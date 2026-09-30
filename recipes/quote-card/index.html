@@ -1,0 +1,11 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>인용 강조 카드 · Quote Card</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>
+.tag{position:absolute;left:120px;top:65px}.quote{position:absolute;left:120px;right:80px;top:140px}.window{position:relative;height:110px;overflow:hidden}.window+.window{margin-top:12px}.line{display:block;line-height:110px;white-space:nowrap}.key{position:relative;display:inline-block;isolation:isolate}.mark{position:absolute;left:-8px;right:-8px;top:38px;height:66px;background:var(--verm-soft);z-index:-1;transform:scaleX(0);transform-origin:0 50%}.callout{position:absolute;left:120px;top:440px;width:110px;height:8px}.callout svg{width:110px;height:8px;overflow:visible}.call{stroke:var(--ink);stroke-width:1;fill:none;stroke-dasharray:1;stroke-dashoffset:1}.point{fill:var(--ink);opacity:0}.source{position:absolute;left:246px;top:431px;opacity:0;font:16px var(--sans);color:var(--ink2)}
+</style></head><body data-kind="recipe" data-no="R07" data-cat="레시피 · 인용문과 핵심 메시지를 전달하는 설명 영상" data-ko="인용 강조 카드" data-en="Quote Card" data-meta="행 리빌 · 핵심 스윕 · 출처" data-dur="4"><main class="scene"><div class="tag lab">AI 원리 교재 · 예문</div><div class="quote"><div class="window"><span class="line t-xl">AI는 앞의 말을 읽고,</span></div><div class="window"><span class="line t-xl"><span class="key"><span class="mark"></span>다음 말</span>을 고른다</span></div></div><div class="callout"><svg viewBox="0 0 110 8"><circle class="point" cx="4" cy="4" r="4"/><path class="call" pathLength="1" d="M8 4 H110"/></svg></div><div class="source">출처 · AI 원리 교재 예문</div></main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl=Motion.timeline();
+tl.fromTo('.line',{yPercent:110},{yPercent:0,duration:1.05,stagger:.35,ease:'power3.out'},.3);
+tl.to('.mark',{scaleX:1,duration:1.35,ease:'power1.inOut'},1.4);
+tl.to('.point',{opacity:1,duration:.15},2.4);
+tl.to('.call',{strokeDashoffset:0,duration:.65,ease:'none'},2.4);
+tl.fromTo('.source',{y:8,opacity:0},{y:0,opacity:1,duration:.35,ease:'power3.out'},3.05);
+Motion.ready();
+</script></body></html>

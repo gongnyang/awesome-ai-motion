@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>조각 조립 · Piece Assembly</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.kicker{position:absolute;left:64px;top:40px}.caption{position:absolute;left:64px;bottom:38px;font-size:18px;color:var(--ink2)}
+svg.canvas{position:absolute;inset:0;width:1168px;height:580px}.note{position:absolute;right:64px;bottom:40px}
+
+.pieces{position:absolute;left:414px;top:128px;width:340px;height:324px}.piece{position:absolute;width:108px;height:108px;background:var(--ink)}.piece.accent{background:var(--verm)}
+</style></head>
+<body data-no="412" data-cat="도형·패스 · SHAPE &amp; PATH" data-ko="조각 조립" data-en="Piece Assembly" data-meta="여섯 조각 · 이동과 회전" data-dur="4" data-poster="3.7">
+<main class="scene"><span class="lab kicker">부분에서 완성으로</span><div class="pieces"><div class="piece" style="left:0;top:0"></div><div class="piece" style="left:108px;top:0"></div><div class="piece accent" style="left:216px;top:0"></div><div class="piece" style="left:0;top:108px"></div><div class="piece" style="left:108px;top:108px"></div><div class="piece" style="left:0;top:216px"></div></div><div class="caption">흩어진 여섯 조각이 하나의 기호를 만든다</div><span class="lab note">조립 완료</span></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+const offsets=[[-300,-90,-35],[25,-180,40],[290,-70,60],[-270,100,45],[240,180,-50],[-100,170,-30]];
+document.querySelectorAll('.piece').forEach((p,i)=>{const [x,y,rotation]=offsets[i];tl.fromTo(p,{x,y,rotation,opacity:.3},{x:0,y:0,rotation:0,opacity:1,duration:1.15,ease:'power3.out'},.35+i*.09);});
+tl.fromTo('.note',{opacity:0},{opacity:1,duration:.3},2);
+Motion.ready();
+</script></body></html>

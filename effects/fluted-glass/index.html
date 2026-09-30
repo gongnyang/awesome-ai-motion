@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>골 유리 · Fluted Glass Drift</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>canvas{position:absolute;inset:0;width:1168px;height:580px}.scene{isolation:isolate}</style></head>
+<body data-no="468" data-cat="질감·스타일 · TEXTURE &amp; STYLE" data-ko="골 유리" data-en="Fluted Glass Drift" data-meta="18개 골 · 배경 굴절" data-dur="5" data-poster="2.15">
+<main class="scene"><canvas width="1168" height="580" aria-label="세로 골 유리가 같은 문구와 주홍 원 위를 지나가며 배경을 접고 늘린다."></canvas></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const canvas=document.querySelector('canvas'), ctx=canvas.getContext('2d');
+const W=1168,H=580,INK='#141210',PAPER='#F4EEE3',VERM='#D6401C',RULE='#CDC3B2';
+const SERIF=getComputedStyle(document.body).getPropertyValue('--serif'), SANS=getComputedStyle(document.body).getPropertyValue('--sans');
+const rng=Motion.rand(303), state={t:0};
+const clamp=(x)=>Math.max(0,Math.min(1,x));
+const out=(x)=>1-Math.pow(1-clamp(x),3);
+const mix=(a,b,p)=>a+(b-a)*p;
+function circle(x,y,r,color=INK,alpha=1){ctx.globalAlpha=alpha;ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y,Math.max(.01,r),0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;}
+function label(s,x,y,size=16,color=INK){ctx.fillStyle=color;ctx.font=`${size}px ${SANS}`;ctx.textAlign='left';ctx.fillText(s,x,y);}
+function title(s='다음 말',x=584,y=330,color=INK){ctx.fillStyle=color;ctx.font=`700 108px ${SERIF}`;ctx.textAlign='center';ctx.fillText(s,x,y);ctx.textAlign='left';}
+function clear(){ctx.clearRect(0,0,W,H);ctx.globalAlpha=1;ctx.filter='none';}
+const source=document.createElement('canvas');source.width=W;source.height=H;const sc=source.getContext('2d');sc.fillStyle=PAPER;sc.fillRect(0,0,W,H);
+sc.fillStyle=INK;sc.font=`700 108px ${SERIF}`;sc.textAlign='center';sc.fillText('다음 말',584,330);
+sc.fillStyle=VERM;sc.beginPath();sc.arc(898,283,39,0,7);sc.fill();
+for(let i=0;i<9;i++){sc.fillStyle=i%2?RULE:INK;sc.fillRect(230+i*80,380,36,75);}
+
+function draw(t){clear();
+ctx.drawImage(source,0,0);const left=mix(-580,1220,out(t/4.7)),width=520;
+ctx.save();ctx.beginPath();ctx.rect(left,150,width,330);ctx.clip();
+for(let x=Math.max(0,Math.floor(left));x<Math.min(W,left+width);x+=2){let phase=(x-left)/width*18*Math.PI*2;let sx=Math.max(0,Math.min(W-3,x+Math.sin(phase)*18));ctx.drawImage(source,sx,150,2,330,x,150,2,330);ctx.fillStyle=INK;ctx.globalAlpha=.03+.13*(1+Math.cos(phase))/2;ctx.fillRect(x,150,2,330);ctx.globalAlpha=1;}
+ctx.restore();ctx.strokeStyle=RULE;ctx.lineWidth=1;ctx.strokeRect(left,150,width,330);label('유리 너머의 말',104,95,24);label('세로 골을 따라 접히는 배경',104,514,18);
+}
+const tl=Motion.timeline();
+tl.to(state,{t:5,duration:5,ease:"none",onUpdate:()=>draw(state.t)},0);
+draw(0);
+Motion.ready();
+</script></body></html>

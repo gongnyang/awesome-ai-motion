@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>입자 버스트 · Particle Burst</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>canvas{position:absolute;inset:0;width:1168px;height:580px}.scene{isolation:isolate}</style></head>
+<body data-no="506" data-cat="입자·생성 · GENERATIVE" data-ko="입자 버스트" data-en="Particle Burst" data-meta="96개 입자 · 중력 · 수명 감쇠" data-dur="3.8" data-poster="1.25">
+<main class="scene"><canvas width="1168" height="580" aria-label="한 주홍 점에서 먹 입자가 사방으로 터져 포물선을 그리며 떨어지고 사라진다."></canvas></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const canvas=document.querySelector('canvas'), ctx=canvas.getContext('2d');
+const W=1168,H=580,INK='#141210',PAPER='#F4EEE3',VERM='#D6401C',RULE='#CDC3B2';
+const SERIF=getComputedStyle(document.body).getPropertyValue('--serif'), SANS=getComputedStyle(document.body).getPropertyValue('--sans');
+const rng=Motion.rand(303), state={t:0};
+const clamp=(x)=>Math.max(0,Math.min(1,x));
+const out=(x)=>1-Math.pow(1-clamp(x),3);
+const mix=(a,b,p)=>a+(b-a)*p;
+function circle(x,y,r,color=INK,alpha=1){ctx.globalAlpha=alpha;ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y,Math.max(.01,r),0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;}
+function label(s,x,y,size=16,color=INK){ctx.fillStyle=color;ctx.font=`${size}px ${SANS}`;ctx.textAlign='left';ctx.fillText(s,x,y);}
+function title(s='다음 말',x=584,y=330,color=INK){ctx.fillStyle=color;ctx.font=`700 108px ${SERIF}`;ctx.textAlign='center';ctx.fillText(s,x,y);ctx.textAlign='left';}
+function clear(){ctx.clearRect(0,0,W,H);ctx.globalAlpha=1;ctx.filter='none';}
+const particles=Array.from({length:96},(_,i)=>{const a=i/96*Math.PI*2+(rng()-.5)*.08;return {vx:Math.cos(a)*(130+rng()*200),vy:Math.sin(a)*(130+rng()*180),r:3+rng()*5};});
+function draw(t){clear();
+label('한 점에서 시작',104,95,24);label('퍼지고, 떨어지고, 사라진다',104,514,18);
+const u=Math.max(0,t-.65);circle(584,265,20*(1-out(u/.25)),VERM);
+// Fade the whole particle above the caption, including its radius.
+if(t>=.65&&u<2.15){for(let i=0;i<particles.length;i++){
+const p=particles[i],x=584+p.vx*u,y=265+p.vy*u+90*u*u;
+const r=p.r*(1-.6*clamp(u/2.15));
+const fade=(1-clamp((u-1.25)/.9))*(1-out((y+r-430)/50));
+if(fade>0)circle(x,y,r,INK,fade);
+}}
+if(t>2.6){ctx.globalAlpha=out((t-2.6)/.5);title('새로운 시작',584,330);ctx.globalAlpha=1;circle(898,283,19*out((t-2.6)/.5),VERM);}
+}
+const tl=Motion.timeline();
+tl.to(state,{t:3.8,duration:3.8,ease:"none",onUpdate:()=>draw(state.t)},0);
+draw(0);
+Motion.ready();
+</script></body></html>

@@ -1,0 +1,762 @@
+{
+  "ui-scroll": {
+    "aka": [
+      "Tilted page scroll",
+      "기울어진 페이지 스크롤",
+      "Tilted Page Scroll",
+      "Ui Scroll",
+      "UI 콘텐츠 스크롤",
+      "3d-page-scroll",
+      "Horizontal scroll gallery",
+      "가로 스크롤 갤러리",
+      "UI scroll with focus retention",
+      "관심 영역을 유지한 UI 스크롤",
+      "UI scroll demonstration",
+      "화면 스크롤"
+    ],
+    "variants": [
+      "평면 페이지",
+      "기울어진 페이지",
+      "가로 갤러리",
+      "목표 영역에서 정지",
+      "대화 기록"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/scroll-camera-story/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://github.com/heygen-com/hyperframes/blob/HEAD/skills/hyperframes-animation/rules/3d-page-scroll.md",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "martinlaxenaire/curtainsjs",
+        "url": "https://www.curtainsjs.com/examples/multiple-planes-scroll-effect/",
+        "license": "MIT"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Plugins/ScrollTrigger/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "motion.dev examples",
+        "url": "https://motion.dev/examples/react-scroll-horizontal",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-054",
+      "R8-097",
+      "R1b-096",
+      "R2-078",
+      "R7-110",
+      "DICT-166"
+    ]
+  },
+  "cursor-click": {
+    "aka": [
+      "Cursor click",
+      "커서 클릭",
+      "Cursor Click",
+      "physics-press-reaction",
+      "cursor-click-ripple",
+      "Press release",
+      "누름과 복구",
+      "Press Release",
+      "누름과 복귀",
+      "press-release-spring",
+      "Inset Shadow",
+      "안쪽으로 눌림",
+      "Button Press Feedback",
+      "버튼 누름 반응",
+      "Cursor trajectory smoothing",
+      "커서 경로 평활화",
+      "Click pulse and cursor compression",
+      "클릭 맥동과 커서 눌림",
+      "Cursor movement",
+      "커서 이동",
+      "Click ripple",
+      "클릭 리플"
+    ],
+    "variants": [
+      "곡선 커서 이동",
+      "경로 평활화",
+      "클릭 리플",
+      "커서 압축",
+      "버튼 눌림과 복구",
+      "안쪽 그림자 눌림"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/oversized-cursor/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/press-ripple/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/vpn-youtube-spot/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/gesture-tap/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/touch-indicator/registry-item.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-093",
+      "R1b-092",
+      "R1a-094",
+      "R1b-091",
+      "R3-048",
+      "R3-161",
+      "R7-099",
+      "R7-100",
+      "DICT-162",
+      "DICT-163"
+    ]
+  },
+  "typing-input": {
+    "aka": [
+      "Typing input",
+      "입력 시연",
+      "Typing Input",
+      "입력창 타이핑",
+      "Keyboard Press Demo",
+      "키보드 입력 시연",
+      "Typing input simulation",
+      "타이핑 입력"
+    ],
+    "variants": [
+      "프롬프트 입력",
+      "검색어 입력",
+      "붙여 넣기",
+      "키보드 눌림 동기화"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/signup-flow/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/input-feedback/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/keyboard",
+        "license": "unknown"
+      },
+      {
+        "title": "magicuidesign/magicui",
+        "url": "https://magicui.design/docs/components/terminal",
+        "license": "MIT"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/blueprints/prompt-type-submit-generate.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-098",
+      "R1b-116",
+      "R3-164",
+      "DICT-164"
+    ]
+  },
+  "answer-stream": {
+    "aka": [
+      "Answer stream",
+      "답변 스트리밍",
+      "Answer Stream",
+      "답변 스트림",
+      "Answer streaming",
+      "답 스트리밍"
+    ],
+    "variants": [
+      "텍스트 청크",
+      "결과 카드 스트림",
+      "문단별 휴지"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/streaming-text/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/ai-chat-reveal/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/chatgpt-exchange/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/claude-exchange/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/hyperframes-animation",
+        "url": "claude-skill:hyperframes-animation/blueprints/prompt-type-submit-generate.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-099",
+      "R1b-117",
+      "DICT-165"
+    ]
+  },
+  "shape-morph": {
+    "aka": [
+      "Shared element morph",
+      "공유 요소 이동 모프",
+      "Shared element transition",
+      "공유 요소 전환",
+      "Shared layout",
+      "Magic motion",
+      "Copy success morph",
+      "복사 완료 상태 변환",
+      "Loading to Result Morph",
+      "로더에서 결과 아이콘으로",
+      "Shared Layout Expansion",
+      "카드에서 상세 확장",
+      "Shared Element Transition",
+      "Morphing Dialog"
+    ],
+    "variants": [
+      "공유 요소 전환",
+      "썸네일에서 상세 패널로 확대",
+      "모서리 변화",
+      "로더에서 성공 또는 오류 표식으로 변형",
+      "복사 아이콘에서 체크로 변형"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/modal-morph/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Plugins/Flip/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "motiondivision/motion",
+        "url": "https://motion.dev/docs/react-layout-animations",
+        "license": "MIT"
+      },
+      {
+        "title": "juliangarnier/anime",
+        "url": "https://animejs.com/documentation/layout",
+        "license": "MIT"
+      },
+      {
+        "title": "motion.dev examples",
+        "url": "https://motion.dev/examples/react-app-store",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-102",
+      "R2-033",
+      "DICT-075",
+      "R2-045",
+      "R3-089",
+      "R3-148"
+    ]
+  },
+  "crossfade": {
+    "aka": [
+      "Theme morph",
+      "테마 교체",
+      "Skeleton reveal",
+      "스켈레톤에서 내용 공개"
+    ],
+    "variants": [
+      "테마 교차 페이드",
+      "스켈레톤에서 실제 내용으로 교체"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/sticky-mock-swap/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/skeleton-reveal/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/rules/theme-crossfade-morph.md",
+        "license": "unknown"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/blueprints/grid-card-assemble.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-103",
+      "R1a-107"
+    ]
+  },
+  "progressive-disclosure": {
+    "aka": [
+      "Agent status theater",
+      "작업 상태 연출",
+      "Agent Status Theater",
+      "작업 상태 시연",
+      "Multi Step Loader",
+      "다단계 상태 로더",
+      "Sticky Scroll Reveal",
+      "고정 화면 순차 교체",
+      "Pinned chart narrative",
+      "고정 차트 문단 전환",
+      "Sticky scrollytelling",
+      "Step-triggered chart state",
+      "문단 단위 차트 상태 전환"
+    ],
+    "variants": [
+      "작업 단계 체크리스트",
+      "고정 장면과 스크롤 설명",
+      "문단별 차트 상태 전환",
+      "이전 단계 흐리게 유지"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/state-chip-rail/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/onboarding-stepper-flow/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/multi-step-loader",
+        "license": "unknown"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      },
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/sticky-scroll-reveal",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-108",
+      "R1b-118",
+      "R3-090",
+      "R3-166",
+      "R6-086",
+      "R6-088"
+    ]
+  },
+  "stagger": {
+    "aka": [
+      "Grid card assembly",
+      "격자 카드 조립"
+    ],
+    "variants": [
+      "격자 카드 조립",
+      "목록 순차 등장"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/grid-card-assemble/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/logo-wall/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/trust-strip/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/mk-placeholder-grid/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/heygen-avatar-promo-card/registry-item.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-194"
+    ]
+  },
+  "line-draw": {
+    "aka": [
+      "Checkmark Tick",
+      "성공 체크 그리기",
+      "checkmark-success-tick",
+      "Animated Check Mark",
+      "체크 표시 그리기"
+    ],
+    "variants": [
+      "두 획 체크 그리기",
+      "체크 완료 후 반동",
+      "배경 원 동반"
+    ],
+    "sources": [
+      {
+        "title": "shadcn-ui/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "license": "MIT"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      },
+      {
+        "title": "LottieFiles/Patrick Rigor",
+        "url": "https://lottiefiles.com/free-animation/loading-animation-with-success-and-error-K2tYPTbs5Q",
+        "license": "Lottie Simple License"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/06-shapes-strokes.md#checkmark-success-tick",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1b-062",
+      "R3-160"
+    ]
+  },
+  "arc-motion": {
+    "aka": [
+      "Arc layout transfer",
+      "곡선 레이아웃 이동"
+    ],
+    "variants": [
+      "재배치 곡선",
+      "상향 호",
+      "하향 호"
+    ],
+    "sources": [
+      {
+        "title": "motiondivision/motion",
+        "url": "https://motion.dev/docs/react-layout-animations",
+        "license": "MIT"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Plugins/MotionPathPlugin/",
+        "license": "GSAP Standard License"
+      }
+    ],
+    "from": [
+      "R2-034"
+    ]
+  },
+  "annotation-callout": {
+    "aka": [
+      "Bubble Pointer Reveal",
+      "말풍선 꼬리 등장",
+      "Popover and Tooltip",
+      "팝오버와 툴팁",
+      "Anchored step tooltip",
+      "앵커 안내 말풍선"
+    ],
+    "variants": [
+      "말풍선 꼬리 등장",
+      "대상 옆 툴팁 등장",
+      "번호 안내",
+      "단계별 앵커 이동"
+    ],
+    "sources": [
+      {
+        "title": "IanLunn/Hover",
+        "url": "https://github.com/IanLunn/Hover",
+        "license": "MIT personal/open-source + paid commercial"
+      },
+      {
+        "title": "shadcn-ui/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "license": "MIT"
+      },
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/tooltip-card",
+        "license": "unknown"
+      },
+      {
+        "title": "ibelick/motion-primitives",
+        "url": "https://github.com/ibelick/motion-primitives",
+        "license": "MIT"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      }
+    ],
+    "from": [
+      "R3-063",
+      "R3-152",
+      "R7-105"
+    ]
+  },
+  "split-compare": {
+    "aka": [
+      "Comparison reveal slider",
+      "비교 경계 슬라이더",
+      "Image Comparison Wipe",
+      "이미지 비교 쓸기"
+    ],
+    "variants": [
+      "좌우 비교",
+      "상하 비교",
+      "코드 비교",
+      "경계 중앙 정지"
+    ],
+    "sources": [
+      {
+        "title": "motion.dev examples",
+        "url": "https://motion.dev/examples/react-image-reveal-slider",
+        "license": "unknown"
+      },
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/compare",
+        "license": "unknown"
+      },
+      {
+        "title": "ibelick/motion-primitives",
+        "url": "https://motion-primitives.com/docs/image-comparison",
+        "license": "MIT"
+      },
+      {
+        "title": "magicuidesign/magicui",
+        "url": "https://magicui.design/docs/components/code-comparison",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R2-055",
+      "R3-147"
+    ]
+  },
+  "zoom-callout": {
+    "aka": [
+      "Magnifying Lens",
+      "확대 렌즈",
+      "Magnified callout / UI focus zoom",
+      "확대 콜아웃"
+    ],
+    "variants": [
+      "이동 확대 렌즈",
+      "UI 부분 확대",
+      "원형 확대 창"
+    ],
+    "sources": [
+      {
+        "title": "magicuidesign/magicui",
+        "url": "https://magicui.design/docs/components/lens",
+        "license": "MIT"
+      },
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/lens",
+        "license": "unknown"
+      },
+      {
+        "title": "motion dictionary 3-type-data-ui.md#26. 확대 콜아웃 · Magnified callout / UI focus zoom",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "R3-146",
+      "DICT-167"
+    ]
+  },
+  "spotlight": {
+    "aka": [
+      "Card Focus Blur",
+      "카드 초점 강조"
+    ],
+    "variants": [
+      "선택 카드 선명도 유지",
+      "주변 카드 흐림과 감광"
+    ],
+    "sources": [
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/focus-cards",
+        "license": "unknown"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      }
+    ],
+    "from": [
+      "R3-174"
+    ]
+  },
+  "mask-reveal": {
+    "aka": [
+      "Directional Menu Image Reveal",
+      "메뉴 이미지 방향 리빌"
+    ],
+    "variants": [
+      "메뉴 이미지 리빌",
+      "진입 방향별 리빌",
+      "리빌 후 포인터 추종"
+    ],
+    "sources": [
+      {
+        "title": "tympanus.net/codrops",
+        "url": "https://tympanus.net/codrops/2020/07/01/creating-a-menu-image-animation-on-hover/",
+        "license": "unknown"
+      },
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/direction-aware-hover",
+        "license": "unknown"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      }
+    ],
+    "from": [
+      "R3-190"
+    ]
+  },
+  "push-transition": {
+    "aka": [
+      "Transition Panel",
+      "콘텐츠 패널 교체"
+    ],
+    "variants": [
+      "UI 탭 패널 전환",
+      "짧은 거리 이동과 교차 페이드"
+    ],
+    "sources": [
+      {
+        "title": "ibelick/motion-primitives",
+        "url": "https://motion-primitives.com/docs/transition-panel",
+        "license": "MIT"
+      },
+      {
+        "title": "shadcn-ui/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "license": "MIT"
+      },
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/navbar-menu",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R3-155"
+    ]
+  },
+  "wipe": {
+    "aka": [
+      "Footer underlay reveal",
+      "하단 배경 공개"
+    ],
+    "variants": [
+      "본문 뒤 고정 푸터 공개",
+      "그림자 경계"
+    ],
+    "sources": [
+      {
+        "title": "motion.dev examples",
+        "url": "https://motion.dev/examples/react-footer-reveal",
+        "license": "unknown"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Plugins/ScrollTrigger/",
+        "license": "GSAP Standard License"
+      }
+    ],
+    "from": [
+      "R2-084"
+    ]
+  },
+  "bar-grow": {
+    "aka": [
+      "Scroll Progress Indicator",
+      "스크롤 진행 표시"
+    ],
+    "variants": [
+      "스크롤 진행 막대",
+      "세로 진행선",
+      "진행률 연동 길이"
+    ],
+    "sources": [
+      {
+        "title": "magicuidesign/magicui",
+        "url": "https://magicui.design/docs/components/scroll-progress",
+        "license": "MIT"
+      },
+      {
+        "title": "ibelick/motion-primitives",
+        "url": "https://motion-primitives.com/docs/scroll-progress",
+        "license": "MIT"
+      },
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/tracing-beam",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R3-165"
+    ]
+  }
+}

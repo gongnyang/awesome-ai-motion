@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>텍스트 익스트루전 · Text Extrusion</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>.space{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;perspective:900px}.title{position:relative;width:950px;height:220px;transform-style:preserve-3d}.layer{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:176px;font-weight:900;letter-spacing:-.06em;white-space:nowrap;color:var(--ink)}.front{color:var(--paper);-webkit-text-stroke:1px var(--ink)}.dot{position:absolute;right:50px;bottom:45px;width:24px;height:24px}.hint{position:absolute;left:0;right:0;bottom:30px;text-align:center}</style></head>
+<body data-no="552" data-cat="3D·깊이 · 3D &amp; DEPTH" data-ko="텍스트 익스트루전" data-en="Text Extrusion" data-meta="글자 12층 · 층간 3px · Y축 24도" data-dur="3.5" data-poster="3.1">
+<main class="scene"><div class="space"><div class="title"><div class="layer front">다음 말</div><div class="layer ">다음 말</div><div class="layer ">다음 말</div><div class="layer ">다음 말</div><div class="layer ">다음 말</div><div class="layer ">다음 말</div><div class="layer ">다음 말</div><div class="layer ">다음 말</div><div class="layer ">다음 말</div><div class="layer ">다음 말</div><div class="layer ">다음 말</div><div class="layer ">다음 말</div></div></div><div class="dot v"></div><div class="lab hint">평면의 글자에서 두께 있는 글자로</div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>const tl = Motion.timeline();
+[...document.querySelectorAll('.layer')].forEach((el,i)=>tl.fromTo(el,{z:0},{z:-i*3,duration:1.2,ease:'power3.out'},.35));
+tl.to('.title',{rotationY:24,rotationX:-8,duration:1.2,ease:'power3.out'},.35);
+Motion.ready();</script></body></html>

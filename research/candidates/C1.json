@@ -1,0 +1,2589 @@
+[
+  {
+    "slug": "blur-dissolve",
+    "family": "transitions",
+    "ko": "블러 디졸브",
+    "en": "Blur Dissolve",
+    "aka": [
+      "Blur dissolve",
+      "Blur through",
+      "Defocus dissolve",
+      "초점 흐림 디졸브",
+      "Linear blur dissolve",
+      "직선 블러 디졸브",
+      "Horizontal blur dissolve",
+      "가로 블러 디졸브",
+      "VR spherical blur transition",
+      "구면 블러 전환"
+    ],
+    "what": "두 장면이 흐려진 상태로 겹쳐 교체되고 새 장면이 다시 선명해진다.",
+    "why": "시간 이동과 부드러운 분위기 변화를 만든다.",
+    "params": "권장 700ms, blur 0→12→0px, 교차점 50%; 가로 블러는 폭 24px, 구면 변형은 각도 블러 8도.",
+    "impl": "겹친 HTML 레이어의 blur와 opacity를 함께 보간하고 가로 또는 구면 커널은 WebGL 다중 샘플로 재현한다.",
+    "runtime": "css",
+    "variants": [
+      "블러 통과",
+      "DefocusBlur",
+      "LinearBlur",
+      "hblur",
+      "Defocus dissolve",
+      "Linear blur dissolve",
+      "Horizontal blur dissolve",
+      "VR spherical blur transition"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/transitions-blur/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/DefocusBlur.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "remotion-dev/remotion",
+        "url": "https://github.com/remotion-dev/remotion/blob/main/packages/template-prompt-to-video/src/lib/utils.ts",
+        "license": "Remotion License"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      },
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/LinearBlur.glsl",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1a-018",
+      "R4-044",
+      "R4-045",
+      "R4-046",
+      "R4-148"
+    ]
+  },
+  {
+    "slug": "dip-to-color",
+    "family": "transitions",
+    "ko": "딥 투 컬러",
+    "en": "Dip to Color",
+    "aka": [
+      "Color dip",
+      "색면 경유 전환",
+      "Dip to color",
+      "색면 경유 페이드",
+      "Blur to solid color",
+      "블러 색면 경유"
+    ],
+    "what": "앞 장면이 단색으로 사라진 뒤 같은 색에서 다음 장면이 나타난다.",
+    "why": "문단이나 분위기의 경계를 만든다.",
+    "params": "권장 퇴장 250ms, 단색 홀드 100ms, 등장 350ms, 색 #000; 블러 변형은 정점 24px.",
+    "impl": "색면을 사이에 두고 두 화면 opacity를 순차 보간한다.",
+    "runtime": "css",
+    "variants": [
+      "animate-text/fade-through",
+      "fadecolor",
+      "fadeblack",
+      "fadewhite",
+      "Dip To Black",
+      "Dip To White",
+      "Dip To Color Dissolve",
+      "검정 경유",
+      "흰색 경유",
+      "브랜드색 경유",
+      "블러 경유",
+      "Color dip",
+      "Blur to solid color"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/fade-through/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "pixel-point/animate-text",
+        "url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/fade-through.json",
+        "license": "unknown"
+      },
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/fadecolor.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "FFmpeg/FFmpeg",
+        "url": "https://ffmpeg.org/ffmpeg-filters.html#xfade",
+        "license": "LGPL-2.1-or-later"
+      },
+      {
+        "title": "Adobe",
+        "url": "https://helpx.adobe.com/premiere/desktop/add-video-effects/effects-and-transitions-library/list-of-video-dissolve-transitions.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-019",
+      "R4-007",
+      "R4-146"
+    ]
+  },
+  {
+    "slug": "squeeze-transition",
+    "family": "transitions",
+    "ko": "스퀴즈 전환",
+    "en": "Squeeze Transition",
+    "aka": [
+      "Squeeze transition",
+      "압축 전환",
+      "압착 전환",
+      "Accordion fold",
+      "맞접기 전환"
+    ],
+    "what": "앞 장면의 한 축이 눌려 사라지고 다음 장면이 같은 축으로 펼쳐진다.",
+    "why": "자리 교체를 압축과 확장으로 강조한다.",
+    "params": "권장 650ms, scaleX 1→0 및 0→1, power2.inOut; 축 Y와 중앙 압착은 변형으로 쓴다.",
+    "impl": "맞닿은 가장자리를 원점으로 두 레이어 축 스케일을 보간한다.",
+    "runtime": "css",
+    "variants": [
+      "squeeze",
+      "squeezeh",
+      "squeezev",
+      "Fold",
+      "중앙 압착",
+      "가로 압축",
+      "세로 압축",
+      "맞닿은 가장자리 교체",
+      "Accordion fold"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/squeeze.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "FFmpeg/FFmpeg",
+        "url": "https://ffmpeg.org/ffmpeg-filters.html#xfade",
+        "license": "LGPL-2.1-or-later"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      },
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Fold.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/transitions/css-push.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-021",
+      "R4-064",
+      "R4-079"
+    ]
+  },
+  {
+    "slug": "clock-wipe",
+    "family": "transitions",
+    "ko": "클록 와이프",
+    "en": "Clock Wipe",
+    "aka": [
+      "Clock wipe",
+      "시계 와이프",
+      "Pinwheel wipe",
+      "바람개비 와이프",
+      "Radial Wipe",
+      "방사 와이프"
+    ],
+    "what": "중심에서 회전하는 부채꼴 경계가 다음 장면을 드러낸다.",
+    "why": "진행과 시간의 흐름을 연상시킨다.",
+    "params": "권장 800ms, 회전 0→360도, 중심 50% 50%, linear; 핀휠은 날개 4개.",
+    "impl": "SVG 부채꼴 마스크의 각도를 늘리고 여러 날개 변형은 같은 마스크를 회전 복제한다.",
+    "runtime": "svg",
+    "variants": [
+      "angular",
+      "Radial",
+      "radial",
+      "pinwheel",
+      "시계방향",
+      "반시계방향",
+      "양방향",
+      "시계 방향",
+      "반시계 방향",
+      "핀휠",
+      "Pinwheel wipe",
+      "Radial Wipe"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/angular.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Radial.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "FFmpeg/FFmpeg",
+        "url": "https://ffmpeg.org/ffmpeg-filters.html#xfade",
+        "license": "LGPL-2.1-or-later"
+      },
+      {
+        "title": "remotion-dev/remotion",
+        "url": "https://www.remotion.dev/docs/transitions/presentations/clock-wipe",
+        "license": "Remotion License"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1a-030",
+      "R4-013",
+      "R4-024",
+      "R5-033"
+    ]
+  },
+  {
+    "slug": "flash-transition",
+    "family": "transitions",
+    "ko": "플래시 전환",
+    "en": "Flash Transition",
+    "aka": [
+      "Overexposure flash",
+      "과노출 플래시",
+      "Flash Cut",
+      "플래시 컷",
+      "flash-frame-subliminal",
+      "light-flash-join",
+      "Exposure flash"
+    ],
+    "what": "흰색 또는 단색 섬광이 화면을 덮는 순간 장면이 교체되고 밝기가 원래대로 돌아온다.",
+    "why": "충격, 플래시, 강한 박자를 강조한다.",
+    "params": "권장 상승 100ms, 정점 1~2프레임, 복구 250ms, 흰색 opacity 1.",
+    "impl": "HTML 전면 색 오버레이의 opacity 봉우리에서 장면을 교체하고 밝기를 복구한다.",
+    "runtime": "gsap",
+    "variants": [
+      "1프레임 플래시",
+      "컬러 플래시",
+      "화이트 조인",
+      "pairs/light-flash-in",
+      "pairs/light-flash-out",
+      "Overexposure",
+      "Overexposure flash",
+      "Flash Cut",
+      "Exposure flash"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/flash-through-white/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/editorial-flash-overlay/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Overexposure.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/transitions/css-light.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-033",
+      "R1b-072",
+      "R4-043"
+    ]
+  },
+  {
+    "slug": "burn-transition",
+    "family": "transitions",
+    "ko": "번 전환",
+    "en": "Burn Transition",
+    "aka": [
+      "Page burn",
+      "페이지 소각",
+      "Noise burn edge",
+      "노이즈 연소 테두리",
+      "dissolve()",
+      "Undulating burn out",
+      "물결 연소 와이프"
+    ],
+    "what": "불규칙한 구멍이나 경계가 타들어 가듯 퍼지며 앞 장면을 지우고 다음 장면을 드러낸다. 경계에는 뜨거운 색의 빛이 남는다.",
+    "why": "파괴와 새로운 시작을 극적으로 보여준다.",
+    "params": "권장 1000ms, 시드 1, 발광 경계 폭 화면 1%, 주황색 경계, 진행률 0→1.",
+    "impl": "노이즈 기반 SVG 또는 WebGL 마스크를 확장하고 임계값 주변 띠에 발광 색을 합성한다.",
+    "runtime": "webgl",
+    "variants": [
+      "dissolve",
+      "burn0",
+      "undulatingBurnOut",
+      "모서리 시작",
+      "중심 시작",
+      "노이즈 구멍",
+      "맥동 경계",
+      "Page burn",
+      "Noise burn edge",
+      "Undulating burn out"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/ridged-burn/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/transitions-destruction/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/dissolve.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/burn0.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "remotion-dev/remotion",
+        "url": "https://www.remotion.dev/docs/transitions/presentations/dissolve",
+        "license": "Remotion License"
+      }
+    ],
+    "from": [
+      "R1a-038",
+      "R4-039",
+      "R4-041"
+    ]
+  },
+  {
+    "slug": "scale-swap",
+    "family": "transitions",
+    "ko": "스케일 스왑",
+    "en": "Scale Swap",
+    "aka": [
+      "Scale swap",
+      "축소 확대 교체",
+      "축소와 팝 교체",
+      "scale-swap-transition",
+      "Anchored scale replacement",
+      "앵커 확대 축소 교체"
+    ],
+    "what": "기존 장면이나 요소가 기준점으로 줄어드는 동안 새 장면이 커져 그 자리를 이어받는다.",
+    "why": "다른 상태가 같은 자리에서 이어진다.",
+    "params": "권장 550ms, 공통 원점 50% 50%, 앞 scale 1→0.2, 뒤 scale 0.2→1, 교차 50%.",
+    "impl": "겹친 형제 요소를 공통 원점으로 스케일 교차 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "아이콘 교체",
+      "브랜드 팝",
+      "Slides",
+      "중심",
+      "모서리",
+      "변 기준",
+      "Anchored scale replacement"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/morph-swap/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/icon-swap/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Slides.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/rules/scale-swap-transition.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-040",
+      "R1b-100",
+      "R4-085"
+    ]
+  },
+  {
+    "slug": "noise-dissolve",
+    "family": "transitions",
+    "ko": "노이즈 디졸브",
+    "en": "Noise Dissolve",
+    "aka": [
+      "Noise dissolve",
+      "Pixel Dissolve",
+      "픽셀 디졸브",
+      "Pixel noise dissolve",
+      "픽셀 노이즈 디졸브",
+      "Perlin cloud dissolve",
+      "노이즈 구름 디졸브",
+      "Crosshatch dissolve",
+      "교차 해칭 디졸브"
+    ],
+    "what": "무작위 픽셀이나 구름 같은 얼룩 영역이 순차 교체되어 다음 장면이 나타난다.",
+    "why": "디지털 생성이나 해체의 느낌을 만든다.",
+    "params": "권장 900ms, 노이즈 크기 8px, feather 0.08, 시드 1; 구름 변형은 저주파 노이즈 scale 4.",
+    "impl": "WebGL에서 고정 노이즈 값과 진행률 임계값을 비교해 두 장면의 혼합량을 계산한다.",
+    "runtime": "webgl",
+    "variants": [
+      "거친 침식",
+      "빛나는 경계",
+      "미세 입자 소멸",
+      "픽셀 소멸",
+      "픽셀 조립",
+      "randomNoisex",
+      "dissolve",
+      "perlin",
+      "crosshatch",
+      "픽셀 노이즈",
+      "펄린 구름",
+      "크로스해치",
+      "Pixel Dissolve",
+      "Pixel noise dissolve",
+      "Perlin cloud dissolve",
+      "Crosshatch dissolve"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/domain-warp-dissolve/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/code-shader-dissolve/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "iart-ai/webgl-animation-skills",
+        "url": "https://github.com/iart-ai/webgl-animation-skills/blob/HEAD/skills/shader-glsl/SKILL.md",
+        "license": "MIT"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgl_postprocessing_transition",
+        "license": "MIT"
+      },
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/randomNoisex.glsl",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1a-130",
+      "R8-047",
+      "R1b-138",
+      "R4-028",
+      "R4-035",
+      "R4-036"
+    ]
+  },
+  {
+    "slug": "halftone-dissolve",
+    "family": "transitions",
+    "ko": "하프톤 디졸브",
+    "en": "Halftone Dissolve",
+    "aka": [
+      "Halftone dissolve",
+      "하프톤 전환",
+      "Polka dot curtain",
+      "물방울 점 커튼"
+    ],
+    "what": "격자에 놓인 원형 구멍들이 커지고 서로 이어져 다음 장면을 드러낸다.",
+    "why": "점묘에서 실화면으로의 점진적 전환을 만든다.",
+    "params": "권장 900ms, 격자 16px, 반경 0→12px, 셀 지연 15ms; 시작점 거리 순으로 공개한다.",
+    "impl": "고정 격자의 원 마스크 반경을 진행률과 인덱스로 보간한다.",
+    "runtime": "canvas",
+    "variants": [
+      "PolkaDotsCurtain",
+      "동시 확장",
+      "거리 순 확장",
+      "Polka dot curtain"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/halftone-dissolve/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/PolkaDotsCurtain.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1a-146",
+      "R4-025"
+    ]
+  },
+  {
+    "slug": "warp-dissolve",
+    "family": "transitions",
+    "ko": "워프 디졸브",
+    "en": "Warp Dissolve",
+    "aka": [
+      "Cross warp",
+      "교차 왜곡 모프",
+      "교차 왜곡",
+      "Displacement Image Transition",
+      "변위 이미지 전환",
+      "Liquid distortion slideshow",
+      "Directional warp",
+      "방향 압축 왜곡",
+      "Displacement map dissolve",
+      "변위 맵 디졸브",
+      "Color driven morph",
+      "색 기반 모프"
+    ],
+    "what": "기존 장면과 다음 장면이 서로 반대 방향으로 휘거나 늘어나면서 교체되고 왜곡이 풀린다.",
+    "why": "두 상태의 형태가 유동적으로 이어짐을 보여준다.",
+    "params": "권장 900ms, 변위 강도 화면 8%, power2.inOut; 선택적 변위 맵 1장, 정점 왜곡은 진행률 50%.",
+    "impl": "WebGL에서 보조 변위 맵이나 방향 좌표 또는 색 성분을 UV 변위로 바꾸고 두 텍스처를 교차 혼합한다.",
+    "runtime": "webgl",
+    "variants": [
+      "crosswarp",
+      "MorphSlider",
+      "melt",
+      "ripple",
+      "shear",
+      "swirl",
+      "액체 전환",
+      "줄무늬 변위",
+      "노이즈 변위",
+      "directionalwarp",
+      "displacement",
+      "morph",
+      "coord-from-in",
+      "크로스 워프",
+      "방향 워프",
+      "변위 맵",
+      "색 기반 워프",
+      "Cross warp",
+      "Displacement Image Transition",
+      "Directional warp",
+      "Displacement map dissolve",
+      "Color driven morph"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/cross-warp-morph/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/crosswarp.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "remotion-dev/remotion",
+        "url": "https://www.remotion.dev/docs/transitions/presentations/crosswarp",
+        "license": "Remotion License"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      }
+    ],
+    "from": [
+      "R1a-159",
+      "R4-061",
+      "R3-199",
+      "R8-048",
+      "R4-060",
+      "R4-062",
+      "R4-063"
+    ]
+  },
+  {
+    "slug": "freeze-frame-dressing",
+    "family": "transitions",
+    "ko": "프리즈 프레임 장식",
+    "en": "Freeze Frame Dressing",
+    "aka": [
+      "Freeze frame dressing",
+      "정지 화면 장식"
+    ],
+    "what": "움직임이 박자에 멈추고 종이, 테이프, 라벨이 정지된 인물 주변에 붙는다.",
+    "why": "중요한 순간을 표지처럼 기억하게 한다.",
+    "params": "권장 정지 0ms, 유지 1000ms, 장식 시작차 80ms",
+    "impl": "미리 만든 정지 이미지 상태로 교체하고 장식 레이어를 공개한다.",
+    "runtime": "gsap",
+    "variants": [
+      "정지 히트",
+      "종이 테이프",
+      "인물 분리"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/freeze-frame-dressing/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/beat-freeze-cut/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-191"
+    ]
+  },
+  {
+    "slug": "clone-wall-wipe",
+    "family": "transitions",
+    "ko": "타일 월 와이프",
+    "en": "Clone Wall Wipe",
+    "aka": [
+      "Clone wall cover",
+      "복제 글자벽 전환"
+    ],
+    "what": "같은 단어의 타일 벽이 화면을 채우고 반전된 뒤 걷힌다.",
+    "why": "메시지 반복과 강한 장면 경계를 만든다.",
+    "params": "권장 800ms, 격자 8x6, difference 혼합, 간격 20ms",
+    "impl": "동일 단어 타일들을 덮기와 걷기 순서로 공개하고 가림 시점에 컷한다.",
+    "runtime": "css",
+    "variants": [
+      "Clone wall cover"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/mk-clone-wall-transition/registry-item.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-200"
+    ]
+  },
+  {
+    "slug": "split-panel-handoff",
+    "family": "transitions",
+    "ko": "분할 패널 전환",
+    "en": "Split Panel Handoff",
+    "aka": [
+      "Type split panel handoff",
+      "글자 분할 패널 전환"
+    ],
+    "what": "제목이 위아래로 갈라져 나가고 생긴 빈 공간에서 패널이 커져 화면을 차지한다.",
+    "why": "문장에서 구체적 화면으로 초점이 넘어간다.",
+    "params": "권장 800ms, 상하 이동 300px, 패널 scale 0~1",
+    "impl": "분할 제목의 반대 방향 이동과 중앙 패널 확장을 한 진행값으로 계산한다.",
+    "runtime": "gsap",
+    "variants": [
+      "Type split panel handoff"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/type-match-cut/registry-item.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-208"
+    ]
+  },
+  {
+    "slug": "negative-space-invert",
+    "family": "texture",
+    "ko": "네거티브 스페이스 반전",
+    "en": "Negative Space Inversion",
+    "aka": [
+      "Negative Space Invert",
+      "여백 반전",
+      "matte-invert-negative-space",
+      "silhouette-negative-space-match"
+    ],
+    "what": "실루엣 형태는 유지되고 밝은 면과 어두운 여백의 역할이 서로 바뀐다.",
+    "why": "같은 대상의 관점이나 상황이 뒤집힘을 느낀다.",
+    "params": "기본 500ms, 같은 실루엣 좌표, power2.inOut",
+    "impl": "SVG 동일 실루엣 마스크와 반전 매트의 opacity를 교차 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "명암 매치컷",
+      "반전 매트",
+      "Negative Space Invert"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/04-masks-mattes.md#matte-invert-negative-space",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/08-transitions-advanced.md#silhouette-negative-space-match",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1b-040"
+    ]
+  },
+  {
+    "slug": "zoom-flash",
+    "family": "transitions",
+    "ko": "줌 플래시",
+    "en": "Zoom Flash",
+    "aka": [
+      "Hyperzoom Flash",
+      "급가속 하이퍼줌",
+      "speed-ramp-blur-flash",
+      "Dreamy zoom flash",
+      "몽환 줌 플래시",
+      "dreamy-zoom()",
+      "Punch flash cut",
+      "확대 플래시 컷"
+    ],
+    "what": "화면이 빠르게 확대되고 밝은 섬광이 생기는 순간 다음 장면으로 이어진다.",
+    "why": "강한 비트와 극적인 전환을 느낀다.",
+    "params": "권장 확대 180ms, 복구 300ms, 최대 scale 3.2, blur 4px, brightness 2.4; 약한 펀치 변형 scale 1.04, flash opacity 0.2.",
+    "impl": "HTML 장면 scale과 blur 및 밝기 오버레이를 컷 주위에 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "밝기 1.8배",
+      "밝기 2.8배",
+      "DreamyZoom",
+      "하이퍼 줌",
+      "약한 펀치",
+      "회전 줌",
+      "Hyperzoom Flash",
+      "Dreamy zoom flash",
+      "Punch flash cut"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/DreamyZoom.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "remotion-dev/remotion",
+        "url": "https://www.remotion.dev/docs/transitions/presentations/dreamy-zoom",
+        "license": "Remotion License"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      },
+      {
+        "title": "remotion-dev/remotion",
+        "url": "https://www.remotion.dev/docs/transitions/presentations/push-cut",
+        "license": "Remotion License"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/08-transitions-advanced.md#speed-ramp-blur-flash",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1b-078",
+      "R4-054",
+      "R4-119"
+    ]
+  },
+  {
+    "slug": "exit-before-enter",
+    "family": "transitions",
+    "ko": "퇴장 후 등장",
+    "en": "Exit Before Enter",
+    "aka": [
+      "Exit before enter"
+    ],
+    "what": "이전 요소가 완전히 사라진 다음 새 요소가 나타난다.",
+    "why": "상태가 순서대로 바뀜을 분명히 한다.",
+    "params": "공식: AnimatePresence mode sync, wait 선택. 권장 퇴장 250ms, 등장 400ms.",
+    "impl": "타임라인에서 퇴장 끝에 다음 등장 구간을 이어 붙인다.",
+    "runtime": "gsap",
+    "variants": [
+      "대기 전환",
+      "동시 전환",
+      "순차 문구 교체"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "motiondivision/motion",
+        "url": "https://motion.dev/docs/react-animate-presence",
+        "license": "MIT"
+      },
+      {
+        "title": "pmndrs/react-spring",
+        "url": "https://www.react-spring.dev/docs/components/use-transition",
+        "license": "MIT"
+      },
+      {
+        "title": "motion.dev examples",
+        "url": "https://motion.dev/examples/react-animate-presence-modes",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R2-031"
+    ]
+  },
+  {
+    "slug": "retreat-cover",
+    "family": "transitions",
+    "ko": "축소 후 덮기",
+    "en": "Retreat and Cover",
+    "aka": [
+      "Retreat and cover",
+      "물러나며 덮기"
+    ],
+    "what": "이전 장면이 작아지고 어두워지는 동안 새 장면이 가로나 세로로 들어와 덮는다.",
+    "why": "이전 장면에서 새 주제로 초점을 옮긴다.",
+    "params": "권장 700ms, linear, 이전 크기=1부터 약 0.71",
+    "impl": "뒤 레이어의 scale과 밝기를 줄이며 위 레이어를 평행 이동한다.",
+    "runtime": "gsap",
+    "variants": [
+      "LeftRight",
+      "TopBottom"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/LeftRight.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/TopBottom.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-006"
+    ]
+  },
+  {
+    "slug": "grayscale-dissolve",
+    "family": "transitions",
+    "ko": "흑백 디졸브",
+    "en": "Grayscale Dissolve",
+    "aka": [
+      "Grayscale dissolve",
+      "흑백 경유 전환"
+    ],
+    "what": "두 장면의 채도가 중간에 사라지고 흑백 상태로 섞인 뒤 새 장면의 색이 돌아온다.",
+    "why": "회상과 분위기 변화를 암시한다.",
+    "params": "권장 800ms, linear; 출처 기본값 fadegrayscale: intensity=0.3; xfade 기본 duration=1000ms, offset=0ms",
+    "impl": "채도 필터와 두 레이어의 opacity를 동시에 보간한다.",
+    "runtime": "css",
+    "variants": [
+      "fadegrayscale",
+      "fadegrays"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/fadegrayscale.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "FFmpeg/FFmpeg",
+        "url": "https://ffmpeg.org/ffmpeg-filters.html#xfade",
+        "license": "LGPL-2.1-or-later"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-008"
+    ]
+  },
+  {
+    "slug": "hsv-dissolve",
+    "family": "transitions",
+    "ko": "HSV 디졸브",
+    "en": "HSV Dissolve",
+    "aka": [
+      "HSV dissolve",
+      "색상환 경유 페이드"
+    ],
+    "what": "장면을 섞는 동안 색상이 색상환을 따라 변하고 채도와 밝기가 함께 바뀐다.",
+    "why": "현실적인 혼합보다 색의 변화가 먼저 느껴진다.",
+    "params": "권장 700ms, linear",
+    "impl": "canvas 픽셀을 HSV로 변환해 성분별로 보간한다.",
+    "runtime": "canvas",
+    "variants": [
+      "HSVfade"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/HSVfade.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-009"
+    ]
+  },
+  {
+    "slug": "channel-phase-dissolve",
+    "family": "transitions",
+    "ko": "색 채널 순차 디졸브",
+    "en": "Channel Phase Dissolve",
+    "aka": [
+      "Channel phase dissolve",
+      "색 채널 시차 페이드"
+    ],
+    "what": "빨강과 초록과 파랑 채널이 서로 다른 시점에 새 장면으로 넘어간다.",
+    "why": "디지털 처리와 색 분리를 드러낸다.",
+    "params": "권장 700ms, linear; 출처 기본값 colorphase: fromStep=(0.0, 0.2, 0.4, 0.0), toStep=(0.6, 0.8, 1.0, 1.0)",
+    "impl": "WebGL에서 RGB 채널마다 서로 다른 혼합 진행률을 계산한다.",
+    "runtime": "webgl",
+    "variants": [
+      "colorphase"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/colorphase.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-010"
+    ]
+  },
+  {
+    "slug": "color-distance-dissolve",
+    "family": "transitions",
+    "ko": "색차 디졸브",
+    "en": "Color Distance Dissolve",
+    "aka": [
+      "Color distance dissolve",
+      "색 거리 전환"
+    ],
+    "what": "두 장면의 색 차이가 큰 부분과 작은 부분이 서로 다른 속도로 교체된다.",
+    "why": "그림의 내용이 전환 순서를 결정한다고 느끼게 한다.",
+    "params": "권장 800ms, linear; 출처 기본값 ColourDistance: power=5.0; xfade 기본 duration=1000ms, offset=0ms",
+    "impl": "각 위치의 두 색 거리로 교체 가중치를 계산한다.",
+    "runtime": "webgl",
+    "variants": [
+      "ColourDistance",
+      "distance"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ColourDistance.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "FFmpeg/FFmpeg",
+        "url": "https://ffmpeg.org/ffmpeg-filters.html#xfade",
+        "license": "LGPL-2.1-or-later"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-011"
+    ]
+  },
+  {
+    "slug": "multiply-dissolve",
+    "family": "transitions",
+    "ko": "멀티플라이 디졸브",
+    "en": "Multiply Dissolve",
+    "aka": [
+      "Multiply midpoint dissolve",
+      "곱셈 중간상 전환"
+    ],
+    "what": "두 장면이 중간에서 곱셈 합성으로 어두워진 뒤 다음 장면의 밝기로 돌아온다.",
+    "why": "무게감 있는 장면 교체를 만든다.",
+    "params": "권장 700ms, linear",
+    "impl": "canvas multiply 합성과 원본 혼합 가중치를 순서대로 보간한다.",
+    "runtime": "canvas",
+    "variants": [
+      "multiply_blend",
+      "Multiply midpoint dissolve"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/multiply_blend.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-012"
+    ]
+  },
+  {
+    "slug": "wind-wipe",
+    "family": "transitions",
+    "ko": "윈드 와이프",
+    "en": "Wind Wipe",
+    "aka": [
+      "Wind streak wipe",
+      "바람 줄무늬 와이프"
+    ],
+    "what": "경계가 줄마다 다른 길이로 뻗어 바람에 흩날리는 선처럼 새 장면을 드러낸다.",
+    "why": "속도감과 불규칙한 흐름을 준다.",
+    "params": "권장 600ms, linear, seed=1; 출처 기본값 wind: size=0.2, reversed=false; xfade 기본 duration=1000ms, offset=0ms",
+    "impl": "줄별 난수 오프셋을 가진 방향 마스크를 만든다.",
+    "runtime": "webgl",
+    "variants": [
+      "wind",
+      "hlwind",
+      "hrwind",
+      "vuwind",
+      "vdwind",
+      "Wind streak wipe"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/wind.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "FFmpeg/FFmpeg",
+        "url": "https://ffmpeg.org/ffmpeg-filters.html#xfade",
+        "license": "LGPL-2.1-or-later"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-032"
+    ]
+  },
+  {
+    "slug": "luma-wipe",
+    "family": "transitions",
+    "ko": "루마 와이프",
+    "en": "Luma Wipe",
+    "aka": [
+      "Luma map wipe",
+      "휘도 맵 와이프",
+      "Luma image dissolve",
+      "영상 휘도 순서 디졸브",
+      "Gradient Wipe",
+      "그라디언트 와이프"
+    ],
+    "what": "장면 자체나 흑백 보조 이미지의 밝기 순서에 따라 영역들이 다음 장면으로 교체된다.",
+    "why": "원하는 그림이나 질감의 순서로 장면을 교체한다.",
+    "params": "권장 850ms, threshold 0→1, softness 0.08; 보조 명도 맵 1장 또는 장면 휘도를 쓴다.",
+    "impl": "WebGL에서 장면이나 보조 텍스처의 휘도와 진행 임계값을 비교해 두 장면의 혼합량을 계산한다.",
+    "runtime": "webgl",
+    "variants": [
+      "luma",
+      "노이즈 디졸브",
+      "텍스처 리빌",
+      "방사 맵",
+      "보조 명도 맵",
+      "원본 장면 명도",
+      "밝은 영역 우선",
+      "어두운 영역 우선",
+      "Luma map wipe",
+      "Luma image dissolve",
+      "Gradient Wipe"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/luma.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      },
+      {
+        "title": "Adobe",
+        "url": "https://helpx.adobe.com/premiere/desktop/add-video-effects/types-of-effects/transitions.html",
+        "license": "unknown"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/transition-effects.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R4-037",
+      "R4-147",
+      "R5-037"
+    ]
+  },
+  {
+    "slug": "luminance-melt",
+    "family": "transitions",
+    "ko": "루미넌스 멜트",
+    "en": "Luminance Melt",
+    "aka": [
+      "Luminance melt",
+      "휘도 녹아내리기"
+    ],
+    "what": "장면의 밝기와 노이즈를 따라 영역이 위나 아래로 녹아내리듯 새 장면으로 바뀐다.",
+    "why": "화면 내용이 액체처럼 분해되는 느낌을 준다.",
+    "params": "권장 900ms, linear; 출처 기본값 luminance_melt: direction=1, l_threshold=0.8, above=false",
+    "impl": "영상 휘도와 방향 거리와 노이즈로 교체 순서를 정한다.",
+    "runtime": "webgl",
+    "variants": [
+      "luminance_melt"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/luminance_melt.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-038"
+    ]
+  },
+  {
+    "slug": "tinted-burn-dissolve",
+    "family": "transitions",
+    "ko": "색조 번 디졸브",
+    "en": "Tinted Burn Dissolve",
+    "aka": [
+      "Tinted burn dissolve",
+      "색조 연소 페이드"
+    ],
+    "what": "이전 장면의 색이 뜨거운 색조로 바뀌면서 다음 장면으로 섞인다.",
+    "why": "온도감 있는 장면 이동을 만든다.",
+    "params": "권장 700ms, linear; 출처 기본값 burn: color=(0.9, 0.4, 0.2)",
+    "impl": "색조 가중치와 장면 혼합률을 함께 보간한다.",
+    "runtime": "webgl",
+    "variants": [
+      "burn"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/burn.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-040"
+    ]
+  },
+  {
+    "slug": "zoom-wipe",
+    "family": "transitions",
+    "ko": "줌 와이프",
+    "en": "Zoom Wipe",
+    "aka": [
+      "Zoom wipe"
+    ],
+    "what": "중심 확대가 진행되는 도중 직선 경계가 좌우로 이동해 새 장면을 공개한다.",
+    "why": "카메라 이동과 페이지 교체를 함께 느끼게 한다.",
+    "params": "권장 650ms, easeInOutCubic; 출처 기본값 ZoomLeftWipe: zoom_quickness=0.8; ZoomRigthWipe: zoom_quickness=0.8",
+    "impl": "장면 scale과 SVG 직선 clipPath 경계를 동시에 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "ZoomLeftWipe",
+      "ZoomRigthWipe"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ZoomLeftWipe.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ZoomRigthWipe.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-051"
+    ]
+  },
+  {
+    "slug": "ring-zoom",
+    "family": "transitions",
+    "ko": "링 줌",
+    "en": "Ring Zoom",
+    "aka": [
+      "Ring zoom",
+      "동심원 줌"
+    ],
+    "what": "동심원 띠마다 서로 다른 확대율로 영상이 보이며 중심에서 장면이 교체된다.",
+    "why": "터널처럼 층진 집중과 깊이감을 만든다.",
+    "params": "권장 800ms, linear, 링 수=3",
+    "impl": "거리 구간마다 다른 scale로 텍스처를 샘플링한다.",
+    "runtime": "webgl",
+    "variants": [
+      "ZoomInCircles"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ZoomInCircles.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-052"
+    ]
+  },
+  {
+    "slug": "fly-eye-transition",
+    "family": "transitions",
+    "ko": "플라이 아이 전환",
+    "en": "Fly Eye Transition",
+    "aka": [
+      "Fly eye mosaic",
+      "곤충 눈 굴절"
+    ],
+    "what": "영상이 작은 렌즈들로 쪼개져 확대 굴절되고 색이 분리되며 교차한다.",
+    "why": "복안과 유리 표면 같은 낯선 시야를 만든다.",
+    "params": "권장 800ms, linear; 출처 기본값 flyeye: size=0.04, zoom=50.0, colorSeparation=0.3",
+    "impl": "반복 셀 안의 확대 좌표와 RGB 오프셋으로 샘플링한다.",
+    "runtime": "webgl",
+    "variants": [
+      "flyeye",
+      "Fly eye mosaic"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/flyeye.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-068"
+    ]
+  },
+  {
+    "slug": "mosaic-traverse",
+    "family": "transitions",
+    "ko": "모자이크 이동 전환",
+    "en": "Mosaic Traversal",
+    "aka": [
+      "Zoom mosaic traversal",
+      "줌 모자이크 이동"
+    ],
+    "what": "영상이 여러 복제 타일로 펼쳐지고 타일 좌표를 따라 이동하며 새 장면으로 들어간다.",
+    "why": "타일 세계를 가로지르는 큰 공간 이동을 만든다.",
+    "params": "권장 900ms, easeInOutCubic; 출처 기본값 Mosaic: endx=2, endy=-1",
+    "impl": "반복 UV 격자를 scale과 오프셋으로 이동하며 장면을 섞는다.",
+    "runtime": "webgl",
+    "variants": [
+      "Mosaic",
+      "Zoom mosaic traversal"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Mosaic.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-070"
+    ]
+  },
+  {
+    "slug": "column-melt",
+    "family": "transitions",
+    "ko": "컬럼 멜트",
+    "en": "Column Melt",
+    "aka": [
+      "Screen melt columns",
+      "세로 기둥 녹아내리기"
+    ],
+    "what": "세로로 잘린 화면 띠들이 서로 다른 속도로 아래로 내려가 다음 장면을 드러낸다.",
+    "why": "게임 화면의 고전적인 용해감을 만든다.",
+    "params": "권장 1000ms, linear; 출처 기본값 DoomScreenTransition: bars=30, amplitude=2, noise=0.1, frequency=0.5, dripScale=0.5",
+    "impl": "세로 타일마다 난수 지연과 낙하량을 계산한다.",
+    "runtime": "webgl",
+    "variants": [
+      "DoomScreenTransition",
+      "Screen melt columns"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/DoomScreenTransition.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-074"
+    ]
+  },
+  {
+    "slug": "bounce-transition",
+    "family": "transitions",
+    "ko": "바운스 전환",
+    "en": "Bounce Transition",
+    "aka": [
+      "Bounce reveal",
+      "바운스 덮기"
+    ],
+    "what": "장면 경계가 아래로 떨어져 바닥에서 여러 번 튀고 그림자가 뒤따르며 새 장면을 보여준다.",
+    "why": "장면을 무게 있는 물체처럼 느끼게 한다.",
+    "params": "권장 900ms, bounceOut; 출처 기본값 Bounce: shadow_colour=(0.,0.,0.,.6), shadow_height=0.075, bounces=3.0",
+    "impl": "앞 레이어 이동에 바운스 곡선을 쓰고 경계에 그림자를 합성한다.",
+    "runtime": "gsap",
+    "variants": [
+      "Bounce",
+      "Bounce reveal"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Bounce.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-075"
+    ]
+  },
+  {
+    "slug": "cube-transition",
+    "family": "transitions",
+    "ko": "큐브 전환",
+    "en": "Cube Transition",
+    "aka": [
+      "Cube rotation",
+      "큐브 회전"
+    ],
+    "what": "두 장면이 큐브의 이웃 면처럼 원근을 가지며 회전해 교체되고 바닥 반사가 보인다.",
+    "why": "두 장면이 같은 3D 물체에 붙었다고 느끼게 한다.",
+    "params": "권장 800ms, easeInOutCubic; 출처 기본값 cube: persp=0.7, unzoom=0.3, reflection=0.4, floating=3.0",
+    "impl": "CSS 3D 면 두 개 또는 WebGL 큐브 메시를 회전하고 반사를 합성한다.",
+    "runtime": "webgl",
+    "variants": [
+      "cube",
+      "Cube rotation"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/cube.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "remotion-dev/remotion",
+        "url": "https://www.remotion.dev/docs/transitions/presentations/cube",
+        "license": "Remotion License"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-080"
+    ]
+  },
+  {
+    "slug": "split-slide",
+    "family": "transitions",
+    "ko": "스플릿 슬라이드",
+    "en": "Split Slide",
+    "aka": [
+      "Split slide",
+      "반쪽 슬라이드"
+    ],
+    "what": "두 반쪽 장면이 서로 반대쪽으로 벌어지거나 모여 다음 장면과 교체된다.",
+    "why": "열림과 닫힘 및 대칭 이동을 또렷하게 만든다.",
+    "params": "권장 650ms, easeInOutCubic; 출처 기본값 splitSlideInHorizontal: reverse=false; splitSlideInVertical: reverse=false; splitSlideOutHorizontal: reverse=false; splitSlideOutVertical: reverse=false; splitSlideInOutHorizontal: reverse=false; splitSlideInOutVertical: reverse=false",
+    "impl": "각 장면을 두 개의 clipPath로 자르고 반대 방향 translate를 준다.",
+    "runtime": "gsap",
+    "variants": [
+      "splitSlideInHorizontal",
+      "splitSlideInVertical",
+      "splitSlideOutHorizontal",
+      "splitSlideOutVertical",
+      "splitSlideInOutHorizontal",
+      "splitSlideInOutVertical"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/splitSlideInHorizontal.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/splitSlideInVertical.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/splitSlideOutHorizontal.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/splitSlideOutVertical.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/splitSlideInOutHorizontal.glsl",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-086"
+    ]
+  },
+  {
+    "slug": "rotating-tile-dissolve",
+    "family": "transitions",
+    "ko": "회전 타일 디졸브",
+    "en": "Rotating Tile Dissolve",
+    "aka": [
+      "Rotating tiled dissolve",
+      "회전 반복 타일 전환"
+    ],
+    "what": "반복된 영상 타일이 원점 주변으로 회전하며 다음 장면으로 섞인다.",
+    "why": "화면 경계를 넘는 회전과 패턴 흐름을 준다.",
+    "params": "권장 700ms, linear, 회전=90도",
+    "impl": "회전한 UV를 반복 범위로 감아 두 영상을 혼합한다.",
+    "runtime": "webgl",
+    "variants": [
+      "rotateTransition",
+      "Rotating tiled dissolve"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/rotateTransition.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-087"
+    ]
+  },
+  {
+    "slug": "tangent-blur-spin",
+    "family": "transitions",
+    "ko": "회전 블러 전환",
+    "en": "Tangent Motion Blur Spin",
+    "aka": [
+      "Tangent motion blur spin",
+      "접선 잔상 회전"
+    ],
+    "what": "장면이 모서리를 중심으로 회전하고 회전 궤도의 접선 방향으로 길게 흐려지며 교체된다.",
+    "why": "회전 속도와 관성을 강하게 느끼게 한다.",
+    "params": "권장 650ms, cubicBezier(0.68 0.01 0.17 0.98), 샘플=21",
+    "impl": "연속 회전 좌표 차이로 접선 속도를 구해 다중 샘플 평균한다.",
+    "runtime": "webgl",
+    "variants": [
+      "tangentMotionBlur"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/tangentMotionBlur.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-088"
+    ]
+  },
+  {
+    "slug": "stereo-viewer-swap",
+    "family": "transitions",
+    "ko": "스테레오 뷰어 전환",
+    "en": "Stereo Viewer Swap",
+    "aka": [
+      "Stereo viewer swap",
+      "스테레오 뷰어 교체"
+    ],
+    "what": "장면이 둥근 모서리의 작은 창으로 축소되고 두 복제 창이 화면 밖 축을 따라 반대 방향으로 회전해 갈라진다. 검은 중간 구간 뒤 두 마스크가 새 장면을 드러내고 화면이 확대된다.",
+    "why": "슬라이드 뷰어와 관람 창의 물리적 교체감을 준다.",
+    "params": "권장 900ms, easeInOutCubic; 출처 기본값 StereoViewer: zoom=0.88, corner_radius=0.22",
+    "impl": "둥근 창 두 복제 레이어를 반대 축으로 회전시키고 새 장면은 같은 이동 마스크로 공개한다.",
+    "runtime": "webgl",
+    "variants": [
+      "StereoViewer"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/StereoViewer.glsl",
+        "license": "BSD-2-Clause"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-089"
+    ]
+  },
+  {
+    "slug": "datamosh-transition",
+    "family": "transitions",
+    "ko": "데이터모시 전환",
+    "en": "Datamosh Transition",
+    "aka": [
+      "Strip datamosh",
+      "띠 데이터모시"
+    ],
+    "what": "가로 띠와 세로 틈이 찢기고 이전 영상 잔해가 늘어 붙으며 다음 화면으로 바뀐다.",
+    "why": "손상된 압축 영상 같은 마찰과 파괴감을 준다.",
+    "params": "권장 600ms, linear, seed=1; 출처 기본값 StripDatamoshGlitch: strength=1.0, horizontalBars=42.0, verticalSlits=18.0, tear=0.18, chroma=0.032, residue=0.62, noiseAmount=0.16, scanAmount=0.13, flashAmount=0.20",
+    "impl": "띠별 UV 변위와 이전 프레임 잔상 및 색 분리를 합성한다.",
+    "runtime": "webgl",
+    "variants": [
+      "StripDatamoshGlitch",
+      "Strip datamosh"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/StripDatamoshGlitch.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-094"
+    ]
+  },
+  {
+    "slug": "tv-static-transition",
+    "family": "transitions",
+    "ko": "TV 노이즈 전환",
+    "en": "TV Static Transition",
+    "aka": [
+      "TV static interruption",
+      "TV 잡음 삽입",
+      "Static blended fade",
+      "잡음 혼합 페이드"
+    ],
+    "what": "무채색 잡음이 화면을 잠깐 덮거나 장면과 섞인 뒤 다음 장면이 나타난다.",
+    "why": "채널 전환과 신호 단절을 표현한다.",
+    "params": "권장 500ms, 노이즈 정점 100ms, 잡음 opacity 1, 프레임별 시드 변화.",
+    "impl": "WebGL 또는 canvas의 프레임별 노이즈를 전면 합성하고 잡음 정점에서 장면을 교체한다.",
+    "runtime": "webgl",
+    "variants": [
+      "TVStatic",
+      "StaticFade",
+      "잡음 화면 경유",
+      "노이즈 혼합 페이드",
+      "TV static interruption",
+      "Static blended fade"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/TVStatic.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      },
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/StaticFade.glsl",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-095",
+      "R4-096"
+    ]
+  },
+  {
+    "slug": "static-band-wipe",
+    "family": "transitions",
+    "ko": "노이즈 띠 와이프",
+    "en": "Static Band Wipe",
+    "aka": [
+      "Static band wipe",
+      "잡음 띠 와이프"
+    ],
+    "what": "가로 잡음 띠가 위아래로 지나가며 띠 뒤쪽이 다음 장면으로 바뀐다.",
+    "why": "스캔이 화면을 교체하는 전자적 느낌을 준다.",
+    "params": "권장 550ms, linear; 출처 기본값 static_wipe: u_transitionUpToDown=true, u_max_static_span=0.5",
+    "impl": "이동 띠 마스크 안에 잡음을 넣고 앞뒤 장면 선택 경계를 움직인다.",
+    "runtime": "webgl",
+    "variants": [
+      "static_wipe"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/static_wipe.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-097"
+    ]
+  },
+  {
+    "slug": "translate-fade",
+    "family": "transitions",
+    "ko": "이동 교차 페이드",
+    "en": "Translate Fade",
+    "aka": [
+      "Translate fade boundary",
+      "이동 페이드 경계",
+      "Fade transform",
+      "겹쳐 위치 맞추는 페이드 변환",
+      "FadeTransform",
+      "FadeTransformPieces"
+    ],
+    "what": "이전 대상이 다음 위치로 이동하며 옅어지고 같은 이동 영역에서 새 대상이 선명해진다.",
+    "why": "평행 이동과 잔상 교체를 함께 느끼게 한다.",
+    "params": "권장 700ms, 이동량 화면 폭 30%, opacity 1→0 및 0→1, power2.inOut.",
+    "impl": "겹친 HTML 또는 SVG 레이어의 translate와 opacity를 함께 보간해 이동 중 상태를 교체한다.",
+    "runtime": "gsap",
+    "variants": [
+      "x_axis_translation",
+      "전체 변환",
+      "조각별 변환",
+      "Translate fade boundary",
+      "Fade transform"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/x_axis_translation.glsl",
+        "license": "MIT"
+      },
+      {
+        "title": "mifi/editly",
+        "url": "https://github.com/mifi/editly#transition-types",
+        "license": "MIT"
+      },
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/transform.py",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-100",
+      "R7-043"
+    ]
+  },
+  {
+    "slug": "jump-cut",
+    "family": "transitions",
+    "ko": "점프 컷",
+    "en": "Jump Cut",
+    "aka": [
+      "Jump cut",
+      "점프컷"
+    ],
+    "what": "같은 구도의 장면에서 인물 위치나 상태가 순간적으로 건너뛰어 바뀐다.",
+    "why": "시간 압축과 의도적인 단절을 느끼게 한다.",
+    "params": "전환=0ms, 컷 간격 제안 500ms",
+    "impl": "같은 앵커의 장면들을 시간 생략 후 즉시 교체한다.",
+    "runtime": "gsap",
+    "variants": [],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Adobe",
+        "url": "https://www.adobe.com/creativecloud/video/discover/jump-cut.html",
+        "license": "unknown"
+      },
+      {
+        "title": "motion dictionary 2-transitions-camera.md#3. 점프컷 · Jump Cut",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "R4-104",
+      "DICT-106"
+    ]
+  },
+  {
+    "slug": "smash-cut",
+    "family": "transitions",
+    "ko": "스매시 컷",
+    "en": "Smash Cut",
+    "aka": [
+      "Smash cut",
+      "Gilligan cut"
+    ],
+    "what": "강하게 대비되는 밝기와 장소 또는 상황의 장면이 예고 없이 즉시 맞바뀐다.",
+    "why": "충격과 반전 또는 코미디의 결론을 만든다.",
+    "params": "전환=0ms, 오디오 대비와 컷 위치를 프레임 정렬",
+    "impl": "대비되는 두 장면을 반응 직후 즉시 교체한다.",
+    "runtime": "gsap",
+    "variants": [],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Adobe",
+        "url": "https://www.adobe.com/creativecloud/video/post-production/cuts-in-film/smash-cut.html",
+        "license": "unknown"
+      },
+      {
+        "title": "motion dictionary 2-transitions-camera.md#9. 스매시 컷 · Smash Cut",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "R4-107",
+      "DICT-112"
+    ]
+  },
+  {
+    "slug": "insert-shot",
+    "family": "transitions",
+    "ko": "인서트 컷",
+    "en": "Insert Shot",
+    "aka": [
+      "Insert shot",
+      "Insert Shot / Cut-in",
+      "인서트"
+    ],
+    "what": "전체 행동 사이에 같은 공간의 손이나 물건 같은 세부 화면이 짧게 들어간다.",
+    "why": "행동에 중요한 단서를 또렷하게 알려준다.",
+    "params": "권장 입출 컷 0ms, 세부 화면 홀드 1000ms, 복귀 뒤 홀드 700ms.",
+    "impl": "전체와 세부 레이어를 같은 사건 시각에 맞춰 잠시 교체한다.",
+    "runtime": "gsap",
+    "variants": [
+      "Insert Shot / Cut-in"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Adobe",
+        "url": "https://www.adobe.com/creativecloud/video/post-production/cuts-in-film.html",
+        "license": "unknown"
+      },
+      {
+        "title": "Adobe",
+        "url": "https://www.adobe.com/creativecloud/video/production/cinematography/camera-shots-and-angles.html",
+        "license": "unknown"
+      },
+      {
+        "title": "motion dictionary 2-transitions-camera.md#10. 인서트 · Insert Shot / Cut-in",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "R4-108",
+      "DICT-113"
+    ]
+  },
+  {
+    "slug": "cutaway",
+    "family": "transitions",
+    "ko": "컷어웨이",
+    "en": "Cutaway",
+    "aka": [
+      "Cutaway Shot",
+      "Humor reaction insert",
+      "짧은 반응 삽입"
+    ],
+    "what": "주행동을 보여주다가 관련 대상이나 반응 장면을 잠깐 삽입하고 원래 행동으로 돌아온다.",
+    "why": "맥락을 보충하고 편집 공백을 자연스럽게 가린다.",
+    "params": "권장 입출 컷 0ms, 보조 장면 홀드 1200ms, 복귀 홀드 700ms; 짧은 유머 삽입은 500ms.",
+    "impl": "주 장면 타임라인을 유지한 채 관련 보조 레이어를 잠시 표시한다.",
+    "runtime": "gsap",
+    "variants": [
+      "전체 화면 반응",
+      "작은 반응 창",
+      "관련 맥락",
+      "유머 반응 삽입",
+      "Cutaway Shot",
+      "Humor reaction insert"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "CapCut",
+        "url": "https://www.capcut.com/resource/types-of-filmmaking-transitions",
+        "license": "unknown"
+      },
+      {
+        "title": "Fireship",
+        "url": "https://www.youtube.com/watch?v=vKJpN5FAeF4",
+        "license": "unknown"
+      },
+      {
+        "title": "motion dictionary 2-transitions-camera.md#11. 컷어웨이 · Cutaway Shot",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "R4-109",
+      "DICT-114",
+      "R7-074"
+    ]
+  },
+  {
+    "slug": "reaction-cut",
+    "family": "transitions",
+    "ko": "리액션 컷",
+    "en": "Reaction Cut",
+    "aka": [
+      "Reaction cut",
+      "반응 컷"
+    ],
+    "what": "사건이나 발언 다음에 그것을 본 사람의 얼굴 또는 반응 화면으로 컷한다.",
+    "why": "감정과 사건의 영향을 확인하게 한다.",
+    "params": "전환=0ms, 반응 유지 제안 800ms",
+    "impl": "자극 뒤 프레임 경계에서 반응 레이어를 표시한다.",
+    "runtime": "gsap",
+    "variants": [],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Adobe",
+        "url": "https://www.adobe.com/creativecloud/video/post-production/cuts-in-film.html",
+        "license": "unknown"
+      },
+      {
+        "title": "Adobe",
+        "url": "https://www.adobe.com/creativecloud/video/production/cinematography/camera-shots-and-angles.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R4-110"
+    ]
+  },
+  {
+    "slug": "cross-cutting",
+    "family": "transitions",
+    "ko": "교차 편집",
+    "en": "Cross Cutting",
+    "aka": [
+      "Cross cutting"
+    ],
+    "what": "두 장소나 두 행동의 장면을 번갈아 보여준다.",
+    "why": "동시 진행과 비교 또는 긴장 관계를 이해하게 한다.",
+    "params": "전환=0ms, 장면 간격 제안 1500ms부터 500ms까지 단축",
+    "impl": "두 장면 그룹을 교대로 배치하고 컷 간격을 단계적으로 줄인다.",
+    "runtime": "gsap",
+    "variants": [
+      "Parallel editing",
+      "주제 대비 교차",
+      "동시 사건 교차"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Adobe",
+        "url": "https://www.adobe.com/creativecloud/video/post-production/cuts-in-film/cross-cut.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R4-111"
+    ]
+  },
+  {
+    "slug": "montage",
+    "family": "transitions",
+    "ko": "몽타주",
+    "en": "Montage",
+    "aka": [],
+    "what": "여러 짧은 이미지가 연달아 바뀌며 긴 과정이나 주제를 압축한다.",
+    "why": "시간 흐름과 누적 변화 또는 주제의 연결을 전달한다.",
+    "params": "권장 숏 4~6개, 숏 길이 400~1200ms, 컷 0ms, 마지막 결과 홀드 1000ms.",
+    "impl": "선택한 샷 레이어를 리듬에 맞춰 순서대로 교체한다.",
+    "runtime": "gsap",
+    "variants": [],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Adobe",
+        "url": "https://www.adobe.com/creativecloud/video/discover/edit-a-video.html",
+        "license": "unknown"
+      },
+      {
+        "title": "motion dictionary 2-transitions-camera.md#33. 몽타주 · Montage",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "R4-112",
+      "DICT-136"
+    ]
+  },
+  {
+    "slug": "eyeline-match",
+    "family": "transitions",
+    "ko": "시선 연결 컷",
+    "en": "Eyeline Match",
+    "aka": [
+      "Eyeline cut"
+    ],
+    "what": "인물이 화면 밖을 보는 장면 다음에 그 시선 방향의 대상이 나타난다.",
+    "why": "누가 무엇을 바라보는지 이해하게 한다.",
+    "params": "전환=0ms, 시선 방향 일치, 대상 유지 제안 1000ms",
+    "impl": "인물의 시선 벡터에 대응하는 대상 장면을 다음 샷으로 배치한다.",
+    "runtime": "gsap",
+    "variants": [
+      "Eyeline cut"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Adobe",
+        "url": "https://www.adobe.com/creativecloud/video/post-production/cuts-in-film.html",
+        "license": "unknown"
+      },
+      {
+        "title": "Adobe",
+        "url": "https://www.adobe.com/creativecloud/video/hub/ideas/what-is-continuity-editing-in-film.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R4-114"
+    ]
+  },
+  {
+    "slug": "shot-reverse-shot",
+    "family": "transitions",
+    "ko": "숏 리버스 숏",
+    "en": "Shot Reverse Shot",
+    "aka": [
+      "Shot reverse shot"
+    ],
+    "what": "대화하는 두 사람의 반대 방향 시점이 발언과 반응에 맞춰 번갈아 나타난다.",
+    "why": "대화 관계와 공간의 연속성을 이해하게 한다.",
+    "params": "전환=0ms, 축 유지, 발언 말미 컷 제안",
+    "impl": "좌우 앵커가 반대인 두 인물 화면을 같은 대화 타임라인에서 교체한다.",
+    "runtime": "gsap",
+    "variants": [],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Adobe",
+        "url": "https://www.adobe.com/creativecloud/video/post-production/cuts-in-film.html",
+        "license": "unknown"
+      },
+      {
+        "title": "Adobe",
+        "url": "https://www.adobe.com/creativecloud/video/production/cinematography/camera-shots-and-angles.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R4-115"
+    ]
+  },
+  {
+    "slug": "additive-dissolve",
+    "family": "transitions",
+    "ko": "가산 디졸브",
+    "en": "Additive Dissolve",
+    "aka": [
+      "Additive dissolve"
+    ],
+    "what": "두 장면의 밝은 색이 더해져 중간이 밝아졌다가 다음 장면 밝기로 돌아온다.",
+    "why": "장면 교체에 빛과 활기를 더한다.",
+    "params": "권장 600ms, linear, 중간 밝기 제한=1",
+    "impl": "두 텍스처를 시간 가중치로 가산 합성한다.",
+    "runtime": "webgl",
+    "variants": [],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Adobe",
+        "url": "https://helpx.adobe.com/premiere/desktop/add-video-effects/effects-and-transitions-library/list-of-video-dissolve-transitions.html",
+        "license": "unknown"
+      },
+      {
+        "title": "Blackmagic Design",
+        "url": "https://documents.blackmagicdesign.com/UserManuals/DaVinci-Resolve-15-Advanced-Editing.pdf",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R4-121"
+    ]
+  },
+  {
+    "slug": "overlay-bridge",
+    "family": "transitions",
+    "ko": "오버레이 브리지",
+    "en": "Overlay Bridge",
+    "aka": [
+      "Overlay bridge"
+    ],
+    "what": "같은 전면 그래픽이 컷 앞뒤 장면 위를 끊기지 않고 지나가 두 장면을 연결한다.",
+    "why": "브랜드와 장면 사이의 연결감을 유지한다.",
+    "params": "권장 500ms, offset=0ms, 컷 중심 배치",
+    "impl": "독립 SVG 레이어를 두 장면 위에서 계속 움직이며 뒤 장면을 컷한다.",
+    "runtime": "gsap",
+    "variants": [],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "remotion-dev/remotion",
+        "url": "https://www.remotion.dev/docs/transitions/transitionseries",
+        "license": "Remotion License"
+      },
+      {
+        "title": "remotion-dev/remotion",
+        "url": "https://github.com/remotion-dev/remotion/tree/main/packages/template-overlay",
+        "license": "Remotion License"
+      }
+    ],
+    "from": [
+      "R4-124"
+    ]
+  },
+  {
+    "slug": "held-scene-overlap",
+    "family": "transitions",
+    "ko": "이전 장면 유지 전환",
+    "en": "Held Scene Overlap",
+    "aka": [
+      "Held scene overlap",
+      "장면 유지 겹침"
+    ],
+    "what": "다음 장면이 시작되는 동안 이전 장면의 움직임을 잠시 유지하고 지연 구간 끝에서 새 장면을 공개한다.",
+    "why": "동작 종료와 장면 교체의 시간을 따로 조절한다.",
+    "params": "권장 이전 화면 유지 600ms, 공개 컷 0ms, 두 장면의 시간은 독립적으로 진행한다.",
+    "impl": "GSAP 코어 타임라인에서 두 장면 동작을 독립 재생하고 유지 구간 끝에서 레이어 가시성을 교체한다.",
+    "runtime": "gsap",
+    "variants": [],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "motion-canvas/motion-canvas",
+        "url": "https://motioncanvas.io/docs/transitions/",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-125"
+    ]
+  },
+  {
+    "slug": "freeze-cut",
+    "family": "transitions",
+    "ko": "프리즈 컷",
+    "en": "Freeze Cut",
+    "aka": [
+      "Freeze punctuated cut",
+      "정지 프레임 구두점 컷"
+    ],
+    "what": "동작의 한 순간이 멈춰 짧게 유지된 뒤 다른 장면으로 바뀐다.",
+    "why": "사건의 핵심 순간과 문단 끝을 강조한다.",
+    "params": "권장 정지 400ms, 컷=0ms",
+    "impl": "컷 전 프레임을 canvas에 유지한 뒤 다음 장면을 표시한다.",
+    "runtime": "canvas",
+    "variants": [
+      "Freeze punctuated cut"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "remotion-dev/remotion",
+        "url": "https://www.remotion.dev/docs/freeze",
+        "license": "Remotion License"
+      }
+    ],
+    "from": [
+      "R4-128"
+    ]
+  },
+  {
+    "slug": "band-slide",
+    "family": "transitions",
+    "ko": "밴드 슬라이드",
+    "en": "Band Slide",
+    "aka": [
+      "Band slide",
+      "띠 슬라이드"
+    ],
+    "what": "가로나 세로로 나눈 영상 띠가 조금씩 다른 시점이나 방향으로 이동하며 다음 화면이 나타난다.",
+    "why": "전체를 줄 단위로 분해한 리듬을 준다.",
+    "params": "권장 750ms, easeInOutCubic, 띠=8, 시차=40ms",
+    "impl": "띠별 SVG clipPath와 translate 타임라인을 만든다.",
+    "runtime": "gsap",
+    "variants": [],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Adobe",
+        "url": "https://helpx.adobe.com/premiere/desktop/add-video-effects/effects-and-transitions-library/list-of-video-transitions.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R4-130"
+    ]
+  },
+  {
+    "slug": "paint-splatter-wipe",
+    "family": "transitions",
+    "ko": "페인트 스플래터 와이프",
+    "en": "Paint Splatter Wipe",
+    "aka": [
+      "Paint splatter wipe",
+      "페인트 튐 와이프"
+    ],
+    "what": "불규칙한 페인트 얼룩과 점이 번져 다음 장면을 드러낸다.",
+    "why": "손으로 찍거나 뿌린 듯한 활기를 준다.",
+    "params": "권장 700ms, easeOutCubic, seed=1",
+    "impl": "얼룩 SVG 마스크의 scale과 threshold를 시간에 따라 늘린다.",
+    "runtime": "svg",
+    "variants": [],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Adobe",
+        "url": "https://helpx.adobe.com/premiere/desktop/add-video-effects/effects-and-transitions-library/list-of-video-transitions.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R4-131"
+    ]
+  },
+  {
+    "slug": "zigzag-wipe",
+    "family": "transitions",
+    "ko": "지그재그 와이프",
+    "en": "Zigzag Wipe",
+    "aka": [
+      "Zigzag block wipe",
+      "지그재그 블록 와이프"
+    ],
+    "what": "지그재그로 맞물린 블록 경계가 움직이며 새 장면이 드러난다.",
+    "why": "톱니 모양의 역동적인 진행을 만든다.",
+    "params": "권장 700ms, linear, 블록=12",
+    "impl": "톱니 다각형 clipPath의 위치를 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "Zigzag block wipe"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Adobe",
+        "url": "https://helpx.adobe.com/premiere/desktop/add-video-effects/effects-and-transitions-library/list-of-video-transitions.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R4-133"
+    ]
+  },
+  {
+    "slug": "solarized-dissolve",
+    "family": "transitions",
+    "ko": "솔라리제이션 디졸브",
+    "en": "Solarized Dissolve",
+    "aka": [
+      "Solarized dissolve"
+    ],
+    "what": "색과 밝기의 일부가 반전된 고대비 상태를 지나 다음 장면으로 바뀐다.",
+    "why": "강한 인화 효과와 낯선 장면 도약을 만든다.",
+    "params": "권장 600ms, linear, 밝기 임계값=0.5",
+    "impl": "휘도 임계값 이상 색을 반전하고 효과 세기를 중간에 높인다.",
+    "runtime": "webgl",
+    "variants": [],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "Adobe",
+        "url": "https://helpx.adobe.com/premiere/desktop/add-video-effects/types-of-effects/transitions.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R4-139"
+    ]
+  },
+  {
+    "slug": "phosphor-dissolve",
+    "family": "transitions",
+    "ko": "잔광 디졸브",
+    "en": "Phosphor Trail Dissolve",
+    "aka": [
+      "Phosphor trail dissolve",
+      "형광 잔광 디졸브"
+    ],
+    "what": "밝은 물체의 빛 자국이 오래 남는 동안 이전 화면이 다음 화면으로 바뀐다.",
+    "why": "잔향과 전자 화면의 기억을 느끼게 한다.",
+    "params": "권장 800ms, linear, 잔광 감쇠=0.85",
+    "impl": "이전 프레임의 고휘도 성분을 감쇠 누적하는 피드백 버퍼를 쓴다.",
+    "runtime": "webgl",
+    "variants": [],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "Adobe",
+        "url": "https://helpx.adobe.com/premiere/desktop/add-video-effects/types-of-effects/transitions.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R4-140"
+    ]
+  },
+  {
+    "slug": "mirror-transition",
+    "family": "transitions",
+    "ko": "미러 전환",
+    "en": "Mirror Transition",
+    "aka": [
+      "Mirror transition",
+      "거울 전환"
+    ],
+    "what": "영상이 대칭 반사되거나 복제되어 중앙으로 접힌 뒤 다음 영상으로 풀린다.",
+    "why": "공간이 접혀 다른 장면으로 연결되는 느낌을 준다.",
+    "params": "권장 700ms, easeInOutCubic, 대칭축=가로",
+    "impl": "UV 좌표를 반사 접기하고 교체 시점 전후에 접기량을 보간한다.",
+    "runtime": "webgl",
+    "variants": [],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Adobe",
+        "url": "https://helpx.adobe.com/premiere/desktop/add-video-effects/types-of-effects/transitions.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R4-141"
+    ]
+  },
+  {
+    "slug": "origami-fold",
+    "family": "transitions",
+    "ko": "종이 접기 전환",
+    "en": "Origami Fold Transition",
+    "aka": [
+      "Origami fold transition"
+    ],
+    "what": "장면이 여러 면으로 접혀 작아지고 새 장면이 접힌 면에서 펼쳐진다.",
+    "why": "복잡한 구조를 접고 다시 공개하는 입체감을 준다.",
+    "params": "권장 900ms, easeInOutCubic, 패널=4",
+    "impl": "분할 메시의 경첩 회전을 순차적으로 보간한다.",
+    "runtime": "webgl",
+    "variants": [],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Adobe",
+        "url": "https://helpx.adobe.com/premiere/desktop/add-video-effects/types-of-effects/transitions.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R4-142"
+    ]
+  },
+  {
+    "slug": "frame-border-transition",
+    "family": "transitions",
+    "ko": "프레임 테두리 전환",
+    "en": "Frame Border Transition",
+    "aka": [
+      "Frame border transition"
+    ],
+    "what": "두꺼운 프레임이나 테두리가 이동하거나 커져 컷을 가리고 새 화면을 둘러싼다.",
+    "why": "브랜드 프레임 안에서 장면이 교체된다고 느끼게 한다.",
+    "params": "권장 650ms, easeInOutCubic, 두께=80px",
+    "impl": "SVG 사각 테두리의 위치와 크기 및 두께를 컷 주변에서 보간한다.",
+    "runtime": "svg",
+    "variants": [],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Adobe",
+        "url": "https://helpx.adobe.com/premiere/desktop/add-video-effects/types-of-effects/transitions.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R4-143"
+    ]
+  },
+  {
+    "slug": "facet-single-transition",
+    "family": "data",
+    "ko": "패널 통합 전환",
+    "en": "Facet-to-single Transition",
+    "aka": [
+      "Facet-to-single comparison",
+      "패싯 차트와 단일 차트 전환"
+    ],
+    "what": "여러 작은 차트 패널의 데이터 마크가 한 공통 축으로 이동하거나 한 차트에서 여러 패널로 갈라진다.",
+    "why": "나뉜 항목의 비교와 전체 관계를 같은 데이터로 연결한다.",
+    "params": "기본 1100ms, 패널 2~4개, 색 고정, cubicInOut",
+    "impl": "같은 항목의 패널 좌표와 단일 차트 좌표를 대응해 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "소형 다중에서 중첩",
+      "중첩에서 소형 다중",
+      "Facet-to-single comparison"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "MIT Visualization Group",
+        "url": "https://vis.csail.mit.edu/pubs/animated-vega-lite/",
+        "license": "unknown"
+      },
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      },
+      {
+        "title": "Flourish",
+        "url": "https://app.flourish.studio/@flourish/scatter",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-096"
+    ]
+  },
+  {
+    "slug": "chapter-interstitial",
+    "family": "transitions",
+    "ko": "챕터 인터스티셜",
+    "en": "Chapter Interstitial",
+    "aka": [
+      "Demo chapter interstitial",
+      "시연 챕터 전환 카드"
+    ],
+    "what": "장면 사이에 단계 제목 카드가 나타나 잠시 유지된 뒤 다음 장면으로 넘어간다.",
+    "why": "긴 시연이나 설명의 단계 경계를 분명히 한다.",
+    "params": "권장 카드 1200 ms, 등장 250 ms, 퇴장 250 ms, easeOut",
+    "impl": "자체 제목 카드 opacity와 y를 단계 경계에서 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "전체 제목",
+      "작은 챕터 배지",
+      "Demo chapter interstitial"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Supademo",
+        "url": "https://supademo.com/features/demo-editor",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R7-108"
+    ]
+  }
+]

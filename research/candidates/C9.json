@@ -1,0 +1,596 @@
+[
+  {
+    "slug": "camera-follow",
+    "family": "camera",
+    "ko": "카메라 추적",
+    "en": "Camera Follow",
+    "aka": [
+      "Camera follow",
+      "Camera Caret Track",
+      "입력 초점 추적",
+      "camera-cursor-tracking",
+      "Moving time-window zoom",
+      "시간 창 추적 확대",
+      "Aspect-aware demo reframing",
+      "화면비에 맞춘 시연 재구도"
+    ],
+    "what": "움직이는 대상이 정해진 화면 위치에 머물도록 화면의 크롭이나 배경이 반대 방향으로 이동한다. 대상이 안전 영역을 벗어날 때만 구도를 따라잡는 방식도 쓴다.",
+    "why": "긴 입력이나 이동 과정에서 현재 행동 위치를 계속 읽게 한다.",
+    "params": "권장 추적 600ms, power2.out, 추적 임계 화면 폭 65%, 안전 여백 24px, 고정점 화면 폭 60%. 시계열은 창 너비 10시점, 시점당 500ms.",
+    "impl": "HTML 월드 래퍼나 SVG 좌표계에 대상 위치의 역이동을 적용하고 크롭 중심을 같은 진행값으로 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "커서 추적",
+      "캐럿 임계 추적",
+      "시간축 이동 창",
+      "세로 크롭",
+      "정사각 크롭"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-camera-follow/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/hyperframes-animation",
+        "url": "claude-skill:hyperframes-animation/rules/camera-cursor-tracking.md",
+        "license": "unknown"
+      },
+      {
+        "title": "Flourish",
+        "url": "https://flourish.studio/blog/line-chart-race/",
+        "license": "unknown"
+      },
+      {
+        "title": "Screen Studio",
+        "url": "https://screen.studio/",
+        "license": "unknown"
+      },
+      {
+        "title": "d3/d3-zoom",
+        "url": "https://d3js.org/d3-zoom",
+        "license": "ISC"
+      }
+    ],
+    "from": [
+      "R1a-048",
+      "R1b-105",
+      "R6-028",
+      "R7-103"
+    ]
+  },
+  {
+    "slug": "dolly-zoom",
+    "family": "camera",
+    "ko": "돌리 줌",
+    "en": "Dolly Zoom",
+    "aka": [
+      "Dolly zoom",
+      "dolly-zoom-vertigo",
+      "Dolly Zoom / Vertigo Effect"
+    ],
+    "what": "주대상의 화면 크기는 유지되지만 배경의 원근과 압축감이 크게 변한다.",
+    "why": "불안이나 깨달음의 순간에 공간이 뒤틀리는 느낌을 준다.",
+    "params": "권장 1800ms, power2.inOut, 카메라 거리 20% 변경, 초기 FOV 45도, 주대상 화면 크기 고정.",
+    "impl": "WebGL 카메라 거리 d와 FOV를 함께 보간해 d 곱하기 tan(FOV/2)가 일정하도록 유지한다.",
+    "runtime": "webgl",
+    "variants": [
+      "버티고 인",
+      "버티고 아웃",
+      "CSS 깊이 레이어 모사"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/camera-dolly-zoom/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/03-camera-3d.md#dolly-zoom-vertigo",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "motion dictionary 2-transitions-camera.md#38. 돌리 줌 · Dolly Zoom / Vertigo Effect",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#dolly-zoom",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitives/dolly-zoom/scene.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-050",
+      "R1b-024",
+      "DICT-141"
+    ]
+  },
+  {
+    "slug": "camera-shake",
+    "family": "camera",
+    "ko": "카메라 셰이크",
+    "en": "Camera Shake",
+    "aka": [
+      "Camera shake",
+      "카메라 흔들림"
+    ],
+    "what": "화면 전체가 작은 이동과 회전으로 흔들리며 충격 뒤에는 진폭이 줄어든다.",
+    "why": "충격의 강도와 핸드헬드 촬영의 불안정함을 전달한다.",
+    "params": "권장 충격 300ms, 이동 최대 6px, 회전 최대 0.6도, 지수 감쇠, 가장자리 크롭 여유 2%.",
+    "impl": "GSAP 코어 진행값으로 시드 노이즈의 이동과 회전 진폭을 감쇠시켜 HTML 월드 래퍼에 적용한다.",
+    "runtime": "gsap",
+    "variants": [
+      "충격 후 감쇠",
+      "지속 핸드헬드",
+      "수평 흔들림",
+      "회전 흔들림"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/camera-shake/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-051"
+    ]
+  },
+  {
+    "slug": "camera-flight",
+    "family": "camera",
+    "ko": "카메라 비행",
+    "en": "Camera Fly-through",
+    "aka": [
+      "3D camera flight",
+      "3D 카메라 비행",
+      "3D Camera Flight",
+      "Camera Journey",
+      "다구간 카메라 여정",
+      "multi-phase-camera",
+      "viewport-change",
+      "3d-camera-flight",
+      "Sequenced camera travel",
+      "키프레임 카메라 이동",
+      "Spline Tunnel Flight",
+      "스플라인 터널 비행",
+      "Infinite tubes",
+      "Tunnel fly-through"
+    ],
+    "what": "카메라가 여러 위치와 바라보는 방향을 이어 공간 안을 이동한다. 물체나 터널 사이를 지나 다음 대상 앞에 안착한다.",
+    "why": "떨어진 정보와 장면을 하나의 공간 여행으로 연결한다.",
+    "params": "권장 3구간, 구간 1500ms, FOV 60도, power2.inOut, 도착 홀드 1000ms. CSS 모사는 perspective 1000px, 깊이 이동 300~700px.",
+    "impl": "WebGL에서 위치 경로와 lookAt 목표를 함께 보간하거나 CSS preserve-3d 월드에 역카메라 이동과 회전을 적용한다.",
+    "runtime": "webgl",
+    "variants": [
+      "카드 사이 비행",
+      "비스듬한 진입",
+      "평면 착지",
+      "다구간 시점 여행",
+      "스플라인 터널 비행",
+      "빛 터널"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://github.com/heygen-com/hyperframes/blob/HEAD/skills/hyperframes-animation/rules/3d-camera-flight.md",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "theatre-js/theatre",
+        "url": "https://www.theatrejs.com/docs/latest/getting-started/with-react-three-fiber",
+        "license": "Apache-2.0 / AGPL-3.0 (구성요소별)"
+      },
+      {
+        "title": "codrops/InfiniteTubes",
+        "url": "https://github.com/codrops/InfiniteTubes",
+        "license": "unknown"
+      },
+      {
+        "title": "local/hyperframes-animation",
+        "url": "claude-skill:hyperframes-animation/rules/multi-phase-camera.md",
+        "license": "unknown"
+      },
+      {
+        "title": "theatre-js/theatre",
+        "url": "https://www.theatrejs.com/docs/latest/manual/sequences",
+        "license": "Apache-2.0 / AGPL-3.0 (구성요소별)"
+      }
+    ],
+    "from": [
+      "R1a-052",
+      "R8-092",
+      "R1b-097",
+      "R2-107",
+      "R8-091"
+    ]
+  },
+  {
+    "slug": "speed-ramp",
+    "family": "transitions",
+    "ko": "스피드 램프",
+    "en": "Speed Ramp",
+    "aka": [
+      "Speed ramp",
+      "속도 램프",
+      "speed-ramp-density"
+    ],
+    "what": "이미 진행 중인 동작이나 영상의 재생 속도가 느려졌다 빨라지며 중요한 순간에 다시 감속한다.",
+    "why": "동작의 절정에 시간을 집중시키고 리듬을 바꾼다.",
+    "params": "권장 총 2000ms, 속도 0.25~4배, 속도 전환 300ms, 절정 홀드 800ms.",
+    "impl": "Canvas에서 속도 곡선을 적분한 원본 시간으로 프레임을 선택하거나 GSAP 코어 진행값에 같은 시간 매핑을 적용한다.",
+    "runtime": "canvas",
+    "variants": [
+      "가속",
+      "감속",
+      "가속 뒤 감속",
+      "정지 프레임 결합"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/beat-freeze-cut/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/07-stylize-time.md#speed-ramp-density",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-core/references/creator-editing-recipes.md",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/template-catalog.md#roll-flipbook-word-cycle",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-192",
+      "R1b-070"
+    ]
+  },
+  {
+    "slug": "camera-orbit",
+    "family": "camera",
+    "ko": "카메라 오빗",
+    "en": "Camera Orbit",
+    "aka": [
+      "Turntable Orbit",
+      "턴테이블 오빗",
+      "camera-orbit-turntable",
+      "카메라 공전",
+      "Orbital camera",
+      "Globe destination rotation",
+      "지구 목적지 회전"
+    ],
+    "what": "대상이 중앙에 머무는 동안 시점이 주변을 돌아 옆면과 배경 관계가 바뀐다. 구형 지도는 회전으로 목적지를 정면에 맞출 수 있다.",
+    "why": "같은 대상의 입체 형태와 공간상의 방향을 보여준다.",
+    "params": "권장 2400ms, 방위각 변화 60도, 고도 20도, 반경 600px, power2.inOut. 목적지 정렬은 최단 회전 1200ms.",
+    "impl": "WebGL에서 구면 좌표로 카메라 위치를 계산해 대상을 바라보게 하거나 CSS 객체와 SVG 구면 투영을 반대로 회전한다.",
+    "runtime": "webgl",
+    "variants": [
+      "수평 오빗",
+      "고도 변화",
+      "타원 오빗",
+      "나선 오빗",
+      "턴테이블",
+      "왕복 오빗",
+      "지구 목적지 회전"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/03-camera-3d.md#camera-orbit-turntable",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/work-with-layers/camera-layer/cameras-lights-points-interest.html",
+        "license": "unknown"
+      },
+      {
+        "title": "processing/p5.js-website",
+        "url": "https://p5js.org/examples/3D-Orbit-Control/",
+        "license": "MIT"
+      },
+      {
+        "title": "Observable @d3",
+        "url": "https://observablehq.com/@d3/world-tour",
+        "license": "unknown"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1b-023",
+      "R5-080",
+      "R8-089",
+      "R6-074"
+    ]
+  },
+  {
+    "slug": "crane-tilt",
+    "family": "camera",
+    "ko": "크레인 틸트",
+    "en": "Crane Tilt",
+    "aka": [
+      "크레인과 틸트",
+      "crane-pedestal-tilt"
+    ],
+    "what": "시점이 위아래로 이동하는 동시에 보는 각도가 바뀌어 높은 전경과 대상의 눈높이를 이어 준다.",
+    "why": "대상의 높이와 주변 공간의 규모를 전달한다.",
+    "params": "권장 1600ms, 수직 이동 120px, 틸트 12도, power2.inOut.",
+    "impl": "CSS perspective 아래 HTML 월드의 translateY와 rotateX를 GSAP 코어로 함께 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "상승 후 내려다보기",
+      "하강 후 눈높이 정렬"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/03-camera-3d.md#crane-pedestal-tilt",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1b-026"
+    ]
+  },
+  {
+    "slug": "vanishing-point-shift",
+    "family": "camera",
+    "ko": "소실점 이동",
+    "en": "Vanishing Point Shift",
+    "aka": [
+      "perspective-origin-eye-shift"
+    ],
+    "what": "입체 요소의 소실점이 움직여 화면 중심이나 크기를 크게 바꾸지 않고도 바라보는 위치가 달라진다.",
+    "why": "올려다보기와 미세한 관찰 시점 변화를 전달한다.",
+    "params": "권장 1600ms, perspective 1000px, perspective-origin 50% 50%에서 50% 70%, power2.inOut.",
+    "impl": "CSS perspective-origin의 가로와 세로 비율을 GSAP 코어로 보간해 공통 3D 공간의 소실점을 옮긴다.",
+    "runtime": "gsap",
+    "variants": [
+      "저각 시점",
+      "좌우 시점 이동",
+      "수직 시점 이동"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/03-camera-3d.md#perspective-origin-eye-shift",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/camera/eye-shift.html",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/camera/eye-shift.meta.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1b-028"
+    ]
+  },
+  {
+    "slug": "frame-scrub",
+    "family": "camera",
+    "ko": "프레임 스크럽",
+    "en": "Frame Scrub",
+    "aka": [
+      "Scroll image sequence",
+      "스크롤 이미지 시퀀스"
+    ],
+    "what": "스크롤이나 진행값에 맞춰 연속 이미지 또는 영상의 프레임이 앞뒤로 바뀐다.",
+    "why": "제품의 회전과 과정의 세부 단계를 원하는 속도로 읽게 한다.",
+    "params": "권장 120프레임, 영상 재현 5000ms, 프레임 인덱스 반올림, 진행값 평활 600ms. 스크롤은 2000px 구간.",
+    "impl": "Canvas에 진행률을 정수 프레임 인덱스로 변환해 선택한 이미지를 그리며 역방향 진행도 같은 방식으로 처리한다.",
+    "runtime": "canvas",
+    "variants": [
+      "스크롤 이미지 시퀀스",
+      "양방향 스크럽",
+      "제품 턴테이블",
+      "분해 과정",
+      "고정 캡션 결합"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "gongnyang/awesome-html-scrolline-deck",
+        "url": "gongnyang/awesome-html-scrolline-deck:references/techniques.md#frame-scrub-hero",
+        "license": "MIT"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/HelperFunctions/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "gongnyang/awesome-html-scrolline-deck",
+        "url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/frame-scrub-hero/scene.css",
+        "license": "MIT"
+      },
+      {
+        "title": "gongnyang/awesome-html-scrolline-deck",
+        "url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/frame-scrub-hero/scene.html",
+        "license": "MIT"
+      },
+      {
+        "title": "gongnyang/awesome-html-scrolline-deck",
+        "url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/frame-scrub-hero/scene.js",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1b-079",
+      "R2-085"
+    ]
+  },
+  {
+    "slug": "lens-distortion-zoom",
+    "family": "camera",
+    "ko": "렌즈 왜곡 줌",
+    "en": "Lens Distortion Zoom",
+    "aka": [
+      "Optics Compensation"
+    ],
+    "what": "화면 중심이 확대되는 동안 주변 직선이 휘어졌다가 원래 모양으로 돌아온다.",
+    "why": "강한 접근과 광각 렌즈의 공간 팽창감을 전달한다.",
+    "params": "권장 700ms, 왜곡 강도 0에서 0.25를 거쳐 0, 확대 1에서 1.4배, power2.inOut.",
+    "impl": "WebGL에서 중심 기준 방사 UV 왜곡과 화면 배율을 같은 진행값으로 계산한다.",
+    "runtime": "webgl",
+    "variants": [
+      "배럴 왜곡",
+      "핀쿠션 왜곡",
+      "왜곡 후 정착"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/distort-effects.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R5-114"
+    ]
+  },
+  {
+    "slug": "fisheye-lens",
+    "family": "data",
+    "ko": "어안 렌즈 확대",
+    "en": "Fisheye Lens",
+    "aka": [
+      "Fisheye chart lens",
+      "차트 어안 렌즈"
+    ],
+    "what": "초점 주변의 점과 눈금 간격이 벌어지고 주변부는 압축되며 전체 범위는 화면에 남는다.",
+    "why": "전체 맥락을 유지하면서 밀집한 구간의 세부를 읽게 한다.",
+    "params": "권장 800ms, 초점 반경 120px, 왜곡 강도 2, cubic-bezier(0.42, 0, 0.58, 1).",
+    "impl": "SVG에서 초점 거리별 비선형 좌표 변환을 원래 좌표와 혼합해 마크와 눈금을 함께 이동한다.",
+    "runtime": "svg",
+    "variants": [
+      "단일 초점",
+      "이중 초점",
+      "이동 렌즈"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-064"
+    ]
+  },
+  {
+    "slug": "fly-to",
+    "family": "camera",
+    "ko": "플라이 투",
+    "en": "Fly-to",
+    "aka": [
+      "Geographic fly-to",
+      "지도 비행 이동"
+    ],
+    "what": "시점이 출발 지역에서 줌아웃하고 넓어진 시야로 이동한 뒤 목표 지역에 다시 줌인한다.",
+    "why": "멀리 떨어진 장소의 거리와 위치 관계를 유지하며 시선을 옮긴다.",
+    "params": "권장 1800ms, 중간 배율은 시작 배율의 0.5배, 양 끝 홀드 400ms, cubic-bezier(0.42, 0, 0.58, 1).",
+    "impl": "SVG 지도 그룹의 중심과 배율을 줌아웃, 이동, 줌인의 연속 경로로 계산해 함께 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "장거리 이동",
+      "연속 지역 방문",
+      "장소 목록 투어"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Observable @d3",
+        "url": "https://observablehq.com/@d3/smooth-zooming",
+        "license": "unknown"
+      },
+      {
+        "title": "d3/d3-zoom",
+        "url": "https://d3js.org/d3-zoom",
+        "license": "ISC"
+      },
+      {
+        "title": "maplibre/maplibre-gl-js",
+        "url": "https://github.com/maplibre/maplibre-gl-js",
+        "license": "BSD-3-Clause"
+      }
+    ],
+    "from": [
+      "R6-073"
+    ]
+  },
+  {
+    "slug": "fractal-zoom",
+    "family": "generative",
+    "ko": "프랙탈 줌",
+    "en": "Fractal Zoom",
+    "aka": [],
+    "what": "반복 무늬의 작은 부분으로 계속 확대하면 비슷한 구조와 새로운 세부가 다시 나타난다.",
+    "why": "자기 유사성과 무한히 이어지는 규모를 시각화한다.",
+    "params": "권장 6000ms, 확대 1에서 16배, 로그 배율 보간, 최대 반복 계산 100회.",
+    "impl": "WebGL 프래그먼트 셰이더에서 복소평면 중심과 배율을 보간하고 프랙탈을 매 프레임 다시 계산한다.",
+    "runtime": "webgl",
+    "variants": [
+      "만델브로",
+      "줄리아",
+      "중심 이동 줌"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "processing/p5.js-website",
+        "url": "https://p5js.org/examples/Math-And-Physics-Mandelbrot/",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-011"
+    ]
+  }
+]

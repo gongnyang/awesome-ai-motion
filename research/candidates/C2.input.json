@@ -1,0 +1,4869 @@
+[
+{
+"key": "tiltedpagescroll",
+"family": "ui",
+"core": "ui-scroll",
+"rows": [
+{
+"id": "R1a-054",
+"en": "Tilted page scroll",
+"ko": "기울어진 페이지 스크롤",
+"aka": [],
+"family": "ui",
+"what": "원근 기울어진 웹페이지 카드 안에서 긴 내용이 위로 이동한다.",
+"why": "실제 제품의 길이와 구역을 보여준다.",
+"params": "재현 기본값 제안: rotateX 8도, rotateY -8도, perspective 1200px, 스크롤 2000ms",
+"impl": "클리핑한 페이지 내부만 이동하고 외부 카드에 3D 회전을 적용한다.",
+"runtime": "css",
+"variants": [],
+"core": "ui-scroll",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/scroll-camera-story/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/3d-page-scroll.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R8-097",
+"en": "Tilted Page Scroll",
+"ko": "기울어진 페이지 스크롤",
+"aka": [],
+"family": "ui",
+"what": "웹페이지가 공간 안에서 기울어진 카드로 보이고 그 안의 내용이 위로 흐른다.",
+"why": "제품 화면의 전체 구조와 주요 섹션을 한 번에 소개한다.",
+"params": "재현 제안 기본값: 5000ms, 회전 x 15도와 y -12도, 내용 이동 900px, 시작과 끝 500ms 정지",
+"impl": "CSS에서 카드 원근 변환을 유지하고 내부 콘텐츠를 마스크 안에서 translateY로 이동한다.",
+"runtime": "css",
+"variants": [
+"페이지 투어",
+"휴대폰 화면",
+"단계별 섹션 이동"
+],
+"core": "ui-scroll",
+"sources": [
+{
+"url": "https://github.com/heygen-com/hyperframes/blob/HEAD/skills/hyperframes-animation/rules/3d-page-scroll.md",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://www.curtainsjs.com/examples/multiple-planes-scroll-effect/",
+"repo": "martinlaxenaire/curtainsjs",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "cursorclick",
+"family": "ui",
+"core": "cursor-click",
+"rows": [
+{
+"id": "R1a-093",
+"en": "Cursor click",
+"ko": "커서 클릭",
+"aka": [],
+"family": "ui",
+"what": "커서가 대상에 도착해 눌리고 작은 원이 퍼지며 상태가 바뀐다.",
+"why": "어떤 조작이 결과를 일으켰는지 보여준다.",
+"params": "재현 기본값 제안: 접근 700ms, 누름 120ms, 복구 500ms, ripple 400ms",
+"impl": "커서 끝 좌표와 대상 압축을 같은 클릭 시점에 연결한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "cursor-click",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/oversized-cursor/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/press-ripple/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/cursor-click-ripple.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/physics-press-reaction.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/cursor-ui-demo.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/vpn-youtube-spot/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/cta-morph-press.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-092",
+"en": "Cursor Click",
+"ko": "커서 클릭",
+"aka": [
+"physics-press-reaction",
+"cursor-click-ripple"
+],
+"family": "ui",
+"what": "커서가 목표에 도착해 작게 눌리고 원형 파장이 퍼진다.",
+"why": "어디에 입력이 일어났는지 알아본다.",
+"params": "기본 이동 700ms power2.inOut, 대기 150ms, press 반주기 90ms",
+"impl": "HTML 커서 팁을 타깃 좌표로 이동하고 눌림 스케일 및 SVG 파장 원을 동기화한다.",
+"runtime": "gsap",
+"variants": [
+"단일 클릭",
+"클릭 체인",
+"커서와 버튼 동기",
+"cursor-ui-demo"
+],
+"core": "cursor-click",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/physics-press-reaction.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/cursor-click-ripple.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/cursor-ui-demo.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "pressrelease",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-094",
+"en": "Press release",
+"ko": "누름과 복구",
+"aka": [],
+"family": "ui",
+"what": "버튼이 눌리며 작아지고 그림자가 좁아졌다 손을 떼면 탄성으로 돌아온다.",
+"why": "접촉과 실행의 촉각적 반응을 보여준다.",
+"params": "재현 기본값 제안: 압축 120ms, scale 0.95, 복구 500ms",
+"impl": "압축 구간과 감쇠 복구 구간을 나누고 그림자도 같은 값으로 구동한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/gesture-tap/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/touch-indicator/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/press-release-spring.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-091",
+"en": "Press Release",
+"ko": "누름과 복귀",
+"aka": [
+"physics-press-reaction",
+"press-release-spring"
+],
+"family": "ui",
+"what": "버튼이 눌릴 때 작아지고 그림자가 줄어든 뒤 떼는 순간 탄성으로 돌아온다.",
+"why": "입력과 시스템 반응의 인과를 느낀다.",
+"params": "기본 scale 0.92, press 180ms none, release 600ms back.out(1.4)",
+"impl": "HTML 버튼의 scale과 그림자를 압축하고 해제 시 반대 보간 및 후광을 연결한다.",
+"runtime": "gsap",
+"variants": [
+"커서 없는 누름",
+"커서 동기 누름",
+"길게 누르기",
+"cta-morph-press"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/physics-press-reaction.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/press-release-spring.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/cta-morph-press.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "cursordrag",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-095",
+"en": "Cursor drag",
+"ko": "커서 드래그",
+"aka": [],
+"family": "ui",
+"what": "커서가 요소를 집어 들어 반투명 복사본과 이동하고 새 위치에 놓는다.",
+"why": "옮기기, 순서 바꾸기, 크기 변경을 보여준다.",
+"params": "재현 기본값 제안: 들기 150ms, 복사 opacity 0.6, 이동 800ms, power2.inOut",
+"impl": "커서와 복사 요소를 한 좌표로 이동하고 놓기 후 최종 상태를 공개한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/swipe-rail/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/cursor-drag.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-093",
+"en": "Cursor Drag",
+"ko": "커서 드래그",
+"aka": [],
+"family": "ui",
+"what": "커서가 대상을 집어 들어 같은 속도로 옮긴 뒤 놓으면 슬롯에 정렬된다.",
+"why": "이동과 배치와 순서 변경의 인과를 이해한다.",
+"params": "기본 ghost opacity 0.65, lift 160ms scale 1.05, travel 900ms power2.inOut",
+"impl": "HTML 커서 팁과 대상의 잡은 점에 같은 경로 진행값을 적용하고 놓을 때 스냅한다.",
+"runtime": "gsap",
+"variants": [
+"채우기 핸들",
+"비례 크기 조절",
+"이웃 재정렬",
+"cursor-ui-demo"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/cursor-drag.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/cursor-ui-demo.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "collaborativecursors",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-096",
+"en": "Collaborative cursors",
+"ko": "협업 커서",
+"aka": [],
+"family": "ui",
+"what": "서로 다른 이름의 커서들이 한 화면에서 독립 경로로 움직이고 작업한다.",
+"why": "여러 사람이 동시에 작업하는 존재감을 보여준다.",
+"params": "재현 기본값 제안: 커서 3개, 경로 4000ms, 행동 시간차 300ms",
+"impl": "각 커서의 시드 경로와 행동 스케줄을 고정 시간으로 샘플링한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/multiplayer-cursors/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/multi-cursor-choreography.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "cursortrail",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-097",
+"en": "Cursor trail",
+"ko": "커서 이동 흔적",
+"aka": [],
+"family": "ui",
+"what": "커서가 지나간 경로에 점선과 클릭 순서 번호가 남았다 지워진다.",
+"why": "작업 순서와 이동 경로를 복기하게 한다.",
+"params": "재현 기본값 제안: 점 간격 12px, 이동 800ms, 흔적 감소 500ms",
+"impl": "이동 거리 기준으로 점을 배치하고 구간별 opacity를 감쇠한다.",
+"runtime": "svg",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/cursor-glyph-trail/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+},
+{
+"id": "R2-048",
+"en": "Cursor trail",
+"ko": "커서 잔상",
+"aka": [],
+"family": "texture",
+"what": "커서가 지나간 자리에 작은 점이나 이미지가 남았다가 사라진다.",
+"why": "이동 경로와 속도를 보여준다.",
+"params": "공식 공통 기본 없음. 권장 생성 30ms, 수명 500ms, 최대 20개.",
+"impl": "기록 경로에서 입자를 생성하고 opacity와 scale을 시간별로 줄인다.",
+"runtime": "canvas",
+"variants": [
+"점",
+"이미지",
+"속도별 간격",
+"탄성 꼬리"
+],
+"core": "",
+"sources": [
+{
+"url": "https://demos.gsap.com/demo/cursor-trail",
+"repo": "demos.gsap.com",
+"license": "unknown"
+},
+{
+"url": "https://motion.dev/examples/react-cursor-trail",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://motion.dev/examples/react-cursor-trail-velocity",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "typinginput",
+"family": "ui",
+"core": "typing-input",
+"rows": [
+{
+"id": "R1a-098",
+"en": "Typing input",
+"ko": "입력 시연",
+"aka": [],
+"family": "ui",
+"what": "입력창에 사람이 쓰는 속도로 문장이 들어가고 제출 상태로 바뀐다.",
+"why": "입력부터 실행까지의 제품 사용 흐름을 보여준다.",
+"params": "재현 기본값 제안: 60~120ms/자, 정지 400ms, 제출 120ms",
+"impl": "고정된 UI 상태 배열에 입력 텍스트와 제출 피드백을 함께 배치한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "typing-input",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/signup-flow/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/input-feedback/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/prompt-type-submit-generate.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:product-launch-video/SKILL.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-116",
+"en": "Typing Input",
+"ko": "입력창 타이핑",
+"aka": [],
+"family": "ui",
+"what": "실제 입력창 모양 안에 문장이 입력되고 제출 직전에 커서가 멈춘다.",
+"why": "제품에 어떤 요청을 하는지 이해한다.",
+"params": "기본 80ms/문자, 단어 휴지 400ms, 제출 대기 300ms",
+"impl": "HTML 입력창 내부 문자열을 타임스탬프 배열로 갱신하고 제출 버튼을 연이어 강조한다.",
+"runtime": "gsap",
+"variants": [
+"프롬프트",
+"검색어",
+"명령어",
+"prompt-type-submit-generate"
+],
+"core": "typing-input",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/blueprints/prompt-type-submit-generate.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "answerstream",
+"family": "ui",
+"core": "answer-stream",
+"rows": [
+{
+"id": "R1a-099",
+"en": "Answer stream",
+"ko": "답변 스트리밍",
+"aka": [],
+"family": "ui",
+"what": "답변 단어가 고른 간격 대신 묶음과 짧은 멈춤을 두고 들어온다.",
+"why": "AI가 응답을 생성하는 진행을 보여준다.",
+"params": "재현 기본값 제안: 묶음 2~5단어, 간격 80~240ms, 회색에서 잉크 200ms",
+"impl": "단어별 도착 시간표로 텍스트를 추가하고 색 전환을 적용한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "answer-stream",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/streaming-text/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/ai-chat-reveal/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/chatgpt-exchange/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/claude-exchange/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+},
+{
+"id": "R1b-117",
+"en": "Answer Stream",
+"ko": "답변 스트림",
+"aka": [],
+"family": "ui",
+"what": "요청 뒤 응답 문장이나 결과 카드가 조금씩 늘어나 완성된다.",
+"why": "시스템이 요청을 처리하고 결과를 생성함을 느낀다.",
+"params": "권장 시작 대기 500ms, 문자 35ms, 카드 간격 200ms",
+"impl": "HTML 응답 접두부와 결과 항목 공개를 하나의 상태 시간표로 구동한다.",
+"runtime": "gsap",
+"variants": [
+"텍스트 스트림",
+"작업 로그",
+"차트 결과",
+"아티팩트 공개",
+"prompt-type-submit-generate"
+],
+"core": "answer-stream",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/blueprints/prompt-type-submit-generate.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "terminalrun",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-100",
+"en": "Terminal run",
+"ko": "터미널 실행",
+"aka": [],
+"family": "ui",
+"what": "명령이 입력되고 잠시 멈춘 뒤 로그가 줄마다 출력되어 새 프롬프트가 생긴다.",
+"why": "명령과 실행 결과의 인과 관계를 보여준다.",
+"params": "재현 기본값 제안: 입력 50ms/자, 실행 대기 300ms, 로그 간격 180ms",
+"impl": "명령, 실행, 로그, 완료 상태를 하나의 시간표로 표시한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/code-terminal-run/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/terminal-simulator/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "anchoredpanelexpand",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-101",
+"en": "Anchored panel expand",
+"ko": "고정 모서리 패널 확장",
+"aka": [],
+"family": "ui",
+"what": "한 가장자리를 고정한 패널이 펼쳐지고 뒤의 내용이 함께 밀린다.",
+"why": "내용의 추가와 공간적 종속 관계를 보여준다.",
+"params": "재현 기본값 제안: 500ms, scaleY 0~1, power3.out",
+"impl": "마스크와 이동 또는 부모 scale과 자식 역scale로 펼침을 재현한다.",
+"runtime": "css",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/panel-reveal/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/card-resize/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/menu-morph/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/anchored-layout-expand.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "sharedelementmorph",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-102",
+"en": "Shared element morph",
+"ko": "공유 요소 이동 모프",
+"aka": [],
+"family": "ui",
+"what": "같은 카드가 작은 상자에서 큰 상세 패널로 연속 이동하고 자식이 새 자리에 정렬된다.",
+"why": "대상의 정체성을 유지하며 상세 화면으로 확장한다.",
+"params": "재현 기본값 제안: 700ms, power2.inOut, 모서리 24~8px",
+"impl": "시작과 끝 상자를 사전 측정하고 수동 FLIP 및 자식 역스케일을 보간한다.",
+"runtime": "gsap",
+"variants": [
+"카드 상세",
+"모서리 모프",
+"자식 역스케일"
+],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/modal-morph/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/card-morph-anchor.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:figma/SKILL.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "thememorph",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-103",
+"en": "Theme morph",
+"ko": "테마 교체",
+"aka": [],
+"family": "ui",
+"what": "고정된 기준 요소를 둔 채 색, 글꼴, 아이콘, 모서리가 동시에 다른 스킨으로 바뀐다.",
+"why": "같은 제품의 다양한 정체성과 상태를 보여준다.",
+"params": "재현 기본값 제안: 스킨 3~5개, 정지 800~1500ms, 교체 250~400ms",
+"impl": "정렬이 같은 전체 스킨 레이어를 교차 페이드하고 기준 요소는 별도로 유지한다.",
+"runtime": "css",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/sticky-mock-swap/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/theme-crossfade-morph.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "controltargetsync",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-104",
+"en": "Control target sync",
+"ko": "조작과 결과 동기화",
+"aka": [],
+"family": "ui",
+"what": "슬라이더, 입력값, 선택 상태가 바뀌는 순간 연결된 대상도 함께 변한다.",
+"why": "조작의 결과와 인과 관계를 즉시 이해하게 한다.",
+"params": "재현 기본값 제안: 조작 1200ms, 결과 지연 0ms, linear",
+"impl": "하나의 진행값 또는 상태 배열로 조작기와 결과를 동시에 계산한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/settings-toggle-flow/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/control-target-sync.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/panel-edit-live-sync.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "toggleflip",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-105",
+"en": "Toggle flip",
+"ko": "토글 전환",
+"aka": [],
+"family": "ui",
+"what": "스위치 손잡이가 이동해 약간 지나쳤다 돌아오고 트랙 색이 바뀐다.",
+"why": "켜짐과 꺼짐의 전환을 촉각적으로 전달한다.",
+"params": "재현 기본값 제안: 400ms, 손잡이 overshoot 6%, 트랙 색 200ms",
+"impl": "손잡이 위치와 압축, 트랙 색을 같은 상태 진행값으로 보간한다.",
+"runtime": "css",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/toggle-flip/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "tabsindicator",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-106",
+"en": "Tabs indicator",
+"ko": "탭 표시 이동",
+"aka": [],
+"family": "ui",
+"what": "활성 탭의 배경 캡슐이나 밑줄이 다음 탭 위치로 미끄러진다.",
+"why": "선택이 어느 구역으로 옮겨갔는지 알려준다.",
+"params": "재현 기본값 제안: 300ms, power3.out",
+"impl": "사전 측정한 탭 중심과 폭 사이를 transform으로 보간한다.",
+"runtime": "css",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/tabs-slide-indicator/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/micro-transitions/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "skeletonreveal",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-107",
+"en": "Skeleton reveal",
+"ko": "스켈레톤에서 내용 공개",
+"aka": [],
+"family": "ui",
+"what": "빈 자리 표시가 잠시 반짝인 뒤 실제 내용으로 겹쳐 바뀐다.",
+"why": "로딩 중인 영역과 완료된 정보를 구분한다.",
+"params": "재현 기본값 제안: pulse 1000ms, 교체 400ms",
+"impl": "자리 표시와 실제 내용 레이어 opacity를 반대로 보간한다.",
+"runtime": "css",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/skeleton-reveal/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/grid-card-assemble.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "agentstatustheater",
+"family": "ui",
+"core": "progressive-disclosure",
+"rows": [
+{
+"id": "R1a-108",
+"en": "Agent status theater",
+"ko": "작업 상태 연출",
+"aka": [],
+"family": "ui",
+"what": "로더와 작업 문구가 바뀌다가 결과 행들이 등장하고 체크 상태로 변한다.",
+"why": "기계가 여러 단계를 거쳐 일을 완료함을 보여준다.",
+"params": "재현 기본값 제안: 단계 정지 700ms, 행 간격 100ms, 체크 300ms",
+"impl": "작업, 결과 도착, 완료 상태를 시간 임계점에 맞춰 공개한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "progressive-disclosure",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/state-chip-rail/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/onboarding-stepper-flow/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/agent-progress-theater.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-118",
+"en": "Agent Status Theater",
+"ko": "작업 상태 시연",
+"aka": [],
+"family": "ui",
+"what": "로더와 상태 문구가 바뀌다가 결과 항목이 순차로 등장하고 체크된다.",
+"why": "여러 단계의 작업이 실제로 진행됨을 이해한다.",
+"params": "권장 상태 3단계 각 700ms, 결과 간격 200ms, 체크 400ms",
+"impl": "HTML 상태별 로더와 문구를 전환하고 SVG 체크를 결과 도착에 연결한다.",
+"runtime": "gsap",
+"variants": [
+"검사 결과",
+"작업 체크리스트",
+"메시지 스레드",
+"agent-progress-theater"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/blueprints/agent-progress-theater.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "chatthread",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-109",
+"en": "Chat thread",
+"ko": "대화 쌓기",
+"aka": [],
+"family": "ui",
+"what": "메시지 말풍선이 차례로 나타나고 이전 대화가 위로 밀려 올라간다.",
+"why": "질문과 답의 관계, 시간 순서를 보여준다.",
+"params": "재현 기본값 제안: 말풍선 120ms, scale 0.75~1, 메시지 간격 900ms",
+"impl": "말풍선 높이를 미리 측정하고 새 메시지마다 스레드 y를 보간한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/chat-message/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/chat-thread/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/thread-message-stack/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/message-thread-reveal/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/transcript-scroll-artifact-reveal.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "notificationstack",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-110",
+"en": "Notification stack",
+"ko": "알림 쌓기",
+"aka": [],
+"family": "ui",
+"what": "새 알림이 위에서 내려오며 기존 알림 더미를 아래로 밀고 쌓인다.",
+"why": "도착한 사건의 수와 우선순위를 보여준다.",
+"params": "재현 기본값 제안: 알림 5개, 등장 500ms, 간격 700ms",
+"impl": "카드별 도착 시점과 누적 y 좌표를 계산해 스프링 이동한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/native-notification-pop/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/notification-stack/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/notification-cascade/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/macos-notification/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/liquid-glass-notification/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "overwhelmsurround",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-111",
+"en": "Overwhelm surround",
+"ko": "과부하 둘러싸기",
+"aka": [],
+"family": "ui",
+"what": "주인공은 고정된 채 알림과 작업 카드가 더 빠르게 주변을 채운다.",
+"why": "과부하와 공간적 압박을 느끼게 한다.",
+"params": "재현 기본값 제안: 총 4000ms, 도착 간격 600~150ms, 카드 12개; 레지스트리 notification-pileup 기본값 speed=1",
+"impl": "인덱스에 따라 줄어드는 시간 간격과 주변 좌표로 카드를 배치한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/overwhelm-surround/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/notification-pileup/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/slack-notification-ad/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/overwhelm-surround.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-120",
+"en": "Overwhelm Surround",
+"ko": "밀집 포위",
+"aka": [],
+"family": "explainer",
+"what": "여러 도구나 카드가 화면에 쌓인 뒤 중심 인물 주변으로 좁혀 들어온다.",
+"why": "복잡함과 부담이 중심 대상에 집중됨을 느낀다.",
+"params": "권장 항목 12개, 누적 2500ms, 포위 1200ms",
+"impl": "HTML 항목을 단계적으로 누적하고 중심까지의 거리 배율을 줄인다.",
+"runtime": "gsap",
+"variants": [
+"아바타 포위",
+"잡동사니 밀어내기",
+"overwhelm-surround"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/blueprints/overwhelm-surround.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "pulltorefresh",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-112",
+"en": "Pull to refresh",
+"ko": "당겨 새로고침",
+"aka": [],
+"family": "ui",
+"what": "리스트를 당길수록 저항이 커지고 임계점에서 로더가 뜬 뒤 원위치로 튕겨 돌아온다.",
+"why": "사용자 조작과 대기, 갱신 완료를 보여준다.",
+"params": "재현 기본값 제안: 당김 800ms, 임계 100px, 로딩 800ms, 복구 500ms",
+"impl": "비선형 당김 함수와 임계 상태, 복구 스프링을 시간표로 계산한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/pull-to-refresh/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/rubber-band-bumper/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "springsheet",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-113",
+"en": "Spring sheet",
+"ko": "스프링 바닥 시트",
+"aka": [],
+"family": "ui",
+"what": "아래쪽 시트가 빠르게 올라와 조금 지나쳤다 정지하고 내부 내용이 바뀐다.",
+"why": "추가 행동 선택이 같은 화면 안에서 열림을 보여준다.",
+"params": "재현 기본값 제안: 600ms, overshoot 8%, 내용 정지 800ms; 레지스트리 sheet-spring-up 기본값 radius=34",
+"impl": "시트 y를 감쇠 스프링으로 샘플링하고 내부 상태를 단계별 교체한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/sheet-spring-up/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/share-sheet-carousel/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "cardrailthrow",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-114",
+"en": "Card rail throw",
+"ko": "카드 레일 던지기",
+"aka": [],
+"family": "ui",
+"what": "카드 줄이 빠르게 지나가다 선택 카드 앞에서 지나침과 복구로 멈춘다.",
+"why": "빠른 탐색과 선택의 착지를 보여준다.",
+"params": "재현 기본값 제안: 800ms, overshoot 4%, 정지 1000ms",
+"impl": "레일 위치를 빠른 감속과 짧은 역이동 구간으로 보간한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/velocity-throw-snap/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/screen-flow-carousel/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "stackshuffle",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-115",
+"en": "Stack shuffle",
+"ko": "카드 더미 섞기",
+"aka": [],
+"family": "ui",
+"what": "뒤 카드가 위를 넘어 맨 앞으로 오고 나머지 카드는 눌렸다 재정렬된다.",
+"why": "순서 변화와 카드의 질량을 보여준다.",
+"params": "재현 기본값 제안: 카드 3~5개, 이동 900ms, 압축 5%",
+"impl": "카드별 위치와 회전 스프링을 계산하고 교차 깊이에 맞춰 앞뒤 순서를 바꾼다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/spring-stack-shuffle/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/keyframe-scrub-stack/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "vectorpendemo",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-122",
+"en": "Vector pen demo",
+"ko": "벡터 펜 시연",
+"aka": [],
+"family": "ui",
+"what": "점이 찍히고 곡선과 핸들이 차례로 나타나 선택 상자가 완성된다.",
+"why": "곡선을 설계하는 도구와 조작 원리를 보여준다.",
+"params": "재현 기본값 제안: 점 간격 500ms, 선 700ms, 핸들 250ms",
+"impl": "SVG 경로 좌표, 제어점과 선택 프레임을 단계별 공개한다.",
+"runtime": "svg",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/vector-editor-rig/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "gridcardassembly",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-194",
+"en": "Grid card assembly",
+"ko": "격자 카드 조립",
+"aka": [],
+"family": "ui",
+"what": "카드가 정해진 슬롯에 차례로 들어와 전체 격자나 목록을 완성한다.",
+"why": "기능의 수와 구성 범위를 보여준다.",
+"params": "재현 기본값 제안: 간격 40~80ms, 이동 350ms, 슬롯 3x3; 레지스트리 logo-wall 기본값 stagger=45",
+"impl": "최종 격자 좌표를 정하고 카드별 등장 지연을 적용한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/grid-card-assemble/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/logo-wall/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/trust-strip/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/mk-placeholder-grid/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/grid-card-assemble.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/heygen-avatar-promo-card/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/mk-specs-list/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/marker-checklist-card/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/social-proof-card/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "errorshakesuccess",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-203",
+"en": "Error shake success",
+"ko": "오류 흔들림에서 성공",
+"aka": [],
+"family": "ui",
+"what": "입력창이 짧게 좌우로 흔들리고 수정 후 체크 표시가 그려진다.",
+"why": "잘못된 입력과 해결된 상태를 구분한다.",
+"params": "재현 기본값 제안: 오류 250ms, 진폭 6px, 성공 선 300ms",
+"impl": "오류 위치 키프레임과 수정, 체크 경로 상태를 순서대로 배치한다.",
+"runtime": "css",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/input-feedback/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/success-check/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "layeryieldpivot",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1a-211",
+"en": "Layer yield pivot",
+"ko": "층 이동 초점 양도",
+"aka": [],
+"family": "ui",
+"what": "영상이나 카드가 옆으로 비켜나고 비운 자리에 큰 숫자나 문장이 등장한다.",
+"why": "시연에서 근거 수치, 설명으로 관심을 넘긴다.",
+"params": "재현 기본값 제안: 이동 600ms, 신규 등장 400ms, 동일 앵커 사용",
+"impl": "기존 층의 이동과 신규 층의 등장 위치를 공통 자리 기준으로 구성한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/blueprints/video-text-pivot.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "checkmarktick",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1b-062",
+"en": "Checkmark Tick",
+"ko": "성공 체크 그리기",
+"aka": [
+"checkmark-success-tick"
+],
+"family": "ui",
+"what": "체크의 짧은 획 다음에 긴 획이 그려지고 작은 반동으로 안착한다.",
+"why": "작업의 성공과 완료를 즉시 알아본다.",
+"params": "기본 짧은 획 150ms, 긴 획 250ms, 안착 200ms",
+"impl": "SVG 두 획의 dashoffset을 순차로 줄이고 마지막 scale을 보간한다.",
+"runtime": "svg",
+"variants": [
+"배경 원 동반",
+"순수 체크",
+"seal/checkmark-lockup"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/06-shapes-strokes.md#checkmark-success-tick",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/seal/checkmark-lockup.html",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/seal/checkmark-lockup.meta.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "local:ig-carousel-hub/03_templates/motion/slot-spec.md",
+"repo": "local/ig-carousel-hub",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "uiscroll",
+"family": "ui",
+"core": "ui-scroll",
+"rows": [
+{
+"id": "R1b-096",
+"en": "Ui Scroll",
+"ko": "UI 콘텐츠 스크롤",
+"aka": [
+"3d-page-scroll"
+],
+"family": "ui",
+"what": "화면 창은 고정되고 긴 페이지나 대화 내용이 안쪽에서 위로 지나간다.",
+"why": "문서의 분량과 실제 사용 흐름을 읽는다.",
+"params": "기본 구간 1200ms, power3.out, 홀드 800ms",
+"impl": "HTML overflow 창 안의 긴 페이지를 translateY로 이동한다.",
+"runtime": "gsap",
+"variants": [
+"평면 페이지",
+"기울어진 3D 카드",
+"대화 기록",
+"문서 증거 탐색",
+"device-surface-showcase",
+"transcript-scroll-artifact-reveal"
+],
+"core": "ui-scroll",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/3d-page-scroll.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/device-surface-showcase.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/transcript-scroll-artifact-reveal.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "anchoredexpand",
+"family": "ui",
+"core": "progressive-disclosure",
+"rows": [
+{
+"id": "R1b-099",
+"en": "Anchored Expand",
+"ko": "고정 변 확장",
+"aka": [
+"anchored-layout-expand"
+],
+"family": "ui",
+"what": "한 변이 붙어 있는 판이 길어지고 아래 항목들이 같은 양만큼 밀려난다.",
+"why": "추가 내용이 열린 공간을 차지함을 이해한다.",
+"params": "기본 450ms power3.out, 행 간격 60ms, 공개는 확장의 25%부터",
+"impl": "HTML 마스크와 이동으로 판을 열고 뒤의 항목에는 같은 진행값의 translate를 적용한다.",
+"runtime": "gsap",
+"variants": [
+"드롭다운",
+"하위 작업",
+"입력 줄 확장",
+"패널 확장"
+],
+"core": "progressive-disclosure",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/anchored-layout-expand.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "controllivesync",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1b-108",
+"en": "Control Live Sync",
+"ko": "컨트롤과 결과 동기",
+"aka": [
+"control-target-sync"
+],
+"family": "ui",
+"what": "숫자나 핸들이 바뀌는 바로 그 순간 옆의 대상 크기나 그래프도 같이 바뀐다.",
+"why": "제어값과 결과 사이의 관계를 이해한다.",
+"params": "기본 조작 1600ms, ease none, 결과 지연 0ms",
+"impl": "HTML 한 프록시 값으로 컨트롤 표시와 대상 transform 또는 SVG 좌표를 갱신한다.",
+"runtime": "gsap",
+"variants": [
+"슬라이더",
+"크기 값",
+"코드 변경",
+"이징 핸들",
+"panel-edit-live-sync"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/control-target-sync.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/panel-edit-live-sync.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "multicursor",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R1b-112",
+"en": "Multi Cursor",
+"ko": "다중 커서 안무",
+"aka": [
+"multi-cursor-choreography"
+],
+"family": "ui",
+"what": "이름표가 달린 여러 커서가 한 화면에서 번갈아 이동하고 대상을 조작한다.",
+"why": "여러 사람이 동시에 협업하는 느낌을 받는다.",
+"params": "기본 커서 3개, 이동 900ms power2.inOut, 휴지 1000ms",
+"impl": "HTML 커서별 고정 경유점 시간표를 두고 잡기와 놓기 이벤트가 겹치지 않게 배정한다.",
+"runtime": "gsap",
+"variants": [
+"협업 캔버스",
+"교대 조작"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/multi-cursor-choreography.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "layoutreflow",
+"family": "ui",
+"core": "dot-regroup",
+"rows": [
+{
+"id": "R2-032",
+"en": "Layout reflow",
+"ko": "레이아웃 재배치",
+"aka": [
+"FLIP",
+"Animated reordering"
+],
+"family": "ui",
+"what": "목록이나 격자의 요소가 새 위치와 크기로 부드럽게 옮겨간다.",
+"why": "요소의 동일성과 새 배열을 이해하게 한다.",
+"params": "공식: Flip scale false, Motion layout true 지정. 권장 500ms, inOut.",
+"impl": "이전과 이후 바운딩 박스를 기록하고 역변환을 점차 제거한다.",
+"runtime": "gsap",
+"variants": [
+"목록 정렬",
+"격자 필터",
+"메이슨리",
+"다차원 순서 변경",
+"스태거 재배치",
+"부모 교체",
+"스크럽 벤토 갤러리"
+],
+"core": "dot-regroup",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/Flip/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/docs/react-layout-animations",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://animejs.com/documentation/layout",
+"repo": "juliangarnier/anime",
+"license": "MIT"
+},
+{
+"url": "https://www.react-spring.dev/examples",
+"repo": "pmndrs/react-spring",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "sharedelementtransition",
+"family": "ui",
+"core": "match-cut",
+"rows": [
+{
+"id": "R2-033",
+"en": "Shared element transition",
+"ko": "공유 요소 전환",
+"aka": [
+"Shared layout",
+"Magic motion"
+],
+"family": "ui",
+"what": "작은 카드나 썸네일이 같은 모양을 유지하며 상세 화면의 큰 요소로 이어진다.",
+"why": "두 화면이 같은 대상을 다룸을 보여준다.",
+"params": "공식: layoutId 또는 data-flip-id 필수, Flip fade false. 권장 650ms.",
+"impl": "양쪽 요소의 좌표와 크기를 대응시키고 한 복제 레이어를 사이에서 보간한다.",
+"runtime": "gsap",
+"variants": [
+"썸네일 확대",
+"모달",
+"부모 바꾸기",
+"교차 페이드"
+],
+"core": "match-cut",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/Flip/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/docs/react-layout-animations",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://animejs.com/documentation/layout",
+"repo": "juliangarnier/anime",
+"license": "MIT"
+},
+{
+"url": "https://motion.dev/examples/react-app-store",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+},
+{
+"id": "DICT-075",
+"en": "Shared element transition",
+"ko": "공유 요소 전환",
+"aka": [],
+"family": "emphasis",
+"what": "두 화면의 공통 요소가 위치·크기를 바꾸며 이어진다.",
+"why": "",
+"params": "300~450ms; Material standard (0.4,0,0.2,1); 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#7. 연속성·공간 모델·시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "arclayouttransfer",
+"family": "ui",
+"core": "arc-motion",
+"rows": [
+{
+"id": "R2-034",
+"en": "Arc layout transfer",
+"ko": "곡선 레이아웃 이동",
+"aka": [],
+"family": "ui",
+"what": "재배치되는 요소가 직선 대신 곡선 궤도를 따라 새 자리로 이동한다.",
+"why": "이동 대상이 배경 배열과 구별되게 한다.",
+"params": "공식: Motion layout path arc() 지정. 권장 600ms, 곡률 0.3, 상향 호.",
+"impl": "새 위치까지의 곡선 제어점을 직접 정하고 GSAP 코어 위치를 보간한다.",
+"runtime": "gsap",
+"variants": [
+"상향 곡선",
+"하향 곡선",
+"공유 카드 호"
+],
+"core": "arc-motion",
+"sources": [
+{
+"url": "https://motion.dev/docs/react-layout-animations",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://gsap.com/docs/v3/Plugins/MotionPathPlugin/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+}
+]
+}
+]
+},
+{
+"key": "nestedlayoutanchoring",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R2-035",
+"en": "Nested layout anchoring",
+"ko": "중첩 레이아웃 고정점",
+"aka": [],
+"family": "ui",
+"what": "부모가 이동하거나 커져도 자식은 부모의 특정 지점을 기준으로 따라간다.",
+"why": "컨테이너와 내용의 결속을 유지한다.",
+"params": "공식: Flip nested false, Motion layoutAnchor 0~1 좌표. 권장 중심 0.5/0.5, 600ms.",
+"impl": "부모 상대 좌표로 자식 변환을 계산하고 크기 보정값을 적용한다.",
+"runtime": "gsap",
+"variants": [
+"중심 고정",
+"모서리 고정",
+"글자 왜곡 보정"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/Flip/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/docs/react-layout-animations",
+"repo": "motiondivision/motion",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "collapsinggapexit",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R2-036",
+"en": "Collapsing gap exit",
+"ko": "빈자리 접히는 퇴장",
+"aka": [],
+"family": "ui",
+"what": "항목이 사라지는 동안 주변 항목이 빈자리를 메우며 이동한다.",
+"why": "삭제와 목록 정리가 연결되어 보인다.",
+"params": "공식: AnimatePresence popLayout 선택, exit 완료까지 레이어 유지. 권장 400ms.",
+"impl": "퇴장 항목을 절대 위치로 분리한 뒤 나머지 요소의 박스를 재배치한다.",
+"runtime": "gsap",
+"variants": [
+"목록 삭제",
+"태그 제거",
+"필터 전환"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motion.dev/docs/react-animate-presence",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://gsap.com/docs/v3/Plugins/Flip/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/examples/react-todo-list",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "accordionexpansion",
+"family": "ui",
+"core": "progressive-disclosure",
+"rows": [
+{
+"id": "R2-037",
+"en": "Accordion expansion",
+"ko": "아코디언 펼침",
+"aka": [],
+"family": "ui",
+"what": "접힌 영역의 높이가 늘어나며 내용이 나타나고 주변 항목이 밀려난다.",
+"why": "추가 정보와 계층을 보여준다.",
+"params": "공식 공통 기본 없음. 권장 350ms, 높이 0~측정값, opacity 지연 80ms.",
+"impl": "HTML 내용 높이를 측정해 컨테이너 높이와 내용 opacity를 보간한다.",
+"runtime": "gsap",
+"variants": [
+"가로 확장",
+"자동 너비",
+"트리 목록",
+"조건 필드"
+],
+"core": "progressive-disclosure",
+"sources": [
+{
+"url": "https://motion.dev/docs/react-layout-animations",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://www.react-spring.dev/examples",
+"repo": "pmndrs/react-spring",
+"license": "MIT"
+},
+{
+"url": "https://motion.dev/examples/react-accordion",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "activeindicatorglide",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R2-038",
+"en": "Active indicator glide",
+"ko": "활성 표시 이동",
+"aka": [],
+"family": "ui",
+"what": "밑줄이나 배경 캡슐이 선택된 항목 아래로 미끄러져 간다.",
+"why": "선택의 이동을 쉽게 추적하게 한다.",
+"params": "공식 공통 기본 없음. 권장 300ms, 스프링 감쇠, 항목 폭 대응.",
+"impl": "단일 표시 레이어를 선택 항목의 좌표와 폭으로 이동한다.",
+"runtime": "gsap",
+"variants": [
+"탭 밑줄",
+"라디오 표시",
+"선택 캡슐"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motion.dev/docs/react-layout-animations",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://motion.dev/examples/react-tab-select",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://motion.dev/examples/react-smooth-tabs",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "switchthumbtravel",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R2-039",
+"en": "Switch thumb travel",
+"ko": "스위치 손잡이 이동",
+"aka": [],
+"family": "ui",
+"what": "스위치의 원형 손잡이가 반대 끝으로 움직이며 배경색이 바뀐다.",
+"why": "켜짐과 꺼짐을 명확하게 전달한다.",
+"params": "공식 공통 기본 없음. 권장 220ms, 탄성 약하게, 색 동시 전환.",
+"impl": "HTML 손잡이 x 좌표와 트랙 색을 GSAP 코어로 보간한다.",
+"runtime": "gsap",
+"variants": [
+"체크박스",
+"토글",
+"DOM과 WebGL 연동"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motion.dev/examples/react-radix-switch",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://www.react-spring.dev/examples",
+"repo": "pmndrs/react-spring",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "modalliftandbackdrop",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R2-040",
+"en": "Modal lift and backdrop",
+"ko": "모달 상승과 배경 암전",
+"aka": [],
+"family": "ui",
+"what": "대화상자가 떠오르면서 뒤 화면이 어두워지거나 흐려진다.",
+"why": "현재 작업 영역을 분명히 한다.",
+"params": "공식 공통 기본 없음. 권장 모달 400ms, backdrop 250ms, y 32px.",
+"impl": "모달 translate/scale과 배경 opacity/blur를 동기화한다.",
+"runtime": "gsap",
+"variants": [
+"하단 시트",
+"중앙 팝업",
+"공유 카드 모달"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motion.dev/docs/react-animate-presence",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://motion.dev/examples/react-modal",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://motion.dev/examples/react-sheet-modal",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "toaststackreshuffle",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R2-041",
+"en": "Toast stack reshuffle",
+"ko": "알림 스택 재정렬",
+"aka": [],
+"family": "ui",
+"what": "새 알림이 들어오며 기존 알림이 밀리거나 뒤로 쌓이고 퇴장 시 빈자리가 닫힌다.",
+"why": "알림의 순서와 최신 항목을 보여준다.",
+"params": "공식 공통 기본 없음. 권장 350ms, 간격 12px, 뒤 카드 scale 0.95.",
+"impl": "각 알림 인덱스를 y, scale, zIndex에 매핑하고 추가 삭제를 재배치한다.",
+"runtime": "gsap",
+"variants": [
+"리스트",
+"겹친 스택",
+"자동 퇴장",
+"시간 막대"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motion.dev/docs/react-animate-presence",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://motion.dev/examples/react-notifications-list",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://motion.dev/examples/react-toast-stack",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://www.react-spring.dev/examples",
+"repo": "pmndrs/react-spring",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "radialmenufanout",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R2-042",
+"en": "Radial menu fanout",
+"ko": "방사형 메뉴 펼침",
+"aka": [],
+"family": "ui",
+"what": "한 중심점에 모인 아이콘이 원호를 따라 각각의 자리로 벌어진다.",
+"why": "선택지가 하나의 도구에 속함을 보여준다.",
+"params": "공식 공통 기본 없음. 권장 반지름 100px, 400ms, 간격 40ms.",
+"impl": "각 항목의 각도를 sin/cos 좌표로 변환해 중앙에서 펼친다.",
+"runtime": "gsap",
+"variants": [
+"전체 원",
+"반원",
+"부채꼴",
+"접힘"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motion.dev/examples/react-radial-menu",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://motion.dev/examples/react-floating-action-button",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "swipeactionreveal",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R2-043",
+"en": "Swipe action reveal",
+"ko": "스와이프 동작 공개",
+"aka": [],
+"family": "ui",
+"what": "행이 옆으로 밀리면서 뒤에 숨은 실행 버튼이 드러난다.",
+"why": "숨은 작업과 실행 방향을 전달한다.",
+"params": "공식 공통 기본 없음. 권장 이동 100px, 300ms, 복귀 스프링.",
+"impl": "커서 시연과 행 translate, 배경 버튼 scale을 한 타임라인에 배치한다.",
+"runtime": "gsap",
+"variants": [
+"삭제",
+"보관",
+"되돌리기"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motion.dev/examples/react-swipe-actions",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://motion.dev/docs/react-drag",
+"repo": "motiondivision/motion",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "holdprogressconfirmation",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R2-044",
+"en": "Hold progress confirmation",
+"ko": "누르기 진행 확인",
+"aka": [],
+"family": "ui",
+"what": "누른 동안 버튼 내부가 채워지고 끝에서 완료 표시로 바뀐다.",
+"why": "의도적인 대기와 확정을 시각화한다.",
+"params": "공식 공통 기본 없음. 권장 홀드 1200ms, 완료 팝 200ms.",
+"impl": "진행값을 마스크 폭에 연결하고 끝에서 완료 아이콘으로 전환한다.",
+"runtime": "gsap",
+"variants": [
+"원형 진행",
+"막대 채움",
+"취소 시 되감기"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motion.dev/examples/react-hold-to-confirm",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "copysuccessmorph",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R2-045",
+"en": "Copy success morph",
+"ko": "복사 완료 상태 변환",
+"aka": [],
+"family": "ui",
+"what": "버튼의 복사 기호가 체크나 완료 문구로 바뀌었다가 원래 상태로 돌아온다.",
+"why": "작업 성공을 짧고 분명하게 알린다.",
+"params": "공식 공통 기본 없음. 권장 전환 250ms, 홀드 1200ms.",
+"impl": "독립 아이콘 레이어의 위치와 opacity 또는 SVG 경로를 보간한다.",
+"runtime": "svg",
+"variants": [
+"체크 모프",
+"문구 교체",
+"색 변화"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motion.dev/examples/react-copy-button",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://motion.dev/examples/react-multi-state-badge",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "proximitymagnification",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R2-046",
+"en": "Proximity magnification",
+"ko": "근접 확대 도크",
+"aka": [],
+"family": "ui",
+"what": "이동하는 포인터 근처의 아이콘이 커지고 먼 아이콘은 작아진다.",
+"why": "현재 관심 영역과 선택 후보를 보여준다.",
+"params": "공식 공통 기본 없음. 권장 영향 반경 140px, 최대 scale 1.6, 완화 200ms.",
+"impl": "시연 포인터와 각 아이콘의 거리를 scale로 매핑한다.",
+"runtime": "gsap",
+"variants": [
+"도크",
+"격자",
+"가로 메뉴",
+"시연 포인터 기반 확대"
+],
+"core": "",
+"sources": [
+{
+"url": "https://demos.gsap.com/demo/macos-dock-effect",
+"repo": "demos.gsap.com",
+"license": "unknown"
+},
+{
+"url": "https://www.react-spring.dev/examples",
+"repo": "pmndrs/react-spring",
+"license": "MIT"
+},
+{
+"url": "https://demos.gsap.com/demo/proximity-scale-grid",
+"repo": "demos.gsap.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "springcursorfollow",
+"family": "ui",
+"core": "follow-through",
+"rows": [
+{
+"id": "R2-047",
+"en": "Spring cursor follow",
+"ko": "스프링 커서 추종",
+"aka": [
+"Spring trail follow",
+"스프링 꼬리 추종"
+],
+"family": "ui",
+"what": "보조 원이나 이미지가 커서의 이동을 약간 늦게 따라간다.",
+"why": "포인터 위치와 이동의 관성을 강조한다.",
+"params": "공식 공통 기본 없음. 권장 반응 150~300ms, stiffness 150, damping 20. 공식: react-spring tension 170, friction 26. 권장 5~12개, 간격 16px.",
+"impl": "기록한 커서 경로를 목표로 삼아 보조 레이어 위치를 스프링 보간한다.",
+"runtime": "gsap",
+"variants": [
+"이미지 미리보기",
+"자기적 흡착",
+"동적 커서 크기",
+"스프링 꼬리 추종",
+"텍스트 꼬리",
+"포인터 꼬리",
+"카드 연쇄",
+"다중 요소 연쇄 추종",
+"포인터와 카드 꼬리"
+],
+"core": "follow-through",
+"sources": [
+{
+"url": "https://motion.dev/examples/react-follow-pointer-with-spring",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://motion.dev/examples/react-cursor-follow",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://www.react-spring.dev/docs/components/use-trail",
+"repo": "pmndrs/react-spring",
+"license": "MIT"
+},
+{
+"url": "https://www.react-spring.dev/examples",
+"repo": "pmndrs/react-spring",
+"license": "MIT"
+},
+{
+"url": "https://motion.dev/examples/react-multifollow-pointer-with-spring",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "draganddropdemonstration",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R2-049",
+"en": "Drag and drop demonstration",
+"ko": "드래그 놓기 시연",
+"aka": [],
+"family": "ui",
+"what": "커서가 물체를 잡아 다른 영역으로 옮기고 놓으면 자리잡는다.",
+"why": "직접 조작과 대상 영역을 설명한다.",
+"params": "공식: Draggable type x,y. 권장 이동 700ms, 놓기 250ms, 경계 지정.",
+"impl": "기록된 커서와 물체를 동기 이동하고 목표 위치로 정착시킨다.",
+"runtime": "gsap",
+"variants": [
+"축 잠금",
+"드롭 영역",
+"목록 순서 변경"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/Draggable/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://animejs.com/documentation/draggable",
+"repo": "juliangarnier/anime",
+"license": "MIT"
+},
+{
+"url": "https://motion.dev/docs/react-drag",
+"repo": "motiondivision/motion",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "elasticboundaryreturn",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R2-051",
+"en": "Elastic boundary return",
+"ko": "탄성 경계 복귀",
+"aka": [],
+"family": "ui",
+"what": "끌린 물체가 영역을 잠깐 벗어나 늘어났다가 경계 안으로 돌아온다.",
+"why": "조작 가능한 범위와 탄성을 보여준다.",
+"params": "공식: Motion dragElastic 0.5, inertia bounceStiffness 500, bounceDamping 10. 권장 복귀 400ms.",
+"impl": "시연 경로의 경계 초과량을 줄여 적용하고 놓기 뒤 스프링으로 복귀한다.",
+"runtime": "gsap",
+"variants": [
+"모서리 반동",
+"범위 제한",
+"자석형 스냅"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/Draggable/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/docs/react-drag",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://motion.dev/docs/react-transitions",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://animejs.com/documentation/draggable",
+"repo": "juliangarnier/anime",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "carouselslide",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R2-052",
+"en": "Carousel slide",
+"ko": "캐러셀 슬라이드",
+"aka": [],
+"family": "ui",
+"what": "카드나 이미지가 한 칸씩 이동하며 다음 항목을 중앙에 놓는다.",
+"why": "목록의 연속성과 현재 항목을 보여준다.",
+"params": "공식 공통 기본 없음. 권장 500ms, 화면 폭 단위, 간격 16px.",
+"impl": "카드 트랙 translate와 활성 표시를 같은 진행값으로 보간한다.",
+"runtime": "gsap",
+"variants": [
+"가로",
+"세로",
+"자유 스크롤",
+"썸네일",
+"자동 넘김"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motion.dev/examples/react-carousel",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://www.react-spring.dev/examples",
+"repo": "pmndrs/react-spring",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "comparisonrevealslider",
+"family": "ui",
+"core": "split-compare",
+"rows": [
+{
+"id": "R2-055",
+"en": "Comparison reveal slider",
+"ko": "비교 경계 슬라이더",
+"aka": [],
+"family": "ui",
+"what": "경계선이 이동하며 겹쳐 놓은 두 이미지의 드러나는 비율이 달라진다.",
+"why": "같은 영역의 전후 차이를 직접 비교하게 한다.",
+"params": "공식 공통 기본 없음. 권장 경계 0~100%, 1600ms, 홀드 500ms.",
+"impl": "윗 이미지 clip-path와 경계선 x를 동일한 진행값에 연결한다.",
+"runtime": "css",
+"variants": [
+"좌우 비교",
+"상하 비교",
+"중앙 홀드"
+],
+"core": "split-compare",
+"sources": [
+{
+"url": "https://motion.dev/examples/react-image-reveal-slider",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "scrollsnapchapters",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R2-077",
+"en": "Scroll snap chapters",
+"ko": "스크롤 장 스냅",
+"aka": [],
+"family": "ui",
+"what": "자유롭게 진행하던 화면이 가까운 장면 경계에 부드럽게 정렬된다.",
+"why": "설명의 구간과 읽는 멈춤점을 만든다.",
+"params": "공식: snap 미지정, 값/배열/labels/labelsDirectional 선택. 권장 정착 300~700ms.",
+"impl": "진행값을 가까운 장면 기준값으로 보간하고 같은 타임라인을 정렬한다.",
+"runtime": "gsap",
+"variants": [
+"장면 라벨",
+"등간격",
+"방향별 다음 장"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/ScrollTrigger/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://gsap.com/docs/v3/Plugins/InertiaPlugin/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+}
+]
+}
+]
+},
+{
+"key": "horizontalscrollgallery",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R2-078",
+"en": "Horizontal scroll gallery",
+"ko": "가로 스크롤 갤러리",
+"aka": [],
+"family": "ui",
+"what": "세로 스크롤이 진행되는 동안 가로로 긴 카드 트랙이 옆으로 이동한다.",
+"why": "연속 콘텐츠를 넓은 공간처럼 보여준다.",
+"params": "공식 공통 기본 없음. 권장 pin 구간 트랙 초과폭, ease none.",
+"impl": "세로 진행값을 가로 트랙 translateX에 매핑한다.",
+"runtime": "gsap",
+"variants": [
+"가로 고정 갤러리",
+"패널 슬라이드",
+"카드 간 패럴랙스"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/ScrollTrigger/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/examples/react-scroll-horizontal",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://www.react-spring.dev/docs/components/parallax",
+"repo": "pmndrs/react-spring",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "directionawareheader",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R2-082",
+"en": "Direction aware header",
+"ko": "방향 반응 헤더",
+"aka": [],
+"family": "ui",
+"what": "아래로 진행할 때 헤더가 위로 사라지고 위로 되돌아가면 나타난다.",
+"why": "내용 공간을 확보하면서 탐색 상태를 알린다.",
+"params": "공식 공통 기본 없음. 권장 이동 헤더 높이, 250ms, 방향 감지 8px.",
+"impl": "스크롤 시연의 방향 전환 시 헤더 y 목표를 바꾼다.",
+"runtime": "gsap",
+"variants": [
+"메뉴 바",
+"하단 도구",
+"작은 축소 헤더"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/ScrollTrigger/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/examples/react-scroll-hide-header",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "footerunderlayreveal",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R2-084",
+"en": "Footer underlay reveal",
+"ko": "하단 배경 공개",
+"aka": [],
+"family": "ui",
+"what": "본문의 끝이 위로 벗겨지면서 뒤에 고정된 하단 영역이 드러난다.",
+"why": "페이지의 끝과 마지막 행동 영역을 구분한다.",
+"params": "공식 공통 기본 없음. 권장 하단 높이 60vh, 공개 구간 60vh.",
+"impl": "본문을 앞 레이어로 두고 하단을 고정하거나 sticky로 배치해 가림을 줄인다.",
+"runtime": "css",
+"variants": [
+"고정 푸터",
+"패럴랙스 푸터",
+"그림자 경계"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motion.dev/examples/react-footer-reveal",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://gsap.com/docs/v3/Plugins/ScrollTrigger/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+}
+]
+}
+]
+},
+{
+"key": "insetshadow",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R3-048",
+"en": "Inset Shadow",
+"ko": "안쪽으로 눌림",
+"aka": [],
+"family": "ui",
+"what": "요소 안쪽의 그림자가 깊어지면서 표면이 눌린 것처럼 보인다.",
+"why": "누름과 활성 상태를 전달한다.",
+"params": "도감 기본값: 250ms, inset blur 8px, 깊이 3px, ease-out",
+"impl": "CSS inset box-shadow와 scale을 짧게 보간한다",
+"runtime": "css",
+"variants": [
+"shadow-inset",
+"box-shadow-inset",
+"hollow",
+"shadow-inset-center",
+"shadow-inset-top",
+"shadow-inset-right",
+"shadow-inset-bottom",
+"shadow-inset-left",
+"shadow-inset-lr",
+"shadow-inset-tb",
+"shadow-inset-tr",
+"shadow-inset-br",
+"shadow-inset-bl",
+"shadow-inset-tl"
+],
+"core": "",
+"sources": [
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/IanLunn/Hover",
+"repo": "IanLunn/Hover",
+"license": "MIT personal/open-source + paid commercial"
+}
+]
+}
+]
+},
+{
+"key": "bubblepointerreveal",
+"family": "ui",
+"core": "annotation-callout",
+"rows": [
+{
+"id": "R3-063",
+"en": "Bubble Pointer Reveal",
+"ko": "말풍선 꼬리 등장",
+"aka": [],
+"family": "ui",
+"what": "작은 삼각형 꼬리가 말풍선의 가장자리에서 자라거나 면이 살짝 떠오른다.",
+"why": "설명이 가리키는 대상을 알려 준다.",
+"params": "도감 기본값: 300ms, 꼬리 길이 10px, 부상 8px, ease-out",
+"impl": "CSS 삼각형 가상 요소의 translate와 scale을 보간한다",
+"runtime": "css",
+"variants": [
+"bubble-top",
+"bubble-bottom",
+"bubble-left",
+"bubble-right",
+"bubble-float"
+],
+"core": "annotation-callout",
+"sources": [
+{
+"url": "https://github.com/IanLunn/Hover",
+"repo": "IanLunn/Hover",
+"license": "MIT personal/open-source + paid commercial"
+}
+]
+}
+]
+},
+{
+"key": "iconflight",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R3-064",
+"en": "Icon Flight",
+"ko": "아이콘 날아가기",
+"aka": [],
+"family": "ui",
+"what": "버튼 내부 아이콘이 위로 떠오르거나 아래로 떨어지며 사라진다.",
+"why": "전송과 실행 완료를 시각화한다.",
+"params": "도감 기본값: 500ms, 이동 24px, opacity 1에서 0, ease-out",
+"impl": "CSS 아이콘 translate와 opacity를 보간하고 새 아이콘을 지연시킨다",
+"runtime": "css",
+"variants": [
+"icon-float-away",
+"icon-sink-away",
+"icon-drop",
+"icon-spin",
+"SlingButton"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/IanLunn/Hover",
+"repo": "IanLunn/Hover",
+"license": "MIT personal/open-source + paid commercial"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "viewportrevealtrigger",
+"family": "ui",
+"core": "progressive-disclosure",
+"rows": [
+{
+"id": "R3-065",
+"en": "Viewport Reveal Trigger",
+"ko": "스크롤 진입 등장",
+"aka": [],
+"family": "ui",
+"what": "스크롤로 화면에 들어온 요소가 그 순간에 등장 동작을 시작한다.",
+"why": "읽는 위치에 맞춰 새 정보를 보여 준다.",
+"params": "도감 기본값: 도감 500ms, 기준점 화면 85%, 지연 0ms, 1회",
+"impl": "HTML IntersectionObserver로 진행을 시작하거나 영상 타임라인에서 같은 시점을 재생한다",
+"runtime": "css",
+"variants": [
+"AOS",
+"WOW",
+"In View",
+"ScrollReveal",
+"in-view"
+],
+"core": "progressive-disclosure",
+"sources": [
+{
+"url": "https://github.com/michalsnik/aos",
+"repo": "michalsnik/aos",
+"license": "MIT"
+},
+{
+"url": "https://github.com/matthieua/WOW",
+"repo": "matthieua/WOW",
+"license": "GPL-3.0 or commercial (README; LICENSE absent)"
+},
+{
+"url": "https://motion-primitives.com/docs/in-view",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "loadingtoresultmorph",
+"family": "ui",
+"core": "shape-morph",
+"rows": [
+{
+"id": "R3-089",
+"en": "Loading to Result Morph",
+"ko": "로더에서 결과 아이콘으로",
+"aka": [],
+"family": "ui",
+"what": "반복하던 점이나 링이 멈추고 체크 또는 오류 표식으로 변한다.",
+"why": "작업 완료와 성공 여부를 즉시 알린다.",
+"params": "도감 기본값: 루프 1200ms, 전환 500ms, hold 1000ms, ease-out",
+"impl": "SVG 도형 위치와 패스 및 opacity를 단계별로 보간한다",
+"runtime": "svg",
+"variants": [
+"Stateful Button",
+"StatusMark",
+"success",
+"error",
+"SpringCheck",
+"CallChip",
+"stateful-button"
+],
+"core": "shape-morph",
+"sources": [
+{
+"url": "https://lottiefiles.com/free-animation/loading-animation-with-success-and-error-K2tYPTbs5Q",
+"repo": "LottieFiles/Patrick Rigor",
+"license": "Lottie Simple License"
+},
+{
+"url": "https://rive.app/community/files/133-207-loading-animation/",
+"repo": "rive.app/Bobbeh",
+"license": "CC-BY (version unverified)"
+},
+{
+"url": "https://ui.aceternity.com/components/stateful-button",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "multisteploader",
+"family": "ui",
+"core": "progressive-disclosure",
+"rows": [
+{
+"id": "R3-090",
+"en": "Multi Step Loader",
+"ko": "다단계 상태 로더",
+"aka": [],
+"family": "ui",
+"what": "현재 처리 단계가 강조되고 체크 표시와 함께 다음 단계로 이동한다.",
+"why": "긴 작업의 진행 이유와 순서를 알려 준다.",
+"params": "도감 기본값: 단계 유지 1500ms, 전환 350ms, 간격 24px",
+"impl": "HTML 목록의 translate와 opacity 및 SVG 체크 선을 순차 재생한다",
+"runtime": "css",
+"variants": [
+"Multi Step Loader",
+"Stepper",
+"multi-step-loader"
+],
+"core": "progressive-disclosure",
+"sources": [
+{
+"url": "https://ui.aceternity.com/components/multi-step-loader",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "imagegenerationscan",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R3-091",
+"en": "Image Generation Scan",
+"ko": "이미지 생성 스캔",
+"aka": [],
+"family": "ui",
+"what": "스캔 띠와 픽셀 격자가 이미지를 훑으며 완성된 영역을 드러낸다.",
+"why": "이미지가 처리되거나 생성되고 있음을 보여 준다.",
+"params": "도감 기본값: 3000ms, 스캔 100%, 격자 12px, linear",
+"impl": "canvas 이미지 위에 진행 마스크와 스캔 선 및 점을 합성한다",
+"runtime": "canvas",
+"variants": [
+"Image Generation Loader",
+"Scanner"
+],
+"core": "",
+"sources": [
+{
+"url": "https://ui.aceternity.com/components",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "magneticattraction",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R3-144",
+"en": "Magnetic Attraction",
+"ko": "자석 끌림",
+"aka": [],
+"family": "ui",
+"what": "요소가 포인터 쪽으로 조금 따라가고 멀어지면 탄성 있게 돌아온다.",
+"why": "반응 가능한 대상과 조작감을 보여 준다.",
+"params": "도감 기본값: 500ms, 영향 반경 120px, 최대 이동 16px, 감쇠 0.8",
+"impl": "GSAP 코어로 지정한 포인터와 요소의 거리를 계산해 translate를 보간한다",
+"runtime": "gsap",
+"variants": [
+"Magnetic",
+"Magnetic Button",
+"Magnet",
+"MagnetLines",
+"magnetic",
+"magnetic-button"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motion-primitives.com/docs/magnetic",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/magnetic-button",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "smoothpointerfollow",
+"family": "ui",
+"core": "cursor-click",
+"rows": [
+{
+"id": "R3-145",
+"en": "Smooth Pointer Follow",
+"ko": "부드러운 포인터 추종",
+"aka": [],
+"family": "ui",
+"what": "포인터 표시와 작은 라벨이 이동 경로를 약간 늦게 따라간다.",
+"why": "화면 시연에서 조작 위치를 명확히 알린다.",
+"params": "도감 기본값: 추종 120ms, 포인터 16px, 라벨 간격 12px",
+"impl": "GSAP 코어로 타임라인에 기록한 포인터 좌표를 지연 보간한다",
+"runtime": "gsap",
+"variants": [
+"Smooth Cursor",
+"Following Pointer",
+"Cursor",
+"TargetCursor",
+"Crosshair",
+"WarmTooltip",
+"pointer",
+"smooth-cursor",
+"cursor",
+"following-pointer"
+],
+"core": "cursor-click",
+"sources": [
+{
+"url": "https://magicui.design/docs/components/pointer",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/following-pointer",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://motion-primitives.com/docs/cursor",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "magnifyinglens",
+"family": "ui",
+"core": "zoom-to-detail",
+"rows": [
+{
+"id": "R3-146",
+"en": "Magnifying Lens",
+"ko": "확대 렌즈",
+"aka": [],
+"family": "ui",
+"what": "원형 창이 이미지 위를 움직이며 창 안의 영역만 크게 보여 준다.",
+"why": "세부를 짚어 설명한다.",
+"params": "도감 기본값: 1000ms, 확대 2배, 반경 100px, ease-out",
+"impl": "HTML 이미지 복제층을 원형 마스크로 잘라 위치를 역보정한다",
+"runtime": "css",
+"variants": [
+"Lens",
+"lens"
+],
+"core": "zoom-to-detail",
+"sources": [
+{
+"url": "https://magicui.design/docs/components/lens",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/lens",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "imagecomparisonwipe",
+"family": "ui",
+"core": "split-compare",
+"rows": [
+{
+"id": "R3-147",
+"en": "Image Comparison Wipe",
+"ko": "이미지 비교 쓸기",
+"aka": [],
+"family": "ui",
+"what": "분할 경계가 이동하며 같은 자리의 두 이미지를 번갈아 드러낸다.",
+"why": "변화 전후의 차이를 직접 비교하게 한다.",
+"params": "도감 기본값: 1500ms, 경계 20%에서 80%, ease-in-out",
+"impl": "CSS clip-path inset과 경계선 translate를 함께 보간한다",
+"runtime": "css",
+"variants": [
+"Compare",
+"Image Comparison",
+"Code Comparison",
+"code-comparison",
+"image-comparison",
+"compare"
+],
+"core": "split-compare",
+"sources": [
+{
+"url": "https://ui.aceternity.com/components/compare",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://motion-primitives.com/docs/image-comparison",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+},
+{
+"url": "https://magicui.design/docs/components/code-comparison",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "sharedlayoutexpansion",
+"family": "ui",
+"core": "progressive-disclosure",
+"rows": [
+{
+"id": "R3-148",
+"en": "Shared Layout Expansion",
+"ko": "카드에서 상세 확장",
+"aka": [
+"Shared Element Transition",
+"Morphing Dialog"
+],
+"family": "ui",
+"what": "작은 카드가 위치와 크기를 유지하며 큰 상세 패널로 연속 확대된다.",
+"why": "목록과 상세 내용이 같은 대상임을 알려 준다.",
+"params": "도감 기본값: 650ms, 반경 16px에서 8px, ease-in-out",
+"impl": "GSAP 코어로 시작과 끝 사각형을 측정해 translate와 scale을 보간한다",
+"runtime": "gsap",
+"variants": [
+"Expandable Card",
+"Morphing Dialog",
+"Morphing Popover",
+"Layout Grid",
+"Expandable",
+"RefineFrame",
+"morphing-dialog",
+"morphing-popover",
+"expandable-card",
+"apple-cards-carousel",
+"layout-grid"
+],
+"core": "progressive-disclosure",
+"sources": [
+{
+"url": "https://ui.aceternity.com/components/expandable-card",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://motion-primitives.com/docs/morphing-dialog",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "accordiondisclosure",
+"family": "ui",
+"core": "progressive-disclosure",
+"rows": [
+{
+"id": "R3-149",
+"en": "Accordion Disclosure",
+"ko": "아코디언 펼치기",
+"aka": [],
+"family": "ui",
+"what": "접힌 행의 높이가 늘어나고 내용이 나타나며 다른 행이 밀려난다.",
+"why": "제목과 숨겨진 내용의 관계를 보여 준다.",
+"params": "도감 기본값: 350ms, 높이 0px에서 내용 높이, opacity 0에서 1",
+"impl": "CSS grid 행 크기 또는 GSAP 코어 height를 보간한다",
+"runtime": "gsap",
+"variants": [
+"Accordion",
+"Disclosure",
+"Collapsible",
+"AccordionGallery",
+"accordion",
+"disclosure"
+],
+"core": "progressive-disclosure",
+"sources": [
+{
+"url": "https://github.com/shadcn-ui/ui",
+"repo": "shadcn-ui/ui",
+"license": "MIT"
+},
+{
+"url": "https://motion-primitives.com/docs/accordion",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "modalentrance",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R3-150",
+"en": "Modal Entrance",
+"ko": "모달 등장",
+"aka": [],
+"family": "ui",
+"what": "배경이 어두워지고 작은 패널이 중앙에서 커지거나 올라오며 나타난다.",
+"why": "현재 집중해야 할 임시 작업을 알린다.",
+"params": "도감 기본값: 300ms, 배경 opacity 0.45, scale 0.95에서 1, ease-out",
+"impl": "CSS 배경 opacity와 패널 translate 및 scale을 동시에 보간한다",
+"runtime": "css",
+"variants": [
+"Dialog",
+"Alert Dialog",
+"Animated Modal",
+"Hero Video Dialog",
+"hero-video-dialog",
+"dialog",
+"animated-modal"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/shadcn-ui/ui",
+"repo": "shadcn-ui/ui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/animated-modal",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://motion-primitives.com/docs/dialog",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+},
+{
+"url": "https://magicui.design/docs/components/hero-video-dialog",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "drawerandsheet",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R3-151",
+"en": "Drawer and Sheet",
+"ko": "서랍 패널 등장",
+"aka": [],
+"family": "ui",
+"what": "화면 가장자리에서 패널이 들어오고 뒤쪽 화면이 약간 줄거나 어두워진다.",
+"why": "기존 화면 위의 보조 작업을 보여 준다.",
+"params": "도감 기본값: 450ms, 이동 100%, 배경 scale 0.96, ease-out",
+"impl": "CSS 패널 translate와 배경 scale 및 opacity를 보간한다",
+"runtime": "css",
+"variants": [
+"Drawer",
+"Sheet",
+"Sidebar",
+"LineSidebar",
+"StaggeredMenu",
+"sidebar"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/shadcn-ui/ui",
+"repo": "shadcn-ui/ui",
+"license": "MIT"
+},
+{
+"url": "https://github.com/emilkowalski/vaul",
+"repo": "emilkowalski/vaul",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/sidebar",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "popoverandtooltip",
+"family": "ui",
+"core": "annotation-callout",
+"rows": [
+{
+"id": "R3-152",
+"en": "Popover and Tooltip",
+"ko": "팝오버와 툴팁",
+"aka": [],
+"family": "ui",
+"what": "대상 근처에 작은 설명 상자가 짧게 이동하고 확대되며 나타난다.",
+"why": "설명과 대상의 위치 관계를 보여 준다.",
+"params": "도감 기본값: 200ms, 이동 6px, scale 0.95에서 1, ease-out",
+"impl": "CSS transform-origin을 대상 방향으로 두고 translate와 scale 및 opacity를 바꾼다",
+"runtime": "css",
+"variants": [
+"Popover",
+"Tooltip",
+"Hover Card",
+"Animated Tooltip",
+"Tooltip Card",
+"Link Preview",
+"WarmTooltip",
+"tooltip-card",
+"animated-tooltip",
+"link-preview"
+],
+"core": "annotation-callout",
+"sources": [
+{
+"url": "https://github.com/shadcn-ui/ui",
+"repo": "shadcn-ui/ui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/tooltip-card",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/ibelick/motion-primitives",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "toastslide",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R3-153",
+"en": "Toast Slide",
+"ko": "토스트 알림",
+"aka": [],
+"family": "ui",
+"what": "짧은 알림 카드가 화면 가장자리에서 들어와 머문 뒤 빠져나간다.",
+"why": "작업 결과를 주변부에서 알려 준다.",
+"params": "도감 기본값: 진입 350ms, 유지 2500ms, 퇴장 250ms, 이동 40px",
+"impl": "CSS 알림 translate와 opacity를 타임라인에 맞춰 보간한다",
+"runtime": "css",
+"variants": [
+"Sonner",
+"SwipeToast"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/shadcn-ui/ui",
+"repo": "shadcn-ui/ui",
+"license": "MIT"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "slidingactiveindicator",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R3-154",
+"en": "Sliding Active Indicator",
+"ko": "선택 표시 이동",
+"aka": [],
+"family": "ui",
+"what": "탭이나 메뉴의 강조 배경이 현재 선택된 항목으로 연속 이동한다.",
+"why": "선택이 옮겨 간 대상과 순서를 알려 준다.",
+"params": "도감 기본값: 300ms, ease-out, radius 12px, 폭 항목에 맞춤",
+"impl": "GSAP 코어로 선택 항목의 사각형을 측정해 강조면 위치와 크기를 바꾼다",
+"runtime": "gsap",
+"variants": [
+"Animated Background",
+"Tabs",
+"PillNav",
+"GlideSelect",
+"OptionWheel",
+"PeekRating",
+"animated-background",
+"card-hover-effect"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/shadcn-ui/ui",
+"repo": "shadcn-ui/ui",
+"license": "MIT"
+},
+{
+"url": "https://motion-primitives.com/docs/animated-background",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://ui.aceternity.com/components/card-hover-effect",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "transitionpanel",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R3-155",
+"en": "Transition Panel",
+"ko": "콘텐츠 패널 교체",
+"aka": [],
+"family": "ui",
+"what": "선택한 내용이 짧게 밀려나고 다음 내용이 같은 틀 안에 들어온다.",
+"why": "탭 또는 단계가 바뀌었음을 알려 준다.",
+"params": "도감 기본값: 300ms, 이동 20px, opacity 교차, ease-out",
+"impl": "CSS 또는 GSAP 코어로 두 패널의 translate와 opacity를 교차한다",
+"runtime": "gsap",
+"variants": [
+"Transition Panel",
+"Tabs",
+"Navigation Menu",
+"Carousel",
+"transition-panel",
+"navbar-menu",
+"tabs"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motion-primitives.com/docs/transition-panel",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+},
+{
+"url": "https://github.com/shadcn-ui/ui",
+"repo": "shadcn-ui/ui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/navbar-menu",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "dockmagnification",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R3-156",
+"en": "Dock Magnification",
+"ko": "독 아이콘 확대",
+"aka": [],
+"family": "ui",
+"what": "포인터와 가까운 아이콘이 크게 떠오르고 이웃 아이콘도 조금 커진다.",
+"why": "조작할 대상과 인접 관계를 알려 준다.",
+"params": "도감 기본값: 350ms, 최대 scale 1.7, 영향 거리 120px",
+"impl": "GSAP 코어로 포인터 거리 함수에 따라 각 아이콘의 scale과 위치를 보간한다",
+"runtime": "gsap",
+"variants": [
+"Dock",
+"Floating Dock",
+"GlassIcons",
+"dock",
+"floating-dock"
+],
+"core": "",
+"sources": [
+{
+"url": "https://magicui.design/docs/components/dock",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/floating-dock",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://motion-primitives.com/docs/dock",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "adaptivenavigation",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R3-157",
+"en": "Adaptive Navigation",
+"ko": "내비게이션 축소와 노출",
+"aka": [],
+"family": "ui",
+"what": "내비게이션이 스크롤 중 작아지거나 숨었다가 방향이 바뀌면 다시 나타난다.",
+"why": "콘텐츠에 공간을 주고 탐색 위치를 유지한다.",
+"params": "도감 기본값: 350ms, 폭 100%에서 70%, 이동 80px, ease-out",
+"impl": "CSS 또는 GSAP 코어로 지정된 스크롤 구간의 너비와 translate를 보간한다",
+"runtime": "gsap",
+"variants": [
+"Floating Navbar",
+"Resizable Navbar",
+"Notch",
+"Dynamic Toolbar",
+"CardNav",
+"BubbleMenu",
+"toolbar-dynamic",
+"notch",
+"floating-navbar",
+"resizable-navbar",
+"sticky-banner"
+],
+"core": "",
+"sources": [
+{
+"url": "https://ui.aceternity.com/components/notch",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://motion-primitives.com/docs/toolbar-dynamic",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "expandabletoolbar",
+"family": "ui",
+"core": "progressive-disclosure",
+"rows": [
+{
+"id": "R3-158",
+"en": "Expandable Toolbar",
+"ko": "도구 모음 펼치기",
+"aka": [],
+"family": "ui",
+"what": "작은 도구 막대가 너비를 늘리고 추가 아이콘을 순서대로 보여 준다.",
+"why": "사용 가능한 작업이 확장됨을 알린다.",
+"params": "도감 기본값: 450ms, 너비 120px에서 320px, 아이콘 간격 50ms",
+"impl": "CSS 너비와 아이콘 opacity 및 translate를 보간한다",
+"runtime": "css",
+"variants": [
+"Toolbar Expandable",
+"BranchedMenu",
+"PromptBar",
+"toolbar-expandable"
+],
+"core": "progressive-disclosure",
+"sources": [
+{
+"url": "https://motion-primitives.com/docs/toolbar-expandable",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "animatedtoggle",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R3-159",
+"en": "Animated Toggle",
+"ko": "토글 상태 전환",
+"aka": [],
+"family": "ui",
+"what": "스위치 손잡이가 반대쪽으로 이동하며 색과 아이콘이 새 상태로 바뀐다.",
+"why": "켜짐과 꺼짐의 상태 변화를 알려 준다.",
+"params": "도감 기본값: 350ms, 이동 24px, ease-out, 색 2개",
+"impl": "CSS 손잡이 translateX와 배경색 및 SVG 아이콘 경로를 보간한다",
+"runtime": "css",
+"variants": [
+"Switch",
+"SquishSwitch",
+"BellToggle",
+"Day/Night Mode Switch"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/shadcn-ui/ui",
+"repo": "shadcn-ui/ui",
+"license": "MIT"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://rive.app/community/files/8362-16053-daynight-mode-switch-interaction/",
+"repo": "rive.app/Raihan_DesignPX",
+"license": "CC-BY (version unverified)"
+}
+]
+}
+]
+},
+{
+"key": "animatedcheckmark",
+"family": "ui",
+"core": "line-draw",
+"rows": [
+{
+"id": "R3-160",
+"en": "Animated Check Mark",
+"ko": "체크 표시 그리기",
+"aka": [],
+"family": "ui",
+"what": "체크 선이 그려지고 주변 원이나 상자가 짧게 튀며 완료 상태가 된다.",
+"why": "선택과 성공을 명확히 알린다.",
+"params": "도감 기본값: 400ms, 선 두께 3px, scale 반동 1.1, ease-out",
+"impl": "SVG stroke-dashoffset과 CSS scale을 보간한다",
+"runtime": "svg",
+"variants": [
+"Checkbox",
+"Radio Group",
+"SpringCheck",
+"StatusMark"
+],
+"core": "line-draw",
+"sources": [
+{
+"url": "https://github.com/shadcn-ui/ui",
+"repo": "shadcn-ui/ui",
+"license": "MIT"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://lottiefiles.com/free-animation/loading-animation-with-success-and-error-K2tYPTbs5Q",
+"repo": "LottieFiles/Patrick Rigor",
+"license": "Lottie Simple License"
+}
+]
+}
+]
+},
+{
+"key": "buttonpressfeedback",
+"family": "ui",
+"core": "cursor-click",
+"rows": [
+{
+"id": "R3-161",
+"en": "Button Press Feedback",
+"ko": "버튼 누름 반응",
+"aka": [],
+"family": "ui",
+"what": "버튼이 잠깐 작아지거나 아래로 눌리고 클릭 지점에서 빛이나 원이 번진다.",
+"why": "입력이 받아들여졌음을 보여 준다.",
+"params": "도감 기본값: 180ms, scale 0.96, 이동 2px, 파문 500ms",
+"impl": "CSS scale과 translate 및 가상 원 opacity를 타임라인으로 재생한다",
+"runtime": "css",
+"variants": [
+"Ripple Button",
+"HoldButton",
+"FuseButton",
+"SlideCommit",
+"ripple-button",
+"tailwindcss-buttons"
+],
+"core": "cursor-click",
+"sources": [
+{
+"url": "https://github.com/shadcn-ui/ui",
+"repo": "shadcn-ui/ui",
+"license": "MIT"
+},
+{
+"url": "https://magicui.design/docs/components/ripple-button",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/tailwindcss-buttons",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://github.com/uiverse-io/galaxy",
+"repo": "uiverse-io/galaxy",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "inputdissolve",
+"family": "ui",
+"core": "typing-input",
+"rows": [
+{
+"id": "R3-162",
+"en": "Input Dissolve",
+"ko": "입력 글자 분해",
+"aka": [],
+"family": "ui",
+"what": "입력된 문자가 작은 점으로 흩어져 사라지고 입력창이 비워진다.",
+"why": "입력 내용이 전송되거나 처리됨을 보여 준다.",
+"params": "도감 기본값: 900ms, 입자 200개, 이동 40px, ease-out",
+"impl": "canvas 문자 알파를 샘플링해 점으로 만든 뒤 위치와 수명을 갱신한다",
+"runtime": "canvas",
+"variants": [
+"Placeholders And Vanish Input",
+"placeholders-and-vanish-input"
+],
+"core": "typing-input",
+"sources": [
+{
+"url": "https://ui.aceternity.com/components/placeholders-and-vanish-input",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "fileuploadstack",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R3-163",
+"en": "File Upload Stack",
+"ko": "업로드 카드 쌓기",
+"aka": [],
+"family": "ui",
+"what": "작은 파일 면이 떠오르며 카드 목록으로 쌓이고 진행 표시가 붙는다.",
+"why": "선택한 파일과 업로드 진행을 보여 준다.",
+"params": "도감 기본값: 500ms, 높이 24px, 항목 지연 80ms, ease-out",
+"impl": "HTML 파일 카드의 translate와 scale 및 진행선을 순차 보간한다",
+"runtime": "css",
+"variants": [
+"File Upload",
+"Folder",
+"FolderFloat",
+"file-upload"
+],
+"core": "",
+"sources": [
+{
+"url": "https://ui.aceternity.com/components/file-upload",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "keyboardpressdemo",
+"family": "ui",
+"core": "typing-input",
+"rows": [
+{
+"id": "R3-164",
+"en": "Keyboard Press Demo",
+"ko": "키보드 입력 시연",
+"aka": [],
+"family": "ui",
+"what": "키가 순서대로 아래로 눌렸다 돌아오고 입력 문장이 함께 늘어난다.",
+"why": "어떤 키 입력이 결과를 만들었는지 보여 준다.",
+"params": "도감 기본값: 키당 120ms, 눌림 3px, 입력 간격 80ms",
+"impl": "CSS 키 translateY와 그림자를 보간하고 HTML 입력 문자열을 갱신한다",
+"runtime": "css",
+"variants": [
+"Keyboard",
+"Terminal",
+"terminal",
+"keyboard"
+],
+"core": "typing-input",
+"sources": [
+{
+"url": "https://ui.aceternity.com/components/keyboard",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://magicui.design/docs/components/terminal",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "scrollprogressindicator",
+"family": "ui",
+"core": "ui-scroll",
+"rows": [
+{
+"id": "R3-165",
+"en": "Scroll Progress Indicator",
+"ko": "스크롤 진행 표시",
+"aka": [],
+"family": "ui",
+"what": "페이지를 내려갈수록 상단 막대나 경로 표시가 길어진다.",
+"why": "전체 중 현재 읽은 위치를 알려 준다.",
+"params": "도감 기본값: 진행 0에서 100%, 평활 120ms, 두께 3px",
+"impl": "CSS scaleX 또는 SVG dashoffset에 지정한 스크롤 진행률을 연결한다",
+"runtime": "css",
+"variants": [
+"Scroll Progress",
+"Tracing Beam",
+"Timeline",
+"scroll-progress",
+"tracing-beam",
+"timeline"
+],
+"core": "ui-scroll",
+"sources": [
+{
+"url": "https://magicui.design/docs/components/scroll-progress",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://motion-primitives.com/docs/scroll-progress",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/tracing-beam",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "stickyscrollreveal",
+"family": "ui",
+"core": "progressive-disclosure",
+"rows": [
+{
+"id": "R3-166",
+"en": "Sticky Scroll Reveal",
+"ko": "고정 화면 순차 교체",
+"aka": [],
+"family": "ui",
+"what": "한쪽 장면이 고정된 채 옆 설명이 지나갈 때 장면 내용이 순서대로 바뀐다.",
+"why": "설명 단계와 시각 자료를 연결한다.",
+"params": "도감 기본값: 단계 구간 800px, 교체 400ms, ease-out",
+"impl": "HTML sticky 레이아웃과 단계 진행률에 따른 opacity 교체를 만든다",
+"runtime": "css",
+"variants": [
+"Sticky Scroll Reveal",
+"ScrollStack",
+"sticky grid",
+"sticky-scroll-reveal"
+],
+"core": "progressive-disclosure",
+"sources": [
+{
+"url": "https://ui.aceternity.com/components/sticky-scroll-reveal",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://tympanus.net/codrops/category/tutorials/",
+"repo": "tympanus.net/codrops",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "rotatingcardstack",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R3-171",
+"en": "Rotating Card Stack",
+"ko": "카드 스택 순환",
+"aka": [],
+"family": "ui",
+"what": "겹친 카드 중 맨 앞 카드가 이동하고 다음 카드가 앞으로 올라온다.",
+"why": "여러 사례와 항목을 연속 소개한다.",
+"params": "도감 기본값: 전환 700ms, 유지 2500ms, 층 간격 12px, scale 차 0.05",
+"impl": "GSAP 코어로 카드 위치와 scale 및 z 순서를 단계별로 바꾼다",
+"runtime": "gsap",
+"variants": [
+"Card Stack",
+"CardSwap",
+"Stack",
+"BounceCards",
+"card-stack"
+],
+"core": "",
+"sources": [
+{
+"url": "https://ui.aceternity.com/components/card-stack",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "animatedcarousel",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R3-172",
+"en": "Animated Carousel",
+"ko": "슬라이더 카드 교체",
+"aka": [],
+"family": "ui",
+"what": "카드들이 옆으로 이동하고 중심 카드가 커지며 다음 항목이 주인공이 된다.",
+"why": "여러 항목의 순서와 현재 항목을 보여 준다.",
+"params": "도감 기본값: 600ms, 이동 카드 폭 100%, 중심 scale 1.1, ease-out",
+"impl": "CSS 트랙 translate와 카드 scale 및 opacity를 보간한다",
+"runtime": "css",
+"variants": [
+"Carousel",
+"Animated Testimonials",
+"CircularCarousel",
+"FlexCarousel",
+"SwipeRow",
+"carousel",
+"images-slider",
+"animated-testimonials"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/shadcn-ui/ui",
+"repo": "shadcn-ui/ui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/images-slider",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://motion-primitives.com/docs/carousel",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "cardfocusblur",
+"family": "ui",
+"core": "spotlight",
+"rows": [
+{
+"id": "R3-174",
+"en": "Card Focus Blur",
+"ko": "카드 초점 강조",
+"aka": [],
+"family": "ui",
+"what": "선택한 카드가 또렷해지고 주변 카드가 흐려지고 어두워진다.",
+"why": "비교군 중 하나에 시선을 모은다.",
+"params": "도감 기본값: 350ms, 주변 blur 4px, opacity 0.5, ease-out",
+"impl": "CSS 카드별 blur와 opacity 및 scale을 보간한다",
+"runtime": "css",
+"variants": [
+"Focus Cards",
+"ChromaGrid",
+"focus-cards"
+],
+"core": "spotlight",
+"sources": [
+{
+"url": "https://ui.aceternity.com/components/focus-cards",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "imagefanout",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R3-175",
+"en": "Image Fan Out",
+"ko": "이미지 부채꼴 펼치기",
+"aka": [],
+"family": "ui",
+"what": "겹친 작은 이미지들이 간격과 각도를 벌리며 부채꼴로 펼쳐진다.",
+"why": "압축된 여러 자료의 존재를 보여 준다.",
+"params": "도감 기본값: 500ms, 각도 간격 8deg, 위치 간격 24px, 지연 50ms",
+"impl": "GSAP 코어로 이미지별 translate와 rotate를 순차 보간한다",
+"runtime": "gsap",
+"variants": [
+"Images Badge",
+"BounceCards",
+"Folder",
+"images-badge"
+],
+"core": "",
+"sources": [
+{
+"url": "https://ui.aceternity.com/components/images-badge",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "directionalmenuimagereveal",
+"family": "ui",
+"core": "mask-reveal",
+"rows": [
+{
+"id": "R3-190",
+"en": "Directional Menu Image Reveal",
+"ko": "메뉴 이미지 방향 리빌",
+"aka": [],
+"family": "ui",
+"what": "메뉴 옆 이미지가 잘린 창에서 드러나고 포인터를 늦게 따라 이동한다.",
+"why": "메뉴 항목과 시각 자료의 연결을 보여 준다.",
+"params": "도감 기본값: 진입 500ms, 추종 150ms, 기울기 8deg, ease-out",
+"impl": "GSAP 코어로 클리핑 창과 이미지의 반대 translate 및 포인터 좌표를 보간한다",
+"runtime": "gsap",
+"variants": [
+"Menu Image Animation",
+"Direction Aware Hover",
+"FlowingMenu",
+"direction-aware-hover"
+],
+"core": "mask-reveal",
+"sources": [
+{
+"url": "https://tympanus.net/codrops/2020/07/01/creating-a-menu-image-animation-on-hover/",
+"repo": "tympanus.net/codrops",
+"license": "unknown"
+},
+{
+"url": "https://ui.aceternity.com/components/direction-aware-hover",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "stickygridexpansion",
+"family": "ui",
+"core": "progressive-disclosure",
+"rows": [
+{
+"id": "R3-191",
+"en": "Sticky Grid Expansion",
+"ko": "고정 격자 확장",
+"aka": [],
+"family": "ui",
+"what": "고정된 이미지 격자가 열별로 들어온 뒤 커져 공간을 열고 설명을 보여 준다.",
+"why": "자료 집합에서 주요 장면으로 시선을 옮긴다.",
+"params": "도감 기본값: 구간 3000px, 열 지연 80ms, 확대 1.3배, ease-out",
+"impl": "GSAP 코어에 지정한 진행률을 연결해 열 위치와 격자 scale 및 텍스트를 보간한다",
+"runtime": "gsap",
+"variants": [
+"Sticky Grid Scroll",
+"Masonry",
+"GridMotion"
+],
+"core": "progressive-disclosure",
+"sources": [
+{
+"url": "https://tympanus.net/codrops/2026/03/02/sticky-grid-scroll-building-a-scroll-driven-animated-grid/",
+"repo": "tympanus.net/codrops",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://github.com/codrops/ScrollBasedLayoutAnimations",
+"repo": "codrops/ScrollBasedLayoutAnimations",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "characterloginresponse",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R3-193",
+"en": "Character Login Response",
+"ko": "입력에 반응하는 캐릭터",
+"aka": [],
+"family": "ui",
+"what": "캐릭터가 입력 커서를 바라보고 비밀번호 입력 때 눈을 가린다.",
+"why": "입력 진행과 보호 상태를 친근하게 알려 준다.",
+"params": "도감 기본값: 시선 이동 400ms, 눈 가림 700ms, 입력 간격 100ms",
+"impl": "SVG 신체 부위를 나누고 GSAP 코어로 눈과 팔 회전을 시간표에 맞춰 보간한다",
+"runtime": "svg",
+"variants": [
+"Login Teddy",
+"Animated Login Screen"
+],
+"core": "",
+"sources": [
+{
+"url": "https://rive.app/community/files/4771-9633-login-teddy/",
+"repo": "rive.app/yoonikuu",
+"license": "CC-BY (version unverified)"
+}
+]
+}
+]
+},
+{
+"key": "pinnedchartnarrative",
+"family": "ui",
+"core": "ui-scroll",
+"rows": [
+{
+"id": "R6-086",
+"en": "Pinned chart narrative",
+"ko": "고정 차트 문단 전환",
+"aka": [
+"Sticky scrollytelling"
+],
+"family": "ui",
+"what": "차트는 같은 화면 위치에 머물고 설명 문단이 지나갈 때 차트 상태가 바뀐다.",
+"why": "글의 주장과 데이터 변화를 같은 시야에서 연결한다.",
+"params": "기본 장면당 1600ms, 차트 전환 700ms, 문단 기준점 화면 높이 60%",
+"impl": "HTML sticky 구성을 영상에서는 고정 프레임으로 바꾸고 문단 이동과 SVG 상태를 연결한다.",
+"runtime": "gsap",
+"variants": [
+"좌우 분리",
+"설명 오버레이",
+"상단 고정"
+],
+"core": "ui-scroll",
+"sources": [
+{
+"url": "https://pudding.cool/process/how-to-implement-scrollytelling/",
+"repo": "the-pudding/how-to-implement-scrollytelling",
+"license": "unknown"
+},
+{
+"url": "https://pudding.cool/process/responsive-scrollytelling/",
+"repo": "the-pudding/responsive-scrollytelling",
+"license": "MIT"
+},
+{
+"url": "https://github.com/reuters-graphics/svelte-scroller",
+"repo": "reuters-graphics/svelte-scroller",
+"license": "custom permissive (Rich Harris 2018)"
+},
+{
+"url": "https://github.com/sjwilliams/scrollstory",
+"repo": "sjwilliams/scrollstory",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "scrollscrubbedcharttransition",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R6-087",
+"en": "Scroll-scrubbed chart transition",
+"ko": "스크롤 진행률 차트 전환",
+"aka": [],
+"family": "ui",
+"what": "스크롤 구간의 진행률에 비례해 점 위치, 막대 길이 또는 축이 연속적으로 움직인다.",
+"why": "변화의 중간 상태를 천천히 탐색하는 느낌을 준다.",
+"params": "기본 구간 100vh, 영상 대응 2000ms, linear 진행률, 역방향 지원",
+"impl": "정규화한 스크롤 진행률을 SVG 속성 보간에 적용하고 영상에서는 재생 시각으로 대체한다.",
+"runtime": "gsap",
+"variants": [
+"길이 스크럽",
+"점 재배치",
+"지도 시점",
+"역스크롤"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/reuters-graphics/svelte-scroller",
+"repo": "reuters-graphics/svelte-scroller",
+"license": "custom permissive (Rich Harris 2018)"
+},
+{
+"url": "https://reuters-graphics.github.io/example_svelte-graph-patterns/",
+"repo": "reuters-graphics/example_svelte-graph-patterns",
+"license": "unknown"
+},
+{
+"url": "https://github.com/russellsamora/scrollama",
+"repo": "russellsamora/scrollama",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "steptriggeredchartstate",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R6-088",
+"en": "Step-triggered chart state",
+"ko": "문단 단위 차트 상태 전환",
+"aka": [],
+"family": "ui",
+"what": "설명 문단이 기준선을 지나면 차트가 정해진 다음 상태로 이동하고 멈춘다.",
+"why": "문단마다 하나의 주장과 하나의 차트 상태를 대응한다.",
+"params": "기본 기준점 50%화면, 전환 700ms, 정지 900ms, cubicInOut",
+"impl": "문단 ID별 상태를 정의하고 GSAP 타임라인으로 목표 좌표와 가시성을 전환한다.",
+"runtime": "gsap",
+"variants": [
+"다음 단계",
+"이전 단계",
+"문단별 강조"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/russellsamora/scrollama",
+"repo": "russellsamora/scrollama",
+"license": "MIT"
+},
+{
+"url": "https://reuters-graphics.github.io/example_svelte-graph-patterns/",
+"repo": "reuters-graphics/example_svelte-graph-patterns",
+"license": "unknown"
+},
+{
+"url": "https://github.com/sjwilliams/scrollstory",
+"repo": "sjwilliams/scrollstory",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "brushwindowlinkedupdate",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R6-095",
+"en": "Brush-window linked update",
+"ko": "범위 선택 창과 연결 차트",
+"aka": [],
+"family": "ui",
+"what": "선택 창이 이동하거나 넓어지면 상세 차트가 해당 기간의 데이터로 연속 갱신된다.",
+"why": "전체 시계열과 선택 구간의 관계를 이해한다.",
+"params": "기본 선택창 이동 1000ms, 상세 갱신 400ms, cubicInOut",
+"impl": "자동 진행률로 선택 구간을 계산해 개요 창과 상세 차트 스케일을 함께 갱신한다.",
+"runtime": "svg",
+"variants": [
+"좁은 기간",
+"확대 기간",
+"이동 창"
+],
+"core": "",
+"sources": [
+{
+"url": "https://vis.csail.mit.edu/pubs/animated-vega-lite/",
+"repo": "MIT Visualization Group",
+"license": "unknown"
+},
+{
+"url": "https://d3js.org/d3-zoom",
+"repo": "d3/d3-zoom",
+"license": "ISC"
+},
+{
+"url": "https://vega.github.io/vega/docs/event-streams/",
+"repo": "vega/vega",
+"license": "BSD-3-Clause"
+}
+]
+}
+]
+},
+{
+"key": "codefoldexpansion",
+"family": "ui",
+"core": "progressive-disclosure",
+"rows": [
+{
+"id": "R7-094",
+"en": "Code fold expansion",
+"ko": "코드 접기와 펼치기",
+"aka": [],
+"family": "ui",
+"what": "여러 코드 줄이 줄어들어 생략 표시가 되고 다시 펼치면 원래 줄과 간격이 돌아온다.",
+"why": "불필요한 세부를 줄였다가 필요한 때 확인한다.",
+"params": "재현 기본값: 450 ms, 줄높이 28 px, easeInOut",
+"impl": "자체 코드 그룹의 높이와 clip 영역을 보간하며 생략 표시를 교대한다.",
+"runtime": "gsap",
+"variants": [
+"함수 접기",
+"중첩 블록 접기"
+],
+"core": "progressive-disclosure",
+"sources": [
+{
+"url": "https://codehike.org/docs/code/fold",
+"repo": "code-hike/codehike",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "cursortrajectorysmoothing",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R7-099",
+"en": "Cursor trajectory smoothing",
+"ko": "커서 경로 평활화",
+"aka": [],
+"family": "ui",
+"what": "빠르게 꺾이거나 떨리던 커서가 매끈한 곡선으로 이동한다.",
+"why": "시연의 의도를 또렷하게 따라간다.",
+"params": "재현 기본값: 이동 650 ms, 평활 구간 120 ms, easeInOut",
+"impl": "자체 기록 좌표의 지터를 정리하고 보간 곡선으로 커서 transform을 갱신한다.",
+"runtime": "gsap",
+"variants": [
+"저역통과 보정",
+"곡선 재구성"
+],
+"core": "",
+"sources": [
+{
+"url": "https://screen.studio/",
+"repo": "Screen Studio",
+"license": "unknown"
+},
+{
+"url": "https://screen.studio/guide/cursor",
+"repo": "Screen Studio",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "clickpulseandcursorcompression",
+"family": "ui",
+"core": "cursor-click",
+"rows": [
+{
+"id": "R7-100",
+"en": "Click pulse and cursor compression",
+"ko": "클릭 맥동과 커서 눌림",
+"aka": [],
+"family": "ui",
+"what": "클릭 순간 커서가 작아졌다 돌아오고 주변에 원형 강조가 퍼진다.",
+"why": "클릭 시점과 정확한 위치를 알아본다.",
+"params": "재현 기본값: 220 ms, 커서 scale 1~0.85~1, 고리 반경 24 px",
+"impl": "커서 scale 왕복과 SVG 고리 확장을 같은 클릭 시점에 시작한다.",
+"runtime": "gsap",
+"variants": [
+"고리만",
+"눌림만",
+"고리와 눌림"
+],
+"core": "cursor-click",
+"sources": [
+{
+"url": "https://screen.studio/guide/cursor",
+"repo": "Screen Studio",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "idlecursorhide",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R7-101",
+"en": "Idle cursor hide",
+"ko": "정지 커서 숨김",
+"aka": [],
+"family": "ui",
+"what": "움직이지 않는 커서가 일정 시간 뒤 작아지거나 흐려지고 다시 움직이면 나타난다.",
+"why": "커서가 내용을 가리지 않으면서 행동 시작을 알린다.",
+"params": "재현 기본값: 정지 기준 1000 ms, 숨김 250 ms, 등장 150 ms",
+"impl": "자체 커서 이벤트의 휴지 구간에 opacity와 scale을 보간한다.",
+"runtime": "gsap",
+"variants": [
+"페이드 숨김",
+"축소 숨김"
+],
+"core": "",
+"sources": [
+{
+"url": "https://screen.studio/",
+"repo": "Screen Studio",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "guidedhotspotpulse",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R7-104",
+"en": "Guided hotspot pulse",
+"ko": "안내 핫스팟 맥동",
+"aka": [],
+"family": "ui",
+"what": "다음 행동 위치에 점이나 고리가 반복해서 커졌다 작아지고 다음 단계에서 다른 위치로 바뀐다.",
+"why": "어디를 눌러야 하는지 즉시 안다.",
+"params": "재현 기본값: 주기 1200 ms, 반경 8~20 px, opacity 1~0, easeOut",
+"impl": "SVG 안내 고리를 반복 보간하고 자동 단계 이동 시 앵커를 갱신한다.",
+"runtime": "svg",
+"variants": [
+"점 핫스팟",
+"영역 핫스팟",
+"자동 진행 영상"
+],
+"core": "",
+"sources": [
+{
+"url": "https://docs.arcade.software/kb/build/interactive-demo/edit/hotspots-callouts-and-spotlights",
+"repo": "Arcade",
+"license": "unknown"
+},
+{
+"url": "https://docs.supademo.com/customize/hotspot",
+"repo": "Supademo",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "anchoredsteptooltip",
+"family": "ui",
+"core": "annotation-callout",
+"rows": [
+{
+"id": "R7-105",
+"en": "Anchored step tooltip",
+"ko": "앵커 안내 말풍선",
+"aka": [],
+"family": "ui",
+"what": "대상 옆에 번호와 설명이 붙은 말풍선이 나타나고 다음 단계에서는 새 대상 옆으로 바뀐다.",
+"why": "행동의 목적과 순서를 이해한다.",
+"params": "재현 기본값: 등장 250 ms, 유지 2200 ms, 이동 400 ms, easeOut",
+"impl": "자체 대상 사각형에서 말풍선 위치를 계산하고 opacity와 translate를 보간한다.",
+"runtime": "gsap",
+"variants": [
+"번호 포함",
+"다음 단계 표시",
+"커서 시연 동반"
+],
+"core": "annotation-callout",
+"sources": [
+{
+"url": "https://docs.arcade.software/kb/build/interactive-demo/edit/hotspots-callouts-and-spotlights",
+"repo": "Arcade",
+"license": "unknown"
+},
+{
+"url": "https://docs.supademo.com/customize/hotspot",
+"repo": "Supademo",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "sensitiveregionanimatedblur",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R7-107",
+"en": "Sensitive-region animated blur",
+"ko": "화면 가림 영역 추적",
+"aka": [],
+"family": "ui",
+"what": "특정 필드 위의 흐림 또는 가림 영역이 화면 이동에 맞춰 따라간다.",
+"why": "시연에서 공개되지 않는 부분을 유지하며 주변 맥락을 읽는다.",
+"params": "재현 기본값: 추적 지연 0 ms, blur 12 px, 가림 opacity 1",
+"impl": "자체 가림 영역을 화면 변환과 같은 부모 좌표계에 둔다.",
+"runtime": "css",
+"variants": [
+"블러",
+"단색 가림",
+"이동 필드 추적"
+],
+"core": "",
+"sources": [
+{
+"url": "https://supademo.com/features/demo-editor",
+"repo": "Supademo",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "uiscrollwithfocusretention",
+"family": "ui",
+"core": "ui-scroll",
+"rows": [
+{
+"id": "R7-110",
+"en": "UI scroll with focus retention",
+"ko": "관심 영역을 유지한 UI 스크롤",
+"aka": [],
+"family": "ui",
+"what": "화면 내용이 위아래로 이동한 뒤 설명할 필드가 안전 영역에 들어오면 멈춘다.",
+"why": "긴 화면의 탐색 경로와 목적지를 이해한다.",
+"params": "재현 기본값: 스크롤 900 ms, 이동 600 px, 끝 휴지 1000 ms, easeInOut",
+"impl": "자체 UI 콘텐츠 그룹의 y를 보간하고 목표 요소 기준으로 끝 위치를 계산한다.",
+"runtime": "gsap",
+"variants": [
+"긴 페이지",
+"목록 탐색",
+"단계 간 복귀"
+],
+"core": "ui-scroll",
+"sources": [
+{
+"url": "https://screen.studio/",
+"repo": "Screen Studio",
+"license": "unknown"
+},
+{
+"url": "https://codehike.org/docs/layouts/scrollycoding",
+"repo": "code-hike/codehike",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "scrollscrubbedimagesequence",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "R8-119",
+"en": "Scroll Scrubbed Image Sequence",
+"ko": "스크롤 영상 프레임 스크럽",
+"aka": [
+"Frame-by-frame scrollytelling"
+],
+"family": "ui",
+"what": "스크롤할수록 제품이나 장면의 영상이 한 프레임씩 앞으로 진행하고 역스크롤 때 되감긴다.",
+"why": "진행을 직접 탐색하면서 구조 변화를 이해하게 한다.",
+"params": "재현 제안 기본값: 영상 4000ms, 프레임 120개, 스크롤 2400px, 진행률 0~1, linear",
+"impl": "canvas에서 진행률에 대응하는 프레임 인덱스를 정하고 같은 규칙을 영상 시간에 적용한다.",
+"runtime": "canvas",
+"variants": [
+"제품 회전 스크럽",
+"분해도 스크럽",
+"이미지 시퀀스"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/danhnm1203/scrollytelling",
+"repo": "danhnm1203/scrollytelling",
+"license": "MIT"
+},
+{
+"url": "https://github.com/basementstudio/scrollytelling",
+"repo": "basementstudio/scrollytelling",
+"license": "MIT"
+},
+{
+"url": "https://github.com/vaitko/awesome-immersive-storytelling",
+"repo": "vaitko/awesome-immersive-storytelling",
+"license": "CC0-1.0"
+}
+]
+}
+]
+},
+{
+"key": "cursormovement",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "DICT-162",
+"en": "Cursor movement",
+"ko": "커서 이동",
+"aka": [],
+"family": "ui",
+"what": "포인터가 조작할 목표까지 이동하는 시연 동작이다.",
+"why": "",
+"params": "이동 350~600ms, 목표 도착 후 120~200ms 쉼; S, 목표 중앙 또는 실제 클릭 지점, 커서 주변 여백 ≥16px.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 3-type-data-ui.md#21. 커서 이동 · Cursor movement",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "clickripple",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "DICT-163",
+"en": "Click ripple",
+"ko": "클릭 리플",
+"aka": [],
+"family": "ui",
+"what": "클릭 위치에서 짧게 퍼지는 원형 피드백이다.",
+"why": "",
+"params": "250~400ms, 후속 UI 반응 0~150ms 뒤; PE, 원 반경 12→28px, 최대 opacity 0.25.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 3-type-data-ui.md#22. 클릭 리플 · Click ripple",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "typinginputsimulation",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "DICT-164",
+"en": "Typing input simulation",
+"ko": "타이핑 입력",
+"aka": [],
+"family": "ui",
+"what": "입력창에 키 입력, 쉼, 붙여 넣기 상태를 재현한다.",
+"why": "",
+"params": "60~120ms/완성 글자, 구간 쉼 250~400ms, 핵심 입력 전체 2000~4000ms; Q, 캐럿 주기 800~1000ms.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 3-type-data-ui.md#23. 타이핑 입력 · Typing input simulation",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "answerstreaming",
+"family": "ui",
+"core": "answer-stream",
+"rows": [
+{
+"id": "DICT-165",
+"en": "Answer streaming",
+"ko": "답 스트리밍",
+"aka": [],
+"family": "ui",
+"what": "응답 문장이 여러 청크로 점진적으로 표시되는 연출이다.",
+"why": "",
+"params": "청크 간 50~140ms, 문단 쉼 200~400ms, 핵심 답 2000~5000ms; Q, 줄 간격 1.45~1.6.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "answer-stream",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 3-type-data-ui.md#24. 답 스트리밍 · Answer streaming",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "uiscrolldemonstration",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "DICT-166",
+"en": "UI scroll demonstration",
+"ko": "화면 스크롤",
+"aka": [],
+"family": "ui",
+"what": "콘텐츠 뷰포트 안에서 문서가 이동하는 시연이다.",
+"why": "",
+"params": "500~900ms, 도착 후 홀드 ≥1600ms; S, 이동 0.5~1화면 높이, 상하 안전 여백 48~72px.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 3-type-data-ui.md#25. 화면 스크롤 · UI scroll demonstration",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "magnifiedcalloutuifocuszoom",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "DICT-167",
+"en": "Magnified callout / UI focus zoom",
+"ko": "확대 콜아웃",
+"aka": [],
+"family": "ui",
+"what": "특정 UI 영역을 확대하고 바깥 맥락을 낮추는 연출이다.",
+"why": "",
+"params": "450~650ms 확대, 홀드 1800~2500ms, 복귀 400ms; S, scale 1.4~2.2, 목표·자막 간격 ≥48px.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 3-type-data-ui.md#26. 확대 콜아웃 · Magnified callout / UI focus zoom",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "focusselectionfeedback",
+"family": "ui",
+"core": "",
+"rows": [
+{
+"id": "DICT-168",
+"en": "Focus / Selection / Feedback",
+"ko": "포커스·선택·피드백",
+"aka": [],
+"family": "ui",
+"what": "행동할 대상과 선택 결과를 시각 상태로 구분한다.",
+"why": "",
+"params": "포커스 100~150ms, 선택 150~200ms, 완료 200~300ms; PE/P, 테두리 2~3px, 상태 간격 ≥150ms.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 3-type-data-ui.md#27. 포커스·선택·피드백 · Focus / Selection / Feedback",
+"license": "own"
+}
+]
+}
+]
+}
+]

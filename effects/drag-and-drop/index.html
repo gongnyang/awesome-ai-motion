@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=1280"><title>드래그 앤 드롭 · Drag and Drop</title><link rel="stylesheet" href="../../lib/stage.css"><style>
+.kicker{position:absolute;left:48px;top:30px}.headline{position:absolute;left:48px;top:58px;font-size:42px}.hint{position:absolute;left:48px;bottom:22px;font-size:16px;color:var(--ink2)}
+.paper{background:#FBF8F2;border:1px solid var(--rule)}.row{border-bottom:1px solid var(--rule);padding:22px 26px;font-size:24px}.badge{font-family:var(--mono);font-size:14px;color:var(--ink2)}
+.pointer{position:absolute;width:28px;height:35px;z-index:12}.button{display:inline-block;background:var(--ink);color:var(--paper);padding:14px 28px;font-size:20px}
+
+.column{position:absolute;top:152px;width:435px;height:330px;border-top:2px solid var(--ink);padding:20px}.from{left:80px}.to{left:650px}.slot{position:absolute;left:20px;top:96px;width:395px;height:120px;border:1px dashed var(--ink3)}.card{position:absolute;left:100px;top:248px;width:395px;height:120px;padding:25px;font-size:28px}.original{opacity:.18}.moving{z-index:5}.pointer{left:360px;top:340px}.status{position:absolute;left:670px;top:397px;font-size:22px;opacity:0}
+</style></head>
+<body data-no="332" data-cat="UI 시연 · UI DEMO" data-ko="드래그 앤 드롭" data-en="Drag and Drop" data-meta="들기 1.05배 · 이동 570px · 놓기" data-dur="4" data-poster="3.7">
+<main class="scene"><div class="kicker lab">03 / 정리</div><div class="headline t-l">집어서 옮기다</div><div class="hint">원본의 자리를 남기고 새 위치에 정착한다</div><div class="column from"><span class="lab">준비 중</span><div class="slot"></div></div><div class="column to"><span class="lab">완료</span><div class="slot target"></div></div><div class="card paper original">다음 말을 고른다<br><span class="badge">설명 원고</span></div><div class="card paper moving">다음 말을 고른다<br><span class="badge">설명 원고</span></div><div class="status">정리가 완료되었습니다</div><svg class="pointer" viewBox="0 0 28 35"><path d="M2 2L3 28L10 21L16 33L21 30L15 19L25 18Z" fill="var(--ink)" stroke="var(--paper)" stroke-width="2"/></svg></main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+tl.set('.original',{opacity:.18},0);
+tl.set('.status',{opacity:0},0);
+tl.set('.pointer',{opacity:1},0);
+
+
+tl.to('.pointer',{y:-20,duration:.4},.2);
+tl.to('.moving',{scale:1.05,opacity:.65,duration:.16},.7);
+tl.to(['.moving','.pointer'],{x:570,duration:1,ease:'power2.inOut'},.9);
+tl.to('.target',{borderColor:'var(--verm)',duration:.2},1.2);
+tl.to('.moving',{scale:1,opacity:1,duration:.25},1.9);
+tl.to('.original',{opacity:0,duration:.2},2.05);
+tl.to('.target',{borderColor:'var(--rule)',duration:.2},2.2);
+tl.to('.status',{opacity:1,duration:.3},2.2);
+tl.to('.pointer',{x:620,y:55,opacity:0,duration:.45},2.4);
+
+Motion.ready();
+</script></body></html>

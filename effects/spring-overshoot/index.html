@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>스프링 오버슛 · Spring &amp; Overshoot</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.label{position:absolute;left:100px;top:66px}.target{position:absolute;left:120px;top:198px;width:310px;height:218px;border:1px dashed var(--rule)}
+.block{position:absolute;left:120px;top:198px;width:310px;height:218px;background:var(--ink);transform:scale(0)}
+.readout{position:absolute;left:120px;top:454px;font-size:46px}.readout small{font-family:var(--mono);font-size:12px;margin-right:18px;color:var(--ink2)}
+.chart{position:absolute;left:520px;top:96px;width:580px;height:420px;overflow:visible}
+.axis{stroke:var(--rule);stroke-width:1;fill:none}.target-line{stroke:var(--ink3);stroke-width:1;stroke-dasharray:4 5}
+.curve{fill:none;stroke:var(--ink);stroke-width:3;stroke-dasharray:1;stroke-dashoffset:1}.over{stroke:var(--verm);stroke-width:4}
+.chart text{font-family:var(--mono);font-size:12px;fill:var(--ink2)}.pointer{fill:var(--ink)}
+.lead{left:790px;top:118px;opacity:0}
+</style></head>
+<body data-no="004" data-cat="기본기 · PRINCIPLES" data-ko="스프링 오버슛" data-en="Spring &amp; Overshoot" data-meta="back.out(1.5) · 최대 1.08" data-dur="3">
+<main class="scene"><div class="label lab">SCALE · 목표 1.00</div><div class="target"></div><div class="block" id="card"></div>
+<div class="readout num"><small>SCALE</small><span id="value">0.00</span></div>
+<svg class="chart" viewBox="0 0 580 420"><defs><clipPath id="above"><rect x="40" y="0" width="480" height="78"/></clipPath></defs>
+<path class="axis" d="M40 35 V338 H535"/><path class="target-line" d="M40 78 H520"/>
+<text x="0" y="82">1.00</text><text x="12" y="340">0</text><text x="40" y="368">0.0s</text><text x="476" y="368">1.4s</text>
+<text x="40" y="402">TIME →</text>
+<path id="curve" class="curve" pathLength="1"/><path id="over" class="curve over" pathLength="1" clip-path="url(#above)"/>
+<circle id="pointer" class="pointer" cx="40" cy="338" r="5"/></svg>
+<div class="lead" id="note"><i></i><s></s><span>최대 1.08</span></div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+const state={t:0}, N=280, samples=[], lengths=[0];
+const spring=t=>1+2.5*Math.pow(t-1,3)+1.5*Math.pow(t-1,2);
+for(let i=0;i<=N;i++){
+  const t=i/N,p={x:40+480*t,y:338-260*spring(t)};samples.push(p);
+  if(i) lengths.push(lengths[i-1]+Math.hypot(p.x-samples[i-1].x,p.y-samples[i-1].y));
+}
+const d=samples.map((p,i)=>(i?'L':'M')+p.x.toFixed(3)+' '+p.y.toFixed(3)).join(' ');
+document.querySelectorAll('.curve').forEach(p=>p.setAttribute('d',d));
+function update(){
+  const t=state.t,v=spring(t),idx=Math.min(N-1,Math.floor(t*N)),f=t*N-idx;
+  const length=lengths[idx]+(lengths[idx+1]-lengths[idx])*f;
+  gsap.set('#card',{scale:v});document.querySelectorAll('.curve').forEach(p=>p.style.strokeDashoffset=1-length/lengths[N]);
+  gsap.set('#pointer',{x:480*t,y:-260*v});document.querySelector('#value').textContent=v.toFixed(2);
+}
+tl.to(state,{t:1,duration:1.4,ease:'none',onUpdate:update},0.3);
+tl.to('#note',{opacity:1,duration:0.2},1.85);
+Motion.ready();
+</script></body></html>

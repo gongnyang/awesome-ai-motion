@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>스크롤 스크럽 시네마 · Scroll-scrub Cinema Scene</title>
+<meta name="viewport" content="width=1280">
+<link rel="stylesheet" href="../../lib/stage.css">
+<style>
+#world{position:absolute;left:0;top:0;width:1180px;height:580px;transform-origin:590px 290px}
+#bg{position:absolute;left:230px;top:40px;font-size:470px;color:var(--ink3);opacity:.2;white-space:nowrap}
+#s1lab{position:absolute;left:80px;top:40px}
+.title{position:absolute;left:80px;top:72px}
+.win{position:relative;height:98px;overflow:hidden}
+.win .line{display:block;line-height:98px;white-space:nowrap}
+#dia{position:absolute;left:0;top:0;width:1180px;height:580px}
+#dia .nd{position:absolute}
+#nIn{left:118px;top:374px;width:72px;height:72px;border-radius:50%;background:var(--ink)}
+#nMo{left:420px;top:362px;width:170px;height:96px;background:var(--ink)}
+#nOut{left:820px;top:374px;width:72px;height:72px;border-radius:50%;border:2px solid var(--ink)}
+#dia .nl{position:absolute;top:470px;transform:translateX(-50%)}
+#dia svg{position:absolute;left:0;top:0;overflow:visible}
+#dia svg path{fill:none;stroke:var(--ink);stroke-width:2}
+#next{position:absolute;left:80px;top:215px}
+#next .t-body{margin-top:18px;color:var(--ink2);width:640px}
+/* 스크롤 레일 */
+#rail{position:absolute;left:1206px;top:40px;width:1px;height:500px;background:var(--rule)}
+#fill{position:absolute;left:-1px;top:0;width:3px;height:500px;background:var(--ink);transform-origin:50% 0;transform:scaleY(0)}
+#thumb{position:absolute;left:-8px;top:-8px;width:17px;height:17px;border-radius:50%;background:var(--verm)}
+#read{position:absolute;left:16px;top:-8px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink);line-height:17px}
+.tick{position:absolute;left:-7px;width:15px;height:1px;background:var(--ink)}
+.tv{position:absolute;right:16px;font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--ink3);transform:translateY(-50%)}
+.beat{position:absolute;right:16px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--ink3);transform:translateY(-50%)}
+</style></head>
+<body data-no="238" data-cat="가상 카메라 · CAMERA" data-ko="스크롤 스크럽 시네마" data-en="Scroll-scrub Cinema Scene" data-meta="진행률 p 한 값 → 층 4개 · 박자 0.30 / 0.75" data-dur="5" data-poster="4.7">
+<main class="scene bleed">
+<div id="world">
+  <div id="bg" class="num">939</div>
+  <div class="lab" id="s1lab">SCENE 01 · 고정 장면</div>
+  <div class="title">
+    <div class="win"><span class="line t-xl" id="l1">AI는</span></div>
+    <div class="win"><span class="line t-xl" id="l2">다음 말을 고른다</span></div>
+  </div>
+  <div id="dia">
+    <svg width="1180" height="580">
+      <path id="e1" d="M198 410 H404 M392 400 L404 410 L392 420" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1"/>
+      <path id="e2" d="M598 410 H804 M792 400 L804 410 L792 420" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1"/>
+    </svg>
+    <div class="nd" id="nIn"></div>
+    <div class="nd" id="nMo"></div>
+    <div class="nd" id="nOut"></div>
+    <div class="lab nl" id="tIn" style="left:154px">입력</div>
+    <div class="lab nl" id="tMo" style="left:505px">모델</div>
+    <div class="lab nl" id="tOut" style="left:856px">출력</div>
+  </div>
+  <div id="next">
+    <div class="lab">SCENE 02</div>
+    <div class="t-l" style="margin-top:12px">다음 말은 어떻게 고르나요?</div>
+    <div class="t-body">AI는 앞의 말을 읽고, 올 수 있는 말마다 확률을 매긴 뒤 하나를 고릅니다.</div>
+  </div>
+</div>
+<div id="rail">
+  <div class="beat" id="bEnter" style="top:75px">enter</div>
+  <div class="tick" style="top:150px"></div><div class="tv" style="top:150px">0.30</div>
+  <div class="beat" id="bHold" style="top:262px">hold</div>
+  <div class="tick" style="top:375px"></div><div class="tv" style="top:375px">0.75</div>
+  <div class="beat" id="bExit" style="top:437px">exit</div>
+  <div id="fill"></div>
+  <div id="knob" style="position:absolute;left:0;top:0"><div id="thumb"></div><div id="read">0.00</div></div>
+</div>
+</main>
+<script src="../../lib/gsap.min.js"></script>
+<script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+const $ = id => document.getElementById(id);
+const clamp = v => Math.max(0, Math.min(1, v));
+const seg = (p, a, b) => clamp((p - a) / (b - a));
+const out3 = gsap.parseEase('power3.out'), io2 = gsap.parseEase('power2.inOut');
+// 흩어진 조립 시작점: 시드 고정 난수
+const R = Motion.rand(939);
+const scatter = ['nIn', 'nMo', 'nOut'].map(() => ({ x: (R() - 0.5) * 360, y: 160 + R() * 120, r: (R() - 0.5) * 24 }));
+const T1 = 0.30, T2 = 0.75;
+
+// 모든 층은 진행률 p 하나만 읽는다 (같은 p면 같은 그림)
+function draw(p) {
+  // 월드: 홀드 동안 5% 밀고 들어갔다가 퇴장에서 풀린다
+  const s = 1 + 0.05 * io2(seg(p, T1, T2)) - 0.05 * io2(seg(p, T2, 1));
+  $('world').style.transform = `scale(${s})`;
+  // 배경 숫자: 스크롤 전 구간 0.35배속 패럴랙스
+  $('bg').style.transform = `translate(${-70 * p}px, ${130 - 170 * p}px)`;
+  // 제목: 입장에서 마스크로 올라오고, 퇴장에서 위로 빠진다
+  [['l1', 0.02, 0.20, 0.76, 0.86], ['l2', 0.08, 0.27, 0.79, 0.90]].forEach(([id, a, b, c, d]) => {
+    const y = 110 * (1 - out3(seg(p, a, b))) - 110 * io2(seg(p, c, d));
+    $(id).style.transform = `translateY(${y}%)`;
+  });
+  $('s1lab').style.opacity = 1 - seg(p, 0.76, 0.84);
+  // 도해: 흩어진 부품이 제자리로 모이고, 화살표가 그려진다. 퇴장은 층마다 다른 속도로 위로
+  const exitY = -520 * seg(p, T2 + 0.03, 1);
+  [['nIn', 'tIn', 0.10, 0.40, 1.00], ['nMo', 'tMo', 0.16, 0.48, 1.12], ['nOut', 'tOut', 0.22, 0.56, 1.24]].forEach(([n, t, a, b, sp], i) => {
+    const k = out3(seg(p, a, b)), sc = scatter[i];
+    const x = sc.x * (1 - k), y = sc.y * (1 - k) + exitY * sp, r = sc.r * (1 - k);
+    $(n).style.transform = `translate(${x}px, ${y}px) rotate(${r}deg) scale(${0.6 + 0.4 * k})`;
+    $(n).style.opacity = seg(p, a, a + 0.08);
+    $(t).style.transform = `translate(calc(-50% + ${x}px), ${y}px)`;
+    $(t).style.opacity = seg(p, b - 0.06, b);
+  });
+  $('e1').style.strokeDashoffset = 1 - io2(seg(p, 0.44, 0.60));
+  $('e2').style.strokeDashoffset = 1 - io2(seg(p, 0.54, 0.70));
+  $('e1').style.transform = $('e2').style.transform = `translateY(${exitY * 1.06}px)`;
+  // 다음 장면: 아래에서 스크롤 속도 그대로 올라온다
+  const q = seg(p, 0.80, 1);
+  $('next').style.transform = `translateY(${380 * (1 - q)}px)`;
+  $('next').style.opacity = seg(p, 0.80, 0.9);
+  // 레일
+  $('fill').style.transform = `scaleY(${p})`;
+  $('knob').style.transform = `translateY(${500 * p}px)`;
+  $('read').textContent = p.toFixed(2);
+  const beat = p < T1 ? 'bEnter' : p < T2 ? 'bHold' : 'bExit';
+  ['bEnter', 'bHold', 'bExit'].forEach(b => $(b).style.color = b === beat ? 'var(--ink)' : 'var(--ink3)');
+}
+
+// 사람 손 스크롤 곡선: 휠 두 번 → 0.30 앞에서 멈칫 → 길게 굴림 → 0.75 앞에서 멈칫 → 끝까지
+const S = { p: 0 };
+const upd = () => draw(S.p);
+let at = 0.35;
+[
+  [0.00, 0.17, 0.50, 'power2.out'],
+  [0.17, 0.29, 0.45, 'power2.inOut'],
+  [0.29, 0.30, 0.45, 'sine.inOut'],    // 멈칫 1
+  [0.30, 0.735, 1.10, 'power2.inOut'],
+  [0.735, 0.75, 0.45, 'sine.inOut'],   // 멈칫 2
+  [0.75, 1.00, 1.00, 'power3.inOut'],
+].forEach(([a, b, d, ease]) => { tl.fromTo(S, { p: a }, { p: b, duration: d, ease, immediateRender: false, onUpdate: upd }, at); at += d; });
+draw(0);
+Motion.ready();
+</script></body></html>

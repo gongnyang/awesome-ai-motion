@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>하단 자막 바 · Lower Third Reveal</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>.topic{position:absolute;left:110px;top:80px}.topic .lab{margin-bottom:25px}.topic .t-l{font-size:60px}.lt{position:absolute;left:110px;bottom:72px;width:625px;height:136px}.band{position:absolute;inset:0;background:var(--paper2);border-top:2px solid var(--ink);transform-origin:left center}.accent{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--verm)}.name{position:absolute;left:28px;top:22px;font-size:35px;font-family:var(--serif);font-weight:700}.role{position:absolute;left:28px;top:80px;font-size:19px;color:var(--ink2)}.dot{position:absolute;right:120px;top:190px;width:92px;height:92px}</style></head>
+<body data-no="632" data-cat="자막·하단 자막 · CAPTIONS" data-ko="하단 자막 바" data-en="Lower Third Reveal" data-meta="이름과 소속 · 띠 0.35초 · 유지 후 퇴장" data-dur="5" data-poster="2.7">
+<main class="scene"><div class="topic"><div class="lab">AI 원리 이야기</div><div class="t-l">다음 말을 고르는 방식</div></div><div class="dot"></div><div class="lt"><div class="band"><div class="accent"></div></div><div class="name">김민지</div><div class="role">AI 교육 연구원</div></div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>const tl = Motion.timeline();
+tl.set('.lt',{x:0,opacity:1},0);
+tl.fromTo('.band',{scaleX:0},{scaleX:1,duration:.35,ease:'power3.out'},.3);
+tl.fromTo('.name',{x:-24,opacity:0},{x:0,opacity:1,duration:.3},.4);
+tl.fromTo('.role',{x:-24,opacity:0},{x:0,opacity:1,duration:.3},.58);
+tl.to('.lt',{opacity:0,x:-40,duration:.25,ease:'power2.in'},4.35);
+Motion.ready();</script></body></html>

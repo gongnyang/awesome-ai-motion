@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>팬 · Pan</title>
+<meta name="viewport" content="width=1280">
+<link rel="stylesheet" href="../../lib/stage.css">
+<style>#strip{position:absolute;left:0;top:165px;width:2100px;height:270px}.track{position:absolute;left:240px;top:118px;width:1610px;height:2px;background:var(--ink)}.station{position:absolute;top:0;width:290px;height:260px}.station .num{font-size:150px;position:absolute;left:0;top:15px}.station .t-m{position:absolute;left:110px;top:75px}.station .lab{position:absolute;left:0;top:205px}#s3 .num,#s3 .t-m{color:var(--ink)}.arrow{position:absolute;top:80px;font-size:55px;color:var(--ink3)}.lead{opacity:0}</style></head>
+<body data-no="219" data-cat="가상 카메라 · CAMERA" data-ko="팬" data-en="Pan" data-meta="power1.inOut · 가로 1100px · 3에서 정지" data-dur="3">
+<main class="scene"><div class="lab" style="position:absolute;left:70px;top:60px">입력 → 모델 → 출력</div><div id="strip"><div class="track" style="left:540px;width:260px"></div><div class="track" style="left:1090px;width:260px"></div><div class="station" style="left:250px"><div class="num">1</div><div class="t-m">입력</div><div class="lab">다음 말은 어떻게 고르나요?</div></div><span class="arrow" style="left:640px">→</span><div class="station" style="left:800px"><div class="num">2</div><div class="t-m">계산</div><div class="lab">모델 · 후보마다 확률</div></div><span class="arrow" style="left:1190px">→</span><div class="station" id="s3" style="left:1350px"><div class="num">3</div><div class="t-m">출력</div><div class="lab">고른다 62%</div></div></div><div id="note" class="lead" style="left:605px;top:440px"><i></i><s></s><span>3 · 정지</span></div></main>
+<script src="../../lib/gsap.min.js"></script>
+<script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+tl.to('#strip', {x: -1100, duration: 2.0, ease: 'power1.inOut'}, .3);
+tl.to('#s3 .num, #s3 .t-m', {color: 'var(--verm)', duration: .15}, 2.3);
+tl.to('#note', {opacity: 1, duration: .15}, 2.3);
+Motion.ready();
+</script></body></html>

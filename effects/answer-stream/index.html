@@ -1,0 +1,10 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=1280"><title>답 스트리밍</title><link rel="stylesheet" href="../../lib/stage.css"><style>
+.label{position:absolute;left:110px;top:86px}.question{position:absolute;left:110px;top:124px;color:var(--ink2);font-size:24px}.rule{position:absolute;left:110px;top:189px;width:930px}.answer{position:absolute;left:110px;top:236px;width:925px;font-size:38px;line-height:1.8;font-family:var(--serif);font-weight:700}.token{display:none;opacity:0}.block{display:inline-block;width:15px;height:34px;background:var(--verm);margin-left:8px;vertical-align:-4px}.lead{left:110px;top:477px;opacity:0}
+</style></head><body data-no="314" data-cat="UI 시연 · UI DEMO" data-ko="답 스트리밍" data-en="Answer Streaming" data-meta="토큰 묶음 0.18s · 농도 정착 0.26s" data-dur="3"><main class="scene"><div class="label lab">입력 → 모델 → 출력</div><div class="question">다음 말은 어떻게 고르나요?</div><div class="rule hair"></div><div class="answer"><span id="tokens"></span><span class="block"></span></div><div class="lead"><i></i><s></s><span>10개 묶음 · 순차 출력</span></div></main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+const chunks=['AI는 ','앞의 말을 ','읽고, ','올 수 있는 ','말마다 ','확률을 ','매긴 뒤 ','하나를 ','고릅','니다.'];
+document.querySelector('#tokens').innerHTML=chunks.map(s=>`<span class="token">${s}</span>`).join('');
+document.querySelectorAll('.token').forEach((el,i)=>{const at=.3+i*.18;tl.set(el,{display:'inline',opacity:.22},at);tl.to(el,{opacity:1,duration:.26,ease:'none'},at);});
+tl.to('.lead',{opacity:1,duration:.2},2.2);
+Motion.ready();
+</script></body></html>

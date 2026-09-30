@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>페이드 슬라이드 · Fade Slide</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>.hint{position:absolute;left:80px;bottom:40px;font-size:15px;color:var(--ink2)}.heading{position:absolute;left:80px;top:50px;font-size:18px;color:var(--ink2)}.hero{position:absolute;left:80px;top:125px;width:1008px;height:300px}.hero .t-xl{position:absolute;left:0;top:40px}.hero .num{position:absolute;right:0;top:25px;font-size:240px}.hero .dot{position:absolute;left:515px;top:142px}.hero .hair{position:absolute;left:0;right:0;bottom:0}.hero .lab{position:absolute;left:0;bottom:20px}
+</style></head>
+<body data-no="038" data-cat="등장·퇴장 · ENTRANCE &amp; EXIT" data-ko="페이드 슬라이드" data-en="Fade Slide" data-meta="y 24px → 0 · 0.5s" data-dur="3.5" data-poster="3.2">
+<main class="scene"><span class="heading">가볍게 떠오르는 정보</span><div class="hero target"><div class="t-xl">다음 말을<br>고른다</div><div class="num">62%</div><div class="dot v"></div><div class="hair"></div><span class="lab">입력 → 모델 → 출력</span></div><span class="hint">24px 이동 · 제목과 수치가 함께 도착</span></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+tl.fromTo('.target', {y:24, opacity:0}, {y:0, opacity:1, duration:.5, ease:'power2.out'}, .4);
+Motion.ready();
+</script></body></html>

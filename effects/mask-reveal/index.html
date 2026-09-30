@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>마스크 리빌 · Mask Reveal</title>
+<meta name="viewport" content="width=1280">
+<link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.title{position:absolute;left:120px;top:156px;right:100px}
+.window{position:relative;height:116px;overflow:hidden}
+.window+.window{margin-top:12px}
+.line{display:block;line-height:116px;white-space:nowrap}
+.lead{left:120px;top:442px;opacity:0}
+</style></head>
+<body data-no="091" data-cat="타이포 · TYPOGRAPHY" data-ko="마스크 리빌" data-en="Mask Reveal" data-meta="y 110% → 0 · 줄 간격 0.35s" data-dur="3">
+<main class="scene">
+<div class="title"><div class="window"><span class="line t-xl">AI는</span></div><div class="window"><span class="line t-xl">다음 말을 고른다</span></div></div>
+<div class="lead"><i></i><s></s><span>아래에서 위로 · 110%</span></div>
+</main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+tl.fromTo('.line', {yPercent:110}, {yPercent:0, duration:1.05, stagger:0.35, ease:'power3.out'}, 0.3);
+tl.to('.lead', {opacity:1, duration:0.25}, 1.8);
+Motion.ready();
+</script></body></html>

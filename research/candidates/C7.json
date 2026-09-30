@@ -1,0 +1,2199 @@
+[
+  {
+    "slug": "card-flip",
+    "family": "depth",
+    "ko": "카드 플립",
+    "en": "Card Flip",
+    "aka": [
+      "Card flip",
+      "카드 뒤집기",
+      "3D card flip",
+      "3D 카드 뒤집기",
+      "Rotate and Flip",
+      "회전과 뒤집기",
+      "3D Layer Flip",
+      "3D 레이어 플립"
+    ],
+    "what": "카드나 평면 이미지가 가로 또는 세로축으로 180도 돌아 앞면에서 뒷면으로 바뀐다.",
+    "why": "같은 대상의 다른 면이나 상태를 보여준다.",
+    "params": "권장 기본값: 800ms, 회전 180도, perspective 900px, ease-in-out",
+    "impl": "CSS 양면 레이어의 backface-visibility를 숨기고 부모의 rotateX 또는 rotateY를 보간한다.",
+    "runtime": "css",
+    "variants": [
+      "가로축 뒤집기",
+      "세로축 뒤집기",
+      "이동하며 뒤집기"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/transitions-3d/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "pmndrs/react-spring",
+        "url": "https://www.react-spring.dev/examples",
+        "license": "MIT"
+      },
+      {
+        "title": "animate-css/animate.css",
+        "url": "https://github.com/animate-css/animate.css",
+        "license": "Hippocratic-2.1"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/work-with-layers/3d-layers/3d-layers.html",
+        "license": "unknown"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/transitions/css-3d.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-024",
+      "R2-104",
+      "R3-042",
+      "R5-083"
+    ]
+  },
+  {
+    "slug": "depth-assemble",
+    "family": "depth",
+    "ko": "3D 조립",
+    "en": "Depth Assemble",
+    "aka": [
+      "Depth scatter assemble",
+      "깊이 산개 조립",
+      "Depth Scatter Assemble",
+      "깊이 분산 조립",
+      "깊이 구름 조립",
+      "depth-scatter-assemble"
+    ],
+    "what": "여러 요소가 입체 공간에 흩어져 회전하다 평면의 정확한 자리로 모인다.",
+    "why": "혼란에서 정리 또는 구성의 탄생을 보여준다.",
+    "params": "권장 기본값: 1500ms, 깊이 ±300px, 회전 ±70도, 요소 간격 50ms",
+    "impl": "요소별 시드 3D 시작 좌표를 최종 평면 좌표로 보간한다.",
+    "runtime": "css",
+    "variants": [
+      "카드 배열 조립",
+      "문자 조각 조립",
+      "역방향 산개"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/char-slam-explode/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://github.com/heygen-com/hyperframes/blob/HEAD/skills/hyperframes-animation/rules/depth-scatter-assemble.md",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/hyperframes-animation",
+        "url": "claude-skill:hyperframes-animation/rules/depth-scatter-assemble.md",
+        "license": "unknown"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/glass-shard-title/registry-item.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-055",
+      "R8-095",
+      "R1b-103"
+    ]
+  },
+  {
+    "slug": "text-extrusion",
+    "family": "depth",
+    "ko": "텍스트 익스트루전",
+    "en": "Text Extrusion",
+    "aka": [
+      "Text extrusion layers",
+      "글자 깊이 적층",
+      "겹층 입체 글자",
+      "3d-text-depth-layers",
+      "3D Text Extrusion",
+      "텍스트 돌출 회전",
+      "Stacked Text Extrusion",
+      "겹친 글자 돌출",
+      "Layered text depth"
+    ],
+    "what": "글자의 뒤층이 깊이 방향으로 벌어지고 회전해 앞면과 두꺼운 옆면을 보여준다.",
+    "why": "큰 제목의 질량과 물리적 존재감을 높인다.",
+    "params": "권장 기본값: 1200ms, 8층, 층간 2px, rotateY 18도",
+    "impl": "같은 글자를 CSS 3D 레이어로 복제하고 translateZ 간격과 그룹 회전을 보간한다.",
+    "runtime": "css",
+    "variants": [
+      "복제층 적층",
+      "입체 메시 돌출",
+      "깊이 펼치기"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/code-3d-extrude/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/hyperframes-animation",
+        "url": "claude-skill:hyperframes-animation/rules/3d-text-depth-layers.md",
+        "license": "unknown"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/work-with-layers/3d-layers/3d-layers.html",
+        "license": "unknown"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://github.com/heygen-com/hyperframes/blob/HEAD/skills/hyperframes-animation/rules/3d-text-depth-layers.md",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgl_geometry_text",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1a-058",
+      "R1b-114",
+      "R5-087",
+      "R8-124"
+    ]
+  },
+  {
+    "slug": "collision-displacement",
+    "family": "shape",
+    "ko": "충돌 밀어내기",
+    "en": "Collision Displacement",
+    "aka": [
+      "Collision displacement",
+      "충돌 밀림",
+      "Collision Displace",
+      "reactive-displacement"
+    ],
+    "what": "들어오는 요소가 기존 요소에 닿아 그 요소를 같은 힘으로 밀어낸다.",
+    "why": "두 움직임이 물리적 원인과 결과로 읽힌다.",
+    "params": "권장 기본값: 900ms, 접촉 시점 40%, 반응 이동 80px, back.out(1.5)",
+    "impl": "하나의 스프링 변위에서 접촉 후 상대 요소의 변위를 파생한다.",
+    "runtime": "gsap",
+    "variants": [
+      "티커 탈취",
+      "카드 충돌",
+      "텍스트 밀기",
+      "ticker-takeover"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/rules/reactive-displacement.md",
+        "license": "unknown"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/blueprints/ticker-takeover.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-116",
+      "R1b-110"
+    ]
+  },
+  {
+    "slug": "magnetic-distortion",
+    "family": "shape",
+    "ko": "마그네틱 왜곡",
+    "en": "Magnetic Distortion",
+    "aka": [
+      "Magnetic distortion",
+      "자석 왜곡"
+    ],
+    "what": "움직이는 접점으로 화면 픽셀이나 부드러운 덩어리가 끌려갔다가 복구된다.",
+    "why": "주목 지점과 재질의 유연함을 보여준다.",
+    "params": "권장 기본값: 반경 180px, 강도 0.06, 복구 500ms",
+    "impl": "접점 거리의 가우시안 힘으로 UV 또는 형상 좌표를 변형한다.",
+    "runtime": "webgl",
+    "variants": [],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/vfx-magnetic/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/soft-blob-touch/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/adapters/html-in-canvas-patterns.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-131"
+    ]
+  },
+  {
+    "slug": "shatter",
+    "family": "shape",
+    "ko": "파편 분해",
+    "en": "Shatter",
+    "aka": [
+      "Shatter fragments"
+    ],
+    "what": "화면이나 글자가 삼각 파편으로 갈라져 회전하며 흩어진다.",
+    "why": "파괴, 해방, 강한 전환을 보여준다.",
+    "params": "권장 기본값: 1200ms, 파편 120개, 초기 속도 400px/s",
+    "impl": "텍스처의 영역을 삼각 메시에 할당하고 각 파편 자세를 시드 기반으로 계산한다.",
+    "runtime": "webgl",
+    "variants": [],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/vfx-shatter/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/frost-sequence-camera-orbit/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/adapters/html-in-canvas-patterns.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-132"
+    ]
+  },
+  {
+    "slug": "portal-reveal",
+    "family": "depth",
+    "ko": "포털 리빌",
+    "en": "Portal Reveal",
+    "aka": [
+      "Portal reveal",
+      "포털 공개"
+    ],
+    "what": "빛나는 구멍이 열리고 대상이 그 경계를 통과해 앞으로 나온다.",
+    "why": "다른 세계나 기능 안으로 들어가는 경험을 만든다.",
+    "params": "권장 기본값: 1200ms, 포털 반경 0~300px, 대상 z -300~0",
+    "impl": "원형 깊이 마스크와 대상 z 이동, 경계 bloom을 같은 시간표로 계산한다.",
+    "runtime": "webgl",
+    "variants": [],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/vfx-portal/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/wireframe-portal-title/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/adapters/html-in-canvas-patterns.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-134"
+    ]
+  },
+  {
+    "slug": "wave-carousel",
+    "family": "depth",
+    "ko": "웨이브 캐러셀",
+    "en": "Wave Carousel",
+    "aka": [
+      "Cuboid wave carousel",
+      "입방체 파동 캐러셀"
+    ],
+    "what": "각진 상자들이 파동의 높낮이를 따라 이동하며 차례로 앞에 선다.",
+    "why": "여러 콘텐츠를 물리적 구조로 순환시킨다.",
+    "params": "권장 기본값: 주기 6000ms, 상자 8개, 진폭 80px, 항목 위상차 45도",
+    "impl": "인덱스 위상으로 상자 위치와 회전을 계산하고 표면 텍스처를 배치한다.",
+    "runtime": "webgl",
+    "variants": [],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/cuboid-carousel/registry-item.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-162"
+    ]
+  },
+  {
+    "slug": "object-turntable",
+    "family": "depth",
+    "ko": "오브젝트 턴테이블",
+    "en": "Object Turntable",
+    "aka": [
+      "Device turntable",
+      "기기 턴테이블",
+      "Orbiting 3D object",
+      "3D 물체 연속 회전",
+      "3D Object Turntable",
+      "입체 물체 회전 시연",
+      "Product hero turntable",
+      "제품 히어로 회전",
+      "Product Turntable",
+      "제품 턴테이블",
+      "Object spin"
+    ],
+    "what": "제품이나 입체 물체가 고정된 중심축을 돌아 앞면, 옆면, 뒷면을 차례로 보여준다.",
+    "why": "물체의 전체 형태와 표면 재질을 이해하게 한다.",
+    "params": "권장 기본값: 6000ms, y축 360도, 카메라 고도 15도, linear",
+    "impl": "WebGL 물체의 중심과 카메라를 고정하고 모델 그룹의 회전각을 시간으로 계산한다.",
+    "runtime": "webgl",
+    "variants": [
+      "단일축 회전",
+      "다축 회전",
+      "정면에서 감속 정지",
+      "화면 텍스처가 붙은 기기"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/vfx-iphone-device/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "motion.dev examples",
+        "url": "https://motion.dev/examples/react-use-animation-frame",
+        "license": "unknown"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      },
+      {
+        "title": "Apple",
+        "url": "https://www.apple.com/apple-events/",
+        "license": "unknown"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgl_geometry_teapot",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1a-164",
+      "R2-106",
+      "R3-198",
+      "R7-112",
+      "R8-088"
+    ]
+  },
+  {
+    "slug": "tile-flip",
+    "family": "depth",
+    "ko": "타일 플립",
+    "en": "Tile Flip",
+    "aka": [
+      "Tiled face flip",
+      "타일 면 뒤집기"
+    ],
+    "what": "글자 표면의 작은 타일들이 파도처럼 뒤집혀 반대 면의 글자를 드러낸다.",
+    "why": "큰 메시지의 변화가 작은 물리적 단위로 진행된다.",
+    "params": "권장 기본값: 1500ms, 격자 12x6, 회전 180도, 타일 간격 25ms",
+    "impl": "타일별 깊이 위상에 따라 앞뒤 면 회전을 계산한다.",
+    "runtime": "css",
+    "variants": [],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/code-slice-hero/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/wordmark-tiles/registry-item.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-174"
+    ]
+  },
+  {
+    "slug": "piece-assembly",
+    "family": "shape",
+    "ko": "조각 조립",
+    "en": "Piece Assembly",
+    "aka": [
+      "Logo part assembly",
+      "로고 조각 조립",
+      "Mosaic Pack",
+      "타일 패킹"
+    ],
+    "what": "떨어져 있던 도형 조각들이 이동하고 회전해 하나의 로고나 빈틈 없는 타일 배열을 완성한다.",
+    "why": "부분들이 모여 전체를 이루는 과정을 보여준다.",
+    "params": "권장 기본값: 1200ms, 조각 간격 60ms, 시작 회전 ±30도, power3.out",
+    "impl": "SVG 조각의 위치와 회전을 미리 정한 최종 배열로 시간차 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "로고 조립",
+      "모자이크 패킹",
+      "역방향 분해"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/logo-outro/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#mosaic-pack",
+        "license": "unknown"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/wordmark-tiles/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitives/mosaic-pack/scene.html",
+        "license": "unknown"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/blueprints/logo-assemble-lockup.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-195",
+      "R1b-144"
+    ]
+  },
+  {
+    "slug": "split-lockup",
+    "family": "shape",
+    "ko": "스플릿 로고 리빌",
+    "en": "Split Logo Reveal",
+    "aka": [
+      "Logo split lockup",
+      "로고 벌림 잠금"
+    ],
+    "what": "하나의 마크가 두 부분으로 벌어져 사이의 문장을 드러낸 뒤 다시 닫힌다.",
+    "why": "하나의 대상과 그 사이에 공개되는 메시지를 연결한다.",
+    "params": "권장 기본값: 벌림 400ms, 이동 ±120px, 메시지 홀드 1000ms, 닫힘 300ms",
+    "impl": "마크 좌우 이동과 내부 단어 공개를 음악 앵커에 맞춰 연결한다.",
+    "runtime": "gsap",
+    "variants": [],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:music-to-video/references/template-catalog.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-196"
+    ]
+  },
+  {
+    "slug": "pivot-relay",
+    "family": "shape",
+    "ko": "피벗 릴레이",
+    "en": "Pivot Relay",
+    "aka": [
+      "Moving Pivot",
+      "이동하는 회전축",
+      "anchor-itself-animated",
+      "회전축 릴레이",
+      "anchor-relay-handoff"
+    ],
+    "what": "요소가 한 모서리를 중심으로 회전하거나 확대하다 다른 모서리로 중심을 옮겨 안착한다.",
+    "why": "힘과 무게 중심이 옮겨가는 움직임을 보여준다.",
+    "params": "권장 기본값: 1000ms, 첫 회전 8도, 다음 회전 -3도, 축 좌상에서 우하",
+    "impl": "중첩 HTML 래퍼의 transform-origin과 회전을 연결하고 축 교체 순간의 화면 위치를 보정한다.",
+    "runtime": "gsap",
+    "variants": [
+      "연속 피벗 이동",
+      "두 축 순차 교대"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/01-anchor-transform.md#anchor-itself-animated",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/01-anchor-transform.md#anchor-relay-handoff",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1b-006",
+      "R1b-011"
+    ]
+  },
+  {
+    "slug": "corner-peel",
+    "family": "shape",
+    "ko": "모서리 말림",
+    "en": "Corner Peel",
+    "aka": [
+      "Skew Peel",
+      "스티커 젖힘",
+      "skew-pivot-peel",
+      "Corner Curl",
+      "종이 모서리 말림"
+    ],
+    "what": "얇은 면의 한 모서리가 비스듬히 말려 들리며 뒷면과 그림자가 드러난다.",
+    "why": "종이나 스티커 같은 얇은 재질을 느낀다.",
+    "params": "권장 기본값: 500ms, 말림 크기 40px, 회전 45도, ease-out",
+    "impl": "SVG 접힌 면과 그림자 경로를 보간하거나 CSS 모서리 가상 요소의 크기와 기울기를 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "스티커 벗기기",
+      "종이 모서리 말림"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/01-anchor-transform.md#skew-pivot-peel",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "IanLunn/Hover",
+        "url": "https://github.com/IanLunn/Hover",
+        "license": "MIT personal/open-source + paid commercial"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      }
+    ],
+    "from": [
+      "R1b-010",
+      "R3-062"
+    ]
+  },
+  {
+    "slug": "atmospheric-depth",
+    "family": "depth",
+    "ko": "대기 원근",
+    "en": "Atmospheric Depth",
+    "aka": [
+      "depth-fog-atmospheric-falloff",
+      "depth-of-field-blur",
+      "Moving Fog Reveal",
+      "이동 안개 공개"
+    ],
+    "what": "먼 대상은 안개 속에서 흐리고 옅게 보이다 가까워지며 선명해진다.",
+    "why": "층의 거리와 공간 깊이를 읽는다.",
+    "params": "권장 기본값: 3000ms, 먼 층 opacity 0.3, blur 3px, 가까운 층 opacity 1",
+    "impl": "깊이별 HTML 레이어의 불투명도와 흐림을 거리 진행값에 연결해 보간한다.",
+    "runtime": "css",
+    "variants": [
+      "먼 레이어 농도 감소",
+      "안개 속 접근 리빌"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/03-camera-3d.md#depth-fog-atmospheric-falloff",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "oframe/ogl",
+        "url": "https://oframe.github.io/ogl/examples/fog.html",
+        "license": "unknown"
+      },
+      {
+        "title": "local/hyperframes-animation",
+        "url": "claude-skill:hyperframes-animation/rules/depth-of-field-blur.md",
+        "license": "unknown"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgpu_fog_height",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1b-029",
+      "R8-099"
+    ]
+  },
+  {
+    "slug": "outline-then-fill",
+    "family": "shape",
+    "ko": "윤곽 후 채움",
+    "en": "Outline Then Fill",
+    "aka": [
+      "Trace Fill",
+      "윤곽 뒤 채움",
+      "trace-then-fill",
+      "svg-path-draw",
+      "outline-to-fill",
+      "Border then fill",
+      "윤곽 뒤 채우기",
+      "DrawBorderThenFill",
+      "Wireframe Surface Reveal",
+      "와이어프레임 표면 공개"
+    ],
+    "what": "대상의 윤곽선이나 와이어프레임이 먼저 드러난 뒤 내부 면과 색이 채워진다.",
+    "why": "완료와 확정의 순서를 느낀다.",
+    "params": "권장 기본값: 윤곽 700ms, 채움 400ms, stroke 2px, ease-out",
+    "impl": "SVG dashoffset으로 윤곽을 그린 뒤 fill-opacity를 올린다.",
+    "runtime": "svg",
+    "variants": [
+      "평면 윤곽 후 채움",
+      "입체 와이어프레임 후 표면"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/06-shapes-strokes.md#trace-then-fill",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/creation.py",
+        "license": "MIT"
+      },
+      {
+        "title": "oframe/ogl",
+        "url": "https://oframe.github.io/ogl/examples/wireframe-shader.html",
+        "license": "unknown"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgpu_lines_fat_wireframe",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1b-054",
+      "R7-002",
+      "R8-107"
+    ]
+  },
+  {
+    "slug": "depth-card-flyby",
+    "family": "depth",
+    "ko": "뎁스 카드 플라이바이",
+    "en": "Depth Card Flyby",
+    "aka": [
+      "깊이 카드 플라이바이"
+    ],
+    "what": "앞뒤로 쌓인 카드가 차례로 앞으로 구르고 이전 카드는 카메라 쪽으로 넘어간다.",
+    "why": "항목의 빠른 순환과 긴장 상승을 느낀다.",
+    "params": "권장 기본값: 5카드, 총 5000ms, 착지 간격 점차 축소, perspective 1000px",
+    "impl": "HTML 카드의 translateZ와 rotateY를 착지 비트마다 다음 깊이 슬롯으로 이동한다.",
+    "runtime": "gsap",
+    "variants": [
+      "가속 카드열",
+      "최종 카드 홀드",
+      "card-flyby"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/template-catalog.md#card-flyby",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1b-148"
+    ]
+  },
+  {
+    "slug": "hinged-oscillation",
+    "family": "shape",
+    "ko": "힌지 개폐",
+    "en": "Hinged Oscillation",
+    "aka": [
+      "맞물린 부품 왕복"
+    ],
+    "what": "가위나 날개처럼 두 부품이 같은 축에서 반대 각도로 열리고 닫힌다.",
+    "why": "아이콘의 실제 기능과 움직이는 구조를 이해한다.",
+    "params": "권장 기본값: 각도 ±15도, 주기 1800ms, sine.inOut, 2회",
+    "impl": "SVG 각 부품에 공통 피벗을 두고 반대 부호의 회전 함수를 적용한다.",
+    "runtime": "svg",
+    "variants": [
+      "가위 날",
+      "날개",
+      "토글 부품"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "local/hyperframes-animation",
+        "url": "claude-skill:hyperframes-animation/rules/svg-icon-enrichment.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1b-164"
+    ]
+  },
+  {
+    "slug": "coverflow",
+    "family": "depth",
+    "ko": "커버플로우",
+    "en": "Coverflow",
+    "aka": [
+      "Coverflow depth carousel",
+      "커버플로 깊이 캐러셀",
+      "Depth Gallery Rotation",
+      "입체 갤러리 회전"
+    ],
+    "what": "카드들이 곡면 배열을 따라 이동하며 중앙 카드는 정면으로 크고 옆 카드는 비스듬히 작게 보인다.",
+    "why": "선택 항목과 주변 항목의 깊이 차를 보여준다.",
+    "params": "권장 기본값: 항목 전환 600ms, perspective 900px, 측면 rotateY 45도, 카드 7개",
+    "impl": "CSS 카드별 중앙 거리로 translateX, translateZ, rotateY와 scale을 계산한다.",
+    "runtime": "css",
+    "variants": [
+      "직선 커버플로우",
+      "원통형 갤러리",
+      "구면 갤러리"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "motion.dev examples",
+        "url": "https://motion.dev/examples/react-carousel-coverflow",
+        "license": "unknown"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      },
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/3d-marquee",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R2-053",
+      "R3-173"
+    ]
+  },
+  {
+    "slug": "perspective-tilt",
+    "family": "depth",
+    "ko": "퍼스펙티브 틸트",
+    "en": "Perspective Tilt",
+    "aka": [
+      "3D tilt and depth",
+      "3D 기울기와 깊이",
+      "Perspective Card Tilt",
+      "카드 입체 기울기",
+      "3D Card Tilt and Float",
+      "3D 카드 기울임과 부유"
+    ],
+    "what": "카드가 가로와 세로축으로 조금 기울고 내부 요소가 서로 다른 깊이로 떠오른다.",
+    "why": "평면 요소에 입체감을 준다.",
+    "params": "권장 기본값: 600ms, 각도 ±12도, perspective 900px, 자식 깊이 30px",
+    "impl": "가상 포인터 또는 시간 진행값을 CSS rotateX, rotateY와 자식 translateZ에 연결한다.",
+    "runtime": "css",
+    "variants": [
+      "포인터 추적",
+      "주기적 틸트와 부유"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "motion.dev examples",
+        "url": "https://motion.dev/examples/react-tilt-card",
+        "license": "unknown"
+      },
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/3d-card-effect",
+        "license": "unknown"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://github.com/heygen-com/hyperframes/blob/HEAD/skills/hyperframes-animation/rules/split-tilt-cards.md",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/GSAP/CorePlugins/CSS/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      }
+    ],
+    "from": [
+      "R2-105",
+      "R3-170",
+      "R8-096"
+    ]
+  },
+  {
+    "slug": "animated-lighting",
+    "family": "depth",
+    "ko": "조명 애니메이션",
+    "en": "Animated Lighting",
+    "aka": [
+      "Animated scene lighting",
+      "장면 조명 변화"
+    ],
+    "what": "입체 물체에 비추는 빛의 색과 세기가 바뀌어 다른 부분이 드러난다.",
+    "why": "형태와 분위기, 강조 영역을 바꾼다.",
+    "params": "권장 기본값: intensity 0~3, 1600ms, 색 2개.",
+    "impl": "WebGL 광원의 intensity와 color를 직접 만든 키프레임으로 보간한다.",
+    "runtime": "webgl",
+    "variants": [
+      "색 전환",
+      "점등",
+      "이동 광원",
+      "명암 공개"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "theatre-js/theatre",
+        "url": "https://www.theatrejs.com/docs/latest/manual/sequences",
+        "license": "Apache-2.0 / AGPL-3.0 (구성요소별)"
+      },
+      {
+        "title": "theatre-js/theatre",
+        "url": "https://www.theatrejs.com/docs/latest/getting-started/with-react-three-fiber",
+        "license": "Apache-2.0 / AGPL-3.0 (구성요소별)"
+      }
+    ],
+    "from": [
+      "R2-108"
+    ]
+  },
+  {
+    "slug": "shadow-elevation",
+    "family": "depth",
+    "ko": "그림자 엘리베이션",
+    "en": "Shadow Elevation",
+    "aka": [
+      "그림자 부상",
+      "Elevation Reveal",
+      "Shadow Distance Motion",
+      "거리 연동 그림자"
+    ],
+    "what": "대상이 바닥에서 올라갈수록 그림자가 넓어지고 옅어져 떠 있는 높이가 드러난다.",
+    "why": "선택 대상의 높이와 중요도를 전달한다.",
+    "params": "권장 기본값: 600ms, 높이 0~24px, 그림자 blur 4~24px, opacity 0.3~0.15",
+    "impl": "CSS translateY와 box-shadow의 거리 및 흐림을 보간한다",
+    "runtime": "css",
+    "variants": [
+      "shadow-drop",
+      "shadow-drop-2",
+      "float-shadow",
+      "grow-shadow",
+      "shadow-radial",
+      "glow",
+      "outset",
+      "shadow-drop-center",
+      "shadow-drop-top",
+      "shadow-drop-right",
+      "shadow-drop-bottom",
+      "shadow-drop-left",
+      "shadow-drop-lr",
+      "shadow-drop-tb",
+      "shadow-drop-tr",
+      "shadow-drop-br",
+      "shadow-drop-bl",
+      "shadow-drop-tl",
+      "shadow-drop-2-center",
+      "shadow-drop-2-top",
+      "shadow-drop-2-right",
+      "shadow-drop-2-bottom",
+      "shadow-drop-2-left",
+      "shadow-drop-2-lr",
+      "shadow-drop-2-tb",
+      "shadow-drop-2-tr",
+      "shadow-drop-2-br",
+      "shadow-drop-2-bl",
+      "shadow-drop-2-tl",
+      "text-shadow-drop-center",
+      "text-shadow-drop-top",
+      "text-shadow-drop-tr",
+      "text-shadow-drop-right",
+      "text-shadow-drop-br",
+      "text-shadow-drop-bottom",
+      "text-shadow-drop-bl",
+      "text-shadow-drop-left",
+      "text-shadow-drop-tl",
+      "box-shadow-outset",
+      "shadow",
+      "부유 그림자",
+      "착지 그림자"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "animista.net",
+        "url": "https://animista.net/play",
+        "license": "BSD-2-Clause (FreeBSD)"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/perspective-effects.html",
+        "license": "unknown"
+      },
+      {
+        "title": "IanLunn/Hover",
+        "url": "https://github.com/IanLunn/Hover",
+        "license": "MIT personal/open-source + paid commercial"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R3-046",
+      "R5-086"
+    ]
+  },
+  {
+    "slug": "hard-shadow-pop",
+    "family": "depth",
+    "ko": "하드 섀도 팝",
+    "en": "Hard Shadow Pop",
+    "aka": [
+      "단단한 그림자 튀기"
+    ],
+    "what": "요소가 대각선으로 조금 이동하고 계단 같은 단단한 그림자가 늘어난다.",
+    "why": "인쇄물 같은 두께와 입체감을 준다.",
+    "params": "권장 기본값: 400ms, 이동 8px, shadow 단계 8개, ease-out",
+    "impl": "CSS translate와 여러 겹 box-shadow 또는 text-shadow를 보간한다",
+    "runtime": "css",
+    "variants": [
+      "shadow-pop",
+      "text-shadow-pop",
+      "text-pop-up",
+      "line-shadow-text",
+      "shadow-pop-tr",
+      "shadow-pop-br",
+      "shadow-pop-bl",
+      "shadow-pop-tl",
+      "text-shadow-pop-top",
+      "text-shadow-pop-tr",
+      "text-shadow-pop-right",
+      "text-shadow-pop-br",
+      "text-shadow-pop-bottom",
+      "text-shadow-pop-bl",
+      "text-shadow-pop-left",
+      "text-shadow-pop-tl",
+      "text-pop-up-top",
+      "text-pop-up-tr",
+      "text-pop-up-right",
+      "text-pop-up-br",
+      "text-pop-up-bottom",
+      "text-pop-up-bl",
+      "text-pop-up-left",
+      "text-pop-up-tl",
+      "comic-text"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "animista.net",
+        "url": "https://animista.net/play",
+        "license": "BSD-2-Clause (FreeBSD)"
+      },
+      {
+        "title": "magicuidesign/magicui",
+        "url": "https://magicui.design/docs/components/line-shadow-text",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R3-047"
+    ]
+  },
+  {
+    "slug": "round-corners",
+    "family": "shape",
+    "ko": "모서리 라운딩",
+    "en": "Round Corners",
+    "aka": [
+      "Rounded Corner Morph",
+      "모서리 둥글어지기",
+      "라운드 코너"
+    ],
+    "what": "각진 도형의 모서리가 점차 둥근 곡선으로 바뀌거나 다시 각진 모서리로 돌아간다.",
+    "why": "표면 상태 변화와 유연함을 보여 준다.",
+    "params": "권장 기본값: 500ms, 반경 0~24px, power2.inOut",
+    "impl": "사각형은 CSS border-radius를 보간하고 일반 SVG 윤곽은 모서리를 접선 곡선으로 치환한다.",
+    "runtime": "svg",
+    "variants": [
+      "사각형 라운딩",
+      "다각형 라운딩"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "IanLunn/Hover",
+        "url": "https://github.com/IanLunn/Hover",
+        "license": "MIT personal/open-source + paid commercial"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/drawing-painting-and-paths/shapes-and-shape-attributes/shape-attributes-paint-operations-path.html",
+        "license": "unknown"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R3-061",
+      "R5-008"
+    ]
+  },
+  {
+    "slug": "starfield-warp",
+    "family": "depth",
+    "ko": "스타필드 워프",
+    "en": "Starfield Warp",
+    "aka": [
+      "별 터널 질주",
+      "Hyperspace Star Streaks",
+      "초공간 별 궤적",
+      "Starfield warp",
+      "Warp speed"
+    ],
+    "what": "중앙 부근의 별 점들이 원근에 따라 화면 바깥으로 빠르게 뻗으며 긴 빛줄기가 된다.",
+    "why": "빠른 전진과 공간 통과를 느끼게 한다.",
+    "params": "권장 기본값: 2500ms, 별 300개, 전진 속도 600px/s, 시야각 65도",
+    "impl": "canvas에서 별의 깊이를 줄여 원근 투영하고 이전 투영 위치와 현재 위치 사이에 빛 꼬리를 그린다.",
+    "runtime": "canvas",
+    "variants": [
+      "Hyperspeed",
+      "LightTunnel",
+      "Warp Background",
+      "warp-background",
+      "container-cover",
+      "워프 가속",
+      "터널 별",
+      "감속 착지"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      },
+      {
+        "title": "tsparticles/presets",
+        "url": "https://github.com/tsparticles/presets/blob/HEAD/presets/hyperspace/README.md",
+        "license": "MIT"
+      },
+      {
+        "title": "magicuidesign/magicui",
+        "url": "https://magicui.design/docs/components/warp-background",
+        "license": "MIT"
+      },
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/container-cover",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R3-132",
+      "R8-027"
+    ]
+  },
+  {
+    "slug": "elastic-mesh",
+    "family": "shape",
+    "ko": "엘라스틱 메시",
+    "en": "Elastic Mesh",
+    "aka": [
+      "탄성 망 변형"
+    ],
+    "what": "그물의 한 부분이 당겨지고 주변 점들이 뒤늦게 따라와 복원된다.",
+    "why": "연결된 구조의 탄성과 영향을 보여 준다.",
+    "params": "권장 기본값: 1000ms, 격자 20px, 당김 40px, 감쇠 0.9",
+    "impl": "canvas 격자 점을 스프링으로 연결하고 제어점 변위를 전파한다",
+    "runtime": "canvas",
+    "variants": [
+      "ElasticMesh",
+      "WebThreads",
+      "GridDistortion"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      }
+    ],
+    "from": [
+      "R3-143"
+    ]
+  },
+  {
+    "slug": "perspective-flatten",
+    "family": "depth",
+    "ko": "원근 평면화",
+    "en": "Perspective Flatten",
+    "aka": [
+      "Scroll Perspective Flatten",
+      "스크롤 입체 펴기"
+    ],
+    "what": "비스듬한 화면이 진행에 따라 회전해 정면으로 펴지고 커진다.",
+    "why": "화면과 제품의 형태를 입체적으로 소개한다.",
+    "params": "권장 기본값: 1500ms, 회전 30deg에서 0deg, scale 0.85에서 1",
+    "impl": "CSS perspective와 rotateX 및 scale을 진행률에 따라 보간한다",
+    "runtime": "css",
+    "variants": [
+      "Container Scroll Animation",
+      "ScrollExpand",
+      "Container Scroll",
+      "container-scroll-animation"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/container-scroll-animation",
+        "license": "unknown"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      }
+    ],
+    "from": [
+      "R3-168"
+    ]
+  },
+  {
+    "slug": "screen-emergence",
+    "family": "depth",
+    "ko": "스크린 이머전스",
+    "en": "Screen Emergence",
+    "aka": [
+      "Laptop Screen Emergence",
+      "노트북 화면 솟아 나오기"
+    ],
+    "what": "기울어진 기기 화면이 정면으로 펴진 뒤 내부 콘텐츠가 화면 바깥으로 확대되어 나온다.",
+    "why": "디바이스 속 콘텐츠를 주인공으로 바꾼다.",
+    "params": "권장 기본값: 1800ms, 회전 80deg에서 0deg, scale 0.8에서 1.5",
+    "impl": "CSS 디바이스 면의 perspective와 콘텐츠 translate 및 scale을 단계적으로 바꾼다",
+    "runtime": "css",
+    "variants": [
+      "Macbook Scroll",
+      "macbook-scroll"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/macbook-scroll",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R3-169"
+    ]
+  },
+  {
+    "slug": "perspective-grid-drift",
+    "family": "depth",
+    "ko": "원근 격자 전진",
+    "en": "Perspective Grid Drift",
+    "aka": [
+      "원근 격자 흐름"
+    ],
+    "what": "수평선 쪽으로 모이는 격자 선이 앞으로 흘러온다.",
+    "why": "넓은 가상 공간과 전진을 표현한다.",
+    "params": "권장 기본값: 4000ms, 격자 40px, 기울기 65deg, linear",
+    "impl": "CSS perspective로 기울인 반복 격자 배경의 위치를 이동한다",
+    "runtime": "css",
+    "variants": [
+      "Retro Grid",
+      "GridScan",
+      "Topography",
+      "retro-grid"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "magicuidesign/magicui",
+        "url": "https://magicui.design/docs/components/retro-grid",
+        "license": "MIT"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      }
+    ],
+    "from": [
+      "R3-180"
+    ]
+  },
+  {
+    "slug": "image-unroll",
+    "family": "depth",
+    "ko": "이미지 언롤",
+    "en": "Image Unroll",
+    "aka": [
+      "이미지 말림 펴기"
+    ],
+    "what": "말린 이미지 면이 펼쳐지며 평평한 사진으로 정착한다.",
+    "why": "숨겨진 면의 공개와 물성을 보여 준다.",
+    "params": "권장 기본값: 1400ms, 말림 반경 80px에서 0px, ease-out",
+    "impl": "WebGL 평면 정점을 곡면으로 변형하고 진행에 따라 펼친다",
+    "runtime": "webgl",
+    "variants": [
+      "unrolling images"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "tympanus.net/codrops",
+        "url": "https://tympanus.net/codrops/2024/02/07/on-scroll-revealing-webgl-image-explorations/",
+        "license": "unknown"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      }
+    ],
+    "from": [
+      "R3-188"
+    ]
+  },
+  {
+    "slug": "paper-crumple",
+    "family": "depth",
+    "ko": "종이 구김과 복원",
+    "en": "Paper Crumple",
+    "aka": [
+      "Paper Crumple and Restore",
+      "종이 구기기와 복원"
+    ],
+    "what": "평평한 종이가 여러 주름을 따라 작은 덩어리로 구겨지고 다시 펼쳐진다.",
+    "why": "폐기와 압축 또는 물리적 복원을 보여 준다.",
+    "params": "권장 기본값: 구김 550ms, 복원 400ms, 주름 6개, 강도 0.85",
+    "impl": "WebGL 새 평면 메시 정점을 주름 축에 따라 접고 조명 법선을 갱신한다",
+    "runtime": "webgl",
+    "variants": [
+      "PaperCrumple",
+      "완전 복원",
+      "잔주름 유지"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      }
+    ],
+    "from": [
+      "R3-200"
+    ]
+  },
+  {
+    "slug": "perforated-tear",
+    "family": "shape",
+    "ko": "절취선 찢기",
+    "en": "Perforated Tear",
+    "aka": [
+      "Perforated Ticket Tear",
+      "절취선 뜯기"
+    ],
+    "what": "표의 한 부분이 절취선을 따라 찢어지고 떨어져 나가며 몸체가 남는다.",
+    "why": "사용 완료와 분리된 상태를 전달한다.",
+    "params": "권장 기본값: 800ms, 분리 거리 80px, 회전 20deg, ease-out",
+    "impl": "SVG 절취 경계 패스와 CSS 분리된 면의 translate 및 rotate를 보간한다",
+    "runtime": "svg",
+    "variants": [
+      "TearTicket",
+      "가로",
+      "세로"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      }
+    ],
+    "from": [
+      "R3-201"
+    ]
+  },
+  {
+    "slug": "shape-repeater",
+    "family": "shape",
+    "ko": "셰이프 리피터",
+    "en": "Shape Repeater",
+    "aka": [
+      "도형 리피터",
+      "Repeater"
+    ],
+    "what": "같은 도형이 일정한 위치·회전·배율 차이로 늘어난다.",
+    "why": "반복 구조와 리듬을 만든다.",
+    "params": "권장 기본값: 800ms; 12개; 간격 24px; 회전 30deg",
+    "impl": "SVG 복제 그룹에 누적 변환과 개수 마스크를 적용한다.",
+    "runtime": "svg",
+    "variants": [
+      "방사형",
+      "격자형",
+      "나선형"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/drawing-painting-and-paths/shapes-and-shape-attributes/shape-attributes-paint-operations-path.html",
+        "license": "unknown"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R5-003"
+    ]
+  },
+  {
+    "slug": "offset-path",
+    "family": "shape",
+    "ko": "오프셋 패스",
+    "en": "Offset Path",
+    "aka": [
+      "Offset Paths",
+      "Outline Ripple"
+    ],
+    "what": "도형의 외곽이 일정 거리만큼 부풀거나 줄어든다.",
+    "why": "팽창과 수축을 명확하게 보여준다.",
+    "params": "권장 기본값: 600ms; 오프셋 0→24px; power2.inOut",
+    "impl": "경로 법선으로 외곽을 새로 계산하고 조인 형태를 유지한다.",
+    "runtime": "svg",
+    "variants": [
+      "양수 확장",
+      "음수 축소",
+      "동심 윤곽",
+      "교차 윤곽",
+      "윤곽 물결 방출"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/drawing-painting-and-paths/shapes-and-shape-attributes/shape-attributes-paint-operations-path.html",
+        "license": "unknown"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R5-004"
+    ]
+  },
+  {
+    "slug": "zigzag-path",
+    "family": "shape",
+    "ko": "지그재그 패스",
+    "en": "Zig Zag Path",
+    "aka": [
+      "Zig Zag"
+    ],
+    "what": "매끈한 외곽에 반복된 뾰족점이나 물결이 생긴다.",
+    "why": "긴장감과 장식적 에너지를 만든다.",
+    "params": "권장 기본값: 700ms; 진폭 0→12px; 변당 8개",
+    "impl": "경로 길이를 샘플링해 교대 법선 변위를 적용한다.",
+    "runtime": "svg",
+    "variants": [
+      "각진 톱니",
+      "부드러운 물결"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/drawing-painting-and-paths/shapes-and-shape-attributes/shape-attributes-paint-operations-path.html",
+        "license": "unknown"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R5-005"
+    ]
+  },
+  {
+    "slug": "pucker-bloat",
+    "family": "shape",
+    "ko": "퍼커 앤 블로트",
+    "en": "Pucker and Bloat",
+    "aka": [],
+    "what": "꼭짓점과 곡선이 서로 반대 방향으로 당겨져 별이나 꽃처럼 변한다.",
+    "why": "도형의 성격이 날카롭거나 유연하게 바뀐다.",
+    "params": "권장 기본값: 700ms; amount 0→35%; power2.inOut",
+    "impl": "중심 기준 꼭짓점과 베지어 핸들의 반경을 반대로 조절한다.",
+    "runtime": "svg",
+    "variants": [
+      "퍼커 별",
+      "블로트 꽃"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/drawing-painting-and-paths/shapes-and-shape-attributes/shape-attributes-paint-operations-path.html",
+        "license": "unknown"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R5-006"
+    ]
+  },
+  {
+    "slug": "boolean-path-merge",
+    "family": "shape",
+    "ko": "부울 패스 결합",
+    "en": "Boolean Path Merge",
+    "aka": [
+      "Merge Paths Animation",
+      "패스 병합 애니메이션"
+    ],
+    "what": "겹친 도형이 붙거나 교차 부분이 뚫리며 하나의 실루엣을 만든다.",
+    "why": "결합·차집합·교집합을 시각화한다.",
+    "params": "권장 기본값: 800ms; 겹침 0→40px",
+    "impl": "자체 부울 경로 연산 또는 SVG mask로 합성 영역을 갱신한다.",
+    "runtime": "svg",
+    "variants": [
+      "합집합",
+      "차집합",
+      "교집합",
+      "배타 영역"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/drawing-painting-and-paths/shapes-and-shape-attributes/shape-attributes-paint-operations-path.html",
+        "license": "unknown"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R5-009"
+    ]
+  },
+  {
+    "slug": "tapered-stroke",
+    "family": "shape",
+    "ko": "테이퍼 스트로크",
+    "en": "Tapered Stroke",
+    "aka": [],
+    "what": "선의 시작과 끝이 가늘어지며 붓처럼 길어졌다 줄어든다.",
+    "why": "방향성과 속도감을 강화한다.",
+    "params": "권장 기본값: 900ms; 최대 폭 12px; 끝 폭 0px",
+    "impl": "경로 법선 양쪽에 가변 폭 정점을 만들어 면으로 그린다.",
+    "runtime": "svg",
+    "variants": [
+      "양끝 테이퍼",
+      "한끝 테이퍼",
+      "파도 폭"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "schoolofmotion.com",
+        "url": "https://schoolofmotion.com/blog/after-effects-text-animator-tapered-stroke",
+        "license": "unknown"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R5-012"
+    ]
+  },
+  {
+    "slug": "bend",
+    "family": "shape",
+    "ko": "벤드",
+    "en": "Bend",
+    "aka": [
+      "Bend and Bend It",
+      "굽힘 변형",
+      "CC Bend It"
+    ],
+    "what": "대상이 한쪽 끝을 축으로 휘어져 흔들린다.",
+    "why": "유연한 물체와 탄성을 표현한다.",
+    "params": "권장 기본값: 1000ms; angle ±20deg; sine.inOut",
+    "impl": "중심선을 곡선으로 만들고 메시를 접선 방향에 맞춰 변형한다.",
+    "runtime": "webgl",
+    "variants": [
+      "한끝 고정",
+      "양끝 고정",
+      "곡률 파동"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/distort-effects.html",
+        "license": "unknown"
+      },
+      {
+        "title": "cycorefx.com",
+        "url": "https://cycorefx.com/downloads/cfx_hd_std/CycoreFX%201.6%20Manual.pdf",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R5-045"
+    ]
+  },
+  {
+    "slug": "mesh-warp",
+    "family": "shape",
+    "ko": "메시 워프",
+    "en": "Mesh Warp",
+    "aka": [],
+    "what": "격자 제어점이 움직여 평면 전체가 천처럼 휜다.",
+    "why": "넓은 표면의 유연한 변형을 보여준다.",
+    "params": "권장 기본값: 900ms; grid 6×6; 변위 24px",
+    "impl": "자체 격자 메시 정점을 보간해 텍스처를 매핑한다.",
+    "runtime": "webgl",
+    "variants": [
+      "천 휘기",
+      "얼굴 과장",
+      "평면 뒤틀기"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/distort-effects.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R5-047"
+    ]
+  },
+  {
+    "slug": "corner-pin",
+    "family": "depth",
+    "ko": "코너 핀",
+    "en": "Corner Pin",
+    "aka": [
+      "코너 핀 변형"
+    ],
+    "what": "평면의 네 모서리가 움직이며 화면이 원근 형태로 기울어진다.",
+    "why": "화면과 간판을 공간에 붙여 보여준다.",
+    "params": "권장 기본값: 800ms; corner shift 40px; power2.inOut",
+    "impl": "네 점으로 호모그래피를 계산해 평면 이미지를 투영한다.",
+    "runtime": "webgl",
+    "variants": [
+      "화면 삽입",
+      "포스터 기울임"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/distort-effects.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R5-048"
+    ]
+  },
+  {
+    "slug": "layer-separation",
+    "family": "depth",
+    "ko": "레이어 분리와 재결합",
+    "en": "Layer Separation",
+    "aka": [
+      "3D Layer Fan Out",
+      "3D 레이어 펼침",
+      "Layer separation and recomposition",
+      "레이어 분리와 재합성"
+    ],
+    "what": "겹쳐진 평면 레이어들이 깊이와 각도 차이를 두고 벌어져 보인 뒤 다시 포개진다.",
+    "why": "구성 요소와 계층을 보여준다.",
+    "params": "권장 기본값: 1600ms, 깊이 간격 100px, 회전 15도, 레이어 간격 60ms",
+    "impl": "CSS preserve-3d 부모 아래 레이어별 translateZ와 회전을 보간한다.",
+    "runtime": "css",
+    "variants": [
+      "깊이 분리",
+      "입체 팬아웃",
+      "역방향 재합성"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/work-with-layers/3d-layers/3d-layers.html",
+        "license": "unknown"
+      },
+      {
+        "title": "motion-canvas/examples",
+        "url": "https://github.com/motion-canvas/examples/blob/master/examples/deferred-lighting/src/scenes/layers.tsx",
+        "license": "MIT"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R5-084",
+      "R7-086"
+    ]
+  },
+  {
+    "slug": "spherize",
+    "family": "depth",
+    "ko": "구면화",
+    "en": "Spherize",
+    "aka": [],
+    "what": "평면 이미지가 구면에 감긴 듯 가운데가 튀어나와 움직인다.",
+    "why": "입체적인 표면 변화를 표현한다.",
+    "params": "권장 기본값: 900ms; strength 0→70%; power2.inOut",
+    "impl": "구면 투영의 UV를 평면 UV와 보간한다.",
+    "runtime": "webgl",
+    "variants": [
+      "구형 돌출",
+      "구형 압축"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/distort-effects.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R5-113"
+    ]
+  },
+  {
+    "slug": "scatter-dimension-rotation",
+    "family": "data",
+    "ko": "산점도 차원 회전",
+    "en": "Scatter Dimension Rotation",
+    "aka": [
+      "Scatter dimension rotation",
+      "Scatter depth expansion staging",
+      "산점도 깊이 확장 단계화"
+    ],
+    "what": "산점도의 점들이 깊이 방향으로 벌어진 뒤 회전해 새로운 변수 쌍의 평면으로 모인다.",
+    "why": "차원 전환 중 각 점을 시각적으로 추적한다.",
+    "params": "권장 기본값: 확장 400ms, 회전 600ms, 압축 400ms, 회전 90도, 직교 투영",
+    "impl": "이전 변수와 새 변수를 3D 좌표에 배치하고 회전 행렬을 보간해 화면에 투영한다.",
+    "runtime": "webgl",
+    "variants": [
+      "동시 차원 회전",
+      "깊이 확장 후 회전과 압축"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "NilsRodrigues/d3-scattertrans",
+        "url": "https://github.com/NilsRodrigues/d3-scattertrans",
+        "license": "MIT"
+      },
+      {
+        "title": "Rodrigues et al. 2024",
+        "url": "https://arxiv.org/abs/2401.04692",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-038",
+      "R6-039"
+    ]
+  },
+  {
+    "slug": "map-extrusion",
+    "family": "data",
+    "ko": "지도 높이 돌출",
+    "en": "Map Extrusion",
+    "aka": [
+      "Extruded density map rise",
+      "입체 밀도 지도 상승"
+    ],
+    "what": "도시 구역이나 격자 셀이 바닥에서 솟아오르며 높이로 밀도를 나타낸다.",
+    "why": "지리적 위치와 수치의 큰 차이를 입체적으로 느낀다.",
+    "params": "권장 기본값: 1200ms, 높이 배율 1, 카메라 기울기 45도, cubicOut",
+    "impl": "WebGL 메시의 상단 z 좌표를 값에 맞춰 보간하고 바닥면은 고정한다.",
+    "runtime": "webgl",
+    "variants": [
+      "인구 기둥",
+      "프리즘 지도",
+      "값 갱신"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "the-pudding/3d-cities-story",
+        "url": "https://github.com/the-pudding/3d-cities-story",
+        "license": "MIT"
+      },
+      {
+        "title": "Yang et al. Tilt Map",
+        "url": "https://arxiv.org/abs/2006.14120",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-082"
+    ]
+  },
+  {
+    "slug": "map-to-bar-chart",
+    "family": "data",
+    "ko": "지도에서 막대 차트로",
+    "en": "Map to Bar Chart",
+    "aka": [
+      "Map tilt to chart",
+      "지도 기울이기와 차트 전환"
+    ],
+    "what": "평면 지도가 기울어 높이 지도가 된 뒤 지역별 막대가 나란한 차트로 이동한다.",
+    "why": "지리 맥락과 정확한 값 비교를 연결한다.",
+    "params": "권장 기본값: 기울임 600ms, 높이 600ms, 재배치 900ms, cubicInOut",
+    "impl": "공유 지역 ID의 다각형 중심과 높이를 3D 좌표로 보간한 뒤 공통 막대 기준선에 정렬한다.",
+    "runtime": "webgl",
+    "variants": [
+      "지도에서 프리즘",
+      "프리즘에서 막대",
+      "역전환"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Yang et al. Tilt Map",
+        "url": "https://arxiv.org/abs/2006.14120",
+        "license": "unknown"
+      },
+      {
+        "title": "apache/echarts",
+        "url": "https://echarts.apache.org/handbook/en/basics/release-note/5-2-0/",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R6-083"
+    ]
+  },
+  {
+    "slug": "traveling-deformation-wave",
+    "family": "shape",
+    "ko": "변형 파동 전달",
+    "en": "Traveling Deformation Wave",
+    "aka": [
+      "Traveling deformation wave",
+      "전파되는 변형 파동",
+      "ApplyWave"
+    ],
+    "what": "대상의 한쪽에서 시작한 굴곡이 반대쪽으로 이동하고 원래 형태로 돌아온다.",
+    "why": "전달되는 교란이나 반응을 느끼게 한다.",
+    "params": "권장 기본값: 1000 ms, 진폭 12 px, 파장 대상 폭 60%, sine",
+    "impl": "SVG 점들의 변위를 위치와 시간에 따른 사인 함수로 갱신한다.",
+    "runtime": "svg",
+    "variants": [
+      "수직 파동",
+      "수평 파동",
+      "비틀림 파동"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/indication.py",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R7-017"
+    ]
+  },
+  {
+    "slug": "cyclic-position-swap",
+    "family": "shape",
+    "ko": "순환 자리 교환",
+    "en": "Cyclic Position Swap",
+    "aka": [
+      "Cyclic position swap",
+      "CyclicReplace",
+      "Swap"
+    ],
+    "what": "둘 이상의 대상이 원호를 따라 서로의 자리로 이동한다.",
+    "why": "순서 변경과 치환을 추적한다.",
+    "params": "권장 기본값: 900 ms, 원호 90 deg, smooth",
+    "impl": "그룹별 목적지를 다음 그룹 위치로 정해 원호 translate를 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "두 대상 교환",
+      "다중 순환"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/transform.py",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R7-041"
+    ]
+  },
+  {
+    "slug": "popup-book",
+    "family": "depth",
+    "ko": "팝업북 전개",
+    "en": "Pop-up Book",
+    "aka": [
+      "Pop-up book deployment",
+      "팝업북 펼침"
+    ],
+    "what": "책 페이지가 열리며 접힌 종이 구조가 솟아나 장면을 만든다.",
+    "why": "설명 속 세계가 눈앞에 만들어지는 느낌을 준다.",
+    "params": "권장 기본값: 1800 ms, 페이지 110 deg, 구조 0~80 deg, easeInOut",
+    "impl": "자체 페이지와 종이 면을 CSS perspective 및 rotateX로 펼친다.",
+    "runtime": "css",
+    "variants": [
+      "한 페이지",
+      "연속 페이지"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "TED-Ed",
+        "url": "https://ed.ted.com/lessons/making-a-ted-ed-lesson-bringing-a-pop-up-book-to-life",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R7-076"
+    ]
+  },
+  {
+    "slug": "exploded-assembly",
+    "family": "depth",
+    "ko": "분해도 조립",
+    "en": "Exploded Assembly",
+    "aka": [
+      "Exploded product assembly",
+      "제품 분해와 조립"
+    ],
+    "what": "제품의 부품들이 축을 따라 벌어져 내부 구조를 보여 준 뒤 한 몸체로 다시 모인다.",
+    "why": "외형 안의 구조와 부품 관계를 이해한다.",
+    "params": "권장 기본값: 1800 ms, 부품 간격 80 px, 시작 차이 100 ms, easeInOut",
+    "impl": "독립 제작 부품 메쉬의 위치를 축별로 보간한다.",
+    "runtime": "webgl",
+    "variants": [
+      "분해 보기",
+      "공중 조립",
+      "단계 조립"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Apple",
+        "url": "https://www.apple.com/apple-events/",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R7-114"
+    ]
+  },
+  {
+    "slug": "soft-body-jiggle",
+    "family": "shape",
+    "ko": "소프트 바디 흔들림",
+    "en": "Soft Body Jiggle",
+    "aka": [],
+    "what": "부드러운 덩어리가 이동과 충돌에 따라 찌그러지고 떨리며 원형으로 돌아온다.",
+    "why": "탄성 있는 물질과 힘의 영향을 보여준다.",
+    "params": "권장 기본값: 2500ms, 경계점 18개, 강성 120/s², 감쇠 15/s, 이동 120px",
+    "impl": "canvas에서 경계점과 중심의 스프링 제약을 계산해 닫힌 곡선으로 그린다.",
+    "runtime": "canvas",
+    "variants": [
+      "젤리",
+      "고무 공",
+      "물방울"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "processing/p5.js-website",
+        "url": "https://p5js.org/examples/Math-And-Physics-Soft-Body/",
+        "license": "MIT"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#physics_ammo_volume",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-040"
+    ]
+  },
+  {
+    "slug": "noise-blob",
+    "family": "depth",
+    "ko": "노이즈 블롭",
+    "en": "Noise Blob",
+    "aka": [
+      "Noise Blob Deformation",
+      "노이즈 블롭 변형",
+      "Twisted sphere",
+      "WebGL blob"
+    ],
+    "what": "구의 표면이 울퉁불퉁 솟거나 비틀리며 계속 형태를 바꾼다.",
+    "why": "유기적인 생명감과 추상적인 재질을 표현한다.",
+    "params": "권장 기본값: 5000ms, 변위 0.18반지름, 노이즈 주파수 2.5, 비틀림 20도, 속도 0.3/s",
+    "impl": "WebGL에서 구 정점의 법선 방향으로 노이즈 변위를 주고 축별 비틀림을 더한다.",
+    "runtime": "webgl",
+    "variants": [
+      "비틀린 구",
+      "불규칙 블롭",
+      "색 변형 연동"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "codrops/WebGLBlobs",
+        "url": "https://github.com/codrops/WebGLBlobs",
+        "license": "MIT"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgl_morphtargets_sphere",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-052"
+    ]
+  },
+  {
+    "slug": "perspective-panel-rotation",
+    "family": "depth",
+    "ko": "원근 패널 회전",
+    "en": "Perspective Panel Rotation",
+    "aka": [
+      "Perspective Color Panels",
+      "원근 컬러 패널"
+    ],
+    "what": "서로 다른 색의 긴 패널이 중심축 주위에서 회전하며 비스듬히 펼쳐지고 가까운 면이 크게 보인다.",
+    "why": "리듬과 구획 변화로 배경에 구조를 준다.",
+    "params": "권장 기본값: 5000ms, 패널 7개, 패널 사이각 25도, 기울기 15도, 회전 18도/s, linear",
+    "impl": "WebGL에서 반복된 패널의 원근 좌표와 시간별 회전을 계산해 패널 색과 가장자리 빛을 그린다.",
+    "runtime": "webgl",
+    "variants": [
+      "세로 패널",
+      "가로 패널",
+      "교차 컬러"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "paper-design/shaders",
+        "url": "https://shaders.paper.design/color-panels",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R8-081"
+    ]
+  },
+  {
+    "slug": "dynamic-reflection",
+    "family": "depth",
+    "ko": "동적 반사",
+    "en": "Dynamic Reflection",
+    "aka": [],
+    "what": "주변 물체나 조명이 움직이면 거울 같은 표면 안의 반사도 함께 이동한다.",
+    "why": "반사면과 주변 공간의 위치 관계를 보여준다.",
+    "params": "권장 기본값: 5000ms, 반사 해상도 256px, 거칠기 0.1, 대상 회전 30도/s",
+    "impl": "WebGL에서 주변을 큐브맵이나 반사 카메라로 렌더하고 표면에 샘플링한다.",
+    "runtime": "webgl",
+    "variants": [
+      "거울",
+      "구 반사",
+      "거친 반사"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgl_materials_cubemap_dynamic",
+        "license": "MIT"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgpu_mirror",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-101"
+    ]
+  },
+  {
+    "slug": "curve-guided-deformation",
+    "family": "shape",
+    "ko": "곡선 따라 휘기",
+    "en": "Curve Guided Deformation",
+    "aka": [
+      "곡선 안내 변형"
+    ],
+    "what": "긴 물체가 구부러진 경로를 따라 미끄러지면서 경로에 맞춰 휜다.",
+    "why": "유연한 전달 경로와 물체의 연속 이동을 보여준다.",
+    "params": "권장 기본값: 4000ms, 경로 길이 6단위, 속도 1.5단위/s, 단면 12점, linear",
+    "impl": "WebGL에서 각 정점의 길이 좌표를 곡선의 위치와 국소 좌표계에 매핑한다.",
+    "runtime": "webgl",
+    "variants": [
+      "리본 이동",
+      "튜브 변형",
+      "글자 리본"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgl_modifier_curve_instanced",
+        "license": "MIT"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgpu_modifier_curve",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-108"
+    ]
+  },
+  {
+    "slug": "shape-split-merge",
+    "family": "shape",
+    "ko": "도형 분할과 통합",
+    "en": "Shape Split and Merge",
+    "aka": [
+      "SVG Shape Split and Merge",
+      "SVG 도형 분할과 합체",
+      "One-to-many morph",
+      "Many-to-one morph"
+    ],
+    "what": "하나의 도형이 여러 작은 도형으로 갈라지거나 여러 도형이 하나로 합쳐진다.",
+    "why": "부분과 전체의 관계, 분류와 통합을 보여준다.",
+    "params": "권장 기본값: 1600ms, 목표 도형 3개, 간격 36px, 대응점 100개, cubic.inOut",
+    "impl": "SVG에서 중간 분할 경계를 정하고 각 조각의 경로를 독립적으로 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "한 개에서 여러 개",
+      "여러 개에서 한 개",
+      "범주 합체"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "veltman/flubber",
+        "url": "https://github.com/veltman/flubber",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-111"
+    ]
+  }
+]

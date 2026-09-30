@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>무한 줌 스루 · Infinite Zoom</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>#world,.page{position:absolute;inset:0;transform-origin:584px 290px}.page{background:var(--paper)}.page .lab{position:absolute;left:80px;top:48px}.page .num{position:absolute;left:70px;top:160px;font-size:245px;color:var(--ink3)}.page .t-l{position:absolute;left:680px;top:150px;font-size:46px;line-height:1.4}.page .hair{position:absolute;left:80px;right:80px;top:105px}.page .foot{position:absolute;left:80px;bottom:50px}.portal{position:absolute;left:542.285714px;top:248.285714px;width:83.428572px;height:83.428572px;border-radius:50%;overflow:hidden;background:var(--verm)}.portal>.page{left:0;top:21px;right:auto;bottom:auto;width:1168px;height:580px;transform:scale(.07142857142857);transform-origin:0 0}#page2 .num{font-size:190px;top:180px}.final .t-xl{position:absolute;left:250px;top:200px;font-size:120px;color:var(--verm)}.final .num{font-size:170px;left:80px;top:365px}</style></head>
+<body data-no="234" data-cat="가상 카메라 · CAMERA" data-ko="무한 줌 스루" data-en="Infinite Zoom" data-meta="중첩 3단 · scale 1 → 2,744" data-dur="4" data-poster="3.7"><main class="scene"><div id="world"><section class="page" id="page0"><span class="lab">01 / SCALE 1×</span><div class="hair"></div><div class="num">939</div><div class="t-l">AI는<br>앞의 말을 읽는다</div><div class="lab foot">AI는 다음 말을 고른다</div><div class="portal"><section class="page" id="page1"><span class="lab">02 / SCALE 14×</span><div class="hair"></div><div class="num">30</div><div class="t-l">올 수 있는 말마다<br>확률을 매긴다</div><div class="lab foot">AI는 다음 말을 고른다</div><div class="portal"><section class="page" id="page2"><span class="lab">03 / SCALE 196×</span><div class="hair"></div><div class="num">62%</div><div class="t-l">확률을 따라<br>하나를 고른다</div><div class="lab foot">AI는 다음 말을 고른다</div><div class="portal"><section class="page final" id="page3"><span class="lab">04 / OUTPUT</span><div class="hair"></div><div class="t-xl">다음 말</div><div class="lab foot">입력 → 모델 → 출력</div></section></div></section></div></section></div></section></div></main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+const zoom = {p:0};
+const world = document.querySelector('#world');
+const pages = [0,1,2,3].map(i=>document.querySelector('#page'+i));
+// Keep camera scale bounded to prevent huge ancestor textures in Chromium.
+pages.forEach(el=>world.appendChild(el));
+function draw(){
+  const stage = Math.min(3,Math.floor(zoom.p));
+  world.style.transform = `scale(${Math.pow(14,zoom.p-stage)})`;
+  pages.forEach((el,i)=>{
+    const active = i>=stage;
+    el.style.transformOrigin = '584px 290px';
+    el.style.transform = `scale(${active?Math.pow(14,stage-i):1})`;
+    el.style.opacity = !active ? 0 : i===0 ? 1 : Math.max(0,Math.min(1,(zoom.p-i+.82)/.48));
+  });
+}
+draw();
+tl.to(zoom,{p:3,duration:3.3,ease:'sine.inOut',onUpdate:draw},.2);
+Motion.ready();
+</script></body></html>

@@ -1,0 +1,1076 @@
+{
+  "easing-curves": {
+    "aka": [
+      "Easing curves",
+      "이징 곡선",
+      "Easing Curves",
+      "speed-graph-power-family",
+      "keyframe-velocity-to-cubic-bezier",
+      "easy-ease-linear-hold-usage",
+      "custom-function-ease",
+      "Nudge curve",
+      "밀어내는 속도 곡선",
+      "Easing curve families",
+      "가감속 곡선",
+      "Custom Bezier timing",
+      "사용자 곡선 타이밍",
+      "Linear",
+      "Quad",
+      "Cubic",
+      "Quart",
+      "Quint",
+      "Strong",
+      "Cubic Bezier",
+      "CustomEase",
+      "Easy Ease Timing",
+      "이지 이즈 타이밍",
+      "Easy Ease",
+      "Data transition easing",
+      "데이터 전환 이징",
+      "Progress easing curves",
+      "진행률 이징 곡선",
+      "Slow In and Slow Out",
+      "느린 시작과 느린 끝",
+      "Linear / none / power0",
+      "선형",
+      "ease",
+      "CSS 기본 완화",
+      "ease-in / in",
+      "가속",
+      "ease-out / out",
+      "감속",
+      "ease-in-out / inOut",
+      "가속과 감속",
+      "Sine",
+      "사인",
+      "Quad / power1",
+      "2차",
+      "Cubic / power2",
+      "3차",
+      "Quart / power3",
+      "4차",
+      "Quint / power4 / strong",
+      "5차",
+      "Expo",
+      "지수",
+      "Circ",
+      "원형",
+      "CustomEase / cubic-bezier / linear()",
+      "사용자 곡선",
+      "SlowMo / slow",
+      "완만한 양끝·선형 중앙",
+      "RoughEase / rough",
+      "거친 변화",
+      "ExpoScaleEase / expoScale",
+      "지수 비율 크기 변화"
+    ],
+    "variants": [
+      "linear",
+      "sine",
+      "power1~4",
+      "expo",
+      "circ",
+      "back",
+      "bounce",
+      "elastic",
+      "steps",
+      "power 계열",
+      "등속",
+      "사인",
+      "지수",
+      "사용자 함수 곡선",
+      "ease-in",
+      "ease-out",
+      "ease-in-out",
+      "다항식",
+      "원형",
+      "가속",
+      "감속",
+      "가감속",
+      "사용자 곡선 타이밍",
+      "다중 베지어",
+      "비대칭 곡선",
+      "SVG 이징 시각화",
+      "사용자 곡선",
+      "탄성 곡선은 spring-overshoot 항목",
+      "Back는 anticipation 항목",
+      "Bounce는 바운스 착지 항목",
+      "Steps는 계단식 타이밍 항목",
+      "입력 감속",
+      "출력 가속",
+      "비대칭 이즈",
+      "선형",
+      "다항",
+      "easeIn",
+      "easeOut",
+      "easeInOut",
+      "왕복",
+      "구간 압축"
+    ],
+    "sources": [
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/adapters/gsap-easing-and-stagger.md",
+        "license": "unknown"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#speed-graph-power-family",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "animista.net",
+        "url": "https://animista.net/play",
+        "license": "BSD-2-Clause (FreeBSD)"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/rules/nudge-curve.md",
+        "license": "unknown"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Eases/",
+        "license": "GSAP Standard License"
+      }
+    ],
+    "from": [
+      "R1a-001",
+      "R1b-013",
+      "R3-001",
+      "R1a-011",
+      "R2-001",
+      "R5-101",
+      "R6-001",
+      "R7-129",
+      "DICT-006",
+      "DICT-018",
+      "DICT-019",
+      "DICT-020",
+      "DICT-021",
+      "DICT-022",
+      "DICT-023",
+      "DICT-024",
+      "DICT-025",
+      "DICT-026",
+      "DICT-027",
+      "DICT-028",
+      "DICT-029",
+      "DICT-034",
+      "DICT-035",
+      "DICT-036",
+      "DICT-037"
+    ]
+  },
+  "anticipation": {
+    "aka": [
+      "Anticipation",
+      "예비 동작",
+      "anticipation-windup-chain",
+      "nudge-curve",
+      "예비동작",
+      "Anticipatory back motion",
+      "반대 방향 예비 동작",
+      "Anticipation Pose",
+      "예비 동작 포즈",
+      "Wind-up"
+    ],
+    "variants": [
+      "누르기 준비",
+      "발사 준비",
+      "회전 준비",
+      "수축 후 팽창",
+      "뒤로 당긴 뒤 이동",
+      "회전 예비",
+      "스케일 예비"
+    ],
+    "sources": [
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-keyframes/SKILL.md",
+        "license": "unknown"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#anticipation-windup-chain",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "motion dictionary 1-principles.md#3. 디즈니 12원칙 전체",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Eases/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "motiondesign.school",
+        "url": "https://motiondesign.school/blog/animation-principles-in-logo-animation/",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-002",
+      "R1b-015",
+      "DICT-002",
+      "R2-002",
+      "R5-103"
+    ]
+  },
+  "squash-stretch": {
+    "aka": [
+      "Squash and stretch",
+      "눌림과 늘어남",
+      "스쿼시와 스트레치",
+      "Squash and Stretch",
+      "찌그러짐과 늘어남",
+      "찌그러뜨리기와 늘이기",
+      "Squash Stretch",
+      "Rubber Band",
+      "고무줄 신축"
+    ],
+    "variants": [
+      "착지 압축",
+      "도약 신장",
+      "아이콘 팝",
+      "이동 신장",
+      "누름",
+      "도약",
+      "충돌",
+      "rubberBand",
+      "RubberSegment",
+      "SquishSwitch"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/hw-box-label/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Eases/CustomBounce/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "motiondesign.school",
+        "url": "https://motiondesign.school/blog/animation-principles-in-logo-animation/",
+        "license": "unknown"
+      },
+      {
+        "title": "motion dictionary 1-principles.md#3. 디즈니 12원칙 전체",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "local/hyperframes-animation",
+        "url": "claude-skill:hyperframes-animation/rules/physics-press-reaction.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-003",
+      "R2-005",
+      "R5-104",
+      "DICT-001",
+      "R1b-126",
+      "R3-035"
+    ]
+  },
+  "arc-motion": {
+    "aka": [
+      "Arc motion",
+      "곡선 이동",
+      "Arc Motion",
+      "곡선 도착",
+      "separate-dimensions-axis-ease",
+      "nudge-curve",
+      "Bezier Arc Travel",
+      "베지어 곡선 이동",
+      "Arcs",
+      "아크"
+    ],
+    "variants": [
+      "비대칭 축 이즈",
+      "베지어 호",
+      "포물선",
+      "S곡선",
+      "곡선 착지"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/arc-motion-path/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#separate-dimensions-axis-ease",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/animate-in-after-effects/animation-keyframes/keyframe-interpolation.html",
+        "license": "unknown"
+      },
+      {
+        "title": "motion dictionary 1-principles.md#3. 디즈니 12원칙 전체",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/offset-path-traveler/registry-item.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-004",
+      "R1b-020",
+      "R5-106",
+      "DICT-007"
+    ]
+  },
+  "follow-through": {
+    "aka": [
+      "Follow through",
+      "후속 동작",
+      "Follow Through",
+      "후행 정착",
+      "Follow Through Settle",
+      "후속 움직임 정착",
+      "Follow Through and Overlapping Action",
+      "팔로스루와 겹침 동작"
+    ],
+    "variants": [
+      "꼬리 정착",
+      "장식 회전",
+      "끝부분 흔들림"
+    ],
+    "sources": [
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-keyframes/SKILL.md",
+        "license": "unknown"
+      },
+      {
+        "title": "motion dictionary 1-principles.md#3.1 함께 쓰지만 구분해야 할 하위 개념",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "motiondesign.school",
+        "url": "https://motiondesign.school/blog/animation-principles-in-logo-animation/",
+        "license": "unknown"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1a-005",
+      "DICT-013",
+      "R5-105",
+      "DICT-005"
+    ]
+  },
+  "overlapping-action": {
+    "aka": [
+      "Overlapping action",
+      "겹치는 동작",
+      "Overlapping Action",
+      "겹침 동작",
+      "Time Delayed Follower",
+      "시간 지연 추종",
+      "valueAtTime follow",
+      "Drag",
+      "끌림"
+    ],
+    "variants": [
+      "위치 추종",
+      "크기 추종",
+      "회전 추종"
+    ],
+    "sources": [
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/rules/waterfall-entry.md",
+        "license": "unknown"
+      },
+      {
+        "title": "motion dictionary 1-principles.md#3.1 함께 쓰지만 구분해야 할 하위 개념",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/work-with-expressions/expression-examples/expression-examples.html",
+        "license": "unknown"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-creative/references/motion-principles.md",
+        "license": "unknown"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1a-006",
+      "DICT-014",
+      "R5-021",
+      "DICT-015"
+    ]
+  },
+  "stagger": {
+    "aka": [
+      "Stagger",
+      "시간차 배열",
+      "순차 스태거",
+      "range-selector-stagger-map",
+      "waterfall-entry",
+      "staggered-exit",
+      "staggered-reveal",
+      "스태거",
+      "Sequential stagger",
+      "Cascade",
+      "Staggered sequence",
+      "Staggered Group",
+      "순차 등장",
+      "Index Delay Cascade",
+      "인덱스 지연 연쇄",
+      "Index stagger",
+      "Data-driven stagger",
+      "데이터 순서 시차",
+      "Lagged animation start",
+      "시간차 시작",
+      "LaggedStart",
+      "LaggedStartMap"
+    ],
+    "variants": [
+      "정방향",
+      "역방향",
+      "중심에서 바깥",
+      "양끝에서 중심",
+      "격자 거리",
+      "불균일 간격",
+      "처음부터",
+      "끝부터",
+      "중앙부터",
+      "양끝부터",
+      "폭포 진입",
+      "순차 퇴장",
+      "closing-qr",
+      "grid-card-assemble",
+      "intro-kinetic-cascade",
+      "block/list",
+      "block/numbered",
+      "랜덤 순서",
+      "전체 시간 고정",
+      "시드 지터",
+      "개별 반복",
+      "개별 요요",
+      "함수 기반 지연",
+      "Animated Group",
+      "Animated List",
+      "BounceCards",
+      "정순",
+      "역순",
+      "중앙 확산",
+      "랜덤",
+      "AnimatedList",
+      "animated-list",
+      "animated-group",
+      "무작위 순서",
+      "순위 지연",
+      "값 기반 지연",
+      "방사 거리 지연",
+      "좌우 순서",
+      "중심부터",
+      "임의 순서"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/stagger-cascade/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/05-text-animator.md#range-selector-stagger-map",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "motion dictionary 1-principles.md#5. 타이밍·간격·리듬 기본기",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/resources/getting-started/Staggers/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "ibelick/motion-primitives",
+        "url": "https://motion-primitives.com/docs/animated-group",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1a-007",
+      "R1b-042",
+      "DICT-054",
+      "R2-015",
+      "R3-002",
+      "R5-022",
+      "R6-002",
+      "R7-046"
+    ]
+  },
+  "spring-overshoot": {
+    "aka": [
+      "Spring overshoot",
+      "스프링 오버슈트",
+      "Spring Overshoot",
+      "탄성 오버슈트",
+      "value-graph-overshoot-settle",
+      "elastic-amplitude-period",
+      "Elastic ease",
+      "Damped spring",
+      "스프링 정착",
+      "Elastic Settle",
+      "Back Overshoot",
+      "Overshoot",
+      "오버슈트",
+      "Settle",
+      "정착",
+      "Back",
+      "되밀림",
+      "Elastic",
+      "탄성",
+      "Spring",
+      "물리 스프링",
+      "Inertial Overshoot",
+      "관성 오버슈트",
+      "Inertia bounce expression",
+      "Text Scale Pop"
+    ],
+    "variants": [
+      "animate-text/spring-scale-in",
+      "단일 오버슈트",
+      "다중 탄성 왕복",
+      "무오버슈트 안착",
+      "object/hero-overshoot-strobe",
+      "탄성 이징",
+      "물리 스프링",
+      "시간 기반 스프링",
+      "임계 감쇠",
+      "elastic",
+      "back",
+      "spring",
+      "ElasticSlider",
+      "RubberSegment",
+      "WakeSlider",
+      "ScrubField",
+      "위치 관성",
+      "회전 관성",
+      "스케일 관성",
+      "문자 팝",
+      "단어 팝",
+      "텍스트 스케일 팝"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/spring-pop/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#value-graph-overshoot-settle",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Eases/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      },
+      {
+        "title": "motion dictionary 1-principles.md#3.1 함께 쓰지만 구분해야 할 하위 개념",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "R1a-008",
+      "R1b-014",
+      "R2-003",
+      "R3-003",
+      "DICT-016",
+      "DICT-017",
+      "DICT-030",
+      "DICT-031",
+      "DICT-040",
+      "R5-023"
+    ]
+  },
+  "timing-spacing": {
+    "aka": [
+      "Timing and spacing",
+      "시간과 간격",
+      "Weighted Deceleration",
+      "무게별 감속",
+      "weighted-deceleration-mass",
+      "Scene Three Beat",
+      "등장 홀드 퇴장",
+      "dynamic-content-sequencing",
+      "Freeze Hold",
+      "움직임 정지 홀드",
+      "Timing and holds",
+      "시간 배분과 홀드",
+      "Playback speed ramp",
+      "재생 속도 램프",
+      "Keyframe choreography",
+      "Transition dwell and final hold",
+      "전환 사이 읽기 정지",
+      "Explanatory hold",
+      "설명용 정지 휴지",
+      "Wait",
+      "Timing and spacing demonstration",
+      "타이밍과 간격 대비",
+      "Timing",
+      "타이밍",
+      "Duration",
+      "지속 시간",
+      "Spacing",
+      "간격 배치",
+      "Hold / Dwell",
+      "홀드",
+      "Asymmetric timing",
+      "비대칭 시간",
+      "Enter / Hold / Exit",
+      "진입·독해·퇴장",
+      "Reading hold / Narration cue",
+      "읽기 홀드·발화 큐",
+      "Hold / Settle / Breathing room",
+      "홀드·세틀·호흡"
+    ],
+    "variants": [
+      "미디어 연속 이동",
+      "정지 홀드",
+      "하드 스톱",
+      "비트 정지",
+      "퍼센트 키프레임",
+      "배열 키프레임",
+      "누적 지연",
+      "홀드",
+      "재생 속도 램프",
+      "슬로 모션",
+      "가속 재생",
+      "속도 반전",
+      "전역 재생 이징",
+      "속도 램프",
+      "중간 정지",
+      "끝 정지",
+      "핵심 연도 정지",
+      "도해 휴지",
+      "정답 전 휴지",
+      "무거운 공",
+      "가벼운 공",
+      "등속과 가속"
+    ],
+    "sources": [
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-creative/references/motion-principles.md",
+        "license": "unknown"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#weighted-deceleration-mass",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/awesome-html-scrolline-deck",
+        "url": "gongnyang/awesome-html-scrolline-deck:references/choreography.md",
+        "license": "MIT"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#freeze-hold",
+        "license": "unknown"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/GSAP/Timeline/",
+        "license": "GSAP Standard License"
+      }
+    ],
+    "from": [
+      "R1a-009",
+      "R1b-018",
+      "R1b-086",
+      "R1b-143",
+      "R2-011",
+      "R6-007",
+      "R7-052",
+      "R7-078",
+      "DICT-009",
+      "DICT-048",
+      "DICT-050",
+      "DICT-052",
+      "DICT-058",
+      "DICT-073",
+      "DICT-178",
+      "DICT-219"
+    ]
+  },
+  "motion-hierarchy": {
+    "aka": [
+      "Motion hierarchy",
+      "모션 위계",
+      "Negative Space Hold",
+      "빈 공간 결론 홀드",
+      "Coherence-driven background settling",
+      "핵심 외 움직임 정착"
+    ],
+    "variants": [
+      "부모 먼저",
+      "자식 먼저",
+      "속성별 타이밍",
+      "침묵 구간",
+      "엔드카드",
+      "단일 로고",
+      "배경 정지",
+      "보조 요소 퇴장",
+      "비핵심 디밍"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/beat-timeline/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/GSAP/Timeline/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "motion dictionary 1-principles.md#6. 모션 위계·코레오그래피",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#negative-space-hold",
+        "license": "unknown"
+      },
+      {
+        "title": "Richard E. Mayer / Wiley",
+        "url": "https://onlinelibrary.wiley.com/doi/10.1111/jcal.12197",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-010",
+      "R2-013",
+      "DICT-062",
+      "R1b-145",
+      "R7-122"
+    ]
+  },
+  "underline-draw": {
+    "aka": [
+      "Underline draw",
+      "밑줄 그리기",
+      "Underline Draw",
+      "마커 밑줄 그리기",
+      "underline-emphasis-sweep",
+      "css-marker-patterns",
+      "밑줄 드로우",
+      "Animated underline",
+      "밑줄 그리기 강조",
+      "FlashUnder"
+    ],
+    "variants": [
+      "밑줄",
+      "취소선",
+      "동그라미",
+      "이중선",
+      "seal/rail-lockup-sweep",
+      "block/quote",
+      "underline-from",
+      "overline-from",
+      "underline-reveal",
+      "highlighter",
+      "Pointer Highlight",
+      "overline-from-center",
+      "overline-from-left",
+      "overline-from-right",
+      "overline-reveal",
+      "underline-from-center",
+      "underline-from-left",
+      "underline-from-right",
+      "밑줄 유지",
+      "밑줄 지나가기"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/hw-underline/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/06-shapes-strokes.md#underline-emphasis-sweep",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "IanLunn/Hover",
+        "url": "https://github.com/IanLunn/Hover",
+        "license": "MIT personal/open-source + paid commercial"
+      },
+      {
+        "title": "motion dictionary 3-type-data-ui.md#07. 밑줄 드로우 · Underline draw",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "3b1b/manim",
+        "url": "https://github.com/3b1b/manim/blob/master/manimlib/animation/indication.py",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1a-075",
+      "R1b-055",
+      "R3-059",
+      "DICT-148",
+      "R7-128"
+    ]
+  },
+  "annotation-callout": {
+    "aka": [
+      "Annotation callout",
+      "주석 콜아웃",
+      "Annotation Callout",
+      "Annotation / Callout",
+      "주석·콜아웃",
+      "Moving data annotation callout",
+      "데이터 주석 따라가기"
+    ],
+    "variants": [
+      "해부 행",
+      "번호 주석",
+      "타깃 박스",
+      "anatomy-rows",
+      "끝점 주석",
+      "이동 거품 주석",
+      "최댓값 설명"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/vox-annotate/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/awesome-html-scrolline-deck",
+        "url": "gongnyang/awesome-html-scrolline-deck:references/techniques.md#anatomy-rows",
+        "license": "MIT"
+      },
+      {
+        "title": "motion dictionary 4-explainer-learning.md#B. 공개 순서와 시선 유도",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "the-pudding/pop-love-songs",
+        "url": "https://github.com/the-pudding/pop-love-songs",
+        "license": "MIT"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/hw-callout-circle/registry-item.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-076",
+      "R1b-082",
+      "DICT-205",
+      "R6-090"
+    ]
+  },
+  "spotlight": {
+    "aka": [
+      "Spotlight",
+      "스포트라이트",
+      "움직이는 스포트라이트",
+      "mask-spotlight-drift",
+      "spotlight-sweep",
+      "Overview-to-example spotlight",
+      "전체에서 사례 초점",
+      "Code focus dimming",
+      "코드 초점 디밍",
+      "UI spotlight mask",
+      "UI 스포트라이트 마스크",
+      "Dim / Veil",
+      "디밍",
+      "Spotlight / Dimming",
+      "스포트라이트·배경 약화"
+    ],
+    "variants": [
+      "고정 초점",
+      "탐색 표류",
+      "행별 초점",
+      "단일 사례",
+      "작은 그룹",
+      "전체 복귀",
+      "줄 초점",
+      "토큰 초점",
+      "다중 범위 초점",
+      "둥근 사각",
+      "원형",
+      "다중 영역"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/spotlight-card/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/04-masks-mattes.md#mask-spotlight-drift",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      },
+      {
+        "title": "motion-canvas/motion-canvas",
+        "url": "https://motioncanvas.io/docs/code/",
+        "license": "MIT"
+      },
+      {
+        "title": "Arcade",
+        "url": "https://docs.arcade.software/kb/build/interactive-demo/edit/hotspots-callouts-and-spotlights",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-077",
+      "R1b-034",
+      "R6-089",
+      "R7-090",
+      "R7-106",
+      "DICT-102",
+      "DICT-206"
+    ]
+  },
+  "progressive-disclosure": {
+    "aka": [
+      "Progressive disclosure",
+      "점진적 공개"
+    ],
+    "variants": [],
+    "sources": [
+      {
+        "title": "motion dictionary 1-principles.md#6. 모션 위계·코레오그래피",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "DICT-069",
+      "DICT-202"
+    ]
+  },
+  "match-cut": {
+    "aka": [
+      "Graphic match / Match cut 연결",
+      "그래픽 대응"
+    ],
+    "variants": [],
+    "sources": [
+      {
+        "title": "motion dictionary 1-principles.md#7. 연속성·공간 모델·시선 유도",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "DICT-083"
+    ]
+  },
+  "line-draw": {
+    "aka": [
+      "Path tracing / Draw-on",
+      "연결선 추적",
+      "Directional cue / Connector",
+      "방향 단서·연결선"
+    ],
+    "variants": [],
+    "sources": [
+      {
+        "title": "motion dictionary 1-principles.md#7. 연속성·공간 모델·시선 유도",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "DICT-087",
+      "DICT-209"
+    ]
+  },
+  "zoom-to-detail": {
+    "aka": [
+      "Focus zoom / Reframing",
+      "포커스 줌·리프레임"
+    ],
+    "variants": [],
+    "sources": [
+      {
+        "title": "motion dictionary 4-explainer-learning.md#B. 공개 순서와 시선 유도",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "DICT-207"
+    ]
+  },
+  "cursor-click": {
+    "aka": [
+      "Cursor choreography / Action cue",
+      "커서 안무·행동 단서"
+    ],
+    "variants": [],
+    "sources": [
+      {
+        "title": "motion dictionary 4-explainer-learning.md#B. 공개 순서와 시선 유도",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "DICT-208"
+    ]
+  }
+}

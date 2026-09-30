@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>글자 복제 잔상 · Text Echo Trail</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>canvas{position:absolute;inset:0;width:1168px;height:580px}.scene{isolation:isolate}</style></head>
+<body data-no="497" data-cat="질감·스타일 · TEXTURE &amp; STYLE" data-ko="글자 복제 잔상" data-en="Text Echo Trail" data-meta="6개 복사본 · 0.045초 간격" data-dur="3.8" data-poster="0.85">
+<main class="scene"><canvas width="1168" height="580" aria-label="큰 문구가 빠르게 이동하고 여섯 잔상이 시간차로 따라온 뒤 하나로 정착한다."></canvas></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const canvas=document.querySelector('canvas'), ctx=canvas.getContext('2d');
+const W=1168,H=580,INK='#141210',PAPER='#F4EEE3',VERM='#D6401C',RULE='#CDC3B2';
+const SERIF=getComputedStyle(document.body).getPropertyValue('--serif'), SANS=getComputedStyle(document.body).getPropertyValue('--sans');
+const rng=Motion.rand(303), state={t:0};
+const clamp=(x)=>Math.max(0,Math.min(1,x));
+const out=(x)=>1-Math.pow(1-clamp(x),3);
+const mix=(a,b,p)=>a+(b-a)*p;
+function circle(x,y,r,color=INK,alpha=1){ctx.globalAlpha=alpha;ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y,Math.max(.01,r),0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;}
+function label(s,x,y,size=16,color=INK){ctx.fillStyle=color;ctx.font=`${size}px ${SANS}`;ctx.textAlign='left';ctx.fillText(s,x,y);}
+function title(s='다음 말',x=584,y=330,color=INK){ctx.fillStyle=color;ctx.font=`700 108px ${SERIF}`;ctx.textAlign='center';ctx.fillText(s,x,y);ctx.textAlign='left';}
+function clear(){ctx.clearRect(0,0,W,H);ctx.globalAlpha=1;ctx.filter='none';}
+function pos(t){return mix(230,584,out((t-.3)/1.05));}
+function draw(t){clear();
+label('움직임이 남긴 말',104,95,24);label('잔상이 하나로 모인다',104,514,18);
+for(let i=6;i>=1;i--){ctx.globalAlpha=(.48-i*.055)*(1-out((t-1.1)/.6));title('다음 말',pos(t-i*.045),330,INK);}ctx.globalAlpha=1;title('다음 말',pos(t),330);circle(898,283,39*out((t-1.5)/.5),VERM);
+}
+const tl=Motion.timeline();
+tl.to(state,{t:3.8,duration:3.8,ease:"none",onUpdate:()=>draw(state.t)},0);
+draw(0);
+Motion.ready();
+</script></body></html>

@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>모프 전환 · Morph</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>
+.label{position:absolute;left:64px;top:48px}.title{position:absolute;left:64px;top:124px}.morph{position:absolute;left:64px;top:190px;width:200px;height:200px;background:var(--ink);transform-origin:0 50%}.b{position:absolute;inset:0;opacity:0}.bar{position:absolute;left:64px;height:32px;background:var(--ink)}.value{position:absolute;left:840px;top:274px;font-size:100px}.names{position:absolute;left:64px;top:442px}.lead{position:absolute;left:420px;top:490px;opacity:0}
+</style></head><body data-no="125" data-cat="전환·컷 · TRANSITIONS" data-ko="모프 전환" data-en="Morph" data-meta="사각형 → 원 → 막대 · 동일 요소" data-dur="3"><main class="scene"><div class="lab label a">A / 입력</div><div class="b"><div class="lab label">B / 다음 말</div><div class="t-l title">AI는 다음 말을 고른다</div><div class="bar" style="top:336px;width:210px"></div><div class="bar" style="top:392px;width:90px"></div><div class="num value">62<span class="lab">%</span></div><div class="lab names">고른다 62% · 정한다 21% · 찾는다 9%</div></div><div class="morph"></div><div class="lead"><i></i><s></s><span>같은 요소 · 형태와 색 연결</span></div></main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+tl.set('.morph',{x:420,borderRadius:'0%',scaleX:1,scaleY:1});
+tl.to('.morph',{borderRadius:'50%',backgroundColor:'var(--verm)',duration:0.7,ease:'power2.inOut'},0.35);
+tl.to('.morph',{x:0,scaleX:3.1,scaleY:0.16,borderRadius:'0%',duration:0.75,ease:'power3.inOut'},1.25);
+tl.to('.a',{opacity:0,duration:0.2},1.5);
+tl.to('.b',{opacity:1,duration:0.3},1.75);
+tl.to('.lead',{opacity:1,duration:0.25},2.1);
+Motion.ready();
+</script></body></html>

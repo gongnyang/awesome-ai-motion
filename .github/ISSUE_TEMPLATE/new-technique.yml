@@ -1,0 +1,26 @@
+name: New technique · 새 기법
+description: Propose a motion technique for the field guide · 도감에 넣을 모션 기법 제안
+labels: [technique]
+body:
+  - type: input
+    id: name
+    attributes: { label: "Name (Korean · English) · 이름", placeholder: "오버랩 · Overlapping Action" }
+    validations: { required: true }
+  - type: textarea
+    id: what
+    attributes: { label: "What moves, and how · 무엇이 어떻게 움직이나", description: "One or two sentences a viewer could verify in a 3-second clip" }
+    validations: { required: true }
+  - type: textarea
+    id: why
+    attributes: { label: "What it tells the viewer · 전달 효과" }
+  - type: input
+    id: params
+    attributes: { label: "Default parameters · 기본 파라미터", placeholder: "0.6s, power3.out, stagger 0.06s" }
+  - type: input
+    id: source
+    attributes: { label: "Source URL and license · 출처와 라이선스" }
+  - type: dropdown
+    id: family
+    attributes:
+      label: Family · 분류
+      options: [principles, entrance, emphasis, type, transitions, camera, data, ui, explainer, shape, texture, generative, depth, loop, caption]

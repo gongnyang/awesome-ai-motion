@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>대형 마스크 리빌 · Giant Mask Reveal</title>
+<meta name="viewport" content="width=1280">
+<link rel="stylesheet" href="../../lib/stage.css">
+<style>
+#stage{position:absolute;left:0;top:0;width:1280px;height:580px;display:block}
+.glyph{font-family:var(--didone);font-weight:800;font-size:700px;font-variation-settings:"opsz" 96;font-feature-settings:"lnum" 1}
+#mo{fill:none;stroke:var(--ink);stroke-width:2px}
+.w-bg{fill:var(--paper2)}
+.w-grid{stroke:var(--rule);stroke-width:1px}
+.w-big{font-family:var(--didone);font-weight:500;font-variation-settings:"opsz" 96;font-feature-settings:"lnum" 1;fill:var(--ink)}
+.w-ser{font-family:var(--serif);font-weight:700;fill:var(--ink)}
+.w-mono{font-family:var(--mono);font-size:14px;letter-spacing:.08em;fill:var(--ink2)}
+.w-pct{font-family:var(--serif);font-weight:700}
+.w-ink{fill:var(--ink)} .w-verm{fill:var(--verm)}
+.w-rule{stroke:var(--ink);stroke-width:2px}
+.w-hair{stroke:var(--ink3);stroke-width:1px}
+.w-circ{fill:none;stroke:var(--ink3);stroke-width:1.5px}
+</style></head>
+<body data-no="232" data-cat="가상 카메라 · CAMERA" data-ko="대형 마스크 리빌" data-en="Giant Mask Reveal" data-meta="939 창 · 마스크 1 → 12배 · 세계 0.72 → 1 · 2.3s" data-dur="3.5" data-poster="3.3">
+<main class="scene bleed">
+<svg id="stage" viewBox="0 0 1280 580" aria-label="939 글자 창 안으로 들어가는 장면">
+  <defs>
+    <clipPath id="m" clipPathUnits="userSpaceOnUse">
+      <text id="mt" class="glyph" x="640" y="535" text-anchor="middle">939</text>
+    </clipPath>
+  </defs>
+  <g id="win" clip-path="url(#m)"><g class="wcam" id="W1"></g></g>
+  <g id="full" opacity="0"><g class="wcam" id="W2"></g></g>
+  <text id="mo" class="glyph" x="640" y="535" text-anchor="middle" vector-effect="non-scaling-stroke">939</text>
+</svg>
+</main>
+<script src="../../lib/gsap.min.js"></script>
+<script src="../../lib/stage.js"></script>
+<script>
+// 편집 도판 한 장 = "세계". 같은 마크업을 창 안(W1)과 창 밖 완성판(W2)에 똑같이 넣는다
+let g = '<rect class="w-bg" x="-640" y="-420" width="2560" height="1420"/>';
+for (let x = -576; x <= 1856; x += 64) g += `<line class="w-grid" x1="${x}" y1="-420" x2="${x}" y2="1000"/>`;
+for (let y = -384; y <= 960; y += 64) g += `<line class="w-grid" x1="-640" y1="${y}" x2="1920" y2="${y}"/>`;
+g += '<circle class="w-circ" cx="300" cy="240" r="200"/>';
+g += '<text class="w-mono" x="72" y="74">B / 939 안쪽 · 다음 말</text>';
+g += '<text class="w-big" x="60" y="336" font-size="300">62<tspan class="w-pct" font-size="96" dx="10">%</tspan></text>';
+g += '<text class="w-ser" x="72" y="430" font-size="52">AI는 다음 말을 고른다</text>';
+g += '<text class="w-mono" x="72" y="478">30번 중 18번 · 입력 → 모델 → 출력</text>';
+g += '<line class="w-rule" x1="652" y1="64" x2="652" y2="516"/>';
+[['고른다',62],['정한다',21],['찾는다',9],['만든다',5],['쓴다',3]].forEach(([w,p],i) => {
+  const y = 104 + i * 86;
+  g += `<text class="w-ser" x="700" y="${y + 30}" font-size="30">${w}</text>`;
+  g += `<text class="w-mono" x="1208" y="${y + 30}" text-anchor="end">${p}%</text>`;
+  g += `<rect class="${i ? 'w-ink' : 'w-verm vbar'}" x="700" y="${y + 46}" width="${Math.round(p / 62 * 440)}" height="${i ? 12 : 18}"/>`;
+  g += `<line class="w-hair" x1="700" y1="${y + 76}" x2="1208" y2="${y + 76}"/>`;
+});
+document.getElementById('W1').innerHTML = g;
+document.getElementById('W2').innerHTML = g;
+
+document.fonts.load('800 700px "Bodoni Moda"').then(() => document.fonts.ready).then(() => {
+  const tl = Motion.timeline();
+  const P = '732 114'; // 가운데 3의 가장 굵은 획 안쪽(내접원 반지름 66px): 12배면 화면 전체를 덮는다
+  gsap.set('#mt, #mo, .wcam', {svgOrigin: P, smoothOrigin: false});
+  gsap.set('.vbar', {scaleX: 0, transformOrigin: '0% 50%'});
+  // 카메라가 글자 속으로: 가까운 층(마스크)은 12배, 먼 층(세계)은 0.72 → 1
+  // 확대는 지수로(12^p): 매 순간 같은 비율로 커져 일정한 속도로 파고드는 느낌
+  const z = {p: 0};
+  tl.fromTo(z, {p: 0}, {p: 1, duration: 2.3, ease: 'power1.in', onUpdate: () => gsap.set('#mt, #mo', {scale: Math.pow(12, z.p)})}, 0.25);
+  tl.fromTo('.wcam', {scale: 0.72, x: 36}, {scale: 1, x: 0, duration: 2.3, ease: 'power3.inOut'}, 0.25);
+  tl.to('#mo', {opacity: 0, duration: 0.4}, 1.3);
+  tl.set('#full', {opacity: 1}, 2.55); // 완전히 덮인 뒤 창 밖 완성판으로 교체(같은 그림이라 이음매 없음)
+  tl.to('.vbar', {scaleX: 1, duration: 0.45, ease: 'power3.out'}, 2.55);
+  Motion.ready();
+});
+</script>
+</body></html>

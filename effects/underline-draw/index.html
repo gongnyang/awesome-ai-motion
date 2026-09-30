@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>밑줄 드로우 · Underline Draw</title><meta name="viewport" content="width=1280">
+<link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.sentence{position:absolute;left:0;right:0;top:226px;text-align:center;white-space:nowrap;line-height:110px}
+.key{display:inline-block;position:relative}
+.underline{position:absolute;left:-8px;bottom:-20px;width:calc(100% + 16px);height:32px;overflow:visible}
+.underline path{fill:none;stroke:var(--verm);stroke-width:6;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}
+.lead{left:448px;top:403px;opacity:0}
+</style></head>
+<body data-no="094" data-cat="타이포 · TYPOGRAPHY" data-ko="밑줄 드로우" data-en="Underline Draw" data-meta="SVG path · dashoffset 1 → 0" data-dur="3">
+<main class="scene"><div class="sentence t-xl">AI는 <span class="key">다음 말<svg class="underline" viewBox="0 0 270 32" preserveAspectRatio="none"><path pathLength="1" d="M 5 20 C 72 11 172 13 264 17"/></svg></span>을 고른다</div>
+<div class="lead"><i></i><s></s><span>한 획 · 1.35s</span></div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+tl.fromTo('.underline path', {strokeDashoffset:1}, {strokeDashoffset:0, autoRound:false, duration:1.35, ease:'none'}, 0.3);
+tl.to('.lead', {opacity:1, duration:0.25}, 1.85);
+Motion.ready();
+</script></body></html>

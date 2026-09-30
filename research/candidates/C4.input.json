@@ -1,0 +1,6738 @@
+[
+{
+"key": "typewriter",
+"family": "type",
+"core": "typewriter",
+"rows": [
+{
+"id": "R1a-061",
+"en": "Typewriter",
+"ko": "타자기",
+"aka": [],
+"family": "type",
+"what": "글자가 한 자씩 나타나고 커서가 현재 끝점을 따라간다.",
+"why": "실시간 입력과 사고의 진행을 보여준다.",
+"params": "재현 기본값 제안: 25~35ms/자, steps(1), 커서 주기 600ms; 출처 기본값 typewriter: 등장 240ms, 간격 46ms, steps(1, end); 레지스트리 notes-typing 기본값 speed=1",
+"impl": "시간에서 표시 글자 수를 계산하고 문자열과 커서 좌표를 갱신한다.",
+"runtime": "gsap",
+"variants": [
+"animate-text/typewriter",
+"균일 타자",
+"사람 입력 리듬",
+"코드",
+"메모",
+"터미널"
+],
+"core": "typewriter",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/typewriter/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/typed-prompt/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/code-typing/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/notes-typing/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/notes-reveal/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/code-snippet-apple-terminal-pro/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/code-snippet-dark-2026/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/code-snippet-dark-modern/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/discrete-text-sequence.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:embedded-captions/references/motion-vocabulary.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/yt-comment-card/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/typewriter.json",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-048",
+"en": "Typewriter",
+"ko": "타자기 리빌",
+"aka": [
+"typewriter-vs-fade-sequence",
+"discrete-text-sequence",
+"gsap-effects",
+"typewriter-reveal"
+],
+"family": "type",
+"what": "문자나 단어가 커서 뒤에 차례로 추가되며 문장이 완성된다.",
+"why": "누군가 입력하거나 말하고 있음을 느낀다.",
+"params": "기본 80ms/문자, 커서 주기 600ms, 추가 순간 0ms",
+"impl": "HTML 시간에 대응하는 문자열 접두부를 표시하고 커서 상태를 같은 시간으로 계산한다.",
+"runtime": "gsap",
+"variants": [
+"문자 타이핑",
+"단어 타이핑",
+"백스페이스",
+"오타 수정",
+"일괄 붙여넣기",
+"typo/typewriter-stage",
+"closing-qr",
+"typewriter-reveal",
+"typewriter-phrase-keyword-shuffle"
+],
+"core": "typewriter",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/05-text-animator.md#typewriter-vs-fade-sequence",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/typo/typewriter-stage.html",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/typo/typewriter-stage.meta.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:references/techniques.md#closing-qr",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/closing-qr/scene.css",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/closing-qr/scene.html",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/closing-qr/scene.js",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/closing-qr/template.json",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/discrete-text-sequence.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/gsap-effects.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/typewriter-reveal.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:embedded-captions/references/motion-vocabulary.md",
+"repo": "local/embedded-captions",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#typewriter-reveal",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/typewriter-reveal/scene.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/typewriter-reveal/index.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/template-catalog.md#typewriter-phrase-keyword-shuffle",
+"repo": "local/music-to-video",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R2-059",
+"en": "Typewriter",
+"ko": "타자기 텍스트",
+"aka": [],
+"family": "type",
+"what": "문자열이 한 글자씩 늘어나며 입력되는 것처럼 보인다.",
+"why": "생각과 입력의 진행을 보여준다.",
+"params": "공식: TextPlugin delimiter 빈 문자열, ease none 권장. speed 1이면 변경당 50ms. 권장 커서 점멸 600ms.",
+"impl": "문자 배열의 표시 개수를 타임라인으로 늘리고 커서 opacity를 반복한다.",
+"runtime": "gsap",
+"variants": [
+"자연스러운 간격",
+"삭제",
+"반복 문구",
+"오른쪽부터"
+],
+"core": "typewriter",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/TextPlugin/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/docs/react-typewriter",
+"repo": "motion.dev Motion+",
+"license": "unknown"
+},
+{
+"url": "https://motion.dev/examples/react-typewriter",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://motion.dev/examples/react-typewriter-natural-typing",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://codepen.io/GreenSock/pen/wvrpPqv",
+"repo": "CodePen GreenSock",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R3-092",
+"en": "Typewriter",
+"ko": "타자 입력",
+"aka": [],
+"family": "type",
+"what": "문장이 한 글자씩 나타나고 커서가 끝에서 깜박인다.",
+"why": "실시간 작성과 생각의 흐름을 보여 준다.",
+"params": "도감 기본값: 글자당 50ms, 커서 600ms, 문장 유지 1500ms",
+"impl": "HTML 글자 노출 수와 커서 opacity를 시간에 맞춰 바꾼다",
+"runtime": "css",
+"variants": [
+"Typing Animation",
+"Terminal",
+"TextType",
+"Typewriter Effect",
+"typing-animation",
+"typewriter-effect"
+],
+"core": "typewriter",
+"sources": [
+{
+"url": "https://magicui.design/docs/components/typing-animation",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/typewriter-effect",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+},
+{
+"id": "DICT-142",
+"en": "Typewriter",
+"ko": "타자기",
+"aka": [],
+"family": "type",
+"what": "글자를 하나씩 불연속으로 공개하는 텍스트 연출이다.",
+"why": "",
+"params": "40~70ms/글자, 어절 쉼 150~250ms, 완료 홀드 1000~1600ms; Q, 글자 사이 이동 0px.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "typewriter",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 3-type-data-ui.md#01. 타자기 · Typewriter",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "backspaceretype",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1a-062",
+"en": "Backspace retype",
+"ko": "지우고 다시 입력",
+"aka": [],
+"family": "type",
+"what": "완성된 문장의 일부가 뒤로 지워진 뒤 다른 단어가 입력된다.",
+"why": "수정, 재고, 관점 전환을 보여준다.",
+"params": "재현 기본값 제안: 입력 80ms/자, 삭제 40ms/자, 정지 400ms",
+"impl": "입력과 삭제 문자열 상태를 시간 임계점 배열로 정의한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/discrete-text-sequence.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/typewriter-reveal.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "contextcaret",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1a-063",
+"en": "Context caret",
+"ko": "문맥 반응 커서",
+"aka": [],
+"family": "type",
+"what": "텍스트 커서가 현재 입력 구간에 따라 색과 깜빡임을 바꾼다.",
+"why": "입력의 의미와 현재 초점 구간을 알려준다.",
+"params": "재현 기본값 제안: 깜빡임 600~1200ms, 색 전환 0ms, 입력 유예 200ms",
+"impl": "문자열 상태와 커서 상태를 같은 시간표에서 계산한다.",
+"runtime": "css",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/context-sensitive-cursor.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-094",
+"en": "Context Caret",
+"ko": "문맥 커서",
+"aka": [
+"context-sensitive-cursor"
+],
+"family": "type",
+"what": "타이핑 커서가 현재 입력 중인 구간의 의미에 따라 색과 깜박임을 바꾼다.",
+"why": "현재 키워드와 입력 상태를 구분한다.",
+"params": "기본 커서 폭 12px, 높이 글자의 0.9배, 깜박임 800ms, 색 3개",
+"impl": "HTML 입력 단계의 메타데이터로 커서 색을 바꾸고 시간 함수로 opacity를 결정한다.",
+"runtime": "gsap",
+"variants": [
+"브랜드 구간",
+"성공 구간",
+"타이핑 중 고정"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/context-sensitive-cursor.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "characterstagger",
+"family": "type",
+"core": "char-stagger",
+"rows": [
+{
+"id": "R1a-064",
+"en": "Character stagger",
+"ko": "글자 시간차 등장",
+"aka": [],
+"family": "type",
+"what": "글자가 아래, 위, 중심, 양끝의 순서로 하나씩 자리에 들어온다.",
+"why": "읽을 방향과 리듬을 만든다.",
+"params": "재현 기본값 제안: 글자 400ms, 간격 46ms, 이동 24px; 출처 기본값 per-character-rise: 등장 700ms, 간격 24ms, cubic-bezier(0.2, 0.8, 0.2, 1); 출처 기본값 bottom-up-letters: 등장 400ms, 간격 88ms, cubic-bezier(0.18, 1, 0.32, 1); 출처 기본값 top-down-letters: 등장 400ms, 간격 88ms, cubic-bezier(0.18, 1, 0.32, 1); 출처 기본값 stagger-from-center: 등장 620ms, 간격 22ms, cubic-bezier(0.22, 1, 0.36, 1); 출처 기본값 stagger-from-edges: 등장 620ms, 간격 22ms, cubic-bezier(0.22, 1, 0.36, 1)",
+"impl": "글자별 span에 순서별 지연과 transform 보간을 준다.",
+"runtime": "gsap",
+"variants": [
+"animate-text/per-character-rise",
+"animate-text/bottom-up-letters",
+"animate-text/top-down-letters",
+"animate-text/stagger-from-center",
+"animate-text/stagger-from-edges",
+"상승",
+"하강",
+"중앙 공개",
+"양끝 공개",
+"로고 글자 조립"
+],
+"core": "char-stagger",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/bottom-up-letters/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/top-down-letters/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/adapters/animate-text.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/logo-brand-close/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/per-character-rise.json",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/bottom-up-letters.json",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/top-down-letters.json",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/stagger-from-center.json",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/stagger-from-edges.json",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R2-056",
+"en": "Character stagger",
+"ko": "글자 순차 등장",
+"aka": [],
+"family": "type",
+"what": "문장의 글자가 하나씩 이동하거나 회전하며 제자리에 놓인다.",
+"why": "짧은 문구의 읽는 순서를 만든다.",
+"params": "공식: SplitText type chars,words,lines. 권장 글자 간격 35ms, 개별 400ms, y 24px.",
+"impl": "접근성 원문을 유지하고 시각용 글자 span의 위치와 opacity를 스태거로 보간한다.",
+"runtime": "gsap",
+"variants": [
+"상승",
+"회전",
+"중앙부터",
+"랜덤",
+"퇴장"
+],
+"core": "char-stagger",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/SplitText/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/docs/split-text",
+"repo": "motion.dev Motion+",
+"license": "unknown"
+},
+{
+"url": "https://animejs.com/documentation/text/splittext",
+"repo": "juliangarnier/anime",
+"license": "MIT"
+},
+{
+"url": "https://motion.dev/examples/react-split-text",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://codepen.io/GreenSock/pen/JojaebV",
+"repo": "CodePen GreenSock",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "wordrise",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1a-065",
+"en": "Word rise",
+"ko": "단어 떠오르기",
+"aka": [],
+"family": "type",
+"what": "단어들이 조금씩 위로 올라오며 흐림이 사라지고 선명하게 자리 잡는다.",
+"why": "차분한 문장 구성과 읽기 순서를 만든다.",
+"params": "재현 기본값 제안: 350ms, y 8~14px, 간격 80ms, power2.out; 출처 기본값 soft-blur-in: 등장 900ms, 간격 25ms, cubic-bezier(0.22, 1, 0.36, 1); 출처 기본값 per-word-crossfade: 등장 700ms, 간격 70ms, cubic-bezier(0.16, 1, 0.3, 1)",
+"impl": "단어 span의 y와 opacity와 blur를 시간차 보간한다.",
+"runtime": "gsap",
+"variants": [
+"animate-text/soft-blur-in",
+"animate-text/per-word-crossfade",
+"단어",
+"글자",
+"페이드",
+"블러",
+"에치"
+],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/per-word-rise/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/per-word-crossfade/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/soft-blur-in/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/blur-in/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:embedded-captions/references/motion-vocabulary.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/lt-dark-card/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/titlecard-calm/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/titlecard-lockup/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/yt-prism-title/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/soft-blur-in.json",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/per-word-crossfade.json",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "masktextreveal",
+"family": "type",
+"core": "mask-reveal",
+"rows": [
+{
+"id": "R1a-066",
+"en": "Mask text reveal",
+"ko": "마스크 글자 공개",
+"aka": [],
+"family": "type",
+"what": "글자나 줄이 고정된 창의 경계 뒤에서 미끄러져 나타난다.",
+"why": "정돈된 등장과 명확한 기준선을 만든다.",
+"params": "재현 기본값 제안: 400ms, y 100%, 시작차 80ms, power3.out; 출처 기본값 mask-reveal-up: 등장 760ms, 간격 90ms, cubic-bezier(0.22, 1, 0.36, 1); 출처 기본값 line-by-line-slide: 등장 900ms, 간격 120ms, cubic-bezier(0.22, 1, 0.36, 1)",
+"impl": "overflow 또는 clip-path 부모 안에서 내용만 이동한다.",
+"runtime": "css",
+"variants": [
+"animate-text/mask-reveal-up",
+"animate-text/line-by-line-slide",
+"단어 와이프",
+"줄 공개",
+"좌우 줄 슬라이드",
+"SVG 글자 마스크"
+],
+"core": "mask-reveal",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-clip-wipe/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/line-by-line-slide/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/svg-mask-reveal/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/techniques.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/testimonial-card/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/testimonial-proof-card/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/mask-reveal-up.json",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/line-by-line-slide.json",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "lineswap",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1a-067",
+"en": "Line swap",
+"ko": "줄 교체",
+"aka": [],
+"family": "type",
+"what": "기존 줄이 창 위로 나가고 다음 줄이 아래에서 같은 자리를 채운다.",
+"why": "제목이나 상태 변화가 한 자리에서 읽힌다.",
+"params": "재현 기본값 제안: 500ms, y +/-100%, power3.inOut; 출처 기본값 blur-out-up: 등장 560ms, 간격 28ms, cubic-bezier(0.22, 1, 0.36, 1)",
+"impl": "고정 줄 높이의 마스크 내부 두 줄을 반대 시작점에서 같은 방향 이동한다.",
+"runtime": "gsap",
+"variants": [
+"animate-text/blur-out-up"
+],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/line-swap/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/shared-axis-y/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/blur-out-up/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/text-state-swap/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/adapters/animate-text.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/blur-out-up.json",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "kineticcenterbuild",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1a-068",
+"en": "Kinetic center build",
+"ko": "중앙 정렬 문장 쌓기",
+"aka": [],
+"family": "type",
+"what": "새 단어가 오른쪽에서 들어올 때 이미 쓴 단어들이 왼쪽으로 밀려 전체 문장이 중앙에 맞는다.",
+"why": "문장이 계속 성장하면서도 한 초점에 머문다.",
+"params": "재현 기본값 제안: 단어 350ms, 간격 180ms, 최종 정지 1000ms; 출처 기본값 kinetic-center-build: 등장 360ms, 간격 0ms, cubic-bezier(0.2, 0.8, 0.2, 1)",
+"impl": "누적 단어 폭을 미리 측정해 각 단계의 묶음 위치를 계산한다.",
+"runtime": "gsap",
+"variants": [
+"animate-text/kinetic-center-build"
+],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/kinetic-center-build/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "MIT"
+},
+{
+"url": "claude-skill:hyperframes-animation/adapters/animate-text.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/kinetic-center-build.json",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "kineticbeats",
+"family": "type",
+"core": "kinetic-beats",
+"rows": [
+{
+"id": "R1a-069",
+"en": "Kinetic beats",
+"ko": "박자 타이포",
+"aka": [],
+"family": "type",
+"what": "짧은 단어나 구절이 박자마다 크게 들어오고 다음 구절로 즉시 교체된다.",
+"why": "문장의 힘과 리듬, 점층적 강조를 전달한다.",
+"params": "재현 기본값 제안: 박자 간격 500ms, 등장 200ms, 교체 0ms; 출처 기본값 shared-axis-y: 등장 180ms, 간격 78ms, steps(1, end)",
+"impl": "박자 배열마다 별도 구절의 transform과 상태 교체를 배치한다.",
+"runtime": "gsap",
+"variants": [
+"animate-text/shared-axis-y",
+"구절 슬램",
+"단어 하드컷",
+"1프레임 burn-in",
+"전면 타이틀",
+"파형식 단어 컷"
+],
+"core": "kinetic-beats",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-kinetic-slam/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/headline-slam/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/shutter-slam/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/logo-sting/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/kinetic-beat-slam.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/kinetic-type-beats.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/yt-logo-intro/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/blue-sweater-intro-video/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/shared-axis-y.json",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-111",
+"en": "Kinetic Beats",
+"ko": "비트 타이포",
+"aka": [
+"kinetic-beat-slam"
+],
+"family": "type",
+"what": "짧은 문구가 일정 박자마다 서로 다른 타격 동작으로 나타나 마지막 문구에 고정된다.",
+"why": "메시지의 강조와 음악의 리듬을 함께 느낀다.",
+"params": "기본 박자 간격 1500ms, 등장 450ms, 퇴장 250ms, 액센트 1색",
+"impl": "HTML 문구별 scale과 이동을 비트 시간표에 배정하고 마지막 홀드를 둔다.",
+"runtime": "gsap",
+"variants": [
+"스케일 슬램",
+"문구 교체",
+"비트 카운터",
+"kinetic-titles",
+"kinetic-type-beats",
+"intro-kinetic-cascade"
+],
+"core": "kinetic-beats",
+"sources": [
+{
+"url": "gongnyang/awesome-html-scrolline-deck:references/techniques.md#kinetic-titles",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/kinetic-titles/scene.css",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/kinetic-titles/scene.html",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/kinetic-titles/scene.js",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/kinetic-titles/template.json",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/kinetic-beat-slam.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/kinetic-type-beats.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/template-catalog.md#intro-kinetic-cascade",
+"repo": "local/music-to-video",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "fixedslotwordcycle",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1a-070",
+"en": "Fixed slot word cycle",
+"ko": "고정 슬롯 단어 순환",
+"aka": [],
+"family": "type",
+"what": "문장의 고정 부분은 남고 한 단어 자리만 대안들을 순환한다.",
+"why": "하나의 문장 틀로 다양성과 선택지를 보여준다.",
+"params": "재현 기본값 제안: 슬롯 정지 500ms, 교체 250ms, 최대 단어 폭 고정",
+"impl": "가장 넓은 단어로 슬롯을 고정하고 내부 단어만 교체한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/kinetic-type-swap/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/fixed-anchor-cycle.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "textscramble",
+"family": "type",
+"core": "text-scramble",
+"rows": [
+{
+"id": "R1a-071",
+"en": "Text scramble",
+"ko": "글자 해독",
+"aka": [
+"Matrix decode",
+"Binary decrypt"
+],
+"family": "type",
+"what": "무작위처럼 보이는 글자들이 바뀌다가 왼쪽부터 실제 문장으로 잠긴다.",
+"why": "신호 해석과 데이터 복원을 연상시킨다.",
+"params": "재현 기본값 제안: 1200ms, 글리프 갱신 60ms, 좌측 순차 고정",
+"impl": "시간과 인덱스 시드로 대체 문자를 고르고 고정 진행률을 적용한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "text-scramble",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/matrix-decode/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/scramble-reveal/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-matrix-decode/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/adapters/animate-text.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-109",
+"en": "Text Scramble",
+"ko": "문자 디코드",
+"aka": [
+"hacker-flip-3d",
+"gsap-effects",
+"binary-decrypt"
+],
+"family": "type",
+"what": "문자가 임의 기호나 이진수로 바뀌다가 위치별로 정답 글자에 고정된다.",
+"why": "정보가 해독되거나 생성되는 느낌을 준다.",
+"params": "기본 1400ms, 기호 갱신 60ms, 좌우 고정, seed 고정",
+"impl": "HTML 시간 구간과 문자 인덱스의 해시로 대체 글자를 골라 점차 정답 접두부를 늘린다.",
+"runtime": "gsap",
+"variants": [
+"이진 디코드",
+"해커 3D 플립",
+"순차 고정"
+],
+"core": "text-scramble",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/hacker-flip-3d.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/gsap-effects.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#binary-decrypt",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/binary-decrypt/scene.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/binary-decrypt/index.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R3-094",
+"en": "Text Scramble",
+"ko": "글자 해독",
+"aka": [
+"Decrypt Text",
+"Gibberish Reveal"
+],
+"family": "type",
+"what": "임의의 기호가 빠르게 바뀌다가 목표 글자로 차례로 고정된다.",
+"why": "해독과 계산 또는 정보 발견을 표현한다.",
+"params": "도감 기본값: 1200ms, 갱신 40ms, 확정 간격 60ms, 기호 집합 36자",
+"impl": "HTML 텍스트를 시간에 따라 랜덤 기호와 확정 글자로 교체한다",
+"runtime": "css",
+"variants": [
+"Hyper Text",
+"Encrypted Text",
+"DecryptedText",
+"ScrambledText",
+"TechText",
+"hyper-text",
+"text-scramble",
+"evervault-card",
+"encrypted-text"
+],
+"core": "text-scramble",
+"sources": [
+{
+"url": "https://magicui.design/docs/components/hyper-text",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/evervault-card",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://motion-primitives.com/docs/text-scramble",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "3dflipdecode",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1a-072",
+"en": "3D flip decode",
+"ko": "3D 회전 해독",
+"aka": [],
+"family": "type",
+"what": "각 글자가 입체 회전하며 대체 문자를 거쳐 실제 글자로 착지한다.",
+"why": "암호 해독의 기계적 진행을 강조한다.",
+"params": "재현 기본값 제안: 600ms/글자, 회전 90도, 간격 40ms",
+"impl": "글자별 rotateX와 임계점 문자열 교체를 같은 진행값으로 계산한다.",
+"runtime": "css",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/hacker-flip-3d.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "wordemphasis",
+"family": "type",
+"core": "word-emphasis",
+"rows": [
+{
+"id": "R1a-073",
+"en": "Word emphasis",
+"ko": "발화 단어 강조",
+"aka": [],
+"family": "type",
+"what": "발화한 단어만 순간적으로 커지고 밝아졌다 원래 상태로 돌아온다.",
+"why": "음성의 핵심 단어를 정확히 따라가게 한다.",
+"params": "재현 기본값 제안: attack 120ms, sustain 200ms, release 250ms, scale 1.05",
+"impl": "단어 타임스탬프에 맞춘 색과 scale의 포락선을 적용한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "word-emphasis",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/mk-callout-highlight/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-editorial-emphasis/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-neon-accent/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/asr-keyword-glow.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-052",
+"en": "Word Emphasis",
+"ko": "단어 강조",
+"aka": [
+"selective-emphasis-pop",
+"asr-keyword-glow"
+],
+"family": "type",
+"what": "문장 전체는 유지되고 핵심 단어 하나만 커지거나 밝아졌다 돌아온다.",
+"why": "문장의 핵심 의미나 숫자를 즉시 알아본다.",
+"params": "기본 scale 1.15, attack 150ms, release 300ms, power2.out",
+"impl": "HTML 선택 단어의 scale과 색 및 glow를 발화 구간의 포락선으로 구동한다.",
+"runtime": "gsap",
+"variants": [
+"고정 키워드",
+"발화 동기 글로우",
+"카라오케 강조"
+],
+"core": "word-emphasis",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/05-text-animator.md#selective-emphasis-pop",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/asr-keyword-glow.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:embedded-captions/references/typographic-moves.md",
+"repo": "local/embedded-captions",
+"license": "unknown"
+}
+]
+},
+{
+"id": "DICT-144",
+"en": "Word emphasis",
+"ko": "단어 강조",
+"aka": [],
+"family": "type",
+"what": "이미 읽히는 문장에서 특정 단어의 대비를 잠깐 높이는 방식이다.",
+"why": "",
+"params": "진입 150~220ms, 유지 800~1400ms, 복귀 180ms; PE, scale 1→1.03 이하, 강조 간격 ≥600ms.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "word-emphasis",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 3-type-data-ui.md#03. 단어 강조 · Word emphasis",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "highlightsweep",
+"family": "type",
+"core": "highlight-sweep",
+"rows": [
+{
+"id": "R1a-074",
+"en": "Highlight sweep",
+"ko": "하이라이트 쓸기",
+"aka": [],
+"family": "emphasis",
+"what": "표시 띠가 글자 뒤를 한 방향으로 채우며 강조 구간을 남긴다.",
+"why": "핵심 단어나 근거 위치를 분명하게 지목한다.",
+"params": "재현 기본값 제안: 400ms, scaleX 0~1, 원점 왼쪽",
+"impl": "글자 뒤의 색 띠 또는 clip 영역을 진행값으로 확장한다.",
+"runtime": "css",
+"variants": [],
+"core": "highlight-sweep",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/marker-highlight/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/inline-highlight/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-highlight/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/mk-callout-highlight/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/css-marker-patterns.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:motion-graphics/categories/news/module.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/lt-mask-reveal/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:motion-graphics/categories/asset-fusion/module.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:product-launch-video/references/motion-language.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:talking-head-recut/SKILL.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-068",
+"en": "Highlight Sweep",
+"ko": "빛 하이라이트 스윕",
+"aka": [
+"light-sweep-sheen",
+"gradient-text-sweep",
+"chrome-sweep"
+],
+"family": "texture",
+"what": "좁은 밝은 띠가 표면이나 글자 안을 한 번 가로지른다.",
+"why": "매끈한 재질과 완성된 상태를 느낀다.",
+"params": "기본 폭 20%, opacity 0.25, 각도 105도, 권장 1000ms",
+"impl": "HTML gradient를 overflow 또는 text clip 안에서 translate나 background-position으로 이동한다.",
+"runtime": "gsap",
+"variants": [
+"금속 광택",
+"카드 셰인",
+"글자 그라데이션",
+"단어별 빛"
+],
+"core": "highlight-sweep",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/07-stylize-time.md#light-sweep-sheen",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/gradient-text-sweep.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#chrome-sweep",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/chrome-sweep/scene.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/chrome-sweep/index.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R2-067",
+"en": "Highlight sweep",
+"ko": "강조색 쓸기",
+"aka": [],
+"family": "type",
+"what": "글자 뒤의 형광 띠나 색 영역이 문장을 따라 지나간다.",
+"why": "현재 읽는 내용과 핵심 문장을 강조한다.",
+"params": "공식 공통 기본 없음. 권장 700ms, 강조 높이 0.65em, 끝 홀드 500ms.",
+"impl": "텍스트 뒤 레이어의 폭 또는 clip-path를 읽는 방향으로 늘린다.",
+"runtime": "css",
+"variants": [
+"단어별",
+"문장별",
+"색 채움 유지"
+],
+"core": "highlight-sweep",
+"sources": [
+{
+"url": "https://motion.dev/examples/react-scroll-highlight",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://motion.dev/docs/react-use-transform",
+"repo": "motiondivision/motion",
+"license": "MIT"
+}
+]
+},
+{
+"id": "DICT-147",
+"en": "Highlight sweep",
+"ko": "하이라이트 스윕",
+"aka": [],
+"family": "type",
+"what": "형광펜 같은 면이 글자 뒤로 지나가며 남는 강조이다.",
+"why": "",
+"params": "350~550ms, 유지 1200~2000ms, 다음 강조 간격 ≥500ms; E, 배경판 scaleX 0→1, 상하 여백 4~6px.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "highlight-sweep",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 3-type-data-ui.md#06. 하이라이트 스윕 · Highlight sweep",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "variablefontflex",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1a-079",
+"en": "Variable font flex",
+"ko": "가변 글꼴 변형",
+"aka": [],
+"family": "type",
+"what": "글자의 두께와 폭이 연속적으로 변하며 무게가 생긴다.",
+"why": "같은 단어의 강도와 성격을 바꾼다.",
+"params": "재현 기본값 제안: 700ms, wght 300~800, wdth 80~100; 레지스트리 variable-font-flex 기본값 stagger=0.06",
+"impl": "CSS font-variation-settings 축 값을 보간한다.",
+"runtime": "css",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/variable-axis-type/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/variable-font-flex/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-weight-shift/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/techniques.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "weightwave",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1a-080",
+"en": "Weight wave",
+"ko": "글꼴 두께 파동",
+"aka": [],
+"family": "type",
+"what": "두께와 기울기의 봉우리가 글자들을 차례로 지나간다.",
+"why": "글자 자체의 물성과 리듬을 보여준다.",
+"params": "재현 기본값 제안: 1500ms, wght 300~900, slnt 0~-10, 파장 4글자; 레지스트리 weight-wave 기본값 sweepSpeed=0.5",
+"impl": "글자별 위상 차이의 파동으로 가변 폰트 축을 계산한다.",
+"runtime": "css",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/weight-wave/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "OFL-1.1"
+}
+]
+}
+]
+},
+{
+"key": "trackingreveal",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1a-081",
+"en": "Tracking reveal",
+"ko": "자간 공개",
+"aka": [],
+"family": "type",
+"what": "넓게 벌어진 글자 사이 간격이 줄며 제목이 한 덩어리로 정돈된다.",
+"why": "고급스러운 응집과 정렬을 전달한다.",
+"params": "재현 기본값 제안: 800ms, letter-spacing 0.2em~0, opacity 0~1",
+"impl": "미리 고정한 글자 위치를 자간에 맞춰 transform으로 보간한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/tracking-in/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-creative/references/motion-principles.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R3-049",
+"en": "Tracking Reveal",
+"ko": "자간 변화 리빌",
+"aka": [],
+"family": "type",
+"what": "글자 사이 간격이 넓어지거나 좁아지면서 문장이 나타나거나 사라진다.",
+"why": "문장의 형성과 응집을 보여 준다.",
+"params": "도감 기본값: 700ms, letter-spacing 0.8em에서 0em, opacity 0에서 1",
+"impl": "CSS letter-spacing과 opacity 및 translateZ를 보간한다",
+"runtime": "css",
+"variants": [
+"tracking-in",
+"tracking-out",
+"expand",
+"contract",
+"앞",
+"뒤",
+"tracking-in-expand",
+"tracking-in-expand-fwd",
+"tracking-in-expand-fwd-top",
+"tracking-in-expand-fwd-bottom",
+"tracking-in-contract",
+"tracking-in-contract-bck",
+"tracking-in-contract-bck-top",
+"tracking-in-contract-bck-bottom",
+"tracking-out-contract",
+"tracking-out-contract-bck",
+"tracking-out-contract-bck-top",
+"tracking-out-contract-bck-bottom",
+"tracking-out-expand",
+"tracking-out-expand-fwd",
+"tracking-out-expand-fwd-top",
+"tracking-out-expand-fwd-bottom"
+],
+"core": "",
+"sources": [
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+}
+]
+}
+]
+},
+{
+"key": "gooeytextmorph",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1a-082",
+"en": "Gooey text morph",
+"ko": "끈적한 글자 모프",
+"aka": [],
+"family": "type",
+"what": "기존 단어가 흐릿한 액체 덩어리로 뭉치며 다음 단어로 바뀐다.",
+"why": "유기적인 언어 변화와 연결을 만든다.",
+"params": "재현 기본값 제안: 1000ms, blur 12px, threshold 0.5",
+"impl": "겹친 글자 레이어에 SVG blur와 alpha 임계 필터를 적용한다.",
+"runtime": "svg",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/morph-text/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "strikethroughreplace",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1a-083",
+"en": "Strikethrough replace",
+"ko": "취소선 교체",
+"aka": [],
+"family": "type",
+"what": "기존 문구를 선으로 지운 뒤 새 문구가 옆이나 아래에 나타난다.",
+"why": "수정된 주장과 바뀐 상태를 분명히 한다.",
+"params": "재현 기본값 제안: 취소선 350ms, 교체 250ms, 간격 100ms",
+"impl": "취소선 dash 또는 scale을 진행하고 신규 텍스트를 공개한다.",
+"runtime": "svg",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/strikethrough-replace/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "splitflap",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1a-092",
+"en": "Split flap",
+"ko": "분할 플랩 문자판",
+"aka": [],
+"family": "type",
+"what": "타일의 위아래 판이 넘어가며 중간 글자들을 지나 목표 글자에 잠긴다.",
+"why": "기계적 정보 갱신과 대기 시간을 전달한다.",
+"params": "재현 기본값 제안: 1000ms, 글자 간격 80ms, 플랩 100ms; 레지스트리 split-flap-board 기본값 flipDuration=0.09, cellStagger=0.05",
+"impl": "알파벳 순환 인덱스와 위아래 면 회전을 시간으로 계산한다.",
+"runtime": "css",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/split-flap-board/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "handwrittenstroke",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1a-148",
+"en": "Handwritten stroke",
+"ko": "손글씨 쓰기",
+"aka": [],
+"family": "type",
+"what": "펜 끝이 글자의 실제 획 순서대로 이동하며 필체가 드러난다.",
+"why": "글을 직접 쓰는 사람의 손길과 속도를 느끼게 한다.",
+"params": "재현 기본값 제안: 획 300~600ms, 획 사이 80ms, 곡선에서 감속",
+"impl": "글자 중앙 획 경로를 샘플링해 펜 위치와 마스크 공개를 계산한다.",
+"runtime": "svg",
+"variants": [
+"획 쓰기",
+"경로 위 글자",
+"서예",
+"손글씨 제목"
+],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/hw-write-title/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/hw-path-text/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/hw-title/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:embedded-captions/CATALOG.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "stitchedtext",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1a-151",
+"en": "Stitched text",
+"ko": "실땀 글자 그리기",
+"aka": [],
+"family": "type",
+"what": "바늘이 이동하며 점선 실땀이 글자를 만들고 실 꼬리가 조금 따라온다.",
+"why": "수공예 재질과 제작 과정을 보여준다.",
+"params": "재현 기본값 제안: 글자 500ms, 실땀 4px, 간격 3px, 후속 100ms",
+"impl": "글자 경로의 dash 진행과 끝점 바늘, 시간차 꼬리를 그린다.",
+"runtime": "svg",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/stitched-text-draw/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "behindsubjectcaptions",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R1a-175",
+"en": "Behind subject captions",
+"ko": "인물 뒤 자막",
+"aka": [],
+"family": "caption",
+"what": "큰 자막이 등장해 인물 뒤로 가려지고 다음 문구가 같은 공간에서 이어진다.",
+"why": "인물이 실제 공간 속 글자 앞에 있는 것처럼 보인다.",
+"params": "재현 기본값 제안: 단어 350ms, 발화 시간 동기, 인물 매트 전경",
+"impl": "배경 영상과 글자 뒤에 인물 알파 매트를 전경으로 합성한다.",
+"runtime": "canvas",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-parallax-layers/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:embedded-captions/references/composition-craft.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-creative/references/composition-patterns.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "karaokecaption",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R1a-176",
+"en": "Karaoke caption",
+"ko": "카라오케 자막",
+"aka": [],
+"family": "caption",
+"what": "읽는 줄은 유지되고 발화 중인 단어의 색이나 배경 캡슐만 이동한다.",
+"why": "음성을 읽기 위치와 정확히 연결한다.",
+"params": "재현 기본값 제안: 단어 시작시 0ms, 하이라이트 150ms, 종료시 복구",
+"impl": "단어 타임스탬프로 활성 인덱스를 정해 색과 마스크를 바꾼다.",
+"runtime": "css",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-pill-karaoke/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:embedded-captions/references/rail.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:media-use/audio/references/captions/motion.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "captiontakeover",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R1a-177",
+"en": "Caption takeover",
+"ko": "자막 화면 점유",
+"aka": [],
+"family": "caption",
+"what": "평소 자막 줄이 한 순간 큰 전면 타이틀로 바뀌고 다시 읽기 줄로 돌아온다.",
+"why": "발화의 절정과 강조를 한 번 크게 전달한다.",
+"params": "재현 기본값 제안: 전면 진입 0ms, 정지 1000ms, 복귀 250ms",
+"impl": "절정 시점에 자막과 전면 카드 상태를 교체하고 이후 원래 레일을 복원한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:embedded-captions/CATALOG.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:embedded-captions/themes/README.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:embedded-captions/modes/standard/_motion.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "crosshaircaption",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R1a-178",
+"en": "Crosshair caption",
+"ko": "조준선 자막",
+"aka": [],
+"family": "caption",
+"what": "두 가는 선이 단어 중심으로 모인 뒤 글자가 순간적으로 나타난다.",
+"why": "검증과 조사, 날카로운 주목을 전달한다.",
+"params": "재현 기본값 제안: 선 150ms linear, 글자 50ms expo.out",
+"impl": "수평과 수직 선의 끝점 이동 후 텍스트를 공개한다.",
+"runtime": "svg",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:embedded-captions/references/motion-vocabulary.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-127",
+"en": "Crosshair Caption",
+"ko": "크로스헤어 자막",
+"aka": [
+"crosshair"
+],
+"family": "caption",
+"what": "두 가는 선이 단어 중심으로 모인 뒤 단어가 빠르게 나타난다.",
+"why": "정보를 정확히 포착하거나 조사하는 인상을 받는다.",
+"params": "기본 선 수렴 150ms none, 단어 공개 50ms expo.out, 선 1px",
+"impl": "SVG 가로세로 선 끝점을 단어 중심으로 이동하고 HTML 단어 opacity를 켠다.",
+"runtime": "svg",
+"variants": [
+"탐정 자막",
+"타깃 타이틀"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:embedded-captions/references/motion-vocabulary.md",
+"repo": "local/embedded-captions",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "stampimpact",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R1a-179",
+"en": "Stamp impact",
+"ko": "도장 타격",
+"aka": [],
+"family": "caption",
+"what": "글자가 큰 자세에서 내려앉아 종이와 화면을 순간적으로 눌렀다가 멈춘다.",
+"why": "선언, 증거 확정, 강한 결론을 전달한다.",
+"params": "재현 기본값 제안: 180ms, scale 1.2~1, 흔들림 3프레임, 압축 2%",
+"impl": "스탬프와 바탕의 접촉 변형을 같은 임팩트 진행값으로 계산한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:embedded-captions/CATALOG.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "ledtextwipe",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R1a-180",
+"en": "LED text wipe",
+"ko": "LED 문자 점등",
+"aka": [],
+"family": "caption",
+"what": "점 행렬 글자가 열마다 왼쪽부터 켜지고 약한 도착 깜빡임 뒤 고정된다.",
+"why": "전광판의 정보 도착을 재현한다.",
+"params": "재현 기본값 제안: 600ms, 열 시작차 20ms, 도착 2프레임",
+"impl": "글자 비트맵을 점 격자로 샘플링해 열별 밝기 임계값을 적용한다.",
+"runtime": "canvas",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:embedded-captions/CATALOG.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "hologramboot",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R1a-181",
+"en": "Hologram boot",
+"ko": "홀로그램 부팅",
+"aka": [],
+"family": "caption",
+"what": "아래 발광점에서 투영 콘이 켜지고 위로 훑는 빛이 글자판을 구성한다.",
+"why": "가상의 정보가 공간 안에서 켜짐을 보여준다.",
+"params": "재현 기본값 제안: 1000ms, scan 600ms, interference 1프레임",
+"impl": "투영 콘과 주사 마스크를 공개하고 텍스트의 짧은 채널 어긋남을 적용한다.",
+"runtime": "canvas",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:embedded-captions/CATALOG.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "laserignite",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R1a-184",
+"en": "Laser ignite",
+"ko": "레이저 점화",
+"aka": [],
+"family": "caption",
+"what": "두 광선이 단어 위치에 모이고 그 접점에서 글자가 켜진다.",
+"why": "빛으로 정보를 생성하는 무대감을 만든다.",
+"params": "재현 기본값 제안: 광선 선행 2프레임, 점화 100ms, 빛 감쇠 300ms",
+"impl": "광선 끝점과 발광 글자의 시작을 같은 도착 시점에 연결한다.",
+"runtime": "svg",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:embedded-captions/CATALOG.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "papercutplacement",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R1a-185",
+"en": "Papercut placement",
+"ko": "종이 조각 놓기",
+"aka": [],
+"family": "caption",
+"what": "단어 종이 조각들이 비뚤어진 자세로 툭 놓이고 저프레임으로 조금 떤다.",
+"why": "수공예와 스톱모션의 촉감을 전달한다.",
+"params": "재현 기본값 제안: 등장 steps(2), 보일 5fps, 회전 +/-2도",
+"impl": "양자화 시간으로 종이칩 위치와 시드 회전을 계산한다.",
+"runtime": "css",
+"variants": [
+"종이칩",
+"몸통 앞 콜라주",
+"ransom 재붙임"
+],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/stop-motion-cadence/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:embedded-captions/CATALOG.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "popuphinge",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R1a-186",
+"en": "Popup hinge",
+"ko": "팝업북 펼침",
+"aka": [],
+"family": "caption",
+"what": "종이 페이지의 접힘선에서 글자가 앞으로 일어나고 뒷그림자가 커진다.",
+"why": "평면 글자가 실제 종이 구조로 솟아오른다.",
+"params": "재현 기본값 제안: 600ms, rotationX -80~0도, back.out(1.4)",
+"impl": "기준선 원점의 3D 회전과 뒷그림자 크기를 동시 보간한다.",
+"runtime": "css",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:embedded-captions/CATALOG.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "chalkerase",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R1a-187",
+"en": "Chalk erase",
+"ko": "분필 지우기",
+"aka": [],
+"family": "caption",
+"what": "분필 글자가 그려진 뒤 지우개 띠가 지나가며 흐린 흔적을 남긴다.",
+"why": "칠판에서 설명을 쓰고 지우는 행위를 재현한다.",
+"params": "재현 기본값 제안: 쓰기 600ms steps(4), 지우기 500ms, 잔흔 opacity 0.12",
+"impl": "거친 마스크로 글자를 공개하고 이동 지우개 마스크와 잔흔층을 합성한다.",
+"runtime": "canvas",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:embedded-captions/CATALOG.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "graffitispray",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R1a-188",
+"en": "Graffiti spray",
+"ko": "그래피티 분사",
+"aka": [],
+"family": "caption",
+"what": "도료가 튀는 점과 획이 글자를 만들고 지나가는 롤러가 문구를 지운다.",
+"why": "거리의 제작 행위와 거친 에너지를 전달한다.",
+"params": "재현 기본값 제안: 태그 800ms, overspray 40개, 롤러 600ms",
+"impl": "획 진행에 시드 분사 점을 배치하고 롤러 경계로 지움 마스크를 이동한다.",
+"runtime": "canvas",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:embedded-captions/CATALOG.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "brushwipe",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R1a-189",
+"en": "Brush wipe",
+"ko": "붓질 공개",
+"aka": [],
+"family": "caption",
+"what": "붓 머리가 지나간 자리에서 글자가 드러나고 반대 방향의 붓질로 지워진다.",
+"why": "서예의 흐름과 직접 쓰는 손길을 전달한다.",
+"params": "재현 기본값 제안: 공개 700ms, 지움 500ms, 브러시 폭 30px",
+"impl": "브러시 끝점과 글자 공개 마스크를 같은 진행값으로 구동한다.",
+"runtime": "svg",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:embedded-captions/CATALOG.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "fontshuffle",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1a-190",
+"en": "Font shuffle",
+"ko": "글꼴 셔플",
+"aka": [],
+"family": "type",
+"what": "문장은 고정되고 핵심 단어의 글꼴만 박자마다 바뀐다.",
+"why": "단어의 다양한 성격과 음악적 변화를 보여준다.",
+"params": "재현 기본값 제안: 교체 0ms, 박자 250ms, 글꼴 4종, 최종 정지 1000ms",
+"impl": "고정 슬롯 안에서 미리 준비한 폰트 레이어를 박자별로 교체한다.",
+"runtime": "css",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:music-to-video/references/template-catalog.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "tickertakeover",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1a-197",
+"en": "Ticker takeover",
+"ko": "티커에서 제목 승격",
+"aka": [],
+"family": "type",
+"what": "작은 티커가 여러 단어를 넘기다가 마지막 단어에 멈춰 전체 제목으로 커진다.",
+"why": "많은 대안 중 결론 하나가 주인공이 됨을 보여준다.",
+"params": "재현 기본값 제안: 릴 1500ms, 잠금 150ms, 승격 600ms",
+"impl": "마스크 릴 y를 멈춘 뒤 선택 단어의 상자 변환을 전체 제목 자세로 보간한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/ticker-takeover/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/ticker-takeover.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "sharedslidewordreveal",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1a-206",
+"en": "Shared slide word reveal",
+"ko": "묶음 이동과 단어 공개",
+"aka": [],
+"family": "type",
+"what": "문장 전체는 한 번 함께 이동하고 단어들의 투명도만 시간차로 채워진다.",
+"why": "하나의 문장 움직임 안에서 읽을 순서를 만든다.",
+"params": "재현 기본값 제안: 묶음 520ms, x -24~0px, 단어 opacity 210ms, 시작차 92ms; 출처 기본값 short-slide-right: 등장 520ms, 간격 92ms, cubic-bezier(0.2, 0.8, 0.2, 1); 출처 기본값 shimmer-sweep: 등장 850ms, 간격 0ms, cubic-bezier(0.22, 1, 0.36, 1)",
+"impl": "부모 이동과 자식 opacity 지연을 분리해 시간표로 구동한다.",
+"runtime": "gsap",
+"variants": [
+"animate-text/short-slide-right",
+"animate-text/shimmer-sweep"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/adapters/animate-text.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/short-slide-right.json",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/shimmer-sweep.json",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "verticalphrasebuild",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1a-207",
+"en": "Vertical phrase build",
+"ko": "세로 문장 쌓기",
+"aka": [],
+"family": "type",
+"what": "새 단어가 별도 줄로 내려와 기존 줄 묶음을 재정렬하고 중앙의 여러 줄을 만든다.",
+"why": "문장이 단계별로 커지며 구조가 드러난다.",
+"params": "재현 기본값 제안: 첫 단어 360ms, 밀기 500ms, 줄 간격 12px, 정지 1100ms; 출처 기본값 short-slide-down: 등장 520ms, 간격 0ms, cubic-bezier(0.2, 0.8, 0.2, 1)",
+"impl": "단계별 줄 상자를 사전 계산해 기존 줄과 신규 줄 위치를 함께 보간한다.",
+"runtime": "gsap",
+"variants": [
+"animate-text/short-slide-down"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/adapters/animate-text.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/short-slide-down.json",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "coloramasoftwipe",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1a-210",
+"en": "Colorama soft wipe",
+"ko": "색 번짐 와이프",
+"aka": [],
+"family": "type",
+"what": "기울어진 부드러운 경계가 글자를 훑으며 색과 흐림이 바뀌었다 깨끗한 글자가 남는다.",
+"why": "빛나는 표면이 드러나는 고급 타이틀을 만든다.",
+"params": "재현 기본값 제안: 900ms, feather 40px, 기울기 15도, blur 8px",
+"impl": "canvas 글자 마스크에 경계 거리별 색 팔레트와 blur를 적용한다.",
+"runtime": "canvas",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/colorama-wipe/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "trackingconverge",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1b-043",
+"en": "Tracking Converge",
+"ko": "자간 수렴",
+"aka": [
+"tracking-kerning-tween"
+],
+"family": "type",
+"what": "넓게 벌어진 글자들이 간격을 줄이며 하나의 워드마크로 자리잡는다.",
+"why": "이름이 정돈되고 확정되는 느낌을 준다.",
+"params": "기본 자간 0.4em에서 0em, 권장 700ms, power3.out",
+"impl": "HTML 글자별 translateX를 보간해 최종 커닝 위치로 모은다.",
+"runtime": "gsap",
+"variants": [
+"균일 자간",
+"글자별 자간",
+"typo/tracking-open"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/05-text-animator.md#tracking-kerning-tween",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/typo/tracking-open.html",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/typo/tracking-open.meta.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "textwave",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1b-044",
+"en": "Text Wave",
+"ko": "글자 웨이브",
+"aka": [
+"offset-cascade-wave"
+],
+"family": "type",
+"what": "좁은 파동이 문장을 훑으며 걸린 글자만 잠깐 올라갔다 돌아온다.",
+"why": "읽는 방향과 리듬을 따라 시선이 이동한다.",
+"params": "기본 폭 3글자, 진폭 16px, 1200ms",
+"impl": "HTML 글자 인덱스와 진행 위치의 거리로 y 변위를 계산한다.",
+"runtime": "gsap",
+"variants": [
+"좌우 웨이브",
+"색과 위치 파동",
+"typo/cascade-wave"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/05-text-animator.md#offset-cascade-wave",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/typo/cascade-wave.html",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/typo/cascade-wave.meta.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+},
+{
+"id": "R2-064",
+"en": "Text wave",
+"ko": "텍스트 파동",
+"aka": [],
+"family": "type",
+"what": "문장의 글자들이 시간차로 위아래 움직여 물결을 만든다.",
+"why": "생동감과 지속적인 리듬을 만든다.",
+"params": "공식 공통 기본 없음. 권장 진폭 8px, 주기 1600ms, 위상 간격 0.25rad.",
+"impl": "각 글자 인덱스에 위상차를 준 sin 값을 y 좌표로 적용한다.",
+"runtime": "gsap",
+"variants": [
+"수직 파동",
+"회전 파동",
+"색 파동"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motion.dev/examples/react-split-text-wavy",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://gsap.com/docs/v3/Eases/CustomWiggle/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+}
+]
+}
+]
+},
+{
+"key": "flipboardtext",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1b-045",
+"en": "Flipboard Text",
+"ko": "플랩 보드 글자",
+"aka": [
+"flipboard-3d-rotateX",
+"hacker-flip-3d"
+],
+"family": "type",
+"what": "글자가 가로 축으로 접혔다 펼쳐지며 차례로 정면에 안착한다.",
+"why": "정보판이 갱신되는 정밀한 기계감을 느낀다.",
+"params": "기본 회전 90도에서 0도, 각 400ms, 간격 40ms",
+"impl": "HTML 글자별 perspective와 rotateX를 적용하고 backface를 숨긴다.",
+"runtime": "gsap",
+"variants": [
+"아래 경첩",
+"위 경첩",
+"중앙 바럴롤"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/05-text-animator.md#flipboard-3d-rotateX",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/hacker-flip-3d.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "textscalecascade",
+"family": "type",
+"core": "char-stagger",
+"rows": [
+{
+"id": "R1b-047",
+"en": "Text Scale Cascade",
+"ko": "글자 스케일 캐스케이드",
+"aka": [
+"scale-jump-stairstep",
+"word-pop",
+"kinetic-letter-in"
+],
+"family": "type",
+"what": "글자들이 순서대로 작아진 상태에서 커져 목표 크기에 안착한다.",
+"why": "짧은 단어나 숫자의 경쾌한 리듬을 느낀다.",
+"params": "권장 각 400ms, 간격 60ms, 기본 power3.out, playful back.out(1.4)",
+"impl": "HTML 글자별 scale을 스태거하며 필요한 경우 작은 오버슈트를 더한다.",
+"runtime": "gsap",
+"variants": [
+"무오버슈트",
+"탄성 계단",
+"typo/scale-slam-strike"
+],
+"core": "char-stagger",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/05-text-animator.md#scale-jump-stairstep",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/typo/scale-slam-strike.html",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/typo/scale-slam-strike.meta.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:embedded-captions/references/motion-vocabulary.md",
+"repo": "local/embedded-captions",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#kinetic-letter-in",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/kinetic-letter-in/scene.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/kinetic-letter-in/index.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "wordfade",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R1b-049",
+"en": "Word Fade",
+"ko": "단어 페이드 상승",
+"aka": [
+"word-fade-up"
+],
+"family": "caption",
+"what": "말의 시점에 맞춰 단어가 약간 올라오며 선명하게 보인다.",
+"why": "발화 흐름을 따라 문장을 쉽게 읽는다.",
+"params": "기본 각 450ms, y 8px, 간격 80ms, power2.out",
+"impl": "HTML 단어 span의 y와 opacity를 발화 타임스탬프에 맞춰 보간한다.",
+"runtime": "gsap",
+"variants": [
+"내레이션 동기",
+"문구 순차 페이드",
+"block/quote"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:embedded-captions/references/motion-vocabulary.md",
+"repo": "local/embedded-captions",
+"license": "unknown"
+},
+{
+"url": "claude-skill:embedded-captions/references/typographic-moves.md",
+"repo": "local/embedded-captions",
+"license": "unknown"
+},
+{
+"url": "gongnyang/reelforge:blocks/quote/block.html",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "scattertitleassemble",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1b-050",
+"en": "Scatter Title Assemble",
+"ko": "흩어진 글자 조립",
+"aka": [
+"netflix-title-converge",
+"depth-scatter-assemble"
+],
+"family": "type",
+"what": "여러 방향에 흩어진 글자 조각이 최종 자리에 모여 제목을 만든다.",
+"why": "흩어진 생각이 하나의 이름이나 결론으로 모임을 느낀다.",
+"params": "기본 산포 80px, 권장 700ms, 간격 30ms, power3.out",
+"impl": "HTML 인덱스로 고정한 시작 좌표와 회전을 최종 글자 위치로 보간한다.",
+"runtime": "gsap",
+"variants": [
+"평면 산포",
+"회전 산포",
+"깊이 산포",
+"typo/netflix-converge",
+"logo-assemble-lockup"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/05-text-animator.md#netflix-title-converge",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/typo/netflix-converge.html",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/typo/netflix-converge.meta.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/depth-scatter-assemble.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/logo-assemble-lockup.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "wordcrossfade",
+"family": "type",
+"core": "crossfade",
+"rows": [
+{
+"id": "R1b-051",
+"en": "Word Crossfade",
+"ko": "단어 교차 페이드",
+"aka": [
+"word-swap-crossfade"
+],
+"family": "type",
+"what": "같은 자리에 있는 단어가 흐려져 사라지고 다음 단어가 선명해진다.",
+"why": "같은 문맥 안에서 속성이나 메시지가 바뀜을 읽는다.",
+"params": "기본 홀드 900ms, 전환 300ms, blur 10px",
+"impl": "HTML 단어 레이어의 opacity와 blur를 반대 방향으로 교차한다.",
+"runtime": "gsap",
+"variants": [
+"슬로건 순환",
+"블러 교체",
+"사진 교차 페이드",
+"typo/glitch-swap-punch"
+],
+"core": "crossfade",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/05-text-animator.md#word-swap-crossfade",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/typo/glitch-swap-punch.html",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/typo/glitch-swap-punch.meta.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:card-shorts/references/render-recipe.md",
+"repo": "local/card-shorts",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "wordrelay",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1b-080",
+"en": "Word Relay",
+"ko": "단어 릴레이",
+"aka": [],
+"family": "type",
+"what": "큰 단어가 오른쪽에서 들어와 중앙을 지나 왼쪽으로 나가고 다음 단어가 이어받는다.",
+"why": "핵심 메시지가 한 단어씩 전달되는 리듬을 느낀다.",
+"params": "기본 2~5단어, pin 220vh, 릴레이 진행 0~70%, 영상 재현 권장 총 4000ms",
+"impl": "HTML 단어별 x 이동과 홀드를 순차로 연결하고 마지막 단어는 남긴다.",
+"runtime": "gsap",
+"variants": [
+"슬로건 릴레이",
+"고정 마지막 단어",
+"word-relay",
+"split-anchor-word-slot"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/awesome-html-scrolline-deck:references/techniques.md#word-relay",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/word-relay/scene.css",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/word-relay/scene.html",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/word-relay/scene.js",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/word-relay/template.json",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "claude-skill:music-to-video/references/template-catalog.md#split-anchor-word-slot",
+"repo": "local/music-to-video",
+"license": "unknown"
+}
+]
+},
+{
+"id": "DICT-150",
+"en": "Word relay",
+"ko": "단어 릴레이",
+"aka": [],
+"family": "type",
+"what": "짧은 어구가 순서대로 초점을 넘기는 제목 구성이다.",
+"why": "",
+"params": "어구당 350ms 진입+900~1400ms 홀드, 시차 1200~1800ms; E/X, x 24~48px.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 3-type-data-ui.md#09. 단어 릴레이 · Word relay",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "alternatingcaption",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R1b-128",
+"en": "Alternating Caption",
+"ko": "교대 방향 자막",
+"aka": [
+"cascade"
+],
+"family": "caption",
+"what": "단어들이 왼쪽과 오른쪽에서 번갈아 들어와 한 문장을 만든다.",
+"why": "익숙한 문장 리듬이 잠깐 바뀌는 긴장을 느낀다.",
+"params": "기본 x ±40px, 각 300ms power2.out, 드문 사용",
+"impl": "HTML 단어 인덱스의 홀짝으로 시작 x 부호를 정해 최종 자리로 이동한다.",
+"runtime": "gsap",
+"variants": [
+"좌우 교대",
+"행별 교대"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:embedded-captions/references/motion-vocabulary.md",
+"repo": "local/embedded-captions",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "embeddedcaption",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R1b-129",
+"en": "Embedded Caption",
+"ko": "피사체 뒤 자막 임베드",
+"aka": [],
+"family": "caption",
+"what": "움직이는 인물 뒤에 큰 자막이 나타나고 몸이 지나가는 부분은 가려진다.",
+"why": "자막이 영상 속 실제 공간에 존재하는 느낌을 받는다.",
+"params": "기본 배경 자막층, 단어 진입 450ms power2.out, 전경 강조 220ms",
+"impl": "HTML 원본 영상과 인물 알파 매트 사이에 자막층을 배치한다.",
+"runtime": "gsap",
+"variants": [
+"배경 마스트헤드",
+"전경 클라이맥스",
+"공간 표면 자막"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:embedded-captions/references/typographic-moves.md",
+"repo": "local/embedded-captions",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "karaokepill",
+"family": "caption",
+"core": "word-emphasis",
+"rows": [
+{
+"id": "R1b-130",
+"en": "Karaoke Pill",
+"ko": "카라오케 알약 강조",
+"aka": [],
+"family": "caption",
+"what": "한 줄 자막 위의 둥근 강조 배경이 말하는 단어를 따라 이동하거나 너비를 바꾼다.",
+"why": "현재 들리는 단어와 화면의 단어를 연결한다.",
+"params": "권장 attack 120ms, 이동 150ms power2.out, 단어 타임스탬프 동기",
+"impl": "HTML 단어별 측정 박스를 사전 저장하고 강조 배경의 transform과 clip을 보간한다.",
+"runtime": "gsap",
+"variants": [
+"단어 알약",
+"문구 강조 띠"
+],
+"core": "word-emphasis",
+"sources": [
+{
+"url": "claude-skill:motion-graphics/references/motion-vocabulary.md",
+"repo": "local/motion-graphics",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "wordgridburst",
+"family": "type",
+"core": "kinetic-beats",
+"rows": [
+{
+"id": "R1b-147",
+"en": "Word Grid Burst",
+"ko": "단어 격자 축적",
+"aka": [],
+"family": "type",
+"what": "비트마다 다른 단어가 격자에 추가되고 마지막에 한 단어만 중심으로 커진다.",
+"why": "많은 선택지 중 핵심 결론이 선별됨을 느낀다.",
+"params": "권장 12단어, 총 2400ms, 단어당 1비트, 마감 확대 500ms",
+"impl": "HTML 격자 단어를 비트 시간표로 공개하고 마지막 타깃의 scale과 주변 opacity를 보간한다.",
+"runtime": "gsap",
+"variants": [
+"키워드 벽",
+"선택 결론"
+],
+"core": "kinetic-beats",
+"sources": [
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#word-grid-burst",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/word-grid-burst/scene.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/word-grid-burst/index.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "splitlogolockup",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1b-149",
+"en": "Split Logo Lockup",
+"ko": "분할 로고 락업",
+"aka": [],
+"family": "type",
+"what": "좌우 로고 조각이 벌어져 가운데 단어가 쌓이고 다시 닫히며 하나의 마크가 된다.",
+"why": "브랜드와 메시지가 하나로 결합됨을 느낀다.",
+"params": "기본 총 3000ms, 열기 400ms, 단어당 1비트, 닫기 200ms",
+"impl": "HTML 좌우 마크의 x와 가운데 문구 공개를 연결하고 강한 비트에서 닫는다.",
+"runtime": "gsap",
+"variants": [
+"중앙 문구 조립",
+"박자 펄스",
+"logo-split-lockup-pulse"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:music-to-video/references/template-catalog.md#logo-split-lockup-pulse",
+"repo": "local/music-to-video",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "typefaceshuffle",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R1b-150",
+"en": "Typeface Shuffle",
+"ko": "키워드 글꼴 셔플",
+"aka": [],
+"family": "type",
+"what": "문장은 고정된 채 한 단어의 글꼴이 박자마다 바뀌다 한 글꼴에 고정된다.",
+"why": "하나의 개념이 여러 시각적 목소리를 갖는 느낌을 받는다.",
+"params": "기본 총 3500ms, 글꼴 4개, 교체 0ms, 마지막 홀드 800ms",
+"impl": "HTML 같은 키워드의 글꼴별 레이어를 비트마다 즉시 교체한다.",
+"runtime": "gsap",
+"variants": [
+"키워드 서체 순환",
+"변하는 목소리",
+"typewriter-phrase-keyword-shuffle"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:music-to-video/references/template-catalog.md#typewriter-phrase-keyword-shuffle",
+"repo": "local/music-to-video",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "wordstaggeremphasis",
+"family": "type",
+"core": "word-emphasis",
+"rows": [
+{
+"id": "R2-057",
+"en": "Word stagger emphasis",
+"ko": "단어 순차 강조",
+"aka": [],
+"family": "type",
+"what": "문장의 단어가 순서대로 커지거나 진해져 읽는 지점을 안내한다.",
+"why": "문장의 의미 단위와 핵심 단어를 드러낸다.",
+"params": "공식 공통 기본 없음. 권장 단어 간격 120ms, 강조 300ms, scale 1.08.",
+"impl": "단어 span의 color, opacity, scale을 의미 순서에 맞춰 보간한다.",
+"runtime": "gsap",
+"variants": [
+"강조색",
+"확대",
+"흐림 해제",
+"읽기 진행"
+],
+"core": "word-emphasis",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/SplitText/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/docs/text-animation",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://animejs.com/documentation/text/splittext",
+"repo": "juliangarnier/anime",
+"license": "MIT"
+},
+{
+"url": "https://motion.dev/examples/react-text-scroll-word-reveal",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "linemasktypography",
+"family": "type",
+"core": "mask-reveal",
+"rows": [
+{
+"id": "R2-058",
+"en": "Line mask typography",
+"ko": "줄 마스크 타이포",
+"aka": [],
+"family": "type",
+"what": "각 줄이 자기 높이의 가림창 아래에서 올라오며 드러난다.",
+"why": "긴 문장이 정돈되어 나타나게 한다.",
+"params": "공식: SplitText mask lines 지정. 권장 y 100%, 600ms, 줄 간격 100ms.",
+"impl": "각 줄을 overflow hidden 상자로 감싸 내부 줄 레이어를 이동한다.",
+"runtime": "css",
+"variants": [
+"위에서 내려옴",
+"줄별 순서",
+"문단별 공개"
+],
+"core": "mask-reveal",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/SplitText/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://animejs.com/documentation/text/splittext",
+"repo": "juliangarnier/anime",
+"license": "MIT"
+},
+{
+"url": "https://motion.dev/examples/react-scroll-text-lines",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://motion.dev/examples/react-text-reveal",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "wordstreamreplacement",
+"family": "type",
+"core": "answer-stream",
+"rows": [
+{
+"id": "R2-060",
+"en": "Word stream replacement",
+"ko": "단어 스트림 교체",
+"aka": [],
+"family": "type",
+"what": "기존 문장이 단어 단위로 새 문장에 바뀌거나 이어 붙는다.",
+"why": "답변과 수정 내용이 점차 생성됨을 보여준다.",
+"params": "공식: TextPlugin delimiter 공백, type diff 선택. 권장 단어당 100ms.",
+"impl": "텍스트 토큰 배열을 분할하고 표시 토큰 수에 따라 원문과 새 문장을 조합한다.",
+"runtime": "gsap",
+"variants": [
+"단어 추가",
+"차이만 교체",
+"문장 삭제",
+"기존과 신규 색 구분"
+],
+"core": "answer-stream",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/TextPlugin/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+}
+]
+}
+]
+},
+{
+"key": "textscrambledecode",
+"family": "type",
+"core": "text-scramble",
+"rows": [
+{
+"id": "R2-061",
+"en": "Text scramble decode",
+"ko": "텍스트 해독 스크램블",
+"aka": [
+"ScrambleText",
+"Decode text",
+"Decrypt text"
+],
+"family": "type",
+"what": "무작위 문자가 계속 바뀌다가 순서대로 실제 문장에 고정된다.",
+"why": "해독과 계산의 진행을 표현한다.",
+"params": "공식: GSAP chars upperCase, revealDelay 0ms, tweenLength true, speed 1. 권장 1200ms, 해독 지연 200ms.",
+"impl": "미확정 글자만 무작위 치환하고 확정 경계를 시간에 따라 늘린다.",
+"runtime": "gsap",
+"variants": [
+"사용자 문자셋",
+"양방향",
+"중앙부터",
+"길이 변화",
+"시드 고정"
+],
+"core": "text-scramble",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/ScrambleTextPlugin/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://animejs.com/documentation/text/scrambletext",
+"repo": "juliangarnier/anime",
+"license": "MIT"
+},
+{
+"url": "https://motion.dev/examples/react-scramble-text",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R9-016",
+"en": "Text Scramble Decode",
+"ko": "텍스트 스크램블 해독",
+"aka": [],
+"family": "texture",
+"what": "임의 기호가 빠르게 바뀌다가 목표 글자에 하나씩 고정된다.",
+"why": "복잡한 신호가 의미 있는 정보로 해독되는 인상을 준다.",
+"params": "baffle 원문 기본 speed 50ms, characters는 설정 문자 집합. 권장 해독 900ms, 글자 고정 간격 30ms.",
+"impl": "고정 시드 난수로 임시 glyph를 선택하고 시간에 따라 목표 문자 비율을 높인다.",
+"runtime": "gsap",
+"variants": [
+"순차 고정",
+"무작위 고정",
+"줄 단위 해독",
+"문자 집합 제한"
+],
+"core": "text-scramble",
+"sources": [
+{
+"url": "https://github.com/camwiegert/baffle",
+"repo": "camwiegert/baffle",
+"license": "MIT"
+},
+{
+"url": "https://github.com/codrops/TypeShuffleAnimation",
+"repo": "codrops/TypeShuffleAnimation",
+"license": "MIT"
+},
+{
+"url": "https://github.com/codrops/LineTextHoverAnimations",
+"repo": "codrops/LineTextHoverAnimations",
+"license": "MIT"
+}
+]
+},
+{
+"id": "DICT-145",
+"en": "Text scramble / Decode",
+"ko": "스크램블",
+"aka": [],
+"family": "type",
+"what": "가짜 문자 상태를 거쳐 최종 문자를 확정하는 연출이다.",
+"why": "",
+"params": "총 350~600ms, 교체 간격 50~80ms, 확정 홀드 ≥1200ms; L 드라이버+Q, 글자 이동 0px.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 3-type-data-ui.md#04. 스크램블 · Text scramble / Decode",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "rollingglyphreplacement",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R2-062",
+"en": "Rolling glyph replacement",
+"ko": "글자 롤링 교체",
+"aka": [],
+"family": "type",
+"what": "기존 글자가 위나 아래로 사라지면서 같은 자리의 새 글자가 밀려 들어온다.",
+"why": "문구의 상태 변화에 탄력과 리듬을 준다.",
+"params": "공식 공통 기본 없음. 권장 350ms, 글자 지연 25ms, 이동 1em.",
+"impl": "글자별 가림창 안에서 이전과 다음 글자 레이어를 상보 이동한다.",
+"runtime": "css",
+"variants": [
+"버튼 문구",
+"순차 롤링",
+"반대 방향 롤링"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motion.dev/examples/react-rolling-text-button",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://motion.dev/examples/react-rolling-text-button-stagger",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "textscatterassembly",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R2-063",
+"en": "Text scatter assembly",
+"ko": "문자 흩어짐과 조립",
+"aka": [],
+"family": "type",
+"what": "흩어진 글자들이 문장을 만들거나 완성된 문장이 낱자로 흩어진다.",
+"why": "분해와 재구성을 표현한다.",
+"params": "공식 공통 기본 없음. 권장 ±160px, rotation ±90도, 1000ms, 간격 20ms.",
+"impl": "글자별 목표 위치와 회전을 생성해 원래 위치 사이를 보간한다.",
+"runtime": "gsap",
+"variants": [
+"폭발 퇴장",
+"수렴 등장",
+"깊이 분산"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/SplitText/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://animejs.com/documentation/text/splittext",
+"repo": "juliangarnier/anime",
+"license": "MIT"
+},
+{
+"url": "https://motion.dev/examples/react-split-text-scatter",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "progressivetextfill",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R2-065",
+"en": "Progressive text fill",
+"ko": "진행률 텍스트 채움",
+"aka": [],
+"family": "type",
+"what": "옅은 글자 위로 밝은 글자가 왼쪽부터 채워진다.",
+"why": "문구와 작업 진행을 하나로 묶는다.",
+"params": "공식 공통 기본 없음. 권장 2000ms, clip 0~100%, 진행 완화 200ms.",
+"impl": "두 문장 레이어를 겹치고 상단 레이어의 클립 폭을 진행값에 연결한다.",
+"runtime": "css",
+"variants": [
+"좌우 채움",
+"상하 채움",
+"스크롤 읽기"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motion.dev/examples/react-loading-fill-text",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "underlinestrokedraw",
+"family": "type",
+"core": "underline-draw",
+"rows": [
+{
+"id": "R2-066",
+"en": "Underline stroke draw",
+"ko": "밑줄 그리기",
+"aka": [],
+"family": "type",
+"what": "단어 아래의 선이 한쪽 끝에서 시작해 길게 그려진다.",
+"why": "강조 대상과 읽을 지점을 표시한다.",
+"params": "공식 공통 기본 없음. 권장 400ms, stroke 2~5px, ease out.",
+"impl": "SVG 밑줄 길이를 dashoffset으로 드러내거나 HTML 선 scaleX를 보간한다.",
+"runtime": "svg",
+"variants": [
+"직선",
+"손그림 곡선",
+"양끝 확장"
+],
+"core": "underline-draw",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/DrawSVGPlugin/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/docs/react-svg-animation",
+"repo": "motiondivision/motion",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "focustextreveal",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R3-050",
+"en": "Focus Text Reveal",
+"ko": "글자 초점 리빌",
+"aka": [],
+"family": "type",
+"what": "흐린 문장이 선명해지고 자간이 정렬되거나 반대로 흐려진다.",
+"why": "정보가 명료해지는 순간을 보여 준다.",
+"params": "도감 기본값: 700ms, blur 12px에서 0px, 자간 0.2em에서 0em",
+"impl": "CSS filter blur와 letter-spacing 및 opacity를 보간한다",
+"runtime": "css",
+"variants": [
+"text-focus-in",
+"focus-in",
+"text-blur-out",
+"blur-out",
+"BlurText",
+"focus-in-expand",
+"focus-in-expand-fwd",
+"focus-in-contract",
+"focus-in-contract-bck",
+"blur-out-contract",
+"blur-out-contract-bck",
+"blur-out-expand",
+"blur-out-expand-fwd"
+],
+"core": "",
+"sources": [
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "neontextflicker",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R3-051",
+"en": "Neon Text Flicker",
+"ko": "네온 글자 점멸",
+"aka": [],
+"family": "type",
+"what": "발광 글자의 밝기와 외곽 빛이 불규칙하게 꺼졌다 켜진다.",
+"why": "전기와 야간 간판의 분위기를 준다.",
+"params": "도감 기본값: 2000ms, 점멸 8회, glow 16px, steps(1)",
+"impl": "CSS text-shadow와 opacity에 불규칙한 밝기 구간을 준다",
+"runtime": "css",
+"variants": [
+"text-flicker-in-glow",
+"text-flicker-out-glow",
+"glow"
+],
+"core": "",
+"sources": [
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/magicuidesign/magicui",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "characterandwordstagger",
+"family": "type",
+"core": "char-stagger",
+"rows": [
+{
+"id": "R3-093",
+"en": "Character and Word Stagger",
+"ko": "글자와 단어 순차 등장",
+"aka": [],
+"family": "type",
+"what": "글자 또는 단어가 차례로 위로 이동하며 선명하게 나타난다.",
+"why": "문구를 읽는 순서와 리듬을 안내한다.",
+"params": "도감 기본값: 요소당 500ms, 글자 간격 40ms, 단어 간격 100ms",
+"impl": "HTML 텍스트를 span으로 나누고 CSS 지연을 준다",
+"runtime": "css",
+"variants": [
+"SplitText",
+"Text Effect",
+"Text Generate Effect",
+"Text Animate",
+"ScrollReveal",
+"text-animate",
+"text-effect",
+"text-generate-effect"
+],
+"core": "char-stagger",
+"sources": [
+{
+"url": "https://magicui.design/docs/components/text-animate",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/text-generate-effect",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://motion-primitives.com/docs/text-effect",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "rotatingwordloop",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R3-095",
+"en": "Rotating Word Loop",
+"ko": "단어 순환 교체",
+"aka": [],
+"family": "type",
+"what": "같은 문장 위치에서 여러 단어가 위아래로 이동하며 교체된다.",
+"why": "한 자리의 여러 가능성과 특징을 보여 준다.",
+"params": "도감 기본값: 전환 400ms, 유지 2000ms, 이동 1em, ease-out",
+"impl": "HTML overflow hidden 안에서 단어 translateY와 opacity를 교차한다",
+"runtime": "css",
+"variants": [
+"Word Rotate",
+"Flip Words",
+"Text Loop",
+"RotatingText",
+"Container Text Flip",
+"TextLoop",
+"word-rotate",
+"text-loop",
+"layout-text-flip",
+"flip-words",
+"container-text-flip"
+],
+"core": "",
+"sources": [
+{
+"url": "https://magicui.design/docs/components/word-rotate",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/layout-text-flip",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://motion-primitives.com/docs/text-loop",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "textmorph",
+"family": "type",
+"core": "shape-morph",
+"rows": [
+{
+"id": "R3-096",
+"en": "Text Morph",
+"ko": "문구 모프",
+"aka": [],
+"family": "type",
+"what": "기존 문구가 흐려지고 형태가 섞이며 다음 문구로 이어진다.",
+"why": "두 표현이 연결되어 바뀜을 보여 준다.",
+"params": "도감 기본값: 800ms, blur 8px, 유지 1800ms, ease-in-out",
+"impl": "SVG 필터 또는 CSS blur와 대비 및 겹친 텍스트 opacity를 보간한다",
+"runtime": "svg",
+"variants": [
+"Morphing Text",
+"Text Morph",
+"morphing-text",
+"text-morph"
+],
+"core": "shape-morph",
+"sources": [
+{
+"url": "https://magicui.design/docs/components/morphing-text",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://motion-primitives.com/docs/text-morph",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "rollingglyphs",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R3-097",
+"en": "Rolling Glyphs",
+"ko": "굴러 바뀌는 글자",
+"aka": [],
+"family": "type",
+"what": "글자별 세로 슬롯이 굴러 다음 글자로 정착한다.",
+"why": "정보가 정교하게 갱신됨을 보여 준다.",
+"params": "도감 기본값: 700ms, 글자 지연 50ms, 슬롯 이동 1em, ease-out",
+"impl": "HTML 글자별 클리핑 슬롯 안의 세로 문자열을 이동한다",
+"runtime": "css",
+"variants": [
+"Text Roll",
+"Shuffle",
+"CodeSlots",
+"Counter",
+"text-roll"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motion-primitives.com/docs/text-roll",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "splitflapdisplay",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R3-098",
+"en": "Split Flap Display",
+"ko": "분할 플랩 문자판",
+"aka": [],
+"family": "type",
+"what": "문자판의 위아래 반쪽이 경첩을 따라 넘어가며 새 글자를 만든다.",
+"why": "기계식 정보판과 순차 갱신을 표현한다.",
+"params": "도감 기본값: 글자당 200ms, 지연 40ms, perspective 400px",
+"impl": "CSS 문자 상하 절반을 클리핑하고 rotateX로 넘긴다",
+"runtime": "css",
+"variants": [
+"Text Flipping Board",
+"SplitFlapText",
+"Text 3D Flip",
+"text-3d-flip",
+"text-flipping-board"
+],
+"core": "",
+"sources": [
+{
+"url": "https://ui.aceternity.com/components/text-flipping-board",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://magicui.design/docs/components/text-3d-flip",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "textshimmer",
+"family": "type",
+"core": "highlight-sweep",
+"rows": [
+{
+"id": "R3-099",
+"en": "Text Shimmer",
+"ko": "글자 빛 쓸기",
+"aka": [
+"Shiny Text",
+"Text Glint"
+],
+"family": "type",
+"what": "글자 내부에 밝은 띠가 한쪽에서 다른 쪽으로 지나간다.",
+"why": "문구의 중요도와 광택을 보여 준다.",
+"params": "도감 기본값: 2000ms, 밝은 띠 폭 20%, linear, 반복",
+"impl": "CSS background-clip text와 그라디언트 위치를 이동한다",
+"runtime": "css",
+"variants": [
+"Animated Shiny Text",
+"ShinyText",
+"Text Shimmer",
+"Text Shimmer Wave",
+"animated-shiny-text",
+"text-shimmer",
+"text-shimmer-wave"
+],
+"core": "highlight-sweep",
+"sources": [
+{
+"url": "https://magicui.design/docs/components/animated-shiny-text",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://motion-primitives.com/docs/text-shimmer",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "animatedcolortext",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R3-100",
+"en": "Animated Color Text",
+"ko": "색상 흐름 글자",
+"aka": [],
+"family": "type",
+"what": "글자마다 색이 달라지거나 글자 속 다색 흐름이 계속 움직인다.",
+"why": "활기와 다양한 가능성을 전달한다.",
+"params": "도감 기본값: 4000ms, 색 4개, 갱신 간격 200ms, ease-in-out",
+"impl": "CSS 글자별 색 또는 background-clip text의 그라디언트 위치를 보간한다",
+"runtime": "css",
+"variants": [
+"Aurora Text",
+"Colourful Text",
+"GradientText",
+"aurora-text",
+"colourful-text"
+],
+"core": "",
+"sources": [
+{
+"url": "https://magicui.design/docs/components/aurora-text",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/colourful-text",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "maskedtextreveal",
+"family": "type",
+"core": "mask-reveal",
+"rows": [
+{
+"id": "R3-101",
+"en": "Masked Text Reveal",
+"ko": "마스크 글자 리빌",
+"aka": [],
+"family": "type",
+"what": "글자가 잘린 창 안에서 올라오거나 이동하는 면에 의해 드러난다.",
+"why": "문구 등장에 또렷한 질서를 준다.",
+"params": "도감 기본값: 700ms, 이동 1.2em, 지연 50ms, ease-out",
+"impl": "HTML overflow hidden 또는 CSS clip-path로 글자 이동을 자른다",
+"runtime": "css",
+"variants": [
+"MaskedHeading",
+"Text Reveal",
+"Dia Text Reveal",
+"StrokeText",
+"text-reveal",
+"dia-text-reveal",
+"text-reveal-card"
+],
+"core": "mask-reveal",
+"sources": [
+{
+"url": "https://magicui.design/docs/components/text-reveal",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/text-reveal-card",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+},
+{
+"id": "DICT-146",
+"en": "Masked text reveal",
+"ko": "마스크 텍스트",
+"aka": [],
+"family": "type",
+"what": "고정된 잘림 영역 안에서 글자나 행을 드러내는 방식이다.",
+"why": "",
+"params": "행당 350~500ms, 행 시차 80~120ms; E, y 0.8~1행 높이, 행 간격 12~20px.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 3-type-data-ui.md#05. 마스크 텍스트 · Masked text reveal",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "markerhighlight",
+"family": "type",
+"core": "word-emphasis",
+"rows": [
+{
+"id": "R3-102",
+"en": "Marker Highlight",
+"ko": "형광펜 강조",
+"aka": [],
+"family": "type",
+"what": "문구 뒤의 색 면이나 손그림 선이 자라나 핵심 단어를 감싼다.",
+"why": "핵심어와 읽어야 할 구간을 알려 준다.",
+"params": "도감 기본값: 650ms, 두께 0.8em, 지연 100ms, ease-out",
+"impl": "SVG 손그림 패스의 dashoffset 또는 CSS 배경 scaleX를 보간한다",
+"runtime": "svg",
+"variants": [
+"Text Highlighter",
+"Hero Highlight",
+"Pointer Highlight",
+"hero-highlight",
+"pointer-highlight"
+],
+"core": "word-emphasis",
+"sources": [
+{
+"url": "https://github.com/magicuidesign/magicui",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/hero-highlight",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "spinningcirculartext",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R3-103",
+"en": "Spinning Circular Text",
+"ko": "원형 글자 회전",
+"aka": [],
+"family": "type",
+"what": "원의 둘레에 놓인 문장이 중심을 축으로 계속 회전한다.",
+"why": "배지와 순환 메시지에 움직임을 준다.",
+"params": "도감 기본값: 12000ms, 반경 60px, 회전 360deg, linear",
+"impl": "SVG textPath 또는 원형 배치 HTML 전체를 회전한다",
+"runtime": "svg",
+"variants": [
+"Spinning Text",
+"CircularText",
+"CurvedLoop",
+"spinning-text"
+],
+"core": "",
+"sources": [
+{
+"url": "https://magicui.design/docs/components/spinning-text",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://motion-primitives.com/docs/spinning-text",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "fallingletters",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R3-105",
+"en": "Falling Letters",
+"ko": "글자 낙하",
+"aka": [],
+"family": "type",
+"what": "문장의 글자들이 분리되어 아래로 떨어지고 서로 부딪혀 쌓인다.",
+"why": "문구가 해체되는 사건을 보여 준다.",
+"params": "도감 기본값: 2000ms, 중력 900px/s², 반발 0.3, 회전 30deg",
+"impl": "canvas 글자 몸체의 위치와 회전을 간단한 충돌 계산으로 갱신한다",
+"runtime": "canvas",
+"variants": [
+"FallingText"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "variablefontpressure",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R3-106",
+"en": "Variable Font Pressure",
+"ko": "가변 글꼴 압력",
+"aka": [],
+"family": "type",
+"what": "글자의 두께와 폭이 위치나 포인터 거리에 따라 연속적으로 바뀐다.",
+"why": "문구가 시선과 압력에 반응함을 보여 준다.",
+"params": "도감 기본값: 500ms, weight 200에서 800, 영향 반경 120px, ease-out",
+"impl": "CSS font-variation-settings를 거리나 시간에 따라 보간한다",
+"runtime": "css",
+"variants": [
+"TextPressure",
+"VariableProximity",
+"kinetic-text"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://magicui.design/docs/components/kinetic-text",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "wavytextdistortion",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R3-107",
+"en": "Wavy Text Distortion",
+"ko": "물결 글자 변형",
+"aka": [],
+"family": "type",
+"what": "글자나 텍스트 줄이 파도처럼 휘거나 위치가 어긋나며 흐른다.",
+"why": "유기적인 흐름과 속도를 표현한다.",
+"params": "도감 기본값: 2400ms, 진폭 12px, 파장 160px, linear",
+"impl": "SVG displacement 또는 HTML 글자 translate에 사인 위상을 준다",
+"runtime": "svg",
+"variants": [
+"WarpText",
+"Squiggly Text",
+"Organic Text Distortion",
+"ScrollVelocity",
+"Scroll Driven Text Wave",
+"squiggly-text"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://ui.aceternity.com/components/squiggly-text",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://tympanus.net/codrops/2024/11/06/how-to-create-an-organic-text-distortion-effect-with-infinite-scrolling/",
+"repo": "tympanus.net/codrops",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "wordfocusshift",
+"family": "type",
+"core": "word-emphasis",
+"rows": [
+{
+"id": "R3-108",
+"en": "Word Focus Shift",
+"ko": "단어 초점 교대",
+"aka": [],
+"family": "type",
+"what": "문구 안의 한 단어만 선명해지고 초점 테두리가 다음 단어로 옮겨 간다.",
+"why": "읽는 순서와 강조할 단어를 알려 준다.",
+"params": "도감 기본값: 전환 500ms, 유지 1800ms, 비초점 blur 4px",
+"impl": "HTML 단어 blur와 위치 측정한 테두리 translate를 보간한다",
+"runtime": "css",
+"variants": [
+"TrueFocus"
+],
+"core": "word-emphasis",
+"sources": [
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "motioninsidetext",
+"family": "type",
+"core": "mask-reveal",
+"rows": [
+{
+"id": "R3-185",
+"en": "Motion Inside Text",
+"ko": "글자 속 영상",
+"aka": [],
+"family": "type",
+"what": "글자의 외곽은 고정된 채 내부의 영상이나 곡선과 색만 움직인다.",
+"why": "문구와 시각 주제를 연결한다.",
+"params": "도감 기본값: 6000ms, 영상 또는 파형 1개, 반복",
+"impl": "SVG text mask 또는 canvas 문자 클리핑 안에 새로 만든 동영상이나 곡선을 그린다",
+"runtime": "svg",
+"variants": [
+"Video Text",
+"Canvas Text",
+"video-text",
+"canvas-text"
+],
+"core": "mask-reveal",
+"sources": [
+{
+"url": "https://magicui.design/docs/components/video-text",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/canvas-text",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "outlineletterdraw",
+"family": "type",
+"core": "line-draw",
+"rows": [
+{
+"id": "R3-186",
+"en": "Outline Letter Draw",
+"ko": "글자 윤곽 그리기",
+"aka": [],
+"family": "type",
+"what": "속이 빈 글자의 외곽선이 경로를 따라 그려지고 색 면이 뒤따른다.",
+"why": "문구가 만들어지는 과정을 보여 준다.",
+"params": "도감 기본값: 1200ms, 선 두께 2px, 채움 지연 800ms, ease-out",
+"impl": "SVG 글자 패스의 dashoffset과 fill opacity를 보간한다",
+"runtime": "svg",
+"variants": [
+"StrokeText",
+"Text Hover Effect",
+"text-hover-effect"
+],
+"core": "line-draw",
+"sources": [
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://ui.aceternity.com/components/text-hover-effect",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "extrudedtextorbit",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R3-195",
+"en": "Extruded Text Orbit",
+"ko": "두꺼운 입체 글자 회전",
+"aka": [],
+"family": "type",
+"what": "겹친 글자 층이 두께를 만들고 전체 문구가 천천히 기울며 뒷면 깊이를 드러낸다.",
+"why": "평면 제목에 조각 같은 존재감을 준다.",
+"params": "도감 기본값: 5000ms, 층 24개, 층 간격 2px, 최대 기울기 8deg",
+"impl": "CSS 글자 복제층에 translateZ를 주고 부모 rotateX와 rotateY를 보간한다",
+"runtime": "css",
+"variants": [
+"DepthText"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "textrangereveal",
+"family": "type",
+"core": "char-stagger",
+"rows": [
+{
+"id": "R5-062",
+"en": "Text Range Reveal",
+"ko": "텍스트 범위 리빌",
+"aka": [
+"Range selector"
+],
+"family": "type",
+"what": "글자가 순서대로 이동하며 나타나고 선택 범위가 문장을 훑는다.",
+"why": "문장의 읽기 순서와 리듬을 만든다.",
+"params": "제안 기본값: 글자당 35ms; 이동 24px; 400ms; power2.out",
+"impl": "글자를 분리하고 범위 진행률을 각 글자의 변환·알파에 매핑한다.",
+"runtime": "gsap",
+"variants": [
+"문자",
+"단어",
+"줄 단위",
+"랜덤 순서"
+],
+"core": "char-stagger",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/animating-text/text-animation/animating-text.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "typewriterreveal",
+"family": "type",
+"core": "typewriter",
+"rows": [
+{
+"id": "R5-063",
+"en": "Typewriter Reveal",
+"ko": "타자기 리빌",
+"aka": [
+"Type-on"
+],
+"family": "type",
+"what": "문자가 한 글자씩 즉시 추가된다.",
+"why": "작성과 생각의 진행을 보여준다.",
+"params": "제안 기본값: 글자당 65ms; hold; 커서 500ms",
+"impl": "원문을 보존하고 시간에 따라 보이는 문자 수를 늘린다.",
+"runtime": "gsap",
+"variants": [
+"커서 포함",
+"문장 홀드",
+"삭제 역재생"
+],
+"core": "typewriter",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/animating-text/text-animation/animating-text.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+},
+{
+"id": "R9-014",
+"en": "Typewriter Reveal",
+"ko": "타자기 드러내기",
+"aka": [],
+"family": "type",
+"what": "문자가 하나씩 추가되어 문장이 입력되는 듯 보인다.",
+"why": "생각이나 발화가 만들어지는 시간 흐름을 전달한다.",
+"params": "원문 기본값. typewriter: {\"target\":\"per-character\",\"enter\":{\"duration_ms\":240,\"stagger_ms\":46,\"easing\":\"steps(1, end)\",\"from\":{\"opacity\":0,\"y_px\":0},\"to\":{\"opacity\":1,\"y_px\":0}},\"exit\":{\"duration_ms\":260,\"stagger_ms\":10,\"easing\":\"cubic-bezier(0.7, 0, 0.84, 0)\",\"from\":{\"opacity\":1,\"y_px\":0},\"to\":{\"opacity\":0,\"y_px\":-4}},\"swap\":{\"mode\":\"crossfade\",\"overlap_ms\":0,\"micro_delay_ms\":85}}",
+"impl": "시간에 따라 표시할 grapheme 수를 늘리고 커서 표시를 별도로 제어한다.",
+"runtime": "gsap",
+"variants": [
+"typewriter"
+],
+"core": "typewriter",
+"sources": [
+{
+"url": "https://github.com/pixel-point/animate-text",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+},
+{
+"url": "https://github.com/mattboldt/typed.js",
+"repo": "mattboldt/typed.js",
+"license": "GPL-3.0-or-later"
+},
+{
+"url": "https://github.com/uuuulala/WebGL-typing-tutorial",
+"repo": "uuuulala/WebGL-typing-tutorial",
+"license": "MIT"
+},
+{
+"url": "https://github.com/motion-canvas/motion-canvas",
+"repo": "motion-canvas/motion-canvas",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "textwaveselector",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R5-064",
+"en": "Text Wave Selector",
+"ko": "텍스트 파동 셀렉터",
+"aka": [
+"Wiggly selector",
+"Expression selector"
+],
+"family": "type",
+"what": "선택 강도의 파동이 글자를 지나가며 위치·크기·색이 변한다.",
+"why": "문장에 흐름과 강조 리듬을 준다.",
+"params": "제안 기본값: 1800ms; 파장 6글자; 높이 12px; sine",
+"impl": "인덱스와 시간의 위상 함수로 글자별 변환 강도를 계산한다.",
+"runtime": "gsap",
+"variants": [
+"위치 파동",
+"스케일 파동",
+"색 파동"
+],
+"core": "",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/animating-text/text-animation/animating-text.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "tracking",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R5-065",
+"en": "Tracking Animation",
+"ko": "자간 애니메이션",
+"aka": [
+"Tracking reveal"
+],
+"family": "type",
+"what": "글자 사이가 벌어지거나 좁혀져 단어가 모인다.",
+"why": "문구의 등장과 집중을 강조한다.",
+"params": "제안 기본값: 700ms; tracking 0.3em→0; power2.out",
+"impl": "letter-spacing 또는 글자별 기준 위치를 보간한다.",
+"runtime": "css",
+"variants": [
+"중앙 정렬",
+"한쪽 고정",
+"확장 퇴장"
+],
+"core": "",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/animating-text/text-animation/animating-text.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "percharacter3dflip",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R5-066",
+"en": "Per Character 3D Flip",
+"ko": "글자별 3D 뒤집기",
+"aka": [
+"Per-character 3D"
+],
+"family": "type",
+"what": "각 글자가 자기 축으로 돌아 정면을 향한다.",
+"why": "문자마다 깊이와 입체적인 등장감을 준다.",
+"params": "제안 기본값: 600ms; rotationX 90→0deg; 간격 45ms; perspective 800px",
+"impl": "글자별 CSS 3D 회전과 변환 원점을 제어한다.",
+"runtime": "css",
+"variants": [
+"세로 플립",
+"가로 플립",
+"비틀기"
+],
+"core": "",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/animating-text/text-animation/animating-text.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "textblurreveal",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R5-067",
+"en": "Text Blur Reveal",
+"ko": "텍스트 블러 리빌",
+"aka": [],
+"family": "type",
+"what": "흐릿한 글자가 차례로 또렷해지며 나타난다.",
+"why": "읽기 시작과 부드러운 초점을 만든다.",
+"params": "제안 기본값: 600ms; blur 12→0px; 글자당 25ms",
+"impl": "분리 글자에 filter blur와 알파를 보간한다.",
+"runtime": "css",
+"variants": [
+"문자 초점",
+"단어 초점",
+"줄 초점"
+],
+"core": "",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/animating-text/text-animation/animating-text.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "textcharacteroffset",
+"family": "type",
+"core": "text-scramble",
+"rows": [
+{
+"id": "R5-068",
+"en": "Text Character Offset",
+"ko": "문자 코드 오프셋",
+"aka": [
+"Character offset",
+"Decoder text"
+],
+"family": "type",
+"what": "여러 글자가 다른 기호를 거쳐 최종 문구로 정착한다.",
+"why": "해독·계산·디지털 처리를 암시한다.",
+"params": "제안 기본값: 900ms; 교체 50ms; seed 13",
+"impl": "시간·인덱스별 기호를 생성하고 최종 글자 정착 시점을 정한다.",
+"runtime": "gsap",
+"variants": [
+"알파벳 해독",
+"숫자 해독",
+"기호 해독"
+],
+"core": "text-scramble",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/animating-text/text-animation/animating-text.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "wordspotlight",
+"family": "type",
+"core": "word-emphasis",
+"rows": [
+{
+"id": "R5-069",
+"en": "Word Spotlight",
+"ko": "단어 스포트라이트",
+"aka": [
+"Word emphasis"
+],
+"family": "type",
+"what": "읽는 단어만 커지거나 색이 바뀌고 나머지는 약해진다.",
+"why": "핵심 단어와 발화 흐름을 강조한다.",
+"params": "제안 기본값: 단어당 300ms; scale 1.12; 비활성 opacity 0.4",
+"impl": "단어별 활성 시간에 색·배율·알파를 보간한다.",
+"runtime": "gsap",
+"variants": [
+"색 강조",
+"크기 강조",
+"배경 강조"
+],
+"core": "word-emphasis",
+"sources": [
+{
+"url": "https://schoolofmotion.com/blog/text-animators-after-effects",
+"repo": "schoolofmotion.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "textonpath",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R5-070",
+"en": "Text On Path",
+"ko": "패스 위 텍스트",
+"aka": [],
+"family": "type",
+"what": "문자가 곡선을 따라 배열되고 경로 위를 이동한다.",
+"why": "공간적 흐름과 곡선의 형태를 보여준다.",
+"params": "제안 기본값: 2000ms; offset 0→100%; linear",
+"impl": "SVG textPath startOffset 또는 개별 글자 접선 배치를 갱신한다.",
+"runtime": "svg",
+"variants": [
+"원형 텍스트",
+"물결 텍스트",
+"경로 추적"
+],
+"core": "",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/animating-text/text-animation/animating-text.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "textfillstrokeexchange",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R5-071",
+"en": "Text Fill Stroke Exchange",
+"ko": "텍스트 채움 윤곽 교대",
+"aka": [],
+"family": "type",
+"what": "채워진 글자가 윤곽만 남거나 반대로 면이 차오른다.",
+"why": "글자의 구조와 스타일 변화를 강조한다.",
+"params": "제안 기본값: 600ms; fill alpha 1→0; stroke 0→1",
+"impl": "같은 글자의 채움과 윤곽 레이어 알파를 교대한다.",
+"runtime": "svg",
+"variants": [
+"윤곽 등장",
+"면 전환",
+"색 교대"
+],
+"core": "",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/animating-text/text-animation/animating-text.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "textanchorswivel",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R5-072",
+"en": "Text Anchor Swivel",
+"ko": "글자 앵커 회전",
+"aka": [],
+"family": "type",
+"what": "글자가 아래나 위의 축을 중심으로 흔들리며 정렬된다.",
+"why": "매달림과 타이포의 유연한 성격을 만든다.",
+"params": "제안 기본값: 700ms; rotation ±25→0deg; 간격 35ms",
+"impl": "문자 박스 바깥의 transform-origin으로 회전한다.",
+"runtime": "css",
+"variants": [
+"상단 매달림",
+"하단 피벗"
+],
+"core": "",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/animating-text/text-animation/animating-text.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "textmaskslide",
+"family": "type",
+"core": "mask-reveal",
+"rows": [
+{
+"id": "R5-073",
+"en": "Text Mask Slide",
+"ko": "텍스트 마스크 슬라이드",
+"aka": [
+"Line reveal"
+],
+"family": "type",
+"what": "가려진 영역 안에서 글자가 미끄러져 나오고 경계 뒤로 사라진다.",
+"why": "또렷하고 정돈된 문구 전환을 만든다.",
+"params": "제안 기본값: 500ms; y 100→0%; power3.out",
+"impl": "줄별 overflow hidden 컨테이너 안에서 텍스트를 이동한다.",
+"runtime": "css",
+"variants": [
+"위쪽 등장",
+"옆쪽 등장",
+"다중 줄"
+],
+"core": "mask-reveal",
+"sources": [
+{
+"url": "https://schoolofmotion.com/blog/text-animators-after-effects",
+"repo": "schoolofmotion.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "kineticbeattypography",
+"family": "type",
+"core": "kinetic-beats",
+"rows": [
+{
+"id": "R5-074",
+"en": "Kinetic Beat Typography",
+"ko": "키네틱 비트 타이포",
+"aka": [
+"Beat typography"
+],
+"family": "type",
+"what": "단어의 크기·회전·배치가 발화나 음악 박자마다 바뀐다.",
+"why": "말의 강세와 감정적 리듬을 전달한다.",
+"params": "제안 기본값: 박자 400ms; 강조 120ms; scale 1→1.15→1",
+"impl": "비트 타임라인에 단어의 변환 키프레임을 배치한다.",
+"runtime": "gsap",
+"variants": [
+"발화 동기",
+"음악 동기",
+"구절 누적"
+],
+"core": "kinetic-beats",
+"sources": [
+{
+"url": "https://schoolofmotion.com/blog/text-animators-after-effects",
+"repo": "schoolofmotion.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "kinetictypelayoutrelay",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R5-075",
+"en": "Kinetic Type Layout Relay",
+"ko": "키네틱 타이포 배치 릴레이",
+"aka": [],
+"family": "type",
+"what": "새 단어가 들어올 때 기존 단어가 밀리고 돌아 새 문장을 구성한다.",
+"why": "문장의 전개를 공간적으로 기억하게 한다.",
+"params": "제안 기본값: 단어 진입 350ms; 회전 ±90deg; power3.inOut",
+"impl": "단어 그룹의 목표 배치를 계산하고 위치·회전을 함께 보간한다.",
+"runtime": "gsap",
+"variants": [
+"단어 밀기",
+"회전 문장",
+"축 교대"
+],
+"core": "",
+"sources": [
+{
+"url": "https://schoolofmotion.com/blog/text-animators-after-effects",
+"repo": "schoolofmotion.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "textopacityflicker",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R5-076",
+"en": "Text Opacity Flicker",
+"ko": "텍스트 점멸",
+"aka": [],
+"family": "type",
+"what": "글자의 밝기나 가시성이 불규칙하게 켜졌다 정착한다.",
+"why": "전자 신호와 긴박감을 표현한다.",
+"params": "제안 기본값: 650ms; 4회 점멸; 최종 opacity 1",
+"impl": "시드별 이진 알파 구간을 만들고 마지막에 표시를 유지한다.",
+"runtime": "gsap",
+"variants": [
+"네온 점멸",
+"글자별 랜덤 점멸"
+],
+"core": "",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/animating-text/text-animation/animating-text.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "lowerthirdbarreveal",
+"family": "caption",
+"core": "mask-reveal",
+"rows": [
+{
+"id": "R5-093",
+"en": "Lower Third Bar Reveal",
+"ko": "하단 자막 바 리빌",
+"aka": [
+"Name strap",
+"Aston",
+"Super",
+"Lower Third Reverse Exit"
+],
+"family": "caption",
+"what": "색 막대가 먼저 펼쳐지고 이름과 직함이 차례로 나온다.",
+"why": "인물의 정체를 읽기 쉬운 순서로 전달한다.",
+"params": "제안 기본값: 바 300ms; 이름 250ms; 직함 지연 120ms; hold 4000ms",
+"impl": "막대 폭을 늘리고 그 영역으로 두 줄 텍스트를 마스킹한다.",
+"runtime": "css",
+"variants": [
+"좌측 펼침",
+"중앙 펼침",
+"접힘 퇴장",
+"옆으로 회수",
+"하단 자막 역순 퇴장"
+],
+"core": "mask-reveal",
+"sources": [
+{
+"url": "https://schoolofmotion.com/blog/sports-lower-thirds",
+"repo": "schoolofmotion.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "lowerthirdaccentline",
+"family": "caption",
+"core": "underline-draw",
+"rows": [
+{
+"id": "R5-094",
+"en": "Lower Third Accent Line",
+"ko": "하단 자막 강조선",
+"aka": [],
+"family": "caption",
+"what": "짧은 선이 먼저 그려진 뒤 옆에 이름과 직함이 나타난다.",
+"why": "가벼운 정보 위계를 만든다.",
+"params": "제안 기본값: 선 250ms; 텍스트 350ms; hold 4000ms",
+"impl": "SVG 선 드로잉과 텍스트 이동·알파를 연결한다.",
+"runtime": "gsap",
+"variants": [
+"세로 강조선",
+"가로 강조선"
+],
+"core": "underline-draw",
+"sources": [
+{
+"url": "https://schoolofmotion.com/blog/sports-lower-thirds",
+"repo": "schoolofmotion.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "lowerthirdpanelexchange",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R5-095",
+"en": "Lower Third Panel Exchange",
+"ko": "하단 자막 패널 교대",
+"aka": [],
+"family": "caption",
+"what": "자막 배경을 유지한 채 이전 이름이 나가고 다음 정보가 들어온다.",
+"why": "같은 맥락의 인물이나 정보를 연속 소개한다.",
+"params": "제안 기본값: 교대 450ms; y 100%; hold 3500ms",
+"impl": "고정 클리핑 패널 안에서 두 텍스트 그룹을 교대 이동한다.",
+"runtime": "css",
+"variants": [
+"수직 교대",
+"수평 교대"
+],
+"core": "",
+"sources": [
+{
+"url": "https://schoolofmotion.com/blog/sports-lower-thirds",
+"repo": "schoolofmotion.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "responsivelowerthirdresize",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R5-096",
+"en": "Responsive Lower Third Resize",
+"ko": "가변 길이 하단 자막",
+"aka": [],
+"family": "caption",
+"what": "문구가 바뀔 때 배경 막대가 새 글자 길이에 맞춰 부드럽게 늘어난다.",
+"why": "정보량이 달라도 정돈된 레이아웃을 유지한다.",
+"params": "제안 기본값: 400ms; padding 24px; power2.inOut",
+"impl": "텍스트 폭을 측정해 패널 폭과 주변 위치를 보간한다.",
+"runtime": "gsap",
+"variants": [
+"이름 길이 대응",
+"두 줄 대응"
+],
+"core": "",
+"sources": [
+{
+"url": "https://schoolofmotion.com/blog/automation-in-after-effects",
+"repo": "schoolofmotion.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+},
+{
+"url": "https://schoolofmotion.com/blog/anchor-point-expressions-in-after-effects",
+"repo": "schoolofmotion.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "lowerthirdmatchup",
+"family": "caption",
+"core": "split-compare",
+"rows": [
+{
+"id": "R5-097",
+"en": "Lower Third Matchup",
+"ko": "대결 하단 자막",
+"aka": [],
+"family": "caption",
+"what": "양쪽 팀이나 인물 패널이 반대 방향에서 들어와 중앙에서 만난다.",
+"why": "비교 대상과 대결 구도를 즉시 보여준다.",
+"params": "제안 기본값: 600ms; 중앙 간격 24px; hold 5000ms",
+"impl": "대칭 패널의 위치·마스크를 반대 방향으로 애니메이션한다.",
+"runtime": "css",
+"variants": [
+"팀 대결",
+"전후 비교",
+"양자 소개"
+],
+"core": "split-compare",
+"sources": [
+{
+"url": "https://schoolofmotion.com/blog/sports-lower-thirds",
+"repo": "schoolofmotion.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "newstickercrawl",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R5-098",
+"en": "News Ticker Crawl",
+"ko": "뉴스 티커 흐름",
+"aka": [],
+"family": "caption",
+"what": "짧은 정보가 하단 띠 안에서 일정 속도로 지나간다.",
+"why": "많은 보조 정보를 지속적으로 전달한다.",
+"params": "제안 기본값: 60px/s; gap 48px; linear",
+"impl": "폭을 측정한 텍스트 그룹을 반복 배치하고 시간 기반 이동한다.",
+"runtime": "css",
+"variants": [
+"연속 티커",
+"항목 간 홀드"
+],
+"core": "",
+"sources": [
+{
+"url": "https://schoolofmotion.com/blog/sports-lower-thirds",
+"repo": "schoolofmotion.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "interpolatedcountticker",
+"family": "type",
+"core": "count-up",
+"rows": [
+{
+"id": "R6-032",
+"en": "Interpolated count ticker",
+"ko": "보간 숫자 티커",
+"aka": [
+"Count up",
+"Number tween"
+],
+"family": "type",
+"what": "숫자가 시작값에서 목표값까지 계속 바뀌며 마지막 값에 멈춘다.",
+"why": "핵심 수치의 규모와 변화량에 주의를 모은다.",
+"params": "기본 1200ms, cubicOut, 소수 0자리, 고정 자릿수 폭",
+"impl": "GSAP 숫자 객체를 보간하고 프레임마다 지정 형식으로 HTML 텍스트를 갱신한다.",
+"runtime": "gsap",
+"variants": [
+"증가",
+"감소",
+"음수 통과",
+"문장 안 여러 숫자"
+],
+"core": "count-up",
+"sources": [
+{
+"url": "https://helpcenter.flourish.studio/hc/en-us/articles/8761548263823-Number-ticker-an-overview",
+"repo": "Flourish",
+"license": "unknown"
+},
+{
+"url": "https://flourish.studio/blog/number-ticker-countdown-templates/",
+"repo": "Flourish",
+"license": "unknown"
+},
+{
+"url": "https://echarts.apache.org/handbook/en/basics/release-note/v5-feature/",
+"repo": "apache/echarts",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "digitreelticker",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R6-033",
+"en": "Digit reel ticker",
+"ko": "자릿수 롤링 티커",
+"aka": [
+"Odometer",
+"Rolling numbers"
+],
+"family": "type",
+"what": "숫자의 각 자릿수가 세로로 굴러가며 새 숫자가 자리를 차지한다.",
+"why": "수치 갱신을 기계식 계수기처럼 선명하게 느낀다.",
+"params": "기본 1000ms, 자릿수 간 50ms, cubicOut, overflow hidden",
+"impl": "각 자릿수를 세로 숫자 열로 만들고 CSS translateY를 보간한다.",
+"runtime": "css",
+"variants": [
+"계기판",
+"슬롯 릴",
+"자릿수 올림"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/HubSpot/odometer",
+"repo": "HubSpot/odometer",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "countdownclock",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R6-034",
+"en": "Countdown clock",
+"ko": "목표 시점 카운트다운",
+"aka": [],
+"family": "type",
+"what": "남은 일, 시간, 분, 초가 일정한 간격으로 줄고 자릿수가 교체된다.",
+"why": "마감이나 사건까지 남은 시간을 느낀다.",
+"params": "기본 갱신 1000ms, 교체 250ms, 목표 시각 명시",
+"impl": "목표와 재생 시각의 차이를 계산하고 각 시간 단위 텍스트를 갱신한다.",
+"runtime": "css",
+"variants": [
+"초 단위",
+"일 단위",
+"완료 메시지"
+],
+"core": "",
+"sources": [
+{
+"url": "https://flourish.studio/blog/number-ticker-countdown-templates/",
+"repo": "Flourish",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "timedeventcaptions",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R6-091",
+"en": "Timed event captions",
+"ko": "시간별 사건 캡션",
+"aka": [],
+"family": "caption",
+"what": "재생 중인 연도나 경기 시점에 맞춰 설명 문장이 나타나고 다음 사건 전에 사라진다.",
+"why": "수치 변화와 사건의 시점을 연결한다.",
+"params": "기본 페이드 250ms, 유지 1800ms, 사건 시작·종료 시각 지정",
+"impl": "공유 재생 시각을 캡션 구간과 비교해 HTML opacity와 위치를 보간한다.",
+"runtime": "gsap",
+"variants": [
+"연도 캡션",
+"기록 설명",
+"선두 교체"
+],
+"core": "",
+"sources": [
+{
+"url": "https://flourish.studio/blog/line-chart-race/",
+"repo": "Flourish",
+"license": "unknown"
+},
+{
+"url": "https://helpcenter.flourish.studio/hc/en-us/articles/8761554645263-Sports-race-an-overview",
+"repo": "Flourish",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "handwrittenwriteanderase",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R7-003",
+"en": "Handwritten write and erase",
+"ko": "손글씨 쓰기와 지우기",
+"aka": [
+"Write",
+"Unwrite"
+],
+"family": "type",
+"what": "글자 획이 손으로 쓰듯 차례로 생긴다. 지울 때는 획이나 글자가 반대 순서로 사라진다.",
+"why": "문장을 구성하는 과정을 보여 주며 필기 감각을 만든다.",
+"params": "재현 기본값: 총 1600 ms, 획 간격 60 ms, linear",
+"impl": "자체 제작 글자 SVG 획의 dashoffset을 순차 보간한다.",
+"runtime": "svg",
+"variants": [
+"획별 필기",
+"글자별 필기",
+"역순 지우기"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/creation.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "lettertypingwithoptionalcursor",
+"family": "type",
+"core": "typewriter",
+"rows": [
+{
+"id": "R7-004",
+"en": "Letter typing with optional cursor",
+"ko": "글자 타이핑",
+"aka": [
+"AddTextLetterByLetter",
+"RemoveTextLetterByLetter",
+"TypeWithCursor",
+"UntypeWithCursor"
+],
+"family": "type",
+"what": "문자가 한 글자씩 나타나거나 끝에서부터 삭제된다. 선택적으로 삽입 위치 커서가 따라간다.",
+"why": "입력 중인 문장과 완성 시점을 알게 한다.",
+"params": "재현 기본값: 글자 45 ms, 커서 점멸 500 ms, 삭제 30 ms, steps",
+"impl": "HTML 텍스트 노드를 글자 단위로 갱신하고 별도 커서를 배치한다.",
+"runtime": "gsap",
+"variants": [
+"커서 없음",
+"커서 동반",
+"백스페이스"
+],
+"core": "typewriter",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/creation.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "wordwisetextreveal",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R7-005",
+"en": "Wordwise text reveal",
+"ko": "단어 단위 공개",
+"aka": [
+"AddTextWordByWord"
+],
+"family": "type",
+"what": "문장의 단어가 일정 간격으로 하나씩 나타나 누적된다.",
+"why": "문장과 해설의 호흡을 맞춘다.",
+"params": "재현 기본값: 단어 220 ms, opacity 120 ms, easeOut",
+"impl": "단어 span을 분리해 순서대로 투명도를 올린다.",
+"runtime": "gsap",
+"variants": [
+"단어 즉시 공개",
+"단어 페이드"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/creation.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "matchedcodetokenmove",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R7-088",
+"en": "Matched code token move",
+"ko": "대응 코드 토큰 이동",
+"aka": [
+"Magic Move",
+"Token Transitions",
+"코드 diff 모프"
+],
+"family": "type",
+"what": "두 코드 버전에서 같은 토큰은 새 자리로 이동하고 삭제 토큰은 사라지며 추가 토큰은 나타난다.",
+"why": "코드 변경에서 유지되는 부분과 변경되는 부분을 구별한다.",
+"params": "재현 기본값: 800 ms, 이동 easeInOut, 등장 200 ms, 퇴장 150 ms",
+"impl": "자체 토큰 대응표와 DOM 좌표를 계산해 span transform 및 opacity를 보간한다.",
+"runtime": "gsap",
+"variants": [
+"줄 재정렬",
+"들여쓰기 변경",
+"함수 추출",
+"언어 전환"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/shikijs/shiki-magic-move/blob/main/README.md",
+"repo": "shikijs/shiki-magic-move",
+"license": "MIT"
+},
+{
+"url": "https://codehike.org/docs/code/token-transitions",
+"repo": "code-hike/codehike",
+"license": "MIT"
+},
+{
+"url": "https://motioncanvas.io/docs/code/",
+"repo": "motion-canvas/motion-canvas",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "codeeditinsertionandremoval",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R7-089",
+"en": "Code edit insertion and removal",
+"ko": "코드 삽입과 삭제",
+"aka": [],
+"family": "type",
+"what": "코드의 일부가 들어오거나 지워지면서 아래 줄들이 자리를 밀거나 당겨 정렬된다.",
+"why": "편집의 원인과 주변 구조 변화가 연결됨을 이해한다.",
+"params": "재현 기본값: 600 ms, 줄 이동 easeInOut, 추가 opacity 200 ms",
+"impl": "편집 전후 줄 좌표를 자체 계산해 줄 transform과 영역 높이를 보간한다.",
+"runtime": "gsap",
+"variants": [
+"삽입",
+"삭제",
+"부분 교체"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motioncanvas.io/docs/code/",
+"repo": "motion-canvas/motion-canvas",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "sparsekeywordsupportwithnarration",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R7-124",
+"en": "Sparse keyword support with narration",
+"ko": "해설과 짧은 핵심어 지원",
+"aka": [],
+"family": "caption",
+"what": "긴 문장 대신 짧은 핵심어가 해당 도형 옆에 나타나고 설명이 끝나면 정리된다.",
+"why": "화면에서 읽는 양을 줄이고 해설을 따라간다.",
+"params": "재현 기본값: 핵심어 2~5개, 등장 200 ms, 유지 1800 ms",
+"impl": "자체 해설 큐별 핵심어 span의 opacity를 갱신한다.",
+"runtime": "gsap",
+"variants": [
+"핵심어 라벨",
+"짧은 요약 배지"
+],
+"core": "",
+"sources": [
+{
+"url": "https://onlinelibrary.wiley.com/doi/10.1111/jcal.12197",
+"repo": "Richard E. Mayer / Wiley",
+"license": "unknown"
+},
+{
+"url": "https://www.cambridge.org/core/books/abs/cambridge-handbook-of-multimedia-learning/principles-for-managing-essential-processing-in-multimedia-learning-segmenting-pretraining-and-modality-principles/DD24C2F48B9B1277CE59F78276110258",
+"repo": "Cambridge University Press",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "centeredphrasepushbuild",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R9-010",
+"en": "Centered Phrase Push Build",
+"ko": "중앙 문장 밀어 쌓기",
+"aka": [],
+"family": "type",
+"what": "중앙의 첫 단어에 새 단어가 옆에서 합류하며 기존 단어를 밀고 완성된 문장을 다시 중앙에 맞춘다.",
+"why": "문장의 확장 과정을 물리적인 연결로 전달한다.",
+"params": "원문 기본값. kinetic-center-build: {\"target\":\"per-word\",\"enter\":{\"duration_ms\":360,\"stagger_ms\":0,\"easing\":\"cubic-bezier(0.2, 0.8, 0.2, 1)\",\"from\":{\"opacity\":0,\"y_px\":6,\"scale\":0.992,\"blur_px\":3.5},\"to\":{\"opacity\":1,\"y_px\":0,\"scale\":1,\"blur_px\":0}},\"exit\":{\"duration_ms\":260,\"stagger_ms\":0,\"easing\":\"cubic-bezier(0.4, 0, 0.2, 1)\",\"from\":{\"opacity\":1,\"y_px\":0,\"blur_px\":0},\"to\":{\"opacity\":0,\"y_px\":-6,\"blur_px\":2.5}},\"swap\":{\"mode\":\"sequential\",\"overlap_ms\":0,\"micro_delay_ms\":220},\"build\":{\"entry_direction\":\"from-right\",\"line_alignment\":\"center\",\"first_word_duration_ms\":340,\"push_duration_ms\":430,\"entry_offset_px\":88,\"word_gap_px\":10,\"first_word_y_px\":6,\"entry_scale\":0.992,\"entry_blur_px\":3.5,\"reflow_blur_px\":0.8,\"exit_y_px\":-6,\"exit_blur_px\":2.5,\"easing\":\"cubic-bezier(0.2, 0.8, 0.2, 1)\",\"exit_easing\":\"cubic-bezier(0.4, 0, 0.2, 1)\"}}",
+"impl": "새 단어 너비를 측정해 모든 단어의 목표 x를 다시 계산하고 함께 보간한다.",
+"runtime": "gsap",
+"variants": [
+"kinetic-center-build"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/pixel-point/animate-text",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "humanizedtypingandbackspace",
+"family": "type",
+"core": "typing-input",
+"rows": [
+{
+"id": "R9-015",
+"en": "Humanized Typing and Backspace",
+"ko": "사람 같은 입력과 지우기",
+"aka": [],
+"family": "type",
+"what": "글자 입력 중 잠깐 멈추거나 일부를 지운 뒤 새 표현으로 고쳐 쓴다.",
+"why": "생각과 수정 과정이 살아 있는 문장처럼 느껴진다.",
+"params": "권장 입력 60ms, 삭제 35ms, 구두점 대기 350ms, 문구 대기 1200ms.",
+"impl": "시간표에 따라 텍스트 grapheme 배열의 길이를 늘리거나 줄인다.",
+"runtime": "gsap",
+"variants": [
+"스마트 공통 접두어 유지",
+"오타 수정",
+"여러 문구 반복"
+],
+"core": "typing-input",
+"sources": [
+{
+"url": "https://github.com/mattboldt/typed.js",
+"repo": "mattboldt/typed.js",
+"license": "GPL-3.0-or-later"
+}
+]
+}
+]
+},
+{
+"key": "lettershufflereassembly",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R9-017",
+"en": "Letter Shuffle Reassembly",
+"ko": "글자 재배치 조립",
+"aka": [],
+"family": "type",
+"what": "기존 단어의 글자가 공간을 옮겨 새로운 단어나 목록의 첫 글자가 된다.",
+"why": "같은 요소가 새 구조로 연결되는 관계를 보여준다.",
+"params": "권장 이동 800ms, 지연 40ms, power3.inOut, 위치 유지 대기 500ms.",
+"impl": "동일 글자별 시작과 도착 좌표를 측정하고 중간 위치를 보간한다.",
+"runtime": "gsap",
+"variants": [
+"목록 머리글 변환",
+"패널 분산 배치",
+"원래 문장 복귀"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/codrops/LetterShuffleMenu",
+"repo": "codrops/LetterShuffleMenu",
+"license": "MIT"
+},
+{
+"url": "https://github.com/codrops/LettersAnimationLayout",
+"repo": "codrops/LettersAnimationLayout",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "textsquashstretch",
+"family": "type",
+"core": "squash-stretch",
+"rows": [
+{
+"id": "R9-021",
+"en": "Text Squash Stretch",
+"ko": "텍스트 눌림과 늘어남",
+"aka": [],
+"family": "type",
+"what": "글자가 높게 늘어나거나 납작하게 눌린 뒤 정상 비율로 돌아온다.",
+"why": "탄성과 압력 또는 속도감을 전달한다.",
+"params": "LetterEffects 예시 scaleY 8에서 1, scaleX 0.5에서 1, 800ms. 권장 일반 강도 scaleY 1.4.",
+"impl": "글자나 단어의 scaleX와 scaleY를 반대로 보간하고 baseline을 유지한다.",
+"runtime": "gsap",
+"variants": [
+"세로 늘림",
+"가로 압축",
+"줄 전체 압축",
+"스크롤 신장"
+],
+"core": "squash-stretch",
+"sources": [
+{
+"url": "https://github.com/codrops/LetterEffects",
+"repo": "codrops/LetterEffects",
+"license": "unknown"
+},
+{
+"url": "https://github.com/codrops/OnScrollTypographyAnimations",
+"repo": "codrops/OnScrollTypographyAnimations",
+"license": "MIT"
+},
+{
+"url": "https://github.com/codrops/OnScrollLetterAnimations",
+"repo": "codrops/OnScrollLetterAnimations",
+"license": "MIT"
+},
+{
+"url": "https://github.com/codrops/TextBlockTransitions",
+"repo": "codrops/TextBlockTransitions",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "textbeatpulse",
+"family": "type",
+"core": "kinetic-beats",
+"rows": [
+{
+"id": "R9-025",
+"en": "Text Beat Pulse",
+"ko": "박자 텍스트 펄스",
+"aka": [],
+"family": "type",
+"what": "단어나 제목이 음악 박자에 맞춰 커졌다 줄거나 강하게 교체된다.",
+"why": "소리의 리듬과 핵심 단어의 강세를 연결한다.",
+"params": "권장 BPM 120, 펄스 150ms, scale 1에서 1.12, 강박만 적용.",
+"impl": "비트 타임스탬프마다 scale과 글꼴 굵기 키프레임을 배치한다.",
+"runtime": "gsap",
+"variants": [
+"매 박자 펄스",
+"강박 확대",
+"음절 박자"
+],
+"core": "kinetic-beats",
+"sources": [
+{
+"url": "https://github.com/dcmcand/dynamic-typography-videos",
+"repo": "dcmcand/dynamic-typography-videos",
+"license": "Apache-2.0"
+},
+{
+"url": "https://github.com/motion-canvas/motion-canvas",
+"repo": "motion-canvas/motion-canvas",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "spatialkineticwordcomposition",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R9-026",
+"en": "Spatial Kinetic Word Composition",
+"ko": "공간 키네틱 문장 구성",
+"aka": [],
+"family": "type",
+"what": "발화 순서대로 단어가 크기와 각도를 바꾸며 화면 공간을 채운다.",
+"why": "문장의 강세와 의미 관계를 공간 배치로 전달한다.",
+"params": "권장 단어당 250~600ms, 핵심어 1.8배, 회전 최대 15도.",
+"impl": "단어별 시간과 레이아웃 목표를 작성하고 위치 및 크기를 프레임 시간으로 보간한다.",
+"runtime": "gsap",
+"variants": [
+"질문과 답 배치",
+"핵심어 확대",
+"대각선 문장"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/dcmcand/dynamic-typography-videos",
+"repo": "dcmcand/dynamic-typography-videos",
+"license": "Apache-2.0"
+},
+{
+"url": "https://github.com/motion-canvas/motion-canvas",
+"repo": "motion-canvas/motion-canvas",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "textbaselinewave",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R9-027",
+"en": "Text Baseline Wave",
+"ko": "텍스트 기준선 물결",
+"aka": [],
+"family": "type",
+"what": "글자가 위아래로 연속 움직여 단어 전체가 파도처럼 출렁인다.",
+"why": "유연함과 리듬을 전달한다.",
+"params": "권장 진폭 12px, 주기 1400ms, 글자 위상차 0.35rad.",
+"impl": "각 글자의 y를 시간과 인덱스를 입력한 사인 함수로 계산한다.",
+"runtime": "gsap",
+"variants": [
+"사인 물결",
+"중심 파동",
+"계단형 파동"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/shshaw/Splitting",
+"repo": "shshaw/Splitting",
+"license": "MIT"
+},
+{
+"url": "https://github.com/codrops/LetterInteractions",
+"repo": "codrops/LetterInteractions",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "dualcolumntextwave",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R9-028",
+"en": "Dual Column Text Wave",
+"ko": "두 열 반대 방향 텍스트 물결",
+"aka": [],
+"family": "type",
+"what": "두 열의 문구가 반대 위상으로 휘어 움직이며 중앙의 활성 항목과 맞물린다.",
+"why": "반복 목록에 흐름과 초점을 만든다.",
+"params": "권장 진폭 60px, 공간 파장 6개 항목, 주기 2200ms, 위치 추종 400ms.",
+"impl": "두 열 항목의 x를 서로 반대 부호의 사인 함수로 계산하고 시간표로 활성 항목을 바꾼다.",
+"runtime": "gsap",
+"variants": [
+"동기화 이미지",
+"스크롤을 시간으로 치환"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/ValentinDBS/codrops-tutorial-text-animation",
+"repo": "ValentinDBS/codrops-tutorial-text-animation",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "texttrackingexpansion",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R9-029",
+"en": "Text Tracking Expansion",
+"ko": "텍스트 자간 확장",
+"aka": [
+"Film Title Tracking Resolve"
+],
+"family": "type",
+"what": "글자 사이가 벌어졌다 모이면서 제목의 폭이 변화한다.",
+"why": "기대감과 호흡을 만들고 제목을 장중하게 보이게 한다.",
+"params": "권장 자간 0.2em에서 0em, 1400ms, power2.out. 영화 타이틀 자간 정착 변형: 권장 자간 0.35em에서 0.12em, 2500ms, 페이드 1000ms, 유지 3000ms.",
+"impl": "letter spacing 또는 측정한 글자별 x 오프셋을 보간한다.",
+"runtime": "gsap",
+"variants": [
+"글자 방사 확장",
+"가로 폭 수축",
+"넓어지는 제목",
+"줄별 지연",
+"영화 타이틀 자간 정착"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/codrops/OnScrollLetterAnimations",
+"repo": "codrops/OnScrollLetterAnimations",
+"license": "MIT"
+},
+{
+"url": "https://www.artofthetitle.com/title/catch-me-if-you-can/",
+"repo": "Art of the Title",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "variablefontweightwave",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R9-030",
+"en": "Variable Font Weight Wave",
+"ko": "가변 폰트 굵기 물결",
+"aka": [],
+"family": "type",
+"what": "글자의 획 굵기가 순차적으로 가늘어졌다 두꺼워진다.",
+"why": "강조가 문장 안을 흐르는 인상을 준다.",
+"params": "권장 wght 300~800, 주기 1600ms, 글자 지연 70ms. 폰트 실제 축 범위에 맞춘다.",
+"impl": "글자별 font variation settings의 wght 값을 사인 함수나 트윈으로 계산한다.",
+"runtime": "css",
+"variants": [
+"글자별 파동",
+"단어별 굵기 강조",
+"전체 호흡"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/amazingcreationsltd/variable-font-animator",
+"repo": "amazingcreationsltd/variable-font-animator",
+"license": "unknown"
+},
+{
+"url": "https://github.com/yanone/fontanimation",
+"repo": "yanone/fontanimation",
+"license": "Apache-2.0"
+},
+{
+"url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-variation-settings",
+"repo": "MDN",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "variablefontwidthbreathing",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R9-031",
+"en": "Variable Font Width Breathing",
+"ko": "가변 폰트 폭 호흡",
+"aka": [],
+"family": "type",
+"what": "글자의 형태 자체가 넓어졌다 좁아지면서 문장의 폭이 변한다.",
+"why": "긴장과 이완을 글꼴 구조로 표현한다.",
+"params": "권장 wdth 85~115, 주기 2000ms, sine.inOut. 폰트 축 존재와 범위를 확인한다.",
+"impl": "wdth 축을 보간하고 정렬 기준점을 유지한다.",
+"runtime": "css",
+"variants": [
+"압축 제목",
+"넓은 제목",
+"폭과 굵기 동시 변화"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/yanone/fontanimation",
+"repo": "yanone/fontanimation",
+"license": "Apache-2.0"
+},
+{
+"url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-variation-settings",
+"repo": "MDN",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "variablefontslantmotion",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R9-032",
+"en": "Variable Font Slant Motion",
+"ko": "가변 폰트 기울기 변화",
+"aka": [],
+"family": "type",
+"what": "획과 글자 형태가 점진적으로 기울어졌다 바로 선다.",
+"why": "속도와 방향성을 글자 자체에 부여한다.",
+"params": "권장 slnt 0에서 -12도, 650ms, power2.out. ital은 폰트에 따라 불연속이다.",
+"impl": "실제 slnt 축 범위를 보간하며 지원하는 폰트만 사용한다.",
+"runtime": "css",
+"variants": [
+"전체 기울기",
+"글자별 기울기 파동"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/yanone/fontanimation",
+"repo": "yanone/fontanimation",
+"license": "Apache-2.0"
+},
+{
+"url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-variation-settings",
+"repo": "MDN",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "variablefontcustomaxismorph",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R9-033",
+"en": "Variable Font Custom Axis Morph",
+"ko": "가변 폰트 사용자 축 변형",
+"aka": [],
+"family": "type",
+"what": "폰트가 제공하는 장식이나 곡률 같은 축을 따라 글자의 형태가 연속 변한다.",
+"why": "브랜드 글꼴 고유의 성격을 움직임으로 전달한다.",
+"params": "권장 정규화 축 0~1, 1200ms, sine.inOut. 실제 태그와 범위는 폰트 메타데이터를 따른다.",
+"impl": "같은 가변 폰트 안의 호환 축 값을 보간한다.",
+"runtime": "css",
+"variants": [
+"장식 축",
+"optical size 축",
+"복수 축 조합"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/yanone/fontanimation",
+"repo": "yanone/fontanimation",
+"license": "Apache-2.0"
+},
+{
+"url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-variation-settings",
+"repo": "MDN",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "outlinetexttofill",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R9-035",
+"en": "Outline Text to Fill",
+"ko": "윤곽 텍스트 채우기",
+"aka": [],
+"family": "type",
+"what": "글자 외곽선이 드러난 뒤 내부 면이 채워져 단단한 글자가 된다.",
+"why": "초안이 완성된 표현으로 변하는 느낌을 준다.",
+"params": "권장 외곽 900ms, fill 400ms, overlap 100ms, stroke 2px.",
+"impl": "SVG 글자 윤곽 path의 dashoffset을 구동한 뒤 fill opacity를 높인다.",
+"runtime": "svg",
+"variants": [
+"윤곽 유지",
+"채움 후 외곽 소거"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/maxwellito/vivus",
+"repo": "maxwellito/vivus",
+"license": "MIT"
+},
+{
+"url": "https://github.com/codrops/FancyLetterAnimation",
+"repo": "codrops/FancyLetterAnimation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "textpathconveyor",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R9-037",
+"en": "Text Path Conveyor",
+"ko": "경로 위 텍스트 이동",
+"aka": [],
+"family": "type",
+"what": "글자 줄이 곡선 경로를 따라 흘러가며 각 글자의 방향이 경로 접선을 따른다.",
+"why": "문장이 곡면과 흐름을 따라가는 공간감을 준다.",
+"params": "권장 startOffset 0~100%, 이동 6000ms, linear, 경로 길이 1000px.",
+"impl": "SVG textPath의 startOffset을 보간한다.",
+"runtime": "svg",
+"variants": [
+"곡선 티커",
+"파도 경로",
+"반복 경로"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/codrops/AnimateSVGTextPath",
+"repo": "codrops/AnimateSVGTextPath",
+"license": "MIT"
+},
+{
+"url": "https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/textPath",
+"repo": "MDN",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "repeatedtextwallbuild",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R9-042",
+"en": "Repeated Text Wall Build",
+"ko": "반복 텍스트 벽 생성",
+"aka": [],
+"family": "type",
+"what": "한 문구가 여러 행과 열로 복제되어 화면을 채운다.",
+"why": "문구의 존재감과 반복의 압도감을 만든다.",
+"params": "RepetitiveTypography 예시 700ms, 글자 지연 20ms, 줄 지연 80ms. 권장 7행.",
+"impl": "문구 복제 레이어를 만들고 위치와 scale 및 opacity를 시간차로 구동한다.",
+"runtime": "gsap",
+"variants": [
+"상하 확장",
+"번갈아 글자 복제",
+"격자 확장"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/codrops/RepetitiveTypography",
+"repo": "codrops/RepetitiveTypography",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "repeatedtextfragmentfan",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R9-043",
+"en": "Repeated Text Fragment Fan",
+"ko": "반복 텍스트 조각 펼침",
+"aka": [],
+"family": "type",
+"what": "큰 글자의 잘린 복사본들이 벌어져 층층이 나타났다가 원래 글자로 모인다.",
+"why": "타이포의 리듬과 깊이를 강하게 강조한다.",
+"params": "TextRepetitionEffect 정규화 tween 1000ms, yPercent는 조각 데이터별 값. 권장 8조각.",
+"impl": "복제 텍스트를 서로 다른 클립 띠로 자르고 띠별 위치를 보간한다.",
+"runtime": "gsap",
+"variants": [
+"세로 부채",
+"대각선 부채",
+"투명도 시차"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/codrops/TextRepetitionEffect",
+"repo": "codrops/TextRepetitionEffect",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "inlineimagetypographyexpansion",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R9-056",
+"en": "Inline Image Typography Expansion",
+"ko": "문장 속 이미지 확장",
+"aka": [],
+"family": "type",
+"what": "단어 사이의 작은 이미지가 커지며 문구를 양옆으로 밀어낸다.",
+"why": "텍스트가 설명하던 대상을 시각적 중심으로 전환한다.",
+"params": "권장 이미지 폭 1em에서 70vw, 1600ms, power2.inOut.",
+"impl": "문구 안 이미지 래퍼의 폭과 높이를 보간하고 텍스트 위치 변화를 함께 제어한다.",
+"runtime": "gsap",
+"variants": [
+"한 줄 분리",
+"여러 줄 확장"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/codrops/ImageExpansionTypography",
+"repo": "codrops/ImageExpansionTypography",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "karaokecontinuouscolorwipe",
+"family": "caption",
+"core": "highlight-sweep",
+"rows": [
+{
+"id": "R9-071",
+"en": "Karaoke Continuous Color Wipe",
+"ko": "카라오케 연속 색 채움",
+"aka": [],
+"family": "caption",
+"what": "가사 글자 내부의 활성 색이 발화 시간에 맞춰 왼쪽에서 오른쪽으로 채워진다.",
+"why": "음절과 음원의 정확한 진행 위치를 보여준다.",
+"params": "원문 가사 타임스탬프 사용. 권장 단어 구간 안 진행 0~100%, linear.",
+"impl": "기본 가사 위에 활성 색 복사본을 겹치고 단어별 클립 폭을 시간에 따라 늘린다.",
+"runtime": "svg",
+"variants": [
+"음절 단위",
+"단어 내부 채움",
+"전체 구절 연속 채움"
+],
+"core": "highlight-sweep",
+"sources": [
+{
+"url": "https://github.com/dcmcand/dynamic-typography-videos",
+"repo": "dcmcand/dynamic-typography-videos",
+"license": "Apache-2.0"
+},
+{
+"url": "https://github.com/rayanfer32/remotion-lyrics",
+"repo": "rayanfer32/remotion-lyrics",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "karaokeactivewordstep",
+"family": "caption",
+"core": "word-emphasis",
+"rows": [
+{
+"id": "R9-072",
+"en": "Karaoke Active Word Step",
+"ko": "카라오케 활성 단어 이동",
+"aka": [],
+"family": "caption",
+"what": "전체 가사 줄은 고정되고 현재 부르는 단어만 색이나 배경이 바뀐다.",
+"why": "현재 발화 단어를 빠르게 찾게 한다.",
+"params": "단어 시작과 종료 타임스탬프 사용. 권장 색 전환 80ms, 비활성 opacity 0.5.",
+"impl": "단어별 시간 구간으로 활성 토큰을 정하고 스타일을 교체한다.",
+"runtime": "gsap",
+"variants": [
+"단어 색 변경",
+"둥근 배경 강조",
+"발화 후 색 유지"
+],
+"core": "word-emphasis",
+"sources": [
+{
+"url": "https://github.com/dcmcand/dynamic-typography-videos",
+"repo": "dcmcand/dynamic-typography-videos",
+"license": "Apache-2.0"
+},
+{
+"url": "https://www.remotion.dev/docs/captions/create-tiktok-style-captions",
+"repo": "remotion-dev/remotion",
+"license": "Remotion License (custom)"
+},
+{
+"url": "https://github.com/rayanfer32/remotion-lyrics",
+"repo": "rayanfer32/remotion-lyrics",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "wordpopcaptions",
+"family": "caption",
+"core": "word-emphasis",
+"rows": [
+{
+"id": "R9-073",
+"en": "Word Pop Captions",
+"ko": "단어 팝 자막",
+"aka": [],
+"family": "caption",
+"what": "말하는 단어가 차례로 작게 튀어 오르거나 확대되어 짧은 자막 묶음을 만든다.",
+"why": "빠른 발화에서도 강세와 읽는 위치를 알린다.",
+"params": "권장 팝 160ms, scale 0.85에서 1.08을 거쳐 1, 페이지 2~5단어.",
+"impl": "단어 타임스탬프마다 scale 키프레임을 만들고 페이지별 자막을 교체한다.",
+"runtime": "gsap",
+"variants": [
+"단어별 확대",
+"위로 팝",
+"핵심 단어만 팝"
+],
+"core": "word-emphasis",
+"sources": [
+{
+"url": "https://www.remotion.dev/templates/tiktok",
+"repo": "remotion-dev/remotion",
+"license": "Remotion License (custom)"
+},
+{
+"url": "https://www.remotion.dev/docs/captions/create-tiktok-style-captions",
+"repo": "remotion-dev/remotion",
+"license": "Remotion License (custom)"
+}
+]
+}
+]
+},
+{
+"key": "singlewordcaptionreplacement",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R9-074",
+"en": "Single Word Caption Replacement",
+"ko": "한 단어 자막 교체",
+"aka": [],
+"family": "caption",
+"what": "화면 중앙 또는 하단의 한 자리에서 발화 단어가 빠르게 교체된다.",
+"why": "빠른 리듬과 강한 주목을 만든다.",
+"params": "권장 최소 표시 120ms, 교체 60ms, 발화 타임스탬프 유지.",
+"impl": "활성 단어 인덱스로 문자열을 바꾸고 짧은 opacity 교체를 적용한다.",
+"runtime": "gsap",
+"variants": [
+"중앙 한 단어",
+"두 단어 교대"
+],
+"core": "",
+"sources": [
+{
+"url": "https://www.remotion.dev/templates/tiktok",
+"repo": "remotion-dev/remotion",
+"license": "Remotion License (custom)"
+},
+{
+"url": "https://www.remotion.dev/docs/captions/create-tiktok-style-captions",
+"repo": "remotion-dev/remotion",
+"license": "Remotion License (custom)"
+}
+]
+}
+]
+},
+{
+"key": "captionpageaccumulation",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R9-075",
+"en": "Caption Page Accumulation",
+"ko": "자막 페이지 누적",
+"aka": [],
+"family": "caption",
+"what": "발화한 단어가 짧은 구절 안에 남아 쌓이고 구절이 차면 다음 페이지로 넘어간다.",
+"why": "발화 맥락을 유지하면서 화면 밀도를 제한한다.",
+"params": "createTikTokStyleCaptions 원문 combineTokensWithinMilliseconds 1200ms 예시. 권장 페이지 최대 2줄.",
+"impl": "단어 타임스탬프를 페이지로 묶고 현재 시간까지의 토큰을 표시한다.",
+"runtime": "gsap",
+"variants": [
+"2줄 누적",
+"구절별 교체",
+"마지막 단어 유지"
+],
+"core": "",
+"sources": [
+{
+"url": "https://www.remotion.dev/docs/captions/create-tiktok-style-captions",
+"repo": "remotion-dev/remotion",
+"license": "Remotion License (custom)"
+},
+{
+"url": "https://www.remotion.dev/templates/tiktok",
+"repo": "remotion-dev/remotion",
+"license": "Remotion License (custom)"
+}
+]
+}
+]
+},
+{
+"key": "lowerthirdspeakercaption",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R9-076",
+"en": "Lower Third Speaker Caption",
+"ko": "하단 화자 자막 등장",
+"aka": [],
+"family": "caption",
+"what": "화자 이름과 설명이 하단에서 배경 띠와 함께 나타난 뒤 사라진다.",
+"why": "누가 말하는지와 발화 맥락을 알려준다.",
+"params": "권장 배경 350ms, 이름 지연 100ms, 설명 지연 180ms, 유지 3500ms.",
+"impl": "하단 패널과 두 텍스트 줄의 translate 및 opacity를 시간차로 구동한다.",
+"runtime": "gsap",
+"variants": [
+"이름판",
+"발언 요약",
+"장소 자막"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/jschr/textillate",
+"repo": "jschr/textillate",
+"license": "MIT"
+},
+{
+"url": "https://github.com/motion-canvas/motion-canvas",
+"repo": "motion-canvas/motion-canvas",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "twolinedialoguesubtitle",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R9-077",
+"en": "Two Line Dialogue Subtitle",
+"ko": "두 줄 대사 자막 교체",
+"aka": [],
+"family": "caption",
+"what": "한두 줄의 대사가 하단의 일정 위치에서 발화 구간에 맞춰 교체된다.",
+"why": "대사의 뜻을 안정적으로 읽게 한다.",
+"params": "발화 시작과 종료 시간 사용. 권장 페이드 80ms, 최대 2줄, 하단 여백 화면 높이 8%.",
+"impl": "구간별 텍스트를 고정 슬롯에 표시하고 줄바꿈 결과를 사전에 확정한다.",
+"runtime": "gsap",
+"variants": [
+"화자 색 구분",
+"배경 박스",
+"외곽선 자막"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/remotion-dev/remotion",
+"repo": "remotion-dev/remotion",
+"license": "Remotion License (custom)"
+},
+{
+"url": "https://github.com/dcmcand/dynamic-typography-videos",
+"repo": "dcmcand/dynamic-typography-videos",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "lyriclineliftandfocus",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R9-078",
+"en": "Lyric Line Lift and Focus",
+"ko": "가사 줄 상승과 초점",
+"aka": [],
+"family": "caption",
+"what": "새 가사 줄이 중앙으로 올라오고 지난 줄은 위로 밀려 어둡게 남는다.",
+"why": "노래의 흐름과 현재 구절을 함께 읽게 한다.",
+"params": "권장 줄 이동 500ms, 현재 scale 1, 지난 줄 opacity 0.3, 줄 간격 1.5em.",
+"impl": "가사 줄 목록의 y와 opacity를 구간마다 재계산해 보간한다.",
+"runtime": "gsap",
+"variants": [
+"이전 다음 줄 미리보기",
+"중앙 고정 가사"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/dcmcand/dynamic-typography-videos",
+"repo": "dcmcand/dynamic-typography-videos",
+"license": "Apache-2.0"
+},
+{
+"url": "https://github.com/rayanfer32/remotion-lyrics",
+"repo": "rayanfer32/remotion-lyrics",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "lyricglowaccent",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "R9-079",
+"en": "Lyric Glow Accent",
+"ko": "가사 빛 강조",
+"aka": [],
+"family": "caption",
+"what": "현재 가사만 빛이 강해지고 발화가 끝나면 빛이 줄어든다.",
+"why": "음악의 감정과 구절의 절정을 강조한다.",
+"params": "권장 glow 반경 12px, 강조 180ms, 감쇠 450ms.",
+"impl": "활성 가사에 text shadow 또는 텍스트 마스크 bloom 강도를 구동한다.",
+"runtime": "css",
+"variants": [
+"네온",
+"몽환적 번짐",
+"강박 플래시"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/dcmcand/dynamic-typography-videos",
+"repo": "dcmcand/dynamic-typography-videos",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "quotecardeditorialbuild",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R9-080",
+"en": "Quote Card Editorial Build",
+"ko": "인용 카드 편집 등장",
+"aka": [],
+"family": "type",
+"what": "인용 부호와 문장이 차례로 나타나고 마지막에 저자나 출처가 붙는다.",
+"why": "문장과 인용자의 관계를 분명히 하며 읽을 시간을 준다.",
+"params": "권장 인용 부호 300ms, 줄당 500ms, 줄 지연 120ms, 저자 지연 250ms, 유지 4000ms.",
+"impl": "기호와 문장 줄 및 출처를 별도 레이어로 만들고 순서 있는 타임라인을 작성한다.",
+"runtime": "gsap",
+"variants": [
+"단일 문장 인용",
+"여러 줄 인용",
+"핵심어 강조"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/jschr/textillate",
+"repo": "jschr/textillate",
+"license": "MIT"
+},
+{
+"url": "https://github.com/motion-canvas/motion-canvas",
+"repo": "motion-canvas/motion-canvas",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "integrateddiegetictitle",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "R9-082",
+"en": "Integrated Diegetic Title",
+"ko": "장면에 통합된 타이틀",
+"aka": [],
+"family": "type",
+"what": "글자가 장면의 선이나 인물 동선과 맞물려 드러나고 가려진다.",
+"why": "제목과 이야기 세계가 연결된 느낌을 준다.",
+"params": "권장 장면 연동 1500~3000ms, 마스크 이동은 장면 요소와 동일 시간표.",
+"impl": "전경 마스크와 제목 레이어를 분리해 장면 오브젝트의 이동에 맞춰 클립을 구동한다.",
+"runtime": "svg",
+"variants": [
+"실루엣 가림",
+"건축선 연결",
+"선이 글자로 이어짐"
+],
+"core": "",
+"sources": [
+{
+"url": "https://www.artofthetitle.com/title/catch-me-if-you-can/",
+"repo": "Art of the Title",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "percharacterstagger",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "DICT-143",
+"en": "Per-character stagger",
+"ko": "글자별 스태거",
+"aka": [],
+"family": "type",
+"what": "글자마다 짧은 시차를 줘 진입시키는 방식이다.",
+"why": "",
+"params": "글자당 240~360ms, 시작 간격 20~35ms, 총 시차 ≤500ms; E, y 8~16px.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 3-type-data-ui.md#02. 글자별 스태거 · Per-character stagger",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "speechsynchronizedemphasis",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "DICT-151",
+"en": "Speech-synchronized emphasis",
+"ko": "발화 동기 강조",
+"aka": [],
+"family": "type",
+"what": "발화 시각에 맞춰 현재 어구를 강조하는 방식이다.",
+"why": "",
+"params": "발화 시작±0~100ms, 진입 100~150ms, 어구 간격은 실제 타임스탬프; PE, 이동 0px.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 3-type-data-ui.md#10. 발화 동기 강조 · Speech-synchronized emphasis",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "graphemewordlinesegmentation",
+"family": "type",
+"core": "",
+"rows": [
+{
+"id": "DICT-175",
+"en": "Grapheme / Word / Line segmentation",
+"ko": "분절 단위",
+"aka": [],
+"family": "type",
+"what": "문자를 애니메이션 대상 묶음으로 나누는 설계 단위이다.",
+"why": "",
+"params": "준비 단계 처리, 글자 시차 20~35ms·어구 80~120ms; E/Q, 행 간격 12~20px.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 3-type-data-ui.md#34. 분절 단위 · Grapheme / Word / Line segmentation",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "accessiblecaptionsfidelity",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "DICT-232",
+"en": "Accessible captions / Fidelity",
+"ko": "접근성 자막·충실성",
+"aka": [],
+"family": "caption",
+"what": "발화와 이해에 필요한 비언어 소리를 정확히 시간에 맞춰 글로 제공하는 기능이다.",
+"why": "",
+"params": "음성과 시작·끝 동기 목표 ±100ms, 등장 0ms H, 읽는 동안 위치 고정",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#E. 자막·텍스트와 화면 입력 규칙",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "semanticchunkinglinebreaking",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "DICT-233",
+"en": "Semantic chunking / Line breaking",
+"ko": "의미 단위 분절·줄바꿈",
+"aka": [],
+"family": "caption",
+"what": "문법·의미가 이어지는 어절을 같은 덩어리로 보여 주는 규칙이다.",
+"why": "",
+"params": "1~2줄, 한 줄 14~22 한글 음절부터 시험, 노출 1500~4000ms H, 항목 전환 0~80ms L",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#E. 자막·텍스트와 화면 입력 규칙",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "readingspeeddwelltime",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "DICT-234",
+"en": "Reading speed / Dwell time",
+"ko": "읽기 속도·체류 시간",
+"aka": [],
+"family": "caption",
+"what": "자막 길이에 필요한 노출 시간을 확보하는 설계이다.",
+"why": "",
+"params": "8~12 grapheme/초부터 시험, 최소 약 1200ms H, 3000~5000ms도 허용, ease H",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#E. 자막·텍스트와 화면 입력 규칙",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "safeareacontrastocclusion",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "DICT-235",
+"en": "Safe area / Contrast / Occlusion",
+"ko": "세이프존·대비·가림 방지",
+"aka": [],
+"family": "caption",
+"what": "자막과 핵심 조작 영역이 잘리고 가려지지 않게 배치하는 규칙이다.",
+"why": "",
+"params": "1080p 기준 자막 42~56px부터, 좌우 5%·하단 8~12% 여백, 일반 글자 대비 4.5:1 이상, H",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#E. 자막·텍스트와 화면 입력 규칙",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "summarytextemphasiscaption",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "DICT-236",
+"en": "Summary text / Emphasis caption",
+"ko": "요약 텍스트·강조 자막",
+"aka": [],
+"family": "caption",
+"what": "발화 전체와 구별되는 짧은 요점·핵심어의 시각 신호이다.",
+"why": "",
+"params": "요점 진입 150ms E, 핵심어 1개, 유지 2500~5000ms H, 자막과 24px 이상 간격",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#E. 자막·텍스트와 화면 입력 규칙",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "karaokeemphasiswordtracking",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "DICT-237",
+"en": "Karaoke emphasis / Word tracking",
+"ko": "카라오케 강조·단어 추적",
+"aka": [],
+"family": "caption",
+"what": "현재 발화 중인 단어·구를 색 등으로 표시하는 방식이다.",
+"why": "",
+"params": "단어 타임코드 기준 0ms H, 강조 fade 80~110ms L 선택, 위치·scale 고정",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#E. 자막·텍스트와 화면 입력 규칙",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "typewritercompletestatereveal",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "DICT-238",
+"en": "Typewriter / Complete-state reveal",
+"ko": "타이핑·완성 상태 공개",
+"aka": [],
+"family": "caption",
+"what": "입력 행동은 순차로, 읽어야 하는 결과는 완성된 덩어리로 보여 주는 규칙이다.",
+"why": "",
+"params": "타이핑 35~70ms/grapheme, steps(1,end) H, 문단 150~240ms E, 완성 뒤 2500~5000ms H",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#E. 자막·텍스트와 화면 입력 규칙",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "terminologyconsistencypronunciationmapping",
+"family": "caption",
+"core": "",
+"rows": [
+{
+"id": "DICT-239",
+"en": "Terminology consistency / Pronunciation mapping",
+"ko": "용어 표기·발음 분리",
+"aka": [],
+"family": "caption",
+"what": "화면의 정확한 표기와 음성용 읽기를 대응표로 관리하는 규칙이다.",
+"why": "",
+"params": "첫 소개 3000~5000ms H, 괄호 보조 150ms E, 이후 동일 표기",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#E. 자막·텍스트와 화면 입력 규칙",
+"license": "own"
+}
+]
+}
+]
+}
+]

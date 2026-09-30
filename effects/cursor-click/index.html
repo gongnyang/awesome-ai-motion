@@ -1,0 +1,11 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=1280"><title>커서 이동과 클릭</title><link rel="stylesheet" href="../../lib/stage.css"><style>
+.head{position:absolute;left:110px;top:105px}.question{position:absolute;left:110px;top:235px;font-size:30px}.input{position:absolute;left:110px;top:300px;width:930px;height:95px;border-top:1px solid var(--rule);border-bottom:2px solid var(--ink)}.input span{position:absolute;left:0;top:30px;font-size:24px;color:var(--ink2)}.send{position:absolute;left:820px;top:320px;width:220px;height:64px;background:var(--verm);color:var(--paper);font-size:25px;display:flex;align-items:center;justify-content:center;transform-origin:center}.pointer{position:absolute;left:180px;top:430px;width:34px;height:42px;z-index:3}.ripple{position:absolute;left:890px;top:312px;width:80px;height:80px;border:3px solid var(--verm);border-radius:50%;opacity:0}.lead{left:910px;top:458px;opacity:0}
+</style></head><body data-no="315" data-cat="UI 시연 · UI DEMO" data-ko="커서 이동과 클릭" data-en="Cursor Move &amp; Click" data-meta="곡선 이동 1.10s · 클릭 0.12s" data-dur="3"><main class="scene"><div class="head t-l">AI는 다음 말을 고른다</div><div class="question">다음 말은 어떻게 고르나요?</div><div class="input"><span>입력 → 모델 → 출력</span></div><div class="send">보내기</div><div class="ripple"></div><svg class="pointer" viewBox="0 0 34 42"><path d="M2 2 L2 32 L10 25 L18 40 L24 37 L16 22 L29 22 Z" fill="var(--ink)" stroke="var(--paper)" stroke-width="2"/></svg><div class="lead"><i></i><s></s><span>클릭 피드백</span></div></main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+const p={t:0};
+tl.to(p,{t:1,duration:1.1,ease:'power2.inOut',onUpdate:()=>{const t=p.t;gsap.set('.pointer',{x:740*t,y:-78*t-150*Math.sin(Math.PI*t)});}},.3);
+tl.to('.send',{scale:.94,duration:.12,ease:'power2.in'},1.4).to('.send',{scale:1,duration:.22,ease:'power2.out'},1.52);
+tl.fromTo('.ripple',{scale:.45,opacity:.85},{scale:2.4,opacity:0,duration:.65,ease:'power2.out'},1.43);
+tl.to('.lead',{opacity:1,duration:.2},2.12);
+Motion.ready();
+</script></body></html>

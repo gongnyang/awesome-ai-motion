@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>깊은 다층 패럴랙스 · Deep Multi-layer Parallax</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.world,.layer{position:absolute;inset:0}.layer{width:2400px}.far{position:absolute;left:140px;top:44px;font-size:390px;color:var(--ink3);opacity:.2;filter:blur(3px)}
+.grid{position:absolute;left:80px;top:55px;width:1380px;height:450px;background:repeating-linear-gradient(90deg,transparent 0,transparent 229px,var(--rule) 229px,var(--rule) 230px);opacity:.45}
+.diagram{position:absolute;left:400px;top:105px;width:1000px;height:70px;border-top:1px solid var(--ink3);border-bottom:1px solid var(--rule)}.diagram span{position:absolute;top:22px;font-family:var(--mono);font-size:20px;color:var(--ink2)}
+.blocks{position:absolute;left:570px;top:230px;display:flex;align-items:end;gap:30px;height:115px}.blocks i{width:76px;background:var(--ink2)}
+.value{position:absolute;left:1400px;top:202px;font-size:152px;color:var(--verm)}.value small{font-family:var(--mono);font-size:22px}.caption{position:absolute;left:1400px;top:350px;font-size:13px}
+.midword{position:absolute;left:1000px;top:353px;font-family:var(--serif);font-weight:700;font-size:66px;filter:blur(.6px);color:var(--ink2)}
+.nearword{position:absolute;left:1260px;top:436px;font-family:var(--serif);font-weight:700;font-size:115px;line-height:1;filter:blur(2px)}
+.tag{position:absolute;left:30px;top:26px}.note{position:absolute;right:35px;bottom:30px;opacity:0}
+</style></head>
+<body data-no="561" data-cat="3D·깊이 · 3D &amp; DEPTH" data-ko="깊은 다층 패럴랙스" data-en="Deep Multi-layer Parallax" data-meta="7 layers · 0.1~1.8× · 600px" data-dur="4" data-poster="3.7">
+<main class="scene"><div class="world">
+<div class="layer" data-ratio="0.1"><div class="num far">939</div></div>
+<div class="layer" data-ratio="0.25"><div class="grid"></div></div>
+<div class="layer" data-ratio="0.45"><div class="diagram"><span style="left:0">입력</span><span style="left:280px">→ 모델</span><span style="left:660px">→ 출력</span></div></div>
+<div class="layer" data-ratio="0.7"><div class="blocks"><i style="height:40px"></i><i style="height:115px"></i><i style="height:72px"></i><i style="height:26px"></i></div></div>
+<div class="layer" data-ratio="0.95"><div class="num value">62<small>%</small></div><div class="lab caption">고른다 · 다음 말</div></div>
+<div class="layer" data-ratio="1.3"><div class="midword">다음 말</div></div>
+<div class="layer" data-ratio="1.8"><div class="nearword">고른다</div></div>
+</div><div class="lab tag">DEPTH / 07 PLANES</div><div class="lab note">0.1× → 1.8× · 60 → 1080px</div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>const tl = Motion.timeline();
+
+tl.to('.world',{x:-600,duration:3,ease:'sine.inOut'},.3);
+document.querySelectorAll('.layer').forEach(layer=>{
+  const ratio=Number(layer.dataset.ratio);
+  tl.to(layer,{x:-600*(ratio-1),duration:3,ease:'sine.inOut'},.3);
+});
+tl.to('.note',{opacity:1,duration:.15},3.3);
+
+Motion.ready();</script></body></html>

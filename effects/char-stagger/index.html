@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>글자별 스태거 · Per-character Rise</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.label{position:absolute;left:60px;top:175px}.text{position:absolute;left:60px;top:240px;white-space:pre;letter-spacing:0;line-height:1.3}.char{display:inline-block;opacity:0;transform:translateY(64px)}.baseline{position:absolute;left:60px;right:60px;top:355px}.lead{left:60px;top:410px;opacity:0}
+</style></head><body data-no="088" data-cat="타이포 · TYPOGRAPHY" data-ko="글자별 스태거" data-en="Per-character Rise" data-meta="power3.out · 64px · +0.035s" data-dur="3">
+<main class="scene"><div class="lab label">아래에서 위로 · 글자별 시간차</div><div class="text t-xl" id="text" aria-label="AI는 다음 말을 고른다"></div><div class="hair baseline"></div><div class="lead" id="note"><i></i><s></s><span>64px 상승 · +0.035s</span></div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+Array.from('AI는 다음 말을 고른다').forEach(c => {
+ const span = document.createElement('span'); span.className = 'char'; span.textContent = c;
+ span.setAttribute('aria-hidden','true'); document.querySelector('#text').appendChild(span);
+});
+tl.fromTo('.char', {y:64, opacity:0}, {y:0, opacity:1, duration:.62, stagger:.035, ease:'power3.out'}, .3);
+tl.to('#note', {opacity:1, duration:.25}, 1.5);
+Motion.ready();
+</script></body></html>

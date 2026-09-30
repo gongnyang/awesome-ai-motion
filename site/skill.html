@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{var l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('am-lang')||((navigator.language||'ko').indexOf('ko')===0?'ko':'en');document.documentElement.dataset.lang=l;document.documentElement.lang=l;var t=localStorage.getItem('am-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<title>스킬로 쓰기 · Use as a skill · Awesome AI Motion</title><meta name="description" content="AI 에이전트가 바로 쓰는 모션 기법 도감. 효과마다 정의·파라미터·구현·프롬프트·출처, 핵심 효과는 3초 클립까지.">
+<meta property="og:title" content="스킬로 쓰기 · Use as a skill · Awesome AI Motion"><meta property="og:description" content="AI 에이전트가 바로 쓰는 모션 기법 도감. 효과마다 정의·파라미터·구현·프롬프트·출처, 핵심 효과는 3초 클립까지."><meta property="og:image" content="assets/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23F4EEE3'/><circle cx='16' cy='16' r='8' fill='%23D6401C'/></svg>">
+</head><body>
+<div class="wrap">
+<header class="folio"><a class="brand" href="index.html">AWESOME AI MOTION</a>
+<nav><a href="index.html"><span lang="ko">효과</span><span lang="en">EFFECTS</span></a><a href="recipes.html"><span lang="ko">레시피</span><span lang="en">RECIPES</span></a><a href="routes.html"><span lang="ko">용도별 루트</span><span lang="en">ROUTES</span></a><a href="glossary.html"><span lang="ko">용어</span><span lang="en">GLOSSARY</span></a><a href="skill.html" class="on"><span lang="ko">스킬로 쓰기</span><span lang="en">USE AS A SKILL</span></a><a href="https://github.com/gongnyang/awesome-ai-motion">GITHUB</a><button class="lang" type="button" aria-label="언어 전환 / language"></button><button class="theme" type="button" aria-label="밝기 전환 / theme">◐</button></nav></header>
+<div class="docgrid"><aside class="toc"><a href="#작업-순서-workflow">작업 순서 · Workflow</a><a href="#필요한-자료만-읽기-read-on-demand">필요한 자료만 읽기 · Read on demand</a><a href="#결정론-조회-deterministic-lookup">결정론 조회 · Deterministic lookup</a><a href="#소재만-바꿔-쓰기-replace-content-and-render">소재만 바꿔 쓰기 · Replace content and render</a><a href="#공통-규칙-shared-rules">공통 규칙 · Shared rules</a><a href="#렌더-환경과-경계-runtime-and-boundaries">렌더 환경과 경계 · Runtime and boundaries</a></aside><article class="doc"><p class="muted">한국어·영어 작업 흐름과 필요한 참조 문서를 제공한다. / Bilingual workflow with references loaded on demand.</p><h1 id="awesome-ai-motion">awesome-ai-motion</h1>
+<p>효과 637개 · 클립 128개 · 레시피 11개 · 루트 7개 637 effects · 128 clips · 11 recipes · 7 routes</p>
+<p>목적에 맞는 움직임을 고르고 카드의 기본값으로 시작한다. 상세 자료는 필요한 파일만 읽는다. Select motion by intent, start with card defaults, and load only the references needed for the scene.</p>
+<h2 id="작업-순서-workflow">작업 순서 · Workflow</h2>
+<ol><li>장면의 목적과 매체를 한 문장으로 정한다. 무엇을 알게 하거나 보게 할지 먼저 정한다. State the scene intent and medium in one sentence before choosing motion.</li><li><a href="https://github.com/gongnyang/awesome-ai-motion/blob/main/references/decision-tables.md">결정표</a>에서 후보 2~3개를 고른다. 교육 영상 첫 5초는 훅 행을 읽는다. Choose two or three candidates from the decision tables; use the first five seconds hook row for education.</li><li><code>effects/&lt;slug&gt;/README.md</code>의 전달 효과, 기본 파라미터, 과용 주의를 읽고 클립을 비교한다. Read the effect card for meaning, defaults and limits, then compare clips.</li><li>조합은 <a href="https://github.com/gongnyang/awesome-ai-motion/blob/main/references/recipes.md">레시피</a>, 산출물별 설계는 <a href="https://github.com/gongnyang/awesome-ai-motion/blob/main/references/routes.md">루트</a>를 필요할 때 읽는다. Read recipes for timing combinations or routes for deliverable design when relevant.</li><li>아래 절차로 소재만 바꾸고 렌더한다. 시작, 주 동작, 완성 상태를 확인해 의도와 맞는지 검증한다. Replace content and render as below; inspect entry, main action and the completed state against the intent.</li></ol>
+<h2 id="필요한-자료만-읽기-read-on-demand">필요한 자료만 읽기 · Read on demand</h2>
+<p><a href="https://github.com/gongnyang/awesome-ai-motion/blob/main/index.json">정본 데이터</a>는 효과·레시피·루트·용어의 기준이다. 문서와 사이트는 여기서 생성된다. <a href="https://github.com/gongnyang/awesome-ai-motion/blob/main/index.json">index.json</a> is the source of truth; scripts generate the documentation and site from it.</p>
+<p><a href="https://github.com/gongnyang/awesome-ai-motion/blob/main/references/decision-tables.md">결정표</a>는 목적·매체·동작 분류로 찾을 때 읽는다. Read <a href="https://github.com/gongnyang/awesome-ai-motion/blob/main/references/decision-tables.md">decision tables</a> to filter by intent, medium or motion family.</p>
+<p><a href="https://github.com/gongnyang/awesome-ai-motion/blob/main/references/recipes.md">레시피 목록</a>은 조합을, <a href="https://github.com/gongnyang/awesome-ai-motion/blob/main/references/routes.md">루트 목록</a>은 산출물별 문서를 안내한다. <a href="https://github.com/gongnyang/awesome-ai-motion/blob/main/references/recipes.md">Recipes</a> list combinations; <a href="https://github.com/gongnyang/awesome-ai-motion/blob/main/references/routes.md">routes</a> link deliverable guidance.</p>
+<p><a href="https://github.com/gongnyang/awesome-ai-motion/blob/main/references/clips.md">클립 목록</a>은 렌더 완료 예제만 비교할 때, <a href="https://github.com/gongnyang/awesome-ai-motion/blob/main/references/catalog.md">카탈로그</a>는 상세 검색 때 읽는다. Read <a href="https://github.com/gongnyang/awesome-ai-motion/blob/main/references/clips.md">clips</a> for rendered examples or the <a href="https://github.com/gongnyang/awesome-ai-motion/blob/main/references/catalog.md">catalog</a> for detailed lookup.</p>
+<h2 id="결정론-조회-deterministic-lookup">결정론 조회 · Deterministic lookup</h2>
+<p>레포 루트에서 실행한다. 목적 값은 정본의 한국어 값이며, 영문 카드 필드도 함께 조회할 수 있다. Run from the repository root. Purpose values use Korean source labels; cards also expose English fields.</p>
+<pre><code># Rendered effects for emphasis / 강조
+jq -r '.effects[] | select(.render == &quot;done&quot; and (.purposes | index(&quot;강조&quot;))) | .slug' index.json
+# Parameters and prompts for one effect / 효과 하나의 기본값과 프롬프트
+jq '.effects[] | select(.slug == &quot;mask-reveal&quot;) | {params, ease, prompts, promptsEn}' index.json</code></pre>
+<p><code>render: &quot;done&quot;</code>은 클립 완료, <code>&quot;planned&quot;</code>는 카드만 제공함을 뜻한다. HTML 유무는 별도로 확인한다. <code>done</code> means clips exist; <code>planned</code> provides a card. Check HTML availability before copying a template.</p>
+<h2 id="소재만-바꿔-쓰기-replace-content-and-render">소재만 바꿔 쓰기 · Replace content and render</h2>
+<ol><li>선택한 <code>index.html</code>을 작업 폴더로 복사한다. HTML의 문구·이미지·데이터를 교체하고 타임라인은 유지한다. Copy the chosen HTML into a working folder, replace text, images or data, and keep its timeline.</li><li><code>--text</code>는 지원되는 주 문구를 교체한다(<code>\n</code>으로 줄바꿈). 여러 문구나 이미지 교체는 복사한 HTML에서 편집한다. <code>--text</code> replaces supported primary text (<code>\n</code> breaks lines); edit the copied HTML for multiple labels or images.</li><li>임의 경로의 HTML이나 폴더를 입력하고 <code>--out</code> 폴더에 결과 파일이 바로 저장된다(하위 폴더 없음). <code>--embed</code>는 예제 틀을 숨긴다. Pass an arbitrary HTML or folder path; <code>--out</code> writes files directly into that directory and <code>--embed</code> hides the reference frame.</li></ol>
+<p>레포 루트에서 다음 예를 실행한다. 경로와 문구는 작업에 맞게 바꾼다. Run this example from the repository root, adjusting paths and text for your task.</p>
+<pre><code>mkdir -p /tmp/my-motion
+cp effects/mask-reveal/index.html /tmp/my-motion/index.html
+node scripts/render.mjs /tmp/my-motion/index.html \
+  --out /tmp/my-motion-output --embed --text &quot;LLM은 다음 토큰을 고른다&quot;
+node scripts/render.mjs --help</code></pre>
+<p><code>clip.mp4</code>, <code>preview.gif</code>, <code>poster.jpg</code>를 확인한다. <code>--out</code> 없이 렌더하면 입력 폴더의 결과물을 덮어쓴다. Inspect the MP4, GIF and poster. Without <code>--out</code>, rendering overwrites outputs in the input folder. 원본 예제를 보존하려면 복사본과 별도 출력 폴더를 사용한다. 외부 복사본의 공용 <code>lib</code> 경로는 렌더러가 해결한다. Use a copy and separate output directory to preserve examples; the renderer resolves shared <code>lib</code> paths for external copies.</p>
+<h2 id="공통-규칙-shared-rules">공통 규칙 · Shared rules</h2>
+<ol><li>한 장면 한 초점, 주 동작 하나와 보조 1~2개. One focus and one main action with one or two supporting actions.</li><li>카드의 시간·이징 기본값부터 조정한다. Start from the card duration and easing defaults.</li><li>진입·홀드·퇴장 중 홀드를 확보해 완성 상태가 읽히게 한다. Hold the completed state long enough to read.</li><li><code>transform</code>·<code>opacity</code> 중심으로 움직이고 레이아웃 tween을 피한다. Prefer transforms and opacity over layout tweens.</li><li>시간은 seek 가능한 타임라인에 두고 난수는 시드를 고정한다. Use a seekable timeline and seeded randomness.</li></ol>
+<h2 id="렌더-환경과-경계-runtime-and-boundaries">렌더 환경과 경계 · Runtime and boundaries</h2>
+<p>렌더에는 Node.js 20+, ffmpeg, Playwright와 Chromium이 필요하다. 전역 Playwright가 있으면 <code>npm install</code>은 선택이다. Rendering requires Node.js 20+, ffmpeg, Playwright and Chromium; <code>npm install</code> is optional with global Playwright.</p>
+<pre><code>npm install
+npx playwright install chromium</code></pre>
+<p>이 스킬은 모션 선택과 짧은 예제 렌더를 맡는다. 영상 전체 제작은 HyperFrames, 브리프 기반 제작은 ReelForge를 사용한다. This skill selects motion and renders short examples; use HyperFrames for full videos or ReelForge for brief driven production. 스크롤덱 제작은 Scrolline Deck에서 처리한다. 초 단위 타이밍은 장면 길이로 나눠 진행률로 옮긴다. Use Scrolline Deck for scroll decks, converting seconds to progress by dividing by scene duration.</p>
+<p>정본을 수정한 뒤 <code>node scripts/build.mjs</code>로 재생성하고 <code>node scripts/check.mjs</code>로 검사한다. After changing source data, regenerate with <code>node scripts/build.mjs</code> and validate with <code>node scripts/check.mjs</code>.</p></article></div>
+<footer class="foot"><span>AWESOME AI MOTION · <span lang="ko">모션 기법 도감</span><span lang="en">motion vocabulary for agents</span> v0.1.0</span><span><span lang="ko">효과 637 · 클립 128 · 레시피 11</span><span lang="en">637 effects · 128 clips · 11 recipes</span> · MIT</span></footer>
+</div>
+<script src="assets/app.js"></script>
+</body></html>

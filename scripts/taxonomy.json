@@ -1,0 +1,123 @@
+{
+ "version": "0.1.0",
+ "description": "AI 에이전트가 바로 쓰는 모션 기법 도감. 효과마다 정의·파라미터·구현·프롬프트·출처, 핵심 효과는 3초 클립까지.",
+ "families": {
+  "principles": {
+   "ko": "기본기",
+   "en": "PRINCIPLES",
+   "desc": "디즈니 12원칙, 이징, 타이밍과 간격. 모든 움직임의 문법",
+   "descEn": "Disney's 12 principles, easing, timing and spacing. The grammar of all motion"
+  },
+  "entrance": {
+   "ko": "등장·퇴장",
+   "en": "ENTRANCE & EXIT",
+   "desc": "요소가 화면에 들어오고 나가는 방식",
+   "descEn": "How elements come in and leave"
+  },
+  "emphasis": {
+   "ko": "강조·주의",
+   "en": "EMPHASIS",
+   "desc": "이미 보이는 것 중 하나로 시선을 끌어오는 방식",
+   "descEn": "Pulling the eye to something already on screen"
+  },
+  "type": {
+   "ko": "타이포",
+   "en": "TYPOGRAPHY",
+   "desc": "글자가 등장하고 바뀌고 강조되는 방식",
+   "descEn": "How text appears, changes and gets emphasis"
+  },
+  "transitions": {
+   "ko": "전환·컷",
+   "en": "TRANSITIONS",
+   "desc": "장면과 장면을 잇는 컷과 화면 전환",
+   "descEn": "Cuts and transitions that join scenes"
+  },
+  "camera": {
+   "ko": "가상 카메라",
+   "en": "CAMERA",
+   "desc": "화면 전체를 움직여 시선과 공간을 옮기는 법",
+   "descEn": "Moving the whole frame to move the eye and the space"
+  },
+  "data": {
+   "ko": "데이터",
+   "en": "DATA",
+   "desc": "숫자와 차트를 움직여 크기·변화·비교를 보이는 법",
+   "descEn": "Animating numbers and charts to show size, change and comparison"
+  },
+  "ui": {
+   "ko": "UI 시연",
+   "en": "UI DEMO",
+   "desc": "화면 조작과 제품 사용을 영상으로 보여 주는 법",
+   "descEn": "Showing screen interaction and product use on video"
+  },
+  "explainer": {
+   "ko": "원리 도해",
+   "en": "EXPLAINER",
+   "desc": "보이지 않는 원리와 과정을 그림으로 풀어 보이는 법",
+   "descEn": "Drawing invisible mechanisms and processes"
+  },
+  "shape": {
+   "ko": "도형·패스",
+   "en": "SHAPE & PATH",
+   "desc": "선 그리기, 모프, 경로 이동, 셰이프 레이어 기법",
+   "descEn": "Line drawing, morphing, path motion, shape layers"
+  },
+  "texture": {
+   "ko": "질감·스타일",
+   "en": "TEXTURE & STYLE",
+   "desc": "글리치, 그레인, 빛, 인쇄 질감 같은 화면 처리",
+   "descEn": "Glitch, grain, light, print texture"
+  },
+  "generative": {
+   "ko": "입자·생성",
+   "en": "GENERATIVE",
+   "desc": "입자, 노이즈, 반복 규칙으로 만드는 움직임",
+   "descEn": "Particles, noise and rule-based repetition"
+  },
+  "depth": {
+   "ko": "3D·깊이",
+   "en": "3D & DEPTH",
+   "desc": "원근, 회전, 레이어 깊이로 만드는 공간감",
+   "descEn": "Perspective, rotation and layered depth"
+  },
+  "loop": {
+   "ko": "반복·앰비언트",
+   "en": "LOOP & AMBIENT",
+   "desc": "로더, 숨쉬기, 배경 루프처럼 계속 도는 움직임",
+   "descEn": "Loaders, breathing, ambient loops"
+  },
+  "caption": {
+   "ko": "자막·하단 자막",
+   "en": "CAPTIONS",
+   "desc": "자막, 하단 자막, 인용과 출처 표기",
+   "descEn": "Captions, lower thirds, quotes and credits"
+  }
+ },
+ "purposes": [
+  "주목 끌기",
+  "설명",
+  "비교",
+  "순서·흐름",
+  "강조",
+  "전환",
+  "데이터 증명",
+  "피드백",
+  "분위기",
+  "브랜딩"
+ ],
+ "media": [
+  "설명 영상",
+  "숏폼",
+  "스크롤덱",
+  "발표",
+  "제품 시연",
+  "데이터 스토리",
+  "웹 UI"
+ ],
+ "levels": [
+  "기본",
+  "중급",
+  "고급"
+ ],
+ "description_en": "A motion technique field guide your AI agent can use: definitions, parameters, implementation and prompts for every effect, with 3-second reference clips for the core set."
+}

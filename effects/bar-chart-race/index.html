@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>막대 차트 레이스</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>svg{position:absolute;inset:0;width:1168px;height:580px}svg text{font-family:var(--sans);font-size:22px;fill:var(--ink)}svg .small{font-size:16px;fill:var(--ink2)}svg .big{font-family:var(--didone);font-size:76px}svg .grid{stroke:var(--rule);stroke-width:1}svg .axis{stroke:var(--ink);stroke-width:1} .heading{position:absolute;left:32px;top:26px;font-size:30px}.sub{position:absolute;left:34px;top:72px;font-size:16px;color:var(--ink2)}</style></head>
+<body data-no="250" data-cat="데이터 · DATA" data-ko="막대 차트 레이스" data-en="Bar Chart Race" data-meta="예시 데이터 · 4.5초" data-dur="4.5" data-poster="4.2">
+<main class="scene"><div class="heading t-m">쓰임이 바뀌면 순위도 바뀐다</div><div class="sub">AI 기능별 이용자 변화 · 연도별 예시</div><svg viewBox="0 0 1168 580" xmlns="http://www.w3.org/2000/svg"><text id="year" class="big" x="840" y="175">2024</text><text class="small" x="180" y="175">이용자 수 · 최대 100만 명</text><line class="grid" x1="180" y1="200" x2="180" y2="520"/><text class="small" x="180" y="548">0</text><line class="grid" x1="360" y1="200" x2="360" y2="520"/><text class="small" x="360" y="548">25</text><line class="grid" x1="540" y1="200" x2="540" y2="520"/><text class="small" x="540" y="548">50</text><line class="grid" x1="720" y1="200" x2="720" y2="520"/><text class="small" x="720" y="548">75</text><line class="grid" x1="900" y1="200" x2="900" y2="520"/><text class="small" x="900" y="548">100</text><g id="row0"><text x="70" y="32">검색</text><rect id="bar0" x="180" y="0" width="0" height="42" fill="var(--ink)"/><text id="val0" y="31">0</text></g><g id="row1"><text x="70" y="32">문서</text><rect id="bar1" x="180" y="0" width="0" height="42" fill="var(--ink)"/><text id="val1" y="31">0</text></g><g id="row2"><text x="70" y="32">분석</text><rect id="bar2" x="180" y="0" width="0" height="42" fill="var(--ink)"/><text id="val2" y="31">0</text></g><g id="row3"><text x="70" y="32">이미지</text><rect id="bar3" x="180" y="0" width="0" height="42" fill="var(--ink)"/><text id="val3" y="31">0</text></g><g id="row4"><text x="70" y="32">음성</text><rect id="bar4" x="180" y="0" width="0" height="42" fill="var(--ink)"/><text id="val4" y="31">0</text></g></svg></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+const frames=[[74,58,42,30,22],[80,63,88,44,32],[86,78,94,62,51]];
+const s={phase:0};
+const rows=frames[0].map((_,i)=>({
+  row:document.querySelector('#row'+i),
+  bar:document.querySelector('#bar'+i),
+  value:document.querySelector('#val'+i)
+}));
+const smooth=v=>{const t=Math.max(0,Math.min(1,v));return t*t*(3-2*t);};
+function draw(){
+  const k=Math.min(1,Math.floor(s.phase)),p=s.phase-k;
+  const values=frames[k].map((v,i)=>v+(frames[k+1][i]-v)*p);
+  // Exchange adjacent ranks only near their value crossing, rather than
+  // sending the rising row through both neighbours for the whole year.
+  const positions=values.map((v,i)=>220+60*values.reduce((rank,other,j)=>
+    rank+(i===j?0:smooth((other-v+3)/6)),0));
+  const leader=values.indexOf(Math.max(...values));
+  rows.forEach(({row,bar,value},i)=>{
+    const distance=Math.min(...positions.filter((_,j)=>j!==i).map(y=>Math.abs(y-positions[i])));
+    // Compress the complete row around its centre during the actual pass.
+    // Its 42px silhouette stays inside half the distance to its neighbour.
+    const scale=Math.min(1,distance/44);
+    row.setAttribute('transform',`translate(0 ${positions[i]+21}) scale(1 ${scale}) translate(0 -21)`);
+    const width=values[i]*7.2;
+    bar.setAttribute('width',width);
+    bar.setAttribute('fill',i===leader?'var(--verm)':'var(--ink)');
+    value.setAttribute('x',180+width+14);
+    // One persistent text node per row; replace the count on every seek.
+    value.textContent=Math.round(values[i]);
+  });
+  document.querySelector('#year').textContent=2024+Math.min(2,Math.floor(s.phase+.001));
+}
+draw();
+tl.to(s,{phase:1,duration:1.25,ease:'power2.inOut',onUpdate:draw},.4);
+tl.to(s,{phase:2,duration:1.25,ease:'power2.inOut',onUpdate:draw},2.05);
+Motion.ready();
+</script></body></html>

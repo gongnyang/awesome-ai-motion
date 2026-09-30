@@ -1,0 +1,165 @@
+{
+  "dot-regroup": {
+    "aka": [
+      "Particle text assembly",
+      "입자 글자 조립",
+      "Particle Text Assembly"
+    ],
+    "variants": [
+      "ParticleText"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/particle-text-dissolve/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/code-particle-assemble/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/rules/particle-burst.md",
+        "license": "unknown"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      }
+    ],
+    "from": [
+      "R1a-127",
+      "R3-184"
+    ]
+  },
+  "stagger": {
+    "aka": [
+      "Spatial stagger wave",
+      "공간 스태거 파동",
+      "Grid Ripple",
+      "격자 파문"
+    ],
+    "variants": [
+      "중앙 방사",
+      "가장자리 수렴",
+      "가로 파동",
+      "세로 파동",
+      "비선형 지연",
+      "Background Ripple Effect",
+      "RippleGrid",
+      "Interactive Grid Pattern",
+      "CursorGrid",
+      "PixelBlast",
+      "interactive-grid-pattern",
+      "background-ripple-effect",
+      "background-boxes"
+    ],
+    "sources": [
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/resources/getting-started/Staggers/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "juliangarnier/anime",
+        "url": "https://animejs.com/documentation/utilities/stagger",
+        "license": "MIT"
+      },
+      {
+        "title": "motion.dev examples",
+        "url": "https://motion.dev/examples/react-staggered-grid",
+        "license": "unknown"
+      },
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/background-ripple-effect",
+        "license": "unknown"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      }
+    ],
+    "from": [
+      "R2-016",
+      "R3-179"
+    ]
+  },
+  "arc-motion": {
+    "aka": [
+      "Projectile arc",
+      "포물선 발사",
+      "Directional acceleration",
+      "방향 가속 궤적"
+    ],
+    "variants": [
+      "한 발",
+      "분수",
+      "폭죽",
+      "역재생",
+      "바람",
+      "가로 중력",
+      "마찰 동반",
+      "상승 흐름"
+    ],
+    "sources": [
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Plugins/Physics2DPlugin/",
+        "license": "GSAP Standard License"
+      }
+    ],
+    "from": [
+      "R2-093",
+      "R2-095"
+    ]
+  },
+  "spotlight": {
+    "aka": [
+      "Spotlight Reveal",
+      "스포트라이트 리빌"
+    ],
+    "variants": [
+      "Magic Card",
+      "Spotlight",
+      "SpotlightCard",
+      "Card Spotlight",
+      "SVG Mask Effect",
+      "GlowCursor",
+      "magic-card",
+      "spotlight",
+      "spotlight-new",
+      "svg-mask-effect",
+      "card-spotlight"
+    ],
+    "sources": [
+      {
+        "title": "magicuidesign/magicui",
+        "url": "https://magicui.design/docs/components/magic-card",
+        "license": "MIT"
+      },
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/spotlight",
+        "license": "unknown"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      },
+      {
+        "title": "ibelick/motion-primitives",
+        "url": "https://motion-primitives.com/docs/spotlight",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R3-118"
+    ]
+  }
+}

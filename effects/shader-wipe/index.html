@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>셰이더 와이프 · Shader Directional Warp Wipe</title>
+<meta name="viewport" content="width=1280">
+<link rel="stylesheet" href="../../lib/stage.css">
+<style>
+#gl{position:absolute;left:0;top:0;width:1280px;height:580px}
+</style></head>
+<body data-no="194" data-cat="전환·컷 · TRANSITIONS" data-ko="셰이더 와이프" data-en="Shader Directional Warp Wipe" data-meta="WebGL · 대각 45° · 경계 휨 0.08 · 번짐 0.10 · 2.0s" data-dur="3" data-poster="2.8">
+<main class="scene bleed">
+  <canvas id="gl" width="1280" height="580"></canvas>
+</main>
+<script src="../../lib/gsap.min.js"></script>
+<script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+const W = 1280, H = 580;
+const css = getComputedStyle(document.documentElement);
+const C = n => css.getPropertyValue(n).trim();
+const F = { serif: C('--serif'), sans: C('--sans'), mono: C('--mono'), didone: C('--didone') };
+
+// 도판 두 장을 2D 캔버스에 한 번 그려 텍스처로 쓴다
+function plate(fn) { const c = document.createElement('canvas'); c.width = W; c.height = H; fn(c.getContext('2d')); return c; }
+const mkA = () => plate(o => {
+  o.fillStyle = C('--paper'); o.fillRect(0, 0, W, H);
+  o.fillStyle = C('--ink2'); o.font = `12px ${F.mono}`; o.fillText('PLATE A · 문장', 112, 58);
+  o.fillStyle = C('--ink'); o.fillRect(112, 84, 1056, 2);
+  o.font = `700 150px ${F.serif}`; o.fillText('AI는', 104, 262);
+  o.font = `700 96px ${F.serif}`; o.fillText('다음 말을 고른다', 108, 404);
+  o.fillStyle = C('--rule'); o.fillRect(112, 452, 1056, 1);
+  o.fillStyle = C('--ink2'); o.font = `22px ${F.sans}`; o.fillText('입력 → 모델 → 출력', 112, 500);
+  o.strokeStyle = C('--ink3'); o.lineWidth = 1;
+  for (let i = 0; i < 9; i++) { o.beginPath(); o.moveTo(820 + i * 38, 120); o.lineTo(820 + i * 38, 300); o.stroke(); }
+});
+const mkB = () => plate(o => {
+  o.fillStyle = C('--ink'); o.fillRect(0, 0, W, H);
+  o.fillStyle = C('--paper2'); o.font = `12px ${F.mono}`; o.globalAlpha = .7; o.fillText('PLATE B · 숫자', 112, 58); o.globalAlpha = 1;
+  o.fillStyle = C('--paper'); o.fillRect(112, 84, 1056, 2);
+  o.font = `500 400px ${F.didone}`; o.fillText('939', 96, 430);
+  o.fillStyle = C('--paper2'); o.font = `700 44px ${F.serif}`;
+  o.fillText('30번 중', 836, 470);
+  o.fillStyle = C('--verm'); o.font = `500 120px ${F.didone}`; o.fillText('18', 1000, 482);
+  o.fillStyle = C('--paper2'); o.font = `700 44px ${F.serif}`; o.fillText('번', 1124, 470);
+});
+
+const VS = `attribute vec2 a;varying vec2 v;void main(){v=a*.5+.5;gl_Position=vec4(a,0.,1.);}`;
+// 대각 방향 d로 경계선 e가 지나간다. 경계는 사인 두 개로 휘고, 경계 가까이(k)에서 두 도판이 진행 방향으로 늘어나며 번진다
+const FS = `precision highp float;
+varying vec2 v;uniform sampler2D A,B;uniform float u_p;uniform vec2 R;
+const vec2 D=vec2(.707,.707);
+float lane(vec2 q){return dot(q,D);}
+vec4 smear(sampler2D t,vec2 uv,vec2 dir,float k){
+  vec4 s=vec4(0.);
+  for(int i=0;i<28;i++){float f=float(i)/27.;s+=texture2D(t,clamp(uv+dir*k*f,0.,1.));}
+  return s/28.;
+}
+void main(){
+  float asp=R.x/R.y;vec2 q=vec2(v.x*asp,v.y);
+  float lo=lane(vec2(0.,0.)),hi=lane(vec2(asp,1.));
+  float s=(lane(q)-lo)/(hi-lo);
+  vec2 n=vec2(-D.y,D.x);float t=dot(q,n);
+  float bend=.08*sin(t*2.2+1.3)+.03*sin(t*6.1+u_p*4.);
+  float e=mix(-.16,1.16,u_p)+bend;
+  float x=s-e;
+  float m=smoothstep(-.035,.035,x);
+  float k=exp(-x*x/.012);
+  vec2 dir=vec2(D.x/asp,D.y);
+  vec4 a=smear(A,v-dir*k*.10,dir,k*.10);
+  vec4 b=smear(B,v+dir*k*.10,-dir,k*.10);
+  vec4 c=mix(b,a,m);
+  c.rgb*=1.-.18*k*(1.-abs(m*2.-1.));
+  gl_FragColor=c;
+}`;
+
+const cv = document.getElementById('gl');
+const gl = cv.getContext('webgl', { preserveDrawingBuffer: true, antialias: false, premultipliedAlpha: false });
+let U;
+function setup() {
+  const sh = (t, src) => { const s = gl.createShader(t); gl.shaderSource(s, src); gl.compileShader(s);
+    if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s)); return s; };
+  const pg = gl.createProgram();
+  gl.attachShader(pg, sh(gl.VERTEX_SHADER, VS)); gl.attachShader(pg, sh(gl.FRAGMENT_SHADER, FS));
+  gl.linkProgram(pg); gl.useProgram(pg);
+  gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+  const loc = gl.getAttribLocation(pg, 'a'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+  gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+  [mkA(), mkB()].forEach((c, i) => {
+    gl.activeTexture(gl.TEXTURE0 + i); gl.bindTexture(gl.TEXTURE_2D, gl.createTexture());
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, c);
+    [gl.TEXTURE_WRAP_S, gl.TEXTURE_WRAP_T].forEach(w => gl.texParameteri(gl.TEXTURE_2D, w, gl.CLAMP_TO_EDGE));
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+  });
+  gl.uniform1i(gl.getUniformLocation(pg, 'A'), 0); gl.uniform1i(gl.getUniformLocation(pg, 'B'), 1);
+  gl.uniform2f(gl.getUniformLocation(pg, 'R'), W, H);
+  U = gl.getUniformLocation(pg, 'u_p');
+  gl.viewport(0, 0, W, H);
+}
+function draw(p) { gl.uniform1f(U, p); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); }
+
+Promise.all([`700 150px ${F.serif}`, `500 400px ${F.didone}`, `12px ${F.mono}`].map(f => document.fonts.load(f))).then(() => {
+  // 도판은 폰트가 준비된 뒤 그린다
+  setup();
+  const pr = { p: 0 };
+  tl.to(pr, { p: 1, duration: 2.0, ease: 'sine.inOut', onUpdate: () => draw(pr.p) }, 0.3);
+  draw(0);
+  Motion.ready();
+});
+</script>
+</body></html>

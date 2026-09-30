@@ -1,0 +1,12 @@
+.cache/
+node_modules/
+.staging/
+PROGRESS.md
+research/clusters/
+research/candidates/chunks/
+scripts/queue-writers.py
+scripts/catalog.json
+routes/_prompts/
+_클립 모음/
+scripts/sanitize.py
+effects/*/verification/

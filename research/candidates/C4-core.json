@@ -1,0 +1,1600 @@
+{
+ "typewriter": {
+  "aka": [
+   "Typewriter",
+   "타자기",
+   "타자기 리빌",
+   "typewriter-vs-fade-sequence",
+   "discrete-text-sequence",
+   "gsap-effects",
+   "typewriter-reveal",
+   "타자기 텍스트",
+   "타자 입력",
+   "Typewriter Reveal"
+  ],
+  "variants": [
+   "animate-text/typewriter",
+   "균일 타자",
+   "사람 입력 리듬",
+   "코드",
+   "메모",
+   "터미널",
+   "문자 타이핑",
+   "단어 타이핑",
+   "백스페이스",
+   "오타 수정"
+  ],
+  "sources": [
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/typewriter/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/typed-prompt/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/code-typing/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/notes-typing/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/notes-reveal/registry-item.json",
+    "license": "Apache-2.0"
+   }
+  ],
+  "from": [
+   "R1a-061",
+   "R1b-048",
+   "R2-059",
+   "R3-092",
+   "DICT-142",
+   "R5-063",
+   "R9-014",
+   "R7-004"
+  ]
+ },
+ "typing-input": {
+  "aka": [
+   "Backspace retype",
+   "지우고 다시 입력",
+   "Humanized Typing and Backspace",
+   "사람 같은 입력과 지우기"
+  ],
+  "variants": [
+   "스마트 공통 접두어 유지",
+   "오타 수정",
+   "여러 문구 반복"
+  ],
+  "sources": [
+   {
+    "title": "local/HyperFrames-skills",
+    "url": "claude-skill:hyperframes-animation/rules/discrete-text-sequence.md",
+    "license": "unknown"
+   },
+   {
+    "title": "local/HyperFrames-skills",
+    "url": "claude-skill:hyperframes-animation/blueprints/typewriter-reveal.md",
+    "license": "unknown"
+   },
+   {
+    "title": "mattboldt/typed.js",
+    "url": "https://github.com/mattboldt/typed.js",
+    "license": "GPL-3.0-or-later"
+   }
+  ],
+  "from": [
+   "R1a-062",
+   "R9-015"
+  ]
+ },
+ "char-stagger": {
+  "aka": [
+   "Character stagger",
+   "글자 시간차 등장",
+   "글자 순차 등장",
+   "Text Scale Cascade",
+   "글자 스케일 캐스케이드",
+   "scale-jump-stairstep",
+   "word-pop",
+   "kinetic-letter-in",
+   "Character and Word Stagger",
+   "글자와 단어 순차 등장"
+  ],
+  "variants": [
+   "animate-text/per-character-rise",
+   "animate-text/bottom-up-letters",
+   "animate-text/top-down-letters",
+   "animate-text/stagger-from-center",
+   "animate-text/stagger-from-edges",
+   "상승",
+   "하강",
+   "중앙 공개",
+   "양끝 공개",
+   "로고 글자 조립"
+  ],
+  "sources": [
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/bottom-up-letters/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/top-down-letters/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "local/HyperFrames-skills",
+    "url": "claude-skill:hyperframes-animation/adapters/animate-text.md",
+    "license": "unknown"
+   },
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/logo-brand-close/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "pixel-point/animate-text",
+    "url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/per-character-rise.json",
+    "license": "unknown"
+   }
+  ],
+  "from": [
+   "R1a-064",
+   "R2-056",
+   "R1b-047",
+   "R3-093",
+   "R5-062",
+   "DICT-143",
+   "R9-001"
+  ]
+ },
+ "mask-reveal": {
+  "aka": [
+   "Mask text reveal",
+   "마스크 글자 공개",
+   "Line mask typography",
+   "줄 마스크 타이포",
+   "Masked Text Reveal",
+   "마스크 글자 리빌",
+   "Masked text reveal",
+   "마스크 텍스트",
+   "Text Mask Slide",
+   "텍스트 마스크 슬라이드"
+  ],
+  "variants": [
+   "animate-text/mask-reveal-up",
+   "animate-text/line-by-line-slide",
+   "단어 와이프",
+   "줄 공개",
+   "좌우 줄 슬라이드",
+   "SVG 글자 마스크",
+   "위에서 내려옴",
+   "줄별 순서",
+   "문단별 공개",
+   "MaskedHeading"
+  ],
+  "sources": [
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-clip-wipe/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/line-by-line-slide/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/svg-mask-reveal/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "local/HyperFrames-skills",
+    "url": "claude-skill:hyperframes-animation/techniques.md",
+    "license": "unknown"
+   },
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/testimonial-card/registry-item.json",
+    "license": "Apache-2.0"
+   }
+  ],
+  "from": [
+   "R1a-066",
+   "R2-058",
+   "R3-101",
+   "DICT-146",
+   "R5-073",
+   "R9-006"
+  ]
+ },
+ "kinetic-beats": {
+  "aka": [
+   "Kinetic beats",
+   "박자 타이포",
+   "Kinetic Beats",
+   "비트 타이포",
+   "kinetic-beat-slam",
+   "Word Grid Burst",
+   "단어 격자 축적",
+   "Kinetic Beat Typography",
+   "키네틱 비트 타이포",
+   "Beat typography"
+  ],
+  "variants": [
+   "animate-text/shared-axis-y",
+   "구절 슬램",
+   "단어 하드컷",
+   "1프레임 burn-in",
+   "전면 타이틀",
+   "파형식 단어 컷",
+   "스케일 슬램",
+   "문구 교체",
+   "비트 카운터",
+   "kinetic-titles"
+  ],
+  "sources": [
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-kinetic-slam/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/headline-slam/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/shutter-slam/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/logo-sting/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "local/HyperFrames-skills",
+    "url": "claude-skill:hyperframes-animation/rules/kinetic-beat-slam.md",
+    "license": "unknown"
+   }
+  ],
+  "from": [
+   "R1a-069",
+   "R1b-111",
+   "R1b-147",
+   "R5-074",
+   "R9-025"
+  ]
+ },
+ "text-scramble": {
+  "aka": [
+   "Text scramble",
+   "글자 해독",
+   "Matrix decode",
+   "Binary decrypt",
+   "Text Scramble",
+   "문자 디코드",
+   "hacker-flip-3d",
+   "gsap-effects",
+   "binary-decrypt",
+   "Decrypt Text"
+  ],
+  "variants": [
+   "이진 디코드",
+   "해커 3D 플립",
+   "순차 고정",
+   "Hyper Text",
+   "Encrypted Text",
+   "DecryptedText",
+   "ScrambledText",
+   "TechText",
+   "hyper-text",
+   "text-scramble"
+  ],
+  "sources": [
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/matrix-decode/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/scramble-reveal/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-matrix-decode/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "local/HyperFrames-skills",
+    "url": "claude-skill:hyperframes-animation/adapters/animate-text.md",
+    "license": "unknown"
+   },
+   {
+    "title": "local/hyperframes-animation",
+    "url": "claude-skill:hyperframes-animation/rules/hacker-flip-3d.md",
+    "license": "unknown"
+   }
+  ],
+  "from": [
+   "R1a-071",
+   "R1b-109",
+   "R3-094",
+   "R2-061",
+   "R9-016",
+   "DICT-145",
+   "R5-068"
+  ]
+ },
+ "word-emphasis": {
+  "aka": [
+   "Word emphasis",
+   "발화 단어 강조",
+   "Word Emphasis",
+   "단어 강조",
+   "selective-emphasis-pop",
+   "asr-keyword-glow",
+   "Word stagger emphasis",
+   "단어 순차 강조",
+   "Word Focus Shift",
+   "단어 초점 교대"
+  ],
+  "variants": [
+   "고정 키워드",
+   "발화 동기 글로우",
+   "카라오케 강조",
+   "강조색",
+   "확대",
+   "흐림 해제",
+   "읽기 진행",
+   "TrueFocus",
+   "색 강조",
+   "크기 강조"
+  ],
+  "sources": [
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/mk-callout-highlight/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-editorial-emphasis/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-neon-accent/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "local/HyperFrames-skills",
+    "url": "claude-skill:hyperframes-animation/rules/asr-keyword-glow.md",
+    "license": "unknown"
+   },
+   {
+    "title": "gongnyang/reelforge",
+    "url": "gongnyang/reelforge:skills/reelforge/references/grammar/05-text-animator.md#selective-emphasis-pop",
+    "license": "Apache-2.0"
+   }
+  ],
+  "from": [
+   "R1a-073",
+   "R1b-052",
+   "DICT-144",
+   "R2-057",
+   "R3-108",
+   "R5-069",
+   "DICT-151",
+   "R9-068"
+  ]
+ },
+ "highlight-sweep": {
+  "aka": [
+   "Highlight sweep",
+   "하이라이트 쓸기",
+   "Highlight Sweep",
+   "빛 하이라이트 스윕",
+   "light-sweep-sheen",
+   "gradient-text-sweep",
+   "chrome-sweep",
+   "강조색 쓸기",
+   "하이라이트 스윕",
+   "Text Shimmer"
+  ],
+  "variants": [
+   "금속 광택",
+   "카드 셰인",
+   "글자 그라데이션",
+   "단어별 빛",
+   "단어별",
+   "문장별",
+   "색 채움 유지",
+   "Animated Shiny Text",
+   "ShinyText",
+   "Text Shimmer"
+  ],
+  "sources": [
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/marker-highlight/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/inline-highlight/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-highlight/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/mk-callout-highlight/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "local/HyperFrames-skills",
+    "url": "claude-skill:hyperframes-animation/rules/css-marker-patterns.md",
+    "license": "unknown"
+   }
+  ],
+  "from": [
+   "R1a-074",
+   "R1b-068",
+   "R2-067",
+   "DICT-147",
+   "R3-099",
+   "R3-102",
+   "R9-011",
+   "R9-069"
+  ]
+ },
+ "popup-book": {
+  "aka": [
+   "Popup hinge",
+   "팝업북 펼침"
+  ],
+  "variants": [],
+  "sources": [
+   {
+    "title": "local/HyperFrames-skills",
+    "url": "claude-skill:embedded-captions/CATALOG.md",
+    "license": "unknown"
+   }
+  ],
+  "from": [
+   "R1a-186"
+  ]
+ },
+ "crossfade": {
+  "aka": [
+   "Word Crossfade",
+   "단어 교차 페이드",
+   "word-swap-crossfade",
+   "Text Fade Through",
+   "텍스트 페이드 스루"
+  ],
+  "variants": [
+   "슬로건 순환",
+   "블러 교체",
+   "사진 교차 페이드",
+   "typo/glitch-swap-punch",
+   "fade-through"
+  ],
+  "sources": [
+   {
+    "title": "gongnyang/reelforge",
+    "url": "gongnyang/reelforge:skills/reelforge/references/grammar/05-text-animator.md#word-swap-crossfade",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "gongnyang/reelforge",
+    "url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "gongnyang/reelforge",
+    "url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/typo/glitch-swap-punch.html",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "gongnyang/reelforge",
+    "url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/typo/glitch-swap-punch.meta.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "local/card-shorts",
+    "url": "claude-skill:card-shorts/references/render-recipe.md",
+    "license": "unknown"
+   }
+  ],
+  "from": [
+   "R1b-051",
+   "R9-012"
+  ]
+ },
+ "split-lockup": {
+  "aka": [
+   "Split Logo Lockup",
+   "분할 로고 락업"
+  ],
+  "variants": [
+   "중앙 문구 조립",
+   "박자 펄스",
+   "logo-split-lockup-pulse"
+  ],
+  "sources": [
+   {
+    "title": "local/music-to-video",
+    "url": "claude-skill:music-to-video/references/template-catalog.md#logo-split-lockup-pulse",
+    "license": "unknown"
+   }
+  ],
+  "from": [
+   "R1b-149"
+  ]
+ },
+ "answer-stream": {
+  "aka": [
+   "Word stream replacement",
+   "단어 스트림 교체"
+  ],
+  "variants": [
+   "단어 추가",
+   "차이만 교체",
+   "문장 삭제",
+   "기존과 신규 색 구분"
+  ],
+  "sources": [
+   {
+    "title": "greensock/GSAP",
+    "url": "https://gsap.com/docs/v3/Plugins/TextPlugin/",
+    "license": "GSAP Standard License"
+   }
+  ],
+  "from": [
+   "R2-060"
+  ]
+ },
+ "underline-draw": {
+  "aka": [
+   "Underline stroke draw",
+   "밑줄 그리기",
+   "Animated Underline Draw",
+   "텍스트 밑줄 그리기"
+  ],
+  "variants": [
+   "직선",
+   "손그림 곡선",
+   "양끝 확장",
+   "직선 밑줄",
+   "손그림 밑줄",
+   "이중 밑줄"
+  ],
+  "sources": [
+   {
+    "title": "greensock/GSAP",
+    "url": "https://gsap.com/docs/v3/Plugins/DrawSVGPlugin/",
+    "license": "GSAP Standard License"
+   },
+   {
+    "title": "motiondivision/motion",
+    "url": "https://motion.dev/docs/react-svg-animation",
+    "license": "MIT"
+   },
+   {
+    "title": "codrops/LetterEffects",
+    "url": "https://github.com/codrops/LetterEffects",
+    "license": "unknown"
+   }
+  ],
+  "from": [
+   "R2-066",
+   "R9-070"
+  ]
+ },
+ "blur-resolve": {
+  "aka": [
+   "Focus Text Reveal",
+   "글자 초점 리빌",
+   "Text Blur Reveal",
+   "텍스트 블러 리빌",
+   "Text Blur Resolve",
+   "텍스트 초점 해소",
+   "Soft Blur In",
+   "Focus Blur Resolve",
+   "Blur Out Up"
+  ],
+  "variants": [
+   "text-focus-in",
+   "focus-in",
+   "text-blur-out",
+   "blur-out",
+   "BlurText",
+   "focus-in-expand",
+   "focus-in-expand-fwd",
+   "focus-in-contract",
+   "focus-in-contract-bck",
+   "blur-out-contract"
+  ],
+  "sources": [
+   {
+    "title": "animista.net",
+    "url": "https://animista.net/play",
+    "license": "BSD-2-Clause (FreeBSD)"
+   },
+   {
+    "title": "DavidHDev/react-bits",
+    "url": "https://github.com/DavidHDev/react-bits",
+    "license": "MIT + Commons Clause v1.0"
+   },
+   {
+    "title": "helpx.adobe.com",
+    "url": "https://helpx.adobe.com/after-effects/desktop/animating-text/text-animation/animating-text.html",
+    "license": "unknown"
+   },
+   {
+    "title": "airbnb/lottie-web",
+    "url": "https://github.com/airbnb/lottie-web",
+    "license": "MIT"
+   },
+   {
+    "title": "pixel-point/animate-text",
+    "url": "https://github.com/pixel-point/animate-text",
+    "license": "unknown"
+   }
+  ],
+  "from": [
+   "R3-050",
+   "R5-067",
+   "R9-002"
+  ]
+ },
+ "shape-morph": {
+  "aka": [
+   "Text Morph",
+   "문구 모프"
+  ],
+  "variants": [
+   "Morphing Text",
+   "Text Morph",
+   "morphing-text",
+   "text-morph"
+  ],
+  "sources": [
+   {
+    "title": "magicuidesign/magicui",
+    "url": "https://magicui.design/docs/components/morphing-text",
+    "license": "MIT"
+   },
+   {
+    "title": "ibelick/motion-primitives",
+    "url": "https://motion-primitives.com/docs/text-morph",
+    "license": "MIT"
+   }
+  ],
+  "from": [
+   "R3-096"
+  ]
+ },
+ "color-cycle": {
+  "aka": [
+   "Animated Color Text",
+   "색상 흐름 글자"
+  ],
+  "variants": [
+   "Aurora Text",
+   "Colourful Text",
+   "GradientText",
+   "aurora-text",
+   "colourful-text"
+  ],
+  "sources": [
+   {
+    "title": "magicuidesign/magicui",
+    "url": "https://magicui.design/docs/components/aurora-text",
+    "license": "MIT"
+   },
+   {
+    "title": "ui.aceternity.com",
+    "url": "https://ui.aceternity.com/components/colourful-text",
+    "license": "unknown"
+   },
+   {
+    "title": "DavidHDev/react-bits",
+    "url": "https://github.com/DavidHDev/react-bits",
+    "license": "MIT + Commons Clause v1.0"
+   }
+  ],
+  "from": [
+   "R3-100"
+  ]
+ },
+ "outline-then-fill": {
+  "aka": [
+   "Outline Letter Draw",
+   "글자 윤곽 그리기",
+   "Text Fill Stroke Exchange",
+   "텍스트 채움 윤곽 교대",
+   "Outline Text to Fill",
+   "윤곽 텍스트 채우기"
+  ],
+  "variants": [
+   "StrokeText",
+   "Text Hover Effect",
+   "text-hover-effect",
+   "윤곽 등장",
+   "면 전환",
+   "색 교대",
+   "윤곽 유지",
+   "채움 후 외곽 소거"
+  ],
+  "sources": [
+   {
+    "title": "DavidHDev/react-bits",
+    "url": "https://github.com/DavidHDev/react-bits",
+    "license": "MIT + Commons Clause v1.0"
+   },
+   {
+    "title": "ui.aceternity.com",
+    "url": "https://ui.aceternity.com/components/text-hover-effect",
+    "license": "unknown"
+   },
+   {
+    "title": "helpx.adobe.com",
+    "url": "https://helpx.adobe.com/after-effects/desktop/animating-text/text-animation/animating-text.html",
+    "license": "unknown"
+   },
+   {
+    "title": "airbnb/lottie-web",
+    "url": "https://github.com/airbnb/lottie-web",
+    "license": "MIT"
+   },
+   {
+    "title": "maxwellito/vivus",
+    "url": "https://github.com/maxwellito/vivus",
+    "license": "MIT"
+   }
+  ],
+  "from": [
+   "R3-186",
+   "R5-071",
+   "R9-035"
+  ]
+ },
+ "text-extrusion": {
+  "aka": [
+   "Extruded Text Orbit",
+   "두꺼운 입체 글자 회전",
+   "3D Extruded Text Turntable",
+   "3D 돌출 텍스트 회전",
+   "Layered Text Depth Stack",
+   "텍스트 레이어 깊이 쌓기"
+  ],
+  "variants": [
+   "DepthText",
+   "금속 글자",
+   "무광 글자",
+   "전면 복귀",
+   "윤곽 층",
+   "색 층",
+   "터널 층"
+  ],
+  "sources": [
+   {
+    "title": "DavidHDev/react-bits",
+    "url": "https://github.com/DavidHDev/react-bits",
+    "license": "MIT + Commons Clause v1.0"
+   },
+   {
+    "title": "uuuulala/WebGL-typing-tutorial",
+    "url": "https://github.com/uuuulala/WebGL-typing-tutorial",
+    "license": "MIT"
+   },
+   {
+    "title": "ehaakana/codrops-text-demo",
+    "url": "https://github.com/ehaakana/codrops-text-demo",
+    "license": "MIT"
+   },
+   {
+    "title": "davidfaure/3d-text-animation-codrops",
+    "url": "https://github.com/davidfaure/3d-text-animation-codrops",
+    "license": "MIT"
+   }
+  ],
+  "from": [
+   "R3-195",
+   "R9-058",
+   "R9-059"
+  ]
+ },
+ "swing": {
+  "aka": [
+   "Text Anchor Swivel",
+   "글자 앵커 회전",
+   "Text Pendulum Swing",
+   "텍스트 진자 흔들림"
+  ],
+  "variants": [
+   "상단 매달림",
+   "하단 피벗",
+   "글자별 진자",
+   "단어별 진자"
+  ],
+  "sources": [
+   {
+    "title": "helpx.adobe.com",
+    "url": "https://helpx.adobe.com/after-effects/desktop/animating-text/text-animation/animating-text.html",
+    "license": "unknown"
+   },
+   {
+    "title": "airbnb/lottie-web",
+    "url": "https://github.com/airbnb/lottie-web",
+    "license": "MIT"
+   },
+   {
+    "title": "animate-css/animate.css",
+    "url": "https://github.com/animate-css/animate.css",
+    "license": "Hippocratic-2.1"
+   },
+   {
+    "title": "jschr/textillate",
+    "url": "https://github.com/jschr/textillate",
+    "license": "MIT"
+   },
+   {
+    "title": "codrops/LetterInteractions",
+    "url": "https://github.com/codrops/LetterInteractions",
+    "license": "unknown"
+   }
+  ],
+  "from": [
+   "R5-072",
+   "R9-024"
+  ]
+ },
+ "flicker-reveal": {
+  "aka": [
+   "Text Opacity Flicker",
+   "텍스트 점멸",
+   "Glyph Flicker Reveal",
+   "글자 깜박임 등장"
+  ],
+  "variants": [
+   "네온 점멸",
+   "글자별 랜덤 점멸",
+   "무작위 점등",
+   "순차 점등",
+   "터미널 문장"
+  ],
+  "sources": [
+   {
+    "title": "helpx.adobe.com",
+    "url": "https://helpx.adobe.com/after-effects/desktop/animating-text/text-animation/animating-text.html",
+    "license": "unknown"
+   },
+   {
+    "title": "airbnb/lottie-web",
+    "url": "https://github.com/airbnb/lottie-web",
+    "license": "MIT"
+   },
+   {
+    "title": "codrops/OnScrollTypographyAnimations",
+    "url": "https://github.com/codrops/OnScrollTypographyAnimations",
+    "license": "MIT"
+   },
+   {
+    "title": "codrops/TextBlockTransitions",
+    "url": "https://github.com/codrops/TextBlockTransitions",
+    "license": "MIT"
+   }
+  ],
+  "from": [
+   "R5-076",
+   "R9-018"
+  ]
+ },
+ "marquee": {
+  "aka": [
+   "News Ticker Crawl",
+   "뉴스 티커 흐름",
+   "Text Marquee Conveyor",
+   "텍스트 마키 컨베이어"
+  ],
+  "variants": [
+   "연속 티커",
+   "항목 간 홀드",
+   "반대 방향 다중 줄",
+   "세로 티커",
+   "이미지 섞인 마키"
+  ],
+  "sources": [
+   {
+    "title": "schoolofmotion.com",
+    "url": "https://schoolofmotion.com/blog/sports-lower-thirds",
+    "license": "unknown"
+   },
+   {
+    "title": "airbnb/lottie-web",
+    "url": "https://github.com/airbnb/lottie-web",
+    "license": "MIT"
+   },
+   {
+    "title": "codrops/CSSMarqueeMenu",
+    "url": "https://github.com/codrops/CSSMarqueeMenu",
+    "license": "MIT"
+   }
+  ],
+  "from": [
+   "R5-098",
+   "R9-040"
+  ]
+ },
+ "count-up": {
+  "aka": [
+   "Interpolated count ticker",
+   "보간 숫자 티커",
+   "Count up",
+   "Number tween",
+   "Large Number Count Up",
+   "대형 숫자 카운트업"
+  ],
+  "variants": [
+   "증가",
+   "감소",
+   "음수 통과",
+   "문장 안 여러 숫자",
+   "백분율",
+   "통화",
+   "소수",
+   "감소 카운트"
+  ],
+  "sources": [
+   {
+    "title": "Flourish",
+    "url": "https://helpcenter.flourish.studio/hc/en-us/articles/8761548263823-Number-ticker-an-overview",
+    "license": "unknown"
+   },
+   {
+    "title": "Flourish",
+    "url": "https://flourish.studio/blog/number-ticker-countdown-templates/",
+    "license": "unknown"
+   },
+   {
+    "title": "apache/echarts",
+    "url": "https://echarts.apache.org/handbook/en/basics/release-note/v5-feature/",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "pqina/flip",
+    "url": "https://github.com/pqina/flip",
+    "license": "MIT"
+   },
+   {
+    "title": "motion-canvas/motion-canvas",
+    "url": "https://github.com/motion-canvas/motion-canvas",
+    "license": "MIT"
+   }
+  ],
+  "from": [
+   "R6-032",
+   "R9-085"
+  ]
+ },
+ "rolling-digits": {
+  "aka": [
+   "Digit reel ticker",
+   "자릿수 롤링 티커",
+   "Odometer",
+   "Rolling numbers",
+   "Odometer Digit Roll",
+   "주행거리계 자리별 숫자 롤",
+   "Per Digit Numeric Morph",
+   "자리별 수치 전환"
+  ],
+  "variants": [
+   "계기판",
+   "슬롯 릴",
+   "자릿수 올림",
+   "자리올림 연쇄",
+   "역방향 감소",
+   "빠른 슬롯 회전",
+   "소수점 고정",
+   "단위 고정",
+   "증감 색 표시"
+  ],
+  "sources": [
+   {
+    "title": "HubSpot/odometer",
+    "url": "https://github.com/HubSpot/odometer",
+    "license": "MIT"
+   },
+   {
+    "title": "pqina/flip",
+    "url": "https://github.com/pqina/flip",
+    "license": "MIT"
+   },
+   {
+    "title": "motion-canvas/motion-canvas",
+    "url": "https://github.com/motion-canvas/motion-canvas",
+    "license": "MIT"
+   }
+  ],
+  "from": [
+   "R6-033",
+   "R9-086",
+   "R9-089"
+  ]
+ },
+ "timeline-scrub": {
+  "aka": [
+   "Timed event captions",
+   "시간별 사건 캡션"
+  ],
+  "variants": [
+   "연도 캡션",
+   "기록 설명",
+   "선두 교체"
+  ],
+  "sources": [
+   {
+    "title": "Flourish",
+    "url": "https://flourish.studio/blog/line-chart-race/",
+    "license": "unknown"
+   },
+   {
+    "title": "Flourish",
+    "url": "https://helpcenter.flourish.studio/hc/en-us/articles/8761554645263-Sports-race-an-overview",
+    "license": "unknown"
+   }
+  ],
+  "from": [
+   "R6-091"
+  ]
+ },
+ "matching-token-transform": {
+  "aka": [
+   "Matched code token move",
+   "대응 코드 토큰 이동",
+   "Magic Move",
+   "Token Transitions",
+   "코드 diff 모프"
+  ],
+  "variants": [
+   "줄 재정렬",
+   "들여쓰기 변경",
+   "함수 추출",
+   "언어 전환"
+  ],
+  "sources": [
+   {
+    "title": "shikijs/shiki-magic-move",
+    "url": "https://github.com/shikijs/shiki-magic-move/blob/main/README.md",
+    "license": "MIT"
+   },
+   {
+    "title": "code-hike/codehike",
+    "url": "https://codehike.org/docs/code/token-transitions",
+    "license": "MIT"
+   },
+   {
+    "title": "motion-canvas/motion-canvas",
+    "url": "https://motioncanvas.io/docs/code/",
+    "license": "MIT"
+   }
+  ],
+  "from": [
+   "R7-088"
+  ]
+ },
+ "code-diff-reveal": {
+  "aka": [
+   "Code edit insertion and removal",
+   "코드 삽입과 삭제",
+   "Code Token Replace and Reflow",
+   "코드 토큰 교체와 재배치"
+  ],
+  "variants": [
+   "삽입",
+   "삭제",
+   "부분 교체",
+   "접두 줄 추가",
+   "여러 토큰 교체"
+  ],
+  "sources": [
+   {
+    "title": "motion-canvas/motion-canvas",
+    "url": "https://motioncanvas.io/docs/code/",
+    "license": "MIT"
+   },
+   {
+    "title": "motion-canvas/motion-canvas",
+    "url": "https://motioncanvas.io/docs/code",
+    "license": "MIT"
+   },
+   {
+    "title": "motion-canvas/motion-canvas",
+    "url": "https://github.com/motion-canvas/motion-canvas",
+    "license": "MIT"
+   }
+  ],
+  "from": [
+   "R7-089",
+   "R9-090"
+  ]
+ },
+ "narration-sync": {
+  "aka": [
+   "Sparse keyword support with narration",
+   "해설과 짧은 핵심어 지원"
+  ],
+  "variants": [
+   "핵심어 라벨",
+   "짧은 요약 배지"
+  ],
+  "sources": [
+   {
+    "title": "Richard E. Mayer / Wiley",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1111/jcal.12197",
+    "license": "unknown"
+   },
+   {
+    "title": "Cambridge University Press",
+    "url": "https://www.cambridge.org/core/books/abs/cambridge-handbook-of-multimedia-learning/principles-for-managing-essential-processing-in-multimedia-learning-segmenting-pretraining-and-modality-principles/DD24C2F48B9B1277CE59F78276110258",
+    "license": "unknown"
+   }
+  ],
+  "from": [
+   "R7-124"
+  ]
+ },
+ "squash-stretch": {
+  "aka": [
+   "Text Squash Stretch",
+   "텍스트 눌림과 늘어남"
+  ],
+  "variants": [
+   "세로 늘림",
+   "가로 압축",
+   "줄 전체 압축",
+   "스크롤 신장"
+  ],
+  "sources": [
+   {
+    "title": "codrops/LetterEffects",
+    "url": "https://github.com/codrops/LetterEffects",
+    "license": "unknown"
+   },
+   {
+    "title": "codrops/OnScrollTypographyAnimations",
+    "url": "https://github.com/codrops/OnScrollTypographyAnimations",
+    "license": "MIT"
+   },
+   {
+    "title": "codrops/OnScrollLetterAnimations",
+    "url": "https://github.com/codrops/OnScrollLetterAnimations",
+    "license": "MIT"
+   },
+   {
+    "title": "codrops/TextBlockTransitions",
+    "url": "https://github.com/codrops/TextBlockTransitions",
+    "license": "MIT"
+   }
+  ],
+  "from": [
+   "R9-021"
+  ]
+ },
+ "path-conveyor": {
+  "aka": [
+   "Text Path Conveyor",
+   "경로 위 텍스트 이동"
+  ],
+  "variants": [
+   "곡선 티커",
+   "파도 경로",
+   "반복 경로"
+  ],
+  "sources": [
+   {
+    "title": "codrops/AnimateSVGTextPath",
+    "url": "https://github.com/codrops/AnimateSVGTextPath",
+    "license": "MIT"
+   },
+   {
+    "title": "MDN",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/textPath",
+    "license": "unknown"
+   }
+  ],
+  "from": [
+   "R9-037"
+  ]
+ },
+ "kinetic-type-sweep": {
+  "aka": [
+   "Kinetic Type Curtain Transition",
+   "키네틱 타이포 커튼 전환"
+  ],
+  "variants": [
+   "역회전 복귀",
+   "대형 문구 덮개"
+  ],
+  "sources": [
+   {
+    "title": "codrops/KineticTypePageTransition",
+    "url": "https://github.com/codrops/KineticTypePageTransition",
+    "license": "MIT"
+   }
+  ],
+  "from": [
+   "R9-057"
+  ]
+ },
+ "glitch-rgb-split": {
+  "aka": [
+   "RGB Text Channel Split",
+   "텍스트 RGB 채널 분리"
+  ],
+  "variants": [
+   "색수차 펄스",
+   "방향성 채널 이동"
+  ],
+  "sources": [
+   {
+    "title": "bradley/Blotter",
+    "url": "https://github.com/bradley/Blotter",
+    "license": "MIT"
+   },
+   {
+    "title": "codrops/TextDistortionEffects",
+    "url": "https://github.com/codrops/TextDistortionEffects",
+    "license": "unknown"
+   }
+  ],
+  "from": [
+   "R9-049"
+  ]
+ },
+ "shatter": {
+  "aka": [
+   "Text Vertex Explosion",
+   "텍스트 정점 폭발"
+  ],
+  "variants": [
+   "국소 파괴",
+   "전체 폭발",
+   "탄성 복원"
+  ],
+  "sources": [
+   {
+    "title": "armdz/tsl_elastic_vertex_destruction",
+    "url": "https://github.com/armdz/tsl_elastic_vertex_destruction",
+    "license": "unknown"
+   }
+  ],
+  "from": [
+   "R9-066"
+  ]
+ },
+ "text-particle-dissolve": {
+  "aka": [
+   "Text Particle Dissolve",
+   "텍스트 입자 소멸"
+  ],
+  "variants": [
+   "바람 소멸",
+   "연소 경계",
+   "역재생 입자 조립"
+  ],
+  "sources": [
+   {
+    "title": "WallabyMonochrome/WebGPU-clair-obscur-gommage-codrops",
+    "url": "https://github.com/WallabyMonochrome/WebGPU-clair-obscur-gommage-codrops",
+    "license": "MIT"
+   }
+  ],
+  "from": [
+   "R9-067"
+  ]
+ },
+ "line-boil": {
+  "aka": [
+   "Distressed Film Credit Jitter",
+   "거친 영화 크레디트 떨림"
+  ],
+  "variants": [
+   "이중 노출",
+   "긁힌 마스크",
+   "불규칙 컷"
+  ],
+  "sources": [
+   {
+    "title": "Art of the Title",
+    "url": "https://www.artofthetitle.com/title/se7en/",
+    "license": "unknown"
+   }
+  ],
+  "from": [
+   "R9-081"
+  ]
+ },
+ "stagger": {
+  "aka": [
+   "Spatial Text Stagger",
+   "공간 순서 텍스트 시차"
+  ],
+  "variants": [
+   "stagger-from-center",
+   "stagger-from-edges"
+  ],
+  "sources": [
+   {
+    "title": "pixel-point/animate-text",
+    "url": "https://github.com/pixel-point/animate-text",
+    "license": "unknown"
+   },
+   {
+    "title": "shshaw/Splitting",
+    "url": "https://github.com/shshaw/Splitting",
+    "license": "MIT"
+   },
+   {
+    "title": "jschr/textillate",
+    "url": "https://github.com/jschr/textillate",
+    "license": "MIT"
+   },
+   {
+    "title": "codrops/OnScrollTypographyAnimations",
+    "url": "https://github.com/codrops/OnScrollTypographyAnimations",
+    "license": "MIT"
+   }
+  ],
+  "from": [
+   "R9-013"
+  ]
+ },
+ "jello": {
+  "aka": [
+   "Text Elastic Skew",
+   "텍스트 탄성 비틀림"
+  ],
+  "variants": [
+   "가로 비틀림",
+   "복합 비틀림"
+  ],
+  "sources": [
+   {
+    "title": "animate-css/animate.css",
+    "url": "https://github.com/animate-css/animate.css",
+    "license": "Hippocratic-2.1"
+   }
+  ],
+  "from": [
+   "R9-092"
+  ]
+ },
+ "focus-handoff": {
+  "aka": [
+   "Code Range Focus",
+   "코드 범위 초점 이동"
+  ],
+  "variants": [
+   "줄 선택",
+   "식 선택",
+   "복수 구간 선택"
+  ],
+  "sources": [
+   {
+    "title": "motion-canvas/motion-canvas",
+    "url": "https://motioncanvas.io/docs/code",
+    "license": "MIT"
+   },
+   {
+    "title": "motion-canvas/motion-canvas",
+    "url": "https://github.com/motion-canvas/motion-canvas",
+    "license": "MIT"
+   }
+  ],
+  "from": [
+   "R9-091"
+  ]
+ },
+ "parallax": {
+  "aka": [
+   "Layered Word Depth Drift",
+   "단어 깊이 이동"
+  ],
+  "variants": [
+   "depth-parallax-words"
+  ],
+  "sources": [
+   {
+    "title": "pixel-point/animate-text",
+    "url": "https://github.com/pixel-point/animate-text",
+    "license": "unknown"
+   }
+  ],
+  "from": [
+   "R9-009"
+  ]
+ },
+ "bulge-lens": {
+  "aka": [
+   "3D Text Bulge",
+   "3D 텍스트 부풀림"
+  ],
+  "variants": [
+   "이동하는 볼록점",
+   "전체 부풀림"
+  ],
+  "sources": [
+   {
+    "title": "romanjeanelie/bulge-text-effect-codrops",
+    "url": "https://github.com/romanjeanelie/bulge-text-effect-codrops",
+    "license": "MIT"
+   }
+  ],
+  "from": [
+   "R9-064"
+  ]
+ },
+ "fade": {
+  "aka": [
+   "Text Scale Fade",
+   "텍스트 스케일 페이드",
+   "Micro Scale Fade",
+   "Scale Down Fade"
+  ],
+  "variants": [
+   "micro-scale-fade",
+   "scale-down-fade"
+  ],
+  "sources": [
+   {
+    "title": "pixel-point/animate-text",
+    "url": "https://github.com/pixel-point/animate-text",
+    "license": "unknown"
+   },
+   {
+    "title": "jschr/textillate",
+    "url": "https://github.com/jschr/textillate",
+    "license": "MIT"
+   }
+  ],
+  "from": [
+   "R9-004"
+  ]
+ },
+ "spring-overshoot": {
+  "aka": [
+   "Spring Text Pop",
+   "스프링 텍스트 팝",
+   "Impact Number Reveal"
+  ],
+  "variants": [
+   "spring-scale-in",
+   "퍼센트 성과",
+   "순위",
+   "배수 강조",
+   "충격 대형 숫자 등장"
+  ],
+  "sources": [
+   {
+    "title": "pixel-point/animate-text",
+    "url": "https://github.com/pixel-point/animate-text",
+    "license": "unknown"
+   },
+   {
+    "title": "animate-css/animate.css",
+    "url": "https://github.com/animate-css/animate.css",
+    "license": "Hippocratic-2.1"
+   },
+   {
+    "title": "jschr/textillate",
+    "url": "https://github.com/jschr/textillate",
+    "license": "MIT"
+   },
+   {
+    "title": "motion-canvas/motion-canvas",
+    "url": "https://github.com/motion-canvas/motion-canvas",
+    "license": "MIT"
+   }
+  ],
+  "from": [
+   "R9-005"
+  ]
+ },
+ "slide": {
+  "aka": [
+   "Text Group Slide",
+   "텍스트 묶음 슬라이드",
+   "Line-by-Line Slide",
+   "Short Slide Right",
+   "Short Slide Down"
+  ],
+  "variants": [
+   "line-by-line-slide",
+   "short-slide-right",
+   "short-slide-down"
+  ],
+  "sources": [
+   {
+    "title": "pixel-point/animate-text",
+    "url": "https://github.com/pixel-point/animate-text",
+    "license": "unknown"
+   },
+   {
+    "title": "codrops/TextBlockTransitions",
+    "url": "https://github.com/codrops/TextBlockTransitions",
+    "license": "MIT"
+   }
+  ],
+  "from": [
+   "R9-007"
+  ]
+ },
+ "hinge-drop": {
+  "aka": [
+   "Text Hinge Drop",
+   "텍스트 경첩 낙하"
+  ],
+  "variants": [
+   "단어 낙하",
+   "제목 낙하"
+  ],
+  "sources": [
+   {
+    "title": "jschr/textillate",
+    "url": "https://github.com/jschr/textillate",
+    "license": "MIT"
+   },
+   {
+    "title": "animate-css/animate.css",
+    "url": "https://github.com/animate-css/animate.css",
+    "license": "Hippocratic-2.1"
+   }
+  ],
+  "from": [
+   "R9-023"
+  ]
+ },
+ "velocity-skew": {
+  "aka": [
+   "Text Speed Skew Arrival",
+   "텍스트 속도 기울임 등장"
+  ],
+  "variants": [
+   "좌측 진입",
+   "우측 진입"
+  ],
+  "sources": [
+   {
+    "title": "animate-css/animate.css",
+    "url": "https://github.com/animate-css/animate.css",
+    "license": "Hippocratic-2.1"
+   }
+  ],
+  "from": [
+   "R9-093"
+  ]
+ }
+}

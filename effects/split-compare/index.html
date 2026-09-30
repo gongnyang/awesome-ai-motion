@@ -1,0 +1,12 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>비교 분할 · Split Compare</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>
+.layer{position:absolute;inset:0}.big{position:absolute;left:314px;top:120px;width:540px;text-align:center;font-size:230px}.text{position:absolute;left:235px;top:386px;width:698px;text-align:center;font-family:var(--serif);font-size:46px;font-weight:700;white-space:nowrap}.before .big,.before .text{color:var(--ink3);filter:blur(3px);opacity:.55}.before{clip-path:inset(0% 50% 0% 0%)}.after{clip-path:inset(0% 0% 0% 50%)}.divider{position:absolute;left:583px;top:90px;width:2px;height:410px;background:var(--ink)}.handle{position:absolute;left:-8px;top:193px;width:18px;height:24px;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);background:var(--paper)}.tag{position:absolute;top:60px;font-size:14px}.foot{position:absolute;top:528px}.baseline{position:absolute;left:120px;right:120px;top:469px;height:1px;background:var(--rule)}
+</style></head><body data-no="366" data-cat="원리 도해 · EXPLAINER" data-ko="비교 분할" data-en="Split Compare" data-meta="clip-path · 분할 50% → 35% → 65% → 50%" data-dur="3"><main class="scene"><div class="baseline"></div><div class="layer before"><div class="num big">939</div><div class="text">AI는 다음 말을 고른다</div></div><div class="layer after"><div class="num big">939</div><div class="text">AI는 <span class="v">다음 말</span>을 고른다</div></div><div class="lab tag" style="left:120px">전 · 흐림</div><div class="lab tag" style="right:120px">후 · 선명</div><div class="divider"><div class="handle"></div></div><div class="lab foot" style="left:120px">동일 대상 · 동일 좌표</div></main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+const stops=[35,65,50], starts=[.3,.9,1.55], durations=[.6,.65,.65];
+stops.forEach((p,i)=>{ const vars={duration:durations[i],ease:'power2.inOut'};
+ tl.to('.before',{clipPath:`inset(0% ${100-p}% 0% 0%)`,...vars},starts[i]);
+ tl.to('.after',{clipPath:`inset(0% 0% 0% ${p}%)`,...vars},starts[i]);
+ tl.to('.divider',{x:1168*(p/100-.5),...vars},starts[i]);
+});
+Motion.ready();
+</script></body></html>

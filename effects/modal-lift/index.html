@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=1280"><title>모달 등장 · Modal Lift</title><link rel="stylesheet" href="../../lib/stage.css"><style>
+.kicker{position:absolute;left:48px;top:30px}.headline{position:absolute;left:48px;top:58px;font-size:42px}.hint{position:absolute;left:48px;bottom:22px;font-size:16px;color:var(--ink2)}
+.paper{background:#FBF8F2;border:1px solid var(--rule)}.row{border-bottom:1px solid var(--rule);padding:22px 26px;font-size:24px}.badge{font-family:var(--mono);font-size:14px;color:var(--ink2)}
+.pointer{position:absolute;width:28px;height:35px;z-index:12}.button{display:inline-block;background:var(--ink);color:var(--paper);padding:14px 28px;font-size:20px}
+
+.workspace{position:absolute;left:110px;top:142px;width:950px;height:345px;padding:30px}.mockline{height:12px;background:var(--rule);margin:23px 0;width:65%}.open{position:absolute;right:35px;bottom:30px}.backdrop{position:absolute;inset:0;background:var(--ink);opacity:0}.modal{position:absolute;left:344px;top:130px;width:480px;height:306px;padding:34px;background:var(--paper);border:1px solid var(--ink)}.modal h2{font-family:var(--serif);font-size:36px;margin:0 0 24px}.modal p{font-size:23px;line-height:1.6}.modal .button{float:right}.pointer{left:945px;top:450px}
+</style></head>
+<body data-no="346" data-cat="UI 시연 · UI DEMO" data-ko="모달 등장" data-en="Modal Lift" data-meta="상승 32px · 배경 암전 45%" data-dur="4" data-poster="3.7">
+<main class="scene"><div class="kicker lab">05 / 확인</div><div class="headline t-l">중요한 결정에 집중하다</div><div class="hint">대화상자가 떠오르고 뒤 화면이 어두워진다</div><div class="workspace paper"><span class="lab">설명 원고</span><div class="mockline"></div><div class="mockline" style="width:80%"></div><div class="mockline" style="width:55%"></div><span class="button open">저장하기</span></div><svg class="pointer" viewBox="0 0 28 35"><path d="M2 2L3 28L10 21L16 33L21 30L15 19L25 18Z" fill="var(--ink)" stroke="var(--paper)" stroke-width="2"/></svg><div class="backdrop"></div><div class="modal"><span class="lab">최종 확인</span><h2>원고를 저장할까요?</h2><p>입력에서 출력까지<br>모든 단계가 준비되었습니다</p><span class="button">저장</span></div></main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+
+tl.fromTo('.modal',{opacity:0,y:32,scale:.96},{opacity:1,y:0,scale:1,duration:.4},.8);
+tl.to('.backdrop',{opacity:.45,duration:.25},.8);
+tl.to('.pointer',{opacity:0,duration:.2},.8);
+
+Motion.ready();
+</script></body></html>

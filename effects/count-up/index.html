@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>카운트업 · Count-up</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>.value{position:absolute;left:240px;top:126px;width:688px;text-align:center;font-size:230px;font-variant-numeric:tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;color:var(--verm)}.unit{position:absolute;left:240px;top:376px;width:688px;text-align:center;opacity:0}.baseline{position:absolute;left:240px;top:442px;width:688px}</style></head>
+<body data-no="242" data-cat="데이터 · DATA" data-ko="카운트업" data-en="Count-up" data-meta="power2.out · 0 → 939" data-dur="3"><main class="scene"><div class="value num" id="value">0</div><div class="unit t-m" id="unit">토큰</div><div class="baseline hair"></div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+const counter = {value:0};
+tl.to(counter, {value:939, duration:1.65, ease:'power2.out', onUpdate:()=>{document.querySelector('#value').textContent=Math.round(counter.value);}}, .3);
+tl.fromTo('#unit', {y:12,opacity:0}, {y:0,opacity:1,duration:.3}, 2.02);
+Motion.ready();
+</script></body></html>

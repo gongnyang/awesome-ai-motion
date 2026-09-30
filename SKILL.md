@@ -1,0 +1,105 @@
+---
+name: awesome-ai-motion
+description: 영상·스크롤덱·웹 UI 장면의 목적에 맞는 모션을 고르는 도감 스킬. 효과 카드의 파라미터와 프롬프트를 조회하고, 레시피의 순서와 타이밍을 적용하며, HTML 예제의 소재를 바꿔 클립을 렌더한다. 장면 효과 추천, 전환 비교, 교육·설명 영상 훅 설계에 사용한다. Select motion for video, scroll decks and web UI by scene intent. Look up effect parameters and prompts, follow recipe timing, and render HTML examples with replacement content. Use for effect selection, transition comparisons and educational hooks.
+---
+
+# awesome-ai-motion
+
+효과 637개 · 클립 128개 · 레시피 11개 · 루트 7개
+637 effects · 128 clips · 11 recipes · 7 routes
+
+목적에 맞는 움직임을 고르고 카드의 기본값으로 시작한다. 상세 자료는 필요한 파일만 읽는다.
+Select motion by intent, start with card defaults, and load only the references needed for the scene.
+
+## 작업 순서 · Workflow
+
+1. 장면의 목적과 매체를 한 문장으로 정한다. 무엇을 알게 하거나 보게 할지 먼저 정한다.
+   State the scene intent and medium in one sentence before choosing motion.
+2. [결정표](references/decision-tables.md)에서 후보 2~3개를 고른다. 교육 영상 첫 5초는 훅 행을 읽는다.
+   Choose two or three candidates from the decision tables; use the first five seconds hook row for education.
+3. `effects/<slug>/README.md`의 전달 효과, 기본 파라미터, 과용 주의를 읽고 클립을 비교한다.
+   Read the effect card for meaning, defaults and limits, then compare clips.
+4. 조합은 [레시피](references/recipes.md), 산출물별 설계는 [루트](references/routes.md)를 필요할 때 읽는다.
+   Read recipes for timing combinations or routes for deliverable design when relevant.
+5. 아래 절차로 소재만 바꾸고 렌더한다. 시작, 주 동작, 완성 상태를 확인해 의도와 맞는지 검증한다.
+   Replace content and render as below; inspect entry, main action and the completed state against the intent.
+
+## 필요한 자료만 읽기 · Read on demand
+
+[정본 데이터](index.json)는 효과·레시피·루트·용어의 기준이다. 문서와 사이트는 여기서 생성된다.
+[index.json](index.json) is the source of truth; scripts generate the documentation and site from it.
+
+[결정표](references/decision-tables.md)는 목적·매체·동작 분류로 찾을 때 읽는다.
+Read [decision tables](references/decision-tables.md) to filter by intent, medium or motion family.
+
+[레시피 목록](references/recipes.md)은 조합을, [루트 목록](references/routes.md)은 산출물별 문서를 안내한다.
+[Recipes](references/recipes.md) list combinations; [routes](references/routes.md) link deliverable guidance.
+
+[클립 목록](references/clips.md)은 렌더 완료 예제만 비교할 때, [카탈로그](references/catalog.md)는 상세 검색 때 읽는다.
+Read [clips](references/clips.md) for rendered examples or the [catalog](references/catalog.md) for detailed lookup.
+
+## 결정론 조회 · Deterministic lookup
+
+레포 루트에서 실행한다. 목적 값은 정본의 한국어 값이며, 영문 카드 필드도 함께 조회할 수 있다.
+Run from the repository root. Purpose values use Korean source labels; cards also expose English fields.
+
+```bash
+# Rendered effects for emphasis / 강조
+jq -r '.effects[] | select(.render == "done" and (.purposes | index("강조"))) | .slug' index.json
+# Parameters and prompts for one effect / 효과 하나의 기본값과 프롬프트
+jq '.effects[] | select(.slug == "mask-reveal") | {params, ease, prompts, promptsEn}' index.json
+```
+
+`render: "done"`은 클립 완료, `"planned"`는 카드만 제공함을 뜻한다. HTML 유무는 별도로 확인한다.
+`done` means clips exist; `planned` provides a card. Check HTML availability before copying a template.
+
+## 소재만 바꿔 쓰기 · Replace content and render
+
+1. 선택한 `index.html`을 작업 폴더로 복사한다. HTML의 문구·이미지·데이터를 교체하고 타임라인은 유지한다.
+   Copy the chosen HTML into a working folder, replace text, images or data, and keep its timeline.
+2. `--text`는 지원되는 주 문구를 교체한다(`\n`으로 줄바꿈). 여러 문구나 이미지 교체는 복사한 HTML에서 편집한다.
+   `--text` replaces supported primary text (`\n` breaks lines); edit the copied HTML for multiple labels or images.
+3. 임의 경로의 HTML이나 폴더를 입력하고 `--out` 폴더에 결과 파일이 바로 저장된다(하위 폴더 없음). `--embed`는 예제 틀을 숨긴다.
+   Pass an arbitrary HTML or folder path; `--out` writes files directly into that directory and `--embed` hides the reference frame.
+
+레포 루트에서 다음 예를 실행한다. 경로와 문구는 작업에 맞게 바꾼다.
+Run this example from the repository root, adjusting paths and text for your task.
+
+```bash
+mkdir -p /tmp/my-motion
+cp effects/mask-reveal/index.html /tmp/my-motion/index.html
+node scripts/render.mjs /tmp/my-motion/index.html \
+  --out /tmp/my-motion-output --embed --text "LLM은 다음 토큰을 고른다"
+node scripts/render.mjs --help
+```
+
+`clip.mp4`, `preview.gif`, `poster.jpg`를 확인한다. `--out` 없이 렌더하면 입력 폴더의 결과물을 덮어쓴다.
+Inspect the MP4, GIF and poster. Without `--out`, rendering overwrites outputs in the input folder.
+원본 예제를 보존하려면 복사본과 별도 출력 폴더를 사용한다. 외부 복사본의 공용 `lib` 경로는 렌더러가 해결한다.
+Use a copy and separate output directory to preserve examples; the renderer resolves shared `lib` paths for external copies.
+
+## 공통 규칙 · Shared rules
+
+1. 한 장면 한 초점, 주 동작 하나와 보조 1~2개. One focus and one main action with one or two supporting actions.
+2. 카드의 시간·이징 기본값부터 조정한다. Start from the card duration and easing defaults.
+3. 진입·홀드·퇴장 중 홀드를 확보해 완성 상태가 읽히게 한다. Hold the completed state long enough to read.
+4. `transform`·`opacity` 중심으로 움직이고 레이아웃 tween을 피한다. Prefer transforms and opacity over layout tweens.
+5. 시간은 seek 가능한 타임라인에 두고 난수는 시드를 고정한다. Use a seekable timeline and seeded randomness.
+
+## 렌더 환경과 경계 · Runtime and boundaries
+
+렌더에는 Node.js 20+, ffmpeg, Playwright와 Chromium이 필요하다. 전역 Playwright가 있으면 `npm install`은 선택이다.
+Rendering requires Node.js 20+, ffmpeg, Playwright and Chromium; `npm install` is optional with global Playwright.
+
+```bash
+npm install
+npx playwright install chromium
+```
+
+이 스킬은 모션 선택과 짧은 예제 렌더를 맡는다. 영상 전체 제작은 HyperFrames, 브리프 기반 제작은 ReelForge를 사용한다.
+This skill selects motion and renders short examples; use HyperFrames for full videos or ReelForge for brief driven production.
+스크롤덱 제작은 Scrolline Deck에서 처리한다. 초 단위 타이밍은 장면 길이로 나눠 진행률로 옮긴다.
+Use Scrolline Deck for scroll decks, converting seconds to progress by dividing by scene duration.
+
+정본을 수정한 뒤 `node scripts/build.mjs`로 재생성하고 `node scripts/check.mjs`로 검사한다.
+After changing source data, regenerate with `node scripts/build.mjs` and validate with `node scripts/check.mjs`.

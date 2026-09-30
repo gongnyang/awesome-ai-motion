@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>3D 카드 플립 스택 · 3D Card Flip Stack</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.camera{position:absolute;inset:0;perspective:1400px;perspective-origin:50% 50%}.stack{position:absolute;inset:0;transform-style:preserve-3d}
+.card{position:absolute;left:194px;top:145px;width:780px;height:350px;background:var(--paper2);border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);transform-origin:50% 30%;backface-visibility:hidden}
+.label{position:absolute;left:36px;top:26px}.number{position:absolute;left:34px;top:91px;font-size:156px}.sentence{position:absolute;left:236px;top:141px;font-family:var(--serif);font-weight:700;font-size:34px;white-space:nowrap;letter-spacing:-.03em}
+.line{position:absolute;left:36px;right:36px;top:265px}.bottom{position:absolute;left:36px;top:291px}#card4 .number{color:var(--verm)}.tag{position:absolute;left:35px;top:25px}.note{position:absolute;right:35px;bottom:30px;opacity:0}
+</style></head>
+<body data-no="558" data-cat="3D·깊이 · 3D &amp; DEPTH" data-ko="3D 카드 플립 스택" data-en="3D Card Flip Stack" data-meta="1400px · rotateX · +0.18s" data-dur="4" data-poster="3.7">
+<main class="scene"><div class="camera"><div class="stack"><article class="card" id="card0"><div class="lab label">NEXT TOKEN / 01</div><div class="num number">01</div><div class="sentence">AI는 앞의 말을 읽는다</div><div class="hair line"></div><div class="lab bottom">입력 → 모델</div></article><article class="card" id="card1"><div class="lab label">NEXT TOKEN / 02</div><div class="num number">02</div><div class="sentence">올 수 있는 말을 찾는다</div><div class="hair line"></div><div class="lab bottom">후보 단어</div></article><article class="card" id="card2"><div class="lab label">NEXT TOKEN / 03</div><div class="num number">03</div><div class="sentence">말마다 확률을 매긴다</div><div class="hair line"></div><div class="lab bottom">30번 중 18번</div></article><article class="card" id="card3"><div class="lab label">NEXT TOKEN / 04</div><div class="num number">04</div><div class="sentence">다음 말을 하나 고른다</div><div class="hair line"></div><div class="lab bottom">고른다 62%</div></article><article class="card" id="card4"><div class="lab label">NEXT TOKEN / 05</div><div class="num number">05</div><div class="sentence">AI는 다음 말을 고른다</div><div class="hair line"></div><div class="lab bottom">입력 → 모델 → 출력</div></article></div></div><div class="lab tag">FIVE SHEETS / ONE SEQUENCE</div><div class="lab note">05 · FRONT / +0.18s</div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>const tl = Motion.timeline();
+
+for(let i=0;i<5;i++){
+  tl.set('#card'+i,{z:-i*65,y:-i*22,rotationX:-i*5},0);
+}
+for(let i=0;i<4;i++){
+  const start=.38+i*.18;
+  tl.to('#card'+i,{rotationX:-115,y:-145,z:90,duration:.65,ease:'power2.inOut'},start);
+  tl.to('#card'+i,{rotationX:-22,y:-115-i*16,z:-420-i*55,duration:.75,ease:'power2.out'},start+.65);
+}
+tl.fromTo('#card4',{rotationX:-42},{rotationX:0,y:0,z:0,duration:1.1,ease:'power3.out'},1.1);
+tl.to('.stack',{x:0,rotationY:-5,duration:1.4,ease:'sine.inOut'},.3);
+tl.to('.stack',{rotationY:0,duration:.65,ease:'sine.inOut'},2.4);
+tl.to('.note',{opacity:1,duration:.2},3.1);
+
+Motion.ready();</script></body></html>

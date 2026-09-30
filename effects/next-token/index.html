@@ -1,0 +1,13 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>다음 말 고르기 · Next-token Pick</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>
+.sentence{position:absolute;left:155px;top:140px;font-family:var(--serif);font-size:56px;font-weight:700;white-space:nowrap}.blank{position:absolute;left:548px;top:208px;width:210px;height:2px;background:var(--rule)}.choice{position:absolute;top:435px;font-family:var(--serif);font-size:44px;font-weight:700;white-space:nowrap;transform-origin:0 0}.bar{position:absolute;top:265px;height:135px;width:32px;background:var(--ink);transform-origin:50% 100%;transform:scaleY(0)}.prob{position:absolute;top:408px;font-size:14px;opacity:0}.base{position:absolute;left:180px;top:400px;width:840px;height:1px;background:var(--rule)}.label{position:absolute;left:155px;top:70px}.rest{position:absolute;left:940px;top:525px}
+</style></head><body data-no="364" data-cat="원리 도해 · EXPLAINER" data-ko="다음 말 고르기" data-en="Next-token Pick" data-meta="62% · 후보 4개 · power3.inOut" data-dur="3"><main class="scene"><div class="lab label">확률 → 선택 → 문장 완성</div><div class="sentence">AI는 다음 말을</div><div class="blank"></div><div class="base"></div><div class="bar" style="left:270px"></div><div class="bar" style="left:490px"></div><div class="bar" style="left:710px"></div><div class="bar" style="left:930px"></div><div class="choice" id="pick" style="left:220px">고른다</div><div class="choice other" style="left:440px">정한다</div><div class="choice other" style="left:660px">찾는다</div><div class="choice other" style="left:880px">만든다</div><div class="lab prob" style="left:265px">62%</div><div class="lab prob" style="left:485px">21%</div><div class="lab prob" style="left:705px">9%</div><div class="lab prob" style="left:925px">5%</div><div class="lab rest">기타 3%</div></main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+const bars=document.querySelectorAll('.bar');
+[1,21/62,9/62,5/62].forEach((v,i)=>tl.to(bars[i],{scaleY:v,duration:.8,ease:'power2.out'},.3+i*.08));
+tl.to('.prob',{opacity:1,duration:.25,stagger:.08},.65);
+tl.to('#pick',{color:'var(--verm)',duration:.25},1.35);
+tl.to('#pick',{x:328,y:-295,scale:56/44,duration:.7,ease:'power3.inOut'},1.6);
+tl.to('.other',{opacity:.3,duration:.3},1.6);
+tl.to('.blank',{opacity:0,duration:.25},2.05);
+Motion.ready();
+</script></body></html>

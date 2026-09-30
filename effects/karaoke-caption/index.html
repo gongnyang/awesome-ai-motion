@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>카라오케 자막 · Karaoke Caption</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>.headline{position:absolute;left:110px;top:95px;font-size:56px}.diagram{position:absolute;left:110px;right:110px;top:240px;display:flex;align-items:center;gap:30px}.diagram i{height:1px;background:var(--rule);flex:1}.diagram .dot{width:38px;height:38px}.rail{position:absolute;left:70px;right:70px;bottom:48px;display:flex;align-items:center;justify-content:center;gap:18px;font-family:var(--sans);font-weight:700;font-size:48px}.rail span{display:block;white-space:nowrap}</style></head>
+<body data-no="629" data-cat="자막·하단 자막 · CAPTIONS" data-ko="카라오케 자막" data-en="Karaoke Caption" data-meta="단어별 고정 큐 · 주홍 강조 0.15초" data-dur="4.5" data-poster="3.35">
+<main class="scene"><div class="diagram"><span class="lab">입력</span><i></i><span class="lab">모델</span><i></i><span class="dot v"></span></div><div class="t-l headline">AI는 다음 말을 고른다</div><div class="rail"><span>AI는</span><span>앞의</span><span>말을</span><span>읽고</span><span>고른다</span></div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>const tl = Motion.timeline();
+// 발화 리듬을 시연하는 고정 큐, 외부 음성 없음.
+const palette=getComputedStyle(document.documentElement);
+const ink=palette.getPropertyValue('--ink').trim(), verm=palette.getPropertyValue('--verm').trim();
+tl.set('.rail span',{color:ink},0);
+const cues=[{start:.35,end:.82},{start:.82,end:1.36},{start:1.36,end:1.94},{start:1.94,end:2.55},{start:2.55,end:3.65}];
+[...document.querySelectorAll('.rail span')].forEach((el,i)=>{tl.to(el,{color:verm,duration:.15,ease:'power1.out'},cues[i].start);tl.to(el,{color:ink,duration:.15,ease:'power1.out'},cues[i].end);});
+Motion.ready();</script></body></html>

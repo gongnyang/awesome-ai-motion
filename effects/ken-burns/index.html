@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>켄 번스 · Ken Burns</title>
+<meta name="viewport" content="width=1280">
+<link rel="stylesheet" href="../../lib/stage.css">
+<style>#plate{position:absolute;left:145px;top:70px;width:860px;height:430px;transform-origin:50% 50%;border-top:2px solid var(--ink);border-bottom:1px solid var(--rule)}.title{position:absolute;left:20px;top:20px}.hero{position:absolute;left:20px;top:115px;font-size:190px}.diagram{position:absolute;left:440px;top:130px;width:375px;height:140px}.diagram .dot{position:absolute;top:38px;width:46px;height:46px}.diagram .hair{position:absolute;left:0;top:60px;width:355px}.step{position:absolute;top:102px}.foot{position:absolute;left:20px;bottom:25px}</style></head>
+<body data-no="218" data-cat="가상 카메라 · CAMERA" data-ko="켄 번스" data-en="Ken Burns" data-meta="none · 1.00 → 1.12 · 대각 이동" data-dur="3">
+<main class="scene"><div id="plate"><div class="title lab">도판 939 · 다음 말의 선택</div><div class="hero num">939</div><div class="diagram"><div class="hair"></div><div class="dot" style="left:0"></div><div class="dot" style="left:154px"></div><div class="dot v" style="left:309px"></div><span class="step lab" style="left:0">입력</span><span class="step lab" style="left:154px">모델</span><span class="step lab" style="left:309px">출력</span></div><div class="foot t-m">AI는 다음 말을 고른다</div></div></main>
+<script src="../../lib/gsap.min.js"></script>
+<script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+tl.to('#plate', {scale: 1.12, x: -28, y: -18, duration: 2.2, ease: 'none'}, .3);
+Motion.ready();
+</script></body></html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>강조점 순회 · Focus Handoff</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.kicker{position:absolute;left:64px;top:40px}.caption{position:absolute;left:64px;bottom:38px;font-size:18px;color:var(--ink2)}
+svg.canvas{position:absolute;inset:0;width:1168px;height:580px}.note{position:absolute;right:64px;bottom:40px}
+
+.item{position:absolute;top:190px;width:240px;text-align:center;color:var(--ink3)}.item .dot{margin:0 auto 30px;background:var(--ink3)}.item .t-m{font-size:42px}.a{left:124px}.b{left:464px}.c{left:804px}.connector{position:absolute;top:218px;left:300px;width:570px;height:1px;background:var(--rule)}
+</style></head>
+<body data-no="079" data-cat="강조·주의 · EMPHASIS" data-ko="강조점 순회" data-en="Focus Handoff" data-meta="한 번에 한 항목 · 초점 전달" data-dur="4" data-poster="3.7">
+<main class="scene"><span class="lab kicker">입력에서 출력까지</span><div class="connector"></div><div class="item a"><div class="dot"></div><div class="t-m">입력</div></div><div class="item b"><div class="dot"></div><div class="t-m">모델</div></div><div class="item c"><div class="dot"></div><div class="t-m">출력</div></div><div class="caption">배치는 유지하고 강조점만 순서대로 옮긴다</div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+tl.set('.item',{color:'var(--ink3)',scale:1},0);
+tl.set('.item .dot',{backgroundColor:'var(--ink3)'},0);
+const items=[...document.querySelectorAll('.item')];
+items.forEach((el,i)=>{const t=.4+i*.95; tl.to(el,{color:'var(--ink)',scale:1.04,duration:.15,ease:'power2.inOut'},t); tl.to(el.querySelector('.dot'),{backgroundColor:'var(--verm)',duration:.15},t); if(i<2){tl.to(el,{color:'var(--ink3)',scale:1,duration:.15},t+.95);tl.to(el.querySelector('.dot'),{backgroundColor:'var(--ink3)',duration:.15},t+.95);} });
+Motion.ready();
+</script></body></html>

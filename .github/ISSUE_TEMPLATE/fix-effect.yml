@@ -1,0 +1,15 @@
+name: Fix an effect · 효과 고치기
+description: A clip, parameter or prompt looks wrong · 클립·파라미터·프롬프트가 이상할 때
+labels: [fix]
+body:
+  - type: input
+    id: slug
+    attributes: { label: "Effect slug", placeholder: "overlapping-action" }
+    validations: { required: true }
+  - type: textarea
+    id: problem
+    attributes: { label: "What is wrong · 무엇이 문제인가", description: "Attach a contact sheet or timestamp if you can" }
+    validations: { required: true }
+  - type: textarea
+    id: proposal
+    attributes: { label: "Suggested fix · 제안" }

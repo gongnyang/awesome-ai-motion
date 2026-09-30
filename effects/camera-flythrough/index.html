@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>카메라 플라이스루 · Camera Fly-through</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>.scene{perspective:1200px;perspective-origin:50% 50%}#world{position:absolute;inset:0;transform-style:preserve-3d}.plane{position:absolute;inset:0;transform-style:preserve-3d;backface-visibility:hidden}.plane .lab{position:absolute;left:100px;top:60px}.plane .num{position:absolute;left:160px;top:100px;font-size:280px}.plane .t-xl{position:absolute;left:180px;top:350px;font-size:80px;white-space:nowrap}.plane .hair{position:absolute;left:100px;right:100px;top:120px}.plane .base{position:absolute;left:100px;right:100px;bottom:70px;border-top:1px solid var(--rule)}.plane .foot{position:absolute;left:100px;bottom:40px}.tunnel{position:absolute;inset:0;width:1168px;height:580px;opacity:.6}.final .t-xl{left:210px;top:210px;font-size:124px;color:var(--verm)}</style></head>
+<body data-no="557" data-cat="3D·깊이 · 3D &amp; DEPTH" data-ko="카메라 플라이스루" data-en="Camera Fly-through" data-meta="perspective 1200px · Z +5,700px" data-dur="4" data-poster="3.7"><main class="scene"><svg class="tunnel" viewBox="0 0 1168 580"><g stroke="var(--rule)" fill="none"><path d="M0 0L584 290L1168 0M0 580L584 290L1168 580M0 290H1168"/></g></svg><div id="world"><section class="plane "><div class="lab">01 / DEPTH 0px</div><div class="hair"></div><div class="num">939</div><div class="base"></div><div class="lab foot">입력 → 모델 → 출력</div></section><section class="plane "><div class="lab">02 / DEPTH 900px</div><div class="hair"></div><div class="t-xl">앞의 말을 읽는다</div><div class="base"></div><div class="lab foot">입력 → 모델 → 출력</div></section><section class="plane "><div class="lab">03 / DEPTH 1,800px</div><div class="hair"></div><div class="num">30</div><div class="base"></div><div class="lab foot">입력 → 모델 → 출력</div></section><section class="plane "><div class="lab">04 / DEPTH 2,700px</div><div class="hair"></div><div class="t-xl">확률을 매긴다</div><div class="base"></div><div class="lab foot">입력 → 모델 → 출력</div></section><section class="plane "><div class="lab">05 / DEPTH 3,600px</div><div class="hair"></div><div class="num">62%</div><div class="base"></div><div class="lab foot">입력 → 모델 → 출력</div></section><section class="plane "><div class="lab">06 / DEPTH 4,500px</div><div class="hair"></div><div class="t-xl">하나를 고른다</div><div class="base"></div><div class="lab foot">입력 → 모델 → 출력</div></section><section class="plane final"><div class="lab">07 / DEPTH 5,400px</div><div class="hair"></div><div class="t-xl">다음 말</div><div class="base"></div><div class="lab foot">입력 → 모델 → 출력</div></section></div></main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+const planes = [...document.querySelectorAll('.plane')];
+planes.forEach((el,i) => gsap.set(el,{z:-i*900}));
+const camera = {z:-300};
+function draw(){
+  document.querySelector('#world').style.transform = `translateZ(${camera.z}px)`;
+  planes.forEach((el,i) => {
+    const depth = camera.z-i*900;
+    el.style.opacity = Math.max(0, Math.min(1,(depth+1000)/600,(650-depth)/550));
+  });
+}
+draw();
+tl.to(camera,{z:5400,duration:3.3,ease:'sine.inOut',onUpdate:draw},.2);
+Motion.ready();
+</script></body></html>

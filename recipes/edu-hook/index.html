@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>교육 첫 5초 훅 · Educational Opening Hook</title>
+<link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.kicker{position:absolute;left:84px;top:35px}
+.question{position:absolute;left:84px;right:60px;top:86px}
+.window{height:86px;overflow:hidden}
+.line{display:block;font-size:64px;line-height:86px;white-space:nowrap}
+.focus{display:inline-block;transform-origin:50% 65%}
+.question-en{position:absolute;left:84px;top:276px;font-size:23px;color:var(--ink2)}
+.route{position:absolute;left:84px;right:84px;top:350px;display:flex;gap:28px;align-items:center}
+.step{display:flex;align-items:baseline;gap:12px;font-size:30px}
+.step .num{font-size:30px;color:var(--ink3)}
+.step .en{font-size:15px;color:var(--ink2)}
+.arrow{font-size:24px;color:var(--ink3)}
+.promise{position:absolute;left:84px;top:441px;font-size:30px;line-height:1.4}
+.key{position:relative;display:inline-block}
+.underline{position:absolute;left:0;bottom:-10px;width:100%;height:20px;overflow:visible}
+.underline path{fill:none;stroke:var(--verm);stroke-width:4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}
+.promise-en{position:absolute;left:84px;top:508px;font-size:20px;color:var(--ink2)}
+</style>
+</head>
+<body data-kind="recipe" data-size="1280x720" data-no="R11" data-cat="레시피 · 교육·설명 영상의 가로형 첫 5초" data-ko="교육 첫 5초 훅" data-en="Educational Opening Hook" data-meta="질문 → 핵심어 → 학습 경로 → 약속" data-dur="5" data-poster="4.7">
+<main class="scene" aria-label="AI는 왜 다음 말을 고를까? 입력, 후보 확률, 선택으로 예측의 원리를 이해합니다.">
+<div class="kicker lab">LEARN / 01 · A QUESTION WORTH ANSWERING</div>
+<div class="question t-l">
+  <div class="window"><span class="line">AI는 왜</span></div>
+  <div class="window"><span class="line"><span class="focus">다음 말</span>을 고를까?</span></div>
+</div>
+<div class="question-en" lang="en">Why does AI predict the next word?</div>
+<div class="route">
+  <div class="step"><span class="num">01</span><span>입력 <span class="en" lang="en">Input</span></span></div>
+  <span class="arrow" aria-hidden="true">→</span>
+  <div class="step"><span class="num">02</span><span>후보 확률 <span class="en" lang="en">Probabilities</span></span></div>
+  <span class="arrow" aria-hidden="true">→</span>
+  <div class="step"><span class="num">03</span><span>선택 <span class="en" lang="en">Selection</span></span></div>
+</div>
+<div class="promise"><span class="key">예측의 원리<svg class="underline" viewBox="0 0 270 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 12 C80 7 184 8 266 11"/></svg></span>, 한 장면으로 이해하기</div>
+<div class="promise-en" lang="en">Understand prediction in one scene.</div>
+</main>
+<script src="../../lib/gsap.min.js"></script>
+<script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline({defaults:{ease:'power3.out',duration:.6,lazy:false}});
+const verm = getComputedStyle(document.documentElement).getPropertyValue('--verm').trim();
+const ink = getComputedStyle(document.documentElement).getPropertyValue('--ink').trim();
+tl.fromTo('.line', {yPercent:110}, {yPercent:0, duration:.7, stagger:.22, ease:'power3.out'}, .12);
+tl.fromTo('.question-en', {opacity:0,y:8}, {opacity:1,y:0,duration:.3}, .8);
+tl.fromTo('.focus', {color:ink,scale:1}, {color:verm,scale:1.04,duration:.5,ease:'power2.inOut'}, 1.25);
+tl.fromTo('.focus', {color:verm,scale:1.04}, {color:ink,scale:1,duration:.3,ease:'power2.inOut',immediateRender:false}, 1.85);
+tl.fromTo('.step', {opacity:0,y:16}, {opacity:1,y:0,duration:.45,stagger:.2,ease:'power3.out'}, 2.15);
+tl.fromTo('.arrow', {opacity:0}, {opacity:1,duration:.25,stagger:.2}, 2.55);
+tl.fromTo('.promise,.promise-en', {opacity:0,y:8}, {opacity:1,y:0,duration:.2}, 3.05);
+tl.fromTo('.underline path', {strokeDashoffset:1}, {strokeDashoffset:0,autoRound:false,duration:.7,ease:'none'}, 3.3);
+Motion.ready();
+</script>
+</body>
+</html>

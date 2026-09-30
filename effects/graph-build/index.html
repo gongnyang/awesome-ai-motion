@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=1280"><title>노드 연결망 구축 · Node-link Build</title><link rel="stylesheet" href="../../lib/stage.css"><style>
+.kicker{position:absolute;left:48px;top:30px}.headline{position:absolute;left:48px;top:58px;font-size:42px}.hint{position:absolute;left:48px;bottom:22px;font-size:16px;color:var(--ink2)}
+.paper{background:#FBF8F2;border:1px solid var(--rule)}.row{border-bottom:1px solid var(--rule);padding:22px 26px;font-size:24px}.badge{font-family:var(--mono);font-size:14px;color:var(--ink2)}
+.pointer{position:absolute;width:28px;height:35px;z-index:12}.button{display:inline-block;background:var(--ink);color:var(--paper);padding:14px 28px;font-size:20px}
+.diagram{position:absolute;left:40px;top:145px;width:1088px;height:340px}svg text{font-family:var(--sans);fill:var(--ink);font-size:22px}.edge{fill:none;stroke:var(--rule);stroke-width:2}.node circle{fill:var(--paper);stroke:var(--ink);stroke-width:2}.node text{text-anchor:middle}.signal{fill:var(--verm)}</style></head>
+<body data-no="380" data-cat="원리 도해 · EXPLAINER" data-ko="노드 연결망 구축" data-en="Node-link Build" data-meta="노드 5개 · 선 그리기 · 경로 강조" data-dur="4.5" data-poster="4.2">
+<main class="scene"><div class="kicker lab">06 / 관계</div><div class="headline t-l">점이 연결되면 구조가 된다</div><div class="hint">노드를 공개하고 선택 경로를 차례로 강조한다</div><svg class="diagram" viewBox="0 0 1088 340"><g><path class="edge e0" d="M110 170L370 70"/><path class="edge e1" d="M110 170L370 250"/><path class="edge e2" d="M370 70L680 170"/><path class="edge e3" d="M370 250L680 170"/><path class="edge e4" d="M680 170L990 170"/></g><g class="node n0"><circle cx="110" cy="170" r="38"/><text x="110" y="177">1</text><text x="110" y="245">입력</text></g><g class="node n1"><circle cx="370" cy="70" r="38"/><text x="370" y="77">2</text><text x="370" y="145">문맥</text></g><g class="node n2"><circle cx="370" cy="250" r="38"/><text x="370" y="257">3</text><text x="370" y="325">기억</text></g><g class="node n3"><circle cx="680" cy="170" r="38"/><text x="680" y="177">4</text><text x="680" y="245">모델</text></g><g class="node n4"><circle cx="990" cy="170" r="38"/><text x="990" y="177">5</text><text x="990" y="245">출력</text></g></svg></main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+tl.set('.edge',{stroke:'var(--rule)',strokeWidth:2},0);
+tl.set('.node circle',{fill:'var(--paper)',stroke:'var(--ink)'},0);
+tl.set('.node text',{fill:'var(--ink)'},0);
+
+
+tl.fromTo('.node',{opacity:0,scale:.8,transformOrigin:'center center'},{opacity:1,scale:1,stagger:.25,duration:.3},.2);
+document.querySelectorAll('.edge').forEach((el,i)=>{const L=el.getTotalLength();tl.fromTo(el,{strokeDasharray:L,strokeDashoffset:L},{strokeDashoffset:0,duration:.45,ease:'none'},.6+i*.25);});
+['.e0','.e2','.e4'].forEach((s,i)=>tl.to(s,{stroke:'var(--ink)',strokeWidth:4,duration:.3},2.25+i*.35));
+tl.to('.n4 circle',{fill:'var(--verm)',stroke:'var(--verm)',duration:.3},3.25);
+tl.to('.n4 text:first-of-type',{fill:'var(--paper)',duration:.3},3.25);
+
+Motion.ready();
+</script></body></html>

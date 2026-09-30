@@ -1,0 +1,174 @@
+{
+ "noise-dissolve": {
+  "slug": "noise-dissolve",
+  "family": "transitions",
+  "ko": "노이즈 디졸브",
+  "en": "Noise Dissolve",
+  "aka": [
+   "Noise dissolve",
+   "Pixel Dissolve",
+   "픽셀 디졸브",
+   "Pixel noise dissolve",
+   "픽셀 노이즈 디졸브",
+   "Perlin cloud dissolve",
+   "노이즈 구름 디졸브",
+   "Crosshatch dissolve",
+   "교차 해칭 디졸브"
+  ],
+  "what": "무작위 픽셀이나 구름 같은 얼룩 영역이 순차 교체되어 다음 장면이 나타난다.",
+  "why": "디지털 생성이나 해체의 느낌을 만든다.",
+  "params": "권장 900ms, 노이즈 크기 8px, feather 0.08, 시드 1; 구름 변형은 저주파 노이즈 scale 4.",
+  "impl": "WebGL에서 고정 노이즈 값과 진행률 임계값을 비교해 두 장면의 혼합량을 계산한다.",
+  "runtime": "webgl",
+  "variants": [
+   "거친 침식",
+   "빛나는 경계",
+   "미세 입자 소멸",
+   "픽셀 소멸",
+   "픽셀 조립",
+   "randomNoisex",
+   "dissolve",
+   "perlin",
+   "crosshatch",
+   "픽셀 노이즈",
+   "펄린 구름",
+   "크로스해치",
+   "Pixel Dissolve",
+   "Pixel noise dissolve",
+   "Perlin cloud dissolve",
+   "Crosshatch dissolve"
+  ],
+  "useful": 2,
+  "sources": [
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/domain-warp-dissolve/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/code-shader-dissolve/registry-item.json",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "iart-ai/webgl-animation-skills",
+    "url": "https://github.com/iart-ai/webgl-animation-skills/blob/HEAD/skills/shader-glsl/SKILL.md",
+    "license": "MIT"
+   },
+   {
+    "title": "mrdoob/three.js",
+    "url": "https://threejs.org/examples/#webgl_postprocessing_transition",
+    "license": "MIT"
+   },
+   {
+    "title": "gl-transitions/gl-transitions",
+    "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/randomNoisex.glsl",
+    "license": "MIT"
+   }
+  ],
+  "from": [
+   "R1a-130",
+   "R8-047",
+   "R1b-138",
+   "R4-028",
+   "R4-035",
+   "R4-036"
+  ]
+ },
+ "light-sweep": {
+  "slug": "light-sweep",
+  "family": "texture",
+  "ko": "라이트 스윕",
+  "en": "Light Sweep",
+  "aka": [
+   "빛 훑기",
+   "CC Light Sweep"
+  ],
+  "what": "밝은 좁은 반사가 글자나 로고 표면을 지나간다.",
+  "why": "광택과 핵심 대상의 존재감을 높인다.",
+  "params": "제안 기본값: 800ms; 폭 40px; angle 25deg",
+  "impl": "HTML 글자나 로고의 알파 마스크 안에서 기울어진 밝은 그라디언트를 수평 이동한다.",
+  "runtime": "css",
+  "variants": [
+   "금속 광택",
+   "부드러운 하이라이트"
+  ],
+  "useful": 2,
+  "sources": [
+   {
+    "title": "helpx.adobe.com",
+    "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/generate-effects.html",
+    "license": "unknown"
+   },
+   {
+    "title": "airbnb/lottie-web",
+    "url": "https://github.com/airbnb/lottie-web",
+    "license": "MIT"
+   },
+   {
+    "title": "cycorefx.com",
+    "url": "https://cycorefx.com/downloads/cfx_hd_std/CycoreFX%201.6%20Manual.pdf",
+    "license": "unknown"
+   }
+  ],
+  "from": [
+   "R5-054"
+  ]
+ },
+ "perspective-tilt": {
+  "slug": "perspective-tilt",
+  "family": "depth",
+  "ko": "퍼스펙티브 틸트",
+  "en": "Perspective Tilt",
+  "aka": [
+   "3D tilt and depth",
+   "3D 기울기와 깊이",
+   "Perspective Card Tilt",
+   "카드 입체 기울기",
+   "3D Card Tilt and Float",
+   "3D 카드 기울임과 부유"
+  ],
+  "what": "카드가 가로와 세로축으로 조금 기울고 내부 요소가 서로 다른 깊이로 떠오른다.",
+  "why": "평면 요소에 입체감을 준다.",
+  "params": "권장 기본값: 600ms, 각도 ±12도, perspective 900px, 자식 깊이 30px",
+  "impl": "가상 포인터 또는 시간 진행값을 CSS rotateX, rotateY와 자식 translateZ에 연결한다.",
+  "runtime": "css",
+  "variants": [
+   "포인터 추적",
+   "주기적 틸트와 부유"
+  ],
+  "useful": 1,
+  "sources": [
+   {
+    "title": "motion.dev examples",
+    "url": "https://motion.dev/examples/react-tilt-card",
+    "license": "unknown"
+   },
+   {
+    "title": "ui.aceternity.com",
+    "url": "https://ui.aceternity.com/components/3d-card-effect",
+    "license": "unknown"
+   },
+   {
+    "title": "heygen-com/hyperframes",
+    "url": "https://github.com/heygen-com/hyperframes/blob/HEAD/skills/hyperframes-animation/rules/split-tilt-cards.md",
+    "license": "Apache-2.0"
+   },
+   {
+    "title": "greensock/GSAP",
+    "url": "https://gsap.com/docs/v3/GSAP/CorePlugins/CSS/",
+    "license": "GSAP Standard License"
+   },
+   {
+    "title": "DavidHDev/react-bits",
+    "url": "https://github.com/DavidHDev/react-bits",
+    "license": "MIT + Commons Clause v1.0"
+   }
+  ],
+  "from": [
+   "R2-105",
+   "R3-170",
+   "R8-096"
+  ]
+ }
+}

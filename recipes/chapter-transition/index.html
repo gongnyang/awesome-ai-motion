@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>장 전환 카드 · Chapter Card Transition</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>
+.shot{position:absolute;inset:0}.tag{position:absolute;left:80px;top:65px}.before .heading{position:absolute;left:80px;top:160px}.before .sentence{position:absolute;left:80px;top:285px}.baseline{position:absolute;left:80px;right:80px;top:445px;height:2px;background:var(--ink)}.step{position:absolute;left:80px;top:474px}.card{background:var(--ink);color:var(--paper);clip-path:inset(0% 100% 0% 0%)}.card .lab{color:var(--paper2)}.number{position:absolute;left:85px;top:180px;font-size:290px;opacity:0}.chapter-title{position:absolute;left:600px;top:218px;opacity:0}.chapter-sub{position:absolute;left:600px;top:316px;font-size:24px;opacity:0;color:var(--paper2)}.card-rule{position:absolute;left:600px;right:80px;top:376px;height:1px;background:var(--ink2)}.edge{position:absolute;left:0;top:0;width:4px;height:580px;background:var(--verm);opacity:0}.seed{position:absolute;left:568px;top:274px;width:32px;height:32px;border-radius:50%;background:var(--verm);opacity:0}.after{background:var(--paper);clip-path:circle(0px at 584px 290px)}.after .heading{position:absolute;left:80px;top:132px}.chart{position:absolute;left:80px;top:270px;width:990px}.row{position:relative;height:66px;font-size:25px}.bar{position:absolute;left:150px;top:7px;height:28px;background:var(--ink)}.row.first .bar{background:var(--verm)}.pct{position:absolute;top:8px;font-size:19px}.after .footer{position:absolute;left:80px;top:496px;font-size:24px;color:var(--ink2)}
+</style></head>
+<body data-kind="recipe" data-no="R04" data-cat="레시피 · 교육 영상과 발표의 장 사이 전환" data-ko="장 전환 카드" data-en="Chapter Card Transition" data-meta="와이프 → 02 홀드 → 원형 마스크" data-dur="4" data-poster="1.85"><main class="scene">
+<section class="shot before"><div class="tag lab">01 / 입력</div><div class="heading t-xl">AI는</div><div class="sentence t-l">다음 말을 고른다</div><div class="baseline"></div><div class="step lab">입력 → 모델 → 출력</div></section>
+<section class="shot card"><div class="tag lab">CHAPTER / 02</div><div class="num number">02</div><div class="chapter-title t-l">다음 말의 확률</div><div class="chapter-sub">입력 → 모델 → 출력</div><div class="card-rule"></div><div class="seed"></div></section><div class="edge"></div>
+<section class="shot after"><div class="tag lab">02 / 후보 확률</div><div class="heading t-l">다음 말은 어떻게 고르나요?</div><div class="chart"><div class="row first">고른다<div class="bar" style="width:620px"></div><span class="pct mono" style="left:790px">62%</span></div><div class="row">정한다<div class="bar" style="width:210px"></div><span class="pct mono" style="left:380px">21%</span></div><div class="row">찾는다<div class="bar" style="width:90px"></div><span class="pct mono" style="left:260px">9%</span></div></div><div class="footer">후보마다 확률을 매긴 뒤 하나를 고릅니다.</div></section>
+</main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+
+tl.to('.card',{clipPath:'inset(0% 0% 0% 0%)',duration:.9,ease:'none'},.3);
+tl.set('.edge',{opacity:1},.3);
+tl.to('.edge',{x:1164,duration:.9,ease:'none'},.3);
+tl.set('.edge',{opacity:0},1.2);
+tl.fromTo('.number',{y:32,opacity:0},{y:0,opacity:1,duration:.70,ease:'power3.out'},.9);
+tl.fromTo('.chapter-title',{y:18,opacity:0},{y:0,opacity:1,duration:.40,ease:'power3.out'},1.2);
+tl.set('.chapter-sub',{opacity:1},1.6);
+tl.set('.seed',{opacity:1},2.05);
+tl.to('.after',{clipPath:'circle(680px at 584px 290px)',duration:1.35,ease:'power2.inOut'},2.05);
+tl.to('.seed',{scale:0,duration:.15,ease:'power1.in'},2.05);
+
+Motion.ready();
+</script></body></html>

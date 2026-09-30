@@ -1,0 +1,3918 @@
+[
+  {
+    "family": "texture",
+    "ko": "빛샘",
+    "en": "Light Leak",
+    "what": "따뜻한 빛 덩어리가 프레임을 가로질러 번지고 사라진다.",
+    "why": "필름의 기억감과 감정적인 연결을 만든다.",
+    "params": "재현 기본값 제안: 700ms, 큰 radial gradient 2~3개, opacity 0.35; 필름 번 변형: 800ms, 빛 레이어 3개, 시작차 60ms",
+    "impl": "화면보다 큰 빛 레이어 위치와 opacity를 보간한다.",
+    "runtime": "css",
+    "slug": "light-leak",
+    "useful": 1,
+    "aka": [
+      "Light leak",
+      "빛샘 전환",
+      "Film burn",
+      "필름 빛샘",
+      "light-leak-film-burn"
+    ],
+    "variants": [
+      "필름 번",
+      "따뜻한 빛샘",
+      "유기적 빛샘",
+      "렌즈 누광"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/light-leak/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/organic-light-leak-overlay/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/transitions/css-light.md",
+        "license": "unknown"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/transitions-light/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/07-stylize-time.md#light-leak-film-burn",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-032",
+      "R1b-069"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "RGB 분리 글리치",
+    "en": "RGB Split Glitch",
+    "what": "색 채널과 가로 조각이 순간적으로 어긋나며 떨린 뒤 원래 화면으로 돌아온다.",
+    "why": "디지털 오류와 강한 순간 강조를 전달한다.",
+    "params": "재현 기본값 제안: 200~500ms, 채널 변위 8~30px, 복사 opacity 0.35",
+    "impl": "시간을 프레임으로 양자화하고 시드 기반 채널 변위를 적용한다.",
+    "runtime": "css",
+    "slug": "glitch-rgb-split",
+    "useful": 1,
+    "aka": [
+      "Chromatic glitch",
+      "색 분리 글리치",
+      "Chromatic Split",
+      "색수차 분리",
+      "chromatic-aberration-static",
+      "chromatic-aberration-glitch-cut",
+      "chromatic-glitch",
+      "chromatic-pressure",
+      "Glitch Text",
+      "글자 글리치",
+      "Chromatic Separation",
+      "색 채널 분리",
+      "Chromatic Aberration",
+      "RGB split",
+      "Slice Glitch",
+      "슬라이스 글리치",
+      "Digital glitch"
+    ],
+    "variants": [
+      "색수차",
+      "가로 슬라이스",
+      "약한 채널 분리"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/glitch/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/rgb-glitch-text/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-glitch-rgb/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/rules/chromatic-glitch.md",
+        "license": "unknown"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/transitions/css-distortion.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-034",
+      "R1b-064",
+      "R3-104",
+      "R3-139",
+      "R8-063",
+      "R8-064"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "VHS 트래킹",
+    "en": "VHS Tracking",
+    "what": "가로 줄마다 화면이 옆으로 어긋나고 색 가장자리가 흔들린다.",
+    "why": "오래된 테이프 재생과 신호 불안정을 전달한다.",
+    "params": "재현 기본값 제안: 20줄, 각 54px, 채널 opacity 0.35, 600ms",
+    "impl": "화면 복사본을 가로 마스크로 나누고 시드 기반 변위를 준다.",
+    "runtime": "css",
+    "slug": "vhs-tracking",
+    "useful": 2,
+    "aka": [
+      "VHS tracking",
+      "Vhs Tracking",
+      "vhs-tracking-glitch",
+      "chromatic-glitch"
+    ],
+    "variants": [
+      "테이프 위브",
+      "수평 시어"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/camcorder-hud/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/transitions/css-distortion.md",
+        "license": "unknown"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:media-use/references/media-treatment-recipes.md",
+        "license": "unknown"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/07-stylize-time.md#vhs-tracking-glitch",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/hyperframes-animation",
+        "url": "claude-skill:hyperframes-animation/rules/chromatic-glitch.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-036",
+      "R1b-065"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "입자 버스트",
+    "en": "Particle Burst",
+    "what": "한 점에서 입자들이 튀어나와 퍼지고 중력에 따라 아래로 떨어진다.",
+    "why": "충격, 기쁨, 강조의 에너지를 보여준다.",
+    "params": "재현 기본값 제안: 입자 80개, 수명 1200ms, 중력 600px/s², 시드 고정",
+    "impl": "시간과 입자 인덱스로 초기 속도를 정해 탄도 위치를 계산한다.",
+    "runtime": "canvas",
+    "slug": "particle-burst",
+    "useful": 1,
+    "aka": [
+      "Particle burst",
+      "입자 폭발",
+      "Confetti burst",
+      "색종이 폭발",
+      "Confetti Burst",
+      "색종이 분출",
+      "Confetti cannon",
+      "Confetti explosion",
+      "Confetti",
+      "Cool Mode",
+      "ClickSpark",
+      "Click Burst",
+      "confetti",
+      "cool-mode"
+    ],
+    "variants": [
+      "색종이",
+      "점 폭발",
+      "글자 뒤 폭발",
+      "양쪽 대포",
+      "중력 낙하"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/confetti/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-particle-burst/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/rules/particle-burst.md",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#particle-burst",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitives/particle-burst/scene.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-126",
+      "R1b-102",
+      "R2-094",
+      "R3-124",
+      "R8-017"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "입자 이미지 공개",
+    "en": "Particle image reveal",
+    "what": "입자 구름이 모여 얇아지고 아래의 이미지가 선명하게 남는다.",
+    "why": "추상에서 실제 대상으로 수렴함을 보여준다.",
+    "params": "재현 기본값 제안: 2000ms, 입자 1000개, trail 감쇠 500ms",
+    "impl": "시드 입자 좌표 보간과 이미지 마스크 공개를 같은 진행값으로 계산한다.",
+    "runtime": "canvas",
+    "slug": "particle-image-reveal",
+    "useful": 2,
+    "aka": [],
+    "variants": [],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/particle-image-reveal/registry-item.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-128"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "도메인 워핑",
+    "en": "Domain Warping",
+    "what": "넓은 색 띠와 유기적인 무늬가 천천히 흐르고 휘어진다.",
+    "why": "살아 있는 배경과 유동적인 분위기를 만든다.",
+    "params": "재현 기본값 제안: 5000ms, FBM 5옥타브, 시간 속도 0.4, 시드 고정",
+    "impl": "WebGL에서 시간에 따른 도메인 변형 노이즈와 색 팔레트를 계산한다.",
+    "runtime": "webgl",
+    "slug": "domain-warping",
+    "useful": 3,
+    "aka": [
+      "Flow noise field",
+      "흐르는 노이즈 필드",
+      "Noise warping",
+      "Marble flow"
+    ],
+    "variants": [
+      "대리석",
+      "플라스마",
+      "다중 워프"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/mesh-gradient-bg/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/mk-background/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/aurora-drift/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/techniques.md",
+        "license": "unknown"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-129",
+      "R8-006"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "홀로그램 광택",
+    "en": "Holographic sheen",
+    "what": "표면의 무지갯빛이 시야 각도와 시간에 따라 바뀐다.",
+    "why": "미래적 재질과 비물질적인 존재감을 만든다.",
+    "params": "재현 기본값 제안: 3000ms, hue 속도 0.15, Fresnel 강도 0.4",
+    "impl": "표면 법선과 시선의 각도로 간섭색과 가장자리 밝기를 계산한다.",
+    "runtime": "webgl",
+    "slug": "holographic-sheen",
+    "useful": 2,
+    "aka": [],
+    "variants": [],
+    "sources": [
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/adapters/html-in-canvas-patterns.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-135"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "유리 굴절",
+    "en": "Glass Refraction",
+    "what": "움직이는 유리 면 안에서 배경이 흐려지고 가장자리의 상과 색 윤곽이 굴절된다.",
+    "why": "앞뒤 레이어와 고급 유리 재질을 보여준다.",
+    "params": "재현 기본값 제안: blur 16px, 굴절 변위 6px, 이동 1500ms",
+    "impl": "배경 텍스처의 흐림 샘플과 굴절 UV를 표면 마스크 안에 합성한다.",
+    "runtime": "webgl",
+    "slug": "glass-refraction",
+    "useful": 2,
+    "aka": [
+      "Frosted glass",
+      "반투명 유리",
+      "Glass Refraction Motion",
+      "유리 굴절 이동"
+    ],
+    "variants": [
+      "색 분리 유리"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/liquid-glass-widgets/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/ios26-liquid-glass/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/macos-tahoe-liquid-glass/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/adapters/html-in-canvas-patterns.md",
+        "license": "unknown"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      }
+    ],
+    "from": [
+      "R1a-136",
+      "R3-197"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "CRT 주사선",
+    "en": "CRT Scanlines",
+    "what": "가로 주사선, 화면 휨, 잔광이 움직이는 내용 위에 겹친다.",
+    "why": "오래된 모니터와 신호의 질감을 만든다.",
+    "params": "재현 기본값 제안: 선 간격 3px, scan 속도 60px/s, 왜곡 0.02",
+    "impl": "행 밝기와 곡률 UV를 계산하고 이전 위치의 잔광을 시간 함수로 합성한다.",
+    "runtime": "webgl",
+    "slug": "crt-scanlines",
+    "useful": 2,
+    "aka": [
+      "CRT scanlines",
+      "Scanlines",
+      "스캔라인",
+      "scanline-interlace",
+      "CRT Warp",
+      "브라운관 왜곡",
+      "CRT Scanline Roll",
+      "CRT 주사선 이동",
+      "Rolling scanlines",
+      "CRTWarp",
+      "FaultyTerminal",
+      "Balatro",
+      "CRT 색 번짐"
+    ],
+    "variants": [
+      "상시 줄무늬",
+      "인터레이스",
+      "임팩트 스파이크",
+      "고정 주사선",
+      "롤링 밴드"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/yt-lcd-background/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/yt-screen-warp/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-glitch-rgb/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/adapters/html-in-canvas-patterns.md",
+        "license": "unknown"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/07-stylize-time.md#scanline-interlace",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-137",
+      "R1b-067",
+      "R3-138",
+      "R8-071"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "픽셀 정렬",
+    "en": "Pixel Sorting",
+    "what": "가로 또는 세로 줄의 픽셀이 길게 재배치되며 화면이 끌려간다.",
+    "why": "디지털 손상과 데이터의 불안정함을 만든다.",
+    "params": "재현 기본값 제안: 600ms, 줄 폭 8px, 변위 60px",
+    "impl": "행별 시드 임계와 변위를 UV에 적용해 정렬처럼 보이는 번짐을 만든다.",
+    "runtime": "webgl",
+    "slug": "pixel-sort",
+    "useful": 3,
+    "aka": [
+      "Pixel sort smear",
+      "픽셀 정렬 번짐",
+      "Pixel Sort Stretch",
+      "픽셀 정렬 늘어짐",
+      "Pixel sorting"
+    ],
+    "variants": [
+      "수평 정렬",
+      "수직 정렬",
+      "사선 정렬"
+    ],
+    "sources": [
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/adapters/html-in-canvas-patterns.md",
+        "license": "unknown"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md",
+        "license": "unknown"
+      },
+      {
+        "title": "fand/vfx-js",
+        "url": "https://github.com/fand/vfx-js/tree/main/packages/effects#effects",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1a-138",
+      "R8-066"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "필름 그레인",
+    "en": "Film Grain",
+    "what": "미세 입자 밝기가 프레임마다 달라져 화면에 촬영 질감이 생긴다.",
+    "why": "매끈한 디지털 화면에 아날로그 감각을 더한다.",
+    "params": "재현 기본값 제안: opacity 0.08, 12fps 갱신, 입자 1~2px",
+    "impl": "프레임 인덱스로 시드 노이즈 텍스처를 선택해 합성한다.",
+    "runtime": "canvas",
+    "slug": "film-grain",
+    "useful": 1,
+    "aka": [
+      "Film grain",
+      "살아있는 필름 그레인",
+      "film-grain-seeded-flip",
+      "Animated noise grain",
+      "움직이는 노이즈 질감",
+      "Animated Grain",
+      "움직이는 그레인",
+      "Noise Texture",
+      "Noise Background",
+      "Noise",
+      "Grainient",
+      "noise-texture",
+      "noise-background"
+    ],
+    "variants": [
+      "잔잔한 그레인",
+      "강한 필름룩",
+      "스톱 프레임",
+      "정적 입자 이동",
+      "흑백 그레인",
+      "색 그레인"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/grain-overlay/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/grain-field/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/techniques.md",
+        "license": "unknown"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/07-stylize-time.md#film-grain-seeded-flip",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-139",
+      "R1b-066",
+      "R2-101",
+      "R3-135",
+      "R5-057"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "모션 블러",
+    "en": "Motion Blur",
+    "what": "빠르게 움직이는 대상이 경로 방향으로 번지고 정지하면 선명해진다.",
+    "why": "실제 속도와 촬영 셔터의 느낌을 전달한다.",
+    "params": "재현 기본값 제안: 셔터각 180도, 샘플 8개, 최대 blur 20px",
+    "impl": "서브프레임 자세를 시간 창 안에서 샘플링해 평균 합성한다.",
+    "runtime": "canvas",
+    "slug": "motion-blur",
+    "useful": 1,
+    "aka": [
+      "Motion blur",
+      "Velocity blur",
+      "Motion Blur Shutter",
+      "셔터 모션 블러",
+      "Temporal supersampling",
+      "Shutter Motion Blur",
+      "축 방향 SVG 블러"
+    ],
+    "variants": [
+      "서브프레임 셔터 평균",
+      "카메라 이동 블러",
+      "짧은 셔터",
+      "긴 셔터",
+      "회전 블러",
+      "선형 블러",
+      "카메라 블러"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/motion-blur/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/rules/motion-blur-streak.md",
+        "license": "unknown"
+      },
+      {
+        "title": "motion dictionary 1-principles.md#8. 2D 속성 기본 동작",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/time-effects.html",
+        "license": "unknown"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://github.com/heygen-com/hyperframes/blob/HEAD/skills/hyperframes-animation/references/motion-blur.md",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-140",
+      "DICT-099",
+      "R5-107",
+      "R8-085"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "슬릿 스캔",
+    "en": "Slit Scan",
+    "what": "화면 행마다 다른 시점의 대상을 보여주어 형태가 시간 방향으로 늘어진다.",
+    "why": "시간 지연과 독특한 물성 변화를 시각화한다.",
+    "params": "재현 기본값 제안: 행 시간차 2ms, 지연 감소 1200ms",
+    "impl": "각 행을 t-offset(row)에서 샘플링하다 지연을 0으로 수렴한다.",
+    "runtime": "canvas",
+    "slug": "slit-scan",
+    "useful": 3,
+    "aka": [
+      "Slit scan",
+      "Time Displacement",
+      "시간 변위"
+    ],
+    "variants": [
+      "행별 시간 지연",
+      "밝기 맵 시간 변위"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/slit-scan-reveal/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/time-effects.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-142",
+      "R5-030"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "ASCII 모션",
+    "en": "ASCII Motion",
+    "what": "문자 격자로 보이는 이미지가 거친 격자에서 촘촘한 격자로 변한다.",
+    "why": "정보의 해상도가 올라가는 과정을 보여준다.",
+    "params": "재현 기본값 제안: 1500ms, 격자 24~6px, 명암 문자 10단계",
+    "impl": "원본 밝기를 격자 샘플링해 밀도별 문자를 그리고 격자 크기를 줄인다.",
+    "runtime": "canvas",
+    "slug": "ascii-motion",
+    "useful": 2,
+    "aka": [
+      "ASCII resolve",
+      "ASCII 해상도 복원",
+      "문자 격자 영상",
+      "ASCII Mosaic Animation",
+      "ASCII 모자이크 애니메이션",
+      "ASCII art filter"
+    ],
+    "variants": [
+      "문자 격자 해상도 복원",
+      "명암 문자 모자이크"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/ascii-render-pass/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/ascii-trail-reveal/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/ascii-art",
+        "license": "unknown"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      },
+      {
+        "title": "magicuidesign/magicui",
+        "url": "https://magicui.design/docs/components/glyph-matrix",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1a-143",
+      "R3-137",
+      "R8-068"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "디더링 모션",
+    "en": "Animated Dithering",
+    "what": "두 색의 점무늬가 점차 원본의 깨끗한 색으로 풀리거나 반대로 분해된다.",
+    "why": "인쇄와 디지털 양자화의 질감을 보여준다.",
+    "params": "재현 기본값 제안: 1200ms, Bayer 8x8, 색 단계 2~16",
+    "impl": "고정 Bayer 임계 행렬로 각 픽셀의 색을 양자화하고 혼합량을 보간한다.",
+    "runtime": "canvas",
+    "slug": "animated-dither",
+    "useful": 2,
+    "aka": [
+      "Ordered dither",
+      "순서 디더 공개",
+      "Animated Dither",
+      "디더 패턴 전환",
+      "디더링 변화",
+      "Dither Shader",
+      "Dither",
+      "DitherVeil",
+      "HalftoneReveal",
+      "dither-shader"
+    ],
+    "variants": [
+      "순서 디더",
+      "노이즈 디더",
+      "이미지 디더"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/ordered-dither-pass/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/dither-shader",
+        "license": "unknown"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      },
+      {
+        "title": "paper-design/shaders",
+        "url": "https://shaders.paper.design/dithering",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "paper-design/shaders",
+        "url": "https://shaders.paper.design/image-dithering",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-144",
+      "R3-136",
+      "R8-070"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "하프톤 모션",
+    "en": "Halftone Motion",
+    "what": "격자 점의 크기와 색이 물결처럼 변해 넓은 빛 띠가 흘러간다.",
+    "why": "인쇄 점묘와 LED 화면의 움직임을 만든다.",
+    "params": "재현 기본값 제안: 격자 12px, 최대 점 반경 5px, 주기 5000ms",
+    "impl": "시드 노이즈의 시간 변화로 격자점 크기와 색을 계산한다.",
+    "runtime": "canvas",
+    "slug": "halftone-motion",
+    "useful": 2,
+    "aka": [
+      "Halftone field",
+      "하프톤 필드",
+      "Screen-tone animation",
+      "CMYK",
+      "RGB 망점"
+    ],
+    "variants": [
+      "단색 망점"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/halftone-field/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "paper-design/shaders",
+        "url": "https://shaders.paper.design/halftone-dots",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "paper-design/shaders",
+        "url": "https://shaders.paper.design/halftone-cmyk",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgl_postprocessing_rgb_halftone",
+        "license": "MIT"
+      },
+      {
+        "title": "fand/vfx-js",
+        "url": "https://github.com/fand/vfx-js/tree/main/packages/effects#effects",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1a-145",
+      "R8-069"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "잉크 번짐",
+    "en": "Ink Bleed",
+    "what": "잉크 덩어리가 종이 속으로 번져 합쳐지고 수축하며 선명한 글자나 마크가 남는다.",
+    "why": "손으로 만든 흔적과 유기적인 생성을 보여준다.",
+    "params": "재현 기본값 제안: 1200ms, blur 16px, threshold 0.5, 종이 입자 고정",
+    "impl": "blur와 임계 필터의 액체 마스크를 진행시키고 최종 형상을 공개한다.",
+    "runtime": "svg",
+    "slug": "ink-bleed",
+    "useful": 2,
+    "aka": [
+      "Ink bleed",
+      "Noise Threshold Ink",
+      "노이즈 임계 잉크"
+    ],
+    "variants": [
+      "잉크 얼룩",
+      "흑백 마블",
+      "유기 셀"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/ink-bleed-reveal/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:embedded-captions/CATALOG.md",
+        "license": "unknown"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/noise-grain-effects.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-147",
+      "R5-056"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "라인 보일",
+    "en": "Line Boil",
+    "what": "그림의 윤곽이 작은 범위에서 불규칙하게 바뀌어 매 프레임 다시 그린 듯 떨린다.",
+    "why": "손으로 매 프레임 다시 그린 애니메이션처럼 느끼게 한다.",
+    "params": "재현 기본값 제안: 5fps, 위치 진폭 1px, 회전 0.4도",
+    "impl": "양자화한 시간의 시드로 경로와 자세를 조금씩 변형한다.",
+    "runtime": "svg",
+    "slug": "line-boil",
+    "useful": 2,
+    "aka": [
+      "Hand draw boil",
+      "손그림 보일",
+      "Line boil",
+      "Wiggle Paths",
+      "위글 패스",
+      "Roughen Edges",
+      "거친 외곽",
+      "Boiling Line",
+      "보일링 라인",
+      "Doodle line boil",
+      "두들 선 흔들림",
+      "Hand Drawn Boiling Line",
+      "손그림 끓는 선",
+      "Animated rough ink"
+    ],
+    "variants": [
+      "손그림 선 교체",
+      "거친 윤곽",
+      "연속 경로 흔들림"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/hw-boil/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/hw-frame/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/hw-text-cloud/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:embedded-captions/CATALOG.md",
+        "license": "unknown"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/drawing-painting-and-paths/shapes-and-shape-attributes/shape-attributes-paint-operations-path.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-149",
+      "R5-010",
+      "R5-058",
+      "R5-059",
+      "R7-081",
+      "R8-122"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "질감 채움 모션",
+    "en": "Animated Texture Fill",
+    "what": "고정된 글자나 도형의 마스크 안에서 이미지와 색 질감이 흐르거나 교체된다.",
+    "why": "글자의 재질과 강도를 바꾼다.",
+    "params": "재현 기본값 제안: 이동 2000ms, 질감 교체 3프레임, 마스크 고정",
+    "impl": "글자 마스크 내부 텍스처의 UV 또는 프레임을 시간에 따라 변경한다.",
+    "runtime": "css",
+    "slug": "texture-fill-motion",
+    "useful": 2,
+    "aka": [
+      "Texture text fill",
+      "글자 내부 질감 흐름",
+      "Text Image Fill",
+      "글자 속 이미지",
+      "bg-clip-text-shape",
+      "Heatmap Logo Flow",
+      "열지도 로고 흐름",
+      "Gem Smoke Mask",
+      "보석 연무 마스크"
+    ],
+    "variants": [
+      "글자 이미지 채움",
+      "열지도 팔레트",
+      "색 연무 채움",
+      "비트별 질감 교체"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/texture-mask-text/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-texture/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:music-to-video/references/template-catalog.md",
+        "license": "unknown"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/04-masks-mattes.md#bg-clip-text-shape",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/template-catalog.md#held-text-strobe-burst",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-152",
+      "R1b-035",
+      "R8-079",
+      "R8-080"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "이동 광원",
+    "en": "Moving Light",
+    "what": "화면은 고정된 채 지나가는 빛에 맞춰 요소별 밝기와 그림자가 함께 이동한다.",
+    "why": "같은 장면의 재질과 입체감을 드러낸다.",
+    "params": "재현 기본값 제안: 2000ms, 광원 x -20~120%, 그림자 20px",
+    "impl": "하나의 광원 좌표에서 요소별 조명 방향과 그림자를 계산한다.",
+    "runtime": "css",
+    "slug": "moving-light",
+    "useful": 2,
+    "aka": [
+      "Light re-shading",
+      "이동 광원 재조명"
+    ],
+    "variants": [],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/light-sweep-pass/registry-item.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-153"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "렌즈 플레어",
+    "en": "Lens Flare",
+    "what": "밝은 점에서 긴 가로 방향의 청보라 빛줄기가 뻗는다.",
+    "why": "영화 렌즈와 강한 광원의 촬영감을 전달한다.",
+    "params": "재현 기본값 제안: high-pass 0.3, 가로 샘플 80, 틴트 #7a8aff",
+    "impl": "밝은 텍스처 영역을 가로로 누적 샘플링해 원본에 더한다.",
+    "runtime": "webgl",
+    "slug": "lens-flare",
+    "useful": 2,
+    "aka": [
+      "Anamorphic flare",
+      "아나모픽 플레어",
+      "Lens Flare Travel",
+      "렌즈 플레어 이동"
+    ],
+    "variants": [
+      "가로 아나모픽 플레어",
+      "광원 반사 원"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/vfx-anamorphic-flare/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/generate-effects.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-154",
+      "R5-120"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "글자 광선",
+    "en": "Text Light Rays",
+    "what": "움직이는 빛점을 향해 글자에서 색 가장자리의 광선이 길게 뻗는다.",
+    "why": "타이틀을 무대의 빛나는 주인공으로 만든다.",
+    "params": "재현 기본값 제안: 3000ms, 광선 길이 300px, 강도 0.4",
+    "impl": "글자 마스크를 광원 방향으로 반복 샘플링해 색 분리 광선을 합성한다.",
+    "runtime": "webgl",
+    "slug": "text-light-rays",
+    "useful": 3,
+    "aka": [
+      "Spectral text rays",
+      "글자 스펙트럼 광선",
+      "Text Spectral Rays",
+      "글자 광선 투사"
+    ],
+    "variants": [
+      "볼류메트릭 타이틀",
+      "커서 광원"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/vfx-text-cursor/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#text-spectral-rays",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitives/text-spectral-rays/scene.html",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitives/text-spectral-rays/index.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-155",
+      "R1b-146"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "스캔 왜곡 띠",
+    "en": "Scan band",
+    "what": "좁은 대각 띠가 글자를 지나가고 띠 안에서만 RGB 어긋남이 보인다.",
+    "why": "정상 화면을 훑는 짧은 검사나 디지털 효과를 만든다.",
+    "params": "재현 기본값 제안: 800ms, 띠 폭 15%, 변위 8px",
+    "impl": "이동 마스크 내부에만 색 채널 변위를 적용한다.",
+    "runtime": "css",
+    "slug": "glitch-scan-band",
+    "useful": 2,
+    "aka": [],
+    "variants": [],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/scan-band/registry-item.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-156"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "난류 왜곡",
+    "en": "Turbulent Displace",
+    "what": "흐르는 불규칙 무늬에 따라 화면의 픽셀과 윤곽이 출렁였다가 복원된다.",
+    "why": "열기와 불안정한 공기의 존재를 보여준다.",
+    "params": "재현 기본값 제안: 3000ms, 변위 4px, 노이즈 속도 0.3",
+    "impl": "저주파 노이즈로 배경 UV를 미세 이동한다.",
+    "runtime": "webgl",
+    "slug": "turbulent-displace",
+    "useful": 2,
+    "aka": [
+      "Heat haze",
+      "열 아지랑이",
+      "SVG filter distortion",
+      "SVG 필터 왜곡",
+      "터뷸런트 변위",
+      "Displacement Map",
+      "변위 맵",
+      "SVG Turbulence Displacement",
+      "SVG 난류 왜곡",
+      "Turbulence filter warp",
+      "SVG 난류 변위"
+    ],
+    "variants": [
+      "외부 변위 맵"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/thermal-distortion/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "pmndrs/react-spring",
+        "url": "https://www.react-spring.dev/examples",
+        "license": "MIT"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/GSAP/CorePlugins/CSS/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/distort-effects.html",
+        "license": "unknown"
+      },
+      {
+        "title": "willianjusten/awesome-svg",
+        "url": "https://github.com/willianjusten/awesome-svg",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-160",
+      "R2-100",
+      "R5-042",
+      "R5-044",
+      "R8-117"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "차등 회전 은하",
+    "en": "Differential galaxy",
+    "what": "안쪽 별들이 바깥 별보다 빨리 돌아 나선팔 모양이 시간에 따라 감긴다.",
+    "why": "거대한 규모와 실제 회전 관계를 보여준다.",
+    "params": "재현 기본값 제안: 별 20000개, 총 8000ms, 안쪽 각속도 2배",
+    "impl": "시드 별 반경마다 각속도를 다르게 정해 시간으로 위치를 계산한다.",
+    "runtime": "webgl",
+    "slug": "differential-galaxy",
+    "useful": 3,
+    "aka": [],
+    "variants": [],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/spiral-galaxy/registry-item.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-166"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "전기 아크",
+    "en": "Electric Arc",
+    "what": "불규칙하게 갈라진 밝은 선이 지점이나 윤곽 사이에 번쩍이고 빠르게 사라진다.",
+    "why": "폭풍과 강한 타격의 인과를 전달한다.",
+    "params": "재현 기본값 제안: 번개 2프레임, 글자 지연 2프레임, 감쇠 300ms",
+    "impl": "시드 분기 SVG 경로를 짧게 공개하고 단어 조명을 동기화한다.",
+    "runtime": "svg",
+    "slug": "electric-arc",
+    "useful": 2,
+    "aka": [
+      "Lightning accent",
+      "번개 강조",
+      "Electric Outline",
+      "전기 윤곽선",
+      "Advanced Lightning",
+      "번개 가지"
+    ],
+    "variants": [
+      "단어 타격",
+      "두 지점 연결",
+      "전기 윤곽"
+    ],
+    "sources": [
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:embedded-captions/CATALOG.md",
+        "license": "unknown"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#electric-arc",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitives/electric-arc/scene.html",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitives/electric-arc/index.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-183",
+      "R1b-132",
+      "R3-116",
+      "R5-118"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "게이트 위브",
+    "en": "Gate Weave",
+    "what": "영상이 작은 기계적 오프셋으로 흔들리고 노출이 미세하게 밝아졌다 어두워진다.",
+    "why": "오래된 필름 영사와 개인 기록의 질감을 만든다.",
+    "params": "재현 기본값 제안: 위치 범위 짧은 변의 0.15% 이하, 노출 진폭 0.03, 주기 1200ms",
+    "impl": "시드 시간표의 미세 translation과 노출값을 유한 구간으로 보간한다.",
+    "runtime": "gsap",
+    "slug": "gate-weave",
+    "useful": 2,
+    "aka": [
+      "Gate weave and flicker",
+      "필름 게이트 흔들림과 플리커",
+      "Film weave",
+      "Exposure flicker"
+    ],
+    "variants": [],
+    "sources": [
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:media-use/references/media-treatment-recipes.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-215"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "필름 먼지와 스크래치",
+    "en": "Film Dust and Scratches",
+    "what": "작은 먼지점과 세로 긁힘이 프레임에 나타났다가 다른 위치로 바뀌거나 사라진다.",
+    "why": "오래된 필름의 마모와 아날로그 기록감을 전달한다.",
+    "params": "재현 기본값 제안: 12fps, 먼지 20개, 스크래치 2줄, 최대 opacity 0.15",
+    "impl": "프레임 인덱스의 시드로 점과 선의 위치와 수명을 정해 합성한다.",
+    "runtime": "canvas",
+    "slug": "film-dust-scratches",
+    "useful": 2,
+    "aka": [
+      "Film dust and scratches"
+    ],
+    "variants": [],
+    "sources": [
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:media-use/references/media-treatment-recipes.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-217"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "스트로브 플래시",
+    "en": "Strobe Flash",
+    "what": "색이나 질감 프레임이 짧은 비트 간격으로 반복 교체되고 마지막에 안정된다.",
+    "why": "고밀도 음악 구간의 강한 리듬을 느낀다.",
+    "params": "기본 간격 100ms, 소스 4장, 버스트 1200ms",
+    "impl": "HTML 고정 순서의 색과 질감 레이어를 타임라인 set으로 순환한다.",
+    "runtime": "gsap",
+    "slug": "strobe-flash",
+    "useful": 2,
+    "aka": [
+      "Strobe Grid",
+      "비트 스트로브",
+      "strobe-pulse-grid",
+      "Strobe Light Flash",
+      "Strobe Light"
+    ],
+    "variants": [
+      "색 덮개 점멸",
+      "질감 프레임 교체",
+      "불규칙 점멸"
+    ],
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/07-stylize-time.md#strobe-pulse-grid",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/template-catalog.md#held-text-strobe-burst",
+        "license": "unknown"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/stylize-effects.html",
+        "license": "unknown"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1b-073",
+      "R5-123"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "메타볼",
+    "en": "Metaball",
+    "what": "둥근 방울들이 가까워질 때 목이 생겨 붙고 멀어지면 다시 분리된다.",
+    "why": "끈적한 액체와 결합을 느낀다.",
+    "params": "권장 방울 5개, 반경 30px, 합체 구간 2200ms, blur 12px",
+    "impl": "SVG 방울 그룹에 blur와 alpha threshold 필터를 합성해 합체 경계를 만든다.",
+    "runtime": "svg",
+    "slug": "metaball",
+    "useful": 2,
+    "aka": [
+      "Gooey Metaball",
+      "점성 방울 합체"
+    ],
+    "variants": [
+      "방울 합체",
+      "방울 분열"
+    ],
+    "sources": [
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#gooey-metaball",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitives/gooey-metaball/scene.html",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitives/gooey-metaball/index.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1b-135"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "코덱 글리치",
+    "en": "Codec Glitch",
+    "what": "화면에 압축 블록과 뒤틀린 색이 생기거나 블록이 이동 방향으로 번진 뒤 원래 영상으로 돌아온다.",
+    "why": "영상 신호가 깨지는 디지털 혼란을 느낀다.",
+    "params": "권장 블록 24px, 이동 80px, 700ms, 시드 고정",
+    "impl": "canvas 원본 블록을 인덱스별 다른 오프셋으로 복제하며 다음 이미지를 섞는다.",
+    "runtime": "canvas",
+    "slug": "codec-glitch",
+    "useful": 3,
+    "aka": [
+      "Datamosh Smear",
+      "데이터모시 번짐",
+      "JPEG Codec Glitch",
+      "JPEG 코덱 글리치",
+      "JPEG 손상 프레임"
+    ],
+    "variants": [],
+    "sources": [
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#datamosh-smear",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitives/datamosh-smear/scene.html",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitives/datamosh-smear/index.html",
+        "license": "unknown"
+      },
+      {
+        "title": "fand/vfx-js",
+        "url": "https://github.com/fand/vfx-js/tree/main/packages/effects#effects",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1b-139",
+      "R8-065"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "웨이브 워프",
+    "en": "Wave Warp",
+    "what": "문장의 위치는 유지되지만 글자 윤곽이 물결처럼 휘고 흔들린다.",
+    "why": "수면이나 음파 같은 유동적인 재질을 느낀다.",
+    "params": "권장 진폭 4px, 파장 80px, 1800ms, 주기 1200ms",
+    "impl": "SVG displacement map의 강도나 canvas 글자 표본 좌표를 사인파로 변형한다.",
+    "runtime": "svg",
+    "slug": "wave-warp",
+    "useful": 2,
+    "aka": [
+      "Text Wave Distort",
+      "글자 표면 왜곡",
+      "웨이브 왜곡"
+    ],
+    "variants": [
+      "수평 파동",
+      "음파 왜곡",
+      "사인파",
+      "사각파",
+      "핀 고정 깃발"
+    ],
+    "sources": [
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#text-wave-distort",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitives/text-wave-distort/scene.html",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitives/text-wave-distort/index.html",
+        "license": "unknown"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/distort-effects.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1b-140",
+      "R5-043"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "흐름장",
+    "en": "Flow Field",
+    "what": "많은 작은 입자와 잔상이 보이지 않는 흐름을 따라 곡선으로 이동한다.",
+    "why": "유체 같은 방향성과 유기적인 에너지를 느낀다.",
+    "params": "권장 입자 600개, 8000ms, noise scale 0.004, 잔상 alpha 0.08, seed 고정",
+    "impl": "canvas 고정 노이즈 벡터장을 따라 입자를 적분하고 시간별 상태를 사전 계산한다.",
+    "runtime": "canvas",
+    "slug": "flow-field",
+    "useful": 2,
+    "aka": [
+      "노이즈 흐름장",
+      "bg-flow-field",
+      "Vector-field phase flow",
+      "벡터장 흐름",
+      "PhaseFlow",
+      "Noise Flow Field",
+      "Flow-field advection",
+      "Perlin flow field",
+      "Curl Noise Swirl",
+      "컬 노이즈 소용돌이",
+      "Divergence-free particle flow"
+    ],
+    "variants": [
+      "벡터장 궤적"
+    ],
+    "sources": [
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#bg-flow-field",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitives/bg-flow-field/scene.html",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitives/bg-flow-field/index.html",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/template-catalog.md#held-message-living-field",
+        "license": "unknown"
+      },
+      {
+        "title": "local/claude-synced-skills",
+        "url": "claude-skill:synced/39cd27d1-5d54-43b6-b557-65596e75bccb_30aab8dd-6815-4962-a41b-a684567e027b/algorithmic-art/SKILL.md",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1b-141",
+      "R7-025",
+      "R8-001",
+      "R8-002"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "파동 간섭",
+    "en": "Wave Interference",
+    "what": "격자의 점들이 서로 다른 사인 위상으로 움직이며 밝은 결절과 빈 영역을 만든다.",
+    "why": "주기와 공명이 복잡한 패턴을 만드는 과정을 느낀다.",
+    "params": "권장 30x30점, 주파수 비 2:3, 진폭 8px, 6000ms",
+    "impl": "canvas 점의 위치와 밝기를 여러 위상의 사인 함수 합으로 계산한다.",
+    "runtime": "canvas",
+    "slug": "wave-interference",
+    "useful": 2,
+    "aka": [
+      "Harmonic Interference",
+      "위상 간섭 파동"
+    ],
+    "variants": [
+      "공명 격자",
+      "만다라 간섭",
+      "동심원 간섭",
+      "위상 격자",
+      "공명 만다라"
+    ],
+    "sources": [
+      {
+        "title": "local/claude-synced-skills",
+        "url": "claude-skill:synced/39cd27d1-5d54-43b6-b557-65596e75bccb_30aab8dd-6815-4962-a41b-a684567e027b/algorithmic-art/SKILL.md",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "anthropics/skills",
+        "url": "https://github.com/anthropics/skills/blob/HEAD/skills/algorithmic-art/SKILL.md",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "paper-design/shaders",
+        "url": "https://shaders.paper.design/waves",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1b-151",
+      "R8-013"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "가지 성장",
+    "en": "Branch Growth",
+    "what": "한 줄기에서 가지가 갈라지고 작은 가지가 다시 갈라져 구조가 자란다.",
+    "why": "단순한 규칙이 복잡한 전체를 만드는 것을 이해한다.",
+    "params": "권장 깊이 5, 길이 비 0.618, 분기 각 28도, 4000ms, seed 고정",
+    "impl": "SVG 사전 생성한 재귀 가지 path를 깊이별로 순차 draw한다.",
+    "runtime": "svg",
+    "slug": "branch-growth",
+    "useful": 2,
+    "aka": [
+      "Recursive Growth",
+      "재귀 가지 성장",
+      "Recursive Branch Growth",
+      "Space Colonization Branch Growth",
+      "공간 점유 가지 성장",
+      "Space colonization",
+      "Leaf venation growth"
+    ],
+    "variants": [
+      "재귀 분기",
+      "목표점 방향 성장"
+    ],
+    "sources": [
+      {
+        "title": "local/claude-synced-skills",
+        "url": "claude-skill:synced/39cd27d1-5d54-43b6-b557-65596e75bccb_30aab8dd-6815-4962-a41b-a684567e027b/algorithmic-art/SKILL.md",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "processing/p5.js-website",
+        "url": "https://p5js.org/examples/Repetition-Recursive-Tree/",
+        "license": "MIT"
+      },
+      {
+        "title": "anthropics/skills",
+        "url": "https://github.com/anthropics/skills/blob/HEAD/skills/algorithmic-art/SKILL.md",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "nature-of-code/noc-book-2",
+        "url": "https://natureofcode.com/fractals/",
+        "license": "unknown"
+      },
+      {
+        "title": "jasonwebb/morphogenesis-resources",
+        "url": "https://github.com/jasonwebb/morphogenesis-resources#space-colonization",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1b-152",
+      "R8-009",
+      "R8-131"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "패킹 이완",
+    "en": "Packing Relaxation",
+    "what": "흩어진 점과 원이 서로 밀리거나 크기를 조절하며 겹침 없는 배치로 정착한다.",
+    "why": "무질서에서 질서가 생기는 과정을 느낀다.",
+    "params": "권장 40원, 완화 80회, 영상 재현 4000ms, seed 고정",
+    "impl": "canvas 원 패킹이나 보로노이 완화의 단계별 좌표를 계산해 시간에 따라 그린다.",
+    "runtime": "canvas",
+    "slug": "packing-relaxation",
+    "useful": 2,
+    "aka": [
+      "패킹 완화",
+      "Circle Packing Relaxation",
+      "원 채우기 이완",
+      "Voronoi Stipple Relaxation",
+      "보로노이 점묘 이완",
+      "Lloyd relaxation",
+      "Weighted Voronoi stippling"
+    ],
+    "variants": [
+      "원 패킹",
+      "명암 가중 배치"
+    ],
+    "sources": [
+      {
+        "title": "local/claude-synced-skills",
+        "url": "claude-skill:synced/39cd27d1-5d54-43b6-b557-65596e75bccb_30aab8dd-6815-4962-a41b-a684567e027b/algorithmic-art/SKILL.md",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "anthropics/skills",
+        "url": "https://github.com/anthropics/skills/blob/HEAD/skills/algorithmic-art/SKILL.md",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "jasonwebb/morphogenesis-resources",
+        "url": "https://github.com/jasonwebb/morphogenesis-resources#lloyds-relaxation",
+        "license": "unknown"
+      },
+      {
+        "title": "jasonwebb/morphogenesis-resources",
+        "url": "https://github.com/jasonwebb/morphogenesis-resources#weighted-voronoi-stippling",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1b-153",
+      "R8-008",
+      "R8-134"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "입자 힘장",
+    "en": "Particle Force Field",
+    "what": "입자들이 끌림과 밀림과 회전의 힘을 받아 중심 주위로 휘며 흔적을 남긴다.",
+    "why": "보이지 않는 힘의 방향을 궤적으로 이해한다.",
+    "params": "권장 입자 300개, 힘점 3개, 감쇠 0.98, 6000ms, seed 고정",
+    "impl": "canvas 고정 시간 간격으로 힘장을 적분하고 저장한 궤적을 시간 순서대로 표시한다.",
+    "runtime": "canvas",
+    "slug": "particle-force-field",
+    "useful": 2,
+    "aka": [
+      "Force Field Traces",
+      "힘장 궤적",
+      "Particle Attraction and Repulsion",
+      "입자 끌림과 밀림"
+    ],
+    "variants": [
+      "끌림",
+      "밀림",
+      "회전장",
+      "원위치 복귀"
+    ],
+    "sources": [
+      {
+        "title": "local/claude-synced-skills",
+        "url": "claude-skill:synced/39cd27d1-5d54-43b6-b557-65596e75bccb_30aab8dd-6815-4962-a41b-a684567e027b/algorithmic-art/SKILL.md",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "iart-ai/webgl-animation-skills",
+        "url": "https://github.com/iart-ai/webgl-animation-skills/blob/HEAD/skills/particle-system/SKILL.md",
+        "license": "MIT"
+      },
+      {
+        "title": "nature-of-code/noc-book-2",
+        "url": "https://natureofcode.com/particles/",
+        "license": "unknown"
+      },
+      {
+        "title": "naughtyduk/particlesGL",
+        "url": "https://github.com/naughtyduk/particlesGL",
+        "license": "custom personal-noncommercial/commercial-paid"
+      }
+    ],
+    "from": [
+      "R1b-154",
+      "R8-030"
+    ]
+  },
+  {
+    "family": "shape",
+    "ko": "그라데이션 배열 모션",
+    "en": "Graded Array Motion",
+    "what": "요소마다 크기나 회전량이 달라져 부채꼴과 경사형 배열을 만든다.",
+    "why": "전체의 규칙과 차이를 드러낸다.",
+    "params": "권장 지속 600ms, 요소 12개, 회전 0~90도, 크기 0.7~1.3, power2.out.",
+    "impl": "인덱스 또는 공간 거리의 정규화 값을 크기와 회전 범위로 매핑한다.",
+    "runtime": "gsap",
+    "slug": "graded-array-motion",
+    "useful": 2,
+    "aka": [
+      "Value distribution",
+      "값을 나누는 배열 모션"
+    ],
+    "variants": [
+      "크기 경사",
+      "각도 부채",
+      "거리 기반 분포"
+    ],
+    "sources": [
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/GSAP/UtilityMethods/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "juliangarnier/anime",
+        "url": "https://animejs.com/documentation/utilities/stagger",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R2-017"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "속도 기반 스큐",
+    "en": "Velocity Skew",
+    "what": "스크롤이 빨라질수록 글자와 카드가 기울고 멈추면 원래 모양으로 돌아온다.",
+    "why": "빠른 이동의 관성과 속도감을 전달한다.",
+    "params": "공식 공통 기본 없음. 권장 skew ±12도 제한, 복귀 300ms.",
+    "impl": "진행값의 시간 미분을 제한된 skew 값에 매핑하고 감쇠시킨다.",
+    "runtime": "gsap",
+    "slug": "velocity-skew",
+    "useful": 2,
+    "aka": [
+      "Scroll velocity skew",
+      "스크롤 속도 기울임"
+    ],
+    "variants": [
+      "가로 기울임",
+      "세로 기울임",
+      "속도별 늘어짐"
+    ],
+    "sources": [
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Plugins/ScrollTrigger/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "motiondivision/motion",
+        "url": "https://motion.dev/docs/react-use-velocity",
+        "license": "MIT"
+      },
+      {
+        "title": "demos.gsap.com",
+        "url": "https://demos.gsap.com/demo/velocity-skew",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R2-081"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "파문 왜곡",
+    "en": "Ripple Distortion",
+    "what": "화면 위로 원형 파문이 지나가면서 주변 색과 모양이 잠깐 변한다.",
+    "why": "에너지 확산과 시스템 활성화를 표현한다.",
+    "params": "권장 지속 1400ms, 파문 속도 0.5UV/s, 파장 0.05UV, 변위 0.02UV, 지수 감쇠.",
+    "impl": "WebGL에서 중심 거리와 시간으로 감쇠하는 원형 파형을 구해 이미지 샘플 좌표를 밀어낸다.",
+    "runtime": "webgl",
+    "slug": "ripple-distortion",
+    "useful": 2,
+    "aka": [
+      "Distortion ripple overlay",
+      "화면 왜곡 파문",
+      "Radial Ripple Distortion",
+      "방사 물결 왜곡"
+    ],
+    "variants": [
+      "화면 활성화",
+      "색 파문",
+      "빛 테두리",
+      "클릭 물결",
+      "다중 물결",
+      "물결 전환"
+    ],
+    "sources": [
+      {
+        "title": "motion.dev examples",
+        "url": "https://motion.dev/examples/react-apple-intelligence",
+        "license": "unknown"
+      },
+      {
+        "title": "iart-ai/webgl-animation-skills",
+        "url": "https://github.com/iart-ai/webgl-animation-skills/blob/HEAD/skills/shader-glsl/SKILL.md",
+        "license": "MIT"
+      },
+      {
+        "title": "paper-design/shaders",
+        "url": "https://shaders.paper.design/water",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgl_gpgpu_water",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R2-103",
+      "R8-050"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "볼록 렌즈",
+    "en": "Bulge Lens",
+    "what": "이미지 위를 투명한 렌즈가 지나가며 그 아래 부분이 휘거나 확대되어 보인다.",
+    "why": "특정 부분에 시선을 끌고 유리 질감을 보여준다.",
+    "params": "공식 공통 기본 없음. 권장 이동 3000ms, 렌즈 반경 화면의 15%, 굴절 강도 0.05.",
+    "impl": "자체 WebGL 셰이더에서 렌즈 마스크 안의 텍스처 좌표를 굴절시키고 중심을 이동한다.",
+    "runtime": "webgl",
+    "slug": "bulge-lens",
+    "useful": 2,
+    "aka": [
+      "Refractive lens travel",
+      "굴절 렌즈 이동",
+      "Bulge",
+      "볼록 렌즈 변형",
+      "볼록 렌즈 왜곡",
+      "Bulge distortion"
+    ],
+    "variants": [
+      "이동 렌즈",
+      "고정 영역 팽창"
+    ],
+    "sources": [
+      {
+        "title": "motion.dev examples",
+        "url": "https://motion.dev/examples/js-three-uniforms",
+        "license": "unknown"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/distort-effects.html",
+        "license": "unknown"
+      },
+      {
+        "title": "Robpayot/webgl-distortion-bulge-effect",
+        "url": "https://github.com/Robpayot/webgl-distortion-bulge-effect",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R2-118",
+      "R5-046",
+      "R8-053"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "등고선 표면 흐름",
+    "en": "Topographic contour flow",
+    "what": "변형되는 입체 표면에 촘촘한 등고선이 나타나며 색과 높이가 흐른다.",
+    "why": "표면의 높낮이와 유기적 변형을 보여준다.",
+    "params": "공식 공통 기본 없음. 권장 주기 6000ms, 등고선 간격 0.08, 변형 진폭 0.2.",
+    "impl": "직접 만든 WebGL 높이 함수와 등고선 셰이더의 시간 및 색 값을 보간한다.",
+    "runtime": "webgl",
+    "slug": "topographic-flow",
+    "useful": 3,
+    "aka": [],
+    "variants": [
+      "구 표면",
+      "높이 지도",
+      "하프톤 열",
+      "입자 표면"
+    ],
+    "sources": [
+      {
+        "title": "motion.dev examples",
+        "url": "https://motion.dev/examples/js-three-shader-topography",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R2-119"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "램프 빛 펼치기",
+    "en": "Lamp Cone Reveal",
+    "what": "양옆에서 넓어진 빛 원뿔이 중앙 문구를 비추며 나타난다.",
+    "why": "중앙 제목을 무대 위처럼 강조한다.",
+    "params": "도감 기본값: 1000ms, 빛 폭 0에서 600px, blur 40px, ease-out",
+    "impl": "CSS conic-gradient 두 면의 폭과 opacity를 보간한다.",
+    "runtime": "css",
+    "slug": "lamp-cone-reveal",
+    "useful": 2,
+    "aka": [
+      "Lamp Effect",
+      "lamp-effect"
+    ],
+    "variants": [],
+    "sources": [
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/lamp-effect",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R3-119"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "유성",
+    "en": "Shooting Stars",
+    "what": "가느다란 빛 꼬리가 비스듬히 빠르게 지나가고 사라진다.",
+    "why": "우주 분위기와 순간적인 에너지를 준다.",
+    "params": "도감 기본값: 1400ms, 길이 100px, 간격 600ms, 속도 300px/s",
+    "impl": "CSS 선형 그라디언트 막대의 translate와 opacity를 반복한다.",
+    "runtime": "css",
+    "slug": "shooting-stars",
+    "useful": 2,
+    "aka": [
+      "Meteors and Shooting Stars",
+      "유성과 별똥별",
+      "Meteors",
+      "meteors",
+      "shooting-stars-and-stars-background"
+    ],
+    "variants": [],
+    "sources": [
+      {
+        "title": "magicuidesign/magicui",
+        "url": "https://magicui.design/docs/components/meteors",
+        "license": "MIT"
+      },
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/meteors",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R3-121"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "비단 주름 흐름",
+    "en": "Silk Flow",
+    "what": "광택이 있는 천 같은 주름이 천천히 움직이며 빛과 그림자가 흐른다.",
+    "why": "부드러운 재질과 고급스러운 분위기를 준다.",
+    "params": "도감 기본값: 8000ms, 주름 주기 8, 속도 0.2, 대비 0.4",
+    "impl": "WebGL 방향성 노이즈의 미분으로 주름 명암을 계산한다.",
+    "runtime": "webgl",
+    "slug": "silk-flow",
+    "useful": 2,
+    "aka": [
+      "Silk",
+      "Ribbons"
+    ],
+    "variants": [],
+    "sources": [
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      }
+    ],
+    "from": [
+      "R3-127"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "액체 금속",
+    "en": "Liquid Metal",
+    "what": "은색 표면이 점성 있게 흐르며 거울 같은 반사가 변한다.",
+    "why": "금속 질감과 미래적인 분위기를 만든다.",
+    "params": "도감 기본값: 7000ms, 변형 강도 0.2, 속도 0.25, 대비 1.5",
+    "impl": "WebGL 노이즈 법선과 가상 환경 반사 색을 시간에 따라 바꾼다.",
+    "runtime": "webgl",
+    "slug": "liquid-metal",
+    "useful": 2,
+    "aka": [
+      "액체 금속 흐름",
+      "Liquid Metal Morph",
+      "액체 금속 모프",
+      "Liquid Metal Shimmer",
+      "액체 금속 반짝임",
+      "Chrome shader",
+      "LiquidChrome",
+      "MetallicPaint",
+      "MoltenMetal"
+    ],
+    "variants": [
+      "크롬 방울",
+      "금속 글자",
+      "금속 합체",
+      "금속 로고",
+      "크롬",
+      "색 금속"
+    ],
+    "sources": [
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      },
+      {
+        "title": "motiondesign.school",
+        "url": "https://motiondesign.school/blog/after-effects-tutorial/",
+        "license": "unknown"
+      },
+      {
+        "title": "paper-design/shaders",
+        "url": "https://shaders.paper.design/liquid-metal",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R3-128",
+      "R5-099",
+      "R8-059"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "유체 잉크",
+    "en": "Fluid Ink Advection",
+    "what": "색 구름과 잉크가 퍼지고 휘말리며 부드럽게 섞인다.",
+    "why": "유동적 사고와 에너지 흐름을 표현한다.",
+    "params": "도감 기본값: 8000ms, 소용돌이 반경 120px, 감쇠 0.98, 속도 0.2",
+    "impl": "WebGL 이동 필드로 색 텍스처를 변위시키거나 독립 노이즈 흐름을 합성한다.",
+    "runtime": "webgl",
+    "slug": "fluid-ink",
+    "useful": 2,
+    "aka": [
+      "Liquid Flow",
+      "유체 색 흐름",
+      "유체 잉크 확산",
+      "Stable fluids visual",
+      "Dye advection",
+      "LiquidEther",
+      "SplashCursor",
+      "Ferrofluid",
+      "Plasma",
+      "PlasmaWave"
+    ],
+    "variants": [
+      "다색 잉크",
+      "단색 연무",
+      "경로 주입"
+    ],
+    "sources": [
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      },
+      {
+        "title": "PavelDoGreat/WebGL-Fluid-Simulation",
+        "url": "https://github.com/PavelDoGreat/WebGL-Fluid-Simulation",
+        "license": "MIT"
+      },
+      {
+        "title": "artcodev/three-fluid-fx",
+        "url": "https://three-fluid-fx.artcreativecode.com/examples/glsl/minimal/overlay/",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R3-129",
+      "R8-032"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "입자 소용돌이",
+    "en": "Particle Vortex",
+    "what": "입자들이 중심을 향해 또는 중심 밖으로 나선형으로 흐른다.",
+    "why": "흡입과 집중 또는 확산을 표현한다.",
+    "params": "도감 기본값: 6000ms, 입자 200개, 각속도 0.4rad/s, 반경 200px",
+    "impl": "canvas 극좌표 반경과 각도를 시간에 따라 갱신한다.",
+    "runtime": "canvas",
+    "slug": "particle-vortex",
+    "useful": 2,
+    "aka": [
+      "Particle Tornado",
+      "입자 토네이도"
+    ],
+    "variants": [
+      "평면 나선",
+      "상승 토네이도",
+      "중심 흡입",
+      "바깥 확산"
+    ],
+    "sources": [
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/vortex",
+        "license": "unknown"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgpu_tsl_vfx_tornado",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R3-131",
+      "R8-046"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "빛내림",
+    "en": "God Rays",
+    "what": "여러 빛줄기가 광원에서 뻗어 나와 천천히 흔들리고 밝기가 변한다.",
+    "why": "신비한 공간과 중심 광원을 강조한다.",
+    "params": "도감 기본값: 6000ms, 광선 12개, 각도 폭 50deg, 밝기 진폭 0.3",
+    "impl": "WebGL 광원 기준 각도와 노이즈로 선형 광량을 계산한다.",
+    "runtime": "webgl",
+    "slug": "god-rays",
+    "useful": 2,
+    "aka": [
+      "Light Ray Field",
+      "빛줄기 배경",
+      "God Ray Sweep",
+      "빛줄기 스윕",
+      "Light shafts",
+      "Crepuscular rays",
+      "Light Rays",
+      "LightRays",
+      "SideRays",
+      "Beams",
+      "LightPillar",
+      "Lightfall",
+      "light-rays"
+    ],
+    "variants": [
+      "태양 광선",
+      "방사 광선",
+      "움직이는 가림"
+    ],
+    "sources": [
+      {
+        "title": "magicuidesign/magicui",
+        "url": "https://magicui.design/docs/components/light-rays",
+        "license": "MIT"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgl_postprocessing_godrays",
+        "license": "MIT"
+      },
+      {
+        "title": "paper-design/shaders",
+        "url": "https://shaders.paper.design/god-rays",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R3-133",
+      "R8-062"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "프랙탈 구름",
+    "en": "Fractal Clouds",
+    "what": "부드러운 구름 덩어리가 천천히 이동하며 형태를 바꾼다.",
+    "why": "넓은 공간과 평온함을 만든다.",
+    "params": "도감 기본값: 16000ms, 속도 10px/s, 구름 6개, 변형 0.2",
+    "impl": "WebGL 누적 노이즈를 이동시키거나 canvas 흐린 덩어리를 합성한다.",
+    "runtime": "webgl",
+    "slug": "fractal-clouds",
+    "useful": 2,
+    "aka": [
+      "Drifting Clouds",
+      "흐르는 구름",
+      "Fractal Noise Evolution",
+      "프랙탈 노이즈 진화",
+      "Fractal Noise",
+      "fBm",
+      "프랙탈 노이즈 변화",
+      "Fractal Brownian motion texture"
+    ],
+    "variants": [
+      "구름 이동",
+      "노이즈 진화"
+    ],
+    "sources": [
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/cloud-shader",
+        "license": "unknown"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/noise-grain-effects.html",
+        "license": "unknown"
+      },
+      {
+        "title": "iart-ai/webgl-animation-skills",
+        "url": "https://github.com/iart-ai/webgl-animation-skills/blob/HEAD/skills/shader-glsl/SKILL.md",
+        "license": "MIT"
+      },
+      {
+        "title": "paper-design/shaders",
+        "url": "https://shaders.paper.design/perlin-noise",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "paper-design/shaders",
+        "url": "https://shaders.paper.design/simplex-noise",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R3-134",
+      "R5-055",
+      "R8-005"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "강체 충돌",
+    "en": "Rigid Body Cascade",
+    "what": "여러 공이나 상자가 중력으로 떨어져 서로 부딪히고 튕기며 바닥에 쌓인다.",
+    "why": "다수 객체의 물리적 상호작용을 보여 준다.",
+    "params": "도감 기본값: 4000ms, 공 30개, 반경 12px, 중력 600px/s², 반발 0.6",
+    "impl": "canvas 원 충돌과 중력 계산을 시간별로 갱신한다.",
+    "runtime": "canvas",
+    "slug": "rigid-body-cascade",
+    "useful": 2,
+    "aka": [
+      "Bouncing Ball Pit",
+      "공 무리 충돌",
+      "강체 충돌 연쇄"
+    ],
+    "variants": [
+      "공 쌓기",
+      "상자 연쇄 충돌"
+    ],
+    "sources": [
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#physics_rapier_instancing",
+        "license": "MIT"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#physics_ammo_instancing",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R3-182",
+      "R8-041"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "흐름맵 번짐",
+    "en": "Flowmap Smear",
+    "what": "이미지가 이동 방향으로 휘거나 일그러지고 시간이 지나면 복원된다.",
+    "why": "속도와 관성을 표면 변형으로 보여 준다.",
+    "params": "도감 기본값: 900ms, 변위 20px, 감쇠 0.9, ease-out",
+    "impl": "WebGL 이미지 UV에 이동 속도 기반 변형장을 더한다.",
+    "runtime": "webgl",
+    "slug": "flowmap-smear",
+    "useful": 2,
+    "aka": [
+      "Image Decay Distortion",
+      "이미지 변형 잔류",
+      "Velocity-map distortion",
+      "DecayCard",
+      "GridDistortion",
+      "RippleDistortion",
+      "On-Scroll Image Distortion"
+    ],
+    "variants": [
+      "커서 경로",
+      "스크롤 속도 왜곡",
+      "자막 유체 번짐"
+    ],
+    "sources": [
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      },
+      {
+        "title": "tympanus.net/codrops",
+        "url": "https://tympanus.net/Tutorials/ShaderOnScroll/",
+        "license": "unknown"
+      },
+      {
+        "title": "martinlaxenaire/curtainsjs",
+        "url": "https://www.curtainsjs.com/examples/ping-pong-shading-flowmap/",
+        "license": "MIT"
+      },
+      {
+        "title": "oframe/ogl",
+        "url": "https://oframe.github.io/ogl/examples/mouse-flowmap.html",
+        "license": "unknown"
+      },
+      {
+        "title": "artcodev/three-fluid-fx",
+        "url": "https://three-fluid-fx.artcreativecode.com/examples/glsl/minimal/distortion/",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R3-187",
+      "R8-055"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "점진적 블러",
+    "en": "Progressive Blur",
+    "what": "콘텐츠의 가장자리 쪽으로 갈수록 흐림이 강해져 이동하는 내용이 자연스럽게 사라진다.",
+    "why": "중심 정보에 집중하고 경계의 움직임을 부드럽게 한다.",
+    "params": "도감 기본값: 600ms, blur 0에서 12px, 경계 폭 120px",
+    "impl": "CSS 마스크가 다른 backdrop-filter 층을 겹쳐 흐림 강도를 분포시킨다.",
+    "runtime": "css",
+    "slug": "progressive-blur",
+    "useful": 2,
+    "aka": [
+      "가장자리 점진 흐림",
+      "GradualBlur",
+      "progressive-blur"
+    ],
+    "variants": [],
+    "sources": [
+      {
+        "title": "ibelick/motion-primitives",
+        "url": "https://motion-primitives.com/docs/progressive-blur",
+        "license": "MIT"
+      },
+      {
+        "title": "magicuidesign/magicui",
+        "url": "https://magicui.design/docs/components/progressive-blur",
+        "license": "MIT"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      }
+    ],
+    "from": [
+      "R3-192"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "불꽃 노이즈 루프",
+    "en": "Flame Noise Loop",
+    "what": "홍채나 광원 주변의 불꽃 같은 노이즈가 흔들리고 중심 구멍이 시선을 따라 움직인다.",
+    "why": "강한 에너지와 살아 있는 시선을 보여 준다.",
+    "params": "도감 기본값: 4000ms, 노이즈 강도 0.2, 시선 이동 12px, 속도 0.3",
+    "impl": "WebGL 극좌표 노이즈의 시간 위상과 중심 좌표를 갱신한다.",
+    "runtime": "webgl",
+    "slug": "flame-noise-loop",
+    "useful": 3,
+    "aka": [
+      "Flame and Iris Loop",
+      "불꽃과 홍채 루프",
+      "EvilEye"
+    ],
+    "variants": [],
+    "sources": [
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      }
+    ],
+    "from": [
+      "R3-196"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "빛줄기 충돌 폭발",
+    "en": "Beam Collision Burst",
+    "what": "떨어지는 빛줄기가 바닥이나 경계에 닿는 순간 작은 빛 조각으로 퍼진다.",
+    "why": "이동이 충돌로 끝나는 사건을 보여 준다.",
+    "params": "도감 기본값: 낙하 1500ms, 폭발 600ms, 조각 12개, 중력 500px/s²",
+    "impl": "canvas 선의 위치를 내려 충돌 시점에 새 입자 속도와 수명을 시작한다.",
+    "runtime": "canvas",
+    "slug": "beam-collision-burst",
+    "useful": 2,
+    "aka": [
+      "Background Beams With Collision",
+      "background-beams-with-collision"
+    ],
+    "variants": [],
+    "sources": [
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/background-beams-with-collision",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R3-204"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "시간 흔들림",
+    "en": "Temporal Wiggle",
+    "what": "동작 재생 시간이 조금씩 앞뒤로 흔들려 속도가 불규칙해진다.",
+    "why": "불안정한 영상과 유기적 속도 변화를 만든다.",
+    "params": "제안 기본값: 2000ms; 시간 진폭 80ms; 2Hz",
+    "impl": "변환값 대신 애니메이션 평가 시간에 연속 노이즈를 더한다.",
+    "runtime": "canvas",
+    "slug": "temporal-wiggle",
+    "useful": 3,
+    "aka": [
+      "시간 위글"
+    ],
+    "variants": [
+      "미세 떨림",
+      "큰 시간 요동"
+    ],
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/work-with-expressions/expression-language-reference/expression-language-reference.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R5-026"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "해칭 채움",
+    "en": "Hatch Fill",
+    "what": "지그재그 낙서선이 도형 내부를 채우거나 외곽을 따라 생긴다.",
+    "why": "손으로 칠하는 과정과 친근한 질감을 준다.",
+    "params": "제안 기본값: 1200ms; spacing 6px; stroke 2px; 45deg",
+    "impl": "도형 내부를 왕복하는 선을 생성하고 길이로 공개한다.",
+    "runtime": "svg",
+    "slug": "hatch-fill",
+    "useful": 2,
+    "aka": [
+      "Scribble Fill",
+      "스크리블 채움",
+      "Hatched fill construction",
+      "해칭 채움 생성"
+    ],
+    "variants": [
+      "사선 해칭",
+      "낙서 채움"
+    ],
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/generate-effects.html",
+        "license": "unknown"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      },
+      {
+        "title": "rough-stuff/rough",
+        "url": "https://github.com/rough-stuff/rough/blob/master/README.md",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R5-049",
+      "R7-080"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "극좌표 말기",
+    "en": "Polar Coordinates Wrap",
+    "what": "가로로 펼친 이미지가 원형 띠로 말리거나 반대로 펴진다.",
+    "why": "직선과 원형 구조의 대응을 보여준다.",
+    "params": "제안 기본값: 1000ms; 변환 0→100%; power2.inOut",
+    "impl": "직교 UV와 극좌표 UV 사이를 보간한다.",
+    "runtime": "webgl",
+    "slug": "polar-wrap",
+    "useful": 3,
+    "aka": [
+      "극좌표 래핑"
+    ],
+    "variants": [
+      "원형 래핑",
+      "원형 펼침"
+    ],
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/distort-effects.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R5-110"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "트월",
+    "en": "Twirl Distortion",
+    "what": "중심 주변의 영상이 소용돌이처럼 돌아 말린다.",
+    "why": "회전 에너지와 공간의 뒤틀림을 표현한다.",
+    "params": "제안 기본값: 1000ms; angle 180deg; radius 160px",
+    "impl": "중심 거리별 감쇠 회전으로 UV를 변환한다.",
+    "runtime": "webgl",
+    "slug": "twirl",
+    "useful": 2,
+    "aka": [
+      "소용돌이 왜곡"
+    ],
+    "variants": [
+      "시계 소용돌이",
+      "역방향 소용돌이"
+    ],
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/distort-effects.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R5-111"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "만화경",
+    "en": "Kaleidoscope Motion",
+    "what": "이미지가 대칭 복제되고 중심 회전에 따라 무늬가 바뀐다.",
+    "why": "복잡한 대칭과 환상적인 리듬을 만든다.",
+    "params": "제안 기본값: 3000ms; 6대칭; 회전 60deg; linear",
+    "impl": "각도 좌표를 섹터로 접고 반사 UV로 샘플링한다.",
+    "runtime": "webgl",
+    "slug": "kaleidoscope",
+    "useful": 2,
+    "aka": [
+      "Mirror Kaleidoscope",
+      "거울 만화경",
+      "Mirror symmetry",
+      "만화경 모션"
+    ],
+    "variants": [
+      "양면 거울",
+      "방사 만화경",
+      "방사 반사",
+      "다각 대칭",
+      "느린 회전"
+    ],
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/distort-effects.html",
+        "license": "unknown"
+      },
+      {
+        "title": "processing/p5.js-website",
+        "url": "https://p5js.org/examples/Repetition-Kaleidoscope/",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R5-112",
+      "R8-014"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "보로노이 모션",
+    "en": "Animated Voronoi",
+    "what": "불규칙한 셀과 균열 무늬가 크기와 모양을 바꾸며 흐른다.",
+    "why": "유기적 조직과 추상 표면을 보여준다.",
+    "params": "제안 기본값: 4000ms; 셀 48px; 변화 0.3Hz",
+    "impl": "시간에 따라 움직이는 시드의 보로노이 거리장을 그린다.",
+    "runtime": "webgl",
+    "slug": "voronoi-motion",
+    "useful": 2,
+    "aka": [
+      "Cell Pattern Evolution",
+      "셀 패턴 진화",
+      "Cell Pattern",
+      "움직이는 보로노이 셀"
+    ],
+    "variants": [
+      "보로노이 셀",
+      "균열",
+      "거품",
+      "결정 셀",
+      "세포 경계",
+      "커서 주변 셀 수축"
+    ],
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/generate-effects.html",
+        "license": "unknown"
+      },
+      {
+        "title": "paper-design/shaders",
+        "url": "https://shaders.paper.design/voronoi",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "anthropics/skills",
+        "url": "https://github.com/anthropics/skills/blob/HEAD/skills/algorithmic-art/SKILL.md",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "fand/vfx-js",
+        "url": "https://github.com/fand/vfx-js/tree/main/packages/effects#effects",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R5-119",
+      "R8-007"
+    ]
+  },
+  {
+    "family": "transitions",
+    "ko": "윤곽 추출 스타일 전환",
+    "en": "Edge Trace Stylization",
+    "what": "사진의 면이 사라지고 경계선만 남은 그림으로 바뀐다.",
+    "why": "형태의 구조와 도해적 인상을 드러낸다.",
+    "params": "제안 기본값: 800ms; edge threshold 0.15; mix 0→1",
+    "impl": "자체 경계 검출 결과와 원본 색의 혼합 비율을 보간한다.",
+    "runtime": "webgl",
+    "slug": "edge-trace-transition",
+    "useful": 2,
+    "aka": [
+      "Find Edges"
+    ],
+    "variants": [
+      "밝은 윤곽",
+      "어두운 윤곽"
+    ],
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/stylize-effects.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R5-125"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "랜덤 워크",
+    "en": "Random Walk",
+    "what": "점이 짧은 임의 이동을 반복하며 불규칙한 궤적을 남긴다.",
+    "why": "탐색, 불확실성, 확산을 보여준다.",
+    "params": "재현 제안 기본값: 4000ms, 점 80개, 고정 스텝 16.67ms, 이동 표준편차 1.5px, linear",
+    "impl": "canvas에서 시드 난수로 이동 벡터를 누적하고 궤적을 다시 그린다.",
+    "runtime": "canvas",
+    "slug": "random-walk",
+    "useful": 2,
+    "aka": [
+      "Brownian walk"
+    ],
+    "variants": [
+      "가우시안 이동",
+      "방향 편향",
+      "경계 반사"
+    ],
+    "sources": [
+      {
+        "title": "nature-of-code/noc-book-2",
+        "url": "https://natureofcode.com/random/",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R8-003"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "셀룰러 오토마타",
+    "en": "Cellular Automaton Evolution",
+    "what": "격자 칸이 이웃 상태에 따라 켜지고 꺼지며 무늬가 성장하거나 이동한다.",
+    "why": "작은 지역 규칙이 큰 패턴을 만든다는 것을 보여준다.",
+    "params": "재현 제안 기본값: 5000ms, 격자 60x36, 세대 간격 120ms, 초기 점유율 0.25, steps",
+    "impl": "canvas에서 이웃 수에 따른 다음 세대를 계산하고 이중 배열로 교체한다.",
+    "runtime": "canvas",
+    "slug": "cellular-automaton",
+    "useful": 3,
+    "aka": [
+      "셀룰러 오토마타 변화",
+      "1D 규칙"
+    ],
+    "variants": [
+      "생명 게임",
+      "확산하는 군집"
+    ],
+    "sources": [
+      {
+        "title": "processing/p5.js-website",
+        "url": "https://p5js.org/examples/Math-And-Physics-Game-Of-Life/",
+        "license": "MIT"
+      },
+      {
+        "title": "nature-of-code/noc-book-2",
+        "url": "https://natureofcode.com/cellular-automata/",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R8-010"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "입자 연결망",
+    "en": "Connected Particle Network",
+    "what": "움직이는 점 사이의 가까운 연결선이 나타났다가 멀어지면 사라진다.",
+    "why": "관계가 계속 만들어지고 바뀌는 네트워크를 보여준다.",
+    "params": "재현 제안 기본값: 6000ms, 점 100개, 연결 반경 120px, 속도 12px/s, 선 최대 불투명도 0.35",
+    "impl": "canvas에서 공간 격자로 가까운 점만 찾고 거리로 선의 알파를 정한다.",
+    "runtime": "canvas",
+    "slug": "particle-network",
+    "useful": 2,
+    "aka": [
+      "연결 입자 네트워크",
+      "Constellation background",
+      "Linked particles",
+      "3D 연결점"
+    ],
+    "variants": [
+      "별자리",
+      "삼각 면 연결"
+    ],
+    "sources": [
+      {
+        "title": "tsparticles/presets",
+        "url": "https://github.com/tsparticles/presets/blob/HEAD/presets/links/README.md",
+        "license": "MIT"
+      },
+      {
+        "title": "processing/p5.js-website",
+        "url": "https://p5js.org/examples/Classes-And-Objects-Connected-Particles/",
+        "license": "MIT"
+      },
+      {
+        "title": "iart-ai/webgl-animation-skills",
+        "url": "https://github.com/iart-ai/webgl-animation-skills/blob/HEAD/skills/particle-system/SKILL.md",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-016"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "불꽃놀이",
+    "en": "Firework Bloom",
+    "what": "상승한 빛이 공중에서 여러 갈래로 터지고 빛나는 꼬리가 사라진다.",
+    "why": "절정과 해방감을 만든다.",
+    "params": "재현 제안 기본값: 3000ms, 상승 700ms, 파편 80개, 확산속도 180px/s, 잔광 900ms",
+    "impl": "canvas에서 로켓과 파편 두 단계의 탄도를 만들고 가산 합성 꼬리를 그린다.",
+    "runtime": "canvas",
+    "slug": "firework",
+    "useful": 2,
+    "aka": [
+      "불꽃놀이 확산"
+    ],
+    "variants": [
+      "구형 폭발",
+      "연속 폭발",
+      "다단 불꽃"
+    ],
+    "sources": [
+      {
+        "title": "tsparticles/presets",
+        "url": "https://github.com/tsparticles/presets/blob/HEAD/presets/fireworks/README.md",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-018"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "입자 분수",
+    "en": "Particle Fountain",
+    "what": "바닥의 좁은 출구에서 입자가 위로 솟아 포물선을 그리며 떨어진다.",
+    "why": "지속적인 공급이나 분출을 보여준다.",
+    "params": "재현 제안 기본값: 5000ms, 초당 50개, 초기속도 240px/s, 분출각 폭 24도, 중력 400px/s²",
+    "impl": "canvas에서 출생 시각별 입자의 위치를 탄도식으로 직접 계산한다.",
+    "runtime": "canvas",
+    "slug": "particle-fountain",
+    "useful": 2,
+    "aka": [],
+    "variants": [
+      "물 분수",
+      "빛 분수",
+      "넓은 분출"
+    ],
+    "sources": [
+      {
+        "title": "tsparticles/presets",
+        "url": "https://github.com/tsparticles/presets/blob/HEAD/presets/fountain/README.md",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-019"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "빗줄기",
+    "en": "Rain Streaks",
+    "what": "가느다란 선들이 같은 방향으로 빠르게 떨어지고 바닥에서 작은 흔적을 만든다.",
+    "why": "날씨와 속도, 긴장감을 전달한다.",
+    "params": "재현 제안 기본값: 4000ms, 줄기 180개, 속도 500px/s, 길이 12~28px, 기울기 12도",
+    "impl": "canvas에서 낙하 위치와 속도 방향으로 선분을 그리고 바닥 충돌을 작은 링으로 표시한다.",
+    "runtime": "canvas",
+    "slug": "rain-streaks",
+    "useful": 2,
+    "aka": [
+      "빗줄기 낙하"
+    ],
+    "variants": [
+      "수직비",
+      "사선비",
+      "바닥 튀김"
+    ],
+    "sources": [
+      {
+        "title": "iart-ai/webgl-animation-skills",
+        "url": "https://github.com/iart-ai/webgl-animation-skills/blob/HEAD/skills/particle-system/SKILL.md",
+        "license": "MIT"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgpu_compute_particles_rain",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-021"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "불꽃 기둥",
+    "en": "Fire Plume",
+    "what": "밝은 입자가 위로 솟으며 흔들리고 가장자리에서 점차 사라진다.",
+    "why": "열과 에너지, 위로 향하는 힘을 느끼게 한다.",
+    "params": "재현 제안 기본값: 4000ms, 초당 90개, 상승 90px/s, 수명 900ms, 색 흰색부터 주황과 검정",
+    "impl": "canvas에서 상승력과 노이즈 횡이동을 적용하고 나이에 따른 색과 크기를 조절한다.",
+    "runtime": "canvas",
+    "slug": "fire-plume",
+    "useful": 2,
+    "aka": [],
+    "variants": [
+      "입자 불",
+      "볼륨 불",
+      "작은 촛불"
+    ],
+    "sources": [
+      {
+        "title": "tsparticles/presets",
+        "url": "https://github.com/tsparticles/presets/blob/HEAD/presets/fire/README.md",
+        "license": "MIT"
+      },
+      {
+        "title": "iart-ai/webgl-animation-skills",
+        "url": "https://github.com/iart-ai/webgl-animation-skills/blob/HEAD/skills/particle-system/SKILL.md",
+        "license": "MIT"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgpu_tsl_vfx_flames",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-022"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "연기 확산",
+    "en": "Smoke Plume",
+    "what": "부드러운 덩어리가 위로 올라가며 커지고 서로 겹쳐 옅어진다.",
+    "why": "증발, 소멸, 대기의 움직임을 보여준다.",
+    "params": "재현 제안 기본값: 5000ms, 초당 20개, 상승 25px/s, 크기 12px부터 70px, 수명 2600ms",
+    "impl": "canvas에서 반투명 원 스프라이트를 키우고 바람을 더하며 수명에 따라 흐리게 그린다.",
+    "runtime": "canvas",
+    "slug": "smoke-plume",
+    "useful": 2,
+    "aka": [],
+    "variants": [
+      "가벼운 연기",
+      "색 연무",
+      "구름 볼륨"
+    ],
+    "sources": [
+      {
+        "title": "processing/p5.js-website",
+        "url": "https://p5js.org/examples/Math-And-Physics-Smoke-Particle-System/",
+        "license": "MIT"
+      },
+      {
+        "title": "iart-ai/webgl-animation-skills",
+        "url": "https://github.com/iart-ai/webgl-animation-skills/blob/HEAD/skills/particle-system/SKILL.md",
+        "license": "MIT"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgpu_volume_cloud",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-023"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "기포 상승",
+    "en": "Rising Bubbles",
+    "what": "반투명 원이 아래에서 올라오며 흔들리고 커지다가 사라진다.",
+    "why": "가벼움과 액체 속 부력을 느끼게 한다.",
+    "params": "재현 제안 기본값: 5000ms, 초당 8개, 상승 35px/s, 반경 4~18px, 수명 3500ms",
+    "impl": "canvas에서 기포 나이에 따른 상승과 확대를 계산하고 얇은 테두리를 그린다.",
+    "runtime": "canvas",
+    "slug": "rising-bubbles",
+    "useful": 2,
+    "aka": [],
+    "variants": [
+      "비눗방울",
+      "수중 기포",
+      "거품 터짐"
+    ],
+    "sources": [
+      {
+        "title": "tsparticles/presets",
+        "url": "https://github.com/tsparticles/presets/blob/HEAD/presets/bubbles/README.md",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-026"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "촉수 물결",
+    "en": "Tendril Wave",
+    "what": "중심에서 퍼진 가는 촉수가 엇갈린 위상으로 구부러지고 다시 펴진다.",
+    "why": "방사형 생명체와 유연한 반복 움직임을 떠올리게 한다.",
+    "params": "재현 제안 기본값: 6000ms, 촉수 36개, 길이 140px, 흔들림 20도, 주기 2200ms",
+    "impl": "canvas에서 촉수마다 위상이 다른 다절점 곡선을 계산한다.",
+    "runtime": "canvas",
+    "slug": "tendril-wave",
+    "useful": 3,
+    "aka": [
+      "Sea Anemone Tendrils",
+      "말미잘 촉수"
+    ],
+    "variants": [
+      "꽃잎",
+      "촉수",
+      "방사 빛줄기"
+    ],
+    "sources": [
+      {
+        "title": "tsparticles/presets",
+        "url": "https://github.com/tsparticles/presets/blob/HEAD/presets/seaAnemone/README.md",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-028"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "입자 붓질",
+    "en": "Particle Painting Advection",
+    "what": "이미지 색을 가진 짧은 붓 자국이 흐름장을 따라 이동하며 그림을 흐트러뜨린다.",
+    "why": "정지 이미지가 유동적인 회화로 바뀌는 느낌을 준다.",
+    "params": "재현 제안 기본값: 5000ms, 붓 3000개, 길이 8px, 폭 2px, 이동 12px/s, 복귀 0.02",
+    "impl": "WebGL에서 이미지로부터 색을 샘플링한 사각 입자를 속도장 방향으로 회전시켜 그린다.",
+    "runtime": "webgl",
+    "slug": "particle-painting",
+    "useful": 3,
+    "aka": [
+      "입자 붓질 이동"
+    ],
+    "variants": [
+      "유화 흐름",
+      "단색 붓질",
+      "다층 회화"
+    ],
+    "sources": [
+      {
+        "title": "piellardj/paint-webgl",
+        "url": "https://github.com/piellardj/paint-webgl",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R8-031"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "이상 끌개",
+    "en": "Strange Attractor Trails",
+    "what": "많은 점이 복잡한 3D 궤도를 반복해서 돌며 고리와 겹친 띠를 만든다.",
+    "why": "질서와 혼돈이 공존하는 동역학을 느끼게 한다.",
+    "params": "재현 제안 기본값: 6000ms, 점 20000개, 적분 스텝 1/128, 장 전환 2000ms, 꼬리 감쇠 0.97",
+    "impl": "WebGL에서 끌개 방정식으로 점 위치를 적분하고 장 전환 때 두 속도장을 혼합한다.",
+    "runtime": "webgl",
+    "slug": "strange-attractor",
+    "useful": 3,
+    "aka": [
+      "이상 끌개 궤적",
+      "Chaotic attractor"
+    ],
+    "variants": [
+      "로렌츠",
+      "토머스",
+      "끌개 간 모프"
+    ],
+    "sources": [
+      {
+        "title": "QC20/Colourful-Attraction",
+        "url": "https://github.com/QC20/Colourful-Attraction",
+        "license": "MIT"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgpu_tsl_compute_attractors_particles",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-033"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "다체 궤도 군집",
+    "en": "N-body Orbital Cluster",
+    "what": "여러 점이 서로 끌어당기며 작은 무리와 회전 궤도를 만든다.",
+    "why": "상호 작용과 중력에 따른 구조 형성을 보여준다.",
+    "params": "재현 제안 기본값: 5000ms, 점 250개, 중력 상수 0.8, 완화 반경 12px, 스텝 8.33ms",
+    "impl": "canvas에서 거리 기반 인력을 합산해 위치를 고정 스텝으로 적분한다.",
+    "runtime": "canvas",
+    "slug": "nbody-cluster",
+    "useful": 3,
+    "aka": [],
+    "variants": [
+      "행성 형성",
+      "다중 궤도",
+      "중력 우물"
+    ],
+    "sources": [
+      {
+        "title": "nature-of-code/noc-book-2",
+        "url": "https://natureofcode.com/forces/",
+        "license": "unknown"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgl_gpgpu_protoplanet",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-034"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "보이드 군집",
+    "en": "Boid Flocking",
+    "what": "작은 개체들이 서로 거리를 유지하면서 방향을 맞추고 한 무리로 회전한다.",
+    "why": "개별 규칙이 집단의 움직임을 만든다는 것을 보여준다.",
+    "params": "재현 제안 기본값: 6000ms, 개체 120개, 이웃 반경 65px, 분리 반경 18px, 최대속도 80px/s",
+    "impl": "canvas에서 분리, 정렬, 응집 조향력을 더해 각 개체의 방향을 갱신한다.",
+    "runtime": "canvas",
+    "slug": "boid-flocking",
+    "useful": 2,
+    "aka": [
+      "보이드 군집 비행",
+      "Flocking simulation"
+    ],
+    "variants": [
+      "새떼",
+      "물고기",
+      "입자 군집"
+    ],
+    "sources": [
+      {
+        "title": "processing/p5.js-website",
+        "url": "https://p5js.org/examples/Classes-And-Objects-Flocking/",
+        "license": "MIT"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgl_gpgpu_birds",
+        "license": "MIT"
+      },
+      {
+        "title": "nature-of-code/noc-book-2",
+        "url": "https://natureofcode.com/autonomous-agents/",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R8-035"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "배럴 왜곡",
+    "en": "Barrel Lens Warp",
+    "what": "화면 가장자리의 직선이 휘며 전체 이미지가 광각 렌즈처럼 부풀어 보인다.",
+    "why": "넓은 시야와 카메라 렌즈의 존재감을 전달한다.",
+    "params": "재현 제안 기본값: 1600ms, 왜곡계수 0부터 0.18, 중심 0.5/0.5, cubic.inOut",
+    "impl": "WebGL에서 중심에서의 반경 제곱에 비례하는 UV 왜곡을 적용한다.",
+    "runtime": "webgl",
+    "slug": "barrel-warp",
+    "useful": 2,
+    "aka": [
+      "배럴 렌즈 워프"
+    ],
+    "variants": [
+      "배럴",
+      "핀쿠션",
+      "줌과 렌즈 조합"
+    ],
+    "sources": [
+      {
+        "title": "paper-design/shaders",
+        "url": "https://shaders.paper.design/lens-distortion",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R8-054"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "수면 굴절",
+    "en": "Water Surface Refraction",
+    "what": "이미지가 잔물결 아래에서 흔들리고 물결의 밝은 면이 이동한다.",
+    "why": "물속이나 젖은 표면의 감각을 전달한다.",
+    "params": "재현 제안 기본값: 6000ms, 파도 진폭 0.02UV, 파장 0.12UV, 이동 0.1UV/s",
+    "impl": "WebGL에서 시간별 수면 높이의 기울기로 UV를 굴절시키고 반사빛을 더한다.",
+    "runtime": "webgl",
+    "slug": "water-refraction",
+    "useful": 2,
+    "aka": [],
+    "variants": [
+      "잔물결",
+      "거친 바다",
+      "굴절 이미지"
+    ],
+    "sources": [
+      {
+        "title": "paper-design/shaders",
+        "url": "https://shaders.paper.design/water",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgl_shaders_ocean",
+        "license": "MIT"
+      },
+      {
+        "title": "artcodev/three-fluid-fx",
+        "url": "https://three-fluid-fx.artcreativecode.com/examples/glsl/minimal/distortion/",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-056"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "빗방울 유리",
+    "en": "Raindrop Glass",
+    "what": "유리에 맺힌 방울 안에서 배경이 확대되어 보이고 방울들이 합쳐져 아래로 흐른다.",
+    "why": "비 오는 창문과 젖은 표면의 분위기를 만든다.",
+    "params": "재현 제안 기본값: 6000ms, 방울 80개, 반경 3~14px, 흘러내림 15~80px/s, 굴절 0.03UV",
+    "impl": "WebGL에서 방울 위치와 합체 상태로 렌즈 법선장을 만들고 배경을 굴절 샘플링한다.",
+    "runtime": "webgl",
+    "slug": "raindrop-glass",
+    "useful": 2,
+    "aka": [
+      "Rain on glass"
+    ],
+    "variants": [
+      "정지 방울",
+      "흐르는 방울",
+      "닦이는 유리"
+    ],
+    "sources": [
+      {
+        "title": "codrops/RainEffect",
+        "url": "https://github.com/codrops/RainEffect",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R8-057"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "골 유리",
+    "en": "Fluted Glass Drift",
+    "what": "반복된 세로 굴곡이 배경을 늘리고 접으며 옆으로 천천히 이동한다.",
+    "why": "반투명 건축 재질과 세련된 굴절감을 만든다.",
+    "params": "재현 제안 기본값: 5000ms, 골 18개, 왜곡 0.025UV, 이동 0.04UV/s, 그림자 0.2",
+    "impl": "WebGL에서 주기적인 골 법선으로 UV를 좌우 이동시키고 밝기 차이를 더한다.",
+    "runtime": "webgl",
+    "slug": "fluted-glass",
+    "useful": 2,
+    "aka": [
+      "골 유리 이동"
+    ],
+    "variants": [
+      "수직 골",
+      "수평 골",
+      "부분 마스크 유리"
+    ],
+    "sources": [
+      {
+        "title": "paper-design/shaders",
+        "url": "https://shaders.paper.design/fluted-glass",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R8-058"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "프레넬 림",
+    "en": "Fresnel Rim Sweep",
+    "what": "회전하는 물체의 시선과 비스듬한 가장자리가 밝아지고 광택이 따라 이동한다.",
+    "why": "물체 윤곽과 재질의 입체감을 강조한다.",
+    "params": "재현 제안 기본값: 5000ms, 프레넬 지수 3, 광택 강도 0.7, 회전 20도/s",
+    "impl": "WebGL에서 시선과 표면 법선의 내적을 테두리 밝기에 매핑한다.",
+    "runtime": "webgl",
+    "slug": "fresnel-rim",
+    "useful": 2,
+    "aka": [
+      "프레넬 테두리 광택"
+    ],
+    "variants": [
+      "네온 림",
+      "유리 림",
+      "각도별 광택"
+    ],
+    "sources": [
+      {
+        "title": "oframe/ogl",
+        "url": "https://oframe.github.io/ogl/examples/fresnel.html",
+        "license": "unknown"
+      },
+      {
+        "title": "cloudai-x/threejs-skills",
+        "url": "https://github.com/cloudai-x/threejs-skills",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R8-060"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "디지털 문자비",
+    "en": "Digital Rain",
+    "what": "문자 열이 위에서 아래로 떨어지고 밝은 머리 뒤로 희미한 꼬리가 남는다.",
+    "why": "코드와 데이터가 계속 흐르는 분위기를 만든다.",
+    "params": "재현 제안 기본값: 6000ms, 열 간격 16px, 낙하 60~180px/s, 꼬리 12문자, 갱신 80ms",
+    "impl": "canvas에서 열별 시드 문자와 진행 위치를 계산하고 머리부터 꼬리까지 밝기를 줄인다.",
+    "runtime": "canvas",
+    "slug": "digital-rain",
+    "useful": 2,
+    "aka": [
+      "Matrix rain"
+    ],
+    "variants": [
+      "초록 문자비",
+      "단색 숫자비",
+      "영상 명암 문자비"
+    ],
+    "sources": [
+      {
+        "title": "fand/vfx-js",
+        "url": "https://github.com/fand/vfx-js/tree/main/packages/effects#effects",
+        "license": "MIT"
+      },
+      {
+        "title": "tsparticles/presets",
+        "url": "https://github.com/tsparticles/presets/blob/HEAD/presets/matrix/README.md",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-072"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "뉴로 노이즈",
+    "en": "Neuro Noise Veins",
+    "what": "얇게 얽힌 밝은 선과 골이 계속 접히고 퍼지며 망 같은 구조를 이룬다.",
+    "why": "유기적인 신호망과 복잡한 활동을 떠올리게 한다.",
+    "params": "재현 제안 기본값: 6000ms, 스케일 3, 선 폭 0.03UV, 시간 속도 0.2/s, 대비 0.75",
+    "impl": "WebGL에서 반복된 비선형 좌표 변환의 값으로 좁은 밝기 띠를 만든다.",
+    "runtime": "webgl",
+    "slug": "neuro-noise",
+    "useful": 3,
+    "aka": [
+      "신경 노이즈 맥",
+      "Neuro noise"
+    ],
+    "variants": [
+      "신경망 무늬",
+      "전기 맥",
+      "부드러운 세포 망"
+    ],
+    "sources": [
+      {
+        "title": "paper-design/shaders",
+        "url": "https://shaders.paper.design/neuro-noise",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R8-075"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "나선 필드",
+    "en": "Spiral Field Rotation",
+    "what": "중심에서 뻗는 연속 나선 무늬가 회전하며 안팎으로 흐르는 것처럼 보인다.",
+    "why": "중심 집중과 빨려드는 움직임을 전달한다.",
+    "params": "재현 제안 기본값: 5000ms, 나선 팔 4개, 회전 25도/s, 반경 반복 8, linear",
+    "impl": "WebGL에서 극좌표의 각도와 반경을 합친 위상으로 나선 띠를 그린다.",
+    "runtime": "webgl",
+    "slug": "spiral-field",
+    "useful": 3,
+    "aka": [
+      "나선장 회전"
+    ],
+    "variants": [
+      "나선 띠",
+      "회오리",
+      "확대되는 나선"
+    ],
+    "sources": [
+      {
+        "title": "paper-design/shaders",
+        "url": "https://shaders.paper.design/spiral",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "paper-design/shaders",
+        "url": "https://shaders.paper.design/swirl",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R8-076"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "연기 고리",
+    "en": "Smoke Ring Vortex",
+    "what": "연무가 도넛 같은 고리 안에서 말려 돌고 외곽이 계속 흔들린다.",
+    "why": "고리 안을 순환하는 힘과 신비로운 분위기를 만든다.",
+    "params": "재현 제안 기본값: 6000ms, 고리 반경 0.28UV, 두께 0.08UV, 노이즈 변위 0.035UV, 속도 0.2/s",
+    "impl": "WebGL에서 고리 거리 마스크 안에 회전하는 워프 노이즈 밀도를 그린다.",
+    "runtime": "webgl",
+    "slug": "smoke-ring",
+    "useful": 3,
+    "aka": [
+      "연기 고리 소용돌이"
+    ],
+    "variants": [
+      "얇은 연기 링",
+      "컬러 링",
+      "점차 커지는 링"
+    ],
+    "sources": [
+      {
+        "title": "paper-design/shaders",
+        "url": "https://shaders.paper.design/smoke-ring",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R8-077"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "코스틱 물결",
+    "en": "Caustic Light Ripples",
+    "what": "수면이나 유리 아래에 생긴 밝은 그물 모양의 빛이 흐르고 집중된다.",
+    "why": "빛이 굴절되어 모이는 물질의 존재를 느끼게 한다.",
+    "params": "재현 제안 기본값: 6000ms, 무늬 스케일 4, 속도 0.25/s, 밝기 0.6, 선 폭 0.02UV",
+    "impl": "WebGL에서 굴절된 광선의 밀도 또는 이동 셀 거리로 코스틱 밝기장을 계산한다.",
+    "runtime": "webgl",
+    "slug": "caustic-ripples",
+    "useful": 2,
+    "aka": [
+      "코스틱 빛 물결"
+    ],
+    "variants": [
+      "수영장 빛",
+      "유리 코스틱",
+      "색 분산"
+    ],
+    "sources": [
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgpu_caustics",
+        "license": "MIT"
+      },
+      {
+        "title": "artcodev/three-fluid-fx",
+        "url": "https://three-fluid-fx.artcreativecode.com/examples/glsl/minimal/distortion/",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-083"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "팔레트 순환",
+    "en": "Palette Color Cycling",
+    "what": "형태와 픽셀 위치는 고정된 채 특정 색 영역이 순서대로 바뀌어 물이나 빛이 흐르는 듯 보인다.",
+    "why": "적은 프레임으로도 반복 움직임과 레트로 분위기를 만든다.",
+    "params": "재현 제안 기본값: 4000ms, 순환 색 8개, 단계 간격 120ms, 경계 픽셀 고정",
+    "impl": "canvas에서 색 인덱스는 유지하고 팔레트 대응값만 시간별로 순환한다.",
+    "runtime": "canvas",
+    "slug": "palette-cycle",
+    "useful": 2,
+    "aka": [
+      "팔레트 색 순환"
+    ],
+    "variants": [
+      "8비트 물결",
+      "빛 순환",
+      "색띠 이동"
+    ],
+    "sources": [
+      {
+        "title": "raphamorim/awesome-canvas",
+        "url": "https://github.com/raphamorim/awesome-canvas",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-087"
+    ]
+  },
+  {
+    "family": "texture",
+    "ko": "입자 비디오 모자이크",
+    "en": "Particle Video Mosaic",
+    "what": "격자나 점군의 위치는 유지된 채 각 점의 색이 영상 프레임을 따라 바뀌어 움직이는 장면을 만든다.",
+    "why": "영상이 작은 정보 단위로 구성된 모습을 보여준다.",
+    "params": "재현 제안 기본값: 4000ms, 샘플 간격 5px, 점 크기 2px, 원본 프레임 갱신 33.33ms",
+    "impl": "WebGL에서 영상 텍스처를 격자 점의 UV로 샘플링해 점 색을 갱신한다.",
+    "runtime": "webgl",
+    "slug": "particle-video-mosaic",
+    "useful": 2,
+    "aka": [
+      "2D 비디오 점"
+    ],
+    "variants": [
+      "깊이 비디오 점",
+      "문자 스프라이트"
+    ],
+    "sources": [
+      {
+        "title": "naughtyduk/particlesGL",
+        "url": "https://github.com/naughtyduk/particlesGL",
+        "license": "custom personal-noncommercial/commercial-paid"
+      }
+    ],
+    "from": [
+      "R8-125"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "반응 확산",
+    "en": "Reaction Diffusion Growth",
+    "what": "작은 얼룩이 번지며 갈라지고 줄무늬나 미로 같은 무늬로 바뀐다. 이웃 영역의 변화가 이어진다.",
+    "why": "지역 반응이 전체 패턴을 만든다는 것을 보여준다.",
+    "params": "재현 제안 기본값: 8000ms, 격자 256x144, 고정 스텝 16.67ms, 확산 A 1.0 B 0.5, feed 0.055, kill 0.062",
+    "impl": "WebGL에서 두 농도 텍스처를 핑퐁 갱신하고 이웃 확산과 국소 반응을 계산해 농도를 색으로 표시한다.",
+    "runtime": "webgl",
+    "slug": "reaction-diffusion",
+    "useful": 3,
+    "aka": [
+      "반응 확산 성장",
+      "Gray-Scott pattern",
+      "Reaction-diffusion"
+    ],
+    "variants": [
+      "미로 성장",
+      "얼룩 증식",
+      "분리 영역 조대화"
+    ],
+    "sources": [
+      {
+        "title": "jasonwebb/morphogenesis-resources",
+        "url": "https://github.com/jasonwebb/morphogenesis-resources#reaction-diffusion",
+        "license": "unknown"
+      },
+      {
+        "title": "cangdongcheng/reaction-diffusion",
+        "url": "https://github.com/cangdongcheng/reaction-diffusion",
+        "license": "MIT"
+      },
+      {
+        "title": "piellardj/reaction-diffusion-webgl",
+        "url": "https://github.com/piellardj/reaction-diffusion-webgl",
+        "license": "MIT"
+      },
+      {
+        "title": "jasonwebb/reaction-diffusion-playground",
+        "url": "https://github.com/jasonwebb/reaction-diffusion-playground",
+        "license": "CC0-1.0"
+      }
+    ],
+    "from": [
+      "R8-127"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "확산 제한 성장",
+    "en": "Diffusion Limited Aggregation",
+    "what": "떠돌던 점이 기존 덩어리에 닿아 달라붙으며 가늘고 불규칙한 가지가 밖으로 자란다.",
+    "why": "축적과 우연이 구조를 만드는 모습을 보여준다.",
+    "params": "재현 제안 기본값: 7000ms, 점 3000개, 이동 2px/스텝, 부착 반경 2px, 고정 스텝 16.67ms",
+    "impl": "canvas에서 랜덤 워커의 접촉 위치를 고정하고 새 점의 부착 기록을 시간순으로 재생한다.",
+    "runtime": "canvas",
+    "slug": "diffusion-limited-growth",
+    "useful": 3,
+    "aka": [
+      "Diffusion Limited Branch Accretion",
+      "확산 제한 가지 퇴적",
+      "DLA",
+      "Brownian tree",
+      "3D 산호"
+    ],
+    "variants": [
+      "브라운 나무",
+      "전기장 편향 번개 가지"
+    ],
+    "sources": [
+      {
+        "title": "jasonwebb/morphogenesis-resources",
+        "url": "https://github.com/jasonwebb/morphogenesis-resources#diffusion-limited-aggregation-dla",
+        "license": "unknown"
+      },
+      {
+        "title": "jasonwebb/2d-diffusion-limited-aggregation-experiments",
+        "url": "https://github.com/jasonwebb/2d-diffusion-limited-aggregation-experiments",
+        "license": "CC0-1.0"
+      },
+      {
+        "title": "RolandR/diffusion-limited-aggregation",
+        "url": "https://github.com/RolandR/diffusion-limited-aggregation",
+        "license": "AGPL-3.0"
+      }
+    ],
+    "from": [
+      "R8-128"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "차등 성장",
+    "en": "Differential Line Growth",
+    "what": "짧은 고리나 선이 계속 길어지며 주름지고 접혀 공간을 채운다.",
+    "why": "제한된 공간에서 생기는 성장 압력과 유기적인 형태를 보여준다.",
+    "params": "재현 제안 기본값: 7000ms, 초기 노드 40개, 삽입 거리 8px, 반발 반경 14px, 정렬 힘 0.2, 고정 스텝 16.67ms",
+    "impl": "canvas에서 연결 노드의 인접 인력과 주변 반발을 계산하고 긴 구간에 새 노드를 삽입한다.",
+    "runtime": "canvas",
+    "slug": "differential-growth",
+    "useful": 3,
+    "aka": [
+      "차등 선 성장",
+      "Differential growth"
+    ],
+    "variants": [
+      "닫힌 고리 주름",
+      "열린 선 구불거림",
+      "면 주름"
+    ],
+    "sources": [
+      {
+        "title": "jasonwebb/morphogenesis-resources",
+        "url": "https://github.com/jasonwebb/morphogenesis-resources#differential-growth",
+        "license": "unknown"
+      },
+      {
+        "title": "jasonwebb/2d-differential-growth-experiments",
+        "url": "https://github.com/jasonwebb/2d-differential-growth-experiments",
+        "license": "CC0-1.0"
+      },
+      {
+        "title": "devloop01/differential-growth",
+        "url": "https://github.com/devloop01/differential-growth",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R8-129"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "점균 네트워크",
+    "en": "Physarum Trail Network",
+    "what": "많은 점이 앞선 점의 흔적을 따라 모이고 남은 길이 굵은 연결망으로 바뀐다.",
+    "why": "분산된 탐색이 효율적인 길과 생물 같은 구조를 만드는 느낌을 준다.",
+    "params": "재현 제안 기본값: 8000ms, 점 10000개, 센서 거리 8px, 센서각 30도, 흔적 감쇠 0.97/스텝, 고정 스텝 16.67ms",
+    "impl": "WebGL에서 입자가 앞과 좌우의 흔적 농도를 읽고 방향을 바꾸며 흔적 맵을 확산하고 감쇠한다.",
+    "runtime": "webgl",
+    "slug": "physarum-network",
+    "useful": 3,
+    "aka": [
+      "점균 흔적 네트워크",
+      "Slime mold simulation",
+      "Physarum simulation"
+    ],
+    "variants": [
+      "그물 혈관",
+      "느린 점균",
+      "다색 경쟁 흔적"
+    ],
+    "sources": [
+      {
+        "title": "jasonwebb/morphogenesis-resources",
+        "url": "https://github.com/jasonwebb/morphogenesis-resources#physarum",
+        "license": "unknown"
+      },
+      {
+        "title": "Bewelge/Physarum-WebGL",
+        "url": "https://github.com/Bewelge/Physarum-WebGL",
+        "license": "MIT"
+      },
+      {
+        "title": "nicoptere/physarum",
+        "url": "https://github.com/nicoptere/physarum",
+        "license": "Unlicense"
+      }
+    ],
+    "from": [
+      "R8-130"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "입자 생명",
+    "en": "Particle Life Clusters",
+    "what": "여러 색의 입자가 색별 인력과 반발에 따라 막을 두른 군집이나 서로 쫓는 덩어리를 만든다.",
+    "why": "서로 다른 관계 규칙이 복잡한 집단 행동을 만든다는 것을 보여준다.",
+    "params": "재현 제안 기본값: 8000ms, 입자 600개, 색 유형 4개, 상호작용 반경 80px, 힘 행렬 -1~1, 감쇠 0.9, 고정 스텝 16.67ms",
+    "impl": "canvas에서 입자 유형 쌍의 비대칭 힘 행렬로 속도를 적분하고 군집 이동을 그린다.",
+    "runtime": "canvas",
+    "slug": "particle-life",
+    "useful": 3,
+    "aka": [
+      "입자 생명 군집",
+      "Particle life"
+    ],
+    "variants": [
+      "세포 막",
+      "추격 군집",
+      "회전 쌍",
+      "분열 덩어리"
+    ],
+    "sources": [
+      {
+        "title": "jasonwebb/morphogenesis-resources",
+        "url": "https://github.com/jasonwebb/morphogenesis-resources#particle-life",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R8-132"
+    ]
+  },
+  {
+    "family": "generative",
+    "ko": "에덴 성장",
+    "en": "Eden Boundary Growth",
+    "what": "작은 덩어리의 바깥 경계에 새 칸이 붙어 빈틈 적은 둥근 군집이 점점 커진다.",
+    "why": "균일한 증식과 영역 확대를 보여준다.",
+    "params": "재현 제안 기본값: 5000ms, 격자 120x80, 초기 씨앗 3개, 세대 40ms, 세대당 부착 8칸, steps",
+    "impl": "canvas에서 점유 영역에 붙은 빈 경계 칸을 시드 난수로 선택하고 성장 순서를 저장한다.",
+    "runtime": "canvas",
+    "slug": "eden-growth",
+    "useful": 3,
+    "aka": [
+      "에덴 경계 성장",
+      "Eden growth model"
+    ],
+    "variants": [
+      "원형 군집",
+      "이웃 밀도 편향",
+      "복수 씨앗 합류"
+    ],
+    "sources": [
+      {
+        "title": "jasonwebb/morphogenesis-resources",
+        "url": "https://github.com/jasonwebb/morphogenesis-resources#eden-growth-model",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R8-133"
+    ]
+  }
+]

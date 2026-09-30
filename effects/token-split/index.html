@@ -1,0 +1,10 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>토큰 쪼개기 · Token Split</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>
+.token{position:absolute;top:235px;font-family:var(--serif);font-weight:700;font-size:64px;line-height:1.2;white-space:nowrap}.under{position:absolute;top:102px;left:0;width:100%;border-top:1px solid var(--rule);padding-top:13px;font-size:13px;font-family:var(--mono);color:var(--ink2);opacity:0}.note{position:absolute;left:120px;top:125px}
+</style></head><body data-no="367" data-cat="원리 도해 · EXPLAINER" data-ko="토큰 쪼개기" data-en="Token Split" data-meta="5조각 · 간격 34px · power3.inOut" data-dur="3"><main class="scene"><div class="lab note">문장 → 토큰</div><span class="token" style="left:260px">AI<span class="under">01</span></span><span class="token" style="left:339px">는<span class="under">02</span></span><span class="token" style="left:419px">다음<span class="under">03</span></span><span class="token" style="left:566px">말을<span class="under">04</span></span><span class="token" style="left:713px">고른다<span class="under">05</span></span></main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+const pieces = document.querySelectorAll('.token');
+pieces.forEach((el,i)=>tl.to(el,{x:(i-2)*34,duration:1.05,ease:'power3.inOut'},.3));
+tl.to(pieces[2],{color:'var(--verm)',duration:.35},.75);
+tl.to('.under',{opacity:1,duration:.35,stagger:.06},1.1);
+Motion.ready();
+</script></body></html>

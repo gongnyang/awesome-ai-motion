@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>주석 등장 · Annotation Callout</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>svg{position:absolute;left:105px;top:75px;width:958px;height:435px;overflow:visible}.axis{stroke:var(--rule);stroke-width:1;fill:none}.graph{stroke:var(--ink);stroke-width:3;fill:none;stroke-linejoin:round}.focus{fill:var(--verm)}.tick{font-family:var(--mono);font-size:12px;fill:var(--ink2)}.call{stroke:var(--ink);stroke-width:1;fill:none}.note{font-family:var(--sans);font-size:23px;fill:var(--ink);opacity:0}.sub{font-family:var(--mono);font-size:12px;fill:var(--ink2);opacity:0}</style></head>
+<body data-no="240" data-cat="데이터 · DATA" data-ko="주석 등장" data-en="Annotation Callout" data-meta="지시선 0.65s · 주석 +0.12s" data-dur="3"><main class="scene"><svg viewBox="0 0 958 435"><path class="axis" d="M 50 35 V 370 H 920"/><text class="tick" x="50" y="404">01</text><text class="tick" x="492" y="404">04</text><text class="tick" x="886" y="404">07</text><path class="graph" id="graph" pathLength="1" d="M 50 330 L 200 285 L 350 305 L 500 195 L 650 225 L 800 110 L 900 65"/><circle class="focus" cx="500" cy="195" r="8"/><path class="call" id="call" pathLength="1" d="M 500 195 L 545 95 H 730"/><text class="note" x="558" y="66">30번 중 18번</text><text class="sub" x="558" y="85">선택 비율 60%</text></svg></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+gsap.set('#call',{strokeDasharray:1,strokeDashoffset:1});
+tl.to('#call',{strokeDashoffset:0,autoRound:false,duration:.65,ease:'none'},.45);
+tl.fromTo('.note,.sub',{y:8,opacity:0},{y:0,opacity:1,duration:.35,stagger:.12},1.22);
+Motion.ready();
+</script></body></html>

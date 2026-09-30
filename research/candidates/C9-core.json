@@ -1,0 +1,453 @@
+{
+  "ken-burns": {
+    "aka": [
+      "Ken Burns",
+      "켄 번스",
+      "켄 번즈",
+      "Ken Burns Effect"
+    ],
+    "variants": [
+      "줌 인",
+      "줌 아웃",
+      "수평 팬",
+      "수직 팬",
+      "대각선 팬"
+    ],
+    "sources": [
+      {
+        "title": "animista.net",
+        "url": "https://animista.net/play",
+        "license": "BSD-2-Clause (FreeBSD)"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-creative/references/motion-principles.md",
+        "license": "unknown"
+      },
+      {
+        "title": "local/card-shorts",
+        "url": "claude-skill:card-shorts/references/shorts-specs.json",
+        "license": "unknown"
+      },
+      {
+        "title": "motion dictionary 2-transitions-camera.md#24. 켄 번스 · Ken Burns Effect",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-keyframes/SKILL.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-044",
+      "R1b-125",
+      "R3-052",
+      "DICT-127"
+    ]
+  },
+  "push-in": {
+    "aka": [
+      "Push in",
+      "푸시 인",
+      "Punch-in",
+      "Crash zoom",
+      "Multiplane Dolly",
+      "다층 돌리 푸시",
+      "multiplane-dolly-push",
+      "Camera Push In",
+      "카메라 푸시 인",
+      "Dolly in",
+      "Dolly Through Space",
+      "공간 돌리 이동",
+      "Dolly In / Dolly Out",
+      "돌리",
+      "Optical / Digital Zoom",
+      "줌",
+      "Push-in / Punch-in",
+      "푸시인",
+      "Crash Zoom",
+      "충격 줌",
+      "braam-punch",
+      "crash-zoom-in",
+      "Perceptually uniform zoom",
+      "지각 속도 일정 줌",
+      "ExpoScaleEase",
+      "Pull back reveal",
+      "뒤로 빠지며 공개",
+      "Workspace Reveal",
+      "확대 디테일에서 전체 공개",
+      "Macro-to-hero pullback",
+      "매크로에서 전체 제품 리빌"
+    ],
+    "variants": [
+      "느린 접근",
+      "빠른 펀치 인",
+      "크래시 줌",
+      "다층 돌리 푸시",
+      "광학 줌",
+      "디지털 줌",
+      "로그 배율 보간",
+      "돌리 아웃",
+      "줌아웃 리빌",
+      "작업 공간 공개",
+      "매크로에서 전체 제품 공개"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/push-in/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/pull-back-reveal/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/work-with-layers/camera-layer/cameras-lights-points-interest.html",
+        "license": "unknown"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Eases/ExpoScaleEase/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "Apple",
+        "url": "https://www.apple.com/apple-events/",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-045",
+      "R1b-022",
+      "R5-078",
+      "R8-090",
+      "DICT-123",
+      "DICT-124",
+      "DICT-129",
+      "R1b-136",
+      "R2-009",
+      "R1a-026",
+      "R1b-119",
+      "R7-113"
+    ]
+  },
+  "pan": {
+    "aka": [
+      "Pan stations",
+      "정거장 팬",
+      "Horizontal Gallery",
+      "가로 갤러리 팬",
+      "Camera Pan",
+      "카메라 팬",
+      "Pan",
+      "팬",
+      "Tilt",
+      "틸트"
+    ],
+    "variants": [
+      "좌우 팬",
+      "세로 틸트",
+      "구간별 정지",
+      "가로 이미지 스트립",
+      "고정 캡션 결합"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/pan-stations/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/awesome-html-scrolline-deck",
+        "url": "gongnyang/awesome-html-scrolline-deck:references/techniques.md#horizontal-gallery",
+        "license": "MIT"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/work-with-layers/camera-layer/cameras-lights-points-interest.html",
+        "license": "unknown"
+      },
+      {
+        "title": "motion dictionary 2-transitions-camera.md#22. 팬 · Pan",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "motion dictionary 2-transitions-camera.md#23. 틸트 · Tilt",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "R1a-046",
+      "R1b-081",
+      "R5-079",
+      "DICT-125",
+      "DICT-126"
+    ]
+  },
+  "parallax": {
+    "aka": [
+      "Parallax",
+      "시차 이동",
+      "다층 시차",
+      "parallax-3plane-rule",
+      "ambient-parallax-breathing",
+      "패럴랙스 기본",
+      "패럴랙스",
+      "Layered parallax",
+      "다층 패럴랙스",
+      "Layered Parallax",
+      "층별 시차"
+    ],
+    "variants": [
+      "2층",
+      "3층",
+      "4층",
+      "수평 시차",
+      "수직 시차",
+      "영상 배경",
+      "미세 표류",
+      "반대 방향 시차",
+      "글자 깊이 시차"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/camera-rig-depth-stack/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/03-camera-3d.md#parallax-3plane-rule",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Plugins/ScrollSmoother/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/parallax-hero-images",
+        "license": "unknown"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/parallax-zoom/registry-item.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-053",
+      "R1b-021",
+      "DICT-089",
+      "DICT-122",
+      "R2-079",
+      "R3-167"
+    ]
+  },
+  "rack-focus": {
+    "aka": [
+      "Rack focus",
+      "랙 포커스",
+      "Rack Focus",
+      "초점 이동",
+      "rack-focus-reference",
+      "depth-of-field-blur",
+      "Focus pull",
+      "Rack Focus Layers",
+      "레이어 초점 전환",
+      "Depth of field shift",
+      "Rack Focus / Focus Pull"
+    ],
+    "variants": [
+      "전경에서 후경",
+      "후경에서 전경",
+      "선택 영역 초점",
+      "카드 초점 교체",
+      "깊이 버퍼 피사계심도"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/focus-rack/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/03-camera-3d.md#rack-focus-reference",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/work-with-layers/camera-layer/cameras-lights-points-interest.html",
+        "license": "unknown"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://github.com/heygen-com/hyperframes/blob/HEAD/skills/hyperframes-animation/rules/depth-of-field-blur.md",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "motion dictionary 2-transitions-camera.md#25. 랙 포커스 · Rack Focus / Focus Pull",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "R1a-049",
+      "R1b-027",
+      "R5-081",
+      "R8-094",
+      "DICT-128"
+    ]
+  },
+  "zoom-to-detail": {
+    "aka": [
+      "Zoom to target",
+      "대상 중심 줌",
+      "Map target zoom",
+      "Zoom To Detail",
+      "디테일 중심 확대",
+      "viewport-change",
+      "coordinate-target-zoom",
+      "Scroll zoom hero",
+      "스크롤 히어로 줌",
+      "Hierarchy drill-down zoom",
+      "계층 내부 확대",
+      "Map-to-bounds zoom",
+      "지도 경계 맞춤 확대",
+      "Guided scatter cluster zoom tour",
+      "산점도 군집 확대 투어",
+      "Action-centered automatic zoom",
+      "행동 위치 자동 확대"
+    ],
+    "variants": [
+      "비중앙 대상 확대",
+      "스크롤 진행 확대",
+      "지도 경계 맞춤",
+      "계층 드릴다운",
+      "원 패킹 확대",
+      "트리맵 확대",
+      "선버스트 확대",
+      "산점도 군집 투어",
+      "클릭 위치 확대",
+      "입력 위치 확대",
+      "전체 보기 복귀"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/ui-focus-zoom/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Plugins/ScrollTrigger/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "Observable @d3",
+        "url": "https://observablehq.com/@d3/zoomable-sunburst",
+        "license": "unknown"
+      },
+      {
+        "title": "Observable @d3",
+        "url": "https://observablehq.com/@d3/zoom-to-bounding-box",
+        "license": "unknown"
+      },
+      {
+        "title": "Screen Studio",
+        "url": "https://screen.studio/",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-047",
+      "R1b-106",
+      "R2-083",
+      "R6-060",
+      "R6-072",
+      "R6-105",
+      "R7-098"
+    ]
+  },
+  "zoom-through": {
+    "aka": [
+      "Camera Zoom Through",
+      "카메라 관통 줌",
+      "Scientific scale journey",
+      "과학적 규모 여행"
+    ],
+    "variants": [
+      "문자 구멍 관통",
+      "프레임 관통",
+      "포털",
+      "거시에서 미시로 연속 확대",
+      "우주에서 행성",
+      "세포에서 분자"
+    ],
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/work-with-layers/camera-layer/cameras-lights-points-interest.html",
+        "license": "unknown"
+      },
+      {
+        "title": "Kurzgesagt",
+        "url": "https://kurzgesagt.org/what-we-do?visit=videos",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R5-085",
+      "R7-067"
+    ]
+  },
+  "zoom-callout": {
+    "aka": [
+      "Chart zoomed detail inset",
+      "차트 세부 확대 창",
+      "Demo zoom callout inset",
+      "상세 확대 삽입창"
+    ],
+    "variants": [
+      "차트 세부 삽입창",
+      "UI 상세 삽입창",
+      "대상 추적 삽입창",
+      "연결선 결합"
+    ],
+    "sources": [
+      {
+        "title": "d3/d3-zoom",
+        "url": "https://d3js.org/d3-zoom",
+        "license": "ISC"
+      },
+      {
+        "title": "Screen Studio",
+        "url": "https://screen.studio/",
+        "license": "unknown"
+      },
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      },
+      {
+        "title": "Supademo",
+        "url": "https://supademo.com/features/demo-editor",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-097",
+      "R7-109"
+    ]
+  }
+}

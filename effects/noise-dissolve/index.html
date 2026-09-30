@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>노이즈 디졸브 전환 · Noise Dissolve Transition</title>
+<meta name="viewport" content="width=1280">
+<link rel="stylesheet" href="../../lib/stage.css">
+<style>
+#B{position:absolute;inset:0}
+#B .tag{position:absolute;left:112px;top:44px}
+#B .head{position:absolute;left:112px;top:72px}
+.bars{position:absolute;left:112px;top:196px;width:1060px}
+.row{position:relative;height:66px;border-top:1px solid var(--rule)}
+.row:last-child{border-bottom:1px solid var(--rule)}
+.row .w{position:absolute;left:0;top:14px;font-family:var(--serif);font-weight:700;font-size:28px;color:var(--ink)}
+.row .b{position:absolute;left:150px;top:18px;height:30px;background:var(--ink);transform-origin:0 50%}
+.row .n{position:absolute;top:8px;font-family:var(--didone);font-size:48px;line-height:1;font-variation-settings:"opsz" 96;font-feature-settings:"lnum" 1}
+.row .n small{font-family:var(--mono);font-size:16px;margin-left:3px}
+#cv{position:absolute;left:0;top:0;width:1280px;height:580px}
+</style></head>
+<body data-no="184" data-cat="전환·컷 · TRANSITIONS" data-ko="노이즈 디졸브 전환" data-en="Noise Dissolve Transition" data-meta="값 노이즈 4옥타브 · 임계값 1.9s · 주홍 테두리 0.022" data-dur="3" data-poster="2.8">
+<main class="scene bleed">
+  <section id="B">
+    <div class="lab tag">SCENE B · 후보 단어 확률</div>
+    <div class="t-l head">다음 말</div>
+    <div class="bars" id="bars"></div>
+  </section>
+  <canvas id="cv" width="1280" height="580"></canvas>
+</main>
+<script src="../../lib/gsap.min.js"></script>
+<script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+const W = 1280, H = 580, RIM = .022;
+const css = getComputedStyle(document.documentElement);
+const hex = v => { const h = css.getPropertyValue(v).trim().slice(1); return [0, 2, 4].map(i => parseInt(h.substr(i, 2), 16)); };
+const INK = hex('--ink'), PAPER = hex('--paper'), VERM = hex('--verm');
+
+// 장면 B: 후보 단어 5개 막대 (DOM)
+const DATA = [['고른다', 62], ['정한다', 21], ['찾는다', 9], ['만든다', 5], ['쓴다', 3]];
+const bars = document.getElementById('bars');
+DATA.forEach(([w, v], i) => {
+  const px = Math.round(v * 12.5);
+  bars.insertAdjacentHTML('beforeend',
+    `<div class="row"><span class="w">${w}</span><i class="b" id="b${i}" style="width:${px}px"></i>` +
+    `<span class="n" style="left:${150 + px + 18}px">${v}<small>%</small></span></div>`);
+});
+
+// 장면 A는 캔버스에 한 번 그려 두고, 노이즈 값보다 진행률이 크면 그 픽셀을 지운다
+const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+let A, NZ, out;
+function setup() {
+  const off = document.createElement('canvas'); off.width = W; off.height = H;
+  const o = off.getContext('2d');
+  o.fillStyle = `rgb(${INK})`; o.fillRect(0, 0, W, H);
+  o.fillStyle = `rgb(${PAPER})`;
+  const serif = css.getPropertyValue('--serif');
+  o.font = `12px ${css.getPropertyValue('--mono')}`; o.globalAlpha = .6;
+  o.fillText('SCENE A · 질문', 112, 58); o.globalAlpha = 1;
+  o.font = `700 92px ${serif}`;
+  o.fillText('다음 말은', 112, 248);
+  o.fillText('어떻게 고르나요?', 112, 372);
+  o.fillRect(112, 432, 1056, 2);
+  o.font = `22px ${css.getPropertyValue('--sans')}`; o.globalAlpha = .7;
+  o.fillText('입력 → 모델 → 출력', 112, 478); o.globalAlpha = 1;
+  A = o.getImageData(0, 0, W, H).data;
+  // 값 노이즈 4옥타브(격자 190·95·48·16px), 시드 고정. 0~1로 정규화
+  const rnd = Motion.rand(71);
+  NZ = new Float32Array(W * H);
+  const sm = t => t * t * (3 - 2 * t);
+  [[190, .6], [95, .26], [48, .1], [16, .04]].forEach(([g, amp]) => {
+    const gw = Math.ceil(W / g) + 2, gh = Math.ceil(H / g) + 2, L = new Float32Array(gw * gh).map(() => rnd());
+    for (let y = 0; y < H; y++) {
+      const fy = y / g, iy = fy | 0, ty = sm(fy - iy);
+      for (let x = 0; x < W; x++) {
+        const fx = x / g, ix = fx | 0, tx = sm(fx - ix), k = iy * gw + ix;
+        const a = L[k] + (L[k + 1] - L[k]) * tx, b = L[k + gw] + (L[k + gw + 1] - L[k + gw]) * tx;
+        NZ[y * W + x] += (a + (b - a) * ty) * amp;
+      }
+    }
+  });
+  let lo = 1e9, hi = -1e9;
+  for (const v of NZ) { if (v < lo) lo = v; if (v > hi) hi = v; }
+  // 히스토그램 평탄화: 진행률 p만큼의 면적이 정확히 지워지게
+  const BIN = 2048, hist = new Float32Array(BIN + 1);
+  for (let i = 0; i < NZ.length; i++) hist[Math.round((NZ[i] - lo) / (hi - lo) * BIN)]++;
+  for (let b = 1; b <= BIN; b++) hist[b] += hist[b - 1];
+  for (let i = 0; i < NZ.length; i++) NZ[i] = hist[Math.round((NZ[i] - lo) / (hi - lo) * BIN)] / NZ.length;
+  out = ctx.createImageData(W, H);
+}
+
+function draw(p) {
+  const th = -RIM - .01 + p * (1 + RIM + .02);   // 임계값: 테두리까지 화면 밖에서 시작해 1을 넘겨 끝남
+  const d = out.data;
+  for (let i = 0, j = 0; i < NZ.length; i++, j += 4) {
+    const e = NZ[i] - th;
+    if (e < 0) { d[j + 3] = 0; continue; }                 // 지워진 곳: 장면 B가 보인다
+    if (e < RIM) {                                          // 경계: 주홍 테두리, 바깥쪽은 A로 녹아듦
+      const k = e < RIM * .6 ? 1 : 1 - (e - RIM * .6) / (RIM * .4);
+      d[j] = VERM[0] + (A[j] - VERM[0]) * (1 - k); d[j + 1] = VERM[1] + (A[j + 1] - VERM[1]) * (1 - k);
+      d[j + 2] = VERM[2] + (A[j + 2] - VERM[2]) * (1 - k); d[j + 3] = e < .002 ? 150 : 255; continue;
+    }
+    d[j] = A[j]; d[j + 1] = A[j + 1]; d[j + 2] = A[j + 2]; d[j + 3] = 255;
+  }
+  ctx.putImageData(out, 0, 0);
+}
+
+document.fonts.load(`700 92px ${css.getPropertyValue('--serif')}`).then(() => {
+  setup();
+  const pr = { p: 0 };
+  tl.to(pr, { p: 1, duration: 1.9, ease: 'power1.inOut', onUpdate: () => draw(pr.p) }, 0.35);
+  tl.to('#b0', { backgroundColor: `rgb(${VERM})`, duration: .3 }, 2.3);
+  draw(0);
+  Motion.ready();
+});
+</script>
+</body></html>

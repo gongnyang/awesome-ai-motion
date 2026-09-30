@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>입자 연결망 · Connected Particle Network</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>canvas{position:absolute;inset:0;width:1168px;height:580px}.scene{isolation:isolate}</style></head>
+<body data-no="533" data-cat="입자·생성 · GENERATIVE" data-ko="입자 연결망" data-en="Connected Particle Network" data-meta="84개 점 · 거리 임계 연결" data-dur="5" data-poster="2.3">
+<main class="scene"><canvas width="1168" height="580" aria-label="느리게 움직이는 점 사이에서 가까운 점만 연결된다. 주홍 초점 주변의 연결도 거리로 바뀐다."></canvas></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const canvas=document.querySelector('canvas'), ctx=canvas.getContext('2d');
+const W=1168,H=580,INK='#141210',PAPER='#F4EEE3',VERM='#D6401C',RULE='#CDC3B2';
+const SERIF=getComputedStyle(document.body).getPropertyValue('--serif'), SANS=getComputedStyle(document.body).getPropertyValue('--sans');
+const rng=Motion.rand(303), state={t:0};
+const clamp=(x)=>Math.max(0,Math.min(1,x));
+const out=(x)=>1-Math.pow(1-clamp(x),3);
+const mix=(a,b,p)=>a+(b-a)*p;
+function circle(x,y,r,color=INK,alpha=1){ctx.globalAlpha=alpha;ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y,Math.max(.01,r),0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;}
+function label(s,x,y,size=16,color=INK){ctx.fillStyle=color;ctx.font=`${size}px ${SANS}`;ctx.textAlign='left';ctx.fillText(s,x,y);}
+function title(s='다음 말',x=584,y=330,color=INK){ctx.fillStyle=color;ctx.font=`700 108px ${SERIF}`;ctx.textAlign='center';ctx.fillText(s,x,y);ctx.textAlign='left';}
+function clear(){ctx.clearRect(0,0,W,H);ctx.globalAlpha=1;ctx.filter='none';}
+const nodes=Array.from({length:84},(_,i)=>({x:130+rng()*905,y:170+rng()*295,phase:rng()*6.28,v:18+rng()*15}));
+function draw(t){clear();
+label('가까워질 때 이어지는 관계',104,95,24);label('거리로 만들어지는 연결망',104,540,18);
+const pts=nodes.map(n=>({x:n.x+Math.sin(t*.55+n.phase)*n.v,y:n.y+Math.cos(t*.65+n.phase)*n.v}));
+for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<130){ctx.strokeStyle=i===0?VERM:INK;ctx.globalAlpha=(1-d/130)*.45;ctx.lineWidth=i===0?1.8:1;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}}
+ctx.globalAlpha=1;pts.forEach((p,i)=>circle(p.x,p.y,i===0?10:3.5,i===0?VERM:INK));
+}
+const tl=Motion.timeline();
+tl.to(state,{t:5,duration:5,ease:"none",onUpdate:()=>draw(state.t)},0);
+draw(0);
+Motion.ready();
+</script></body></html>

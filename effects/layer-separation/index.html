@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>레이어 분리와 재결합 · Layer Separation</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>.space{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;perspective:1400px}.stack{position:relative;width:510px;height:290px;transform-style:preserve-3d}.layer{position:absolute;inset:0;border:1px solid var(--ink);background:var(--paper2);padding:25px;display:flex;align-items:center;justify-content:center}.layer:first-child{z-index:0}.layer:first-child .t-m{position:absolute;top:48px;left:25px;right:25px;text-align:center}.layer .lab{position:absolute;left:22px;top:20px}.outline{background:transparent;z-index:1}.outline .lab{left:190px}.graph{position:absolute;bottom:24px;left:150px;display:flex;align-items:end;gap:14px;height:105px}.graph i{display:block;width:46px;background:var(--ink)}.focus{background:transparent;z-index:2}.focus .lab{left:360px}.focus .dot{position:absolute;right:35px;bottom:35px;width:72px;height:72px}.hint{position:absolute;bottom:30px;left:0;right:0;text-align:center}</style></head>
+<body data-no="567" data-cat="3D·깊이 · 3D &amp; DEPTH" data-ko="레이어 분리와 재결합" data-en="Layer Separation" data-meta="세 층 분리 · 깊이 40px · 다시 결합" data-dur="4" data-poster="3.6">
+<main class="scene"><div class="space"><div class="stack"><div class="layer"><span class="lab">바탕</span><div class="t-m">AI는 다음 말을 고른다</div></div><div class="layer outline"><span class="lab">후보</span><div class="graph"><i style="height:105px"></i><i style="height:70px"></i><i style="height:35px"></i></div></div><div class="layer focus"><span class="lab">선택</span><div class="dot v"></div></div></div></div><div class="lab hint">바탕 · 후보 · 선택</div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>const tl = Motion.timeline();
+tl.set('.stack',{rotationX:46,rotationY:-15,rotationZ:-12},0);
+const layers=[...document.querySelectorAll('.layer')];
+layers.forEach((el,i)=>{tl.to(el,{z:i*40,duration:.8,ease:'power3.inOut'},.3+i*.06);tl.to(el,{z:0,duration:.8,ease:'power3.inOut'},2+i*.06);});
+tl.to('.stack',{rotationX:0,rotationY:0,rotationZ:0,duration:.8},2.8);
+Motion.ready();</script></body></html>

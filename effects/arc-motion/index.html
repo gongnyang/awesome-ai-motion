@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>아크 · Arcs</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>
+.label{position:absolute;left:80px}.label.a{top:85px}.label.b{top:520px}.track{position:absolute;left:180px;top:150px;width:770px;height:1px;background:var(--rule)}.baseline{position:absolute;left:180px;top:470px;width:770px;height:1px;background:var(--rule)}.dot{position:absolute;width:48px;height:48px;left:156px}#straight{top:126px;background:var(--ink3)}#arc{top:446px}.trail{position:absolute;inset:0;width:1168px;height:580px}.trail circle{fill:var(--ink3);opacity:0}.lead{left:565px;top:240px;opacity:0}
+</style></head><body data-no="007" data-cat="기본기 · PRINCIPLES" data-ko="아크" data-en="Arcs" data-meta="포물선 높이 230px · 이동 770px · 1.65s" data-dur="3">
+<main class="scene"><div class="lab label a">직선 이동</div><div class="track"></div><div class="baseline"></div><svg class="trail" id="trail" viewBox="0 0 1168 580"></svg><div class="dot" id="straight"></div><div class="dot v" id="arc"></div><div class="lab label b">아크 이동</div><div class="lead up" id="apex"><i></i><s></s><span>최고점 230px</span></div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+const progress = {p:0};
+for(let i=0;i<=40;i++){const p=i/40;const dot=document.createElementNS('http://www.w3.org/2000/svg','circle');dot.setAttribute('cx',180+770*p);dot.setAttribute('cy',470-4*230*p*(1-p));dot.setAttribute('r','2.5');document.querySelector('#trail').appendChild(dot);tl.to(dot,{opacity:1,duration:.08,ease:'none'},.3+1.65*p);}
+tl.to('#straight',{x:770,duration:1.65,ease:'none'},.3);
+tl.to(progress,{p:1,duration:1.65,ease:'none',onUpdate:()=>gsap.set('#arc',{x:770*progress.p,y:-4*230*progress.p*(1-progress.p)})},.3);
+tl.to('#apex',{opacity:1,duration:.25},2.1);
+Motion.ready();
+</script></body></html>

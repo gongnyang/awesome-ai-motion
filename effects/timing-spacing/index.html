@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>타이밍과 간격 · Timing &amp; Spacing</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.row{position:absolute;left:100px;width:968px;height:156px}.row.a{top:85px}.row.b{top:302px}
+.row .lab{position:absolute;left:0;top:0}.row svg{position:absolute;left:0;top:50px;width:968px;height:70px;overflow:visible}
+.track{stroke:var(--rule);stroke-width:1}.trail{fill:var(--ink);opacity:0}.row.a .trail{fill:var(--ink3)}
+.moving{fill:var(--verm)}.row.a .moving{fill:var(--ink3)}.time{position:absolute;top:130px;font-size:11px;color:var(--ink3)}.end{left:882px}
+.lead{left:713px;top:504px;opacity:0}
+</style></head>
+<body data-no="010" data-cat="기본기 · PRINCIPLES" data-ko="타이밍과 간격" data-en="Timing &amp; Spacing" data-meta="30fps · 1.40s · power3.out" data-dur="3">
+<main class="scene">
+<div class="row a"><div class="lab">LINEAR · 균등한 간격</div><svg viewBox="0 0 968 70"><line class="track" x1="20" y1="35" x2="940" y2="35"/><g id="linearTrail"></g><circle class="moving" id="linearDot" cx="20" cy="35" r="17"/></svg><span class="time mono">0.00s</span><span class="time mono end">1.40s</span></div>
+<div class="row b"><div class="lab">EASE OUT · 끝에서 촘촘해지는 간격</div><svg viewBox="0 0 968 70"><line class="track" x1="20" y1="35" x2="940" y2="35"/><g id="easeTrail"></g><circle class="moving" id="easeDot" cx="20" cy="35" r="17"/></svg><span class="time mono">0.00s</span><span class="time mono end">1.40s</span></div>
+<div class="lead" id="note"><i></i><s></s><span>같은 42프레임</span></div>
+</main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+const N=42, ease=gsap.parseEase('power3.out');
+for(let i=0;i<=N;i++){
+  ['linear','ease'].forEach(kind=>{
+    const p=i/N, x=20+920*(kind==='linear'?p:ease(p));
+    const dot=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    dot.setAttribute('cx',x);dot.setAttribute('cy',35);dot.setAttribute('r',4.5);dot.setAttribute('class','trail');
+    document.querySelector('#'+kind+'Trail').appendChild(dot);
+    tl.set(dot,{opacity:kind==='linear'?0.65:0.40},0.3+i/30);
+  });
+}
+tl.to('#linearDot',{x:920,duration:1.4,ease:'none'},0.3);
+tl.to('#easeDot',{x:920,duration:1.4,ease:'power3.out'},0.3);
+tl.to('#note',{opacity:1,duration:0.2},1.85);
+Motion.ready();
+</script></body></html>

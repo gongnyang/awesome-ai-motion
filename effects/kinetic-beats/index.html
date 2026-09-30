@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>키네틱 비트 · Kinetic Beats</title><meta name="viewport" content="width=1280">
+<link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.beat{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.word{width:620px;text-align:center;opacity:0;transform-origin:50% 50%}
+.lead{left:465px;top:426px;opacity:0}
+</style></head>
+<body data-no="090" data-cat="타이포 · TYPOGRAPHY" data-ko="키네틱 비트" data-en="Kinetic Beats" data-meta="scale 1.4 → 1 · 비트 0.50s" data-dur="3">
+<main class="scene"><div class="beat"><span class="word t-xl" id="read">읽고</span></div><div class="beat"><span class="word t-xl" id="score">매기고</span></div><div class="beat"><span class="word t-xl v" id="choose">고른다</span></div>
+<div class="lead"><i></i><s></s><span>세 번째 비트 · 1.30s</span></div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+['#read','#score','#choose'].forEach((s,i) => {
+  const at = 0.3 + i * 0.5;
+  tl.set(s, {opacity:1, scale:1.4}, at);
+  tl.to(s, {scale:1, duration:0.25, ease:'power3.out'}, at);
+  if(i < 2) tl.set(s, {opacity:0}, at + 0.5);
+});
+tl.to('.lead', {opacity:1, duration:0.25}, 1.75);
+Motion.ready();
+</script></body></html>

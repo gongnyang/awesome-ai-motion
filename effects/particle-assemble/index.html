@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>입자 흩어졌다 모이기 · Particle Scatter & Assemble</title>
+<meta name="viewport" content="width=1280">
+<link rel="stylesheet" href="../../lib/stage.css">
+<style>
+#cv{position:absolute;left:0;top:0;width:1280px;height:580px}
+.warm{position:absolute;left:0;top:0;font-family:var(--didone);opacity:0}
+.tag{position:absolute;left:56px;top:26px;opacity:0}
+.lead{opacity:0}
+</style></head>
+<body data-no="529" data-cat="입자·생성 · GENERATIVE" data-ko="입자 흩어졌다 모이기" data-en="Particle Scatter &amp; Assemble" data-meta="입자 900개 · 거리순 도착 0.9~1.9s · power3.inOut" data-dur="4" data-poster="3.7">
+<main class="scene bleed">
+  <canvas id="cv" width="1280" height="580"></canvas>
+  <div class="warm num">939</div>
+  <div class="lab tag">입자 900개 · 먼 입자일수록 늦게 도착</div>
+  <div class="lead up" id="L1" style="left:640px;top:92px"><i></i><s></s><span>가운데 3 · 주홍</span></div>
+</main>
+<script src="../../lib/gsap.min.js"></script>
+<script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+const W = 1280, H = 580, N = 900, SEC = 4;
+const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+const css = getComputedStyle(document.documentElement);
+const hex = v => { const h = css.getPropertyValue(v).trim().slice(1); return [0, 2, 4].map(i => parseInt(h.substr(i, 2), 16)); };
+const INK = hex('--ink'), INK3 = hex('--ink3'), VERM = hex('--verm');
+const mix = (a, b, k) => `rgb(${a.map((v, i) => Math.round(v + (b[i] - v) * k)).join(',')})`;
+const clamp = v => v < 0 ? 0 : v > 1 ? 1 : v;
+const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; // power3.inOut
+let P = [], STEP = 8;
+
+// 목표점: 오프스크린 캔버스에 939를 한 번 그리고 픽셀을 읽는다
+function setup() {
+  const off = document.createElement('canvas'); off.width = W; off.height = H;
+  const o = off.getContext('2d');
+  o.font = '800 560px "Bodoni Moda"'; o.textBaseline = 'alphabetic';
+  const m = o.measureText('939'), w9 = o.measureText('9').width, w3 = o.measureText('3').width;
+  const x0 = (W - m.width) / 2, base = H / 2 + (m.actualBoundingBoxAscent - m.actualBoundingBoxDescent) / 2;
+  o.fillText('939', x0, base);
+  o.lineWidth = 9; o.lineJoin = 'round'; o.strokeText('939', x0, base); // 가는 획도 입자가 앉게 두껍게
+  const img = o.getImageData(0, 0, W, H).data;
+  let pts = [];
+  for (let step = 14; step >= 4; step -= .5) {
+    pts = [];
+    for (let y = step / 2; y < H; y += step) for (let x = step / 2 + ((y / step) % 2) * step / 2; x < W; x += step)
+      if (img[(Math.floor(y) * W + Math.floor(x)) * 4 + 3] > 128) pts.push([x, y]);
+    if (pts.length >= N) { STEP = step; break; }
+  }
+  const r = Motion.rand(939);
+  for (let i = pts.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [pts[i], pts[j]] = [pts[j], pts[i]]; }
+  pts = pts.slice(0, N);
+  const midL = x0 + w9, midR = x0 + w9 + w3;
+  let maxD = 0;
+  P = pts.map(([tx, ty]) => {
+    const sx = 20 + r() * (W - 40), sy = 16 + r() * (H - 32);
+    const d = Math.hypot(tx - sx, ty - sy); maxD = Math.max(maxD, d);
+    return { tx, ty, sx, sy, d, r0: 1.4 + r() * 3.2, ph: r() * 6.283, fq: .6 + r() * .8, amp: 8 + r() * 18,
+             curl: (r() - .5) * .5, t0: .35 + r() * .15, mid: tx > midL && tx < midR };
+  });
+  const ys = P.filter(q => q.mid).map(q => q.ty), yMin = Math.min(...ys), yMax = Math.max(...ys);
+  P.forEach(q => {
+    q.dur = .9 + 1.0 * (q.d / maxD);                     // 먼 입자일수록 늦게 도착
+    q.vt = q.mid ? 2.55 + .4 * (q.ty - yMin) / (yMax - yMin) : 99; // 가운데 3만 위에서 아래로 주홍
+  });
+}
+
+function pos(q, t) {
+  const fx = q.sx + Math.sin(t * q.fq + q.ph) * q.amp, fy = q.sy + Math.cos(t * q.fq * .8 + q.ph) * q.amp * .7;
+  const e = ease(clamp((t - q.t0) / q.dur));
+  const dx = q.tx - fx, dy = q.ty - fy, bend = Math.sin(Math.PI * e) * q.curl;
+  return [fx + dx * e - dy * bend, fy + dy * e + dx * bend, e];
+}
+
+function draw(p) {
+  const t = p * SEC;
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.clearRect(0, 0, W, H);
+  const z = 1.1 - .1 * ease(clamp((t - .2) / 2.4));    // 카메라: 1.10 → 1.00
+  ctx.setTransform(z, 0, 0, z, W / 2 * (1 - z), H / 2 * (1 - z));
+  ctx.lineCap = 'round';
+  for (const q of P) {
+    const [x, y, e] = pos(q, t);
+    const rad = q.r0 + (STEP * .36 - q.r0) * e;
+    const vk = clamp((t - q.vt) / .18);
+    const col = vk > 0 ? mix(INK, VERM, vk) : mix(INK3, INK, e);
+    const [px, py] = pos(q, t - 1 / 30);
+    const sp = Math.hypot(x - px, y - py);
+    if (sp > 6) {                                        // 속도 피크에만 짧은 꼬리
+      ctx.strokeStyle = col; ctx.globalAlpha = .22; ctx.lineWidth = rad * 1.4;
+      ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(x, y); ctx.stroke();
+      ctx.globalAlpha = 1;
+    }
+    ctx.fillStyle = col;
+    ctx.beginPath(); ctx.arc(x, y, rad, 0, 6.2832); ctx.fill();
+  }
+}
+
+document.fonts.load('800 560px "Bodoni Moda"').then(() => {
+  setup();
+  const pr = { p: 0 };
+  tl.to(pr, { p: 1, duration: SEC, ease: 'none', onUpdate: () => draw(pr.p) }, 0);
+  tl.to('.tag', { opacity: 1, duration: .3 }, 2.95).to('#L1', { opacity: 1, duration: .3 }, 3.05);
+  draw(0);
+  Motion.ready();
+});
+</script>
+</body></html>

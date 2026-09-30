@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=1280"><title>레이아웃 재배치 · Layout Reflow</title><link rel="stylesheet" href="../../lib/stage.css"><style>
+.kicker{position:absolute;left:48px;top:30px}.headline{position:absolute;left:48px;top:58px;font-size:42px}.hint{position:absolute;left:48px;bottom:22px;font-size:16px;color:var(--ink2)}
+.paper{background:#FBF8F2;border:1px solid var(--rule)}.row{border-bottom:1px solid var(--rule);padding:22px 26px;font-size:24px}.badge{font-family:var(--mono);font-size:14px;color:var(--ink2)}
+.pointer{position:absolute;width:28px;height:35px;z-index:12}.button{display:inline-block;background:var(--ink);color:var(--paper);padding:14px 28px;font-size:20px}
+
+.grid{position:absolute;left:80px;top:155px;width:1008px;height:310px}.item{position:absolute;width:320px;height:140px;padding:25px;border-top:2px solid var(--ink);background:var(--paper2);transform-origin:0 0}.item .num{font-size:44px}.item .label{position:absolute;left:95px;top:49px;font-size:25px}.item:nth-child(2){border-color:var(--verm)}.item:nth-child(4){border-top-color:var(--verm)}.item:nth-child(4) .num{font-family:Georgia,"Liberation Serif",serif;font-variation-settings:normal;color:var(--verm)}.marker{position:absolute;right:20px;top:17px;color:var(--verm);font-size:24px}.after{position:absolute;right:80px;bottom:23px;font-size:18px}
+</style></head>
+<body data-no="343" data-cat="UI 시연 · UI DEMO" data-ko="레이아웃 재배치" data-en="Layout Reflow" data-meta="삭제 0.25s · 위치와 너비 재배치" data-dur="4" data-poster="3.7">
+<main class="scene"><div class="kicker lab">04 / 재배치</div><div class="headline t-l">빈자리를 자연스럽게 채우다</div><div class="hint">같은 항목은 이동과 크기 변화로 이어진다</div><div class="grid"><div class="item paper" style="left:0px;top:0px"><span class="num">01</span><span class="label">입력</span></div><div class="item paper" style="left:344px;top:0px"><span class="num">02</span><span class="label">중복</span><span class=marker>×</span></div><div class="item paper" style="left:688px;top:0px"><span class="num">03</span><span class="label">문맥</span></div><div class="item paper" style="left:0px;top:164px"><span class="num">04</span><span class="label">모델</span></div><div class="item paper" style="left:344px;top:164px"><span class="num">05</span><span class="label">확률</span></div><div class="item paper" style="left:688px;top:164px"><span class="num">06</span><span class="label">출력</span></div></div><div class="after">6개에서 5개로</div></main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+
+const items=gsap.utils.toArray('.item');
+tl.to(items[1],{opacity:0,scale:.86,duration:.25},.7);
+[0,2,3,4,5].forEach((idx,k)=>{tl.to(items[idx],{x:(k%3)*344-(idx%3)*344,y:Math.floor(k/3)*164-Math.floor(idx/3)*164,duration:.65,ease:'power2.inOut'},1.1);});
+tl.to(items[5],{width:664,duration:.65,ease:'power2.inOut'},1.1);
+tl.fromTo('.after',{opacity:0},{opacity:1,duration:.3},1.9);
+
+Motion.ready();
+</script></body></html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>좌표 줌 · Zoom to Detail</title>
+<meta name="viewport" content="width=1280">
+<link rel="stylesheet" href="../../lib/stage.css">
+<style>#map{position:absolute;inset:0;transform-origin:760px 260px}svg{position:absolute;inset:0;width:1168px;height:580px;overflow:visible}svg line{stroke:var(--rule);stroke-width:2}.node{position:absolute;width:52px;height:52px;border-radius:50%;background:var(--ink)}#target{left:734px;top:234px;background:var(--verm)}.nlab{position:absolute;top:62px;left:0;font-family:var(--mono);font-size:12px;color:var(--ink2);white-space:nowrap}#detail{position:absolute;left:500px;top:390px;opacity:0}.detailrule{width:190px;height:1px;background:var(--ink);margin-bottom:16px}</style></head>
+<body data-no="223" data-cat="가상 카메라 · CAMERA" data-ko="좌표 줌" data-en="Zoom to Detail" data-meta="좌표 (760, 260) · 2.6× · 라벨 후행" data-dur="3">
+<main class="scene"><div class="lab" style="position:absolute;left:70px;top:45px">후보 7개 · 하나의 좌표로</div><div id="map"><svg viewBox="0 0 1168 580"><line x1="200" y1="290" x2="390" y2="160"/><line x1="200" y1="290" x2="390" y2="420"/><line x1="390" y1="160" x2="580" y2="290"/><line x1="390" y1="420" x2="580" y2="290"/><line x1="580" y1="290" x2="760" y2="260"/><line x1="760" y1="260" x2="950" y2="160"/><line x1="760" y1="260" x2="950" y2="420"/></svg><div class="node" style="left:174px;top:264px"></div><div class="node" style="left:364px;top:134px"></div><div class="node" style="left:364px;top:394px"></div><div class="node" style="left:554px;top:264px"></div><div class="node" id="target"></div><div class="node" style="left:924px;top:134px"></div><div class="node" style="left:924px;top:394px"></div></div><div id="detail"><div class="detailrule"></div><div class="lab">선택된 노드</div><div class="t-m" style="margin-top:12px">고른다 62%</div></div></main>
+<script src="../../lib/gsap.min.js"></script>
+<script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+tl.to('#map', {scale: 2.6, x: -176, y: 0, duration: 1.75, ease: 'power2.inOut'}, .3);
+tl.to('#detail', {opacity: 1, duration: .3}, 2.05);
+Motion.ready();
+</script></body></html>

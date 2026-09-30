@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>팔로스루 · Follow-through</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>
+#body{position:absolute;left:150px;top:320px;width:30px;height:160px;background:var(--ink)}#flag{position:absolute;left:6px;top:-140px;width:18px;height:140px;background:var(--verm);transform-origin:50% 100%}.track{position:absolute;left:120px;right:120px;top:480px;height:2px;background:var(--ink)}.target{position:absolute;left:815px;top:145px;height:335px;border-left:1px dashed var(--rule)}.label{position:absolute;left:120px;top:45px}.lead{opacity:0}#stop{left:815px;top:445px}#settle{left:815px;top:180px}.time{position:absolute;left:700px;top:525px;opacity:0}
+</style></head><body data-no="008" data-cat="기본기 · PRINCIPLES" data-ko="팔로스루" data-en="Follow-through" data-meta="몸통 정지 1.05s · 판 흔들림 38° → 0°" data-dur="3">
+<main class="scene"><div class="lab label">몸통이 멈춘 뒤에도 끝부분은 움직인다</div><div class="track"></div><div class="target"></div><div id="body"><div id="flag"></div></div><div class="lead" id="stop"><i></i><s></s><span>몸통 정지 1.05s</span></div><div class="lead" id="settle"><i></i><s></s><span>끝부분 정지 2.23s</span></div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+tl.to('#body',{x:650,duration:.75,ease:'none'},.3);
+tl.to('#flag',{rotation:-24,duration:.25,ease:'power2.out'},.3);
+tl.to('#flag',{rotation:38,duration:.18,ease:'power2.out'},1.05);
+[[-20,.22],[11,.20],[-6,.20],[3,.18],[0,.20]].forEach(([rotation,duration],i)=>{
+  const start=[1.23,1.45,1.65,1.85,2.03][i];
+  tl.to('#flag',{rotation,duration,ease:'power1.inOut'},start);
+});
+tl.to('#stop',{opacity:1,duration:.15},1.05);
+tl.to('#settle',{opacity:1,duration:.2},2.25);
+Motion.ready();
+</script></body></html>

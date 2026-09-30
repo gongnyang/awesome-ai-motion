@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>리플 링 · Ripple Rings</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>.hint{position:absolute;left:80px;bottom:40px;font-size:15px;color:var(--ink2)}.heading{position:absolute;left:80px;top:50px;font-size:18px;color:var(--ink2)}.hero{position:absolute;left:80px;top:125px;width:1008px;height:300px}.hero .t-xl{position:absolute;left:0;top:40px}.hero .num{position:absolute;right:0;top:25px;font-size:240px}.hero .dot{position:absolute;left:515px;top:142px}.hero .hair{position:absolute;left:0;right:0;bottom:0}.hero .lab{position:absolute;left:0;bottom:20px}
+.pool{position:absolute;left:65px;top:30px;width:500px;height:500px}.ring{position:absolute;left:100px;top:100px;width:300px;height:300px;border:2px solid var(--ink);border-radius:50%}.pool .dot{position:absolute;left:222px;top:222px}.copy{position:absolute;left:650px;top:160px}.copy .t-xl{font-size:76px}.copy p{color:var(--ink2);font-size:22px}</style></head>
+<body data-no="587" data-cat="반복·앰비언트 · LOOP &amp; AMBIENT" data-ko="리플 링" data-en="Ripple Rings" data-meta="링 3개 · 주기 1.6s" data-dur="4.8" data-poster="2.5">
+<main class="scene"><div class="pool"><div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="dot v"></div></div><div class="copy"><div class="t-xl">작은 신호가<br>멀리 퍼진다</div><p>중심에서 바깥으로 · 세 겹의 파문</p></div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+document.querySelectorAll('.ring').forEach((ring,i)=>{
+ const phase=i*.4;
+ tl.set(ring,{scale:.2+1.3*(phase/1.6),opacity:1-phase/1.6},0);
+ const remain=1.6-phase;
+ tl.to(ring,{scale:1.5,opacity:0,duration:remain,ease:'none'},0);
+ for(let at=remain;at<4.8;at+=1.6){
+  tl.fromTo(ring,{scale:.2,opacity:1},{scale:1.5,opacity:0,duration:1.6,ease:'none',immediateRender:false},at);
+ }
+});
+Motion.ready();
+</script></body></html>

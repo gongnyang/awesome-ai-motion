@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>데이터 스토리 · Data Story</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>
+.kicker{position:absolute;left:70px;top:55px}.heading{position:absolute;left:70px;top:95px}.value{position:absolute;left:70px;top:215px;font-size:210px;color:var(--verm);font-variant-numeric:tabular-nums}.value small{font-family:var(--mono);font-size:38px}.unit{position:absolute;left:70px;top:422px;opacity:0}.chart{position:absolute;left:420px;top:178px;opacity:0}.row{position:relative;width:665px;height:51px}.word{position:absolute;left:0;top:0;font-size:23px}.track{position:absolute;left:110px;top:32px;width:500px;height:1px;background:var(--rule)}.bar{position:absolute;left:110px;top:3px;height:24px;background:var(--ink);transform-origin:left;transform:scaleX(0)}.bar.first{background:var(--verm)}.pct{position:absolute;top:3px;opacity:0;font-size:17px}.call{position:absolute;inset:0;width:1168px;height:580px}.call path{fill:none;stroke:var(--ink);stroke-width:1;stroke-dasharray:1;stroke-dashoffset:1}.note{position:absolute;left:450px;top:471px;font-size:26px;opacity:0}.note-sub{position:absolute;left:450px;top:516px;opacity:0}
+</style></head>
+<body data-kind="recipe" data-no="R05" data-cat="레시피 · 수치 결론을 먼저 제시하는 데이터 설명 영상" data-ko="데이터 스토리" data-en="Data Story" data-meta="62% → 후보 확률 → 해석" data-dur="6"><main class="scene">
+<div class="lab kicker">NEXT WORD / DISTRIBUTION</div><div class="t-m heading">다음 말 후보 확률</div><div class="num value"><span id="value">0</span><small>%</small></div><div class="t-m unit">고른다 · 최상위 후보</div>
+<div class="chart"><div class="row"><span class="word">고른다</span><div class="track"></div><div class="bar first" style="width:434px"></div><span class="pct mono" style="left:556px">62%</span></div><div class="row"><span class="word">정한다</span><div class="track"></div><div class="bar" style="width:147px"></div><span class="pct mono" style="left:269px">21%</span></div><div class="row"><span class="word">찾는다</span><div class="track"></div><div class="bar" style="width:63px"></div><span class="pct mono" style="left:185px">9%</span></div><div class="row"><span class="word">만든다</span><div class="track"></div><div class="bar" style="width:35px"></div><span class="pct mono" style="left:157px">5%</span></div><div class="row"><span class="word">쓴다</span><div class="track"></div><div class="bar" style="width:21px"></div><span class="pct mono" style="left:143px">3%</span></div></div>
+<svg class="call"><path pathLength="1" d="M964 193 V162 H1060 V450 H450"/></svg><div class="note">다섯 후보 중 가장 높은 확률</div><div class="lab note-sub">고른다 62% · 나머지 후보 합계 38%</div>
+</main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+
+const counter={value:0};
+tl.to(counter,{value:62,duration:1.65,ease:'power2.out',onUpdate:()=>{document.querySelector('#value').textContent=Math.round(counter.value);}},.3);
+tl.fromTo('.unit',{y:12,opacity:0},{y:0,opacity:1,duration:.3},2.02);
+tl.to('.value',{color:'var(--ink)',duration:.25},2.1);
+tl.to('.chart',{opacity:1,duration:.25},2.1);
+tl.to('.bar',{scaleX:1,duration:1.05,stagger:.08,ease:'power2.out'},2.35);
+tl.to('.pct',{opacity:1,duration:.25,stagger:.08},3.45);
+tl.to('.call path',{strokeDashoffset:0,autoRound:false,duration:.65,ease:'none'},3.85);
+tl.fromTo('.note,.note-sub',{y:8,opacity:0},{y:0,opacity:1,duration:.35,stagger:.12},4.55);
+
+Motion.ready();
+</script></body></html>

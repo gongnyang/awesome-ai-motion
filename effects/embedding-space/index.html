@@ -1,0 +1,11 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>임베딩 공간 · Embedding Space</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>
+.axis{position:absolute;background:var(--rule)}.axis.x{left:130px;top:475px;width:920px;height:1px}.axis.y{left:130px;top:100px;width:1px;height:375px}.word{position:absolute;top:50px;font-family:var(--serif);font-weight:700;font-size:32px;border-bottom:1px solid var(--rule);padding:6px 12px;white-space:nowrap}.ring{position:absolute;left:246px;top:174px;width:288px;height:238px;border:2px solid var(--verm);border-radius:50%;opacity:0}.lab{position:absolute}.group{opacity:0}
+</style></head><body data-no="363" data-cat="원리 도해 · EXPLAINER" data-ko="임베딩 공간" data-en="Embedding Space" data-meta="2D 투영 · 의미별 군집 · 0.09s" data-dur="3"><main class="scene"><div class="axis x"></div><div class="axis y"></div><span class="lab" style="left:1020px;top:488px">축 1</span><span class="lab" style="left:82px;top:100px">축 2</span><div class="ring"></div><div class="word" style="left:155px">사과</div><div class="word" style="left:295px">자동차</div><div class="word" style="left:475px">배</div><div class="word" style="left:585px">기차</div><div class="word" style="left:725px">귤</div><div class="word" style="left:855px">버스</div><span class="lab group" style="left:342px;top:433px">과일</span><span class="lab group" style="left:777px;top:433px">탈것</span><span class="lab" style="left:130px;top:535px">설명용 좌표 · 실제 벡터의 2D 투영 예시</span></main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+const words = document.querySelectorAll('.word');
+const offsets = [[130,170],[405,195],[-60,275],[225,285],[-320,210],[-120,140]];
+words.forEach((el,i)=>tl.to(el,{x:offsets[i][0],y:offsets[i][1],duration:1.05,ease:'power3.inOut'},.3+i*.09));
+tl.to('.ring',{opacity:1,duration:.4},1.85);
+tl.to('.group',{opacity:1,duration:.3},1.9);
+Motion.ready();
+</script></body></html>

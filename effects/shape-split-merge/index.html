@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>도형 분할과 통합 · Shape Split and Merge</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.kicker{position:absolute;left:64px;top:40px}.caption{position:absolute;left:64px;bottom:38px;font-size:18px;color:var(--ink2)}
+svg.canvas{position:absolute;inset:0;width:1168px;height:580px}.note{position:absolute;right:64px;bottom:40px}
+</style></head>
+<body data-no="432" data-cat="도형·패스 · SHAPE &amp; PATH" data-ko="도형 분할과 통합" data-en="Shape Split and Merge" data-meta="세 조각 · 분할 후 통합" data-dur="5" data-poster="2.2">
+<main class="scene"><span class="lab kicker">하나의 전체, 세 개의 부분</span><svg class="canvas" viewBox="0 0 1168 580"><g class="parts"></g></svg><div class="caption">면적을 유지하며 나누고 다시 합친다</div><span class="lab note">전체와 부분</span></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+const group=document.querySelector('.parts');
+for(let i=0;i<3;i++){const a=-Math.PI/2+i*2*Math.PI/3,b=a+2*Math.PI/3,r=144; const x1=584+r*Math.cos(a),y1=272+r*Math.sin(a),x2=584+r*Math.cos(b),y2=272+r*Math.sin(b);const p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('d',`M584 272 L${x1} ${y1} A144 144 0 0 1 ${x2} ${y2} Z`);p.setAttribute('fill',i===0?'var(--verm)':'var(--ink)');group.appendChild(p);const mid=(a+b)/2,x=48*Math.cos(mid),y=48*Math.sin(mid);tl.to(p,{x,y,duration:1.6,ease:'power3.inOut'},.35);tl.to(p,{x:0,y:0,duration:1.6,ease:'power3.inOut'},2.65);}
+Motion.ready();
+</script></body></html>

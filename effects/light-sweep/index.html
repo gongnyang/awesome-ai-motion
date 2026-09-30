@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>라이트 스윕 · Light Sweep</title>
+<meta name="viewport" content="width=1280">
+<link rel="stylesheet" href="../../lib/stage.css">
+<style>
+#world{position:absolute;inset:0;transform-origin:50% 55%}
+.plate{position:absolute;inset:0}
+.big{position:absolute;left:30px;top:66px;font-family:var(--didone);font-weight:800;font-size:470px;line-height:1;font-variation-settings:"opsz" 96;font-feature-settings:"lnum" 1;letter-spacing:-.02em;white-space:nowrap}
+.ttl{position:absolute;left:914px;top:176px;font-family:var(--serif);font-weight:700;font-size:66px;line-height:1.14;letter-spacing:-.03em;white-space:nowrap}
+.ttl .w{position:relative;display:inline-block}
+#ul{position:absolute;left:0;right:0;bottom:-6px;height:8px;background:var(--verm);transform:scaleX(0);transform-origin:0 50%}
+.base{color:var(--ink)}
+/* 빛 띠: 같은 글자를 한 겹 더 깔고, 글자 모양 안에서만 기울어진 그라디언트가 지나간다 */
+.sheen{color:transparent;-webkit-background-clip:text;background-clip:text;
+  background-image:linear-gradient(112deg,transparent 0%,transparent 45.5%,var(--ink2) 47.8%,var(--ink3) 49.2%,var(--paper) 50%,var(--ink3) 50.8%,var(--ink2) 52.2%,transparent 54.5%,transparent 100%);
+  background-size:250% 100%;background-position:96.4% 0%;background-repeat:no-repeat}
+.rl{position:absolute;left:914px;top:146px;width:310px;height:2px;background:var(--ink)}
+.sub{position:absolute;left:914px;top:422px}
+.lead{opacity:0}
+</style></head>
+<body data-no="475" data-cat="질감·스타일 · TEXTURE &amp; STYLE" data-ko="라이트 스윕" data-en="Light Sweep" data-meta="띠 112° · 폭 290px · 1.5s 한 번 · 밑줄 0.5s" data-dur="3" data-poster="2.7">
+<main class="scene bleed">
+<div id="world">
+  <div class="plate base"><div class="big">939</div><div class="ttl">AI는<br><span class="w">다음 말<i id="ul"></i></span>을<br>고른다</div></div>
+  <div class="plate sheen"><div class="big">939</div><div class="ttl">AI는<br><span class="w">다음 말</span>을<br>고른다</div></div>
+  <div class="rl"></div>
+  <div class="lab sub">30번 중 18번 · 고른다 62%</div>
+</div>
+</main>
+<script src="../../lib/gsap.min.js"></script>
+<script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+// 카메라: 아주 느린 밀어 들어가기(흐름만, 빛이 주인공)
+tl.fromTo('#world', {scale: 0.965, x: 18}, {scale: 1, x: 0, duration: 2.4, ease: 'sine.out'}, 0);
+// 빛 띠 한 번: 배경 폭 250%, 위치 96.4% → 3.6% = 띠 중심이 x -250px → 1530px (화면 왼쪽 밖 → 오른쪽 밖)
+tl.fromTo('.sheen', {backgroundPosition: '96.4% 0%'}, {backgroundPosition: '3.6% 0%', duration: 1.5, ease: 'power1.inOut'}, 0.3);
+// 빛이 지나간 뒤 초점 하나: 주홍 밑줄
+tl.to('#ul', {scaleX: 1, duration: 0.5, ease: 'power3.out'}, 1.85);
+Motion.ready();
+</script>
+</body></html>

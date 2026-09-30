@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>흐름장 · Flow Field</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>canvas{position:absolute;inset:0;width:1168px;height:580px}.scene{isolation:isolate}</style></head>
+<body data-no="523" data-cat="입자·생성 · GENERATIVE" data-ko="흐름장" data-en="Flow Field" data-meta="600개 입자 · 고정 스텝 · 곡선 잔상" data-dur="5" data-poster="3.2">
+<main class="scene"><canvas width="1168" height="580" aria-label="보이지 않는 흐름장을 따라 먹 입자와 가는 잔상이 큰 곡선으로 흘러간다."></canvas></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const canvas=document.querySelector('canvas'), ctx=canvas.getContext('2d');
+const W=1168,H=580,INK='#141210',PAPER='#F4EEE3',VERM='#D6401C',RULE='#CDC3B2';
+const SERIF=getComputedStyle(document.body).getPropertyValue('--serif'), SANS=getComputedStyle(document.body).getPropertyValue('--sans');
+const rng=Motion.rand(303), state={t:0};
+const clamp=(x)=>Math.max(0,Math.min(1,x));
+const out=(x)=>1-Math.pow(1-clamp(x),3);
+const mix=(a,b,p)=>a+(b-a)*p;
+function circle(x,y,r,color=INK,alpha=1){ctx.globalAlpha=alpha;ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y,Math.max(.01,r),0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;}
+function label(s,x,y,size=16,color=INK){ctx.fillStyle=color;ctx.font=`${size}px ${SANS}`;ctx.textAlign='left';ctx.fillText(s,x,y);}
+function title(s='다음 말',x=584,y=330,color=INK){ctx.fillStyle=color;ctx.font=`700 108px ${SERIF}`;ctx.textAlign='center';ctx.fillText(s,x,y);ctx.textAlign='left';}
+function clear(){ctx.clearRect(0,0,W,H);ctx.globalAlpha=1;ctx.filter='none';}
+// A periodic, divergence-free field keeps the seeded density spread across the stage.
+function velocity(x,y,t){
+const u=x/W*Math.PI*2,v=y/H*Math.PI*2;
+return [1.25+1.35*Math.sin(u+t*.18)*Math.cos(v)+.55*Math.cos(2*v-t*.24),
+-1.35*H/W*Math.cos(u+t*.18)*Math.sin(v)+.5*Math.sin(u-t*.16)];
+}
+const tracks=Array.from({length:600},()=>{
+let x=rng()*W,y=rng()*H;const points=[[x,y]];
+for(let f=1;f<=300;f++){
+const t=f/60,[vx,vy]=velocity(x,y,t),[mx,my]=velocity(x+vx*.5,y+vy*.5,t);
+x=(x+mx+W)%W;y=(y+my+H)%H;points.push([x,y]);
+}return points;
+});
+function draw(t){clear();
+label('보이지 않는 흐름',104,95,24);label('각 점은 같은 흐름을 따른다',104,540,18);
+const frame=Math.min(300,Math.floor(t*60));ctx.save();ctx.lineWidth=1.15;
+for(const points of tracks){ctx.strokeStyle=INK;ctx.globalAlpha=.24;ctx.beginPath();for(let f=Math.max(0,frame-24);f<=frame;f++){let [x,y]=points[f];if(f===Math.max(0,frame-24)||Math.abs(x-points[f-1][0])>W/2||Math.abs(y-points[f-1][1])>H/2)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.stroke();let [x,y]=points[frame];circle(x,y,1.6,INK,.55);}ctx.restore();circle(1010,83,9,VERM);
+}
+const tl=Motion.timeline();
+tl.to(state,{t:5,duration:5,ease:"none",onUpdate:()=>draw(state.t)},0);
+draw(0);
+Motion.ready();
+</script></body></html>

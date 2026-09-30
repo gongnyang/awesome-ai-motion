@@ -1,0 +1,399 @@
+{
+  "easing-curves": {
+    "aka": [
+      "Extended settle",
+      "긴 꼬리 도착"
+    ],
+    "variants": [
+      "빠른 도착 후 긴 감속 꼬리"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/extended-keyframe/registry-item.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-013"
+    ]
+  },
+  "stagger": {
+    "aka": [
+      "Waterfall arrival",
+      "폭포식 등장"
+    ],
+    "variants": [
+      "겹쳐 시작하는 폭포식 등장"
+    ],
+    "sources": [
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/rules/waterfall-entry.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-014"
+    ]
+  },
+  "overlapping-action": {
+    "aka": [
+      "Axis Layered Arrival",
+      "다축 복합 진입",
+      "axis-isolated-transform-stack"
+    ],
+    "variants": [
+      "위치와 회전과 스케일의 시간차 도착"
+    ],
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/01-anchor-transform.md#axis-isolated-transform-stack",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1b-005"
+    ]
+  },
+  "mask-reveal": {
+    "aka": [
+      "Mask Reveal",
+      "마스크 리빌",
+      "inset-wipe-reveal",
+      "crop-reveal-overflow",
+      "word-clip-stagger",
+      "mask-line-slide-reveal",
+      "swipe-reveal",
+      "Mask reveal",
+      "마스크 드러내기",
+      "Soft Mask Wipe",
+      "부드러운 마스크 와이프",
+      "gradient-mask-soft-wipe",
+      "Paint Reveal",
+      "붓질 리빌",
+      "Write-on reveal",
+      "Stroke reveal",
+      "Logo Negative Space Reveal",
+      "로고 네거티브 공간 리빌",
+      "Liquid Reveal",
+      "액체 리빌",
+      "Fluid reveal",
+      "Clipped Vector Reveal",
+      "벡터 클리핑 리빌",
+      "Track matte reveal",
+      "Radial sweep reveal",
+      "방사 차트 회전 공개",
+      "Fluid Reveal Mask",
+      "유체 드러내기 마스크"
+    ],
+    "variants": [
+      "좌우",
+      "상하",
+      "코너",
+      "고정 창 슬라이드",
+      "줄 리빌",
+      "단어 리빌",
+      "typo/mask-line-reveal",
+      "titlecard-reveal",
+      "기울어진 경계",
+      "텍스트 마스크",
+      "가로",
+      "세로",
+      "대각선",
+      "서명 리빌",
+      "넓은 붓질",
+      "여러 획",
+      "음각 컷아웃",
+      "배경 반전",
+      "방울 확산",
+      "잉크 번짐",
+      "멜트 리빌",
+      "이동 마스크",
+      "확대 마스크",
+      "알파 마스크",
+      "시계 방향",
+      "반시계 방향",
+      "부분 원",
+      "잉크 공개",
+      "연무 공개",
+      "유체 경계 전환",
+      "페더 경계",
+      "붓질 마스크",
+      "네거티브 공간",
+      "유체 경계",
+      "방사 회전 공개"
+    ],
+    "sources": [
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/GSAP/CorePlugins/CSS/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Plugins/SplitText/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "motion.dev examples",
+        "url": "https://motion.dev/examples/react-scroll-image-reveal",
+        "license": "unknown"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/generate-effects.html",
+        "license": "unknown"
+      },
+      {
+        "title": "motiondesign.school",
+        "url": "https://motiondesign.school/blog/animation-principles-in-logo-animation/",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1b-030",
+      "R2-024",
+      "DICT-101",
+      "R1b-033",
+      "R5-050",
+      "R5-090",
+      "R5-091",
+      "R5-109",
+      "R6-018",
+      "R8-049"
+    ]
+  },
+  "spring-overshoot": {
+    "aka": [
+      "Bounce In and Out",
+      "바운스 등장과 퇴장"
+    ],
+    "variants": [
+      "bounceIn",
+      "bounceOut",
+      "bounce-in",
+      "bounce-out",
+      "tinIn",
+      "tinOut",
+      "swashIn",
+      "swashOut",
+      "bounceInDown",
+      "bounceInLeft",
+      "bounceInRight",
+      "bounceInUp",
+      "bounceOutDown",
+      "bounceOutLeft",
+      "bounceOutRight",
+      "bounceOutUp",
+      "bounce-in-top",
+      "bounce-in-right",
+      "bounce-in-bottom",
+      "bounce-in-left",
+      "bounce-in-fwd",
+      "bounce-in-bck",
+      "bounce-out-top",
+      "bounce-out-right",
+      "bounce-out-bottom",
+      "bounce-out-left",
+      "bounce-out-bck",
+      "bounce-out-fwd",
+      "icon-bounce-out",
+      "tinDownIn",
+      "tinDownOut",
+      "tinLeftIn",
+      "tinLeftOut",
+      "tinRightIn",
+      "tinRightOut",
+      "tinUpIn",
+      "tinUpOut",
+      "반동 등장",
+      "반동 퇴장"
+    ],
+    "sources": [
+      {
+        "title": "animate-css/animate.css",
+        "url": "https://github.com/animate-css/animate.css",
+        "license": "Hippocratic-2.1"
+      },
+      {
+        "title": "animista.net",
+        "url": "https://animista.net/play",
+        "license": "BSD-2-Clause (FreeBSD)"
+      },
+      {
+        "title": "IanLunn/Hover",
+        "url": "https://github.com/IanLunn/Hover",
+        "license": "MIT personal/open-source + paid commercial"
+      },
+      {
+        "title": "miniMAC/magic",
+        "url": "https://github.com/miniMAC/magic",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R3-009"
+    ]
+  },
+  "shape-morph": {
+    "aka": [
+      "Shape Morph Loader",
+      "도형 변환 로더",
+      "Logo Motif Transformation",
+      "로고 모티프 변환"
+    ],
+    "variants": [
+      "shapes",
+      "polygons",
+      "square-circle",
+      "blob",
+      "점에서 심볼",
+      "선에서 글자",
+      "아이콘에서 로고",
+      "반복 도형 변환",
+      "로고 모티프 확장"
+    ],
+    "sources": [
+      {
+        "title": "css-loaders.com",
+        "url": "https://css-loaders.com/",
+        "license": "unknown"
+      },
+      {
+        "title": "uiverse-io/galaxy",
+        "url": "https://github.com/uiverse-io/galaxy",
+        "license": "MIT"
+      },
+      {
+        "title": "motiondesign.school",
+        "url": "https://motiondesign.school/blog/animation-principles-in-logo-animation/",
+        "license": "unknown"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R3-079",
+      "R5-092"
+    ]
+  },
+  "line-draw": {
+    "aka": [
+      "Logo Stroke To Fill",
+      "로고 윤곽에서 면으로",
+      "Outline logo reveal",
+      "SVG Stroke to Fill",
+      "SVG 윤곽에서 채움"
+    ],
+    "variants": [
+      "동시 채움",
+      "부분 채움",
+      "선에서 색",
+      "선만 유지",
+      "글로 뒤 채움",
+      "윤곽 후 채움"
+    ],
+    "sources": [
+      {
+        "title": "motiondesign.school",
+        "url": "https://motiondesign.school/blog/animation-principles-in-logo-animation/",
+        "license": "unknown"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      },
+      {
+        "title": "maxwellito/vivus",
+        "url": "https://github.com/maxwellito/vivus",
+        "license": "MIT"
+      },
+      {
+        "title": "diffusionstudio/lottie",
+        "url": "https://github.com/diffusionstudio/lottie",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R5-088",
+      "R8-115"
+    ]
+  },
+  "dot-regroup": {
+    "aka": [
+      "Logo Parts Assembly",
+      "로고 부품 조립",
+      "Logo build"
+    ],
+    "variants": [
+      "방사 조립",
+      "축 정렬",
+      "퍼즐 조립",
+      "로고 부품 조립"
+    ],
+    "sources": [
+      {
+        "title": "motiondesign.school",
+        "url": "https://motiondesign.school/blog/animation-principles-in-logo-animation/",
+        "license": "unknown"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R5-089"
+    ]
+  },
+  "arc-motion": {
+    "aka": [
+      "Elastic Pendulum",
+      "탄성 진자"
+    ],
+    "variants": [
+      "단진자",
+      "이중 진자",
+      "줄길이 변화",
+      "감쇠 진자"
+    ],
+    "sources": [
+      {
+        "title": "nature-of-code/noc-book-2",
+        "url": "https://natureofcode.com/oscillation/",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R8-037"
+    ]
+  },
+  "cursor-click": {
+    "aka": [
+      "Loop cursor return",
+      "반복용 커서 복귀"
+    ],
+    "variants": [
+      "원호 복귀",
+      "여백 경유 복귀",
+      "시연 끝의 커서 복귀"
+    ],
+    "sources": [
+      {
+        "title": "Screen Studio",
+        "url": "https://screen.studio/",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R7-102"
+    ]
+  }
+}

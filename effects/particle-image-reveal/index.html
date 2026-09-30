@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>입자 이미지 공개 · Particle image reveal</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>canvas{position:absolute;inset:0;width:1168px;height:580px}.scene{isolation:isolate}</style></head>
+<body data-no="507" data-cat="입자·생성 · GENERATIVE" data-ko="입자 이미지 공개" data-en="Particle image reveal" data-meta="고정 시드 · 도판 샘플 · 2.4초 집결" data-dur="4.5" data-poster="4.1">
+<main class="scene"><canvas width="1168" height="580" aria-label="흩어진 입자가 모여 먹 막대 세 개와 주홍 원으로 이루어진 도판을 공개한다."></canvas></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const canvas=document.querySelector('canvas'), ctx=canvas.getContext('2d');
+const W=1168,H=580,INK='#141210',PAPER='#F4EEE3',VERM='#D6401C',RULE='#CDC3B2';
+const SERIF=getComputedStyle(document.body).getPropertyValue('--serif'), SANS=getComputedStyle(document.body).getPropertyValue('--sans');
+const rng=Motion.rand(303), state={t:0};
+const clamp=(x)=>Math.max(0,Math.min(1,x));
+const out=(x)=>1-Math.pow(1-clamp(x),3);
+const mix=(a,b,p)=>a+(b-a)*p;
+function circle(x,y,r,color=INK,alpha=1){ctx.globalAlpha=alpha;ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y,Math.max(.01,r),0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;}
+function label(s,x,y,size=16,color=INK){ctx.fillStyle=color;ctx.font=`${size}px ${SANS}`;ctx.textAlign='left';ctx.fillText(s,x,y);}
+function title(s='다음 말',x=584,y=330,color=INK){ctx.fillStyle=color;ctx.font=`700 108px ${SERIF}`;ctx.textAlign='center';ctx.fillText(s,x,y);ctx.textAlign='left';}
+function clear(){ctx.clearRect(0,0,W,H);ctx.globalAlpha=1;ctx.filter='none';}
+const targets=[];for(let x=350;x<824;x+=7)for(let y=180;y<435;y+=7){let verm=(x-752)**2+(y-228)**2<48**2;let bar=(x>=350&&x<420&&y>=320)||(x>=464&&x<534&&y>=260)||(x>=578&&x<648&&y>=180);if(verm||bar)targets.push({x,y,color:verm?VERM:INK,sx:rng()*W,sy:rng()*H,delay:rng()*.55});}
+function draw(t){clear();
+label('흩어진 점에서 하나의 그림으로',104,95,24);label('입자 이미지 공개',104,514,18);
+for(const p of targets){const q=out((t-.25-p.delay)/2.2);circle(mix(p.sx,p.x,q),mix(p.sy,p.y,q),mix(2,3.5,q),p.color,.35+.65*q);}
+const final=out((t-3.2)/.6);ctx.globalAlpha=final;ctx.fillStyle=INK;ctx.fillRect(350,320,70,115);ctx.fillRect(464,260,70,175);ctx.fillRect(578,180,70,255);ctx.globalAlpha=1;circle(752,228,48,VERM,final);
+}
+const tl=Motion.timeline();
+tl.to(state,{t:4.5,duration:4.5,ease:"none",onUpdate:()=>draw(state.t)},0);
+draw(0);
+Motion.ready();
+</script></body></html>

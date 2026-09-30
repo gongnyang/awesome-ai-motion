@@ -1,0 +1,16 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>숏폼 훅 · Shorts Hook</title><meta name="viewport" content="width=720"><link rel="stylesheet" href="../../lib/stage.css"><style>
+body.portrait .cap{bottom:256px}body.portrait .scene{bottom:332px}.cap .meta{letter-spacing:0}.word{position:absolute;left:0;right:0;top:290px;text-align:center;font-size:92px;opacity:0;transform-origin:50% 50%}.portal{position:absolute;inset:0;transform-origin:320px 360px;opacity:0}.portal svg{display:block;width:640px;height:884px}.content{position:absolute;inset:0;transform-origin:320px 360px;opacity:0}.tag{position:absolute;left:60px;top:140px}.value{position:absolute;left:0;right:0;top:310px;text-align:center;font-size:240px;color:var(--verm);font-variant-numeric:tabular-nums}.unit{position:absolute;left:0;right:0;top:555px;text-align:center}.base{position:absolute;left:60px;right:60px;top:620px;height:1px;background:var(--rule)}.conclusion{position:absolute;left:0;right:0;top:675px;text-align:center;font-size:36px;opacity:0}
+</style></head><body data-kind="recipe" data-size="720x1280" data-no="R09" data-cat="레시피 · 세로 숏폼의 도입과 핵심 수치 전달" data-ko="숏폼 훅" data-en="Shorts Hook" data-meta="3비트 · 줌 · 939" data-dur="5"><main class="scene"><div class="content"><div class="tag lab">AI · 입력에서 출력까지</div><div class="num value" id="value">0</div><div class="unit t-m">토큰</div><div class="base"></div><div class="conclusion t-m">AI는 다음 말을 고른다</div></div><div class="portal"><svg viewBox="0 0 640 884" aria-label="O 안으로 확대"><path fill="var(--paper)" fill-rule="evenodd" d="M0 0H640V884H0Z M385 360a65 110 0 1 0 -130 0a65 110 0 1 0 130 0Z"/><path fill="var(--ink)" fill-rule="evenodd" d="M425 360a105 165 0 1 0 -210 0a105 165 0 1 0 210 0Z M385 360a65 110 0 1 0 -130 0a65 110 0 1 0 130 0Z"/></svg></div><div class="word t-xl" id="read">읽고</div><div class="word t-xl" id="score">매기고</div><div class="word t-xl" id="choose">고른다</div></main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl=Motion.timeline();
+['#read','#score','#choose'].forEach((s,i)=>{const at=.08+i*.3;tl.set(s,{opacity:1,scale:1.4},at);tl.to(s,{scale:1,duration:.2,ease:'power3.out'},at);tl.set(s,{opacity:0},at+.3);});
+tl.set('.portal',{opacity:1},.98);
+tl.set('.content',{scale:.18},0);
+tl.to('.portal',{scale:8,duration:1.35,ease:'power3.in'},1);
+tl.to('.content',{opacity:1,duration:.25},1.3);
+tl.to('.content',{scale:1,duration:1.15,ease:'power2.out'},1.3);
+tl.set('.portal',{opacity:0},2.35);
+const counter={value:0};
+tl.to(counter,{value:939,duration:1.65,ease:'power2.out',onUpdate:()=>document.querySelector('#value').textContent=Math.round(counter.value)},2.25);
+tl.fromTo('.conclusion',{y:12,opacity:0},{y:0,opacity:1,duration:.3},4.05);
+Motion.ready();
+</script></body></html>

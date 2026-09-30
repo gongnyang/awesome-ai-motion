@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>생키 리본 성장</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>svg{position:absolute;inset:0;width:1168px;height:580px}svg text{font-family:var(--sans);font-size:22px;fill:var(--ink)}svg .small{font-size:16px;fill:var(--ink2)}svg .big{font-family:var(--didone);font-size:76px}svg .grid{stroke:var(--rule);stroke-width:1}svg .axis{stroke:var(--ink);stroke-width:1} .heading{position:absolute;left:32px;top:26px;font-size:30px}.sub{position:absolute;left:34px;top:72px;font-size:16px;color:var(--ink2)}</style></head>
+<body data-no="291" data-cat="데이터 · DATA" data-ko="생키 리본 성장" data-en="Sankey Ribbon Growth" data-meta="예시 데이터 · 4초" data-dur="4" data-poster="3.7">
+<main class="scene"><div class="heading t-m">요청이 지나가는 길</div><div class="sub">분기와 합류를 같은 유량으로 이어 보인다</div><svg viewBox="0 0 1168 580" xmlns="http://www.w3.org/2000/svg"><defs><clipPath id="leftClip"><rect id="leftReveal" x="170" y="160" width="0" height="370"/></clipPath><clipPath id="rightClip"><rect id="rightReveal" x="590" y="160" width="0" height="370"/></clipPath></defs>
+<g clip-path="url(#leftClip)"><path d="M190 220 C390 220 390 200 580 200 L580 320 C390 320 390 340 190 340Z" fill="var(--ink)" opacity=".8"/><path d="M190 340 C390 340 390 410 580 410 L580 490 C390 490 390 420 190 420Z" fill="var(--verm)" opacity=".85"/></g>
+<g clip-path="url(#rightClip)"><path d="M604 200 C790 200 790 220 978 220 L978 340 C790 340 790 320 604 320Z" fill="var(--ink)" opacity=".8"/><path d="M604 410 C790 410 790 340 978 340 L978 420 C790 420 790 490 604 490Z" fill="var(--verm)" opacity=".85"/></g>
+<rect x="166" y="220" width="24" height="200" fill="var(--ink)"/><rect x="580" y="200" width="24" height="120" fill="var(--ink)"/><rect x="580" y="410" width="24" height="80" fill="var(--verm)"/><rect x="978" y="220" width="24" height="200" fill="var(--ink)"/>
+<text x="135" y="186">입력 100</text><text x="540" y="173">문서 60</text><text x="540" y="523">이미지 40</text><text x="944" y="186">출력 100</text><text class="small" x="120" y="558">요청 100건 · 리본 두께는 요청 수에 비례 · 예시 흐름</text></svg></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+tl.to('#leftReveal',{attr:{width:420},duration:.8,ease:'none'},.45);tl.to('#rightReveal',{attr:{width:420},duration:.8,ease:'none'},1.45);
+Motion.ready();
+</script></body></html>

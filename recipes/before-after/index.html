@@ -1,0 +1,14 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>전후 비교 · Before and After</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>
+.side{position:absolute;top:0;width:584px;height:580px}.before{left:0;clip-path:inset(0% 0% 0% 100%)}.after{left:584px;clip-path:inset(0% 100% 0% 0%)}.tag{position:absolute;left:70px;top:65px}.value{position:absolute;left:40px;right:40px;top:148px;font-size:200px;text-align:center;font-variant-numeric:tabular-nums}.unit{position:absolute;left:0;right:0;top:352px;text-align:center}.sentence{position:absolute;left:0;right:0;top:425px;text-align:center;font:700 38px var(--serif);white-space:nowrap}.sentence span{display:inline-block}.before .value,.before .sentence{color:var(--ink3);filter:blur(3px)}.divider{position:absolute;left:583px;top:58px;width:2px;height:445px;background:var(--ink);transform:scaleY(0);transform-origin:50% 50%}.base{position:absolute;left:70px;right:70px;top:398px;height:1px;background:var(--rule)}#focus{margin:0 5px;transform-origin:50% 65%}
+</style></head><body data-kind="recipe" data-no="R02" data-cat="레시피 · 제품 개선을 비교하는 발표와 데이터 영상" data-ko="전후 비교" data-en="Before and After" data-meta="50:50 · 0 → 939 · 강조 1.06배" data-dur="5"><main class="scene"><div class="side before"><div class="tag lab">전 · 흐림</div><div class="value num">939</div><div class="unit lab">토큰</div><div class="base"></div><div class="sentence">AI는 다음 말을 고른다</div></div><div class="side after"><div class="tag lab">후 · 선명</div><div class="value num" id="value">0</div><div class="unit lab">토큰</div><div class="base"></div><div class="sentence"><span class="rest">AI는</span> <span id="focus">다음 말</span><span class="rest">을 고른다</span></div></div><div class="divider"></div></main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl=Motion.timeline();
+tl.to('.side',{clipPath:'inset(0% 0% 0% 0%)',duration:.65,ease:'power2.inOut'},.3);
+tl.to('.divider',{scaleY:1,duration:.65,ease:'power2.inOut'},.3);
+const counter={value:0};
+tl.to('#value',{color:'var(--verm)',duration:.2},1.05);
+tl.to(counter,{value:939,duration:1.65,ease:'power2.out',onUpdate:()=>document.querySelector('#value').textContent=Math.round(counter.value)},1.05);
+tl.to('#value',{color:'var(--ink)',duration:.25},2.85);
+tl.to('#focus',{color:'var(--verm)',scale:1.06,duration:.65,ease:'power2.inOut'},3.1);
+tl.to('.after .rest',{opacity:.32,duration:.65,ease:'power2.inOut'},3.1);
+Motion.ready();
+</script></body></html>

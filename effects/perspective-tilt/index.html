@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>3D 원근 틸트 리빌 · Perspective Tilt Reveal</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.camera{position:absolute;inset:0;perspective:1400px;perspective-origin:50% 50%}.world{position:absolute;left:-166px;top:-205px;width:1500px;height:990px;transform-style:preserve-3d;transform-origin:750px 495px;background:var(--paper)}
+.plate{position:absolute;width:500px;height:330px;padding:27px 34px;border-top:1px solid var(--ink);border-left:1px solid var(--rule)}
+.plate-number{position:absolute;left:35px;top:80px;font-size:132px;color:var(--ink2)}.plate-foot{position:absolute;left:35px;bottom:31px}.bars{position:absolute;right:36px;top:125px;display:flex;align-items:end;height:115px;gap:12px}.bars i{width:26px;height:110px;background:var(--ink3)}.bars i:nth-child(2){height:62px}.bars i:nth-child(3){height:30px}
+.focus-title{position:absolute;left:34px;top:76px;font-size:43px}.focus-value{position:absolute;left:260px;top:110px;font-size:124px;color:var(--verm)}.focus-value small{font-size:22px;font-family:var(--mono)}.focus-line{position:absolute;left:34px;right:34px;top:259px;height:2px;background:var(--ink)}.focus-foot{position:absolute;left:34px;top:278px}.tag{position:absolute;left:28px;bottom:14px}.note{position:absolute;right:28px;bottom:24px;opacity:0}
+</style></head>
+<body data-no="236" data-cat="가상 카메라 · CAMERA" data-ko="3D 원근 틸트 리빌" data-en="Perspective Tilt Reveal" data-meta="rotateX 55° · 1400px · 지면 → 도판" data-dur="4" data-poster="3.7">
+<main class="scene"><div class="camera"><div class="world"><section class="plate " style="left:0px;top:0px"><div class="lab">FIG. 01 / NEXT TOKEN</div><div class="num plate-number">939</div><div class="lab plate-foot">입력</div><div class="bars"><i></i><i></i><i></i></div></section><section class="plate " style="left:500px;top:0px"><div class="lab">FIG. 02 / NEXT TOKEN</div><div class="num plate-number">18</div><div class="lab plate-foot">모델</div><div class="bars"><i></i><i></i><i></i></div></section><section class="plate " style="left:1000px;top:0px"><div class="lab">FIG. 03 / NEXT TOKEN</div><div class="num plate-number">30</div><div class="lab plate-foot">출력</div><div class="bars"><i></i><i></i><i></i></div></section><section class="plate " style="left:0px;top:330px"><div class="lab">FIG. 04 / NEXT TOKEN</div><div class="num plate-number">21</div><div class="lab plate-foot">입력</div><div class="bars"><i></i><i></i><i></i></div></section><section class="plate focus" style="left:500px;top:330px"><div class="lab">FIG. 05 / NEXT TOKEN</div><div class="t-l focus-title">다음 말</div><div class="num focus-value">62<small>%</small></div><div class="focus-line"></div><div class="lab focus-foot">고른다 · 30번 중 18번</div></section><section class="plate " style="left:1000px;top:330px"><div class="lab">FIG. 06 / NEXT TOKEN</div><div class="num plate-number">9</div><div class="lab plate-foot">출력</div><div class="bars"><i></i><i></i><i></i></div></section><section class="plate " style="left:0px;top:660px"><div class="lab">FIG. 07 / NEXT TOKEN</div><div class="num plate-number">5</div><div class="lab plate-foot">입력</div><div class="bars"><i></i><i></i><i></i></div></section><section class="plate " style="left:500px;top:660px"><div class="lab">FIG. 08 / NEXT TOKEN</div><div class="num plate-number">3</div><div class="lab plate-foot">모델</div><div class="bars"><i></i><i></i><i></i></div></section><section class="plate " style="left:1000px;top:660px"><div class="lab">FIG. 09 / NEXT TOKEN</div><div class="num plate-number">939</div><div class="lab plate-foot">출력</div><div class="bars"><i></i><i></i><i></i></div></section></div></div><div class="lab tag">EDITORIAL ATLAS / 09 FIGURES</div><div class="lab note">55° → 0° · FIG. 05</div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>const tl = Motion.timeline();
+
+tl.set('.world',{scale:2.02,rotationX:0,z:0,x:1010,y:666,clipPath:'inset(0% 66.666% 66.666% 0%)'},0);
+tl.to('.world',{clipPath:'inset(0% 0% 0% 0%)',duration:.6,ease:'sine.inOut'},.3);
+tl.to('.world',{rotationX:55,scale:.69,z:-180,x:0,y:-15,duration:1.45,ease:'power2.inOut'},.3);
+tl.to('.world',{rotationX:55,scale:.73,z:-150,y:0,duration:.5,ease:'sine.inOut'},1.75);
+tl.to('.world',{rotationX:0,scale:2.02,z:0,y:0,duration:1.05,ease:'power3.inOut'},2.25);
+tl.to('.world',{clipPath:'inset(33.333% 33.333% 33.333% 33.333%)',duration:.8,ease:'power2.inOut'},2.5);
+tl.to('.note',{opacity:1,duration:.15},3.3);
+
+Motion.ready();</script></body></html>

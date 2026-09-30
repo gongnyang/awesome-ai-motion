@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>둘레선 강조 · Circumscribe</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.kicker{position:absolute;left:64px;top:40px}.caption{position:absolute;left:64px;bottom:38px;font-size:18px;color:var(--ink2)}
+svg.canvas{position:absolute;inset:0;width:1168px;height:580px}.note{position:absolute;right:64px;bottom:40px}
+
+.value{position:absolute;left:140px;top:203px;width:390px;font-size:144px;text-align:center}.explain{position:absolute;left:690px;top:207px}.explain .t-m{margin-top:18px}
+</style></head>
+<body data-no="076" data-cat="강조·주의 · EMPHASIS" data-ko="둘레선 강조" data-en="Circumscribe" data-meta="둘레선 3px · 그리기와 소거" data-dur="3.5" data-poster="1.3">
+<main class="scene"><span class="lab kicker">후보 가운데 하나를 짚는다</span><div class="num value">62%</div><svg class="canvas" viewBox="0 0 1168 580"><rect class="box" x="128" y="177" width="414" height="177" rx="6" pathLength="1" fill="none" stroke="var(--verm)" stroke-width="3" stroke-dasharray="1" stroke-dashoffset="1"/></svg><div class="explain"><span class="lab">가장 높은 확률</span><div class="t-m">다음 말을 고른다</div></div><div class="caption">설명할 때 두르고, 설명 뒤에는 지운다</div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+tl.set('.box',{opacity:1,strokeDashoffset:1},0);
+tl.to('.box',{strokeDashoffset:0,duration:.6,ease:'power2.inOut'},.4);
+tl.to('.box',{opacity:0,duration:.3},1.7);
+Motion.ready();
+</script></body></html>

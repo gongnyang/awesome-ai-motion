@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>카드 플립 · Card Flip</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>.space{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;perspective:900px}.card{position:relative;width:680px;height:340px;transform-style:preserve-3d}.face{position:absolute;inset:0;background:var(--paper2);border:1px solid var(--ink);backface-visibility:hidden;padding:44px}.back{transform:rotateY(180deg)}.face .lab{margin-bottom:35px}.face .t-l{font-size:62px}.face .dot{position:absolute;right:42px;bottom:36px}.hint{position:absolute;bottom:32px;left:0;right:0;text-align:center}</style></head>
+<body data-no="548" data-cat="3D·깊이 · 3D &amp; DEPTH" data-ko="카드 플립" data-en="Card Flip" data-meta="질문에서 답으로 · Y축 180도 · 0.8초" data-dur="3.5" data-poster="3.1">
+<main class="scene"><div class="space"><div class="card"><section class="face"><div class="lab">질문</div><div class="t-l">AI는 어떻게 답할까?</div></section><section class="face back"><div class="lab">답</div><div class="t-l">다음 말을 고른다</div><div class="dot v"></div></section></div></div><div class="lab hint">하나의 카드 · 두 가지 상태</div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>const tl = Motion.timeline();
+tl.to('.card',{rotationY:180,duration:.8,ease:'power2.inOut'},.7);
+Motion.ready();</script></body></html>

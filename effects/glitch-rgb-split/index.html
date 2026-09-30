@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>RGB 분리 글리치 · RGB Split Glitch</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>canvas{position:absolute;inset:0;width:1168px;height:580px}.scene{isolation:isolate}</style></head>
+<body data-no="448" data-cat="질감·스타일 · TEXTURE &amp; STYLE" data-ko="RGB 분리 글리치" data-en="RGB Split Glitch" data-meta="6개 조각 · 24fps · 채널 분리" data-dur="3.6" data-poster="0.76">
+<main class="scene"><canvas width="1168" height="580" aria-label="먹과 종이, 주홍 복사 채널이 가로 조각으로 어긋난 뒤 선명한 문구로 복원된다."></canvas></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const canvas=document.querySelector('canvas'), ctx=canvas.getContext('2d');
+const W=1168,H=580,INK='#141210',PAPER='#F4EEE3',VERM='#D6401C',RULE='#CDC3B2';
+const SERIF=getComputedStyle(document.body).getPropertyValue('--serif'), SANS=getComputedStyle(document.body).getPropertyValue('--sans');
+const rng=Motion.rand(303), state={t:0};
+const clamp=(x)=>Math.max(0,Math.min(1,x));
+const out=(x)=>1-Math.pow(1-clamp(x),3);
+const mix=(a,b,p)=>a+(b-a)*p;
+function circle(x,y,r,color=INK,alpha=1){ctx.globalAlpha=alpha;ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y,Math.max(.01,r),0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;}
+function label(s,x,y,size=16,color=INK){ctx.fillStyle=color;ctx.font=`${size}px ${SANS}`;ctx.textAlign='left';ctx.fillText(s,x,y);}
+function title(s='다음 말',x=584,y=330,color=INK){ctx.fillStyle=color;ctx.font=`700 108px ${SERIF}`;ctx.textAlign='center';ctx.fillText(s,x,y);ctx.textAlign='left';}
+function clear(){ctx.clearRect(0,0,W,H);ctx.globalAlpha=1;ctx.filter='none';}
+const source=document.createElement('canvas');source.width=W;source.height=H;const sc=source.getContext('2d');
+sc.font=`700 108px ${SERIF}`;sc.textAlign='center';sc.fillStyle=INK;sc.fillText('다음 말',584,330);sc.fillStyle=VERM;sc.beginPath();sc.arc(898,283,39,0,7);sc.fill();
+const red=document.createElement('canvas');red.width=W;red.height=H;const rc=red.getContext('2d');rc.drawImage(source,0,0);rc.globalCompositeOperation='source-in';rc.fillStyle=VERM;rc.fillRect(0,0,W,H);
+function draw(t){clear();
+label('순간의 어긋남',104,95,24);label('다시 선명하게',104,514,18);
+const active=(t>.55&&t<.95)||(t>1.5&&t<1.86);const rand=Motion.rand(448+Math.floor(t*24));
+if(active){ctx.globalAlpha=.55;ctx.drawImage(red,19,-2);ctx.globalAlpha=1;for(let i=0;i<6;i++){let y=180+i*32,h=32,dx=(rand()-.5)*66;ctx.drawImage(source,0,y,W,h,dx,y,W,h);}ctx.fillStyle=PAPER;ctx.fillRect(180,262,W-360,5);}else ctx.drawImage(source,0,0);
+}
+const tl=Motion.timeline();
+tl.to(state,{t:3.6,duration:3.6,ease:"none",onUpdate:()=>draw(state.t)},0);
+draw(0);
+Motion.ready();
+</script></body></html>

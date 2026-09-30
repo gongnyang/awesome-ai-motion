@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>단어 강조 · Word Emphasis</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.label{position:absolute;left:60px;top:175px}.text{position:absolute;left:60px;top:240px;white-space:pre;letter-spacing:0;line-height:1.3}.text span{display:inline-block}#focus{transform-origin:50% 65%;margin:0 7px}.baseline{position:absolute;left:60px;right:60px;top:355px}.lead{left:280px;top:410px;opacity:0}
+</style></head><body data-no="095" data-cat="타이포 · TYPOGRAPHY" data-ko="단어 강조" data-en="Word Emphasis" data-meta="power2.inOut · 1.06배 · 주변 0.32" data-dur="3">
+<main class="scene"><div class="lab label">문장 안의 한 구절</div><div class="text t-xl" aria-label="AI는 다음 말을 고른다"><span class="rest">AI는 </span><span id="focus">다음 말</span><span class="rest">을 고른다</span></div><div class="hair baseline"></div><div class="lead" id="note"><i></i><s></s><span>다음 말 · 1.06배</span></div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+const verm = getComputedStyle(document.documentElement).getPropertyValue('--verm').trim();
+tl.to('#focus', {color:verm, scale:1.06, duration:.65, ease:'power2.inOut'}, .65);
+tl.to('.rest', {opacity:.32, duration:.65, ease:'power2.inOut'}, .65);
+tl.to('#note', {opacity:1, duration:.25}, 1.5);
+Motion.ready();
+</script></body></html>

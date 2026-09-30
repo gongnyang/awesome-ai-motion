@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>원호 스피너 · Arc Spinner</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>.hint{position:absolute;left:80px;bottom:40px;font-size:15px;color:var(--ink2)}.heading{position:absolute;left:80px;top:50px;font-size:18px;color:var(--ink2)}.hero{position:absolute;left:80px;top:125px;width:1008px;height:300px}.hero .t-xl{position:absolute;left:0;top:40px}.hero .num{position:absolute;right:0;top:25px;font-size:240px}.hero .dot{position:absolute;left:515px;top:142px}.hero .hair{position:absolute;left:0;right:0;bottom:0}.hero .lab{position:absolute;left:0;bottom:20px}
+.dial{position:absolute;left:104px;top:90px;width:360px;height:360px}.dial svg{width:360px;height:360px;overflow:visible}.dial .num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:95px}.copy{position:absolute;left:580px;top:145px}.copy .t-xl{font-size:72px}.copy p{font-size:22px;color:var(--ink2)}</style></head>
+<body data-no="581" data-cat="반복·앰비언트 · LOOP &amp; AMBIENT" data-ko="원호 스피너" data-en="Arc Spinner" data-meta="회전 3회 · 길이 12% ↔ 72%" data-dur="3" data-poster="1.7">
+<main class="scene"><div class="dial"><svg viewBox="0 0 360 360"><circle cx="180" cy="180" r="145" fill="none" stroke="var(--rule)" stroke-width="2"/><circle class="arc" cx="180" cy="180" r="145" fill="none" stroke="var(--verm)" stroke-width="12" stroke-linecap="round" pathLength="100"/></svg><span class="num">939</span></div><div class="copy"><div class="t-xl">다음 말을<br>고르는 중</div><p>길이가 변하는 원호 · 진행 중 표시</p></div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+tl.set('.arc', {strokeDasharray:'12 100', svgOrigin:'180 180'}, 0);
+tl.to('.arc', {rotation:1080, duration:3, ease:'none'}, 0);
+for(let i=0;i<2;i++){
+ tl.to('.arc', {strokeDasharray:'72 100', duration:.75, ease:'sine.inOut'}, i*1.5);
+ tl.to('.arc', {strokeDasharray:'12 100', duration:.75, ease:'sine.inOut'}, i*1.5+.75);
+}
+Motion.ready();
+</script></body></html>

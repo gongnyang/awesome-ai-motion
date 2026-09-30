@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>패럴랙스 · Parallax</title>
+<meta name="viewport" content="width=1280">
+<link rel="stylesheet" href="../../lib/stage.css">
+<style>#far,#mid,#near{position:absolute;inset:0}#far .num{position:absolute;left:380px;top:115px;font-size:230px;color:var(--ink3);opacity:.32}#mid .blk{position:absolute;top:295px;width:105px;height:100px}#mid .blk:nth-child(2){height:145px;top:250px}#mid .blk:nth-child(3){height:70px;top:325px}#near .dot{position:absolute;left:1030px;top:375px;width:72px;height:72px}.depth{position:absolute;left:70px;top:0;width:1028px;border-top:1px solid var(--rule)}.depth .lab{position:absolute;top:12px}.lead{opacity:0}</style></head>
+<body data-no="220" data-cat="가상 카메라 · CAMERA" data-ko="패럴랙스" data-en="Parallax" data-meta="카메라 420px · 깊이별 0.3 / 0.6 / 1.2" data-dur="3">
+<main class="scene"><div class="lab" style="position:absolute;left:70px;top:42px">CAMERA ← 420px</div><div id="far"><div class="num">939</div></div><div id="mid"><div class="blk" style="left:560px"></div><div class="blk" style="left:715px"></div><div class="blk" style="left:870px"></div></div><div id="near"><div class="dot v"></div></div><div class="depth" style="top:145px"><span class="lab">먼 층 · 0.3×</span></div><div class="depth" style="top:280px"><span class="lab">중간 층 · 0.6×</span></div><div class="depth" style="top:430px"><span class="lab">가까운 층 · 1.2×</span></div><div class="lead" id="note" style="left:560px;top:490px"><i></i><s></s><span>126 / 252 / 504px</span></div></main>
+<script src="../../lib/gsap.min.js"></script>
+<script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+[ ['#far', .3], ['#mid', .6], ['#near', 1.2] ].forEach(([s, ratio]) => {
+  tl.to(s, {x: -420 * ratio, duration: 2.0, ease: 'sine.inOut'}, .3);
+});
+tl.to('#note', {opacity: 1, duration: .2}, 2.35);
+Motion.ready();
+</script></body></html>

@@ -1,0 +1,426 @@
+{
+  "shape-morph": {
+    "aka": [
+      "Shape morph",
+      "도형 모프",
+      "Shape Morph",
+      "path-morph-consistent-topology",
+      "Rotational shape morph",
+      "회전형 모프",
+      "Smooth organic morph",
+      "부드러운 유기적 모프",
+      "Liquid Morph",
+      "액체 윤곽 모프",
+      "Path Morph",
+      "패스 모프",
+      "Shape tween",
+      "Point-matched shape transform",
+      "점 대응 도형 모프",
+      "Transform",
+      "ReplacementTransform",
+      "Arc transform transport",
+      "원호를 따라 변환",
+      "ClockwiseTransform",
+      "CounterclockwiseTransform",
+      "Inside-out point reversal",
+      "안팎 뒤집는 형태 변형",
+      "TurnInsideOut",
+      "3D Blend Shape Morph",
+      "3D 블렌드 셰이프 모프",
+      "Morph targets",
+      "Blendshapes",
+      "SVG Path Morph",
+      "SVG 경로 모프",
+      "Path interpolation",
+      "Cubic morph"
+    ],
+    "variants": [
+      "유기적 블롭 모프",
+      "원호 대응점 보간",
+      "안팎 뒤집기",
+      "3D 블렌드 셰이프",
+      "사각에서 둥근사각",
+      "로고 변형",
+      "중간 형태 경유",
+      "아이콘",
+      "로고",
+      "폴리곤",
+      "다중 경로",
+      "점 개수 다른 도형",
+      "회전형 모프",
+      "중앙 회전",
+      "다른 시작 끝 원점",
+      "비틀림 보정",
+      "부드러운 유기적 모프",
+      "액체 블롭",
+      "곡선 손잡이 보간",
+      "랜덤 폴리곤",
+      "방울 변형",
+      "유동 전환",
+      "윤곽 모프",
+      "아이콘 모프",
+      "문자 모프",
+      "채움 모프",
+      "부분 그룹 모프",
+      "시계방향 원호",
+      "반시계방향 원호",
+      "원형 뒤집힘",
+      "폐곡선 뒤집힘",
+      "표정",
+      "구 변형",
+      "다중 인스턴스 모프",
+      "곡선 모프",
+      "다각형 모프",
+      "스크롤 모프"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/facet-morph/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/06-shapes-strokes.md#path-morph-consistent-topology",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Plugins/MorphSVGPlugin/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#liquid-morph",
+        "license": "unknown"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web/wiki/Features",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1a-039",
+      "R1b-058",
+      "R2-089",
+      "R1b-134",
+      "R5-014",
+      "R7-031",
+      "R7-033",
+      "R7-126",
+      "R8-106",
+      "R8-110"
+    ]
+  },
+  "line-draw": {
+    "aka": [
+      "SVG stroke draw",
+      "SVG 선 그리기",
+      "Path draw",
+      "Stroke trace",
+      "Expanding stroke segment",
+      "선 구간 확장",
+      "Trim Paths",
+      "트림 패스",
+      "Stroke",
+      "Write-on",
+      "Draw-on",
+      "Path creation and uncreation",
+      "패스 그리기와 역지우기",
+      "Create",
+      "Uncreate",
+      "ShowCreation",
+      "ShowCreationThenDestruction",
+      "ShowCreationThenFadeOut",
+      "Growing arrow",
+      "화살표 성장",
+      "GrowArrow",
+      "SVG Stroke Drawing",
+      "Path drawing",
+      "DrawSVG effect",
+      "Trim paths reveal"
+    ],
+    "variants": [
+      "윤곽 그리기",
+      "끝부터 지우기",
+      "트림 패스",
+      "화살촉을 동반한 선 그리기",
+      "순방향",
+      "역방향",
+      "복수 선 스태거",
+      "지우기",
+      "선 구간 확장",
+      "중앙 확장",
+      "임의 지점 확장",
+      "양끝 수축",
+      "중앙에서 양방향 확장",
+      "동시 트림",
+      "순차 트림",
+      "역방향 지우기",
+      "동시 드로잉",
+      "패스 순차 드로잉",
+      "직선 화살표",
+      "곡선 화살표",
+      "동시 그리기",
+      "한 줄씩",
+      "지연 중첩"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/svg-stroke-trace/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Plugins/DrawSVGPlugin/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/drawing-painting-and-paths/shapes-and-shape-attributes/shape-attributes-paint-operations-path.html",
+        "license": "unknown"
+      },
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/creation.py",
+        "license": "MIT"
+      },
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/growing.py",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1a-118",
+      "R2-087",
+      "R5-001",
+      "R7-001",
+      "R7-011",
+      "R8-109"
+    ]
+  },
+  "arc-motion": {
+    "aka": [
+      "Path Marker",
+      "경로 추종 마커",
+      "path-follow-marker",
+      "Path follower",
+      "경로 추종 이동",
+      "Tangent auto rotation",
+      "경로 접선 자동 회전",
+      "Move along a path",
+      "패스 따라 이동",
+      "MoveAlongPath",
+      "SVG Motion Path Follow",
+      "SVG 경로 따라가기"
+    ],
+    "variants": [
+      "임의 SVG 경로",
+      "접선 자동 회전",
+      "경로 마커",
+      "점만",
+      "잔상 동반",
+      "지도 이동",
+      "닫힌 궤도",
+      "역방향",
+      "부분 경로",
+      "SVG와 HTML 정렬",
+      "접선 추종",
+      "각도 오프셋",
+      "방향 화살표",
+      "고정 방향",
+      "접선 정렬",
+      "왕복",
+      "점 이동",
+      "아이콘 이동",
+      "자동 방향"
+    ],
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/06-shapes-strokes.md#path-follow-marker",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Plugins/MotionPathPlugin/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/movement.py",
+        "license": "MIT"
+      },
+      {
+        "title": "adobe-webplatform/Snap.svg",
+        "url": "https://github.com/adobe-webplatform/Snap.svg",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "juliangarnier/anime",
+        "url": "https://animejs.com/documentation/svg/createmotionpath",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1b-060",
+      "R2-090",
+      "R2-091",
+      "R7-026",
+      "R8-114"
+    ]
+  },
+  "parallax": {
+    "aka": [
+      "2.5D Parallax",
+      "2.5D 패럴랙스",
+      "Multiplane",
+      "Depth Parallax",
+      "깊이 시차"
+    ],
+    "variants": [
+      "2.5D 레이어",
+      "앞뒤 깊이층",
+      "가로 패럴랙스",
+      "세로 패럴랙스",
+      "전진 패럴랙스",
+      "마우스 경로",
+      "스크롤 시차",
+      "카메라 시차"
+    ],
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/work-with-layers/3d-layers/3d-layers.html",
+        "license": "unknown"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://github.com/heygen-com/hyperframes/blob/HEAD/skills/hyperframes-animation/techniques.md",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "basementstudio/scrollytelling",
+        "url": "https://github.com/basementstudio/scrollytelling",
+        "license": "MIT"
+      },
+      {
+        "title": "iart-ai/webgl-animation-skills",
+        "url": "https://github.com/iart-ai/webgl-animation-skills/blob/HEAD/skills/threejs-animation/SKILL.md",
+        "license": "MIT"
+      },
+      {
+        "title": "pixel-point/animate-text",
+        "url": "https://github.com/pixel-point/animate-text/blob/HEAD/skills/animate-text/references/catalog.md#additional-bundled-specs",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R5-082",
+      "R8-093"
+    ]
+  },
+  "follow-through": {
+    "aka": [
+      "Dangling Object",
+      "매달린 객체",
+      "Spring Chain",
+      "스프링 연결 사슬"
+    ],
+    "variants": [
+      "매달린 물체",
+      "스프링 사슬",
+      "Lanyard",
+      "탄성 줄",
+      "다중 스프링",
+      "꼬리 사슬"
+    ],
+    "sources": [
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      },
+      {
+        "title": "nature-of-code/noc-book-2",
+        "url": "https://natureofcode.com/physics-libraries/",
+        "license": "unknown"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#physics_ammo_rope",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R3-183",
+      "R8-038"
+    ]
+  },
+  "dot-regroup": {
+    "aka": [
+      "Particle Assemble and Disperse",
+      "입자 조립과 분산",
+      "Particle morph",
+      "Image to particles"
+    ],
+    "variants": [
+      "이미지와 로고 형태로 입자 조립",
+      "역방향 분산",
+      "이미지 조립",
+      "문자 조립",
+      "3D 모델 점군",
+      "컬 노이즈 분해"
+    ],
+    "sources": [
+      {
+        "title": "naughtyduk/particlesGL",
+        "url": "https://github.com/naughtyduk/particlesGL",
+        "license": "custom personal-noncommercial/commercial-paid"
+      },
+      {
+        "title": "fand/vfx-js",
+        "url": "https://github.com/fand/vfx-js/tree/main/packages/effects#effects",
+        "license": "MIT"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgl_points_dynamic",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-029"
+    ]
+  },
+  "overlapping-action": {
+    "aka": [
+      "Layered Sprite Illustration",
+      "분리 그림 레이어 모션"
+    ],
+    "variants": [
+      "일러스트 부품별 위상차",
+      "컷아웃 콜라주",
+      "식물 부유",
+      "그림 이야기"
+    ],
+    "sources": [
+      {
+        "title": "iart-ai/generative-illustration-skills",
+        "url": "https://github.com/iart-ai/generative-illustration-skills",
+        "license": "unknown"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://github.com/heygen-com/hyperframes/blob/HEAD/skills/hyperframes-animation/adapters/lottie.md",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R8-123"
+    ]
+  }
+}

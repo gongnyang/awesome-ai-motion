@@ -1,0 +1,2537 @@
+[
+  {
+    "slug": "beat-sync",
+    "family": "principles",
+    "ko": "비트 싱크",
+    "en": "Beat Synchronization",
+    "aka": [
+      "Beat landing",
+      "박자에 착지",
+      "Audio synchronized motion",
+      "오디오 동기 모션",
+      "Beat synchronization"
+    ],
+    "what": "요소의 이동 도착이나 크기 변화, 화면 컷이 음악의 특정 박자에 맞춰 일어난다.",
+    "why": "음악과 화면의 사건이 일치한다.",
+    "params": "기본 100BPM, 박자 간격 600ms, 이동 400ms, 도착 오차 1프레임 이내",
+    "impl": "음악 앵커에서 이동 시간을 빼 시작점을 정한다.",
+    "runtime": "gsap",
+    "variants": [
+      "도착 동기",
+      "충돌 동기",
+      "컷 동기",
+      "팝 동기"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md",
+        "license": "unknown"
+      },
+      {
+        "title": "theatre-js/theatre",
+        "url": "https://www.theatrejs.com/docs/latest/manual/audio",
+        "license": "Apache-2.0 / AGPL-3.0 (구성요소별)"
+      },
+      {
+        "title": "motion dictionary 4-explainer-learning.md#C. 템포·리듬·편집과 비트 동기",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "theatre-js/theatre",
+        "url": "https://www.theatrejs.com/docs/latest/concepts",
+        "license": "Apache-2.0 / AGPL-3.0 (구성요소별)"
+      }
+    ],
+    "from": [
+      "R1a-012",
+      "R2-109",
+      "DICT-218"
+    ]
+  },
+  {
+    "slug": "audio-reactive-pulse",
+    "family": "emphasis",
+    "ko": "오디오 반응 펄스",
+    "en": "Audio Reactive Pulse",
+    "aka": [
+      "Audio reactive pulse",
+      "Audio Reactive Shape Pulse",
+      "오디오 반응 도형 맥박"
+    ],
+    "what": "소리의 저음이나 고음 세기에 맞춰 크기와 빛의 강도가 변한다.",
+    "why": "음악과 화면이 하나의 사건처럼 느껴진다.",
+    "params": "재현 기본값 제안: 30fps, 주파수 16밴드, scale 변화 4% 이하, glow 30% 이하",
+    "impl": "미리 추출한 음량 배열을 프레임 시간으로 샘플링해 시각 속성에 매핑한다.",
+    "runtime": "gsap",
+    "variants": [
+      "저음 맥박",
+      "고음 광택",
+      "배경 호흡"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/beat-accent/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://github.com/heygen-com/hyperframes/blob/HEAD/skills/hyperframes-animation/techniques.md",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/beat-pulse-background/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "remotion-dev/skills",
+        "url": "https://github.com/remotion-dev/skills/blob/HEAD/skills/remotion-best-practices/remotion-markup/audio-visualization.md",
+        "license": "unknown"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/techniques.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-125",
+      "R8-120"
+    ]
+  },
+  {
+    "slug": "radial-speed-lines",
+    "family": "emphasis",
+    "ko": "방사 속도선",
+    "en": "Radial Speed Lines",
+    "aka": [
+      "Radial speed lines",
+      "radial-burst-lines",
+      "Radial flash",
+      "방사형 섬광",
+      "Flash"
+    ],
+    "what": "중심에서 바깥으로 가는 선들이 짧게 뻗었다 사라진다.",
+    "why": "충격과 빠른 확대의 에너지를 강조한다.",
+    "params": "재현 기본값 제안: 300ms, 선 16개, 반경 60~400px",
+    "impl": "방사 SVG 선의 시작과 끝 반경을 시간으로 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "긴 속도선",
+      "짧은 방사 섬광",
+      "폭발 광선"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/rules/css-marker-patterns.md",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#radial-burst-lines",
+        "license": "unknown"
+      },
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/indication.py",
+        "license": "MIT"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitives/radial-burst-lines/scene.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-199",
+      "R1b-137",
+      "R7-015"
+    ]
+  },
+  {
+    "slug": "swing",
+    "family": "emphasis",
+    "ko": "스윙",
+    "en": "Swing",
+    "aka": [
+      "Corner Swing",
+      "모서리 피벗 스윙",
+      "anchor-corner-swing",
+      "Pendulum Decay",
+      "진자 감쇠",
+      "pendulum-decay-swing",
+      "Swing Attention",
+      "매달린 흔들기"
+    ],
+    "what": "고정된 축에 매달린 요소가 좌우로 회전하고 진폭을 줄이며 제자리로 돌아온다.",
+    "why": "카드가 걸려 있거나 힘을 받은 듯한 물성을 느낀다.",
+    "params": "권장 550ms, 회전 6도, power2.out, 피벗 좌상",
+    "impl": "HTML 요소의 transform-origin을 모서리에 고정하고 rotation을 감쇠시킨다.",
+    "runtime": "gsap",
+    "variants": [
+      "모서리 피벗",
+      "상단 피벗",
+      "진자 감쇠"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/01-anchor-transform.md#anchor-corner-swing",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/01-anchor-transform.md#pendulum-decay-swing",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "animate-css/animate.css",
+        "url": "https://github.com/animate-css/animate.css",
+        "license": "Hippocratic-2.1"
+      },
+      {
+        "title": "gongnyang/awesome-html-scrolline-deck",
+        "url": "gongnyang/awesome-html-scrolline-deck:references/techniques.md#tilt-card",
+        "license": "MIT"
+      },
+      {
+        "title": "animista.net",
+        "url": "https://animista.net/play",
+        "license": "BSD-2-Clause (FreeBSD)"
+      }
+    ],
+    "from": [
+      "R1b-001",
+      "R1b-009",
+      "R3-037"
+    ]
+  },
+  {
+    "slug": "additive-motion",
+    "family": "principles",
+    "ko": "가산 모션",
+    "en": "Additive Motion",
+    "aka": [
+      "Group Rig Sway",
+      "그룹 동반 흔들림",
+      "null-parent-rig",
+      "Additive layered motion",
+      "가산 레이어 모션",
+      "Secondary Action",
+      "보조 동작"
+    ],
+    "what": "대상이 큰 경로를 따라 움직이는 동안 작은 흔들림이나 회전이 동시에 더해진다.",
+    "why": "요소들이 하나의 그룹임을 알게 된다.",
+    "params": "주경로 2000ms, 보조 진동 주기 400ms, 위치 진폭 6px, 회전 2도",
+    "impl": "HTML 부모에 주경로를 적용하고 자식에 보조 오프셋을 적용하거나 두 변환값을 시간별로 합산한다.",
+    "runtime": "gsap",
+    "variants": [
+      "이동과 흔들림",
+      "회전과 감쇠",
+      "주경로와 소음"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/01-anchor-transform.md#null-parent-rig",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "juliangarnier/anime",
+        "url": "https://animejs.com/documentation/animation/tween-parameters/composition",
+        "license": "MIT"
+      },
+      {
+        "title": "motion dictionary 1-principles.md#3. 디즈니 12원칙 전체",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/GSAP/Timeline/",
+        "license": "GSAP Standard License"
+      }
+    ],
+    "from": [
+      "R1b-007",
+      "R2-117",
+      "DICT-008"
+    ]
+  },
+  {
+    "slug": "continuous-motion",
+    "family": "principles",
+    "ko": "연속 이동",
+    "en": "Continuous Motion",
+    "aka": [
+      "Continuous Tangent Motion",
+      "접선 속도 승계",
+      "rolling-tension-chain",
+      "scene-boundary-tangent-handoff",
+      "Continue Motion",
+      "속도 유지 연장",
+      "loopOut continue"
+    ],
+    "what": "여러 정거장이나 장면을 지날 때 요소가 중간에서 멈추지 않고 같은 흐름을 잇는다.",
+    "why": "분리된 단계가 하나의 연속 행동임을 느낀다.",
+    "params": "권장 구간 600ms, 경계 속도 동일, 정지 홀드 0ms",
+    "impl": "HTML 좌표 경로를 분할하고 경계의 위치와 진행 속도를 맞춘다.",
+    "runtime": "gsap",
+    "variants": [
+      "구간 접선 연결",
+      "마지막 속도 연장"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#rolling-tension-chain",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/work-with-expressions/expression-language-reference/expression-language-reference.html",
+        "license": "unknown"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#scene-boundary-tangent-handoff",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1b-016",
+      "R5-020"
+    ]
+  },
+  {
+    "slug": "bounce-landing",
+    "family": "principles",
+    "ko": "바운스 착지",
+    "en": "Bounce Landing",
+    "aka": [
+      "Bounce Drop",
+      "낙하 바운스",
+      "bounce-drop-physics",
+      "drop-and-settle",
+      "Bounce landing",
+      "Collision Bounce",
+      "충돌 바운스",
+      "Ballistic bounce",
+      "Bounce",
+      "튀기기",
+      "CustomBounce",
+      "사용자 충돌"
+    ],
+    "what": "물체가 아래로 가속해 떨어진 뒤 점점 낮게 튀어 멈춘다.",
+    "why": "중력과 충돌을 느낀다.",
+    "params": "기본 낙하 높이 120px, 총 1000ms, 반발계수 0.55, 반동 3회",
+    "impl": "HTML y 이동에 bounce.out을 적용하거나 중력 궤적을 시간 함수로 계산한다.",
+    "runtime": "gsap",
+    "variants": [
+      "중력 낙하",
+      "충돌 반동",
+      "높이 감쇠"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#bounce-drop-physics",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Eases/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "motionscript.com",
+        "url": "https://motionscript.com/articles/bounce-and-overshoot.html",
+        "license": "unknown"
+      },
+      {
+        "title": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "local/embedded-captions",
+        "url": "claude-skill:embedded-captions/references/motion-vocabulary.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1b-017",
+      "R2-004",
+      "R5-024",
+      "DICT-032",
+      "DICT-038"
+    ]
+  },
+  {
+    "slug": "stepped-motion",
+    "family": "principles",
+    "ko": "계단식 모션",
+    "en": "Stepped Motion",
+    "aka": [
+      "계단식 상태 변화",
+      "hold-keyframe-stepped-values",
+      "Stepped timing",
+      "계단식 타이밍",
+      "SteppedEase",
+      "Steps",
+      "Stop motion",
+      "Snapped movement",
+      "양자화 이동",
+      "Hold Keyframe Cut",
+      "홀드 키프레임 컷",
+      "Stepped keyframe",
+      "계단",
+      "Intentional discontinuity",
+      "의도한 불연속"
+    ],
+    "what": "값이나 자세가 중간 보간 없이 한 단계씩 순간적으로 바뀐다.",
+    "why": "디지털 단계와 저속 프레임 질감을 느낀다.",
+    "params": "기본 8단계, 총 800ms, 단계 간격 100ms, 위치 격자 20px",
+    "impl": "진행값을 단계 수로 양자화하거나 GSAP 코어 타임라인의 set으로 위치와 상태를 순간 변경한다.",
+    "runtime": "gsap",
+    "variants": [
+      "위치 스냅",
+      "각도 스냅",
+      "홀드 키프레임",
+      "단계 상태 전환"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#hold-keyframe-stepped-values",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Eases/SteppedEase/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/GSAP/CorePlugins/Snap/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/animate-in-after-effects/animation-keyframes/keyframe-interpolation.html",
+        "license": "unknown"
+      },
+      {
+        "title": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "R1b-019",
+      "R2-006",
+      "R2-018",
+      "R5-102",
+      "DICT-033",
+      "DICT-082"
+    ]
+  },
+  {
+    "slug": "vignette-pulse",
+    "family": "emphasis",
+    "ko": "비네트 펄스",
+    "en": "Vignette Pulse",
+    "aka": [
+      "비네트 압력 펄스",
+      "vignette-impact-pulse"
+    ],
+    "what": "가장자리 어둠이 순간 안으로 조였다가 풀린다.",
+    "why": "충돌이나 결정 순간의 압력을 느낀다.",
+    "params": "기본 opacity 0.4, scale 0.9, 220ms",
+    "impl": "HTML radial-gradient 비네트의 scale과 opacity를 짧게 왕복 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "충돌 압력",
+      "카운트 완료"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/07-stylize-time.md#vignette-impact-pulse",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1b-074"
+    ]
+  },
+  {
+    "slug": "match-on-action",
+    "family": "transitions",
+    "ko": "동작 연결 컷",
+    "en": "Match on Action",
+    "aka": [
+      "Vector Continuity",
+      "운동 방향 연속",
+      "motion-vector-inheritance",
+      "axis-of-action-pan-handoff"
+    ],
+    "what": "컷 앞뒤의 물체나 카메라가 같은 화면 방향과 속도 흐름으로 움직인다.",
+    "why": "다른 장면이 하나의 동작으로 이어짐을 느낀다.",
+    "params": "권장 양쪽 400ms, 동일 방향, 끝과 시작 속도 일치",
+    "impl": "HTML 두 장면의 위치 및 속도 경계 조건을 같은 스크린 벡터로 정의한다.",
+    "runtime": "gsap",
+    "variants": [
+      "오브젝트 방향 승계",
+      "카메라 팬 승계"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/08-transitions-advanced.md#motion-vector-inheritance",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/08-transitions-advanced.md#axis-of-action-pan-handoff",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1b-077"
+    ]
+  },
+  {
+    "slug": "focus-handoff",
+    "family": "emphasis",
+    "ko": "강조점 순회",
+    "en": "Focus Handoff",
+    "aka": [
+      "Accent Walk",
+      "gradient-text-sweep",
+      "Narration-synchronized signaling",
+      "해설 동기 신호 주기",
+      "Focus handoff",
+      "초점 이전"
+    ],
+    "what": "이미 배치된 여러 항목 중 하나씩 색이나 빛이 켜졌다 다음 항목으로 옮겨간다.",
+    "why": "읽어야 할 순서와 현재 설명 중인 항목을 알아본다.",
+    "params": "권장 항목 4개, 홀드 500ms, 전환 150ms",
+    "impl": "HTML 항목별 강조 레이어의 opacity를 정해진 순서로 교대한다.",
+    "runtime": "gsap",
+    "variants": [
+      "항목 순회",
+      "해설 큐 동기",
+      "색 강조 교대"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "gongnyang/awesome-html-scrolline-deck",
+        "url": "gongnyang/awesome-html-scrolline-deck:references/techniques.md#kinetic-titles",
+        "license": "MIT"
+      },
+      {
+        "title": "Richard E. Mayer / Wiley",
+        "url": "https://onlinelibrary.wiley.com/doi/10.1111/jcal.12197",
+        "license": "unknown"
+      },
+      {
+        "title": "motion dictionary 1-principles.md#7. 연속성·공간 모델·시선 유도",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "gongnyang/awesome-html-scrolline-deck",
+        "url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/kinetic-titles/scene.css",
+        "license": "MIT"
+      },
+      {
+        "title": "Cambridge University Press",
+        "url": "https://www.cambridge.org/highereducation/books/multimedia-learning/FB7E79A165D24D47CEACEB4D2C426ECD/signaling-principle/9E37E775874EC1D93763620B8A296DD4",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1b-085",
+      "R7-117",
+      "DICT-085"
+    ]
+  },
+  {
+    "slug": "screen-shake",
+    "family": "camera",
+    "ko": "화면 흔들림",
+    "en": "Screen Shake",
+    "aka": [
+      "화면 충격 흔들림"
+    ],
+    "what": "화면이나 단어가 짧게 좌우로 떨리고 빠르게 안정된다.",
+    "why": "타격과 충돌과 긴장감을 느낀다.",
+    "params": "기본 250ms, 진폭 9px, 4회 감쇠, ease none",
+    "impl": "HTML x와 y를 고정된 감쇠 진동 시간표로 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "카메라 쉐이크",
+      "단어 쉐이크",
+      "비트 지터",
+      "split-anchor-word-slot"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#screen-shake",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitives/screen-shake/scene.html",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitives/screen-shake/index.html",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/template-catalog.md#split-anchor-word-slot",
+        "license": "unknown"
+      },
+      {
+        "title": "local/claude-synced-skills",
+        "url": "claude-skill:synced/39cd27d1-5d54-43b6-b557-65596e75bccb_30aab8dd-6815-4962-a41b-a684567e027b/slack-gif-creator/SKILL.md",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1b-131"
+    ]
+  },
+  {
+    "slug": "speed-ramp",
+    "family": "principles",
+    "ko": "스피드 램프",
+    "en": "Speed Ramp",
+    "aka": [
+      "Slow motion plateau",
+      "가속 사이 느린 구간",
+      "SlowMo",
+      "SlowMo ease",
+      "Speed remapping",
+      "시간 구간 속도 재매핑",
+      "ChangeSpeed"
+    ],
+    "what": "물체가 빠르게 들어와 가운데서 천천히 움직이다 다시 빨라져 나간다.",
+    "why": "읽을 시간을 확보하면서 속도감을 유지한다.",
+    "params": "기본 총 1800ms, 느린 구간 0.35배, 빠른 구간 1.8배, 속도 전환 200ms",
+    "impl": "구간별 속도를 적분한 시간 매핑 함수로 원본 타임라인의 진행값을 샘플링한다.",
+    "runtime": "gsap",
+    "variants": [
+      "중앙 슬로 모션",
+      "가속 후 감속",
+      "슬로 모션 후 재가속"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Eases/SlowMo/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/speedmodifier.py",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R2-008",
+      "R7-030"
+    ]
+  },
+  {
+    "slug": "shake",
+    "family": "emphasis",
+    "ko": "셰이크",
+    "en": "Shake",
+    "aka": [
+      "Wiggle oscillation",
+      "좌우 흔들림",
+      "CustomWiggle",
+      "Wobble",
+      "Shake and Vibrate",
+      "흔들기와 진동",
+      "Wiggle indication",
+      "좌우 흔들기 강조",
+      "Wiggle",
+      "WiggleOutThenIn",
+      "사용자 진동"
+    ],
+    "what": "요소가 기준 위치나 각도 양쪽을 오가다가 멈춘다.",
+    "why": "주의를 끌거나 거부와 불안정을 표현한다.",
+    "params": "기본 600ms, 위치 진폭 6px 또는 회전 6도, 왕복 4회, 감쇠 0.6",
+    "impl": "시간 곡선과 진폭 곡선을 곱해 GSAP 코어 rotation 또는 x를 갱신한다.",
+    "runtime": "gsap",
+    "variants": [
+      "위치 진동",
+      "회전 진동",
+      "감쇠 진동"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Eases/CustomWiggle/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "animate-css/animate.css",
+        "url": "https://github.com/animate-css/animate.css",
+        "license": "Hippocratic-2.1"
+      },
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/indication.py",
+        "license": "MIT"
+      },
+      {
+        "title": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "CodePen GreenSock",
+        "url": "https://codepen.io/GreenSock/pen/wzkBYZ",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R2-010",
+      "R3-036",
+      "R7-018",
+      "DICT-039"
+    ]
+  },
+  {
+    "slug": "retarget-motion",
+    "family": "principles",
+    "ko": "진행 중 목표 변경",
+    "en": "Motion Retargeting",
+    "aka": [
+      "Adaptive reverse easing",
+      "중간 반전의 가감속",
+      "Interrupt-and-retarget transition",
+      "진행 중 목표 재설정",
+      "Interruptibility / Reversibility",
+      "중단·반전 가능성"
+    ],
+    "what": "이동 중 방향을 바꿔도 현재 위치에서 새 방향으로 자연스럽게 가감속한다.",
+    "why": "취소와 복귀가 갑작스럽지 않게 보인다.",
+    "params": "기본 이동 800ms, 40% 시점 목표 변경, 재이동 400ms",
+    "impl": "현재 위치를 새 시작점으로 저장하고 남은 거리의 진행률을 다시 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "중간 반전",
+      "새 목표 추종",
+      "데이터 갱신"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/GSAP/Tween/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "d3/d3-transition",
+        "url": "https://d3js.org/d3-transition",
+        "license": "ISC"
+      },
+      {
+        "title": "motion dictionary 1-principles.md#6. 모션 위계·코레오그래피",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "bost.ocks.org",
+        "url": "https://bost.ocks.org/mike/transition/",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R2-014",
+      "R6-006",
+      "DICT-071"
+    ]
+  },
+  {
+    "slug": "inertial-glide",
+    "family": "principles",
+    "ko": "관성 이동",
+    "en": "Inertial Glide",
+    "aka": [
+      "Inertial glide",
+      "관성 미끄러짐",
+      "Numeric property physics",
+      "속성 물리 변화"
+    ],
+    "what": "놓인 물체가 이동 방향을 유지하다 서서히 감속한다.",
+    "why": "속도와 마찰을 느끼게 한다.",
+    "params": "기본 초기 속도 600px/s, 감쇠 시정수 700ms, 최대 재생 2000ms",
+    "impl": "초기 속도와 지수 감쇠를 적분해 GSAP 코어 좌표를 갱신한다.",
+    "runtime": "gsap",
+    "variants": [
+      "위치 관성",
+      "회전 관성",
+      "크기 관성"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Plugins/InertiaPlugin/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Plugins/PhysicsPropsPlugin/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "motiondivision/motion",
+        "url": "https://motion.dev/docs/react-transitions",
+        "license": "MIT"
+      },
+      {
+        "title": "motiondivision/motionone",
+        "url": "https://github.com/motiondivision/motionone/blob/main/README.md",
+        "license": "MIT"
+      },
+      {
+        "title": "Popmotion/popmotion",
+        "url": "https://github.com/Popmotion/popmotion",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R2-050",
+      "R2-096"
+    ]
+  },
+  {
+    "slug": "scroll-scrub",
+    "family": "ui",
+    "ko": "스크롤 스크럽",
+    "en": "Scroll Scrubbing",
+    "aka": [
+      "Scroll progress scrub",
+      "스크롤 진행 스크럽",
+      "Scrub progress",
+      "스크럽 진행도"
+    ],
+    "what": "스크롤 위치를 앞으로나 뒤로 옮기면 장면도 같은 비율로 진행하거나 되감긴다.",
+    "why": "스크롤과 설명 진행을 직접 연결한다.",
+    "params": "기본 스크롤 구간 1200px, 추종 지연 500ms, 진행 범위 0부터 1",
+    "impl": "정규화 스크롤값 또는 영상의 가상 스크롤값을 타임라인 progress에 연결한다.",
+    "runtime": "gsap",
+    "variants": [
+      "정방향 진행",
+      "역방향 되감기"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Plugins/ScrollTrigger/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "motion dictionary 1-principles.md#5. 타이밍·간격·리듬 기본기",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "motiondivision/motion",
+        "url": "https://motion.dev/docs/react-scroll-animations",
+        "license": "MIT"
+      },
+      {
+        "title": "juliangarnier/anime",
+        "url": "https://animejs.com/documentation/events/onscroll",
+        "license": "MIT"
+      },
+      {
+        "title": "CodePen GreenSock",
+        "url": "https://codepen.io/GreenSock/pen/WNjaxKp",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R2-074",
+      "DICT-060"
+    ]
+  },
+  {
+    "slug": "scroll-lag",
+    "family": "ui",
+    "ko": "스크롤 지연 추종",
+    "en": "Scroll Lag",
+    "aka": [
+      "Smooth scroll lag"
+    ],
+    "what": "스크롤 위치가 바뀐 뒤 화면과 일부 레이어가 늦게 따라와 정착한다.",
+    "why": "움직임에 관성과 부드러움을 준다.",
+    "params": "기본 화면 추종 800ms, 레이어 지연 300ms, 이동 속도 1배",
+    "impl": "목표 스크롤값을 시간 기반 저역 통과 필터로 완화해 translate에 적용한다.",
+    "runtime": "gsap",
+    "variants": [
+      "전체 화면 추종",
+      "레이어별 지연",
+      "탄성 추종"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Plugins/ScrollSmoother/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "motiondivision/motion",
+        "url": "https://motion.dev/docs/react-use-spring",
+        "license": "MIT"
+      },
+      {
+        "title": "pmndrs/react-spring",
+        "url": "https://www.react-spring.dev/docs/utilities/use-scroll",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R2-080"
+    ]
+  },
+  {
+    "slug": "bounce-attention",
+    "family": "emphasis",
+    "ko": "통통 튀기",
+    "en": "Bounce Attention",
+    "aka": [],
+    "what": "요소가 제자리에서 위아래로 튀고 원래 위치로 돌아온다.",
+    "why": "활기와 선택 대상에 대한 주의를 만든다.",
+    "params": "도감 기본값: 900ms, 높이 24px, 튕김 3회, ease-out",
+    "impl": "CSS translateY에 높이가 줄어드는 왕복 구간을 준다",
+    "runtime": "css",
+    "variants": [
+      "bounce",
+      "bounce-top",
+      "bounce-bottom",
+      "icon-bounce",
+      "bounce-left",
+      "bounce-right",
+      "bounce-to-bottom",
+      "bounce-to-left",
+      "bounce-to-right",
+      "bounce-to-top"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "animate-css/animate.css",
+        "url": "https://github.com/animate-css/animate.css",
+        "license": "Hippocratic-2.1"
+      },
+      {
+        "title": "animista.net",
+        "url": "https://animista.net/play",
+        "license": "BSD-2-Clause (FreeBSD)"
+      },
+      {
+        "title": "IanLunn/Hover",
+        "url": "https://github.com/IanLunn/Hover",
+        "license": "MIT personal/open-source + paid commercial"
+      }
+    ],
+    "from": [
+      "R3-031"
+    ]
+  },
+  {
+    "slug": "blink",
+    "family": "emphasis",
+    "ko": "점멸",
+    "en": "Blink",
+    "aka": [
+      "Flash and Blink",
+      "점멸 강조",
+      "Visibility blink",
+      "가시성 점멸"
+    ],
+    "what": "요소의 밝기 또는 투명도가 켜지고 꺼지며 반복된다.",
+    "why": "경고와 신호 존재를 알린다.",
+    "params": "도감 기본값: 1000ms, 점멸 2회, opacity 0에서 1",
+    "impl": "CSS opacity 또는 brightness를 왕복시킨다",
+    "runtime": "css",
+    "variants": [
+      "투명도 점멸",
+      "밝기 점멸",
+      "가시성 점멸"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "animate-css/animate.css",
+        "url": "https://github.com/animate-css/animate.css",
+        "license": "Hippocratic-2.1"
+      },
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/indication.py",
+        "license": "MIT"
+      },
+      {
+        "title": "animista.net",
+        "url": "https://animista.net/play",
+        "license": "BSD-2-Clause (FreeBSD)"
+      },
+      {
+        "title": "IanLunn/Hover",
+        "url": "https://github.com/IanLunn/Hover",
+        "license": "MIT personal/open-source + paid commercial"
+      }
+    ],
+    "from": [
+      "R3-032",
+      "R7-020"
+    ]
+  },
+  {
+    "slug": "pulse",
+    "family": "emphasis",
+    "ko": "펄스",
+    "en": "Pulse",
+    "aka": [
+      "크기 맥동",
+      "Heartbeat",
+      "심장 박동",
+      "Scale and color indication",
+      "크기와 색 맥동 강조",
+      "Indicate"
+    ],
+    "what": "요소가 제자리에서 커졌다 작아지며 원래 크기로 돌아온다.",
+    "why": "대상이 살아 있거나 눌러 볼 수 있음을 전달한다.",
+    "params": "도감 기본값: 1000ms, scale 1에서 1.05, ease-in-out, 반복",
+    "impl": "CSS scale을 일정 주기로 왕복시킨다",
+    "runtime": "css",
+    "variants": [
+      "단일 맥동",
+      "두 번 심장 박동",
+      "색 동반 맥동"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "animate-css/animate.css",
+        "url": "https://github.com/animate-css/animate.css",
+        "license": "Hippocratic-2.1"
+      },
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/indication.py",
+        "license": "MIT"
+      },
+      {
+        "title": "animista.net",
+        "url": "https://animista.net/play",
+        "license": "BSD-2-Clause (FreeBSD)"
+      },
+      {
+        "title": "IanLunn/Hover",
+        "url": "https://github.com/IanLunn/Hover",
+        "license": "MIT personal/open-source + paid commercial"
+      },
+      {
+        "title": "loadingio/css-spinner",
+        "url": "https://github.com/loadingio/css-spinner",
+        "license": "CC0 loaders (README; root LICENSE absent)"
+      }
+    ],
+    "from": [
+      "R3-033",
+      "R3-034",
+      "R7-014"
+    ]
+  },
+  {
+    "slug": "tada",
+    "family": "emphasis",
+    "ko": "타다",
+    "en": "Tada",
+    "aka": [
+      "축소 뒤 환호 흔들기"
+    ],
+    "what": "요소가 먼저 움츠러든 뒤 커지고 좌우로 회전하며 흔들린다.",
+    "why": "성과와 축하를 전달한다.",
+    "params": "도감 기본값: 1000ms, scale 0.9에서 1.1, 회전 3deg, 왕복 4회",
+    "impl": "CSS scale과 rotate에 준비와 환호 구간을 준다",
+    "runtime": "css",
+    "variants": [
+      "tada"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "animate-css/animate.css",
+        "url": "https://github.com/animate-css/animate.css",
+        "license": "Hippocratic-2.1"
+      }
+    ],
+    "from": [
+      "R3-038"
+    ]
+  },
+  {
+    "slug": "wobble",
+    "family": "emphasis",
+    "ko": "워블",
+    "en": "Wobble",
+    "aka": [
+      "큰 좌우 비틀림"
+    ],
+    "what": "요소가 좌우로 넓게 이동하면서 기울고 진폭을 줄여 정착한다.",
+    "why": "불안정함이나 재미있는 반응을 보여 준다.",
+    "params": "도감 기본값: 1000ms, 이동 폭 25%, 회전 5deg, 반동 5회",
+    "impl": "CSS translate와 rotate를 반대 방향으로 감쇠시킨다",
+    "runtime": "css",
+    "variants": [
+      "wobble",
+      "wobble-horizontal",
+      "wobble-vertical",
+      "모서리 기준",
+      "wobble-hor-bottom",
+      "wobble-hor-top",
+      "wobble-ver-left",
+      "wobble-ver-right",
+      "wobble-bottom",
+      "wobble-skew",
+      "wobble-to-bottom-right",
+      "wobble-to-top-right",
+      "wobble-top",
+      "icon-wobble-horizontal",
+      "icon-wobble-vertical"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "animate-css/animate.css",
+        "url": "https://github.com/animate-css/animate.css",
+        "license": "Hippocratic-2.1"
+      },
+      {
+        "title": "animista.net",
+        "url": "https://animista.net/play",
+        "license": "BSD-2-Clause (FreeBSD)"
+      },
+      {
+        "title": "IanLunn/Hover",
+        "url": "https://github.com/IanLunn/Hover",
+        "license": "MIT personal/open-source + paid commercial"
+      }
+    ],
+    "from": [
+      "R3-039"
+    ]
+  },
+  {
+    "slug": "jello",
+    "family": "emphasis",
+    "ko": "젤로",
+    "en": "Jello",
+    "aka": [
+      "젤리 전단 진동"
+    ],
+    "what": "요소가 가로와 세로로 번갈아 비틀어지며 젤리처럼 흔들린다.",
+    "why": "부드럽고 말랑한 물성을 보여 준다.",
+    "params": "도감 기본값: 900ms, skew 12deg, 감쇠 5회",
+    "impl": "CSS skewX와 skewY를 번갈아 줄이며 보간한다",
+    "runtime": "css",
+    "variants": [
+      "jello",
+      "jello-horizontal",
+      "jello-vertical",
+      "JellyRadio",
+      "jello-diagonal-1",
+      "jello-diagonal-2"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "animate-css/animate.css",
+        "url": "https://github.com/animate-css/animate.css",
+        "license": "Hippocratic-2.1"
+      },
+      {
+        "title": "animista.net",
+        "url": "https://animista.net/play",
+        "license": "BSD-2-Clause (FreeBSD)"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      }
+    ],
+    "from": [
+      "R3-040"
+    ]
+  },
+  {
+    "slug": "rotate-scale",
+    "family": "emphasis",
+    "ko": "회전 스케일",
+    "en": "Rotate Scale",
+    "aka": [
+      "회전 신축"
+    ],
+    "what": "요소가 회전하며 커졌다 작아져 원래 크기로 돌아온다.",
+    "why": "한 대상의 동작을 풍부하게 강조한다.",
+    "params": "도감 기본값: 700ms, 회전 360deg, scale 0.7에서 1.2에서 1",
+    "impl": "CSS rotate와 scale을 함께 왕복시킨다",
+    "runtime": "css",
+    "variants": [
+      "rotate-scale-up",
+      "rotate-scale-down",
+      "수평축",
+      "수직축",
+      "대각축",
+      "rotate-scale-up-hor",
+      "rotate-scale-down-hor",
+      "rotate-scale-up-ver",
+      "rotate-scale-down-ver",
+      "rotate-scale-up-diag-1",
+      "rotate-scale-down-diag-1",
+      "rotate-scale-up-diag-2",
+      "rotate-scale-down-diag-2"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "animista.net",
+        "url": "https://animista.net/play",
+        "license": "BSD-2-Clause (FreeBSD)"
+      },
+      {
+        "title": "IanLunn/Hover",
+        "url": "https://github.com/IanLunn/Hover",
+        "license": "MIT personal/open-source + paid commercial"
+      }
+    ],
+    "from": [
+      "R3-043"
+    ]
+  },
+  {
+    "slug": "border-reveal",
+    "family": "emphasis",
+    "ko": "테두리 리빌",
+    "en": "Border Reveal",
+    "aka": [
+      "테두리 드러내기"
+    ],
+    "what": "요소의 테두리 선이 안팎으로 이동하거나 선명해져 윤곽을 드러낸다.",
+    "why": "선택 상태와 경계를 강조한다.",
+    "params": "도감 기본값: 350ms, 두께 2px, 외곽 간격 8px, ease-out",
+    "impl": "CSS border와 outline 및 가상 요소 inset을 보간한다",
+    "runtime": "css",
+    "variants": [
+      "border-fade",
+      "outline-in",
+      "outline-out",
+      "reveal",
+      "trim"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "IanLunn/Hover",
+        "url": "https://github.com/IanLunn/Hover",
+        "license": "MIT personal/open-source + paid commercial"
+      }
+    ],
+    "from": [
+      "R3-058"
+    ]
+  },
+  {
+    "slug": "wiggle",
+    "family": "loop",
+    "ko": "위글",
+    "en": "Wiggle",
+    "aka": [
+      "Wiggle Motion",
+      "위글 움직임",
+      "Random shake"
+    ],
+    "what": "대상의 위치나 회전이 불규칙하고 연속적으로 흔들린다.",
+    "why": "불안·활력·자연스러운 미세 움직임을 준다.",
+    "params": "제안 기본값: 2000ms; 2Hz; 위치 ±12px; rotation ±3deg",
+    "impl": "시드 고정 저주파 노이즈를 변환값에 더한다.",
+    "runtime": "gsap",
+    "variants": [
+      "카메라 흔들림",
+      "회전 위글",
+      "크기 위글"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/work-with-expressions/expression-examples/expression-examples.html",
+        "license": "unknown"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R5-015"
+    ]
+  },
+  {
+    "slug": "light-sweep",
+    "family": "texture",
+    "ko": "라이트 스윕",
+    "en": "Light Sweep",
+    "aka": [
+      "빛 훑기",
+      "CC Light Sweep"
+    ],
+    "what": "밝은 좁은 반사가 글자나 로고 표면을 지나간다.",
+    "why": "광택과 핵심 대상의 존재감을 높인다.",
+    "params": "제안 기본값: 800ms; 폭 40px; angle 25deg",
+    "impl": "HTML 글자나 로고의 알파 마스크 안에서 기울어진 밝은 그라디언트를 수평 이동한다.",
+    "runtime": "css",
+    "variants": [
+      "금속 광택",
+      "부드러운 하이라이트"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/generate-effects.html",
+        "license": "unknown"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      },
+      {
+        "title": "cycorefx.com",
+        "url": "https://cycorefx.com/downloads/cfx_hd_std/CycoreFX%201.6%20Manual.pdf",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R5-054"
+    ]
+  },
+  {
+    "slug": "smear-frame",
+    "family": "principles",
+    "ko": "스미어 프레임",
+    "en": "Smear Frame",
+    "aka": [
+      "Smear Frame Motion",
+      "스미어 프레임 운동"
+    ],
+    "what": "빠른 이동 중 대상이 길게 늘어나거나 여러 윤곽으로 퍼졌다 돌아온다.",
+    "why": "속도와 타격의 강도를 강조한다.",
+    "params": "제안 기본값: 스미어 50~100ms; 길이 속도의 0.08배",
+    "impl": "SVG 윤곽을 속도 방향으로 늘리거나 여러 중간 윤곽으로 펼친 뒤 50~100ms 안에 원래 형태로 복원한다.",
+    "runtime": "svg",
+    "variants": [
+      "신장 스미어",
+      "다중 윤곽 스미어"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "schoolofmotion.com",
+        "url": "https://schoolofmotion.com/courses/animation-bootcamp",
+        "license": "unknown"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R5-100"
+    ]
+  },
+  {
+    "slug": "motion-blend",
+    "family": "principles",
+    "ko": "모션 블렌드",
+    "en": "Motion Blending",
+    "aka": [
+      "Rive Timeline Blend",
+      "리브 타임라인 블렌드",
+      "Animation blend"
+    ],
+    "what": "서로 다른 움직임이 혼합되며 한 동작에서 다음 동작으로 이어진다.",
+    "why": "포즈 전환을 부드럽게 연결한다.",
+    "params": "제안 기본값: 블렌드 300ms; weight 0→1; linear",
+    "impl": "동일 대상의 두 타임라인 변환값을 가중 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "걷기에서 정지",
+      "포즈 교대",
+      "속도 블렌드"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "rive.app",
+        "url": "https://rive.app/docs/editor/state-machine/states",
+        "license": "unknown"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      },
+      {
+        "title": "rive-app/rive-runtime",
+        "url": "https://github.com/rive-app/rive-runtime",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R5-108"
+    ]
+  },
+  {
+    "slug": "object-constant-update",
+    "family": "data",
+    "ko": "객체 유지 갱신",
+    "en": "Object-constant Update",
+    "aka": [
+      "Object-constant update",
+      "항목 정체성 유지 갱신",
+      "Object permanence",
+      "대상 지속성",
+      "Object constancy / Keyed identity",
+      "객체 대응",
+      "Object constancy / Persistent anchor",
+      "객체 지속성·앵커 유지"
+    ],
+    "what": "같은 항목의 색과 이름을 유지한 채 위치와 크기가 이전 상태에서 새 상태로 움직인다.",
+    "why": "전후 화면의 어떤 항목이 같은 대상인지 이해한다.",
+    "params": "기본 750ms, ID 대응, 색 고정, cubicInOut",
+    "impl": "항목 ID별 이전 좌표와 목표 좌표를 저장하고 동일 SVG 요소를 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "수치 갱신",
+      "위치 갱신",
+      "색 고정 갱신"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "bost.ocks.org",
+        "url": "https://bost.ocks.org/mike/constancy/",
+        "license": "unknown"
+      },
+      {
+        "title": "motion dictionary 1-principles.md#7. 연속성·공간 모델·시선 유도",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "apache/echarts",
+        "url": "https://echarts.apache.org/handbook/en/how-to/animation/transition/",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R6-003",
+      "DICT-074",
+      "DICT-176",
+      "DICT-212"
+    ]
+  },
+  {
+    "slug": "staged-chart-transition",
+    "family": "data",
+    "ko": "차트 단계 전환",
+    "en": "Staged Chart Transition",
+    "aka": [
+      "Staged chart transition"
+    ],
+    "what": "축 변경, 위치 이동, 크기 변경이 한꺼번에 일어나지 않고 순서대로 진행된다.",
+    "why": "복잡한 차트 변화의 각 의미를 차례로 읽는다.",
+    "params": "기본 3단계 각 400ms, 단계 간 120ms, cubicInOut",
+    "impl": "GSAP 타임라인에서 축, 위치, 형태 보간을 별도 단계로 연결한다.",
+    "runtime": "gsap",
+    "variants": [
+      "축 먼저",
+      "이동 먼저",
+      "크기 나중",
+      "2단계",
+      "3단계"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      },
+      {
+        "title": "uwdata/gemini",
+        "url": "https://github.com/uwdata/gemini",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "title": "Observable @d3",
+        "url": "https://observablehq.com/@d3/stacked-to-grouped-bars",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-004"
+    ]
+  },
+  {
+    "slug": "group-motion",
+    "family": "principles",
+    "ko": "그룹 이동",
+    "en": "Group Motion",
+    "aka": [
+      "Common-fate grouping",
+      "동시 운동 그룹화",
+      "Common fate / Group motion",
+      "공통 운명"
+    ],
+    "what": "같은 그룹의 마크들이 같은 방향과 속도로 동시에 이동한다.",
+    "why": "떨어져 있던 항목도 한 묶음으로 인식한다.",
+    "params": "기본 700ms, 그룹 내 지연 0ms, 그룹 간 160ms, cubicInOut",
+    "impl": "그룹별 같은 진행률을 공유하고 상대 위치를 보존해 좌표를 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "평행 이동",
+      "동기 크기 변화",
+      "동기 색 변화"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      },
+      {
+        "title": "motion dictionary 1-principles.md#6. 모션 위계·코레오그래피",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "d3/d3-transition",
+        "url": "https://d3js.org/d3-transition",
+        "license": "ISC"
+      }
+    ],
+    "from": [
+      "R6-005",
+      "DICT-066"
+    ]
+  },
+  {
+    "slug": "route-highlight",
+    "family": "explainer",
+    "ko": "경로 순차 강조",
+    "en": "Route Highlight",
+    "aka": [
+      "Highlighted route traversal",
+      "흐름 경로 순차 강조"
+    ],
+    "what": "특정 경로의 노드와 연결선이 출발부터 도착까지 차례로 밝아지고 나머지는 옅어진다.",
+    "why": "복잡한 네트워크 안에서 하나의 흐름을 따라간다.",
+    "params": "기본 노드당 350ms, opacity 비선택 0.15, 강조선 3px",
+    "impl": "경로 순서에 따라 SVG fill, stroke와 opacity를 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "고객 여정",
+      "자금 흐름",
+      "선수 연결"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "d3/d3-sankey",
+        "url": "https://github.com/d3/d3-sankey",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "title": "the-pudding/sankey-nba",
+        "url": "https://github.com/the-pudding/sankey-nba",
+        "license": "MIT"
+      },
+      {
+        "title": "chartjs/Chart.js",
+        "url": "https://www.chartjs.org/docs/latest/configuration/animations.html",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R6-054"
+    ]
+  },
+  {
+    "slug": "ripple-rings",
+    "family": "emphasis",
+    "ko": "파동 고리",
+    "en": "Ripple Rings",
+    "aka": [
+      "Map point event pulse",
+      "지도 사건 발생 펄스",
+      "Broadcast rings",
+      "방송 파동 고리",
+      "Broadcast"
+    ],
+    "what": "발생 위치에서 원이 커졌다가 사라지고 중심 표식이 남는다.",
+    "why": "사건이 언제 어디서 발생했는지 주의를 모은다.",
+    "params": "기본 800ms, 반지름 3에서 24px, opacity 0.6에서 0, cubicOut",
+    "impl": "SVG 원 또는 Canvas 링의 반지름과 투명도를 사건 시각에 맞춰 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "단일 사건 링",
+      "다중 방송 링"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "d3/d3-transition",
+        "url": "https://d3js.org/d3-transition",
+        "license": "ISC"
+      },
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/specialized.py",
+        "license": "MIT"
+      },
+      {
+        "title": "chartjs/Chart.js",
+        "url": "https://www.chartjs.org/docs/latest/configuration/animations.html",
+        "license": "MIT"
+      },
+      {
+        "title": "vega/vega",
+        "url": "https://vega.github.io/vega/docs/event-streams/",
+        "license": "BSD-3-Clause"
+      }
+    ],
+    "from": [
+      "R6-080",
+      "R7-029"
+    ]
+  },
+  {
+    "slug": "focus-contraction",
+    "family": "emphasis",
+    "ko": "초점 원판 축소",
+    "en": "Focus Contraction",
+    "aka": [
+      "Contracting focus disk",
+      "축소 원판 초점 신호",
+      "FocusOn"
+    ],
+    "what": "넓고 반투명한 원판이 목표 위치로 줄어들며 사라진다.",
+    "why": "지금 봐야 할 정확한 위치를 찾게 한다.",
+    "params": "재현 기본값: 700 ms, 반경 400~0 px, opacity 0.25~0, easeOut",
+    "impl": "목표 중심 SVG 원의 반경과 투명도를 줄인다.",
+    "runtime": "svg",
+    "variants": [
+      "원형",
+      "타원형"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/indication.py",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R7-013"
+    ]
+  },
+  {
+    "slug": "path-highlight",
+    "family": "shape",
+    "ko": "패스 하이라이트",
+    "en": "Path Highlight",
+    "aka": [
+      "Passing path highlight",
+      "패스를 따라 흐르는 강조",
+      "ShowPassingFlash",
+      "ShowPassingFlashWithThinningStrokeWidth",
+      "VShowPassingFlash",
+      "FlashAround",
+      "ShowPassingFlashAround",
+      "Pulsing Border Energy",
+      "맥동 테두리 에너지"
+    ],
+    "what": "전체 선 중 짧고 밝은 구간만 경로를 따라 지나간다.",
+    "why": "연결의 방향과 흐름을 읽게 한다.",
+    "params": "재현 기본값: 900 ms, 구간 길이 전체 15%, linear, 선폭 5 px",
+    "impl": "SVG 짧은 dash 구간의 offset을 이동한다.",
+    "runtime": "svg",
+    "variants": [
+      "열린 경로 추적",
+      "닫힌 테두리 순환",
+      "발광 띠"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/indication.py",
+        "license": "MIT"
+      },
+      {
+        "title": "paper-design/shaders",
+        "url": "https://shaders.paper.design/pulsing-border",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "3b1b/manim",
+        "url": "https://github.com/3b1b/manim/blob/master/manimlib/animation/indication.py",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R7-016",
+      "R8-078"
+    ]
+  },
+  {
+    "slug": "circumscribe",
+    "family": "emphasis",
+    "ko": "둘레선 강조",
+    "en": "Circumscribe",
+    "aka": [
+      "Temporary circumscription",
+      "임시 둘레선 강조",
+      "CircleIndicate",
+      "ShowCreationThenDestructionAround",
+      "ShowCreationThenFadeAround"
+    ],
+    "what": "대상 바깥에 원이나 사각 테두리가 그려졌다가 지워진다.",
+    "why": "설명의 대상 범위를 분명히 한다.",
+    "params": "재현 기본값: 1000 ms, 여백 12 px, 선폭 3 px, 유지 400 ms",
+    "impl": "SVG 둘레 패스의 stroke를 그린 뒤 투명도를 내린다.",
+    "runtime": "svg",
+    "variants": [
+      "원 둘레",
+      "사각 둘레",
+      "역순 지우기"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/indication.py",
+        "license": "MIT"
+      },
+      {
+        "title": "3b1b/manim",
+        "url": "https://github.com/3b1b/manim/blob/master/manimlib/animation/indication.py",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R7-019"
+    ]
+  },
+  {
+    "slug": "state-tween",
+    "family": "principles",
+    "ko": "상태 보간",
+    "en": "State Tween",
+    "aka": [
+      "State-to-state property tween",
+      "목표 상태 속성 보간",
+      "MoveToTarget",
+      "State transition",
+      "상태 전이",
+      "Compound transform",
+      "복합 변환"
+    ],
+    "what": "위치, 크기, 회전, 색이 저장된 다음 상태로 동시에 바뀐다.",
+    "why": "한 대상의 상태가 연속적으로 변함을 읽는다.",
+    "params": "재현 기본값: 800 ms, smooth, 속성별 시작과 목표",
+    "impl": "HTML 또는 SVG의 자체 상태 객체에서 수치 및 색 속성을 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "복합 속성 변화",
+      "일부 속성 변화"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/transform.py",
+        "license": "MIT"
+      },
+      {
+        "title": "motion dictionary 1-principles.md#6. 모션 위계·코레오그래피",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "R7-034",
+      "DICT-072",
+      "DICT-103"
+    ]
+  },
+  {
+    "slug": "color-transition",
+    "family": "emphasis",
+    "ko": "색 전환",
+    "en": "Color Transition",
+    "aka": [
+      "Color-state transition",
+      "상태 색 변화",
+      "FadeToColor"
+    ],
+    "what": "대상 색이 기존 색에서 다음 색으로 부드럽게 변한다.",
+    "why": "활성화나 역할 변화가 일어났음을 알게 한다.",
+    "params": "재현 기본값: 450 ms, easeInOut, 색상 청색에서 노랑",
+    "impl": "HTML 색 또는 SVG fill과 stroke를 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "채움 색",
+      "윤곽 색",
+      "부분 색"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/transform.py",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R7-037"
+    ]
+  },
+  {
+    "slug": "action-sequence",
+    "family": "principles",
+    "ko": "순차 동작",
+    "en": "Action Sequence",
+    "aka": [
+      "Sequential action chain",
+      "순차 동작 연결",
+      "Succession",
+      "Sequence"
+    ],
+    "what": "한 동작이 끝난 뒤 다음 동작이 시작해 단계를 차례로 보여 준다.",
+    "why": "과정의 선후 관계를 정확히 읽는다.",
+    "params": "재현 기본값: 단계 700 ms, 간격 120 ms, smooth",
+    "impl": "GSAP 타임라인에서 다음 동작을 이전 끝 이후에 배치한다.",
+    "runtime": "gsap",
+    "variants": [
+      "무간격 연결",
+      "설명 휴지 연결"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/composition.py",
+        "license": "MIT"
+      },
+      {
+        "title": "motion dictionary 1-principles.md#5. 타이밍·간격·리듬 기본기",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "motion-canvas/motion-canvas",
+        "url": "https://motioncanvas.io/docs/flow/",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R7-047",
+      "DICT-053"
+    ]
+  },
+  {
+    "slug": "temporal-overlap",
+    "family": "principles",
+    "ko": "동작 중첩",
+    "en": "Temporal Overlap",
+    "aka": [
+      "Overlapping choreography",
+      "겹치는 동작 순서",
+      "Temporal overlap",
+      "시간 겹침"
+    ],
+    "what": "첫 요소가 멈추기 전에 다음 요소의 움직임이 시작된다.",
+    "why": "서로 연결된 행동과 유려한 흐름을 전달한다.",
+    "params": "기본 개별 동작 600ms, 다음 시작은 이전 종료 150ms 전",
+    "impl": "타임라인의 상대 위치와 라벨로 여러 tween 시작점을 겹친다.",
+    "runtime": "gsap",
+    "variants": [
+      "부분 중첩",
+      "연쇄 중첩"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/GSAP/Timeline/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "motion dictionary 1-principles.md#5. 타이밍·간격·리듬 기본기",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "motiondivision/motion",
+        "url": "https://motion.dev/docs/animate",
+        "license": "MIT"
+      },
+      {
+        "title": "pmndrs/react-spring",
+        "url": "https://www.react-spring.dev/docs/components/use-chain",
+        "license": "MIT"
+      },
+      {
+        "title": "juliangarnier/anime",
+        "url": "https://animejs.com/documentation/timeline",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R2-012",
+      "DICT-055"
+    ]
+  },
+  {
+    "slug": "concurrent-motion",
+    "family": "principles",
+    "ko": "동시 동작",
+    "en": "Concurrent Motion",
+    "aka": [
+      "Concurrent action composition",
+      "동시 동작 합성",
+      "AnimationGroup"
+    ],
+    "what": "여러 대상이나 속성이 같은 시간대에 함께 움직인다.",
+    "why": "동시에 일어나는 변화의 관계를 이해한다.",
+    "params": "재현 기본값: 총 900 ms, 시작 차이 0 ms, smooth",
+    "impl": "GSAP 타임라인의 공통 시간에 여러 속성 트윈을 배치한다.",
+    "runtime": "gsap",
+    "variants": [
+      "완전 동시",
+      "부분 겹침"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/composition.py",
+        "license": "MIT"
+      },
+      {
+        "title": "motion-canvas/motion-canvas",
+        "url": "https://motioncanvas.io/docs/flow/",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R7-048"
+    ]
+  },
+  {
+    "slug": "selection-travel",
+    "family": "emphasis",
+    "ko": "선택 영역 이동",
+    "en": "Selection Travel",
+    "aka": [
+      "Code selection travel",
+      "코드 선택 영역 이동",
+      "Chart focus band sweep",
+      "차트 구간 강조 띠"
+    ],
+    "what": "반투명 선택 띠가 한 범위에서 다음 범위로 이동하며 대상에 맞춰 폭과 높이를 바꾼다.",
+    "why": "설명 대상의 문법적 범위를 읽게 한다.",
+    "params": "재현 기본값: 400 ms, 선택색 opacity 0.25, 여백 2 px",
+    "impl": "토큰 DOM 범위로 계산한 사각형의 x, y, width, height를 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "코드 선택 범위",
+      "차트 기간 범위"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "motion-canvas/motion-canvas",
+        "url": "https://motioncanvas.io/docs/code/",
+        "license": "MIT"
+      },
+      {
+        "title": "chartjs/Chart.js",
+        "url": "https://www.chartjs.org/docs/latest/configuration/animations.html",
+        "license": "MIT"
+      },
+      {
+        "title": "fnando/sparkline",
+        "url": "https://github.com/fnando/sparkline",
+        "license": "MIT"
+      },
+      {
+        "title": "Flourish",
+        "url": "https://app.flourish.studio/@flourish/scatter",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R7-091",
+      "R6-094"
+    ]
+  },
+  {
+    "slug": "diff-reveal",
+    "family": "ui",
+    "ko": "변경점 공개",
+    "en": "Diff Reveal",
+    "aka": [
+      "Semantic diff paint",
+      "추가와 삭제 코드 색 공개"
+    ],
+    "what": "추가 줄과 삭제 줄이 다른 색으로 나타나고 변경 부분 표시가 함께 생긴다.",
+    "why": "변경의 방향을 바로 구분한다.",
+    "params": "재현 기본값: 250 ms, 추가 녹색, 삭제 적색, easeOut",
+    "impl": "자체 diff 결과의 줄 배경과 표시 glyph opacity를 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "줄 diff",
+      "단어 diff",
+      "비교 화면"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "code-hike/codehike",
+        "url": "https://codehike.org/docs/code/diff",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R7-092"
+    ]
+  },
+  {
+    "slug": "segmented-explanation",
+    "family": "explainer",
+    "ko": "단계별 설명 모션",
+    "en": "Segmented Explanation",
+    "aka": [
+      "Segmented explanation with stable holds",
+      "분할 설명과 안정된 휴지"
+    ],
+    "what": "긴 과정이 짧은 동작 묶음으로 나뉘고 각 묶음 끝에서 화면이 잠시 유지된다.",
+    "why": "한 번에 처리해야 할 정보를 줄이고 단계별로 이해한다.",
+    "params": "재현 기본값: 동작 묶음 3000 ms, 휴지 1200 ms, 단계 4개",
+    "impl": "자체 과정 타임라인을 단계로 나누고 경계에 정지 상태를 둔다.",
+    "runtime": "gsap",
+    "variants": [
+      "영상 자동 분할",
+      "스크롤덱 단계 분할",
+      "학습자 진행"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Cambridge University Press",
+        "url": "https://www.cambridge.org/core/books/abs/cambridge-handbook-of-multimedia-learning/principles-for-managing-essential-processing-in-multimedia-learning-segmenting-pretraining-and-modality-principles/DD24C2F48B9B1277CE59F78276110258",
+        "license": "unknown"
+      },
+      {
+        "title": "Richard E. Mayer / Wiley",
+        "url": "https://onlinelibrary.wiley.com/doi/10.1111/jcal.12197",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R7-118"
+    ]
+  },
+  {
+    "slug": "narration-sync",
+    "family": "explainer",
+    "ko": "해설 동기 모션",
+    "en": "Narration-synchronized Motion",
+    "aka": [
+      "Temporal contiguity of explanation and change",
+      "설명과 변화의 동시 제시"
+    ],
+    "what": "원인을 설명하는 말이 나올 때 대응 변화도 동시에 일어난다.",
+    "why": "해설 내용과 눈앞의 사건을 한 덩어리로 연결한다.",
+    "params": "재현 기본값: 큐 지연 0~100 ms, 변화 800 ms, smooth",
+    "impl": "자체 해설 큐와 원인 도해 트윈을 동일 시간에 시작한다.",
+    "runtime": "gsap",
+    "variants": [
+      "원인과 결과 큐",
+      "용어와 도형 큐"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Richard E. Mayer / Wiley",
+        "url": "https://onlinelibrary.wiley.com/doi/10.1111/jcal.12197",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R7-121"
+    ]
+  },
+  {
+    "slug": "spark-spray",
+    "family": "generative",
+    "ko": "불티 분사",
+    "en": "Spark Spray",
+    "aka": [],
+    "what": "작은 밝은 점이 빠르게 튀어 나가 짧은 꼬리를 남기고 꺼진다.",
+    "why": "충돌과 마찰, 순간적인 충격을 강조한다.",
+    "params": "재현 제안 기본값: 800ms, 점 60개, 초기속도 350px/s, 수명 450ms, 가산 합성",
+    "impl": "canvas에서 원뿔 방향의 탄도를 만들고 속도 방향으로 짧은 선을 그린다.",
+    "runtime": "canvas",
+    "variants": [
+      "충돌 불티",
+      "용접 불티",
+      "전기 점멸"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "iart-ai/webgl-animation-skills",
+        "url": "https://github.com/iart-ai/webgl-animation-skills/blob/HEAD/skills/particle-system/SKILL.md",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-024"
+    ]
+  },
+  {
+    "slug": "bloom-pulse",
+    "family": "texture",
+    "ko": "블룸 펄스",
+    "en": "Bloom Pulse",
+    "aka": [
+      "블룸 맥박",
+      "Glow bloom"
+    ],
+    "what": "밝은 물체 주변으로 부드러운 빛이 퍼졌다가 줄어든다.",
+    "why": "주인공과 에너지의 절정을 강조한다.",
+    "params": "재현 제안 기본값: 1600ms, 임계값 0.8, 강도 0.2부터 1.1, 반경 0.35, sine.inOut",
+    "impl": "WebGL에서 밝은 픽셀만 추출해 여러 해상도로 블러한 뒤 원본에 더한다.",
+    "runtime": "webgl",
+    "variants": [
+      "선택적 블룸",
+      "넓은 글로",
+      "비트 블룸"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgl_postprocessing_unreal_bloom",
+        "license": "MIT"
+      },
+      {
+        "title": "fand/vfx-js",
+        "url": "https://github.com/fand/vfx-js/tree/main/packages/effects#effects",
+        "license": "MIT"
+      },
+      {
+        "title": "oframe/ogl",
+        "url": "https://oframe.github.io/ogl/examples/post-bloom.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R8-061"
+    ]
+  },
+  {
+    "slug": "outline-pulse",
+    "family": "emphasis",
+    "ko": "윤곽 펄스",
+    "en": "Outline Pulse",
+    "aka": [
+      "Outline and Edge Pulse",
+      "윤곽과 에지 맥박"
+    ],
+    "what": "이미지나 3D 물체의 경계선이 나타나고 두께와 밝기가 잠깐 커졌다 줄어든다.",
+    "why": "복잡한 화면에서 선택한 형태를 분명하게 드러낸다.",
+    "params": "재현 제안 기본값: 1400ms, 윤곽 1px부터 3px, 강도 0부터 0.8, sine.inOut",
+    "impl": "WebGL에서 깊이와 법선 또는 밝기 차이로 경계를 추출해 원본 위에 합성한다.",
+    "runtime": "webgl",
+    "variants": [
+      "선택 윤곽",
+      "스케치 에지",
+      "전체 경계 강조"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgl_postprocessing_outline",
+        "license": "MIT"
+      },
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgl_postprocessing_sobel",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-086"
+    ]
+  },
+  {
+    "slug": "slide",
+    "family": "principles",
+    "ko": "슬라이드",
+    "en": "Slide",
+    "aka": [
+      "Translation / Slide",
+      "이동"
+    ],
+    "what": "형태를 유지하고 위치를 바꾼다.",
+    "why": "위치 변화와 이동 방향을 명확하게 보여 준다.",
+    "params": "기본 거리 80px, 시간 350ms, power3.out",
+    "impl": "HTML 요소의 translateX 또는 translateY를 GSAP 코어로 시작 위치부터 목표 위치까지 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "수평 이동",
+      "수직 이동"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "motion dictionary 1-principles.md#8. 2D 속성 기본 동작",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "DICT-091"
+    ]
+  },
+  {
+    "slug": "scale",
+    "family": "principles",
+    "ko": "스케일",
+    "en": "Scale",
+    "aka": [
+      "Scale / Zoom",
+      "크기 변화",
+      "ScaleX / ScaleY",
+      "축별 크기"
+    ],
+    "what": "기준점에서 크기를 비례 변경한다.",
+    "why": "대상의 크기 변화와 펼쳐지는 방향을 보여 준다.",
+    "params": "기본 scale 0.96부터 1, 시간 300ms, power3.out, 원점 중앙",
+    "impl": "HTML 요소의 transform-origin을 정하고 scaleX와 scaleY를 GSAP 코어로 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "균일 확대",
+      "가로 확장",
+      "세로 확장"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "motion dictionary 1-principles.md#8. 2D 속성 기본 동작",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "DICT-092",
+      "DICT-093"
+    ]
+  },
+  {
+    "slug": "rotate",
+    "family": "principles",
+    "ko": "회전",
+    "en": "Rotation",
+    "aka": [],
+    "what": "중심점 둘레로 방향을 바꾼다.",
+    "why": "방향과 자세의 변화를 명확하게 보여 준다.",
+    "params": "기본 각도 90도, 시간 300ms, power2.out, 원점 중앙",
+    "impl": "HTML 요소의 transform-origin을 정하고 rotation을 GSAP 코어로 보간한다.",
+    "runtime": "gsap",
+    "variants": [],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "motion dictionary 1-principles.md#8. 2D 속성 기본 동작",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "DICT-094"
+    ]
+  },
+  {
+    "slug": "skew",
+    "family": "shape",
+    "ko": "스큐",
+    "en": "Skew",
+    "aka": [
+      "기울임"
+    ],
+    "what": "축 방향으로 형태를 비스듬히 변형한다.",
+    "why": "기울어지는 형태로 힘의 방향과 속도감을 보여 준다.",
+    "params": "기본 각도 4도, 변형 150ms, 복원 200ms, power2.out",
+    "impl": "HTML 요소의 skewX 또는 skewY를 GSAP 코어로 변형한 뒤 0도로 복원한다.",
+    "runtime": "gsap",
+    "variants": [
+      "가로 전단",
+      "세로 전단"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "motion dictionary 1-principles.md#8. 2D 속성 기본 동작",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "DICT-095"
+    ]
+  },
+  {
+    "slug": "fade",
+    "family": "entrance",
+    "ko": "페이드",
+    "en": "Fade",
+    "aka": [
+      "Opacity / Fade",
+      "불투명도"
+    ],
+    "what": "모양과 위치를 유지하고 가시성을 바꾼다.",
+    "why": "위치 변화 없이 대상의 등장과 퇴장을 전달한다.",
+    "params": "기본 등장 200ms, 퇴장 150ms, opacity 0부터 1, power2.out",
+    "impl": "HTML 요소의 opacity를 GSAP 코어로 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "페이드 인",
+      "페이드 아웃"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "motion dictionary 1-principles.md#8. 2D 속성 기본 동작",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "DICT-096"
+    ]
+  },
+  {
+    "slug": "blur-resolve",
+    "family": "entrance",
+    "ko": "블러 해제",
+    "en": "Blur Resolve",
+    "aka": [
+      "Blur / Focus resolve",
+      "초점 흐림"
+    ],
+    "what": "블러 반경을 바꿔 선명한 대상에 시선을 모은다.",
+    "why": "흐릿한 대상이 선명해지며 시선을 모은다.",
+    "params": "기본 blur 4px부터 0, 시간 250ms, power2.out",
+    "impl": "HTML 요소의 CSS filter blur를 GSAP 코어로 0까지 보간한다.",
+    "runtime": "gsap",
+    "variants": [],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "motion dictionary 1-principles.md#8. 2D 속성 기본 동작",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "DICT-098"
+    ]
+  },
+  {
+    "slug": "clip-reveal",
+    "family": "entrance",
+    "ko": "클립 리빌",
+    "en": "Clip Reveal",
+    "aka": [
+      "Clip reveal"
+    ],
+    "what": "경계 안에서 보이는 영역을 확대해 내용을 드러낸다.",
+    "why": "경계를 따라 내용이 드러나 읽는 방향을 안내한다.",
+    "params": "기본 350ms, inset 100%부터 0%, power3.out",
+    "impl": "HTML 요소의 clip-path inset 경계를 GSAP 코어로 보간해 가시 영역을 넓힌다.",
+    "runtime": "gsap",
+    "variants": [
+      "상향 공개",
+      "하향 공개",
+      "수평 공개"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "motion dictionary 1-principles.md#8. 2D 속성 기본 동작",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "DICT-100"
+    ]
+  },
+  {
+    "slug": "hard-cut",
+    "family": "transitions",
+    "ko": "하드컷",
+    "en": "Hard Cut",
+    "aka": [
+      "Hard cut / Semantic boundary",
+      "하드컷·의미 경계"
+    ],
+    "what": "겹침 없이 바로 다음 화면으로 바꾸는 편집이다.",
+    "why": "새 장면의 시작과 의미 경계를 즉시 전달한다.",
+    "params": "기본 전환 0ms, 다음 화면 유지 3000ms",
+    "impl": "GSAP 코어 타임라인의 같은 시점에 이전 장면을 숨기고 다음 장면을 표시한다.",
+    "runtime": "gsap",
+    "variants": [],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "motion dictionary 4-explainer-learning.md#C. 템포·리듬·편집과 비트 동기",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "DICT-220"
+    ]
+  },
+  {
+    "slug": "split-edit",
+    "family": "transitions",
+    "ko": "J컷과 L컷",
+    "en": "J-cut and L-cut",
+    "aka": [
+      "Sound bridge / J-cut / L-cut",
+      "사운드 브리지·J컷·L컷"
+    ],
+    "what": "장면 경계에서 소리가 먼저 바뀌고 화면이 뒤따르거나, 화면이 바뀐 뒤 이전 장면의 소리가 이어진다.",
+    "why": "다음 장면을 예고하거나 이전 장면의 여운을 유지한다.",
+    "params": "기본 화면 컷 0ms, 소리 선행 또는 잔류 400ms",
+    "impl": "HTML 오디오의 재생 구간과 GSAP 코어 장면 표시 시점을 400ms 어긋나게 배치한다.",
+    "runtime": "gsap",
+    "variants": [
+      "J컷",
+      "L컷"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "motion dictionary 4-explainer-learning.md#C. 템포·리듬·편집과 비트 동기",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "DICT-221"
+    ]
+  },
+  {
+    "slug": "time-compression",
+    "family": "transitions",
+    "ko": "시간 압축",
+    "en": "Time Compression",
+    "aka": [
+      "Time compression / Ellipsis",
+      "시간 압축·생략 표시"
+    ],
+    "what": "긴 대기나 반복 동작을 빠르게 진행하거나 중간 구간을 잘라 다음 결과로 넘어간다. 배속이나 생략 표식이 함께 나타난다.",
+    "why": "과정의 선후 관계를 유지하면서 불필요한 대기를 줄인다.",
+    "params": "기본 배속 4배, 생략 컷 0ms, 표식 등장 150ms, 유지 1500ms",
+    "impl": "GSAP 코어 타임라인의 시간 매핑을 배속하거나 생략 구간 이후로 옮기고 HTML 표식을 표시한다.",
+    "runtime": "gsap",
+    "variants": [
+      "배속 재생",
+      "생략 컷"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "motion dictionary 4-explainer-learning.md#C. 템포·리듬·편집과 비트 동기",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "DICT-222"
+    ]
+  }
+]

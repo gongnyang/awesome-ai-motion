@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>매치컷 모프 · Morph Match Cut</title>
+<meta name="viewport" content="width=1280">
+<link rel="stylesheet" href="../../lib/stage.css">
+<style>
+#world{position:absolute;left:0;top:0;width:1280px;height:580px;transform-origin:640px 290px}
+#world section{position:absolute;inset:0}
+#B,#C{visibility:hidden}
+#fx{position:absolute;left:0;top:0;width:1280px;height:580px;overflow:visible}
+.hl{stroke:var(--rule);stroke-width:1;fill:none}
+.hk{stroke:var(--ink);stroke-width:1;fill:none}
+#A .head{position:absolute;left:56px;top:40px}
+#A .sub{position:absolute;left:56px;top:92px}
+#B .g{position:absolute}
+#C .col{position:absolute;left:910px;top:150px;width:300px}
+#C .col .hair{margin:18px 0 14px}
+#C .col .row{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--ink3);line-height:26px;display:flex;justify-content:space-between}
+#C .pct{position:absolute;left:640px;top:290px;transform:translate(-50%,-50%);height:112px;overflow:hidden}
+#C .pct .num{display:block;font-size:124px;line-height:112px;white-space:nowrap}
+#C .pct .num small{font-size:46px;margin-left:4px}
+#strip{position:absolute;left:56px;bottom:14px;display:flex;align-items:center;gap:14px}
+#strip .s{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink3);white-space:nowrap}
+#strip .s b{font-weight:400}
+#strip .k{width:36px;height:1px;background:var(--rule)}
+</style></head>
+<body data-no="181" data-cat="전환·컷 · TRANSITIONS" data-ko="매치컷 모프" data-en="Morph Match Cut" data-meta="하드 컷 1.15s · 모프 1.0s power3.inOut · 같은 중심 ø360" data-dur="4" data-poster="3.7">
+<main class="scene bleed">
+<div id="world">
+  <!-- SCENE A: 원 -->
+  <section id="A">
+    <div class="lab head">SCENE A · 점 하나</div>
+    <div class="t-m sub">AI는 다음 말을 고른다</div>
+    <svg width="1280" height="580" viewBox="0 0 1280 580" style="position:absolute;left:0;top:0">
+      <line class="hl" x1="0" y1="290" x2="1280" y2="290"/>
+      <line class="hl" x1="640" y1="20" x2="640" y2="560"/>
+      <circle class="hl ring" cx="640" cy="290" r="222" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1" transform="rotate(-90 640 290)"/>
+      <circle class="hl ring" cx="640" cy="290" r="258" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1" transform="rotate(-90 640 290)"/>
+      <circle class="sat" cx="862" cy="290" r="6" fill="var(--ink)" opacity="0"/>
+      <circle class="sat" cx="457" cy="107" r="6" fill="var(--ink)" opacity="0"/>
+    </svg>
+  </section>
+  <!-- SCENE B: 글자 O -->
+  <section id="B">
+    <div class="lab" style="position:absolute;left:56px;top:40px">SCENE B · 글자 O</div>
+    <svg width="1280" height="580" viewBox="0 0 1280 580" style="position:absolute;left:0;top:0">
+      <line class="hl" x1="0" y1="110" x2="1280" y2="110"/>
+      <line class="hk" x1="0" y1="470" x2="1280" y2="470"/>
+      <line class="hl" x1="640" y1="84" x2="640" y2="496" stroke-dasharray="4 6"/>
+      <line class="hl" x1="505" y1="84" x2="505" y2="496"/>
+      <line class="hl" x1="775" y1="84" x2="775" y2="496"/>
+    </svg>
+    <div class="lab g" style="left:56px;top:88px">CAP HEIGHT</div>
+    <div class="lab g" style="left:56px;top:448px">BASELINE</div>
+    <div class="lab g" style="left:1064px;top:88px">DIDONE · 360</div>
+    <div class="lab g" style="left:1064px;top:448px">굵기 43 / 18</div>
+  </section>
+  <!-- SCENE C: 도넛 차트 -->
+  <section id="C">
+    <div class="pct"><span class="num">62<small>%</small></span></div>
+    <div class="col">
+      <div class="lab c1">후보 1위</div>
+      <div class="t-l c1">고른다</div>
+      <div class="hair c1"></div>
+      <div class="row c2"><span>정한다</span><span>21%</span></div>
+      <div class="row c2"><span>찾는다</span><span>9%</span></div>
+      <div class="row c2"><span>만든다</span><span>5%</span></div>
+      <div class="row c2"><span>쓴다</span><span>3%</span></div>
+    </div>
+  </section>
+  <!-- 이어지는 도형: 원 → O → 도넛 (모두 같은 중심 640,290) -->
+  <svg id="fx" viewBox="0 0 1280 580">
+    <circle id="disk" cx="640" cy="290" r="180" fill="var(--verm)"/>
+    <path id="morph" fill="var(--verm)" fill-rule="evenodd" visibility="hidden"/>
+    <circle id="track" cx="640" cy="290" r="150" fill="none" stroke="var(--rule)" stroke-width="60" visibility="hidden"/>
+    <circle id="arc" cx="640" cy="290" r="150" fill="none" stroke="var(--verm)" stroke-width="60" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0" transform="rotate(-90 640 290)" visibility="hidden"/>
+  </svg>
+</div>
+<div id="strip">
+  <span class="s" id="sA">A 원 · 0.00s</span><span class="k"></span>
+  <span class="s" id="sB">B 글자 O · 컷 1.15s</span><span class="k"></span>
+  <span class="s" id="sC">C 도넛 · 모프 1.60s</span>
+</div>
+</main>
+<script src="../../lib/gsap.min.js"></script>
+<script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+const CX = 640, CY = 290, CUT = 1.15, M0 = 1.6, MD = 1.0;
+// 타원 하나 = 호 2개. 바깥·안쪽 타원을 evenodd로 겹쳐 글자 O와 도넛을 같은 구조로 만든다
+const ell = (rx, ry) => `M${CX - rx},${CY}A${rx},${ry} 0 1 1 ${CX + rx},${CY}A${rx},${ry} 0 1 1 ${CX - rx},${CY}Z`;
+const S = { orx: 135, ory: 180, irx: 92, iry: 162 };   // 디돈 O: 옆 43px 굵고 위아래 18px 가늘다
+const morph = document.getElementById('morph');
+const drawO = () => morph.setAttribute('d', ell(S.orx, S.ory) + ell(S.irx, S.iry));
+drawO();
+
+// 카메라: 전 구간 천천히 밀고 들어가고, 모프 동안 왼쪽으로 170px 패닝
+tl.fromTo('#world', { scale: 1 }, { scale: 1.06, duration: 3.2, ease: 'sine.inOut' }, 0.2);
+tl.to('#world', { x: -170, duration: 1.1, ease: 'power2.inOut' }, M0);
+
+// SCENE A: 주홍 원이 자리를 잡는다
+tl.set('#disk', { scale: 0, svgOrigin: '640 290' }, 0);
+tl.to('#disk', { scale: 1, duration: 0.7, ease: 'power3.out' }, 0.25);
+tl.to('#A .ring', { strokeDashoffset: 0, autoRound: false, duration: 0.8, stagger: 0.1, ease: 'power2.out' }, 0.3);
+tl.to('#A .sat', { opacity: 1, duration: 0.2, stagger: 0.08 }, 0.85);
+
+// 하드 컷: 같은 중심·같은 높이의 글자 O로 한 프레임에 바뀐다
+tl.set('#A', { visibility: 'hidden' }, CUT).set('#disk', { visibility: 'hidden' }, CUT)
+  .set('#B', { visibility: 'visible' }, CUT).set('#morph', { visibility: 'visible' }, CUT)
+  .set('#sA', { color: 'var(--ink3)' }, CUT).set('#sB', { color: 'var(--ink)' }, CUT);
+tl.set('#sA', { color: 'var(--ink)' }, 0);
+
+// 모프: O의 바깥·안쪽 타원 반지름을 도넛 값으로 보간 (점 구성이 같은 경로라 매끈하다)
+tl.to('#B', { opacity: 0, duration: 0.35, ease: 'power1.out' }, M0);
+tl.to(S, { orx: 180, ory: 180, irx: 120, iry: 120, duration: MD, ease: 'power3.inOut', onUpdate: drawO }, M0);
+tl.set('#C', { visibility: 'visible' }, M0 + 0.5).set('#sB', { color: 'var(--ink3)' }, M0).set('#sC', { color: 'var(--ink)' }, M0);
+tl.fromTo('#C .c1', { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.55, stagger: 0.07 }, M0 + 0.55);
+tl.fromTo('#C .c2', { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.45, stagger: 0.05 }, M0 + 0.8);
+
+// 링 완성 순간 채운 도형을 같은 크기 선 원으로 바꾸고, 끝을 62%까지 되감는다
+const RING = M0 + MD;
+tl.set('#morph, #B', { visibility: 'hidden' }, RING).set('#track, #arc', { visibility: 'visible' }, RING);
+tl.to('#arc', { strokeDashoffset: 0.38, autoRound: false, duration: 0.65, ease: 'power2.inOut' }, RING + 0.05);
+tl.fromTo('#C .pct .num', { yPercent: 110 }, { yPercent: 0, duration: 0.55, ease: 'power3.out' }, RING + 0.2);
+Motion.ready();
+</script></body></html>

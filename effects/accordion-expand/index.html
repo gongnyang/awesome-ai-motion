@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=1280"><title>아코디언 펼치기 · Accordion Expansion</title><link rel="stylesheet" href="../../lib/stage.css"><style>
+.kicker{position:absolute;left:48px;top:30px}.headline{position:absolute;left:48px;top:58px;font-size:42px}.hint{position:absolute;left:48px;bottom:22px;font-size:16px;color:var(--ink2)}
+.paper{background:#FBF8F2;border:1px solid var(--rule)}.row{border-bottom:1px solid var(--rule);padding:22px 26px;font-size:24px}.badge{font-family:var(--mono);font-size:14px;color:var(--ink2)}
+.pointer{position:absolute;width:28px;height:35px;z-index:12}.button{display:inline-block;background:var(--ink);color:var(--paper);padding:14px 28px;font-size:20px}
+
+.sheet{position:absolute;left:430px;top:66px;width:640px}.head{display:flex;justify-content:space-between;padding:24px 26px;font-size:28px;border-bottom:1px solid var(--rule)}.panel{height:0;overflow:hidden}.content{padding:26px;font-size:24px;line-height:1.7}.plus{color:var(--verm);display:block}.pointer{left:995px;top:298px}.left{position:absolute;left:48px;top:205px;width:290px;font-size:46px}
+</style></head>
+<body data-no="320" data-cat="UI 시연 · UI DEMO" data-ko="아코디언 펼치기" data-en="Accordion Expansion" data-meta="펼침 0.55s · 주변 행 동기 이동" data-dur="4" data-poster="3.7">
+<main class="scene"><div class="kicker lab">01 / 펼침</div><div class="headline t-l">숨은 설명을 펼치다</div><div class="hint">새 공간만큼 다음 항목이 내려간다</div><div class="left t-l">입력<br>모델<br>출력</div><div class="sheet paper"><div class="head">입력은 무엇인가<span class="badge">01</span></div><div class="head">모델은 어떻게 읽는가<span class="plus">＋</span></div><div class="panel"><div class="content">앞의 말을 읽고<br>다음 말의 확률을 구한다</div></div><div class="head">출력은 어떻게 고르는가<span class="badge">03</span></div></div><svg class="pointer" viewBox="0 0 28 35"><path d="M2 2L3 28L10 21L16 33L21 30L15 19L25 18Z" fill="var(--ink)" stroke="var(--paper)" stroke-width="2"/></svg></main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+
+tl.to('.pointer',{x:18,y:-115,duration:.6},.2);
+tl.to('.plus',{rotation:45,duration:.35},.9);
+tl.to('.panel',{height:148,duration:.55,ease:'power3.out'},.9);
+tl.fromTo('.content',{opacity:0,y:12},{opacity:1,y:0,duration:.4},1.02);
+tl.to('.pointer',{opacity:0,duration:.25},1.55);
+
+Motion.ready();
+</script></body></html>

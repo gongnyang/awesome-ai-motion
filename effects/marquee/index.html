@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>마키 · Marquee</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>.hint{position:absolute;left:80px;bottom:40px;font-size:15px;color:var(--ink2)}.heading{position:absolute;left:80px;top:50px;font-size:18px;color:var(--ink2)}.hero{position:absolute;left:80px;top:125px;width:1008px;height:300px}.hero .t-xl{position:absolute;left:0;top:40px}.hero .num{position:absolute;right:0;top:25px;font-size:240px}.hero .dot{position:absolute;left:515px;top:142px}.hero .hair{position:absolute;left:0;right:0;bottom:0}.hero .lab{position:absolute;left:0;bottom:20px}
+.belt{position:absolute;left:0;right:0;top:145px;height:200px;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);overflow:hidden}.track{display:flex;width:max-content;height:100%;align-items:center}.unit{display:flex;flex:none;align-items:center;gap:48px;width:1000px;padding-left:48px;font-family:var(--serif);font-size:80px;font-weight:700;white-space:nowrap}.unit .dot{width:36px;height:36px;flex:none;background:var(--ink)}.focus{position:absolute;left:566px;top:382px;width:36px;height:36px}.center-note{position:absolute;left:0;right:0;top:438px;text-align:center;color:var(--ink2);font-size:18px}</style></head>
+<body data-no="586" data-cat="반복·앰비언트 · LOOP &amp; AMBIENT" data-ko="마키" data-en="Marquee" data-meta="등속 100px/s · 연속 스트립" data-dur="5" data-poster="2.5">
+<main class="scene"><span class="heading">멈추지 않는 흐름</span><div class="belt"><div class="track"><div class="unit"><span>입력</span><span>모델</span><span>출력</span><i class="dot"></i></div><div class="unit"><span>입력</span><span>모델</span><span>출력</span><i class="dot"></i></div><div class="unit"><span>입력</span><span>모델</span><span>출력</span><i class="dot"></i></div></div></div><div class="dot v focus"></div><div class="center-note">입력에서 출력까지 · 흐름은 이어진다</div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+tl.fromTo('.track', {x:0}, {x:-500,duration:5,ease:'none'}, 0);
+Motion.ready();
+</script></body></html>

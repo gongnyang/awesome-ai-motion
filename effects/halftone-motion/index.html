@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>하프톤 모션 · Halftone Motion</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>canvas{position:absolute;inset:0;width:1168px;height:580px}.scene{isolation:isolate}</style></head>
+<body data-no="525" data-cat="입자·생성 · GENERATIVE" data-ko="하프톤 모션" data-en="Halftone Motion" data-meta="16px 격자 · 반경 변조 · 파동" data-dur="5" data-poster="2.4">
+<main class="scene"><canvas width="1168" height="580" aria-label="점의 중심은 고정하고 반경만 변화시켜 인쇄 하프톤 위로 큰 물결이 흐르게 한다."></canvas></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const canvas=document.querySelector('canvas'), ctx=canvas.getContext('2d');
+const W=1168,H=580,INK='#141210',PAPER='#F4EEE3',VERM='#D6401C',RULE='#CDC3B2';
+const SERIF=getComputedStyle(document.body).getPropertyValue('--serif'), SANS=getComputedStyle(document.body).getPropertyValue('--sans');
+const rng=Motion.rand(303), state={t:0};
+const clamp=(x)=>Math.max(0,Math.min(1,x));
+const out=(x)=>1-Math.pow(1-clamp(x),3);
+const mix=(a,b,p)=>a+(b-a)*p;
+function circle(x,y,r,color=INK,alpha=1){ctx.globalAlpha=alpha;ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y,Math.max(.01,r),0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;}
+function label(s,x,y,size=16,color=INK){ctx.fillStyle=color;ctx.font=`${size}px ${SANS}`;ctx.textAlign='left';ctx.fillText(s,x,y);}
+function title(s='다음 말',x=584,y=330,color=INK){ctx.fillStyle=color;ctx.font=`700 108px ${SERIF}`;ctx.textAlign='center';ctx.fillText(s,x,y);ctx.textAlign='left';}
+function clear(){ctx.clearRect(0,0,W,H);ctx.globalAlpha=1;ctx.filter='none';}
+const dots=[];for(let y=150;y<=465;y+=16)for(let x=110;x<=1060;x+=16)dots.push([x,y]);
+function draw(t){clear();
+label('점의 크기로 흐르는 물결',104,95,24);label('하프톤 모션',104,540,18);
+for(const [x,y] of dots){const wave=(Math.sin(x/65+y/100-t*2.2)+1)/2;const envelope=.65+.35*Math.cos((y-305)/200);circle(x,y,.6+5.6*wave*envelope,INK);}
+circle(1050,82,9,VERM);
+}
+const tl=Motion.timeline();
+tl.to(state,{t:5,duration:5,ease:"none",onUpdate:()=>draw(state.t)},0);
+draw(0);
+Motion.ready();
+</script></body></html>

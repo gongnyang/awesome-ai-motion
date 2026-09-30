@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>잉크 번짐 · Ink Bleed</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>canvas{position:absolute;inset:0;width:1168px;height:580px}.scene{isolation:isolate}</style></head>
+<body data-no="472" data-cat="질감·스타일 · TEXTURE &amp; STYLE" data-ko="잉크 번짐" data-en="Ink Bleed" data-meta="번짐 → 합체 → 선명한 글자" data-dur="4" data-poster="3.6">
+<main class="scene"><canvas width="1168" height="580" aria-label="먹 덩어리가 종이 위에서 번져 합쳐진 뒤 수축하여 다음 말과 주홍 점을 남긴다."></canvas></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const canvas=document.querySelector('canvas'), ctx=canvas.getContext('2d');
+const W=1168,H=580,INK='#141210',PAPER='#F4EEE3',VERM='#D6401C',RULE='#CDC3B2';
+const SERIF=getComputedStyle(document.body).getPropertyValue('--serif'), SANS=getComputedStyle(document.body).getPropertyValue('--sans');
+const rng=Motion.rand(303), state={t:0};
+const clamp=(x)=>Math.max(0,Math.min(1,x));
+const out=(x)=>1-Math.pow(1-clamp(x),3);
+const mix=(a,b,p)=>a+(b-a)*p;
+function circle(x,y,r,color=INK,alpha=1){ctx.globalAlpha=alpha;ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y,Math.max(.01,r),0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;}
+function label(s,x,y,size=16,color=INK){ctx.fillStyle=color;ctx.font=`${size}px ${SANS}`;ctx.textAlign='left';ctx.fillText(s,x,y);}
+function title(s='다음 말',x=584,y=330,color=INK){ctx.fillStyle=color;ctx.font=`700 108px ${SERIF}`;ctx.textAlign='center';ctx.fillText(s,x,y);ctx.textAlign='left';}
+function clear(){ctx.clearRect(0,0,W,H);ctx.globalAlpha=1;ctx.filter='none';}
+const blobs=Array.from({length:23},(_,i)=>({x:350+rng()*470,y:210+rng()*130,r:18+rng()*28,phase:rng()*6.28}));
+function draw(t){clear();
+label('종이에 스며드는 말',104,95,24);label('번짐에서 형태로',104,514,18);
+const grow=out(t/.95),settle=out((t-1.25)/1.25),a=1-settle;
+ctx.filter=`blur(${mix(16,0,settle)}px)`;
+for(const b of blobs){circle(b.x+Math.sin(b.phase+t)*12*a,b.y,b.r*grow*(1+grow*.7)*(1-settle),INK,a*.9);}
+ctx.globalAlpha=out((t-.5)/1.6);title();ctx.globalAlpha=1;ctx.filter='none';circle(898,283,39*out((t-1.7)/.55),VERM);
+}
+const tl=Motion.timeline();
+tl.to(state,{t:4,duration:4,ease:"none",onUpdate:()=>draw(state.t)},0);
+draw(0);
+Motion.ready();
+</script></body></html>

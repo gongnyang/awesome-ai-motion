@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>윤곽 후 채움 · Outline Then Fill</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.kicker{position:absolute;left:64px;top:40px}.caption{position:absolute;left:64px;bottom:38px;font-size:18px;color:var(--ink2)}
+svg.canvas{position:absolute;inset:0;width:1168px;height:580px}.note{position:absolute;right:64px;bottom:40px}
+</style></head>
+<body data-no="425" data-cat="도형·패스 · SHAPE &amp; PATH" data-ko="윤곽 후 채움" data-en="Outline Then Fill" data-meta="윤곽 0.9s · 채움 0.5s" data-dur="3.5" data-poster="3.2">
+<main class="scene"><span class="lab kicker">구조를 그리고 내용을 채운다</span><svg class="canvas" viewBox="0 0 1168 580"><path class="shape" d="M384 340 L384 170 L524 90 L664 170 L664 340 L524 420 Z" fill="var(--ink)" fill-opacity="0" stroke="var(--ink)" stroke-width="3"/><circle class="shape" cx="762" cy="300" r="76" fill="var(--verm)" fill-opacity="0" stroke="var(--verm)" stroke-width="3"/></svg><div class="caption">계획의 윤곽에서 완성된 면으로</div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+document.querySelectorAll('.shape').forEach((s,i)=>{const len=s.getTotalLength();tl.set(s,{strokeDasharray:len,strokeDashoffset:len,fillOpacity:0},0);tl.to(s,{strokeDashoffset:0,duration:.9,ease:'power2.out'},.3+i*.18);tl.to(s,{fillOpacity:1,duration:.5,ease:'power1.inOut'},1.25+i*.18);});
+Motion.ready();
+</script></body></html>

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>휩팬 · Whip Pan</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>
+.strip{position:absolute;left:0;top:0;width:2336px;height:580px;filter:url(#horizontal-blur)}.layer{position:absolute;top:0;width:1168px;height:580px}.a{left:0;background:var(--paper)}.b{left:1168px;background:var(--paper2)}.label{position:absolute;left:64px;top:48px}.title{position:absolute;left:64px;top:130px}.input{position:absolute;left:64px;top:294px}.line{position:absolute;left:64px;right:64px;top:420px;height:1px;background:var(--rule)}.bar{position:absolute;left:64px;height:32px;background:var(--ink)}.bar.v{background:var(--verm)}.value{position:absolute;left:840px;top:280px;font-size:100px}.lead{left:748px;top:468px;opacity:0}.filter-def{position:absolute;width:0;height:0;overflow:hidden}
+</style></head><body data-no="126" data-cat="전환·컷 · TRANSITIONS" data-ko="휩팬" data-en="Whip Pan" data-meta="왼쪽 1168px · 0.42s · 가로 blur 28px" data-dur="3"><main class="scene">
+<svg class="filter-def" aria-hidden="true"><defs><filter id="horizontal-blur" x="-20%" y="-10%" width="140%" height="120%" color-interpolation-filters="sRGB"><feGaussianBlur id="blur-x" stdDeviation="0 0"/></filter></defs></svg>
+<div class="strip"><div class="layer a"><div class="lab label">A / 입력</div><div class="t-xl title">다음 말은<br>어떻게 고르나요?</div><div class="t-m input" style="top:360px">입력 → 모델 → 출력</div><div class="line"></div></div><div class="layer b"><div class="lab label">B / 출력</div><div class="t-l title">AI는 다음 말을 고른다</div><div class="bar v" style="top:280px;width:620px"></div><div class="bar" style="top:336px;width:210px"></div><div class="bar" style="top:392px;width:90px"></div><div class="num value">62<span class="lab">%</span></div></div></div><div class="lead"><i></i><s></s><span>동일 방향 · 급감속 안착</span></div>
+</main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+const blur = {x:0};
+const updateBlur = () => document.querySelector('#blur-x').setAttribute('stdDeviation', `${blur.x} 0`);
+tl.set('.strip',{x:0});
+tl.to('.strip',{x:-1168,duration:0.42,ease:'power4.inOut'},1.03);
+tl.to(blur,{x:28,duration:0.21,ease:'power3.in',onUpdate:updateBlur},1.03);
+tl.to(blur,{x:0,duration:0.21,ease:'power3.out',onUpdate:updateBlur},1.24);
+tl.to('.lead',{opacity:1,duration:0.25},1.7);
+Motion.ready();
+</script></body></html>

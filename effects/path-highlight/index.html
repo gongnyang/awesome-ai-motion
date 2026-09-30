@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>패스 하이라이트 · Path Highlight</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.kicker{position:absolute;left:64px;top:40px}.caption{position:absolute;left:64px;bottom:38px;font-size:18px;color:var(--ink2)}
+svg.canvas{position:absolute;inset:0;width:1168px;height:580px}.note{position:absolute;right:64px;bottom:40px}
+
+.node{position:absolute;top:300px;font-size:28px}.n1{left:100px}.n2{left:520px}.n3{left:948px}
+</style></head>
+<body data-no="426" data-cat="도형·패스 · SHAPE &amp; PATH" data-ko="패스 하이라이트" data-en="Path Highlight" data-meta="경로의 15% · 일정 속도" data-dur="4" data-poster="2.6">
+<main class="scene"><span class="lab kicker">연결 위를 지나가는 신호</span><svg class="canvas" viewBox="0 0 1168 580"><defs><clipPath id="flow-clip"><rect x="150" y="100" width="868" height="280"/></clipPath></defs><path d="M150 260 C300 260 290 140 430 140 S660 360 780 260 S900 180 1018 260" fill="none" stroke="var(--rule)" stroke-width="5"/><g clip-path="url(#flow-clip)"><path class="flow" d="M150 260 C300 260 290 140 430 140 S660 360 780 260 S900 180 1018 260" fill="none" stroke="var(--verm)" stroke-width="7" stroke-linecap="round"/></g><g fill="var(--ink)"><circle cx="150" cy="260" r="12"/><circle cx="584" cy="239" r="12"/><circle cx="1018" cy="260" r="12"/></g></svg><div class="node n1 t-m">입력</div><div class="node n2 t-m">처리</div><div class="node n3 t-m">출력</div><div class="caption">선은 남겨 두고 흐름의 방향만 보여 준다</div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+const flow = document.querySelector('.flow');
+const length = flow.getTotalLength();
+const segment = length * .15;
+const cap = Number(flow.getAttribute('stroke-width'));
+// Use measured SVG units throughout: CSS px and pathLength ratios must not mix.
+// The long gap keeps exactly one highlight on the open path, without wrapping.
+const startOffset = segment + cap;
+const endOffset = -length - cap;
+gsap.set(flow, { attr: {
+  'stroke-dasharray': `${segment} ${length + segment + cap * 2}`,
+  'stroke-dashoffset': startOffset
+} });
+for (const start of [.4, 2]) {
+  tl.fromTo(flow,
+    { attr: { 'stroke-dashoffset': startOffset } },
+    { attr: { 'stroke-dashoffset': endOffset }, duration: 1.2,
+      ease: 'none', immediateRender: false }, start);
+}
+Motion.ready();
+</script></body></html>

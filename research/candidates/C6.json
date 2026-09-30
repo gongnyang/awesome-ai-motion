@@ -1,0 +1,3944 @@
+[
+  {
+    "slug": "graph-build",
+    "family": "explainer",
+    "ko": "노드 연결망 구축",
+    "en": "Node-link Build",
+    "aka": [
+      "Avatar network",
+      "아바타 연결망",
+      "Flowchart build",
+      "흐름도 구축",
+      "Avatar Hub",
+      "아바타 허브 연결",
+      "avatar-cloud-network",
+      "Relation Traverse",
+      "관계 도해 탐색",
+      "Graph port linking",
+      "그래프 포트 연결"
+    ],
+    "what": "노드가 순서대로 나타나고 연결선이 각 노드 사이에 그려진다. 선택 경로의 노드와 선을 차례로 강조한다.",
+    "why": "구성요소 사이의 관계와 처리 순서를 보여준다.",
+    "params": "노드 8개, 등장 간격 200ms, 연결선 400ms, 활성 노드 유지 700ms.",
+    "impl": "SVG 노드와 연결선을 순서대로 공개하고 동일 시간표에서 선택 경로의 색을 갱신한다.",
+    "runtime": "svg",
+    "variants": [
+      "허브와 스포크",
+      "흐름도",
+      "관계망",
+      "출력 포트와 입력 포트 연결"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/avatar-cloud/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/constellation-hub/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/rules/avatar-cloud-network.md",
+        "license": "unknown"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/blueprints/constellation-hub.md",
+        "license": "unknown"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/flowchart/registry-item.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-060",
+      "R1a-117",
+      "R1b-104",
+      "R1b-161",
+      "R7-085"
+    ]
+  },
+  {
+    "slug": "fractional-icon-fill",
+    "family": "data",
+    "ko": "부분 아이콘 채우기",
+    "en": "Fractional Icon Fill",
+    "aka": [
+      "Fractional star fill",
+      "소수 별점 채우기",
+      "Fractional Rating",
+      "부분 별점 채움",
+      "stat-bars-and-fills",
+      "Fractional pictogram fill",
+      "부분 아이콘 비율 채움"
+    ],
+    "what": "아이콘 내부의 채움 경계가 이동해 수량이나 비율을 나타낸다. 마지막 아이콘은 소수 비율만큼만 채워진다.",
+    "why": "평점의 정수와 소수값을 정확히 전달한다.",
+    "params": "1000ms, 평점 4.5/5, clip 폭 90%",
+    "impl": "비어 있는 별 위 색 별 레이어의 클리핑 폭을 보간한다.",
+    "runtime": "css",
+    "variants": [
+      "별점 채우기",
+      "사람 픽토그램",
+      "가로 채움",
+      "세로 채움"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/star-rating-fill/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/rules/stat-bars-and-fills.md",
+        "license": "unknown"
+      },
+      {
+        "title": "Flourish",
+        "url": "https://flourish.studio/visualisations/pictogram-charts/",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-088",
+      "R1b-089",
+      "R6-049"
+    ]
+  },
+  {
+    "slug": "chart-scrub",
+    "family": "data",
+    "ko": "차트 스크럽",
+    "en": "Chart Scrub",
+    "aka": [
+      "Chart scrub",
+      "그래프 훑기",
+      "차트 탐색 읽기",
+      "chart-scrub-readout",
+      "Linked chart time cursor",
+      "차트 공통 시간 커서",
+      "Graph linked to moving readout",
+      "그래프와 값 동시 추적"
+    ],
+    "what": "이미 그려진 차트 위를 추적선과 점이 이동하고 현재 위치의 날짜와 값이 함께 바뀐다.",
+    "why": "그래프가 실제 수치를 가진 탐색 대상임을 보여준다.",
+    "params": "1500~3000ms, 점 10~40개, power1.inOut",
+    "impl": "동일 진행값으로 선 위치, 데이터 보간 점, 인덱스 라벨을 계산한다.",
+    "runtime": "svg",
+    "variants": [
+      "시간 커서",
+      "함수 보조선",
+      "여러 차트 동기화",
+      "두 시리즈 비교"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/rules/chart-scrub-readout.md",
+        "license": "unknown"
+      },
+      {
+        "title": "vega/vega",
+        "url": "https://vega.github.io/vega/docs/event-streams/",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "title": "chartjs/Chart.js",
+        "url": "https://www.chartjs.org/docs/latest/configuration/animations.html",
+        "license": "MIT"
+      },
+      {
+        "title": "fnando/sparkline",
+        "url": "https://github.com/fnando/sparkline",
+        "license": "MIT"
+      },
+      {
+        "title": "3b1b/videos",
+        "url": "https://github.com/3b1b/videos/blob/master/_2017/eoc/chapter2.py",
+        "license": "CC-BY-NC-SA-4.0"
+      }
+    ],
+    "from": [
+      "R1a-089",
+      "R1b-115",
+      "R6-031",
+      "R7-059"
+    ]
+  },
+  {
+    "slug": "bar-chart-race",
+    "family": "data",
+    "ko": "막대 차트 레이스",
+    "en": "Bar Chart Race",
+    "aka": [
+      "Bar chart race",
+      "막대 순위 경주",
+      "Racing bars"
+    ],
+    "what": "시계열이 진행하며 막대 길이와 순위가 바뀌고 선두의 강조가 이동한다.",
+    "why": "시간에 따른 경쟁과 추월을 보여준다.",
+    "params": "12000ms, 데이터 단계 12개, 단계 1000ms.",
+    "impl": "각 시점의 값과 정렬된 y 좌표를 보간하고 축 최대값을 함께 갱신한다.",
+    "runtime": "svg",
+    "variants": [
+      "상위 N 진입",
+      "이미지 라벨",
+      "누적 값",
+      "기간별 값"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/bar-chart-race/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "Observable @d3",
+        "url": "https://observablehq.com/@d3/bar-chart-race",
+        "license": "unknown"
+      },
+      {
+        "title": "apache/echarts",
+        "url": "https://echarts.apache.org/handbook/en/basics/release-note/v5-feature/",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-090",
+      "R6-011"
+    ]
+  },
+  {
+    "slug": "rolling-digits",
+    "family": "data",
+    "ko": "숫자 롤링",
+    "en": "Rolling Digits",
+    "aka": [
+      "Rolling digits",
+      "롤링 숫자",
+      "Odometer",
+      "Number wheel",
+      "Odometer Reels",
+      "오도미터 숫자",
+      "vertical-spring-ticker",
+      "slot-machine-reveal",
+      "Rolling number odometer",
+      "롤링 숫자 계기판",
+      "Sliding Number",
+      "숫자 릴 갱신",
+      "Number Reel",
+      "Text Counter Roll"
+    ],
+    "what": "각 자릿수가 세로 릴에서 돌아 다음 값에 멈춘다.",
+    "why": "점수와 가격의 기계적 갱신을 보여준다.",
+    "params": "800ms, 자릿수 간격 60ms, power3.out",
+    "impl": "자릿수별 마스크 내부 숫자 스트립의 y를 보간한다.",
+    "runtime": "css",
+    "variants": [
+      "동시 롤링",
+      "자릿수 시차",
+      "증가와 감소",
+      "통화와 소수",
+      "오도미터"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/number-wheel/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/slot-machine-roll/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/rules/vertical-spring-ticker.md",
+        "license": "unknown"
+      },
+      {
+        "title": "gongnyang/awesome-html-scrolline-deck",
+        "url": "gongnyang/awesome-html-scrolline-deck:references/techniques.md#odometer-stats",
+        "license": "MIT"
+      },
+      {
+        "title": "gongnyang/awesome-html-scrolline-deck",
+        "url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/odometer-stats/scene.css",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1a-091",
+      "R1b-084",
+      "R2-069",
+      "R3-110",
+      "R5-077"
+    ]
+  },
+  {
+    "slug": "object-tracking-box",
+    "family": "explainer",
+    "ko": "대상 추적 박스",
+    "en": "Object Tracking Box",
+    "aka": [
+      "AI tracking box",
+      "AI 추적 상자",
+      "Ai Tracking Box",
+      "AI 추적 박스"
+    ],
+    "what": "모서리 표시 상자가 대상의 움직임을 따라가고 크기와 신뢰도 수치가 조금 변한다.",
+    "why": "기계가 대상을 인식하고 추적함을 보여준다.",
+    "params": "상자 300px, 이동 진폭 100px, 주기 3000ms, 신뢰도 97%.",
+    "impl": "고정 시간 함수로 대상과 상자 좌표, 크기와 라벨을 함께 계산한다.",
+    "runtime": "svg",
+    "variants": [
+      "다중 대상",
+      "추적 상실과 재획득"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/camera-scan-gate/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/rules/ai-tracking-box.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-120",
+      "R1b-090"
+    ]
+  },
+  {
+    "slug": "segmentation-reveal",
+    "family": "explainer",
+    "ko": "영역 분할 스캔",
+    "en": "Segmentation Reveal",
+    "aka": [
+      "Segmentation flood"
+    ],
+    "what": "대상의 여러 구역에 반투명 색 마스크가 주사선 순서로 차오르고 라벨이 붙는다.",
+    "why": "기계가 대상을 부분별로 분석하는 과정을 보여준다.",
+    "params": "1500ms, scanline steps 24, 마스크 opacity 0.3",
+    "impl": "사전 정의 영역 마스크를 행 단위 임계값으로 공개한다.",
+    "runtime": "canvas",
+    "variants": [],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/segmentation-flood/registry-item.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-121"
+    ]
+  },
+  {
+    "slug": "oscilloscope-trace",
+    "family": "data",
+    "ko": "오실로스코프 잔광",
+    "en": "Oscilloscope Trace",
+    "aka": [
+      "Oscilloscope trace"
+    ],
+    "what": "빛점이 파형을 훑고 뒤의 선은 시간이 지나며 흐려진다.",
+    "why": "시간에 따른 신호와 측정 도구의 작동을 보여준다.",
+    "params": "주사 2000ms, 잔광 tau 300ms, 격자 10x8",
+    "impl": "주사 위치와 exp(-age/tau) 잔광을 프레임 시간에서 직접 계산한다.",
+    "runtime": "canvas",
+    "variants": [],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/oscilloscope-trace/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:embedded-captions/CATALOG.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-167"
+    ]
+  },
+  {
+    "slug": "choropleth-transition",
+    "family": "data",
+    "ko": "코로플레스 색상 전환",
+    "en": "Choropleth Transition",
+    "aka": [
+      "Choropleth reveal",
+      "단계구분도 공개",
+      "Choropleth time transition",
+      "코로플레스 시간 전환"
+    ],
+    "what": "지도 구역의 색이 데이터 값에 따라 순서대로 채워지거나 시점별 색으로 바뀐다.",
+    "why": "지역별 수치와 분포의 차이를 보여준다.",
+    "params": "지역 시작차 40ms, 채움 500ms, 범례 800ms",
+    "impl": "SVG 지역별 데이터 값을 색으로 매핑해 시간차 공개한다.",
+    "runtime": "svg",
+    "variants": [
+      "지역 순차 공개",
+      "연도별 갱신",
+      "지표 교체"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/us-map/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/spain-map/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/world-map/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "reuters-graphics/chart-module-global-rate-map",
+        "url": "https://github.com/reuters-graphics/chart-module-global-rate-map",
+        "license": "unknown"
+      },
+      {
+        "title": "d3/d3-interpolate",
+        "url": "https://d3js.org/d3-interpolate",
+        "license": "ISC"
+      }
+    ],
+    "from": [
+      "R1a-168",
+      "R6-077"
+    ]
+  },
+  {
+    "slug": "size-encoding",
+    "family": "data",
+    "ko": "데이터 면적 변화",
+    "en": "Animated Size Encoding",
+    "aka": [
+      "Bubble map",
+      "버블 지도",
+      "Animated size encoding",
+      "면적 인코딩 전환"
+    ],
+    "what": "중심 위치가 고정된 원이나 도형의 면적이 데이터 값에 비례해 커지거나 작아진다.",
+    "why": "위치 관계를 유지하며 데이터 규모의 차이를 보여준다.",
+    "params": "750ms, 원 면적에 값 비례, 반지름은 면적의 제곱근으로 계산, 최소 반지름 2px.",
+    "impl": "SVG 도형의 중심을 유지한 채 표시 면적을 보간하고 원 반지름은 제곱근으로 환산한다.",
+    "runtime": "svg",
+    "variants": [
+      "버블 지도",
+      "원 면적",
+      "사각형 면적",
+      "심벌 크기"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/us-map-bubble/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "chartjs/Chart.js",
+        "url": "https://www.chartjs.org/docs/latest/configuration/animations.html",
+        "license": "MIT"
+      },
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      },
+      {
+        "title": "Flourish",
+        "url": "https://app.flourish.studio/@flourish/scatter",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-169",
+      "R6-066"
+    ]
+  },
+  {
+    "slug": "map-route-animation",
+    "family": "data",
+    "ko": "지도 경로 애니메이션",
+    "en": "Map Route Animation",
+    "aka": [
+      "Flow map",
+      "지도 이동 경로",
+      "Map Connection Draw",
+      "지도 연결선 그리기",
+      "Animated geographic route marker",
+      "지도 경로 이동 표식",
+      "Point along route"
+    ],
+    "what": "지도 위의 곡선이 그려지고 표식이나 비행기가 경로를 따라 이동한다.",
+    "why": "출발지와 목적지, 이동 방향을 보여준다.",
+    "params": "경로 2000ms, linear, 도착 pulse 300ms",
+    "impl": "지도 좌표의 베지어 경로를 그리며 이동체의 위치와 접선을 계산한다.",
+    "runtime": "svg",
+    "variants": [
+      "경로 선 공개",
+      "차량과 비행기 이동",
+      "이동 점",
+      "접선 방향 회전"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/us-map-flow/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/nyc-paris-flight/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/world-map",
+        "license": "unknown"
+      },
+      {
+        "title": "magicuidesign/magicui",
+        "url": "https://magicui.design/docs/components/dotted-map",
+        "license": "MIT"
+      },
+      {
+        "title": "mapbox/mapbox-gl-js",
+        "url": "https://docs.mapbox.com/mapbox-gl-js/example/animate-point-along-route/",
+        "license": "Mapbox TOS proprietary; 포함된 v1.13 이하는 BSD-3-Clause"
+      }
+    ],
+    "from": [
+      "R1a-170",
+      "R3-177",
+      "R6-070"
+    ]
+  },
+  {
+    "slug": "code-diff-reveal",
+    "family": "explainer",
+    "ko": "코드 변경 전개",
+    "en": "Code Diff Reveal",
+    "aka": [
+      "Code diff",
+      "코드 차이 전개"
+    ],
+    "what": "삭제된 줄이 붉게 줄어 사라지고 추가된 줄이 초록색으로 펼쳐진다.",
+    "why": "변경 전후의 추가와 삭제를 구별한다.",
+    "params": "6000ms, 줄 간격 100ms, 줄 교체 400ms",
+    "impl": "원본과 결과 줄을 비교한 고정 상태표로 줄 마스크와 위치를 보간한다.",
+    "runtime": "gsap",
+    "variants": [],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/code-diff/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:pr-to-video/references/code-vocabulary.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-172"
+    ]
+  },
+  {
+    "slug": "matching-token-transform",
+    "family": "explainer",
+    "ko": "대응 기호 이동",
+    "en": "Matching Token Transform",
+    "aka": [
+      "Code token FLIP",
+      "코드 토큰 이동",
+      "Matching-symbol equation transform",
+      "동일 기호 수식 변환",
+      "TransformMatchingTex",
+      "TransformMatchingStrings"
+    ],
+    "what": "같은 의미의 코드 토큰이나 수식 기호가 다음 상태의 위치로 이동한다. 사라진 항은 흐려지고 새로운 항은 나타난다.",
+    "why": "변환 전후에 유지되는 부분과 달라지는 부분을 구별한다.",
+    "params": "이동 1000ms, power2.inOut, 기호 의미 키 유지, 줄 간격 60px, 출입 페이드 250ms.",
+    "impl": "HTML 또는 SVG 기호를 의미 키로 대응해 전후 좌표와 불투명도를 GSAP 코어로 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "코드 토큰 재배치",
+      "수식 이항",
+      "인수분해",
+      "추가와 삭제"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/code-morph/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:pr-to-video/references/code-vocabulary.md",
+        "license": "unknown"
+      },
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/transform_matching_parts.py",
+        "license": "MIT"
+      },
+      {
+        "title": "3b1b/manim",
+        "url": "https://github.com/3b1b/manim/blob/master/manimlib/animation/transform_matching_parts.py",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1a-173",
+      "R7-045"
+    ]
+  },
+  {
+    "slug": "path-beam",
+    "family": "explainer",
+    "ko": "경로 신호 빔",
+    "en": "Path Beam",
+    "aka": [
+      "Tracing beam",
+      "경로 추적 광선",
+      "Animated Path Beam",
+      "경로 빛 이동",
+      "Animated Beam",
+      "움직이는 빔",
+      "Beam effect"
+    ],
+    "what": "빛나는 짧은 선이 연결 경로를 따라 지나가며 각 대상이 차례로 밝아진다.",
+    "why": "처리 경로와 활성 단계를 보여준다.",
+    "params": "1500ms, 광선 길이 80px, 대상 밝기 300ms",
+    "impl": "SVG dash의 위치를 진행시키고 도착 시점에 대상 색을 강조한다.",
+    "runtime": "svg",
+    "variants": [
+      "빛 펄스",
+      "역방향 이동",
+      "도착 노드 강조",
+      "직선과 곡선"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/tracing-beam/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "magicuidesign/magicui",
+        "url": "https://magicui.design/docs/components/animated-beam",
+        "license": "MIT"
+      },
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/background-beams",
+        "license": "unknown"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/generate-effects.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-202",
+      "R3-114",
+      "R5-117"
+    ]
+  },
+  {
+    "slug": "walk-cycle",
+    "family": "explainer",
+    "ko": "캐릭터 걷기",
+    "en": "Walk Cycle",
+    "aka": [
+      "Walking character gesture",
+      "걷는 캐릭터 동작"
+    ],
+    "what": "관절 캐릭터가 발을 땅에 붙이며 걸어 들어와 멈추고 카드를 가리킨다.",
+    "why": "설명 대상에 살아 있는 안내자의 행동을 더한다.",
+    "params": "보행 주기 800ms, 진입 2000ms, 가리킴 500ms",
+    "impl": "관절별 주기 자세와 이동을 맞춰 발 접촉 구간에 발의 세계 좌표를 고정한다.",
+    "runtime": "svg",
+    "variants": [
+      "제자리 걷기",
+      "걸어 들어오기",
+      "정지 후 가리키기"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/lottie-character-walk/registry-item.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-212"
+    ]
+  },
+  {
+    "slug": "audio-spectrum",
+    "family": "data",
+    "ko": "오디오 스펙트럼",
+    "en": "Audio Spectrum Visualizer",
+    "aka": [
+      "Audio spectrum visualizer",
+      "Audio Spectrum Bars",
+      "오디오 스펙트럼 바",
+      "Audio Spectrum",
+      "Spectrum Ribbon and Waveform",
+      "스펙트럼 리본과 파형"
+    ],
+    "what": "주파수 대역의 막대 또는 방사선 길이가 소리 세기에 따라 변화한다.",
+    "why": "소리의 대역별 구성과 에너지를 보여준다.",
+    "params": "30fps, 16밴드, 스무딩 150ms, 최소 높이 4px",
+    "impl": "사전 추출한 대역 배열을 시간으로 샘플링해 막대 길이에 매핑한다.",
+    "runtime": "canvas",
+    "variants": [
+      "선형 스펙트럼",
+      "방사 스펙트럼",
+      "스펙트럼 리본",
+      "파형 동반"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/rules/gsap-effects.md",
+        "license": "unknown"
+      },
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/generate-effects.html",
+        "license": "unknown"
+      },
+      {
+        "title": "remotion-dev/skills",
+        "url": "https://github.com/remotion-dev/skills/blob/HEAD/skills/remotion-best-practices/remotion-markup/audio-visualization.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-213",
+      "R5-115",
+      "R8-121"
+    ]
+  },
+  {
+    "slug": "seesaw-balance",
+    "family": "explainer",
+    "ko": "시소 균형",
+    "en": "Seesaw Balance",
+    "aka": [
+      "seesaw-fulcrum-tilt"
+    ],
+    "what": "막대 양쪽이 반대 높이로 움직이고 접시는 수평을 유지한다.",
+    "why": "두 선택지의 무게와 트레이드오프를 비교한다.",
+    "params": "주기 2000ms, 각도 8도, sine.inOut",
+    "impl": "HTML 공유 받침점으로 막대를 회전하고 접시를 역회전한다.",
+    "runtime": "gsap",
+    "variants": [
+      "양팔 저울",
+      "두 요소 균형"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/01-anchor-transform.md#seesaw-fulcrum-tilt",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1b-003"
+    ]
+  },
+  {
+    "slug": "progress-ring",
+    "family": "data",
+    "ko": "원형 진행 게이지",
+    "en": "Progress Ring",
+    "aka": [
+      "progress-ring-radial",
+      "stat-bars-and-fills"
+    ],
+    "what": "원형 선이 목표 비율까지 채워지고 끝점이나 숫자가 같이 움직인다.",
+    "why": "완료율과 구성비를 직관적으로 읽는다.",
+    "params": "1000ms, 시작 -90도, 목표 75%, power2.out",
+    "impl": "SVG 원 둘레의 dashoffset을 비율로 계산하고 숫자와 같은 진행값을 쓴다.",
+    "runtime": "svg",
+    "variants": [
+      "전체 원",
+      "반원",
+      "감소 카운트다운",
+      "분할 원"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/06-shapes-strokes.md#progress-ring-radial",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/data/progress-ring.html",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/data/progress-ring.meta.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/hyperframes-animation",
+        "url": "claude-skill:hyperframes-animation/rules/stat-bars-and-fills.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1b-056"
+    ]
+  },
+  {
+    "slug": "state-transition-walk",
+    "family": "explainer",
+    "ko": "상태 전이 순회",
+    "en": "State Transition Walk",
+    "aka": [
+      "Step Progress",
+      "단계 진행 선",
+      "progress-bar-linear-segmented",
+      "State-machine transition pulse",
+      "상태 머신 전이 신호"
+    ],
+    "what": "현재 노드가 켜지고 연결선을 따라 신호나 강조가 다음 노드로 이동한다. 도착한 노드가 새 활성 상태가 된다.",
+    "why": "단계 순서와 상태가 바뀌는 경로를 보여준다.",
+    "params": "상태 5개, 전이 500ms, 도착 강조 250ms, 상태 유지 700ms.",
+    "impl": "SVG 연결선의 신호 위치와 노드 색을 상태 전이 시간표에 따라 함께 갱신한다.",
+    "runtime": "svg",
+    "variants": [
+      "선형 단계 진행",
+      "분기 상태 머신",
+      "복귀 전이",
+      "순환 루프"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/06-shapes-strokes.md#progress-bar-linear-segmented",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/ig-carousel-hub",
+        "url": "local:ig-carousel-hub/03_templates/motion/slot-spec.md",
+        "license": "unknown"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:blocks/numbered/block.html",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/bookforge",
+        "url": "claude-skill:bookforge/references/diagrams.md",
+        "license": "MIT"
+      },
+      {
+        "title": "motion-canvas/examples",
+        "url": "https://github.com/motion-canvas/examples/blob/master/examples/asset-code/src/scenes/state-machine.tsx",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1b-057",
+      "R1b-156",
+      "R7-084"
+    ]
+  },
+  {
+    "slug": "dashed-flow",
+    "family": "explainer",
+    "ko": "점선 흐름",
+    "en": "Dashed Flow",
+    "aka": [
+      "Connector Flow",
+      "연결선 흐름",
+      "line-connector-draw",
+      "svg-icon-enrichment",
+      "SVG Dashed Flow",
+      "SVG 점선 흐름",
+      "Marching dashes"
+    ],
+    "what": "노드 사이 선이 그려진 뒤 점선 무늬가 한 방향으로 흐른다.",
+    "why": "데이터가 어디에서 어디로 전달되는지 파악한다.",
+    "params": "draw 600ms, dash 8px/8px, 흐름 주기 1200ms, ease none",
+    "impl": "SVG path dashoffset을 선 공개와 점선 이동의 두 단계로 구동한다.",
+    "runtime": "svg",
+    "variants": [
+      "역방향",
+      "양방향",
+      "선 그리기 후 흐름",
+      "반복 전송"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/06-shapes-strokes.md#line-connector-draw",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/object/connector-tree-cascade.html",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/object/connector-tree-cascade.meta.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/hyperframes-animation",
+        "url": "claude-skill:hyperframes-animation/rules/svg-icon-enrichment.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1b-059",
+      "R8-113"
+    ]
+  },
+  {
+    "slug": "symmetric-panel-open",
+    "family": "entrance",
+    "ko": "대칭 패널 펼침",
+    "en": "Symmetric Panel Open",
+    "aka": [
+      "Split Compare",
+      "대칭 비교 등장",
+      "split-tilt-cards"
+    ],
+    "what": "두 판이 양쪽에서 들어와 책을 펴듯 서로 반대 각도로 정면을 향한다.",
+    "why": "두 항목을 같은 비중으로 비교한다.",
+    "params": "회전 Y ±15도, 권장 진입 600ms, 배지 지연 300ms",
+    "impl": "HTML 두 판의 x와 rotateY를 좌우 대칭으로 보간하고 안쪽 배지를 팝한다.",
+    "runtime": "gsap",
+    "variants": [
+      "A와 B",
+      "상호 보완",
+      "전후 비교",
+      "comparison-split"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "local/hyperframes-animation",
+        "url": "claude-skill:hyperframes-animation/rules/split-tilt-cards.md",
+        "license": "unknown"
+      },
+      {
+        "title": "local/hyperframes-animation",
+        "url": "claude-skill:hyperframes-animation/blueprints/comparison-split.md",
+        "license": "unknown"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:blocks/compare/block.html",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1b-107"
+    ]
+  },
+  {
+    "slug": "sequence-message-draw",
+    "family": "explainer",
+    "ko": "시퀀스 메시지 전달",
+    "en": "Sequence Message Draw",
+    "aka": [],
+    "what": "행위자 사이의 화살표가 시간 순서대로 그려지고 수신 지점이 강조된다.",
+    "why": "누가 언제 누구에게 요청하고 응답하는지 이해한다.",
+    "params": "행위자 4개, 메시지 간격 600ms, 선 400ms",
+    "impl": "SVG 수평 메시지선을 순서대로 draw하고 HTML 수신 노드 강조를 연결한다.",
+    "runtime": "svg",
+    "variants": [
+      "요청 응답",
+      "스위밍레인 메시지"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "local/bookforge",
+        "url": "claude-skill:bookforge/references/diagrams.md",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1b-155"
+    ]
+  },
+  {
+    "slug": "gantt-progress",
+    "family": "data",
+    "ko": "간트 시간 진행",
+    "en": "Gantt Progress",
+    "aka": [],
+    "what": "시간선이 작업 막대를 지나가고 해당 작업의 채워진 부분이 늘어난다.",
+    "why": "작업의 기간과 동시 진행 관계를 읽는다.",
+    "params": "작업 6개, 재생 5000ms, ease none",
+    "impl": "SVG 시간축 위치를 공통 진행값으로 두고 작업별 채움 clip을 계산한다.",
+    "runtime": "svg",
+    "variants": [
+      "프로젝트 간트",
+      "동시 작업"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "local/bookforge",
+        "url": "claude-skill:bookforge/references/diagrams.md",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1b-157"
+    ]
+  },
+  {
+    "slug": "radar-morph",
+    "family": "data",
+    "ko": "레이더 차트 모프",
+    "en": "Radar Chart Morph",
+    "aka": [
+      "Radar Grow",
+      "레이더 영역 성장",
+      "Radar profile morph",
+      "방사 다변량 윤곽 갱신"
+    ],
+    "what": "고정된 축을 따라 꼭짓점이 중심에서 목표값으로 이동하거나 새 값으로 바뀌며 다각형 윤곽을 만든다.",
+    "why": "다차원 성능의 강약을 비교한다.",
+    "params": "5축, 1200ms power2.out, 비교 2계열",
+    "impl": "SVG 축별 반경값에 진행값을 곱해 polygon 정점을 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "중심에서 성장",
+      "프로필 갱신",
+      "두 프로필 비교"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "local/bookforge",
+        "url": "claude-skill:bookforge/references/diagrams.md",
+        "license": "MIT"
+      },
+      {
+        "title": "apache/echarts",
+        "url": "https://echarts.apache.org/handbook/en/how-to/animation/transition/",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "chartjs/Chart.js",
+        "url": "https://www.chartjs.org/docs/latest/configuration/animations.html",
+        "license": "MIT"
+      },
+      {
+        "title": "Flourish",
+        "url": "https://flourish.studio/visualisations/",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1b-158",
+      "R6-102"
+    ]
+  },
+  {
+    "slug": "venn-overlap",
+    "family": "explainer",
+    "ko": "벤 집합 겹침",
+    "en": "Venn Overlap",
+    "aka": [],
+    "what": "원들이 서로 다가가 겹치는 영역이 강조되고 라벨이 나타난다.",
+    "why": "집합의 공통점과 차이를 이해한다.",
+    "params": "원 3개, 이동 1000ms, 겹침 공개 300ms",
+    "impl": "SVG 원 위치를 보간하고 교집합 clip 레이어의 opacity를 올린다.",
+    "runtime": "svg",
+    "variants": [
+      "두 집합",
+      "세 집합"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "local/bookforge",
+        "url": "claude-skill:bookforge/references/diagrams.md",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1b-159"
+    ]
+  },
+  {
+    "slug": "dependent-geometry",
+    "family": "explainer",
+    "ko": "종속 도형 동기 갱신",
+    "en": "Dependent Geometry Update",
+    "aka": [
+      "Mapped synchronized values",
+      "값 매핑 동기화",
+      "Dependent geometry update",
+      "UpdateFromFunc",
+      "UpdateFromAlphaFunc"
+    ],
+    "what": "점이 움직일 때 연결선, 각도, 길이 표시도 매 순간 함께 바뀐다.",
+    "why": "하나의 변화가 다른 값에 미치는 관계를 이해한다.",
+    "params": "1200 ms, 갱신 60 fps, linear",
+    "impl": "단일 진행률에서 점 좌표와 종속 SVG 도형을 함께 계산한다.",
+    "runtime": "svg",
+    "variants": [
+      "점과 연결선",
+      "각도와 길이",
+      "색과 크기 동시 매핑"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/GSAP/UtilityMethods/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "motiondivision/motion",
+        "url": "https://motion.dev/docs/react-use-transform",
+        "license": "MIT"
+      },
+      {
+        "title": "pmndrs/react-spring",
+        "url": "https://www.react-spring.dev/docs/advanced/interpolation",
+        "license": "MIT"
+      },
+      {
+        "title": "juliangarnier/anime",
+        "url": "https://animejs.com/documentation/utilities",
+        "license": "MIT"
+      },
+      {
+        "title": "Popmotion/popmotion",
+        "url": "https://github.com/Popmotion/popmotion/blob/master/README.md",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R2-019",
+      "R7-049"
+    ]
+  },
+  {
+    "slug": "threshold-pulse",
+    "family": "emphasis",
+    "ko": "임계값 경고 펄스",
+    "en": "Threshold Pulse",
+    "aka": [
+      "Threshold counter pulse",
+      "임계값 숫자 경고"
+    ],
+    "what": "값이 한계에 가까워질수록 숫자가 진해지고 튀어 오른다.",
+    "why": "남은 용량이나 위험 구간을 알린다.",
+    "params": "임계 20%, scale 1.12, 팝 200ms.",
+    "impl": "수치의 임계 근접도를 color와 스프링 초기 속도에 매핑한다.",
+    "runtime": "gsap",
+    "variants": [
+      "글자 수",
+      "잔량",
+      "시간",
+      "한도"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "motion.dev examples",
+        "url": "https://motion.dev/examples/react-characters-remaining",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R2-070"
+    ]
+  },
+  {
+    "slug": "chart-path-morph",
+    "family": "data",
+    "ko": "차트 경로 모프",
+    "en": "Chart Path Morph",
+    "aka": [
+      "Data path reshaping",
+      "데이터 경로 변화",
+      "Line and area shape update",
+      "선과 면 윤곽 갱신"
+    ],
+    "what": "같은 그래프의 선이나 면이 새로운 데이터 모양으로 부드럽게 변한다.",
+    "why": "이전과 이후 추세를 연속적으로 비교하게 한다.",
+    "params": "900ms, 점 개수 정규화, inOut.",
+    "impl": "데이터 배열을 직접 보간한 뒤 매 프레임 SVG 경로를 다시 계산한다.",
+    "runtime": "svg",
+    "variants": [
+      "선 그래프",
+      "영역 그래프",
+      "스파크라인",
+      "밀도 곡선",
+      "바이올린 윤곽"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/GSAP/CorePlugins/EndArray/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Plugins/MorphSVGPlugin/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "juliangarnier/anime",
+        "url": "https://animejs.com/documentation/svg/morphto",
+        "license": "MIT"
+      },
+      {
+        "title": "Observable @d3",
+        "url": "https://observablehq.com/@d3/streamgraph-transitions",
+        "license": "unknown"
+      },
+      {
+        "title": "chartjs/Chart.js",
+        "url": "https://www.chartjs.org/docs/latest/configuration/animations.html",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R2-073",
+      "R6-024"
+    ]
+  },
+  {
+    "slug": "pinned-scrollytelling",
+    "family": "explainer",
+    "ko": "고정 장면 스크롤리텔링",
+    "en": "Pinned Scrollytelling",
+    "aka": [
+      "Pinned scrollytelling",
+      "고정 장면 스크롤 설명",
+      "Pinned scrollycoding",
+      "고정 코드와 스크롤 설명",
+      "Scrollytelling steps",
+      "스크롤리텔링 단계"
+    ],
+    "what": "핵심 그림이나 코드 패널은 같은 위치에 머물고 설명이 스크롤되면서 내부 상태와 강조 범위가 바뀐다.",
+    "why": "한 대상을 중심으로 단계별 원리를 설명한다.",
+    "params": "4단계, 단계 변화 800ms, 읽기 유지 1800ms, 문단 이동 600ms.",
+    "impl": "고정 HTML 패널과 이동 설명 레이어를 두고 GSAP 코어 타임라인에서 문단 위치와 패널 상태를 함께 갱신한다.",
+    "runtime": "gsap",
+    "variants": [
+      "고정 그림",
+      "고정 코드",
+      "웹 스크롤 연동",
+      "영상 자동 진행"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Plugins/ScrollTrigger/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "pmndrs/react-spring",
+        "url": "https://www.react-spring.dev/docs/components/parallax",
+        "license": "MIT"
+      },
+      {
+        "title": "motiondivision/motion",
+        "url": "https://motion.dev/docs/react-scroll-animations",
+        "license": "MIT"
+      },
+      {
+        "title": "code-hike/codehike",
+        "url": "https://codehike.org/docs/layouts/scrollycoding",
+        "license": "MIT"
+      },
+      {
+        "title": "motion dictionary 3-type-data-ui.md#18. 스크롤리텔링 단계 · Scrollytelling steps",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "R2-076",
+      "R7-095",
+      "DICT-159"
+    ]
+  },
+  {
+    "slug": "path-convoy",
+    "family": "explainer",
+    "ko": "경로 위 행렬",
+    "en": "Path Convoy",
+    "aka": [
+      "Motion path convoy",
+      "Sankey unit particle flow",
+      "생키 단위 입자 흐름"
+    ],
+    "what": "여러 물체나 단위 입자가 시간차 또는 일정 간격을 두고 같은 경로를 따라 이동한다.",
+    "why": "물류, 데이터 전달, 처리 흐름을 표현한다.",
+    "params": "물체 6개, 간격 120ms, 2400ms.",
+    "impl": "각 물체의 경로 진행값에 위상 또는 시작 지연을 적용한다.",
+    "runtime": "svg",
+    "variants": [
+      "물류 행렬",
+      "패킷 전송",
+      "생키 단위 입자",
+      "분기 경로",
+      "루프 이동"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Plugins/MotionPathPlugin/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/resources/getting-started/Staggers/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "juliangarnier/anime",
+        "url": "https://animejs.com/documentation/svg/createmotionpath",
+        "license": "MIT"
+      },
+      {
+        "title": "The New York Times",
+        "url": "https://www.nytimes.com/interactive/2018/03/19/upshot/race-class-white-and-black-men.html",
+        "license": "unknown"
+      },
+      {
+        "title": "Observable",
+        "url": "https://old.observablehq.com/blog/effective-animation",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R2-092",
+      "R6-051"
+    ]
+  },
+  {
+    "slug": "vector-field-alignment",
+    "family": "explainer",
+    "ko": "벡터장 방향 정렬",
+    "en": "Vector Field Alignment",
+    "aka": [
+      "Magnetic field filings",
+      "자기장 쇳가루"
+    ],
+    "what": "격자의 작은 막대들이 이동하는 기준점을 향해 방향을 돌린다.",
+    "why": "벡터장의 방향과 공간적 영향을 보여준다.",
+    "params": "16×16격자, 반응 300ms, 스프링 완화.",
+    "impl": "막대 중심과 가상 기준점 사이의 atan2 각도를 계산하고 회전을 보간한다.",
+    "runtime": "canvas",
+    "variants": [
+      "이동 극점",
+      "복수 극점",
+      "방향장",
+      "탄성 추종"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "motion.dev examples",
+        "url": "https://motion.dev/examples/react-magnetic-filings",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R2-098"
+    ]
+  },
+  {
+    "slug": "globe-connection-arcs",
+    "family": "depth",
+    "ko": "회전 지구 연결 호",
+    "en": "Rotating Globe Connections",
+    "aka": [
+      "Rotating Globe and Arcs",
+      "회전 지구와 연결 호"
+    ],
+    "what": "지구가 천천히 회전하고 지역 점 사이에 빛나는 호가 순서대로 나타난다.",
+    "why": "국제적 연결과 분포를 보여 준다.",
+    "params": "12000ms, 회전 360deg, 호 1500ms, 점 30개",
+    "impl": "WebGL 구면 점과 곡선을 그리거나 canvas 구면 좌표를 투영한다",
+    "runtime": "webgl",
+    "variants": [
+      "Globe",
+      "GitHub Globe",
+      "3D Globe",
+      "Dotted Map",
+      "World Map",
+      "globe",
+      "github-globe",
+      "3d-globe"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "magicuidesign/magicui",
+        "url": "https://magicui.design/docs/components/globe",
+        "license": "MIT"
+      },
+      {
+        "title": "ui.aceternity.com",
+        "url": "https://ui.aceternity.com/components/github-globe",
+        "license": "unknown"
+      },
+      {
+        "title": "DavidHDev/react-bits",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "license": "MIT + Commons Clause v1.0"
+      }
+    ],
+    "from": [
+      "R3-176"
+    ]
+  },
+  {
+    "slug": "audio-waveform",
+    "family": "data",
+    "ko": "오디오 파형",
+    "en": "Audio Waveform",
+    "aka": [],
+    "what": "소리의 진폭을 나타내는 선이 시간에 따라 변한다.",
+    "why": "발화와 음악의 강약을 눈으로 보여준다.",
+    "params": "24fps; 256샘플; height 60px",
+    "impl": "오디오 PCM 샘플 또는 사전 분석값으로 폴리라인을 그린다.",
+    "runtime": "canvas",
+    "variants": [
+      "가로 파형",
+      "원형 파형"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/generate-effects.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R5-116"
+    ]
+  },
+  {
+    "slug": "grid-draw",
+    "family": "shape",
+    "ko": "격자 그리기",
+    "en": "Grid Draw",
+    "aka": [
+      "Grid Build",
+      "격자 생성",
+      "Grid effect"
+    ],
+    "what": "가로·세로 선이 차례로 그려져 화면에 격자가 생긴다.",
+    "why": "좌표와 모듈 구성의 기준을 알려준다.",
+    "params": "800ms; cell 48px; 선 지연 30ms",
+    "impl": "SVG 격자 선의 길이와 알파를 순차 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "가로 우선",
+      "교차 생성"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "helpx.adobe.com",
+        "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/generate-effects.html",
+        "license": "unknown"
+      },
+      {
+        "title": "airbnb/lottie-web",
+        "url": "https://github.com/airbnb/lottie-web",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R5-121"
+    ]
+  },
+  {
+    "slug": "rank-transition",
+    "family": "data",
+    "ko": "순위 재배치",
+    "en": "Rank Transition",
+    "aka": [
+      "Rank sorting transition",
+      "순위 정렬 전환",
+      "Animated sorting",
+      "Rank transition"
+    ],
+    "what": "길이와 색을 유지한 항목들이 서로 자리를 바꾸어 새 정렬 순서로 놓인다.",
+    "why": "누가 올라가고 내려갔는지 추적한다.",
+    "params": "750ms, 지연 25ms, 행 간격 28px, cubicInOut",
+    "impl": "ID별 목표 행 좌표를 구하고 마크와 라벨을 함께 이동한다.",
+    "runtime": "svg",
+    "variants": [
+      "막대",
+      "점 행",
+      "연결 선",
+      "서로 다른 정렬 기준"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "bost.ocks.org",
+        "url": "https://bost.ocks.org/mike/constancy/",
+        "license": "unknown"
+      },
+      {
+        "title": "Observable @d3",
+        "url": "https://observablehq.com/@d3/bar-chart-transitions/2",
+        "license": "unknown"
+      },
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      },
+      {
+        "title": "The New York Times",
+        "url": "https://www.nytimes.com/interactive/2022/02/02/upshot/tom-brady-career-stats.html",
+        "license": "unknown"
+      },
+      {
+        "title": "motion dictionary 3-type-data-ui.md#19. 순위 재배치 · Rank transition",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "R6-010",
+      "DICT-160"
+    ]
+  },
+  {
+    "slug": "stacked-grouped-transition",
+    "family": "data",
+    "ko": "누적 막대와 그룹 막대 전환",
+    "en": "Stacked-to-grouped Transition",
+    "aka": [
+      "Stacked-to-grouped bars"
+    ],
+    "what": "쌓인 막대 조각들이 옆으로 펼쳐진 뒤 공통 기준선으로 내려온다.",
+    "why": "합계와 구성 요소의 개별 크기를 연결해 비교한다.",
+    "params": "가로 이동 500ms, 세로 이동 500ms, 단계 간 100ms",
+    "impl": "각 조각의 x와 폭을 먼저 보간한 뒤 y와 높이를 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "누적에서 그룹",
+      "그룹에서 누적"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Observable @d3",
+        "url": "https://observablehq.com/@d3/stacked-to-grouped-bars",
+        "license": "unknown"
+      },
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-012"
+    ]
+  },
+  {
+    "slug": "percent-normalization",
+    "family": "data",
+    "ko": "백분율 정규화 전환",
+    "en": "Percent Normalization",
+    "aka": [
+      "Percent normalization"
+    ],
+    "what": "크기가 달랐던 누적 막대가 같은 전체 길이가 되고 내부 조각의 비율이 유지된다.",
+    "why": "절대 규모 비교에서 구성비 비교로 관점을 바꾼다.",
+    "params": "900ms, 목표 합계 100%, 축 이동 600ms, cubicInOut",
+    "impl": "항목별 합계로 나눈 길이와 공통 기준선 좌표를 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "100% 누적 막대",
+      "전체 대비 면적"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      },
+      {
+        "title": "apache/echarts",
+        "url": "https://echarts.apache.org/handbook/en/basics/release-note/5-2-0/",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R6-013"
+    ]
+  },
+  {
+    "slug": "stack-layer-addition",
+    "family": "data",
+    "ko": "누적 레이어 삽입",
+    "en": "Stack Layer Addition",
+    "aka": [
+      "Stack layer addition"
+    ],
+    "what": "새 레이어가 두께를 얻으면서 위쪽 레이어들이 연속적으로 밀려난다.",
+    "why": "전체의 증가와 새 구성 요소의 몫을 동시에 읽는다.",
+    "params": "700ms, 신규 두께 0부터, cubicInOut",
+    "impl": "모든 레이어의 누적 시작값과 끝값을 함께 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "막대 조각 삽입",
+      "면 레이어 삽입",
+      "역방향 제거"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "reuters-graphics/chart-module-stacked-area-chart",
+        "url": "https://github.com/reuters-graphics/chart-module-stacked-area-chart",
+        "license": "unknown"
+      },
+      {
+        "title": "Observable @d3",
+        "url": "https://observablehq.com/@d3/streamgraph-transitions",
+        "license": "unknown"
+      },
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-014"
+    ]
+  },
+  {
+    "slug": "waterfall-accumulation",
+    "family": "data",
+    "ko": "워터폴 순차 누적",
+    "en": "Waterfall Accumulation",
+    "aka": [
+      "Waterfall accumulation"
+    ],
+    "what": "증감 막대가 앞선 누적 끝점에서 차례로 생겨 합계 막대에 도달한다.",
+    "why": "합계가 어떤 더하기와 빼기로 만들어졌는지 이해한다.",
+    "params": "조각당 450ms, 간격 120ms, 연결선 180ms",
+    "impl": "누적 기준값을 계산하고 각 SVG 막대와 연결선을 순차 공개한다.",
+    "runtime": "svg",
+    "variants": [
+      "양수 누적",
+      "음수 차감",
+      "중간 소계"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Flourish",
+        "url": "https://flourish.studio/visualisations/",
+        "license": "unknown"
+      },
+      {
+        "title": "apache/echarts",
+        "url": "https://echarts.apache.org/handbook/en/how-to/animation/transition/",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R6-015"
+    ]
+  },
+  {
+    "slug": "interval-expansion",
+    "family": "data",
+    "ko": "구간 막대 확장",
+    "en": "Interval Expansion",
+    "aka": [
+      "Floating interval expansion"
+    ],
+    "what": "점이나 짧은 막대가 양 끝으로 벌어져 최솟값과 최댓값의 구간이 된다.",
+    "why": "단일 추정값과 값의 범위를 구분한다.",
+    "params": "650ms, 두 끝 동시 이동, cubicInOut",
+    "impl": "SVG 선의 양 끝 좌표와 중앙 표식을 독립적으로 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "범위 막대",
+      "오차 막대",
+      "신뢰구간"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "chartjs/Chart.js",
+        "url": "https://www.chartjs.org/docs/latest/configuration/animations.html",
+        "license": "MIT"
+      },
+      {
+        "title": "apache/echarts",
+        "url": "https://echarts.apache.org/handbook/en/how-to/animation/transition/",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R6-016"
+    ]
+  },
+  {
+    "slug": "pie-donut-update",
+    "family": "data",
+    "ko": "파이와 도넛 비율 갱신",
+    "en": "Pie and Donut Update",
+    "aka": [
+      "Pie and donut value update"
+    ],
+    "what": "부채꼴의 시작각과 끝각이 움직여 각 항목의 몫이 바뀐다.",
+    "why": "총합 안에서 구성비가 커지고 줄어드는 모습을 본다.",
+    "params": "800ms, 색과 순서 고정, cubicInOut",
+    "impl": "동일 항목의 두 각도와 내외 반지름을 보간해 SVG 경로를 다시 계산한다.",
+    "runtime": "svg",
+    "variants": [
+      "파이",
+      "도넛",
+      "장미도"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "apache/echarts",
+        "url": "https://echarts.apache.org/handbook/en/basics/release-note/5-2-0/",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-017"
+    ]
+  },
+  {
+    "slug": "aggregate-split-merge",
+    "family": "data",
+    "ko": "집계 분할과 합치기",
+    "en": "Aggregate Split and Merge",
+    "aka": [
+      "Aggregate split and merge",
+      "집계 마크 분할과 합치기"
+    ],
+    "what": "하나의 집계 도형이 여러 세부 도형으로 갈라지거나 세부 도형들이 하나로 모인다.",
+    "why": "집계와 세부 데이터의 포함 관계를 보여준다.",
+    "params": "1000ms, 부모 ID 대응, 면적 또는 값 합계 보존, cubicInOut",
+    "impl": "부모 도형 내부에서 자식 시작점을 정하고 목표 좌표와 크기로 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "일대다",
+      "다대일",
+      "지역별 분해",
+      "범주별 집계"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "apache/echarts",
+        "url": "https://echarts.apache.org/handbook/en/basics/release-note/5-2-0/",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-020"
+    ]
+  },
+  {
+    "slug": "donut-ring-staging",
+    "family": "data",
+    "ko": "도넛 다중 링 단계화",
+    "en": "Donut Ring Staging",
+    "aka": [
+      "Donut multi-ring staging"
+    ],
+    "what": "도넛 조각들이 여러 동심원으로 나뉜 뒤 각도와 크기를 바꾸고 한 링으로 모인다.",
+    "why": "조각의 위치 변화와 비율 변화를 분리해 추적한다.",
+    "params": "4단계 각 350ms, 링 간격 18px, cubicInOut",
+    "impl": "조각별 반지름, 중심각, 호 길이를 단계적으로 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "두 링",
+      "여러 링",
+      "역방향 복귀"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-021"
+    ]
+  },
+  {
+    "slug": "point-to-point-build",
+    "family": "data",
+    "ko": "점에서 점으로 선 생성",
+    "en": "Point-to-point Construction",
+    "aka": [
+      "Progressive point-to-point construction"
+    ],
+    "what": "이전 점에서 출발한 다음 점이 실제 값의 위치로 움직이며 선이 이어진다.",
+    "why": "데이터가 순서대로 쌓여 추세가 생기는 과정을 보여준다.",
+    "params": "전체 4000ms, 점 간격 전체시간/N, linear",
+    "impl": "점별 출현 시간을 정하고 이전 점 좌표에서 목표 좌표로 보간해 연결선을 갱신한다.",
+    "runtime": "svg",
+    "variants": [
+      "시계열",
+      "누적 측정",
+      "다중 계열 순차 생성"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "chartjs/Chart.js",
+        "url": "https://www.chartjs.org/docs/latest/samples/animations/progressive-line.html",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R6-023"
+    ]
+  },
+  {
+    "slug": "streaming-chart",
+    "family": "data",
+    "ko": "실시간 차트 흐름",
+    "en": "Streaming Chart",
+    "aka": [
+      "Streaming chart scroll"
+    ],
+    "what": "새 표본이 오른쪽에 붙고 기존 선과 눈금이 왼쪽으로 밀리며 오래된 표본이 사라진다.",
+    "why": "최근 변화가 계속 갱신되는 실시간 상태를 느낀다.",
+    "params": "표본 간 500ms, 창 30개, linear, 축 고정",
+    "impl": "Canvas 좌표를 시간 창 기준으로 다시 계산하고 전체 이동을 보간한다.",
+    "runtime": "canvas",
+    "variants": [
+      "스파크라인",
+      "심전도식 선",
+      "이동 막대"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "vega/vega",
+        "url": "https://vega.github.io/vega/docs/event-streams/",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "title": "d3/d3-transition",
+        "url": "https://d3js.org/d3-transition",
+        "license": "ISC"
+      }
+    ],
+    "from": [
+      "R6-025"
+    ]
+  },
+  {
+    "slug": "line-chart-race",
+    "family": "data",
+    "ko": "선 차트 레이스",
+    "en": "Line Chart Race",
+    "aka": [
+      "Line chart race",
+      "Horserace chart"
+    ],
+    "what": "시간을 따라 선이 늘어나고 각 선의 끝점과 라벨이 움직이며 경쟁 순위가 바뀐다.",
+    "why": "지금의 선두와 과거의 추세를 함께 읽는다.",
+    "params": "시점당 500ms, 끝점 크기 5px, linear, 마지막 정지 1000ms",
+    "impl": "시간별 선을 누적하고 끝점 및 라벨 좌표를 값에 맞춰 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "전체 축",
+      "누적 공개",
+      "이동 시간 창"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Flourish",
+        "url": "https://flourish.studio/blog/line-chart-race/",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-026"
+    ]
+  },
+  {
+    "slug": "bump-rank-reveal",
+    "family": "data",
+    "ko": "순위 곡선 전개",
+    "en": "Bump Chart Reveal",
+    "aka": [
+      "Bump rank timeline",
+      "순위 곡선 타임라인",
+      "Bump chart animation"
+    ],
+    "what": "항목들의 순위 선이 시간에 따라 위아래로 교차하며 새로운 구간이 드러난다.",
+    "why": "절대 값보다 순위 교체와 지속 시간을 강조한다.",
+    "params": "구간당 600ms, 순위 간격 24px, linear 공개",
+    "impl": "시간별 순위 좌표로 선을 만들고 현재 구간의 경로와 끝 라벨을 공개한다.",
+    "runtime": "svg",
+    "variants": [
+      "상위 N 범프",
+      "굵기 유지",
+      "면 레이어 범프"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Flourish",
+        "url": "https://flourish.studio/blog/line-chart-race/",
+        "license": "unknown"
+      },
+      {
+        "title": "the-pudding/pop-love-songs",
+        "url": "https://github.com/the-pudding/pop-love-songs",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R6-027"
+    ]
+  },
+  {
+    "slug": "confidence-band-reveal",
+    "family": "data",
+    "ko": "불확실성 띠 공개",
+    "en": "Confidence Band Reveal",
+    "aka": [
+      "Confidence-band reveal"
+    ],
+    "what": "추정선 주변의 반투명 띠가 시간 순서로 펼쳐지거나 폭을 바꾼다.",
+    "why": "추세와 함께 추정의 범위를 읽는다.",
+    "params": "1200ms, opacity 0.2, linear, 중앙선과 같은 진행률",
+    "impl": "상한과 하한 SVG 경로를 구성하고 공통 클립 경계로 공개한다.",
+    "runtime": "svg",
+    "variants": [
+      "신뢰구간",
+      "예측구간",
+      "범위 갱신"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "reuters-graphics/chart-module-polling-lines",
+        "url": "https://github.com/reuters-graphics/chart-module-polling-lines",
+        "license": "unknown"
+      },
+      {
+        "title": "chartjs/Chart.js",
+        "url": "https://www.chartjs.org/docs/latest/configuration/animations.html",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R6-029"
+    ]
+  },
+  {
+    "slug": "streamgraph-baseline-shift",
+    "family": "data",
+    "ko": "스트림그래프 기준선 이동",
+    "en": "Streamgraph Baseline Shift",
+    "aka": [
+      "Streamgraph baseline shift"
+    ],
+    "what": "동일 레이어들이 두께를 유지하거나 갱신하면서 중앙 기준선과 누적 기준선 사이로 이동한다.",
+    "why": "면 레이어의 모양과 기준선 선택이 어떻게 다른지 보여준다.",
+    "params": "900ms, 레이어 순서 고정, cubicInOut",
+    "impl": "각 x 표본의 기준 오프셋을 보간해 모든 레이어 경계를 함께 이동한다.",
+    "runtime": "svg",
+    "variants": [
+      "중앙 정렬",
+      "0 기준 누적",
+      "wiggle 기준"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "Observable @d3",
+        "url": "https://observablehq.com/@d3/streamgraph-transitions",
+        "license": "unknown"
+      },
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-030"
+    ]
+  },
+  {
+    "slug": "bubble-time-series",
+    "family": "data",
+    "ko": "시간별 버블 차트",
+    "en": "Animated Bubble Time Series",
+    "aka": [
+      "Animated bubble time series",
+      "시간별 거품 차트",
+      "Rosling bubble chart",
+      "Gapminder chart"
+    ],
+    "what": "각 거품의 x와 y 위치 및 면적이 시간별 값에 맞춰 함께 바뀐다.",
+    "why": "여러 지표의 발전 경로와 규모 변화를 동시에 본다.",
+    "params": "연도당 500ms, linear, 면적 비례 반지름, 연도 표시 1개",
+    "impl": "국가 ID별 x, y, 면적을 보간하고 반지름은 면적의 제곱근으로 계산한다.",
+    "runtime": "svg",
+    "variants": [
+      "국가 발전",
+      "기업 성장",
+      "인구 면적"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Observable @mbostock",
+        "url": "https://observablehq.com/@mbostock/the-wealth-health-of-nations",
+        "license": "unknown"
+      },
+      {
+        "title": "vizabi/bubblechart",
+        "url": "https://github.com/vizabi/bubblechart",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-036"
+    ]
+  },
+  {
+    "slug": "motion-trails",
+    "family": "data",
+    "ko": "데이터 이동 잔상",
+    "en": "Motion Trails",
+    "aka": [
+      "Persistent motion trails",
+      "데이터 이동 잔상 경로",
+      "Timestamped trip tails",
+      "시간표 경로 꼬리"
+    ],
+    "what": "움직이는 점 뒤에 지나온 좌표가 선이나 옅은 점으로 남는다.",
+    "why": "최종 위치뿐 아니라 이동 방향과 과거 경로를 읽는다.",
+    "params": "꼬리 20표본, opacity 0.3, 표본 간 100ms, 이동 linear",
+    "impl": "점 ID별 최근 좌표를 보관하고 시간에 따라 투명도가 낮아지는 경로를 그린다.",
+    "runtime": "svg",
+    "variants": [
+      "전체 궤적",
+      "짧은 꼬리",
+      "시간에 따른 감쇠",
+      "지도 이동 경로"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Flourish",
+        "url": "https://app.flourish.studio/@flourish/scatter",
+        "license": "unknown"
+      },
+      {
+        "title": "Flourish",
+        "url": "https://flourish.studio/blog/make-arrow-plots/",
+        "license": "unknown"
+      },
+      {
+        "title": "Flourish",
+        "url": "https://helpcenter.flourish.studio/hc/en-us/articles/9196682333199-Sports-template-player-animations",
+        "license": "unknown"
+      },
+      {
+        "title": "visgl/deck.gl",
+        "url": "https://deck.gl/docs/api-reference/geo-layers/trips-layer",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R6-041",
+      "R6-071"
+    ]
+  },
+  {
+    "slug": "change-arrows",
+    "family": "data",
+    "ko": "변화 방향 화살표",
+    "en": "Connected Change Arrows",
+    "aka": [
+      "Connected change arrows"
+    ],
+    "what": "기준 위치에 남은 점에서 새 위치로 선이 늘어나고 화살촉이 끝을 따라 움직인다.",
+    "why": "변화의 방향과 크기를 동시에 읽는다.",
+    "params": "900ms, 선폭 1.5px, 화살촉 6px, cubicInOut",
+    "impl": "이전 점을 고정하고 현재 점까지의 SVG 선과 marker 위치를 갱신한다.",
+    "runtime": "svg",
+    "variants": [
+      "두 시점 비교",
+      "여러 시점 연쇄",
+      "성장 벡터"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Flourish",
+        "url": "https://flourish.studio/blog/make-arrow-plots/",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-042"
+    ]
+  },
+  {
+    "slug": "chart-filter-fade",
+    "family": "data",
+    "ko": "차트 필터 페이드",
+    "en": "Chart Filter Fade",
+    "aka": [
+      "Chart filter fade",
+      "필터 항목 출입"
+    ],
+    "what": "조건을 벗어난 점과 선이 흐려지고 새 조건의 항목이 나타난다.",
+    "why": "조건을 바꾸면 어떤 데이터가 남는지 구분한다.",
+    "params": "350ms, opacity 1에서 0, linear, 축 고정",
+    "impl": "조건별 대상 SVG 그룹의 opacity를 보간하고 종료 후 가시성을 갱신한다.",
+    "runtime": "svg",
+    "variants": [
+      "점 필터",
+      "계열 숨김",
+      "범주 공개"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      },
+      {
+        "title": "chartjs/Chart.js",
+        "url": "https://www.chartjs.org/docs/latest/configuration/animations.html",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R6-043"
+    ]
+  },
+  {
+    "slug": "beeswarm-settling",
+    "family": "data",
+    "ko": "비즈웜 정착",
+    "en": "Beeswarm Settling",
+    "aka": [
+      "Beeswarm settling",
+      "비즈웜 충돌 정착"
+    ],
+    "what": "같은 값 근처의 점들이 서로 밀려 겹치지 않는 띠로 정착한다.",
+    "why": "개별 항목과 분포 밀도를 함께 읽는다.",
+    "params": "1000ms, 점 반지름 4px, 충돌 여백 1px, 감쇠 0.4",
+    "impl": "값 축의 목표 위치를 고정하고 수직 충돌을 풀어 Canvas 점 좌표를 갱신한다.",
+    "runtime": "canvas",
+    "variants": [
+      "수평 비즈웜",
+      "수직 비즈웜",
+      "범주별 띠"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "d3/d3-force",
+        "url": "https://d3js.org/d3-force/simulation",
+        "license": "ISC"
+      },
+      {
+        "title": "the-pudding/pop-love-songs",
+        "url": "https://github.com/the-pudding/pop-love-songs",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R6-044"
+    ]
+  },
+  {
+    "slug": "histogram-rebin",
+    "family": "data",
+    "ko": "히스토그램 구간 재분배",
+    "en": "Histogram Rebinning",
+    "aka": [
+      "Histogram bin redistribution"
+    ],
+    "what": "구간 경계가 바뀌면 막대 폭과 높이가 변하고 포함된 점들이 새 구간으로 이동한다.",
+    "why": "구간 선택에 따라 분포 모양이 달라짐을 이해한다.",
+    "params": "1000ms, 구간 수 10에서 20, cubicInOut, 값 축 고정",
+    "impl": "표본의 구간 대응을 다시 계산하고 경계와 막대 크기를 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "구간 수 변경",
+      "구간 폭 변경",
+      "점에서 빈 집계"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "reuters-graphics/chart-module-countryRankingStrips",
+        "url": "https://github.com/reuters-graphics/chart-module-countryRankingStrips",
+        "license": "unknown"
+      },
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-045"
+    ]
+  },
+  {
+    "slug": "unit-aggregate-transition",
+    "family": "data",
+    "ko": "개별 단위와 집계 면 전환",
+    "en": "Unit-to-aggregate Transition",
+    "aka": [
+      "Individual-to-aggregate continuum"
+    ],
+    "what": "개별 점들이 데이터 구간 안에 모여 연속적인 막대나 면의 윤곽을 이룬다.",
+    "why": "개별 사례가 전체 분포와 추세를 만든다는 것을 보여준다.",
+    "params": "이동 900ms, 집계 면 공개 400ms, 점당 면적 고정",
+    "impl": "구간별 단위 좌표로 이동한 뒤 집계 경계를 공개하고 점 사이 빈틈을 줄인다.",
+    "runtime": "svg",
+    "variants": [
+      "점에서 누적 면",
+      "점에서 막대",
+      "집계에서 사례 공개"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "the-pudding/pop-love-songs",
+        "url": "https://github.com/the-pudding/pop-love-songs",
+        "license": "MIT"
+      },
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-050"
+    ]
+  },
+  {
+    "slug": "sankey-ribbon-grow",
+    "family": "data",
+    "ko": "생키 리본 성장",
+    "en": "Sankey Ribbon Growth",
+    "aka": [
+      "Sankey ribbon growth",
+      "생키 리본 순차 생성"
+    ],
+    "what": "흐름 리본이 출발 노드에서 도착 노드 방향으로 자라며 단계별 네트워크를 드러낸다.",
+    "why": "흐름의 방향과 단계 구조를 순서대로 이해한다.",
+    "params": "열당 600ms, 열 간 150ms, linear, 최종 폭은 값 비례",
+    "impl": "SVG 리본 경로를 출발점 기준 클립으로 공개하고 노드를 단계별로 나타낸다.",
+    "runtime": "svg",
+    "variants": [
+      "왼쪽에서 오른쪽",
+      "분기 순서",
+      "기여도 순서"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "d3/d3-sankey",
+        "url": "https://github.com/d3/d3-sankey",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "title": "the-pudding/sankey-nba",
+        "url": "https://github.com/the-pudding/sankey-nba",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R6-052"
+    ]
+  },
+  {
+    "slug": "sankey-reflow",
+    "family": "data",
+    "ko": "생키 흐름 재배치",
+    "en": "Sankey Reflow",
+    "aka": [
+      "Sankey value and node reflow",
+      "생키 수치와 노드 재배치"
+    ],
+    "what": "흐름량이 바뀌면 리본 두께와 노드 높이가 변하고 연결 끝점이 함께 이동한다.",
+    "why": "흐름량 변화와 전체 분배의 변화를 함께 읽는다.",
+    "params": "1000ms, 노드 폭 24px, 간격 8px, cubicInOut",
+    "impl": "전후 노드 경계와 리본 제어점을 ID로 대응해 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "시점별 흐름",
+      "노드 순서 변경",
+      "분기 비율 변경"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "d3/d3-sankey",
+        "url": "https://github.com/d3/d3-sankey",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "title": "apache/echarts",
+        "url": "https://echarts.apache.org/handbook/en/basics/release-note/5-2-0/",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R6-053"
+    ]
+  },
+  {
+    "slug": "ribbon-particle-transition",
+    "family": "data",
+    "ko": "흐름 리본과 입자 전환",
+    "en": "Ribbon-to-particle Transition",
+    "aka": [
+      "Flow-band-to-particle decomposition",
+      "흐름 리본과 입자 분해"
+    ],
+    "what": "넓은 흐름 띠가 같은 경로를 따라 이동하는 여러 단위 점으로 분해된다.",
+    "why": "집계된 흐름량과 그 안의 개별 사례를 연결한다.",
+    "params": "리본 페이드 400ms, 입자 등장 500ms, 이동 2500ms, 1점당 단위 명시",
+    "impl": "띠 내부에 값 비례 개수의 점을 배치하고 띠와 점의 opacity를 교차 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "면적 흐름에서 단위 흐름",
+      "단위에서 집계 복귀"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "d3/d3-sankey",
+        "url": "https://github.com/d3/d3-sankey",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "title": "The New York Times",
+        "url": "https://www.nytimes.com/interactive/2018/03/19/upshot/race-class-white-and-black-men.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-055"
+    ]
+  },
+  {
+    "slug": "force-layout-settling",
+    "family": "data",
+    "ko": "포스 레이아웃 정착",
+    "en": "Force-directed Layout Settling",
+    "aka": [
+      "Force layout relaxation"
+    ],
+    "what": "노드들이 연결선과 서로의 힘에 따라 움직이다가 진동이 줄며 안정된 배치에 멈춘다.",
+    "why": "연결 관계가 공간적인 구조로 드러나는 과정을 본다.",
+    "params": "alpha 1, alphaMin 0.001, alphaDecay 약 0.0228, velocityDecay 0.4; 재현 약 5000ms, 고정 300 tick",
+    "impl": "Canvas에서 링크 힘, 반발력과 감쇠를 계산하고 고정된 시간 간격으로 좌표를 갱신한다.",
+    "runtime": "canvas",
+    "variants": [
+      "연결 그래프",
+      "충돌 원",
+      "중심 인력"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "d3/d3-force",
+        "url": "https://d3js.org/d3-force/simulation",
+        "license": "ISC"
+      },
+      {
+        "title": "vega/vega",
+        "url": "https://vega.github.io/vega/examples/force-directed-layout/",
+        "license": "BSD-3-Clause"
+      }
+    ],
+    "from": [
+      "R6-056"
+    ]
+  },
+  {
+    "slug": "temporal-network",
+    "family": "data",
+    "ko": "시간별 네트워크 변화",
+    "en": "Temporal Network Transition",
+    "aka": [
+      "Temporal network birth and death",
+      "시간별 네트워크 생성과 소멸"
+    ],
+    "what": "노드와 연결선이 시간에 따라 나타나거나 사라지고 남은 노드들이 새 연결에 맞춰 재배치된다.",
+    "why": "관계망의 성장과 해체를 시간 흐름으로 이해한다.",
+    "params": "시점당 1200ms, 출입 페이드 300ms, 기존 좌표 유지",
+    "impl": "이전 좌표를 유지한 상태에서 노드와 링크를 갱신하고 새 목표 배치를 보간한다.",
+    "runtime": "canvas",
+    "variants": [
+      "인물 관계 변화",
+      "거래망 변화",
+      "연도별 네트워크"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Observable @d3",
+        "url": "https://observablehq.com/@d3/temporal-force-directed-graph",
+        "license": "unknown"
+      },
+      {
+        "title": "d3/d3-force",
+        "url": "https://d3js.org/d3-force/simulation",
+        "license": "ISC"
+      }
+    ],
+    "from": [
+      "R6-057"
+    ]
+  },
+  {
+    "slug": "tree-expand-collapse",
+    "family": "data",
+    "ko": "트리 펼침과 접힘",
+    "en": "Tree Expand and Collapse",
+    "aka": [
+      "Collapsible tree expansion",
+      "트리 가지 펼침과 접힘"
+    ],
+    "what": "부모 노드에서 자식 노드와 연결선이 퍼져 나오거나 부모 위치로 접혀 사라진다.",
+    "why": "상하위 구조와 포함 관계를 이해한다.",
+    "params": "650ms, 자식 시작점 부모 위치, cubicInOut, 깊이 간격 120px",
+    "impl": "노드의 이전 부모 좌표와 목표 트리 좌표를 보간하고 연결선 끝점을 갱신한다.",
+    "runtime": "svg",
+    "variants": [
+      "계층 공개",
+      "하위 가지 접기",
+      "단계별 탐색"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Observable @d3",
+        "url": "https://observablehq.com/@d3/collapsible-tree",
+        "license": "unknown"
+      },
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      },
+      {
+        "title": "the-pudding/sankey-nba",
+        "url": "https://github.com/the-pudding/sankey-nba",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R6-058"
+    ]
+  },
+  {
+    "slug": "tree-reroot",
+    "family": "data",
+    "ko": "트리 루트 재배치",
+    "en": "Tree Re-rooting",
+    "aka": [
+      "Tree focus and re-rooting",
+      "트리 초점과 루트 재배치"
+    ],
+    "what": "선택한 노드가 중심으로 이동하고 연결된 가지들이 새 방향과 위치로 펼쳐진다.",
+    "why": "같은 관계망을 다른 중심에서 이해한다.",
+    "params": "900ms, 중심 이동 40%화면 이내, cubicInOut",
+    "impl": "노드 ID를 유지하고 새 루트의 목표 트리 좌표로 노드와 연결선을 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "방사 재루트",
+      "수평 재루트",
+      "가지 중심 이동"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      },
+      {
+        "title": "the-pudding/sankey-nba",
+        "url": "https://github.com/the-pudding/sankey-nba",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R6-059"
+    ]
+  },
+  {
+    "slug": "treemap-resize",
+    "family": "data",
+    "ko": "트리맵 면적 갱신",
+    "en": "Treemap Resizing",
+    "aka": [
+      "Stable treemap resizing"
+    ],
+    "what": "직사각형들이 가급적 이웃 관계를 유지하면서 면적을 늘리거나 줄인다.",
+    "why": "구성 항목의 규모 변화를 공간적 맥락과 함께 비교한다.",
+    "params": "1000ms, 타일 ID 고정, cubicInOut, 내부 여백 1px",
+    "impl": "안정된 타일 배치의 전후 x, y, 폭, 높이를 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "예산 구성",
+      "연도별 지출",
+      "시장 점유율"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Observable @d3",
+        "url": "https://observablehq.com/@d3/animated-treemap",
+        "license": "unknown"
+      },
+      {
+        "title": "apache/echarts",
+        "url": "https://echarts.apache.org/handbook/en/basics/release-note/5-2-0/",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R6-061"
+    ]
+  },
+  {
+    "slug": "axis-rescale",
+    "family": "data",
+    "ko": "축 범위 전환",
+    "en": "Axis Rescaling",
+    "aka": [
+      "Axis rescale choreography",
+      "축 재범위 전환",
+      "Animated axes",
+      "Small-multiple scale alignment",
+      "소형 차트 축 맞춤"
+    ],
+    "what": "눈금과 격자선이 새 범위의 위치로 이동하고 필요한 눈금이 나타나거나 사라진다.",
+    "why": "데이터 변화와 화면 축척 변화를 구분한다.",
+    "params": "700ms, 눈금 5개, cubicInOut, 신규 눈금 페이드 250ms",
+    "impl": "전후 스케일로 같은 눈금값의 위치를 계산하고 데이터 좌표와 함께 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "범위 확대",
+      "범위 축소",
+      "동적 최대값",
+      "소형 차트 공통 축 맞춤"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      },
+      {
+        "title": "apache/echarts",
+        "url": "https://echarts.apache.org/handbook/en/how-to/animation/transition/",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "Flourish",
+        "url": "https://flourish.studio/blog/line-chart-race/",
+        "license": "unknown"
+      },
+      {
+        "title": "reuters-graphics/chart-module-india-covid-cartogram",
+        "url": "https://github.com/reuters-graphics/chart-module-india-covid-cartogram",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-062",
+      "R6-085"
+    ]
+  },
+  {
+    "slug": "linear-log-transition",
+    "family": "data",
+    "ko": "선형과 로그 좌표 전환",
+    "en": "Linear-to-log Transition",
+    "aka": [
+      "Linear-to-log substrate transition"
+    ],
+    "what": "점과 눈금이 선형 위치에서 로그 위치로 비선형적으로 이동한다.",
+    "why": "축 체계가 바뀌면 분포가 어떻게 달라지는지 본다.",
+    "params": "1100ms, 값은 양수, cubicInOut, 축 제목 교체 300ms",
+    "impl": "동일 값의 선형 화면 좌표와 로그 화면 좌표를 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "선형에서 로그",
+      "로그에서 선형",
+      "로그 밑 변경"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-063"
+    ]
+  },
+  {
+    "slug": "color-encoding-transition",
+    "family": "data",
+    "ko": "데이터 색상 전환",
+    "en": "Color Encoding Transition",
+    "aka": [
+      "Animated mark color encoding",
+      "마크 색상 인코딩 전환"
+    ],
+    "what": "위치가 고정된 데이터 마크의 색이 새 수치나 분류의 색으로 변한다.",
+    "why": "위치 변화를 섞지 않고 범주와 수치 변화만 읽는다.",
+    "params": "650ms, linear, RGB 또는 지각 색 공간 보간",
+    "impl": "같은 데이터 항목의 이전 색과 목표 색을 계산해 fill을 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "수치 색",
+      "범주 색",
+      "선 색",
+      "면 색",
+      "달력 히트맵",
+      "행렬 히트맵",
+      "범례 색상 동기화"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "d3/d3-interpolate",
+        "url": "https://d3js.org/d3-interpolate",
+        "license": "ISC"
+      },
+      {
+        "title": "chartjs/Chart.js",
+        "url": "https://www.chartjs.org/docs/latest/configuration/animations.html",
+        "license": "MIT"
+      },
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-065"
+    ]
+  },
+  {
+    "slug": "hypothetical-outcome-cycle",
+    "family": "data",
+    "ko": "가상 결과 프레임 순환",
+    "en": "Hypothetical Outcome Plot Cycling",
+    "aka": [
+      "Hypothetical outcome plot cycling",
+      "HOPs"
+    ],
+    "what": "같은 축 위에 가능한 결과의 선이나 점이 한 프레임씩 바뀐다.",
+    "why": "분포의 폭과 가능한 결과의 다양성을 반복 관찰한다.",
+    "params": "프레임 간 500ms, 표본 50개, 전환 0ms, 마지막 반복",
+    "impl": "고정 시드로 분포 표본을 생성하고 timer 또는 타임라인으로 표본 프레임을 교체한다.",
+    "runtime": "canvas",
+    "variants": [
+      "시계열 결과",
+      "점 분포",
+      "카테고리 막대"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "vega/vega",
+        "url": "https://vega.github.io/vega/examples/hypothetical-outcome-plots/",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "title": "vega/vega",
+        "url": "https://vega.github.io/vega/docs/event-streams/",
+        "license": "BSD-3-Clause"
+      }
+    ],
+    "from": [
+      "R6-067"
+    ]
+  },
+  {
+    "slug": "uncertainty-needle",
+    "family": "data",
+    "ko": "불확실성 바늘 움직임",
+    "en": "Uncertainty Needle Motion",
+    "aka": [
+      "Forecast uncertainty needle motion",
+      "예측 불확실성 바늘 움직임"
+    ],
+    "what": "예측 바늘이 중심값 주변의 서로 다른 위치로 반복 움직인다.",
+    "why": "고정된 결과가 아니라 불확실한 범위의 예측임을 느낀다.",
+    "params": "표본 갱신 400ms, 이동 250ms, 범위는 분포 기반, cubicInOut",
+    "impl": "예측 분포에서 표본 값을 얻어 SVG 바늘의 회전각 또는 위치를 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "바늘",
+      "수평 점",
+      "확률 눈금"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "Observable",
+        "url": "https://old.observablehq.com/blog/effective-animation",
+        "license": "unknown"
+      },
+      {
+        "title": "vega/vega",
+        "url": "https://vega.github.io/vega/examples/hypothetical-outcome-plots/",
+        "license": "BSD-3-Clause"
+      }
+    ],
+    "from": [
+      "R6-068"
+    ]
+  },
+  {
+    "slug": "density-field-animation",
+    "family": "data",
+    "ko": "시공간 밀도장 재생",
+    "en": "Spatiotemporal Density Animation",
+    "aka": [
+      "Spatiotemporal density field"
+    ],
+    "what": "연속 색 면의 밝은 영역이 시간에 따라 이동하거나 넓어지고 좁아진다.",
+    "why": "개별 점 대신 공간적 집중과 이동 패턴을 본다.",
+    "params": "시점당 500ms, linear, 색 범위 고정, 밀도 반경 24px",
+    "impl": "Canvas 격자에 시점별 밀도를 계산하고 같은 격자 셀 값과 색을 보간한다.",
+    "runtime": "canvas",
+    "variants": [
+      "기상장",
+      "이동 밀도",
+      "조류 분포"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Reuters Graphics",
+        "url": "https://www.reuters.com/graphics/HEALTH-BIRDFLU/MIGRATION/movaqmblrva/",
+        "license": "unknown"
+      },
+      {
+        "title": "Observable",
+        "url": "https://old.observablehq.com/blog/effective-animation",
+        "license": "unknown"
+      },
+      {
+        "title": "vega/vega",
+        "url": "https://vega.github.io/vega/docs/event-streams/",
+        "license": "BSD-3-Clause"
+      }
+    ],
+    "from": [
+      "R6-078"
+    ]
+  },
+  {
+    "slug": "map-event-accumulation",
+    "family": "data",
+    "ko": "지도 사건 누적",
+    "en": "Map Event Accumulation",
+    "aka": [
+      "Geographic event accumulation",
+      "지도 사건 누적 출현"
+    ],
+    "what": "시간 순서에 따라 지도 위의 새로운 장소 표식이 늘어나며 이전 표식은 남는다.",
+    "why": "발생 지역과 확산 순서를 동시에 이해한다.",
+    "params": "전체 6000ms, 등장 150ms, 반지름 3px, 시각 linear",
+    "impl": "사건 시각을 재생 시간과 비교해 해당 위치의 표식을 순차 공개한다.",
+    "runtime": "svg",
+    "variants": [
+      "점포 확산",
+      "발생 사건",
+      "시간별 누적"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Observable",
+        "url": "https://old.observablehq.com/blog/effective-animation",
+        "license": "unknown"
+      },
+      {
+        "title": "vega/vega",
+        "url": "https://vega.github.io/vega/docs/event-streams/",
+        "license": "BSD-3-Clause"
+      }
+    ],
+    "from": [
+      "R6-079"
+    ]
+  },
+  {
+    "slug": "cartogram-transition",
+    "family": "data",
+    "ko": "카토그램 재배열",
+    "en": "Cartogram Transition",
+    "aka": [
+      "Geographic cartogram rearrangement",
+      "지도 카토그램 재배열"
+    ],
+    "what": "지역들이 지리적 위치에서 격자나 수치 면적의 위치로 이동하며 동일 지역의 색과 이름이 남는다.",
+    "why": "지리 크기와 데이터 규모의 차이를 연결한다.",
+    "params": "1200ms, 지역 ID 고정, cubicInOut, 라벨 페이드 250ms",
+    "impl": "지역별 지리 중심과 카토그램 중심을 대응하고 형태 크기를 함께 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "격자 카토그램",
+      "원 카토그램",
+      "수치 면적 카토그램"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "apache/echarts",
+        "url": "https://echarts.apache.org/handbook/en/basics/release-note/5-2-0/",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "reuters-graphics/chart-module-india-covid-cartogram",
+        "url": "https://github.com/reuters-graphics/chart-module-india-covid-cartogram",
+        "license": "unknown"
+      },
+      {
+        "title": "Observable",
+        "url": "https://old.observablehq.com/blog/effective-animation",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-084"
+    ]
+  },
+  {
+    "slug": "freeze-replay",
+    "family": "data",
+    "ko": "중요 시점 정지와 재생",
+    "en": "Freeze and Replay",
+    "aka": [
+      "Data checkpoint freeze and replay",
+      "데이터 중요 시점 정지와 재생"
+    ],
+    "what": "진행 중인 차트가 특정 시점에 멈춰 주석을 보여주고 같은 구간을 다시 재생한다.",
+    "why": "짧게 지나간 중요 변화와 전후 관계를 다시 읽는다.",
+    "params": "정지 1800ms, 재생 구간 2000ms, 반복 1회, linear",
+    "impl": "공유 시간 진행률을 정지한 뒤 지정된 시간 구간부터 다시 증가시킨다.",
+    "runtime": "gsap",
+    "variants": [
+      "결정적 추월",
+      "급격한 변화",
+      "주석 뒤 반복"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Flourish",
+        "url": "https://helpcenter.flourish.studio/hc/en-us/articles/8761554645263-Sports-race-an-overview",
+        "license": "unknown"
+      },
+      {
+        "title": "vega/vega",
+        "url": "https://vega.github.io/vega/docs/event-streams/",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-098"
+    ]
+  },
+  {
+    "slug": "track-data-race",
+    "family": "data",
+    "ko": "트랙 데이터 레이스",
+    "en": "Track Data Race",
+    "aka": [
+      "Sports track data race",
+      "트랙 경로 데이터 레이스"
+    ],
+    "what": "경쟁자 표식들이 각자의 시간 기록에 맞춰 트랙을 이동하고 순위가 바뀐다.",
+    "why": "기록 차이를 실제 경주의 거리와 속도로 체감한다.",
+    "params": "전체 8000ms, 체크포인트 선형 보간, 선두 카메라 배율 2, 결승 정지 1500ms",
+    "impl": "거리와 기록 시간의 대응을 계산해 SVG 트랙상의 위치를 재생 시각으로 갱신한다.",
+    "runtime": "svg",
+    "variants": [
+      "육상",
+      "수영",
+      "항해",
+      "커스텀 SVG 트랙"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Flourish",
+        "url": "https://helpcenter.flourish.studio/hc/en-us/articles/8761554645263-Sports-race-an-overview",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-099"
+    ]
+  },
+  {
+    "slug": "formation-transition",
+    "family": "data",
+    "ko": "전술 배치 전환",
+    "en": "Formation Transition",
+    "aka": [
+      "Sports formation transition",
+      "스포츠 전술 배치 전환"
+    ],
+    "what": "선수 표식들이 경기장 위 이전 배치에서 새 배치로 움직이며 이동 궤적이 남는다.",
+    "why": "팀의 이동과 공간 배치 변화의 원리를 이해한다.",
+    "params": "1500ms, cubicInOut, 표식 반지름 6px, 궤적 opacity 0.3",
+    "impl": "선수 ID별 경기장 좌표를 보간하고 이전 위치에서 현재 위치로 경로를 그린다.",
+    "runtime": "svg",
+    "variants": [
+      "축구",
+      "농구",
+      "공격 전개",
+      "수비 전환"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Flourish",
+        "url": "https://helpcenter.flourish.studio/hc/en-us/articles/9196682333199-Sports-template-player-animations",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-100"
+    ]
+  },
+  {
+    "slug": "boxplot-update",
+    "family": "data",
+    "ko": "상자수염 요약 갱신",
+    "en": "Boxplot Update",
+    "aka": [
+      "Boxplot summary transition"
+    ],
+    "what": "중앙값 선, 상자 양 끝과 수염 끝점이 새 분포의 요약값 위치로 함께 이동한다.",
+    "why": "분포의 중심과 흩어짐이 어떻게 달라졌는지 비교한다.",
+    "params": "900ms, cubicInOut, 이상치 페이드 250ms, 값 축 고정",
+    "impl": "사분위수, 중앙값과 수염의 SVG 좌표를 보간하고 이상치 ID를 대응한다.",
+    "runtime": "svg",
+    "variants": [
+      "분포 시점 전환",
+      "범주 비교",
+      "이상치 추가"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "chartjs/Chart.js",
+        "url": "https://www.chartjs.org/docs/latest/configuration/animations.html",
+        "license": "MIT"
+      },
+      {
+        "title": "apache/echarts",
+        "url": "https://echarts.apache.org/handbook/en/how-to/animation/transition/",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "Flourish",
+        "url": "https://app.flourish.studio/@flourish/scatter",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R6-101"
+    ]
+  },
+  {
+    "slug": "matrix-sort",
+    "family": "data",
+    "ko": "행렬 행과 열 정렬",
+    "en": "Matrix Row-column Sorting",
+    "aka": [
+      "Matrix row-column sorting"
+    ],
+    "what": "셀들이 같은 행과 열 묶음을 유지하면서 새 순서의 격자 위치로 이동한다.",
+    "why": "상관 묶음이나 군집 구조가 정렬을 통해 드러나는 것을 본다.",
+    "params": "1000ms, 행·열 ID 고정, cubicInOut, 셀 간격 16px",
+    "impl": "행과 열의 이전 순위 및 목표 순위를 구해 각 셀 x와 y를 함께 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "상관 행렬",
+      "연결 행렬",
+      "히트맵 정렬"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      },
+      {
+        "title": "MIT Visualization Group",
+        "url": "https://vis.csail.mit.edu/pubs/animated-vega-lite/",
+        "license": "unknown"
+      },
+      {
+        "title": "apache/echarts",
+        "url": "https://echarts.apache.org/handbook/en/how-to/animation/transition/",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R6-103"
+    ]
+  },
+  {
+    "slug": "table-to-chart",
+    "family": "data",
+    "ko": "표에서 차트로 전환",
+    "en": "Table-to-chart Transition",
+    "aka": [
+      "Table values become chart marks",
+      "표의 값에서 차트 마크 생성"
+    ],
+    "what": "표의 수치가 강조된 뒤 같은 항목의 위치에서 막대나 점이 나오며 차트로 정렬된다.",
+    "why": "원자료의 행과 시각적 마크가 어떻게 대응하는지 이해한다.",
+    "params": "수치 강조 300ms, 마크 생성 500ms, 재배치 700ms, cubicInOut",
+    "impl": "행 ID별 HTML 위치를 SVG 시작 좌표로 사용하고 목표 차트 좌표와 크기를 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "표에서 막대",
+      "표에서 점",
+      "표와 차트 연결"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      },
+      {
+        "title": "uwdata/gemini",
+        "url": "https://github.com/uwdata/gemini",
+        "license": "BSD-3-Clause"
+      }
+    ],
+    "from": [
+      "R6-104"
+    ]
+  },
+  {
+    "slug": "anchored-substitution",
+    "family": "explainer",
+    "ko": "고정 위치 교대 표시",
+    "en": "Anchored Substitution",
+    "aka": [
+      "One-at-a-time substitution",
+      "한 항목씩 교대 표시",
+      "ShowSubmobjectsOneByOne"
+    ],
+    "what": "동일 자리에 다음 항목이 나타나면 이전 항목은 사라진다.",
+    "why": "연속 상태를 한 위치에서 비교한다.",
+    "params": "항목 유지 600 ms, 전환 120 ms, steps",
+    "impl": "공통 앵커의 그룹 중 현재 항목만 표시한다.",
+    "runtime": "gsap",
+    "variants": [
+      "하드 교대",
+      "짧은 교차 페이드"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/creation.py",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R7-007"
+    ]
+  },
+  {
+    "slug": "plane-transformation",
+    "family": "explainer",
+    "ko": "평면 공간 변형",
+    "en": "Plane Transformation",
+    "aka": [
+      "Complex-plane mapping",
+      "복소 평면 변환",
+      "ComplexHomotopy",
+      "ApplyComplexFunction",
+      "Linear matrix deformation",
+      "행렬 공간 변형",
+      "ApplyMatrix",
+      "Basis vector tracking",
+      "기저 벡터 추적",
+      "Whole-plane transformation with reference",
+      "기준 격자를 남긴 공간 변형"
+    ],
+    "what": "평면의 격자와 도형이 같은 좌표 변환을 받아 회전하거나 휘어진다. 기준 격자와 기저 벡터를 함께 남겨 변형 전후를 비교할 수 있다.",
+    "why": "함수나 행렬이 공간 전체에 미치는 작용을 보여준다.",
+    "params": "1600ms, 격자 간격 40px, power2.inOut, 기준 격자 불투명도 0.2.",
+    "impl": "Canvas에서 각 점의 원래 좌표와 변환 좌표를 보간하고 격자 곡선과 기저 벡터를 같은 변환으로 갱신한다.",
+    "runtime": "canvas",
+    "variants": [
+      "행렬 선형 변환",
+      "전단",
+      "복소 함수 비선형 변환",
+      "기저 벡터 추적",
+      "기준 격자 유지"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/movement.py",
+        "license": "MIT"
+      },
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/transform.py",
+        "license": "MIT"
+      },
+      {
+        "title": "3b1b/videos",
+        "url": "https://github.com/3b1b/videos/blob/master/_2016/eola/chapter3.py",
+        "license": "CC-BY-NC-SA-4.0"
+      }
+    ],
+    "from": [
+      "R7-024",
+      "R7-040",
+      "R7-053",
+      "R7-055"
+    ]
+  },
+  {
+    "slug": "copy-to-target",
+    "family": "explainer",
+    "ko": "복사본 이동 도출",
+    "en": "Copy-to-target Derivation",
+    "aka": [
+      "Copy-to-target derivation",
+      "TransformFromCopy",
+      "Matrix column to geometry link",
+      "행렬 열과 도형 연결"
+    ],
+    "what": "원본은 남아 있고 복사본이 이동하거나 변형되어 결과 위치에 도착한다.",
+    "why": "결과가 어디에서 유래했는지 추적한다.",
+    "params": "900 ms, 이동 200 px, smooth",
+    "impl": "원본의 별도 SVG 인스턴스를 만들고 위치 및 점 좌표를 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "복사 이동",
+      "복사 모프",
+      "복사 축소",
+      "행렬 열에서 기저 좌표로 이동"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/transform.py",
+        "license": "MIT"
+      },
+      {
+        "title": "3b1b/videos",
+        "url": "https://github.com/3b1b/videos/blob/master/_2016/eola/chapter3.py",
+        "license": "CC-BY-NC-SA-4.0"
+      }
+    ],
+    "from": [
+      "R7-032",
+      "R7-056"
+    ]
+  },
+  {
+    "slug": "annotation-tracking",
+    "family": "explainer",
+    "ko": "주석 위치 추적",
+    "en": "Annotation Tracking",
+    "aka": [
+      "Relative-position annotation tracking",
+      "상대 위치 주석 추적",
+      "MaintainPositionRelativeTo",
+      "Specification label lock-on",
+      "제품 사양 라벨 고정",
+      "Spatially contiguous animated labels",
+      "공간적으로 붙인 설명"
+    ],
+    "what": "라벨과 지시선이 움직이는 대상의 위치를 따라가며 일정한 간격이나 연결 관계를 유지한다.",
+    "why": "대상이 움직여도 설명과 대상의 대응을 유지한다.",
+    "params": "대상과 라벨 간격 12px, 추적 지연 0ms, 갱신 60fps, 라벨 등장 250ms.",
+    "impl": "대상의 화면 좌표에 고정 오프셋을 더해 HTML 라벨을 배치하고 SVG 지시선 끝점을 같은 프레임에 갱신한다.",
+    "runtime": "svg",
+    "variants": [
+      "도형 옆 라벨",
+      "제품 부품 추적",
+      "3D 앵커 화면 투영",
+      "지시선 동반"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/updaters/update.py",
+        "license": "MIT"
+      },
+      {
+        "title": "Apple",
+        "url": "https://www.apple.com/apple-events/",
+        "license": "unknown"
+      },
+      {
+        "title": "Richard E. Mayer / Wiley",
+        "url": "https://onlinelibrary.wiley.com/doi/10.1111/jcal.12197",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R7-050",
+      "R7-116",
+      "R7-120"
+    ]
+  },
+  {
+    "slug": "vector-tip-to-tail",
+    "family": "explainer",
+    "ko": "벡터 끝잇기",
+    "en": "Vector Tip-to-tail Construction",
+    "aka": [
+      "Vector tip-to-tail construction",
+      "벡터 끝잇기 구성"
+    ],
+    "what": "두 성분 벡터를 차례로 늘리고 두 번째를 첫 번째의 끝으로 옮겨 합벡터를 만든다.",
+    "why": "벡터 합과 선형 결합을 공간적으로 이해한다.",
+    "params": "단계 700 ms, 간격 250 ms, smooth",
+    "impl": "SVG 화살표의 길이와 시작점을 순차 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "두 벡터 합",
+      "가중 벡터 합"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "3b1b/videos",
+        "url": "https://github.com/3b1b/videos/blob/master/_2016/eola/chapter3.py",
+        "license": "CC-BY-NC-SA-4.0"
+      }
+    ],
+    "from": [
+      "R7-054"
+    ]
+  },
+  {
+    "slug": "secant-to-tangent",
+    "family": "explainer",
+    "ko": "할선에서 접선으로 수렴",
+    "en": "Secant-to-tangent Convergence",
+    "aka": [
+      "Secant-to-tangent convergence",
+      "할선의 접선 수렴"
+    ],
+    "what": "곡선 위 두 점 사이 간격이 줄고 두 점을 잇는 선이 접선에 가까워진다.",
+    "why": "순간 변화율을 극한 과정으로 이해한다.",
+    "params": "2200 ms, 점 간격 160~4 px, easeInOut",
+    "impl": "함수 샘플 두 점과 자체 할선 좌표를 동시에 SVG로 갱신한다.",
+    "runtime": "svg",
+    "variants": [
+      "한쪽 접근",
+      "양쪽 접근"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "3b1b/videos",
+        "url": "https://github.com/3b1b/videos/blob/master/_2017/eoc/chapter2.py",
+        "license": "CC-BY-NC-SA-4.0"
+      }
+    ],
+    "from": [
+      "R7-057"
+    ]
+  },
+  {
+    "slug": "delta-triangle-shrink",
+    "family": "explainer",
+    "ko": "변화량 삼각형 축소",
+    "en": "Delta Triangle Shrink",
+    "aka": [
+      "Delta triangle shrink"
+    ],
+    "what": "곡선 근처의 가로와 세로 변화량 선분이 함께 작아지고 라벨이 계속 붙어 있다.",
+    "why": "작은 입력 변화와 출력 변화의 비율을 읽는다.",
+    "params": "1800 ms, 길이 120~8 px, smooth",
+    "impl": "공통 delta 변수로 SVG 직각 선분과 라벨 위치를 갱신한다.",
+    "runtime": "svg",
+    "variants": [
+      "삼각형",
+      "직사각형 변화량"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "3b1b/videos",
+        "url": "https://github.com/3b1b/videos/blob/master/_2017/eoc/chapter2.py",
+        "license": "CC-BY-NC-SA-4.0"
+      }
+    ],
+    "from": [
+      "R7-058"
+    ]
+  },
+  {
+    "slug": "fourier-winding",
+    "family": "explainer",
+    "ko": "푸리에 회전 좌표",
+    "en": "Fourier Winding",
+    "aka": [
+      "Fourier rotating-frame explanation",
+      "푸리에 회전 좌표 해설"
+    ],
+    "what": "신호의 점들이 회전 좌표에 감기고 중심 또는 평균점이 주파수에 따라 움직인다.",
+    "why": "특정 주파수 성분이 왜 드러나는지 이해한다.",
+    "params": "주기 3000 ms, 주파수 1~5 Hz, linear",
+    "impl": "자체 복소 회전 좌표와 평균 좌표를 계산해 canvas로 그린다.",
+    "runtime": "canvas",
+    "variants": [
+      "감기기",
+      "평균점 추적",
+      "주파수 스윕"
+    ],
+    "useful": 3,
+    "sources": [
+      {
+        "title": "3b1b/videos",
+        "url": "https://github.com/3b1b/videos/blob/master/_2018/fourier.py",
+        "license": "CC-BY-NC-SA-4.0"
+      }
+    ],
+    "from": [
+      "R7-060"
+    ]
+  },
+  {
+    "slug": "harmonic-assembly",
+    "family": "explainer",
+    "ko": "고조파 성분 합성",
+    "en": "Harmonic Component Assembly",
+    "aka": [
+      "Harmonic component assembly"
+    ],
+    "what": "서로 다른 사인 파형이 쌓이거나 겹쳐지고 합성 결과가 점차 목표 파형에 가까워진다.",
+    "why": "복잡한 파형이 단순 성분의 합임을 이해한다.",
+    "params": "성분 추가 800 ms, 성분 5개, smooth",
+    "impl": "독립 파형과 누적 합 파형을 계산해 SVG 점 배열을 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "성분 누적",
+      "성분 분리",
+      "개수 증가"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "3b1b/videos",
+        "url": "https://github.com/3b1b/videos/blob/master/_2019/diffyq/part2/fourier_series.py",
+        "license": "CC-BY-NC-SA-4.0"
+      }
+    ],
+    "from": [
+      "R7-061"
+    ]
+  },
+  {
+    "slug": "character-gaze-reaction",
+    "family": "explainer",
+    "ko": "캐릭터 시선과 반응",
+    "en": "Character Gaze and Reaction",
+    "aka": [
+      "Character gaze and reaction"
+    ],
+    "what": "캐릭터의 눈이 대상 쪽으로 움직이고 표정이나 몸 자세가 바뀐다.",
+    "why": "관객의 시선을 안내하고 질문 또는 놀라움을 전달한다.",
+    "params": "시선 300 ms, 표정 450 ms, easeOut",
+    "impl": "새로 만든 캐릭터 SVG의 눈 위치와 표정 패스를 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "바라보기",
+      "생각하기",
+      "놀라기"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "3b1b/videos",
+        "url": "https://github.com/3b1b/videos/blob/master/custom/characters/pi_creature_animations.py",
+        "license": "CC-BY-NC-SA-4.0"
+      },
+      {
+        "title": "3b1b/videos",
+        "url": "https://github.com/3b1b/videos/blob/master/custom/characters/pi_creature.py",
+        "license": "CC-BY-NC-SA-4.0"
+      }
+    ],
+    "from": [
+      "R7-063"
+    ]
+  },
+  {
+    "slug": "speech-bubble-reveal",
+    "family": "explainer",
+    "ko": "말풍선 생성과 접힘",
+    "en": "Speech Bubble Reveal",
+    "aka": [
+      "Speech bubble build and collapse"
+    ],
+    "what": "말풍선이 캐릭터 옆에서 커지고 문장이 나타난 뒤 말풍선과 문장이 함께 사라진다.",
+    "why": "질문과 답변의 화자를 명확히 한다.",
+    "params": "풍선 450 ms, 텍스트 250 ms, 유지 1800 ms",
+    "impl": "독립 SVG 말풍선의 scale과 HTML 텍스트 opacity를 순차 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "질문 풍선",
+      "생각 풍선",
+      "답변 풍선"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "3b1b/videos",
+        "url": "https://github.com/3b1b/videos/blob/master/custom/characters/pi_creature_animations.py",
+        "license": "CC-BY-NC-SA-4.0"
+      }
+    ],
+    "from": [
+      "R7-064"
+    ]
+  },
+  {
+    "slug": "character-articulation",
+    "family": "explainer",
+    "ko": "캐릭터 관절 동작",
+    "en": "Character Articulation",
+    "aka": [
+      "Flat character articulation",
+      "평면 캐릭터 관절 동작"
+    ],
+    "what": "평면 캐릭터의 팔과 다리가 관절을 중심으로 돌아 움직이고 몸이 함께 반응한다.",
+    "why": "개념을 인물의 행동으로 쉽게 따라간다.",
+    "params": "800 ms, 관절 회전 ±20 deg, easeInOut",
+    "impl": "새로 만든 SVG 신체 그룹의 transform-origin과 회전을 보간한다.",
+    "runtime": "gsap",
+    "variants": [
+      "인사",
+      "달리기",
+      "도구 사용"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Kurzgesagt",
+        "url": "https://kurzgesagt.org/what-we-do?visit=videos",
+        "license": "unknown"
+      },
+      {
+        "title": "TED-Ed",
+        "url": "https://ed.ted.com/lessons/making-a-ted-ed-lesson-animating-zombies-with-puppets",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R7-066"
+    ]
+  },
+  {
+    "slug": "process-loop",
+    "family": "explainer",
+    "ko": "행위자 과정 순환",
+    "en": "Process Loop",
+    "aka": [
+      "Process loop with actors"
+    ],
+    "what": "작은 캐릭터나 아이콘이 단계별 위치로 이동하며 처리 과정이 순환한다.",
+    "why": "과정에서 각 역할과 순서를 기억한다.",
+    "params": "주기 4000 ms, 단계 4개, 단계 휴지 400 ms",
+    "impl": "SVG 경로 이동과 단계 강조를 공통 타임라인에 배치한다.",
+    "runtime": "gsap",
+    "variants": [
+      "생물 과정",
+      "생산 과정"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Kurzgesagt",
+        "url": "https://kurzgesagt.org/what-we-do?visit=videos",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R7-068"
+    ]
+  },
+  {
+    "slug": "globe-map-morph",
+    "family": "explainer",
+    "ko": "지구에서 지도 투영 모프",
+    "en": "Globe-to-map Projection Morph",
+    "aka": [
+      "Globe-to-map projection morph"
+    ],
+    "what": "구의 표면 격자가 펼쳐져 평면 지도로 변하고 지역의 형태가 함께 바뀐다.",
+    "why": "평면 투영에서 왜 왜곡이 생기는지 알게 한다.",
+    "params": "2200 ms, 격자 24x12, easeInOut",
+    "impl": "자체 구면 좌표와 평면 투영 좌표를 WebGL 정점으로 보간한다.",
+    "runtime": "webgl",
+    "variants": [
+      "메르카토르",
+      "등적 투영"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "Vox",
+        "url": "https://www.youtube.com/watch?v=kIID5FDi2JQ",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R7-069"
+    ]
+  },
+  {
+    "slug": "map-outline-comparison",
+    "family": "data",
+    "ko": "지역 윤곽 이동 비교",
+    "en": "Geographic Outline Comparison",
+    "aka": [
+      "Geographic outline comparison"
+    ],
+    "what": "한 지역의 윤곽을 다른 위치로 옮기거나 실제 비율로 바꿔 겹쳐 비교한다.",
+    "why": "지도의 위치나 투영에 따른 크기 오해를 확인한다.",
+    "params": "1200 ms, 기준 영역 고정, easeInOut",
+    "impl": "새로 만든 지리 윤곽 SVG의 위치와 비율을 보간한다.",
+    "runtime": "svg",
+    "variants": [
+      "겹쳐 비교",
+      "나란히 비교"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Vox",
+        "url": "https://www.youtube.com/watch?v=kIID5FDi2JQ",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R7-070"
+    ]
+  },
+  {
+    "slug": "timeline-scrub",
+    "family": "explainer",
+    "ko": "타임라인 사건 전개",
+    "en": "Timeline Scrub",
+    "aka": [
+      "Timeline scrub narrative",
+      "타임라인 따라 역사 전개"
+    ],
+    "what": "시간축의 재생 표시가 이동하고 해당 시점의 사건 카드나 지도 상태가 나타난다.",
+    "why": "사건의 선후와 변화를 시간에 연결한다.",
+    "params": "사건 간격 1200 ms, 표시 이동 500 ms, easeInOut",
+    "impl": "시간값으로 축 표시와 사건 그룹의 opacity를 동기 갱신한다.",
+    "runtime": "gsap",
+    "variants": [
+      "사건 카드",
+      "지도 상태"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Vox",
+        "url": "https://www.youtube.com/watch?v=kIID5FDi2JQ",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R7-072"
+    ]
+  },
+  {
+    "slug": "code-result-alternation",
+    "family": "explainer",
+    "ko": "코드와 실행 결과 교대",
+    "en": "Code-result Alternation",
+    "aka": [
+      "Code and result alternation"
+    ],
+    "what": "코드 일부가 강조된 뒤 결과 화면으로 전환되고 다시 해당 코드로 돌아온다.",
+    "why": "작성한 코드가 어떤 결과를 만드는지 연결한다.",
+    "params": "코드 1600 ms, 결과 1200 ms, 전환 300 ms",
+    "impl": "코드와 자체 결과 그룹을 교차 표시하며 같은 의미 키를 강조한다.",
+    "runtime": "gsap",
+    "variants": [
+      "전체 화면 교대",
+      "분할 화면 동시 표시"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Fireship",
+        "url": "https://www.youtube.com/watch?v=vKJpN5FAeF4",
+        "license": "unknown"
+      },
+      {
+        "title": "motion-canvas/motion-canvas",
+        "url": "https://motioncanvas.io/docs/code/",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R7-075"
+    ]
+  },
+  {
+    "slug": "memory-allocation",
+    "family": "explainer",
+    "ko": "메모리 조각 할당",
+    "en": "Memory Chunk Allocation",
+    "aka": [
+      "Memory chunk allocation"
+    ],
+    "what": "큰 데이터 블록이 여러 조각으로 나뉘고 메모리 슬롯이 대응 색으로 차례로 채워진다.",
+    "why": "파일과 메모리의 크기 차이 및 할당 관계를 이해한다.",
+    "params": "분할 600 ms, 슬롯 160 ms, 슬롯 8개",
+    "impl": "자체 블록 레이아웃의 간격을 넓히고 대응 슬롯 fill을 갱신한다.",
+    "runtime": "gsap",
+    "variants": [
+      "순차 로딩",
+      "슬롯 재사용",
+      "해제 후 할당"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "motion-canvas/examples",
+        "url": "https://github.com/motion-canvas/examples/blob/master/examples/asset-code/src/scenes/memory.tsx",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R7-083"
+    ]
+  },
+  {
+    "slug": "lighting-pass-accumulation",
+    "family": "explainer",
+    "ko": "조명 패스 누적",
+    "en": "Lighting Pass Accumulation",
+    "aka": [
+      "Lighting pass accumulation"
+    ],
+    "what": "개별 조명의 결과가 차례로 나타나고 합쳐져 최종 화면이 밝아진다.",
+    "why": "최종 영상이 여러 빛의 기여로 구성됨을 이해한다.",
+    "params": "패스 700 ms, 간격 200 ms, 합성 additive",
+    "impl": "자체 생성한 빛 레이어를 canvas에서 투명도와 가산 합성으로 겹친다.",
+    "runtime": "canvas",
+    "variants": [
+      "개별 빛 표시",
+      "누적 합성",
+      "패스 분리"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "motion-canvas/examples",
+        "url": "https://github.com/motion-canvas/examples/blob/master/examples/deferred-lighting/src/scenes/lightComposite.tsx",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R7-087"
+    ]
+  },
+  {
+    "slug": "step-panel-walkthrough",
+    "family": "explainer",
+    "ko": "단계와 패널 동기 진행",
+    "en": "Step-panel Walkthrough",
+    "aka": [
+      "Step-and-code panel walkthrough",
+      "단계 목록과 코드 패널 시연"
+    ],
+    "what": "단계 목록의 활성 표시가 이동하고 옆 코드 패널의 대응 내용이 바뀐다.",
+    "why": "현재 단계와 전체 진행 위치를 동시에 안다.",
+    "params": "단계 2000 ms, 표시 이동 300 ms, 코드 전환 650 ms",
+    "impl": "자체 단계 키로 목록 강조와 코드 토큰 이동을 같은 타임라인에 묶는다.",
+    "runtime": "gsap",
+    "variants": [
+      "단계 자동 진행",
+      "기능 목록 진행"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "code-hike/codehike",
+        "url": "https://codehike.org/docs/layouts/spotlight",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R7-096"
+    ]
+  },
+  {
+    "slug": "source-result-mapping",
+    "family": "explainer",
+    "ko": "원본과 변환 결과 연결",
+    "en": "Source-to-result Mapping",
+    "aka": [
+      "Source-to-compiled representation",
+      "소스에서 변환 결과 공개"
+    ],
+    "what": "원본 코드가 유지된 채 반대편에 변환된 코드가 나타나고 대응 부분이 연결된다.",
+    "why": "고수준 표현이 실행 가능한 형태로 바뀌는 관계를 이해한다.",
+    "params": "공개 700 ms, 대응 강조 350 ms, easeOut",
+    "impl": "자체 양쪽 코드 렌더와 의미 대응표로 토큰 강조를 순차 갱신한다.",
+    "runtime": "gsap",
+    "variants": [
+      "타입 제거",
+      "문법 낮추기",
+      "언어 비교"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "code-hike/codehike",
+        "url": "https://codehike.org/docs/code/transpile",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R7-097"
+    ]
+  },
+  {
+    "slug": "step-recap",
+    "family": "explainer",
+    "ko": "단계 요약 재구성",
+    "en": "Step Recap Reconstruction",
+    "aka": [
+      "Active step recap reconstruction"
+    ],
+    "what": "과정이 끝난 뒤 각 단계의 작은 그림이 차례로 모여 하나의 요약 흐름이 된다.",
+    "why": "전체 과정과 단계 사이 관계를 다시 정리한다.",
+    "params": "단계 450 ms, 간격 100 ms, 최종 유지 2000 ms, easeOut",
+    "impl": "자체 단계 그룹을 요약 좌표로 이동하고 연결선을 그린다.",
+    "runtime": "gsap",
+    "variants": [
+      "가로 요약",
+      "원형 요약",
+      "첫 상태와 마지막 상태 비교"
+    ],
+    "useful": 1,
+    "sources": [
+      {
+        "title": "Richard E. Mayer / Wiley",
+        "url": "https://onlinelibrary.wiley.com/doi/10.1111/jcal.12197",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R7-125"
+    ]
+  },
+  {
+    "slug": "seek-arrive",
+    "family": "generative",
+    "ko": "목표 추적과 도착",
+    "en": "Seek and Arrive",
+    "aka": [],
+    "what": "움직이는 개체가 목표를 향해 방향을 바꾸고 가까워질수록 속도를 줄인다.",
+    "why": "목표 지향 행동과 감속의 이유를 보여준다.",
+    "params": "1800ms, 최고속도 120px/s, 감속반경 90px, 최대가속도 220px/s²",
+    "impl": "canvas에서 목표 거리로 희망 속도를 정하고 제한된 조향력으로 움직인다.",
+    "runtime": "canvas",
+    "variants": [
+      "추적",
+      "도착",
+      "경로 복귀"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "nature-of-code/noc-book-2",
+        "url": "https://natureofcode.com/autonomous-agents/",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R8-036"
+    ]
+  },
+  {
+    "slug": "inverse-kinematics-reach",
+    "family": "explainer",
+    "ko": "역기구학 뻗기",
+    "en": "Inverse Kinematics Reach",
+    "aka": [],
+    "what": "캐릭터의 손이나 발이 목표로 이동하면 연결된 관절이 순서대로 굽혀진다.",
+    "why": "목표 위치와 몸의 움직임 사이의 관계를 보여준다.",
+    "params": "1600ms, 목표 이동 0.7단위, 관절 3개, 반복 8회, cubic.inOut",
+    "impl": "WebGL에서 목표까지의 거리 오차를 줄이는 관절각을 계산하고 시간별 결과를 재생한다.",
+    "runtime": "webgl",
+    "variants": [
+      "손 뻗기",
+      "발 접지",
+      "로봇 팔"
+    ],
+    "useful": 2,
+    "sources": [
+      {
+        "title": "mrdoob/three.js",
+        "url": "https://threejs.org/examples/#webgl_animation_skinning_ik",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R8-105"
+    ]
+  }
+]

@@ -1,0 +1,9150 @@
+[
+{
+"key": "easingcurves",
+"family": "principles",
+"core": "easing-curves",
+"rows": [
+{
+"id": "R1a-001",
+"en": "Easing curves",
+"ko": "이징 곡선",
+"aka": [],
+"family": "principles",
+"what": "같은 거리의 움직임을 가속, 감속, 등속 곡선으로 다르게 진행한다.",
+"why": "속도 변화로 무게와 성격을 전달한다.",
+"params": "재현 기본값 제안: 400ms, 등장 power3.out, 이동 power2.inOut, 퇴장 power2.in",
+"impl": "정규화 진행값에 이징 함수를 적용해 transform을 보간한다.",
+"runtime": "gsap",
+"variants": [
+"linear",
+"sine",
+"power1~4",
+"expo",
+"circ",
+"back",
+"bounce",
+"elastic",
+"steps"
+],
+"core": "easing-curves",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/adapters/gsap-easing-and-stagger.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-013",
+"en": "Easing Curves",
+"ko": "이징 곡선",
+"aka": [
+"speed-graph-power-family",
+"keyframe-velocity-to-cubic-bezier",
+"easy-ease-linear-hold-usage",
+"custom-function-ease"
+],
+"family": "principles",
+"what": "같은 거리를 가는 물체가 천천히 출발하거나 빠르게 멈추며 다른 속도감을 만든다.",
+"why": "동작의 확신과 부드러움과 무게를 구분한다.",
+"params": "기본 600ms, power3.out, CSS 대안 cubic-bezier(0.2,0.7,0.2,1)",
+"impl": "HTML transform 진행값에 GSAP 코어 이즈나 CSS cubic-bezier를 적용한다.",
+"runtime": "gsap",
+"variants": [
+"power 계열",
+"등속",
+"사인",
+"지수",
+"사용자 함수 곡선"
+],
+"core": "easing-curves",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#speed-graph-power-family",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#keyframe-velocity-to-cubic-bezier",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#easy-ease-linear-hold-usage",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#custom-function-ease",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+},
+{
+"id": "R3-001",
+"en": "Easing Curves",
+"ko": "이징 곡선",
+"aka": [],
+"family": "principles",
+"what": "같은 거리를 이동하되 출발과 도착의 속도가 곡선에 따라 달라진다.",
+"why": "부드러움과 무게감을 조절한다.",
+"params": "도감 기본값: 600ms, ease-out, cubic-bezier(0.22,1,0.36,1)",
+"impl": "CSS timing-function 또는 GSAP ease로 시간 진행률을 변환한다",
+"runtime": "gsap",
+"variants": [
+"linear",
+"ease-in",
+"ease-out",
+"ease-in-out",
+"back",
+"steps"
+],
+"core": "easing-curves",
+"sources": [
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/foundation/motion-ui",
+"repo": "foundation/motion-ui",
+"license": "MIT"
+},
+{
+"url": "https://github.com/jamiebuilds/tailwindcss-animate",
+"repo": "jamiebuilds/tailwindcss-animate",
+"license": "MIT"
+},
+{
+"url": "https://github.com/michalsnik/aos",
+"repo": "michalsnik/aos",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "anticipation",
+"family": "principles",
+"core": "anticipation",
+"rows": [
+{
+"id": "R1a-002",
+"en": "Anticipation",
+"ko": "예비 동작",
+"aka": [],
+"family": "principles",
+"what": "본 이동 직전에 반대 방향으로 짧게 당기거나 압축한다.",
+"why": "다음 행동의 방향과 힘을 예고한다.",
+"params": "재현 기본값 제안: 예비 100ms, 역방향 8px, 본동작 400ms",
+"impl": "반대 방향 키프레임 다음에 본 이동을 연결한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "anticipation",
+"sources": [
+{
+"url": "claude-skill:hyperframes-keyframes/SKILL.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-015",
+"en": "Anticipation",
+"ko": "예비 동작",
+"aka": [
+"anticipation-windup-chain",
+"nudge-curve"
+],
+"family": "principles",
+"what": "큰 이동이나 타격 직전에 요소가 반대 방향으로 작게 물러난다.",
+"why": "다음 행동을 예상하고 힘의 크기를 느낀다.",
+"params": "기본 준비 폭 본 이동의 10%, 준비 시간 본 이동의 20%",
+"impl": "HTML 반대 방향 키프레임 뒤에 메인 이동을 이어 붙인다.",
+"runtime": "gsap",
+"variants": [
+"누르기 준비",
+"발사 준비",
+"회전 준비"
+],
+"core": "anticipation",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#anticipation-windup-chain",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/nudge-curve.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+},
+{
+"id": "DICT-002",
+"en": "Anticipation",
+"ko": "예비동작",
+"aka": [],
+"family": "principles",
+"what": "본동작 전에 작은 준비 움직임으로 다음 행동을 예고한다.",
+"why": "",
+"params": "준비 80~140ms, 본동작 250~400ms; 준비 power1.in, 본동작 power3.out; 역방향 3~6px; 간격 0~40ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "anticipation",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#3. 디즈니 12원칙 전체",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "squashandstretch",
+"family": "principles",
+"core": "squash-stretch",
+"rows": [
+{
+"id": "R1a-003",
+"en": "Squash and stretch",
+"ko": "눌림과 늘어남",
+"aka": [],
+"family": "principles",
+"what": "접촉 순간 납작해지고 반대 축으로 늘어난 뒤 원형으로 돌아온다.",
+"why": "재질의 탄성과 충격을 전달한다.",
+"params": "재현 기본값 제안: 압축 120ms, scaleY 0.9, scaleX 1/0.9, 복구 500ms",
+"impl": "두 축의 역비례 스케일로 면적을 보존한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "squash-stretch",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/hw-box-label/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/hw-callout-circle/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/press-release-spring.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-emoji-pop/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+},
+{
+"id": "R2-005",
+"en": "Squash and stretch",
+"ko": "스쿼시와 스트레치",
+"aka": [],
+"family": "principles",
+"what": "착지 순간 세로로 눌리고 가로로 퍼지며 도약 때 길어진다.",
+"why": "탄력과 충격을 강조한다.",
+"params": "공식: CustomBounce squash 0. 권장 squash 2, scaleX 1.25, scaleY 0.8, 위치 동작 1000ms.",
+"impl": "하단 기준으로 scaleX와 scaleY를 반대로 바꾸며 y 착지 시점과 동기화한다.",
+"runtime": "gsap",
+"variants": [
+"착지 압축",
+"도약 신장",
+"아이콘 팝"
+],
+"core": "squash-stretch",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Eases/CustomBounce/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+}
+]
+},
+{
+"id": "R5-104",
+"en": "Squash and Stretch",
+"ko": "찌그러짐과 늘어남",
+"aka": [],
+"family": "principles",
+"what": "속도와 충돌에 따라 대상이 길어지거나 납작해졌다 돌아온다.",
+"why": "질량과 탄성을 보여준다.",
+"params": "제안 기본값: 충돌 120ms; sx 1.2; sy 0.83; 복원 250ms",
+"impl": "면적을 근사 보존하는 두 축 배율을 속도·충돌에 연결한다.",
+"runtime": "gsap",
+"variants": [
+"착지 압축",
+"이동 신장"
+],
+"core": "squash-stretch",
+"sources": [
+{
+"url": "https://motiondesign.school/blog/animation-principles-in-logo-animation/",
+"repo": "motiondesign.school",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+},
+{
+"id": "DICT-001",
+"en": "Squash and Stretch",
+"ko": "찌그러뜨리기와 늘이기",
+"aka": [],
+"family": "principles",
+"what": "압축·신장으로 무게·탄성·충격을 표현한다.",
+"why": "",
+"params": "압축 80~120ms, 복원 180~260ms; power2.out; scaleY:0.94, scaleX:1/0.94; 후속 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#3. 디즈니 12원칙 전체",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "arcmotion",
+"family": "principles",
+"core": "arc-motion",
+"rows": [
+{
+"id": "R1a-004",
+"en": "Arc motion",
+"ko": "곡선 이동",
+"aka": [],
+"family": "principles",
+"what": "물체가 직선 대신 곡선을 따라 이동하며 진행 방향으로 회전한다.",
+"why": "유기적인 이동과 경로를 전달한다.",
+"params": "재현 기본값 제안: 1500ms, power2.out, 경로 접선 회전; 레지스트리 carousel-path-1 기본값 speed=1; 레지스트리 carousel-path-2 기본값 speed=1; 레지스트리 carousel-path-3 기본값 speed=1; 레지스트리 carousel-path-4 기본값 speed=1; 레지스트리 carousel-path-5 기본값 speed=1",
+"impl": "베지어 곡선을 직접 샘플링해 위치와 접선 각도를 구한다.",
+"runtime": "svg",
+"variants": [],
+"core": "arc-motion",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/arc-motion-path/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/offset-path-traveler/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/carousel-path-1/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/carousel-path-2/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/carousel-path-3/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/carousel-path-4/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/carousel-path-5/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/techniques.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-020",
+"en": "Arc Motion",
+"ko": "곡선 도착",
+"aka": [
+"separate-dimensions-axis-ease",
+"nudge-curve"
+],
+"family": "principles",
+"what": "요소가 직선 대신 휘어진 호를 따라 목표에 도착한다.",
+"why": "자연스러운 던짐이나 부드러운 이동을 느낀다.",
+"params": "권장 X 700ms, Y 1000ms, 축 시간차 300ms",
+"impl": "HTML X와 Y의 이즈 및 시간을 다르게 두거나 곡선 좌표를 계산한다.",
+"runtime": "gsap",
+"variants": [
+"비대칭 축 이즈",
+"베지어 호"
+],
+"core": "arc-motion",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#separate-dimensions-axis-ease",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/nudge-curve.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "followthrough",
+"family": "principles",
+"core": "follow-through",
+"rows": [
+{
+"id": "R1a-005",
+"en": "Follow through",
+"ko": "후속 동작",
+"aka": [],
+"family": "principles",
+"what": "주요 이동이 끝난 뒤 일부 요소가 관성으로 조금 더 움직이고 멈춘다.",
+"why": "에너지와 무게를 자연스럽게 마무리한다.",
+"params": "재현 기본값 제안: 본 이동 400ms, 후속 150ms, 추가 거리 8px",
+"impl": "끝점 뒤의 작은 이동과 감쇠 복구를 순차 보간한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "follow-through",
+"sources": [
+{
+"url": "claude-skill:hyperframes-keyframes/SKILL.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "DICT-013",
+"en": "Follow Through",
+"ko": "후행 정착",
+"aka": [],
+"family": "principles",
+"what": "주동작이 멈춘 뒤 부속 움직임이 이어진다.",
+"why": "",
+"params": "80~180ms 추가; power2.out; 2~4px; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "follow-through",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#3.1 함께 쓰지만 구분해야 할 하위 개념",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "overlappingaction",
+"family": "principles",
+"core": "overlapping-action",
+"rows": [
+{
+"id": "R1a-006",
+"en": "Overlapping action",
+"ko": "겹치는 동작",
+"aka": [],
+"family": "principles",
+"what": "앞 요소가 멈추기 전에 다음 요소가 움직이기 시작한다.",
+"why": "동작이 끊기지 않고 한 흐름으로 읽힌다.",
+"params": "재현 기본값 제안: 요소 400ms, 시작 간격 80ms",
+"impl": "독립 요소의 시작 시간을 어긋나게 배치한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "overlapping-action",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/waterfall-entry.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-creative/references/motion-principles.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "DICT-014",
+"en": "Overlapping Action",
+"ko": "겹침 동작",
+"aka": [],
+"family": "principles",
+"what": "연결된 부분이 서로 다른 단계에서 움직인다.",
+"why": "",
+"params": "시작 시차 40~80ms; 250~400ms; power3.out",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "overlapping-action",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#3.1 함께 쓰지만 구분해야 할 하위 개념",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "stagger",
+"family": "principles",
+"core": "stagger",
+"rows": [
+{
+"id": "R1a-007",
+"en": "Stagger",
+"ko": "시간차 배열",
+"aka": [],
+"family": "principles",
+"what": "여러 요소가 순서 또는 중심 거리에 따라 시간차로 움직인다.",
+"why": "순서와 시각적 위계를 전달한다.",
+"params": "재현 기본값 제안: 간격 40~100ms, 총 시작차 500ms 이하; 레지스트리 stagger-cascade 기본값 stagger=60",
+"impl": "인덱스나 격자 거리로 각 요소의 지연을 계산한다.",
+"runtime": "gsap",
+"variants": [
+"정방향",
+"역방향",
+"중심에서 바깥",
+"양끝에서 중심",
+"격자 거리",
+"불균일 간격"
+],
+"core": "stagger",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/stagger-cascade/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/stagger-lattice/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/staggered-fade-up/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/text-stagger/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/adapters/gsap-easing-and-stagger.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-042",
+"en": "Stagger",
+"ko": "순차 스태거",
+"aka": [
+"range-selector-stagger-map",
+"waterfall-entry",
+"staggered-exit",
+"staggered-reveal"
+],
+"family": "principles",
+"what": "비슷한 요소들이 같은 동작을 짧은 간격으로 이어 시작한다.",
+"why": "항목의 순서와 그룹 리듬을 파악한다.",
+"params": "기본 간격 60ms, 각 400ms, power3.out",
+"impl": "HTML 반복 요소에 GSAP stagger를 적용하고 시작점과 순서를 지정한다.",
+"runtime": "gsap",
+"variants": [
+"처음부터",
+"끝부터",
+"중앙부터",
+"양끝부터",
+"폭포 진입",
+"순차 퇴장",
+"closing-qr",
+"grid-card-assemble",
+"intro-kinetic-cascade",
+"block/list",
+"block/numbered"
+],
+"core": "stagger",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/05-text-animator.md#range-selector-stagger-map",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:references/techniques.md#closing-qr",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/closing-qr/scene.css",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/closing-qr/scene.html",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/closing-qr/scene.js",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/closing-qr/template.json",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/waterfall-entry.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/grid-card-assemble.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:card-shorts/scripts/render/build_shorts.mjs",
+"repo": "local/card-shorts",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#staggered-exit",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/staggered-exit/scene.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/staggered-exit/index.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#staggered-reveal",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/template-catalog.md#intro-kinetic-cascade",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "local:ig-carousel-hub/03_templates/motion/slot-spec.md",
+"repo": "local/ig-carousel-hub",
+"license": "unknown"
+},
+{
+"url": "gongnyang/reelforge:blocks/list/block.html",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:blocks/numbered/block.html",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+},
+{
+"id": "DICT-054",
+"en": "Stagger",
+"ko": "스태거",
+"aka": [],
+"family": "principles",
+"what": "같은 계열 요소의 시작을 일정 간격으로 분산한다.",
+"why": "",
+"params": "UI 20~40ms, 영상 50~80ms; 개별 200~300ms power3.out; 그룹 총시간 확인",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "stagger",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#5. 타이밍·간격·리듬 기본기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "springovershoot",
+"family": "principles",
+"core": "spring-overshoot",
+"rows": [
+{
+"id": "R1a-008",
+"en": "Spring overshoot",
+"ko": "스프링 오버슈트",
+"aka": [],
+"family": "principles",
+"what": "목표를 한 번 지나쳤다가 감쇠하며 목표로 돌아온다.",
+"why": "탄력과 촉각적 반응을 전달한다.",
+"params": "재현 기본값 제안: 500ms, back.out(1.6), 초기 scale 0.85; 출처 기본값 spring-scale-in: 등장 360ms, 간격 95ms, cubic-bezier(0.34, 1.56, 0.64, 1)",
+"impl": "감쇠 진동 함수를 시간의 순수 함수로 샘플링한다.",
+"runtime": "gsap",
+"variants": [
+"animate-text/spring-scale-in"
+],
+"core": "spring-overshoot",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/spring-pop/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/badge-pop/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/spring-pop-entrance.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/lt-color-block/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-gradient-fill/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/spring-scale-in.json",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-014",
+"en": "Spring Overshoot",
+"ko": "탄성 오버슈트",
+"aka": [
+"value-graph-overshoot-settle",
+"elastic-amplitude-period"
+],
+"family": "principles",
+"what": "요소가 목표 위치나 크기를 잠깐 지나쳤다가 감쇠하며 돌아온다.",
+"why": "탄성과 반응성을 느낀다.",
+"params": "기본 600ms, back.out(1.4), 탄성 대안 elastic.out(1,0.3)",
+"impl": "HTML 위치나 스케일에 코어 back 또는 elastic 이즈를 적용한다.",
+"runtime": "gsap",
+"variants": [
+"단일 오버슈트",
+"다중 탄성 왕복",
+"무오버슈트 안착",
+"object/hero-overshoot-strobe"
+],
+"core": "spring-overshoot",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#value-graph-overshoot-settle",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#elastic-amplitude-period",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/object/hero-overshoot-strobe.html",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/object/hero-overshoot-strobe.meta.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+},
+{
+"id": "R2-003",
+"en": "Spring overshoot",
+"ko": "스프링 오버슈트",
+"aka": [
+"Elastic ease",
+"Damped spring"
+],
+"family": "principles",
+"what": "물체가 목표를 지나친 뒤 진폭을 줄이며 정착한다.",
+"why": "탄성과 활기를 전달한다.",
+"params": "공식: Motion bounce 0.25, mass 1, damping 10. react-spring tension 170, friction 26. 권장 시각 도달 400~700ms. GSAP elastic 기본 진폭 1, 주기 0.3(단위 정규화). Motion restSpeed 0.1, restDelta 0.01.",
+"impl": "감쇠 진동 진행률을 직접 계산해 GSAP 코어로 위치와 크기를 갱신한다.",
+"runtime": "gsap",
+"variants": [
+"탄성 이징",
+"물리 스프링",
+"시간 기반 스프링",
+"임계 감쇠"
+],
+"core": "spring-overshoot",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Eases/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/docs/react-transitions",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://motion.dev/docs/react-use-spring",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://www.react-spring.dev/docs/advanced/config",
+"repo": "pmndrs/react-spring",
+"license": "MIT"
+},
+{
+"url": "https://animejs.com/documentation/easings/spring",
+"repo": "juliangarnier/anime",
+"license": "MIT"
+},
+{
+"url": "https://github.com/motiondivision/motionone/blob/main/README.md",
+"repo": "motiondivision/motionone",
+"license": "MIT"
+},
+{
+"url": "https://github.com/Popmotion/popmotion",
+"repo": "Popmotion/popmotion",
+"license": "MIT"
+},
+{
+"url": "https://github.com/Popmotion/popmotion/blob/master/README.md",
+"repo": "Popmotion/popmotion",
+"license": "MIT"
+}
+]
+},
+{
+"id": "R3-003",
+"en": "Spring Overshoot",
+"ko": "스프링 정착",
+"aka": [
+"Elastic Settle",
+"Back Overshoot"
+],
+"family": "principles",
+"what": "요소가 목표를 살짝 지나친 뒤 흔들림이 줄며 정착한다.",
+"why": "반응성과 탄성을 느끼게 한다.",
+"params": "도감 기본값: 500ms, 초과 8%, 감쇠 진동 3회",
+"impl": "GSAP 코어의 감쇠 사인 함수로 위치를 보간한다",
+"runtime": "gsap",
+"variants": [
+"elastic",
+"back",
+"spring",
+"ElasticSlider",
+"RubberSegment",
+"WakeSlider",
+"ScrubField"
+],
+"core": "spring-overshoot",
+"sources": [
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://github.com/ibelick/motion-primitives",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/IanLunn/Hover",
+"repo": "IanLunn/Hover",
+"license": "MIT personal/open-source + paid commercial"
+}
+]
+}
+]
+},
+{
+"key": "timingandspacing",
+"family": "principles",
+"core": "timing-spacing",
+"rows": [
+{
+"id": "R1a-009",
+"en": "Timing and spacing",
+"ko": "시간과 간격",
+"aka": [],
+"family": "principles",
+"what": "같은 경로에서 프레임 사이 이동량과 정지 시간을 조절한다.",
+"why": "빠름, 무거움, 읽을 시간을 구분한다.",
+"params": "재현 기본값 제안: 빠름 150~300ms, 중간 300~500ms, 느림 800~2000ms",
+"impl": "구간별 시간과 진행량을 다르게 배분한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "timing-spacing",
+"sources": [
+{
+"url": "claude-skill:hyperframes-creative/references/motion-principles.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/dynamic-content-sequencing.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "motionhierarchy",
+"family": "principles",
+"core": "motion-hierarchy",
+"rows": [
+{
+"id": "R1a-010",
+"en": "Motion hierarchy",
+"ko": "모션 위계",
+"aka": [],
+"family": "principles",
+"what": "중요한 요소가 먼저 움직이고 보조 요소는 뒤따라 등장한다.",
+"why": "시선이 중요도 순서로 이동한다.",
+"params": "재현 기본값 제안: 주요 400ms, 보조 시작차 80ms, 최종 정지 1000ms",
+"impl": "의미상 중요도 순서로 타임라인 시작점을 배정한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "motion-hierarchy",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/beat-timeline/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-creative/references/motion-principles.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R2-013",
+"en": "Motion hierarchy",
+"ko": "모션 위계",
+"aka": [],
+"family": "principles",
+"what": "주요 대상은 크게 오래 움직이고 보조 대상은 작게 짧게 반응한다.",
+"why": "정보의 중요도와 읽는 순서를 드러낸다.",
+"params": "공식 공통 기본 없음. 권장 주동작 700ms, 보조 300ms, 자식 지연 100ms.",
+"impl": "부모와 자식의 이동량, duration, 시작 시점을 독립 타임라인으로 배분한다.",
+"runtime": "gsap",
+"variants": [
+"부모 먼저",
+"자식 먼저",
+"속성별 타이밍"
+],
+"core": "motion-hierarchy",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/GSAP/Timeline/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/docs/react-transitions",
+"repo": "motiondivision/motion",
+"license": "MIT"
+}
+]
+},
+{
+"id": "DICT-062",
+"en": "Motion hierarchy",
+"ko": "모션 위계",
+"aka": [],
+"family": "principles",
+"what": "중요도에 따라 동작의 크기·속도·순서를 다르게 준다.",
+"why": "",
+"params": "주요 350~500ms power3.out, 보조 180~250ms power2.out; 시차 60ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "motion-hierarchy",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#6. 모션 위계·코레오그래피",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "nudgecurve",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R1a-011",
+"en": "Nudge curve",
+"ko": "밀어내는 속도 곡선",
+"aka": [],
+"family": "principles",
+"what": "묶음이 느리게 출발하고 빠르게 이동한 뒤 긴 꼬리로 멈춘다.",
+"why": "자리를 만들거나 내용을 교체하는 힘을 보여준다.",
+"params": "재현 기본값 제안: 거리 배분 10/65/25%, 꼬리 시간은 출발의 3배 이상",
+"impl": "가속, 선형 이동, 긴 감속 세 구간을 연결한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/nudge-curve.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "beatlanding",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R1a-012",
+"en": "Beat landing",
+"ko": "박자에 착지",
+"aka": [],
+"family": "principles",
+"what": "이동은 박자 전에 시작하고 도착 또는 충돌이 박자에 맞는다.",
+"why": "음악과 화면의 사건이 일치한다.",
+"params": "재현 기본값 제안: 선행 40~190ms, 반응 등장 지연 0~45ms",
+"impl": "음악 앵커에서 이동 시간을 빼 시작점을 정한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "underlinedraw",
+"family": "emphasis",
+"core": "underline-draw",
+"rows": [
+{
+"id": "R1a-075",
+"en": "Underline draw",
+"ko": "밑줄 그리기",
+"aka": [],
+"family": "emphasis",
+"what": "단어 아래에 선이 한쪽 끝부터 그려져 남는다.",
+"why": "중요한 문구의 읽기를 마무리한다.",
+"params": "재현 기본값 제안: 500ms, stroke 4px, power2.out",
+"impl": "SVG dashoffset 또는 선 scaleX를 0에서 완성으로 보간한다.",
+"runtime": "svg",
+"variants": [],
+"core": "underline-draw",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/hw-underline/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/lt-accent-underline/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/css-marker-patterns.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/lt-kicker-name/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/lt-side-rule/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+},
+{
+"id": "R1b-055",
+"en": "Underline Draw",
+"ko": "마커 밑줄 그리기",
+"aka": [
+"underline-emphasis-sweep",
+"css-marker-patterns"
+],
+"family": "emphasis",
+"what": "중요한 글자 아래나 주변에 마커 선이 빠르게 그려진다.",
+"why": "특정 표현이 중요하다는 것을 알아본다.",
+"params": "권장 350ms, 선 두께 3px, power2.out",
+"impl": "SVG 밑줄이나 동그라미 path의 dashoffset을 줄인다.",
+"runtime": "svg",
+"variants": [
+"밑줄",
+"취소선",
+"동그라미",
+"이중선",
+"seal/rail-lockup-sweep",
+"block/quote"
+],
+"core": "underline-draw",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/06-shapes-strokes.md#underline-emphasis-sweep",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/seal/rail-lockup-sweep.html",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/seal/rail-lockup-sweep.meta.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/css-marker-patterns.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "local:ig-carousel-hub/03_templates/motion/slot-spec.md",
+"repo": "local/ig-carousel-hub",
+"license": "unknown"
+},
+{
+"url": "gongnyang/reelforge:blocks/quote/block.html",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+},
+{
+"id": "R3-059",
+"en": "Underline Draw",
+"ko": "밑줄 그리기",
+"aka": [],
+"family": "type",
+"what": "문장 아래 또는 위의 선이 한쪽이나 중심에서 자라난다.",
+"why": "읽어야 할 문구를 짚어 준다.",
+"params": "도감 기본값: 450ms, 선 두께 2px, scaleX 0에서 1, ease-out",
+"impl": "CSS 가상 요소의 transform-origin과 scaleX를 보간한다",
+"runtime": "css",
+"variants": [
+"underline-from",
+"overline-from",
+"underline-reveal",
+"highlighter",
+"Pointer Highlight",
+"overline-from-center",
+"overline-from-left",
+"overline-from-right",
+"overline-reveal",
+"underline-from-center",
+"underline-from-left",
+"underline-from-right"
+],
+"core": "underline-draw",
+"sources": [
+{
+"url": "https://github.com/IanLunn/Hover",
+"repo": "IanLunn/Hover",
+"license": "MIT personal/open-source + paid commercial"
+},
+{
+"url": "https://magicui.design/docs/components/highlighter",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+}
+]
+},
+{
+"id": "DICT-148",
+"en": "Underline draw",
+"ko": "밑줄 드로우",
+"aka": [],
+"family": "type",
+"what": "선이 한쪽 끝에서 다른 끝으로 그려지는 강조이다.",
+"why": "",
+"params": "250~400ms, 유지 ≥1500ms, 동시 선 1개; E, 두께 2~4px, 글자와 간격 5~8px.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "underline-draw",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 3-type-data-ui.md#07. 밑줄 드로우 · Underline draw",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "annotationcallout",
+"family": "emphasis",
+"core": "annotation-callout",
+"rows": [
+{
+"id": "R1a-076",
+"en": "Annotation callout",
+"ko": "주석 콜아웃",
+"aka": [],
+"family": "emphasis",
+"what": "대상을 둘러싼 원과 연결선이 그려지고 끝에 설명 라벨이 나타난다.",
+"why": "어느 부분을 왜 봐야 하는지 알려준다.",
+"params": "재현 기본값 제안: 원 400ms, 연결선 300ms, 라벨 200ms",
+"impl": "주석 경로를 dashoffset으로 그리고 끝점 라벨을 공개한다.",
+"runtime": "svg",
+"variants": [],
+"core": "annotation-callout",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/vox-annotate/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/hw-callout-circle/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/hw-box-label/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/hw-arrow/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/yt-circle-pointer/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/css-marker-patterns.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/telemetry-hud/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+},
+{
+"id": "R1b-082",
+"en": "Annotation Callout",
+"ko": "주석 콜아웃",
+"aka": [],
+"family": "explainer",
+"what": "대상의 실제 부분에 점이 나타나고 연결선이 설명 라벨까지 그려진다.",
+"why": "설명과 대상의 어느 부분이 연결되는지 이해한다.",
+"params": "기본 2~4행, 마크 정규화 좌표, 권장 행 간격 150ms, 선 그리기 450ms",
+"impl": "SVG 점과 연결선을 사전 정의한 대상 좌표에 두고 HTML 설명을 순차 공개한다.",
+"runtime": "svg",
+"variants": [
+"해부 행",
+"번호 주석",
+"타깃 박스",
+"anatomy-rows"
+],
+"core": "annotation-callout",
+"sources": [
+{
+"url": "gongnyang/awesome-html-scrolline-deck:references/techniques.md#anatomy-rows",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/anatomy-rows/scene.css",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/anatomy-rows/scene.html",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/anatomy-rows/scene.js",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/anatomy-rows/template.json",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+}
+]
+},
+{
+"id": "DICT-205",
+"en": "Annotation / Callout",
+"ko": "주석·콜아웃",
+"aka": [],
+"family": "emphasis",
+"what": "대상 옆의 짧은 설명과 연결선으로 의미를 붙이는 표시이다.",
+"why": "",
+"params": "선 240ms L, 라벨 150ms E, 80ms 간격, 유지 2500~5000ms H",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "annotation-callout",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#B. 공개 순서와 시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "spotlight",
+"family": "emphasis",
+"core": "spotlight",
+"rows": [
+{
+"id": "R1a-077",
+"en": "Spotlight",
+"ko": "스포트라이트",
+"aka": [],
+"family": "emphasis",
+"what": "나머지 화면이 어두워지고 대상 주변의 부드러운 구멍만 밝게 남는다.",
+"why": "복잡한 화면에서 현재 주목 대상을 격리한다.",
+"params": "재현 기본값 제안: 500ms, 어둠 opacity 0.6, feather 40px",
+"impl": "radial mask의 중심과 반경을 시간에 따라 이동한다.",
+"runtime": "css",
+"variants": [],
+"core": "spotlight",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/spotlight-card/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/yt-feather-highlight/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/code-highlight/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/device-surface-showcase.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/vignette/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+},
+{
+"id": "R1b-034",
+"en": "Spotlight",
+"ko": "움직이는 스포트라이트",
+"aka": [
+"mask-spotlight-drift",
+"spotlight-sweep"
+],
+"family": "emphasis",
+"what": "어두운 화면에서 밝게 열린 작은 영역이 이동하며 부분만 드러낸다.",
+"why": "현재 볼 지점과 탐색의 순서를 알게 된다.",
+"params": "권장 반경 화면의 20%, 이동 1400ms, 주변 opacity 0.7",
+"impl": "HTML 방사형 마스크의 중심과 반경을 진행값으로 이동한다.",
+"runtime": "gsap",
+"variants": [
+"고정 초점",
+"탐색 표류",
+"행별 초점"
+],
+"core": "spotlight",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/04-masks-mattes.md#mask-spotlight-drift",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#spotlight-sweep",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/spotlight-sweep/scene.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/spotlight-sweep/index.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "audioreactivepulse",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R1a-125",
+"en": "Audio reactive pulse",
+"ko": "오디오 반응 펄스",
+"aka": [],
+"family": "emphasis",
+"what": "소리의 저음이나 고음 세기에 맞춰 크기와 빛의 강도가 변한다.",
+"why": "음악과 화면이 하나의 사건처럼 느껴진다.",
+"params": "재현 기본값 제안: 30fps, 주파수 16밴드, scale 변화 4% 이하, glow 30% 이하",
+"impl": "미리 추출한 음량 배열을 프레임 시간으로 샘플링해 시각 속성에 매핑한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/beat-accent/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/beat-pulse-background/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/techniques.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-creative/references/audio-reactive.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:media-use/audio/references/captions/motion.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "radialspeedlines",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R1a-199",
+"en": "Radial speed lines",
+"ko": "방사 속도선",
+"aka": [],
+"family": "emphasis",
+"what": "중심에서 바깥으로 가는 선들이 짧게 뻗었다 사라진다.",
+"why": "충격과 빠른 확대의 에너지를 강조한다.",
+"params": "재현 기본값 제안: 300ms, 선 16개, 반경 60~400px",
+"impl": "방사 SVG 선의 시작과 끝 반경을 시간으로 보간한다.",
+"runtime": "svg",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/css-marker-patterns.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-137",
+"en": "Radial Speed Lines",
+"ko": "방사 속도선",
+"aka": [
+"radial-burst-lines"
+],
+"family": "emphasis",
+"what": "중심 주변의 긴 선들이 바깥으로 뻗으며 빠르게 사라진다.",
+"why": "확장과 속도와 폭발의 방향을 느낀다.",
+"params": "권장 선 16개, 450ms, 반경 80px에서 450px, expo.out",
+"impl": "SVG 중심 방사형 선의 시작과 끝 반경을 보간하고 opacity를 줄인다.",
+"runtime": "svg",
+"variants": [
+"스피드라인",
+"폭발 광선"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#radial-burst-lines",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/radial-burst-lines/scene.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/radial-burst-lines/index.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "cornerswing",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R1b-001",
+"en": "Corner Swing",
+"ko": "모서리 피벗 스윙",
+"aka": [
+"anchor-corner-swing"
+],
+"family": "emphasis",
+"what": "카드가 한 모서리를 붙잡은 채 작은 각도로 흔들리고 제자리로 돌아온다.",
+"why": "카드가 걸려 있거나 힘을 받은 듯한 물성을 느낀다.",
+"params": "권장 550ms, 회전 6도, power2.out, 피벗 좌상",
+"impl": "HTML 요소의 transform-origin을 모서리에 고정하고 rotation을 감쇠시킨다.",
+"runtime": "gsap",
+"variants": [
+"좌상",
+"우상",
+"좌하",
+"우하",
+"tilt-card"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/01-anchor-transform.md#anchor-corner-swing",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:references/techniques.md#tilt-card",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/tilt-card/scene.css",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/tilt-card/scene.html",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/tilt-card/scene.js",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/tilt-card/template.json",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "grouprigsway",
+"family": "principles",
+"core": "overlapping-action",
+"rows": [
+{
+"id": "R1b-007",
+"en": "Group Rig Sway",
+"ko": "그룹 동반 흔들림",
+"aka": [
+"null-parent-rig"
+],
+"family": "principles",
+"what": "여러 요소가 한 덩어리로 움직이면서 각각의 작은 진입 동작을 유지한다.",
+"why": "요소들이 하나의 그룹임을 알게 된다.",
+"params": "권장 그룹 주기 2400ms, 회전 2도, 자식 간격 80ms",
+"impl": "HTML 부모의 이동과 회전에 자식의 개별 스태거를 합성한다.",
+"runtime": "gsap",
+"variants": [
+""
+],
+"core": "overlapping-action",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/01-anchor-transform.md#null-parent-rig",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "pendulumdecay",
+"family": "emphasis",
+"core": "follow-through",
+"rows": [
+{
+"id": "R1b-009",
+"en": "Pendulum Decay",
+"ko": "진자 감쇠",
+"aka": [
+"pendulum-decay-swing"
+],
+"family": "emphasis",
+"what": "매달린 태그가 좌우로 흔들리며 진폭을 줄여 멈춘다.",
+"why": "무게가 있는 물체의 도착 후 잔향을 느낀다.",
+"params": "권장 시작 14도, 진폭 감쇠 0.6, 총 1600ms",
+"impl": "HTML 상단 origin으로 부호가 교대하는 rotation 키프레임을 연결한다.",
+"runtime": "gsap",
+"variants": [
+""
+],
+"core": "follow-through",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/01-anchor-transform.md#pendulum-decay-swing",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "continuoustangentmotion",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R1b-016",
+"en": "Continuous Tangent Motion",
+"ko": "접선 속도 승계",
+"aka": [
+"rolling-tension-chain",
+"scene-boundary-tangent-handoff"
+],
+"family": "principles",
+"what": "여러 정거장이나 장면을 지날 때 요소가 중간에서 멈추지 않고 같은 흐름을 잇는다.",
+"why": "분리된 단계가 하나의 연속 행동임을 느낀다.",
+"params": "권장 구간 600ms, 경계 속도 동일, 정지 홀드 0ms",
+"impl": "HTML 좌표 경로를 분할하고 경계의 위치와 진행 속도를 맞춘다.",
+"runtime": "gsap",
+"variants": [
+"정거장 연결",
+"씬 경계 연결",
+"팬 방향 승계"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#rolling-tension-chain",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#scene-boundary-tangent-handoff",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "bouncedrop",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R1b-017",
+"en": "Bounce Drop",
+"ko": "낙하 바운스",
+"aka": [
+"bounce-drop-physics",
+"drop-and-settle"
+],
+"family": "principles",
+"what": "물체가 아래로 가속해 떨어진 뒤 점점 낮게 튀어 멈춘다.",
+"why": "중력과 충돌을 느낀다.",
+"params": "권장 900ms, bounce.out, 반동 높이 40px에서 감쇠",
+"impl": "HTML y 이동에 bounce.out을 적용하거나 중력 궤적을 시간 함수로 계산한다.",
+"runtime": "gsap",
+"variants": [
+"한 번 튀기",
+"다중 바운스"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#bounce-drop-physics",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:embedded-captions/references/motion-vocabulary.md",
+"repo": "local/embedded-captions",
+"license": "unknown"
+},
+{
+"url": "claude-skill:synced/39cd27d1-5d54-43b6-b557-65596e75bccb_30aab8dd-6815-4962-a41b-a684567e027b/slack-gif-creator/SKILL.md",
+"repo": "local/claude-synced-skills",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "weighteddeceleration",
+"family": "principles",
+"core": "motion-hierarchy",
+"rows": [
+{
+"id": "R1b-018",
+"en": "Weighted Deceleration",
+"ko": "무게별 감속",
+"aka": [
+"weighted-deceleration-mass"
+],
+"family": "principles",
+"what": "큰 물체는 길게 감속하고 작은 요소는 짧게 반응해 서로 다르게 멈춘다.",
+"why": "요소의 중요도와 무게를 구별한다.",
+"params": "기본 가벼운 요소 300ms power1.out, 무거운 요소 1000ms expo.out",
+"impl": "HTML 요소별 이동 시간과 감속 이즈를 다르게 배정한다.",
+"runtime": "gsap",
+"variants": [
+""
+],
+"core": "motion-hierarchy",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#weighted-deceleration-mass",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "steppedmotion",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R1b-019",
+"en": "Stepped Motion",
+"ko": "계단식 상태 변화",
+"aka": [
+"hold-keyframe-stepped-values"
+],
+"family": "principles",
+"what": "값이나 자세가 중간 보간 없이 한 단계씩 순간적으로 바뀐다.",
+"why": "디지털 단계와 저속 프레임 질감을 느낀다.",
+"params": "권장 8단계, 구간 1000ms, steps(8), jump-end",
+"impl": "HTML 값에 GSAP steps 이즈를 적용하거나 타임라인 set으로 상태를 바꾼다.",
+"runtime": "gsap",
+"variants": [
+"홀드 키프레임",
+"정지 모션",
+"프레임 포스터화",
+"data/count-up-punch"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/02-easing-graph.md#hold-keyframe-stepped-values",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/data/count-up-punch.html",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/data/count-up-punch.meta.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "vignettepulse",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R1b-074",
+"en": "Vignette Pulse",
+"ko": "비네트 압력 펄스",
+"aka": [
+"vignette-impact-pulse"
+],
+"family": "emphasis",
+"what": "가장자리 어둠이 순간 안으로 조였다가 풀린다.",
+"why": "충돌이나 결정 순간의 압력을 느낀다.",
+"params": "기본 opacity 0.4, scale 0.9, 220ms",
+"impl": "HTML radial-gradient 비네트의 scale과 opacity를 짧게 왕복 보간한다.",
+"runtime": "gsap",
+"variants": [
+"충돌 압력",
+"카운트 완료"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/07-stylize-time.md#vignette-impact-pulse",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "vectorcontinuity",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R1b-077",
+"en": "Vector Continuity",
+"ko": "운동 방향 연속",
+"aka": [
+"motion-vector-inheritance",
+"axis-of-action-pan-handoff"
+],
+"family": "principles",
+"what": "컷 앞뒤의 물체나 카메라가 같은 화면 방향과 속도 흐름으로 움직인다.",
+"why": "다른 장면이 하나의 동작으로 이어짐을 느낀다.",
+"params": "권장 양쪽 400ms, 동일 방향, 끝과 시작 속도 일치",
+"impl": "HTML 두 장면의 위치 및 속도 경계 조건을 같은 스크린 벡터로 정의한다.",
+"runtime": "gsap",
+"variants": [
+"오브젝트 방향 승계",
+"카메라 팬 승계"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/08-transitions-advanced.md#motion-vector-inheritance",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/08-transitions-advanced.md#axis-of-action-pan-handoff",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "accentwalk",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R1b-085",
+"en": "Accent Walk",
+"ko": "강조점 순회",
+"aka": [
+"gradient-text-sweep"
+],
+"family": "emphasis",
+"what": "이미 배치된 여러 항목 중 하나씩 색이나 빛이 켜졌다 다음 항목으로 옮겨간다.",
+"why": "읽어야 할 순서와 현재 설명 중인 항목을 알아본다.",
+"params": "권장 항목 4개, 홀드 500ms, 전환 150ms",
+"impl": "HTML 항목별 강조 레이어의 opacity를 정해진 순서로 교대한다.",
+"runtime": "gsap",
+"variants": [
+"아젠다 경로",
+"주석 행 순회",
+"단어 하이라이트",
+"kinetic-titles",
+"anatomy-rows"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/awesome-html-scrolline-deck:references/techniques.md#kinetic-titles",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/kinetic-titles/scene.css",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/kinetic-titles/scene.html",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/kinetic-titles/scene.js",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/kinetic-titles/template.json",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:references/techniques.md#anatomy-rows",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/anatomy-rows/scene.css",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/anatomy-rows/scene.html",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/anatomy-rows/scene.js",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/anatomy-rows/template.json",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/gradient-text-sweep.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "scenethreebeat",
+"family": "principles",
+"core": "timing-spacing",
+"rows": [
+{
+"id": "R1b-086",
+"en": "Scene Three Beat",
+"ko": "등장 홀드 퇴장",
+"aka": [
+"dynamic-content-sequencing"
+],
+"family": "principles",
+"what": "내용이 먼저 구성되고 읽을 시간을 머문 뒤 한 몸짓으로 화면에서 빠진다.",
+"why": "장면의 메시지와 다음 장면의 경계를 이해한다.",
+"params": "기본 등장 0~30%, 홀드 30~75%, 퇴장 75~100%, 영상 재현 권장 4000ms",
+"impl": "HTML 단일 진행값에 등장과 홀드와 퇴장의 세 구간을 배정한다.",
+"runtime": "gsap",
+"variants": [
+"미디어 연속 이동",
+"정지 홀드"
+],
+"core": "timing-spacing",
+"sources": [
+{
+"url": "gongnyang/awesome-html-scrolline-deck:references/choreography.md",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/dynamic-content-sequencing.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "squashstretch",
+"family": "principles",
+"core": "squash-stretch",
+"rows": [
+{
+"id": "R1b-126",
+"en": "Squash Stretch",
+"ko": "눌림과 늘어남",
+"aka": [],
+"family": "principles",
+"what": "물체가 충돌 때 납작해지고 이동 때 길어졌다 원래 비율로 돌아온다.",
+"why": "탄성과 충격 방향을 느낀다.",
+"params": "권장 눌림 0.85, 반대 축 1/0.85, 압축 120ms, 복귀 400ms",
+"impl": "HTML scaleX와 scaleY를 역수 관계로 보간해 면적을 유지한다.",
+"runtime": "gsap",
+"variants": [
+"누름",
+"도약",
+"충돌"
+],
+"core": "squash-stretch",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/physics-press-reaction.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "screenshake",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R1b-131",
+"en": "Screen Shake",
+"ko": "화면 충격 흔들림",
+"aka": [],
+"family": "emphasis",
+"what": "화면이나 단어가 짧게 좌우로 떨리고 빠르게 안정된다.",
+"why": "타격과 충돌과 긴장감을 느낀다.",
+"params": "기본 250ms, 진폭 9px, 4회 감쇠, ease none",
+"impl": "HTML x와 y를 고정된 감쇠 진동 시간표로 보간한다.",
+"runtime": "gsap",
+"variants": [
+"카메라 쉐이크",
+"단어 쉐이크",
+"비트 지터",
+"split-anchor-word-slot"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#screen-shake",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/screen-shake/scene.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/screen-shake/index.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/template-catalog.md#split-anchor-word-slot",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:synced/39cd27d1-5d54-43b6-b557-65596e75bccb_30aab8dd-6815-4962-a41b-a684567e027b/slack-gif-creator/SKILL.md",
+"repo": "local/claude-synced-skills",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "freezehold",
+"family": "principles",
+"core": "timing-spacing",
+"rows": [
+{
+"id": "R1b-143",
+"en": "Freeze Hold",
+"ko": "움직임 정지 홀드",
+"aka": [],
+"family": "principles",
+"what": "움직이던 여러 요소가 같은 순간 멈추고 한 상태를 잠시 유지한다.",
+"why": "강한 정지점과 결론의 중요성을 느낀다.",
+"params": "기본 정지 전환 0ms, 홀드 1000ms",
+"impl": "HTML 진행값의 시간 매핑을 정지 구간 동안 일정하게 유지한다.",
+"runtime": "gsap",
+"variants": [
+"하드 스톱",
+"비트 정지"
+],
+"core": "timing-spacing",
+"sources": [
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#freeze-hold",
+"repo": "local/music-to-video",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "negativespacehold",
+"family": "principles",
+"core": "motion-hierarchy",
+"rows": [
+{
+"id": "R1b-145",
+"en": "Negative Space Hold",
+"ko": "빈 공간 결론 홀드",
+"aka": [],
+"family": "principles",
+"what": "분주한 주변 레이어가 사라지고 하나의 읽을 수 있는 표식만 빈 화면에 남는다.",
+"why": "정리와 결론과 휴지를 느낀다.",
+"params": "기본 주변 정리 0ms 또는 300ms, 홀드 2000ms",
+"impl": "HTML 주변 레이어의 opacity를 제거하고 핵심 표식은 고정 유지한다.",
+"runtime": "gsap",
+"variants": [
+"침묵 구간",
+"엔드카드",
+"단일 로고"
+],
+"core": "motion-hierarchy",
+"sources": [
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#negative-space-hold",
+"repo": "local/music-to-video",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "easingcurvefamilies",
+"family": "principles",
+"core": "easing-curves",
+"rows": [
+{
+"id": "R2-001",
+"en": "Easing curve families",
+"ko": "가감속 곡선",
+"aka": [
+"Custom Bezier timing",
+"사용자 곡선 타이밍",
+"Linear",
+"Quad",
+"Cubic",
+"Quart",
+"Quint",
+"Strong",
+"Cubic Bezier",
+"CustomEase"
+],
+"family": "principles",
+"what": "같은 거리의 이동도 시작과 끝의 속도를 달리해 부드럽거나 급하게 보인다.",
+"why": "무게와 추진력을 전달한다.",
+"params": "공식: GSAP duration 500ms, power1.out. none, power1~4, sine, expo, circ 및 in/out/inOut. 권장 비교 800ms. 공식: CustomEase 입력 SVG path 또는 베지어 좌표, precision 1. 권장 600ms, 제어점 0.2/0.8/0.2/1.",
+"impl": "GSAP 코어로 위치를 보간하고 진행률에 선택한 곡선을 적용한다.",
+"runtime": "gsap",
+"variants": [
+"등속",
+"다항식",
+"사인",
+"지수",
+"원형",
+"가속",
+"감속",
+"가감속",
+"사용자 곡선 타이밍",
+"다중 베지어",
+"비대칭 곡선",
+"SVG 이징 시각화",
+"사용자 곡선",
+"탄성 곡선은 spring-overshoot 항목",
+"Back는 anticipation 항목",
+"Bounce는 바운스 착지 항목",
+"Steps는 계단식 타이밍 항목"
+],
+"core": "easing-curves",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Eases/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://animejs.com/documentation/easings/built-in-eases",
+"repo": "juliangarnier/anime",
+"license": "MIT"
+},
+{
+"url": "https://motion.dev/docs/react-transitions",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://gsap.com/docs/v3/Eases/CustomEase/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://github.com/Popmotion/popmotion/blob/master/README.md",
+"repo": "Popmotion/popmotion",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "anticipatorybackmotion",
+"family": "principles",
+"core": "anticipation",
+"rows": [
+{
+"id": "R2-002",
+"en": "Anticipatory back motion",
+"ko": "반대 방향 예비 동작",
+"aka": [],
+"family": "principles",
+"what": "물체가 목적지 반대쪽으로 잠깐 물러났다가 본 이동을 시작한다.",
+"why": "다음 움직임을 예고한다.",
+"params": "공식: back overshoot 1.70158. 권장 600ms, 반대 이동 8~24px.",
+"impl": "GSAP 코어의 back.in 또는 예비 위치 키프레임을 사용한다.",
+"runtime": "gsap",
+"variants": [
+"수축 후 팽창",
+"뒤로 당긴 뒤 이동",
+"회전 준비"
+],
+"core": "anticipation",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Eases/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/docs/react-transitions",
+"repo": "motiondivision/motion",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "bouncelanding",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R2-004",
+"en": "Bounce landing",
+"ko": "바운스 착지",
+"aka": [],
+"family": "principles",
+"what": "낙하한 물체가 바닥에서 여러 차례 튀며 멈춘다.",
+"why": "중력과 충돌 지점을 느끼게 한다.",
+"params": "공식: CustomBounce strength 0.7, endAtStart false. 권장 높이 120px, 1000ms.",
+"impl": "분절 포물선 진행률을 GSAP 코어의 y 좌표에 적용한다.",
+"runtime": "gsap",
+"variants": [
+"높이별 반동",
+"제자리 점프",
+"역방향 튀어 오름"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Eases/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://gsap.com/docs/v3/Eases/CustomBounce/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/examples/react-bounce-easing",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "steppedtiming",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R2-006",
+"en": "Stepped timing",
+"ko": "계단식 타이밍",
+"aka": [
+"SteppedEase",
+"Steps",
+"Stop motion"
+],
+"family": "principles",
+"what": "물체의 위치나 상태가 연속 이동 대신 일정한 단계로 바뀐다.",
+"why": "프레임과 단계를 분명하게 보여준다.",
+"params": "공식: steps(n), immediateStart false. 권장 8단계, 800ms.",
+"impl": "진행률을 단계 수로 양자화해 GSAP 코어 속성에 적용한다.",
+"runtime": "gsap",
+"variants": [
+"홀드 후 점프",
+"시작 즉시 점프",
+"스톱 모션"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Eases/SteppedEase/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://animejs.com/documentation/easings/built-in-eases",
+"repo": "juliangarnier/anime",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "slowmotionplateau",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R2-008",
+"en": "Slow motion plateau",
+"ko": "가속 사이 느린 구간",
+"aka": [
+"SlowMo",
+"SlowMo ease"
+],
+"family": "principles",
+"what": "물체가 빠르게 들어와 가운데서 천천히 움직이다 다시 빨라져 나간다.",
+"why": "읽을 시간을 확보하면서 속도감을 유지한다.",
+"params": "공식: SlowMo linearRatio 0.7, power 0.7, yoyoMode false. 권장 총 2500ms.",
+"impl": "부드러운 감속, 등속, 가속 곡선을 이어 위치를 보간한다.",
+"runtime": "gsap",
+"variants": [
+"중앙 홀드",
+"중앙 역행",
+"동기화 페이드"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Eases/SlowMo/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+}
+]
+}
+]
+},
+{
+"key": "wiggleoscillation",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R2-010",
+"en": "Wiggle oscillation",
+"ko": "좌우 흔들림",
+"aka": [
+"CustomWiggle",
+"Shake",
+"Wobble"
+],
+"family": "emphasis",
+"what": "요소가 기준 위치나 각도 양쪽을 오가다가 멈춘다.",
+"why": "주의를 끌거나 거부와 불안정을 표현한다.",
+"params": "공식: CustomWiggle wiggles 10, type easeOut. 권장 600ms, 각도 6도.",
+"impl": "시간 곡선과 진폭 곡선을 곱해 GSAP 코어 rotation 또는 x를 갱신한다.",
+"runtime": "gsap",
+"variants": [
+"균일",
+"감쇠",
+"예비 동작",
+"랜덤",
+"진폭 사용자 곡선"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Eases/CustomWiggle/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://codepen.io/GreenSock/pen/wzkBYZ",
+"repo": "CodePen GreenSock",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "timingandholds",
+"family": "principles",
+"core": "timing-spacing",
+"rows": [
+{
+"id": "R2-011",
+"en": "Timing and holds",
+"ko": "시간 배분과 홀드",
+"aka": [
+"Playback speed ramp",
+"재생 속도 램프",
+"Keyframe choreography"
+],
+"family": "principles",
+"what": "변화 중간에 정지 구간이 들어가고 구간마다 이동 시간이 달라진다.",
+"why": "중요한 상태를 읽을 시간을 준다.",
+"params": "공식: GSAP delay 0ms, repeatDelay 0ms. 권장 이동 500ms, 홀드 700ms. 공식: timeScale 1. 권장 0.25~2, 속도 변화 600ms.",
+"impl": "타임라인에 정지 간격과 구간별 duration을 배치한다.",
+"runtime": "gsap",
+"variants": [
+"퍼센트 키프레임",
+"배열 키프레임",
+"누적 지연",
+"홀드",
+"재생 속도 램프",
+"슬로 모션",
+"가속 재생",
+"속도 반전",
+"전역 재생 이징",
+"속도 램프"
+],
+"core": "timing-spacing",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/GSAP/Timeline/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://gsap.com/resources/keyframes/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/docs/react-transitions",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://www.theatrejs.com/docs/latest/manual/sequences",
+"repo": "theatre-js/theatre",
+"license": "Apache-2.0 / AGPL-3.0 (구성요소별)"
+},
+{
+"url": "https://github.com/Popmotion/popmotion/blob/master/README.md",
+"repo": "Popmotion/popmotion",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "overlappingchoreography",
+"family": "principles",
+"core": "overlapping-action",
+"rows": [
+{
+"id": "R2-012",
+"en": "Overlapping choreography",
+"ko": "겹치는 동작 순서",
+"aka": [],
+"family": "principles",
+"what": "첫 요소가 멈추기 전에 다음 요소의 움직임이 시작된다.",
+"why": "서로 연결된 행동과 유려한 흐름을 전달한다.",
+"params": "공식: Timeline 위치 기본은 끝에 삽입. 권장 중첩 100~250ms, 개별 600ms.",
+"impl": "타임라인의 상대 위치와 라벨로 여러 tween 시작점을 겹친다.",
+"runtime": "gsap",
+"variants": [
+"동시 시작",
+"끝부분 중첩",
+"라벨 동기화",
+"중첩 타임라인"
+],
+"core": "overlapping-action",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/GSAP/Timeline/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/docs/animate",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://www.react-spring.dev/docs/components/use-chain",
+"repo": "pmndrs/react-spring",
+"license": "MIT"
+},
+{
+"url": "https://animejs.com/documentation/timeline",
+"repo": "juliangarnier/anime",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "adaptivereverseeasing",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R2-014",
+"en": "Adaptive reverse easing",
+"ko": "중간 반전의 가감속",
+"aka": [],
+"family": "principles",
+"what": "이동 중 방향을 바꿔도 현재 위치에서 새 방향으로 자연스럽게 가감속한다.",
+"why": "취소와 복귀가 갑작스럽지 않게 보인다.",
+"params": "공식: GSAP 3.15 easeReverse false, true 또는 ease 지정. 권장 이동 800ms, 40% 시점 반전.",
+"impl": "현재 위치를 새 시작점으로 저장하고 남은 거리의 진행률을 다시 보간한다.",
+"runtime": "gsap",
+"variants": [
+"동일 이징 복귀",
+"다른 이징 복귀",
+"요요 이징"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/GSAP/Tween/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+}
+]
+}
+]
+},
+{
+"key": "sequentialstagger",
+"family": "principles",
+"core": "stagger",
+"rows": [
+{
+"id": "R2-015",
+"en": "Sequential stagger",
+"ko": "순차 스태거",
+"aka": [
+"Cascade",
+"Staggered sequence"
+],
+"family": "principles",
+"what": "여러 요소가 일정한 시간 차로 같은 동작을 시작한다.",
+"why": "목록의 순서와 리듬을 전달한다.",
+"params": "공식: stagger 미지정, each와 amount 중 선택, from 0. 권장 each 60ms, duration 500ms. anime jitter 기본 null, seed 지정 가능.",
+"impl": "대상 인덱스별 시작 지연을 직접 계산해 GSAP 코어로 실행한다.",
+"runtime": "gsap",
+"variants": [
+"정방향",
+"역방향",
+"랜덤 순서",
+"끝부터",
+"전체 시간 고정",
+"시드 지터",
+"개별 반복",
+"개별 요요",
+"함수 기반 지연"
+],
+"core": "stagger",
+"sources": [
+{
+"url": "https://gsap.com/resources/getting-started/Staggers/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/docs/stagger",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://animejs.com/documentation/utilities/stagger",
+"repo": "juliangarnier/anime",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "snappedmovement",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R2-018",
+"en": "Snapped movement",
+"ko": "양자화 이동",
+"aka": [],
+"family": "principles",
+"what": "연속 진행하는 물체가 격자나 일정한 각도에 맞춰 계단식으로 움직인다.",
+"why": "격자 규칙과 정확한 단위를 보여준다.",
+"params": "공식: snap 간격 또는 값 목록, radius 선택. 권장 20px 또는 45도, 1000ms.",
+"impl": "GSAP 코어 modifier로 위치와 각도를 지정 간격에 반올림한다.",
+"runtime": "gsap",
+"variants": [
+"격자 이동",
+"각도 스냅",
+"값 목록 스냅"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/GSAP/CorePlugins/Snap/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://gsap.com/docs/v3/GSAP/UtilityMethods/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://gsap.com/docs/v3/GSAP/CorePlugins/Modifiers/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://github.com/Popmotion/popmotion/blob/master/README.md",
+"repo": "Popmotion/popmotion",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "inertialglide",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R2-050",
+"en": "Inertial glide",
+"ko": "관성 미끄러짐",
+"aka": [],
+"family": "principles",
+"what": "놓인 물체가 이동 방향을 유지하다 서서히 감속한다.",
+"why": "속도와 마찰을 느끼게 한다.",
+"params": "공식: Motion power 0.8, timeConstant 700ms. 권장 초기 600px/s, 경계 선택.",
+"impl": "초기 속도와 지수 감쇠를 적분해 GSAP 코어 좌표를 갱신한다.",
+"runtime": "gsap",
+"variants": [
+"자유 감쇠",
+"목표 스냅",
+"회전 관성",
+"로켓 감쇠"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/InertiaPlugin/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/docs/react-transitions",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://github.com/motiondivision/motionone/blob/main/README.md",
+"repo": "motiondivision/motionone",
+"license": "MIT"
+},
+{
+"url": "https://github.com/Popmotion/popmotion",
+"repo": "Popmotion/popmotion",
+"license": "MIT"
+},
+{
+"url": "https://www.react-spring.dev/examples",
+"repo": "pmndrs/react-spring",
+"license": "MIT"
+},
+{
+"url": "https://github.com/Popmotion/popmotion/blob/master/README.md",
+"repo": "Popmotion/popmotion",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "scrollprogressscrub",
+"family": "principles",
+"core": "ui-scroll",
+"rows": [
+{
+"id": "R2-074",
+"en": "Scroll progress scrub",
+"ko": "스크롤 진행 스크럽",
+"aka": [],
+"family": "principles",
+"what": "스크롤 위치를 앞으로나 뒤로 옮기면 장면도 같은 비율로 진행하거나 되감긴다.",
+"why": "스크롤과 설명 진행을 직접 연결한다.",
+"params": "공식: ScrollTrigger scrub false, true 또는 추종 시간 초. 권장 구간 1200px, scrub 500ms.",
+"impl": "정규화 스크롤값 또는 영상의 가상 스크롤값을 타임라인 progress에 연결한다.",
+"runtime": "gsap",
+"variants": [
+"즉시 스크럽",
+"지연 추종",
+"요소 기준",
+"전체 페이지"
+],
+"core": "ui-scroll",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/ScrollTrigger/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/docs/react-scroll-animations",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://animejs.com/documentation/events/onscroll",
+"repo": "juliangarnier/anime",
+"license": "MIT"
+},
+{
+"url": "https://codepen.io/GreenSock/pen/WNjaxKp",
+"repo": "CodePen GreenSock",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "smoothscrolllag",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R2-080",
+"en": "Smooth scroll lag",
+"ko": "스크롤 지연 추종",
+"aka": [],
+"family": "principles",
+"what": "스크롤 위치가 바뀐 뒤 화면과 일부 레이어가 늦게 따라와 정착한다.",
+"why": "움직임에 관성과 부드러움을 준다.",
+"params": "공식: ScrollSmoother smooth 기본 800ms, speed 1. 권장 레이어 lag 300ms.",
+"impl": "목표 스크롤값을 시간 기반 저역 통과 필터로 완화해 translate에 적용한다.",
+"runtime": "gsap",
+"variants": [
+"전체 화면 추종",
+"레이어별 지연",
+"탄성 추종"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/ScrollSmoother/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/docs/react-use-spring",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://www.react-spring.dev/docs/utilities/use-scroll",
+"repo": "pmndrs/react-spring",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "numericpropertyphysics",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R2-096",
+"en": "Numeric property physics",
+"ko": "속성 물리 변화",
+"aka": [],
+"family": "principles",
+"what": "위치 외에도 크기나 회전이 초기 속도와 가속에 따라 변하고 마찰로 멈춘다.",
+"why": "속성 자체의 추진력과 저항을 느끼게 한다.",
+"params": "공식: PhysicsProps velocity 0, acceleration 0, friction 0. 권장 회전 180도/s, friction 0.02, 2000ms.",
+"impl": "속성별 속도와 가속을 직접 적분하고 결과를 GSAP 코어로 적용한다.",
+"runtime": "gsap",
+"variants": [
+"회전 감쇠",
+"크기 가속",
+"다중 속성 물리"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/PhysicsPropsPlugin/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+}
+]
+}
+]
+},
+{
+"key": "audiosynchronizedmotion",
+"family": "principles",
+"core": "kinetic-beats",
+"rows": [
+{
+"id": "R2-109",
+"en": "Audio synchronized motion",
+"ko": "오디오 동기 모션",
+"aka": [],
+"family": "principles",
+"what": "글자와 도형의 움직임이 음악의 박자나 음성의 강조 시점에 맞춰 일어난다.",
+"why": "말과 화면의 연결, 박자의 리듬을 강화한다.",
+"params": "공식: Theatre attachAudio는 sequence와 재생 동기화. 권장 120BPM이면 박자 500ms, 팝 150ms.",
+"impl": "오디오 시간에 대응하는 자체 타임라인 키프레임으로 위치와 크기를 갱신한다.",
+"runtime": "gsap",
+"variants": [
+"박자 팝",
+"문구 교체",
+"셰이더 동기",
+"음성 강조"
+],
+"core": "kinetic-beats",
+"sources": [
+{
+"url": "https://www.theatrejs.com/docs/latest/manual/audio",
+"repo": "theatre-js/theatre",
+"license": "Apache-2.0 / AGPL-3.0 (구성요소별)"
+},
+{
+"url": "https://www.theatrejs.com/docs/latest/concepts",
+"repo": "theatre-js/theatre",
+"license": "Apache-2.0 / AGPL-3.0 (구성요소별)"
+}
+]
+}
+]
+},
+{
+"key": "additivelayeredmotion",
+"family": "principles",
+"core": "overlapping-action",
+"rows": [
+{
+"id": "R2-117",
+"en": "Additive layered motion",
+"ko": "가산 레이어 모션",
+"aka": [],
+"family": "principles",
+"what": "같은 대상이 큰 경로를 따라 이동하는 동시에 작은 흔들림이나 회전을 더한다.",
+"why": "주동작과 보조 반응을 동시에 전달한다.",
+"params": "공식: anime composition 대상 1000개 미만 replace, 이상 JS는 none. blend 선택 시 가산. 권장 주경로 2000ms, 진동 주기 400ms, 진폭 6px.",
+"impl": "주경로와 보조 오프셋을 독립적으로 계산한 뒤 매 프레임 합산한다.",
+"runtime": "gsap",
+"variants": [
+"이동과 흔들림",
+"회전과 감쇠",
+"주경로와 소음"
+],
+"core": "overlapping-action",
+"sources": [
+{
+"url": "https://animejs.com/documentation/animation/tween-parameters/composition",
+"repo": "juliangarnier/anime",
+"license": "MIT"
+},
+{
+"url": "https://gsap.com/docs/v3/GSAP/Timeline/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+}
+]
+}
+]
+},
+{
+"key": "staggeredgroup",
+"family": "principles",
+"core": "stagger",
+"rows": [
+{
+"id": "R3-002",
+"en": "Staggered Group",
+"ko": "순차 등장",
+"aka": [],
+"family": "principles",
+"what": "여러 요소가 일정한 시간차를 두고 차례로 움직인다.",
+"why": "읽는 순서와 요소 간 관계를 알려 준다.",
+"params": "도감 기본값: 요소당 500ms, 간격 80ms, ease-out",
+"impl": "HTML 요소마다 지연을 주거나 GSAP stagger를 적용한다",
+"runtime": "gsap",
+"variants": [
+"Animated Group",
+"Animated List",
+"BounceCards",
+"정순",
+"역순",
+"중앙 확산",
+"랜덤",
+"AnimatedList",
+"animated-list",
+"animated-group"
+],
+"core": "stagger",
+"sources": [
+{
+"url": "https://motion-primitives.com/docs/animated-group",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+},
+{
+"url": "https://magicui.design/docs/components/animated-list",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://github.com/foundation/motion-ui",
+"repo": "foundation/motion-ui",
+"license": "MIT"
+},
+{
+"url": "https://github.com/michalsnik/aos",
+"repo": "michalsnik/aos",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "bounceattention",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R3-031",
+"en": "Bounce Attention",
+"ko": "통통 튀기",
+"aka": [],
+"family": "emphasis",
+"what": "요소가 제자리에서 위아래로 튀고 원래 위치로 돌아온다.",
+"why": "활기와 선택 대상에 대한 주의를 만든다.",
+"params": "도감 기본값: 900ms, 높이 24px, 튕김 3회, ease-out",
+"impl": "CSS translateY에 높이가 줄어드는 왕복 구간을 준다",
+"runtime": "css",
+"variants": [
+"bounce",
+"bounce-top",
+"bounce-bottom",
+"icon-bounce",
+"bounce-left",
+"bounce-right",
+"bounce-to-bottom",
+"bounce-to-left",
+"bounce-to-right",
+"bounce-to-top"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+},
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/IanLunn/Hover",
+"repo": "IanLunn/Hover",
+"license": "MIT personal/open-source + paid commercial"
+}
+]
+}
+]
+},
+{
+"key": "flashandblink",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R3-032",
+"en": "Flash and Blink",
+"ko": "점멸 강조",
+"aka": [],
+"family": "emphasis",
+"what": "요소의 밝기 또는 투명도가 켜지고 꺼지며 반복된다.",
+"why": "경고와 신호 존재를 알린다.",
+"params": "도감 기본값: 1000ms, 점멸 2회, opacity 0에서 1",
+"impl": "CSS opacity 또는 brightness를 왕복시킨다",
+"runtime": "css",
+"variants": [
+"flash",
+"blink",
+"flicker",
+"back-pulse",
+"flicker-1",
+"flicker-2",
+"flicker-3",
+"flicker-4",
+"flicker-5",
+"blink-1",
+"blink-2"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+},
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/IanLunn/Hover",
+"repo": "IanLunn/Hover",
+"license": "MIT personal/open-source + paid commercial"
+}
+]
+}
+]
+},
+{
+"key": "pulse",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R3-033",
+"en": "Pulse",
+"ko": "크기 맥동",
+"aka": [],
+"family": "emphasis",
+"what": "요소가 작게 커졌다 줄어들며 제자리에서 맥동한다.",
+"why": "대상이 살아 있거나 눌러 볼 수 있음을 전달한다.",
+"params": "도감 기본값: 1000ms, scale 1에서 1.05, ease-in-out, 반복",
+"impl": "CSS scale을 일정 주기로 왕복시킨다",
+"runtime": "css",
+"variants": [
+"pulse",
+"pulsate",
+"PulseHeart",
+"pulsating-button",
+"grow",
+"shrink",
+"pop",
+"push",
+"icon-pulse",
+"scale-up-center",
+"scale-up-top",
+"scale-up-tr",
+"scale-up-right",
+"scale-up-br",
+"scale-up-bottom",
+"scale-up-bl",
+"scale-up-left",
+"scale-up-tl",
+"scale-up-hor-center",
+"scale-up-hor-left",
+"scale-up-hor-right",
+"scale-up-ver-center",
+"scale-up-ver-top",
+"scale-up-ver-bottom",
+"scale-down-center",
+"scale-down-top",
+"scale-down-tr",
+"scale-down-right",
+"scale-down-br",
+"scale-down-bottom",
+"scale-down-bl",
+"scale-down-left",
+"scale-down-tl",
+"scale-down-hor-center",
+"scale-down-hor-left",
+"scale-down-hor-right",
+"scale-down-ver-center",
+"scale-down-ver-top",
+"scale-down-ver-bottom",
+"pulsate-bck",
+"pulsate-fwd",
+"grow-rotate",
+"pulse-grow",
+"pulse-shrink",
+"back-pulse",
+"icon-grow-rotate",
+"icon-grow",
+"icon-pop",
+"icon-pulse-grow",
+"icon-pulse-shrink",
+"icon-push",
+"icon-shrink",
+"Bounce",
+"double-bounce",
+"pulsing",
+"Double Bounce Loader"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+},
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/IanLunn/Hover",
+"repo": "IanLunn/Hover",
+"license": "MIT personal/open-source + paid commercial"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://magicui.design/docs/components/pulsating-button",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://github.com/tobiasahlin/SpinKit",
+"repo": "tobiasahlin/SpinKit",
+"license": "MIT"
+},
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "heartbeat",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R3-034",
+"en": "Heartbeat",
+"ko": "심장 박동",
+"aka": [],
+"family": "emphasis",
+"what": "요소가 짧게 두 번 커진 뒤 쉬는 간격을 두고 반복한다.",
+"why": "생명감과 정서적 친근감을 준다.",
+"params": "도감 기본값: 1300ms, scale 1.14, 두 박동 간격 150ms",
+"impl": "CSS scale의 두 번 팽창과 유지 구간을 만든다",
+"runtime": "css",
+"variants": [
+"heartBeat",
+"heartbeat",
+"heart",
+"PulseHeart"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+},
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/loadingio/css-spinner",
+"repo": "loadingio/css-spinner",
+"license": "CC0 loaders (README; root LICENSE absent)"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "rubberband",
+"family": "emphasis",
+"core": "squash-stretch",
+"rows": [
+{
+"id": "R3-035",
+"en": "Rubber Band",
+"ko": "고무줄 신축",
+"aka": [],
+"family": "emphasis",
+"what": "요소가 가로로 늘고 세로로 줄었다가 반대로 변하며 원형으로 돌아온다.",
+"why": "탄성과 유연함을 보여 준다.",
+"params": "도감 기본값: 900ms, scaleX 1.25, scaleY 0.75, 반동 4회",
+"impl": "CSS 축별 scale을 반대 비율로 왕복시킨다",
+"runtime": "css",
+"variants": [
+"rubberBand",
+"RubberSegment",
+"SquishSwitch"
+],
+"core": "squash-stretch",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "shakeandvibrate",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R3-036",
+"en": "Shake and Vibrate",
+"ko": "흔들기와 진동",
+"aka": [],
+"family": "emphasis",
+"what": "요소가 작은 이동이나 회전으로 빠르게 떨다가 멈춘다.",
+"why": "오류와 주의 또는 강한 반응을 알린다.",
+"params": "도감 기본값: 600ms, 이동 6px, 회전 2deg, 진동 6회",
+"impl": "CSS translate와 rotate에 번갈아 부호가 바뀌는 구간을 준다",
+"runtime": "css",
+"variants": [
+"shakeX",
+"shakeY",
+"headShake",
+"vibrate",
+"buzz",
+"buzz-out",
+"little",
+"hard",
+"slow",
+"horizontal",
+"vertical",
+"rotate",
+"crazy",
+"shake",
+"vibrate-1",
+"vibrate-2",
+"vibrate-3",
+"shake-horizontal",
+"shake-vertical",
+"shake-lr",
+"shake-top",
+"shake-tr",
+"shake-right",
+"shake-br",
+"shake-bottom",
+"shake-bl",
+"shake-left",
+"shake-tl",
+"icon-buzz-out",
+"icon-buzz"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+},
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/IanLunn/Hover",
+"repo": "IanLunn/Hover",
+"license": "MIT personal/open-source + paid commercial"
+},
+{
+"url": "https://github.com/elrumordelaluz/csshake",
+"repo": "elrumordelaluz/csshake",
+"license": "MIT"
+},
+{
+"url": "https://github.com/foundation/motion-ui",
+"repo": "foundation/motion-ui",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "swingattention",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R3-037",
+"en": "Swing Attention",
+"ko": "매달린 흔들기",
+"aka": [],
+"family": "emphasis",
+"what": "요소가 위쪽 또는 모서리 축을 중심으로 좌우 회전한다.",
+"why": "가벼운 물체의 흔들림과 주의를 전달한다.",
+"params": "도감 기본값: 1000ms, 회전 15deg, 감쇠 4회, ease-in-out",
+"impl": "CSS transform-origin을 고정하고 rotate 진폭을 줄인다",
+"runtime": "css",
+"variants": [
+"swing",
+"wiggle",
+"skew",
+"skew-forward",
+"skew-backward"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+},
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/foundation/motion-ui",
+"repo": "foundation/motion-ui",
+"license": "MIT"
+},
+{
+"url": "https://github.com/IanLunn/Hover",
+"repo": "IanLunn/Hover",
+"license": "MIT personal/open-source + paid commercial"
+}
+]
+}
+]
+},
+{
+"key": "tada",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R3-038",
+"en": "Tada",
+"ko": "축소 뒤 환호 흔들기",
+"aka": [],
+"family": "emphasis",
+"what": "요소가 먼저 움츠러든 뒤 커지고 좌우로 회전하며 흔들린다.",
+"why": "성과와 축하를 전달한다.",
+"params": "도감 기본값: 1000ms, scale 0.9에서 1.1, 회전 3deg, 왕복 4회",
+"impl": "CSS scale과 rotate에 준비와 환호 구간을 준다",
+"runtime": "css",
+"variants": [
+"tada"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+}
+]
+}
+]
+},
+{
+"key": "wobble",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R3-039",
+"en": "Wobble",
+"ko": "큰 좌우 비틀림",
+"aka": [],
+"family": "emphasis",
+"what": "요소가 좌우로 넓게 이동하면서 기울고 진폭을 줄여 정착한다.",
+"why": "불안정함이나 재미있는 반응을 보여 준다.",
+"params": "도감 기본값: 1000ms, 이동 폭 25%, 회전 5deg, 반동 5회",
+"impl": "CSS translate와 rotate를 반대 방향으로 감쇠시킨다",
+"runtime": "css",
+"variants": [
+"wobble",
+"wobble-horizontal",
+"wobble-vertical",
+"모서리 기준",
+"wobble-hor-bottom",
+"wobble-hor-top",
+"wobble-ver-left",
+"wobble-ver-right",
+"wobble-bottom",
+"wobble-skew",
+"wobble-to-bottom-right",
+"wobble-to-top-right",
+"wobble-top",
+"icon-wobble-horizontal",
+"icon-wobble-vertical"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+},
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/IanLunn/Hover",
+"repo": "IanLunn/Hover",
+"license": "MIT personal/open-source + paid commercial"
+}
+]
+}
+]
+},
+{
+"key": "jello",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R3-040",
+"en": "Jello",
+"ko": "젤리 전단 진동",
+"aka": [],
+"family": "emphasis",
+"what": "요소가 가로와 세로로 번갈아 비틀어지며 젤리처럼 흔들린다.",
+"why": "부드럽고 말랑한 물성을 보여 준다.",
+"params": "도감 기본값: 900ms, skew 12deg, 감쇠 5회",
+"impl": "CSS skewX와 skewY를 번갈아 줄이며 보간한다",
+"runtime": "css",
+"variants": [
+"jello",
+"jello-horizontal",
+"jello-vertical",
+"JellyRadio",
+"jello-diagonal-1",
+"jello-diagonal-2"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+},
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "rotatescale",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R3-043",
+"en": "Rotate Scale",
+"ko": "회전 신축",
+"aka": [],
+"family": "emphasis",
+"what": "요소가 회전하며 커졌다 작아져 원래 크기로 돌아온다.",
+"why": "한 대상의 동작을 풍부하게 강조한다.",
+"params": "도감 기본값: 700ms, 회전 360deg, scale 0.7에서 1.2에서 1",
+"impl": "CSS rotate와 scale을 함께 왕복시킨다",
+"runtime": "css",
+"variants": [
+"rotate-scale-up",
+"rotate-scale-down",
+"수평축",
+"수직축",
+"대각축",
+"rotate-scale-up-hor",
+"rotate-scale-down-hor",
+"rotate-scale-up-ver",
+"rotate-scale-down-ver",
+"rotate-scale-up-diag-1",
+"rotate-scale-down-diag-1",
+"rotate-scale-up-diag-2",
+"rotate-scale-down-diag-2"
+],
+"core": "",
+"sources": [
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/IanLunn/Hover",
+"repo": "IanLunn/Hover",
+"license": "MIT personal/open-source + paid commercial"
+}
+]
+}
+]
+},
+{
+"key": "borderreveal",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R3-058",
+"en": "Border Reveal",
+"ko": "테두리 드러내기",
+"aka": [],
+"family": "emphasis",
+"what": "요소의 테두리 선이 안팎으로 이동하거나 선명해져 윤곽을 드러낸다.",
+"why": "선택 상태와 경계를 강조한다.",
+"params": "도감 기본값: 350ms, 두께 2px, 외곽 간격 8px, ease-out",
+"impl": "CSS border와 outline 및 가상 요소 inset을 보간한다",
+"runtime": "css",
+"variants": [
+"border-fade",
+"outline-in",
+"outline-out",
+"reveal",
+"trim"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/IanLunn/Hover",
+"repo": "IanLunn/Hover",
+"license": "MIT personal/open-source + paid commercial"
+}
+]
+}
+]
+},
+{
+"key": "wigglemotion",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R5-015",
+"en": "Wiggle Motion",
+"ko": "위글 움직임",
+"aka": [
+"Random shake"
+],
+"family": "emphasis",
+"what": "대상의 위치나 회전이 불규칙하고 연속적으로 흔들린다.",
+"why": "불안·활력·자연스러운 미세 움직임을 준다.",
+"params": "제안 기본값: 2000ms; 2Hz; 위치 ±12px; rotation ±3deg",
+"impl": "시드 고정 저주파 노이즈를 변환값에 더한다.",
+"runtime": "gsap",
+"variants": [
+"카메라 흔들림",
+"회전 위글",
+"크기 위글"
+],
+"core": "",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/work-with-expressions/expression-examples/expression-examples.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "continuemotion",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R5-020",
+"en": "Continue Motion",
+"ko": "속도 유지 연장",
+"aka": [
+"loopOut continue"
+],
+"family": "principles",
+"what": "마지막 키프레임을 지난 뒤에도 마지막 속도로 계속 움직인다.",
+"why": "프레임 밖으로 이어지는 운동을 암시한다.",
+"params": "제안 기본값: 연장 600ms; 끝속도 240px/s",
+"impl": "마지막 구간의 속도를 구해 이후 시간에 선형 적분한다.",
+"runtime": "gsap",
+"variants": [
+"회전 관성",
+"화면 밖 이동"
+],
+"core": "",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/work-with-expressions/expression-language-reference/expression-language-reference.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "timedelayedfollower",
+"family": "principles",
+"core": "overlapping-action",
+"rows": [
+{
+"id": "R5-021",
+"en": "Time Delayed Follower",
+"ko": "시간 지연 추종",
+"aka": [
+"valueAtTime follow"
+],
+"family": "principles",
+"what": "뒤의 대상이 앞 대상의 과거 위치를 따라가며 꼬리를 만든다.",
+"why": "선두와 후속 대상의 연결을 보여준다.",
+"params": "제안 기본값: 지연 80ms; 8개; opacity 0.85 누적",
+"impl": "원본 궤적을 각 대상의 시간 지연만큼 이전 시점에서 평가한다.",
+"runtime": "gsap",
+"variants": [
+"위치 추종",
+"크기 추종",
+"회전 추종"
+],
+"core": "overlapping-action",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/work-with-expressions/expression-examples/expression-examples.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "indexdelaycascade",
+"family": "principles",
+"core": "stagger",
+"rows": [
+{
+"id": "R5-022",
+"en": "Index Delay Cascade",
+"ko": "인덱스 지연 연쇄",
+"aka": [
+"Index stagger"
+],
+"family": "principles",
+"what": "같은 동작이 요소 순서에 따라 차례로 시작된다.",
+"why": "읽기 순서와 그룹의 리듬을 만든다.",
+"params": "제안 기본값: 요소당 60ms; 동작 450ms; power2.out",
+"impl": "요소 인덱스를 시작 시간 오프셋으로 사용한다.",
+"runtime": "gsap",
+"variants": [
+"정방향",
+"역순",
+"중앙 확산",
+"무작위 순서"
+],
+"core": "stagger",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/work-with-expressions/expression-language-reference/expression-language-reference.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "inertialovershoot",
+"family": "principles",
+"core": "spring-overshoot",
+"rows": [
+{
+"id": "R5-023",
+"en": "Inertial Overshoot",
+"ko": "관성 오버슈트",
+"aka": [
+"Inertia bounce expression",
+"Text Scale Pop"
+],
+"family": "principles",
+"what": "대상이 목표를 지나친 뒤 양쪽으로 흔들리며 멈춘다.",
+"why": "질량과 탄성 있는 반응을 느끼게 한다.",
+"params": "제안 기본값: 정착 900ms; 3Hz; decay 6/s; 초과 8%",
+"impl": "종료 속도에 비례한 감쇠 사인 항을 목표값에 더한다.",
+"runtime": "gsap",
+"variants": [
+"위치 관성",
+"회전 관성",
+"스케일 관성",
+"문자 팝",
+"단어 팝",
+"텍스트 스케일 팝"
+],
+"core": "spring-overshoot",
+"sources": [
+{
+"url": "https://motionscript.com/articles/bounce-and-overshoot.html",
+"repo": "motionscript.com",
+"license": "unknown"
+},
+{
+"url": "https://schoolofmotion.com/blog/text-animators-after-effects",
+"repo": "schoolofmotion.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "collisionbounce",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R5-024",
+"en": "Collision Bounce",
+"ko": "충돌 바운스",
+"aka": [
+"Ballistic bounce"
+],
+"family": "principles",
+"what": "대상이 바닥에 닿아 튀고 점차 낮고 짧게 튄다.",
+"why": "무게와 실제 충돌을 느끼게 한다.",
+"params": "제안 기본값: 1000ms; 반발계수 0.55; 3회",
+"impl": "중력 궤적과 충돌 때 감소하는 속도를 구간별로 평가한다.",
+"runtime": "gsap",
+"variants": [
+"공 바운스",
+"착지 바운스"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motionscript.com/articles/bounce-and-overshoot.html",
+"repo": "motionscript.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "lightsweep",
+"family": "emphasis",
+"core": "highlight-sweep",
+"rows": [
+{
+"id": "R5-054",
+"en": "Light Sweep",
+"ko": "빛 훑기",
+"aka": [
+"CC Light Sweep"
+],
+"family": "emphasis",
+"what": "밝은 좁은 반사가 글자나 로고 표면을 지나간다.",
+"why": "광택과 핵심 대상의 존재감을 높인다.",
+"params": "제안 기본값: 800ms; 폭 40px; angle 25deg",
+"impl": "대상 알파에 기울어진 이동 그라디언트를 클리핑한다.",
+"runtime": "svg",
+"variants": [
+"금속 광택",
+"부드러운 하이라이트"
+],
+"core": "highlight-sweep",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/generate-effects.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+},
+{
+"url": "https://cycorefx.com/downloads/cfx_hd_std/CycoreFX%201.6%20Manual.pdf",
+"repo": "cycorefx.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "smearframemotion",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R5-100",
+"en": "Smear Frame Motion",
+"ko": "스미어 프레임 운동",
+"aka": [],
+"family": "principles",
+"what": "빠른 이동 중 대상이 길게 늘어나거나 여러 윤곽으로 퍼졌다 돌아온다.",
+"why": "속도와 타격의 강도를 강조한다.",
+"params": "제안 기본값: 스미어 50~100ms; 길이 속도의 0.08배",
+"impl": "속도 방향으로 메시를 늘리거나 중간 윤곽을 자체 생성한다.",
+"runtime": "svg",
+"variants": [
+"신장 스미어",
+"다중 윤곽 스미어"
+],
+"core": "",
+"sources": [
+{
+"url": "https://schoolofmotion.com/courses/animation-bootcamp",
+"repo": "schoolofmotion.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "easyeasetiming",
+"family": "principles",
+"core": "easing-curves",
+"rows": [
+{
+"id": "R5-101",
+"en": "Easy Ease Timing",
+"ko": "이지 이즈 타이밍",
+"aka": [
+"Easy Ease"
+],
+"family": "principles",
+"what": "움직임이 천천히 시작하고 끝에 다시 감속한다.",
+"why": "부드럽고 의도된 이동으로 느끼게 한다.",
+"params": "제안 기본값: 600ms; cubic-bezier(0.42,0,0.58,1)",
+"impl": "시간 진행률을 자체 베지어 이징으로 변환한다.",
+"runtime": "gsap",
+"variants": [
+"입력 감속",
+"출력 가속",
+"비대칭 이즈"
+],
+"core": "easing-curves",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/animate-in-after-effects/animation-keyframes/keyframe-interpolation.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "holdkeyframecut",
+"family": "principles",
+"core": "timing-spacing",
+"rows": [
+{
+"id": "R5-102",
+"en": "Hold Keyframe Cut",
+"ko": "홀드 키프레임 컷",
+"aka": [
+"Stepped keyframe"
+],
+"family": "principles",
+"what": "상태가 유지되다가 특정 시점에 다음 상태로 즉시 바뀐다.",
+"why": "도약·박자·단계 구분을 명료하게 한다.",
+"params": "제안 기본값: hold 250ms; 전환 0ms",
+"impl": "구간별 상태를 보간 없이 선택한다.",
+"runtime": "gsap",
+"variants": [
+"포즈 홀드",
+"색 컷",
+"위치 컷"
+],
+"core": "timing-spacing",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/animate-in-after-effects/animation-keyframes/keyframe-interpolation.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "anticipationpose",
+"family": "principles",
+"core": "anticipation",
+"rows": [
+{
+"id": "R5-103",
+"en": "Anticipation Pose",
+"ko": "예비 동작 포즈",
+"aka": [
+"Wind-up"
+],
+"family": "principles",
+"what": "본동작 직전에 반대 방향으로 조금 움직인다.",
+"why": "다가올 움직임을 예측하게 한다.",
+"params": "제안 기본값: 예비 120ms; 반대 이동 8px; 본동작 450ms",
+"impl": "주동작 앞에 반대 변위 키프레임을 넣는다.",
+"runtime": "gsap",
+"variants": [
+"회전 예비",
+"스케일 예비"
+],
+"core": "anticipation",
+"sources": [
+{
+"url": "https://motiondesign.school/blog/animation-principles-in-logo-animation/",
+"repo": "motiondesign.school",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "followthroughsettle",
+"family": "principles",
+"core": "follow-through",
+"rows": [
+{
+"id": "R5-105",
+"en": "Follow Through Settle",
+"ko": "후속 움직임 정착",
+"aka": [],
+"family": "principles",
+"what": "본체가 멈춘 뒤 끝부분이나 장식이 더 움직이고 정착한다.",
+"why": "힘이 전달되는 순서와 유연함을 보여준다.",
+"params": "제안 기본값: 후속 지연 70ms; 정착 500ms; 감쇠 5/s",
+"impl": "본체 궤적의 지연값 또는 자체 감쇠 곡선을 부속 요소에 적용한다.",
+"runtime": "gsap",
+"variants": [
+"꼬리 정착",
+"장식 회전",
+"끝부분 흔들림"
+],
+"core": "follow-through",
+"sources": [
+{
+"url": "https://motiondesign.school/blog/animation-principles-in-logo-animation/",
+"repo": "motiondesign.school",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "bezierarctravel",
+"family": "principles",
+"core": "arc-motion",
+"rows": [
+{
+"id": "R5-106",
+"en": "Bezier Arc Travel",
+"ko": "베지어 곡선 이동",
+"aka": [],
+"family": "principles",
+"what": "대상이 직선 대신 활 모양 경로를 따라 이동한다.",
+"why": "자연스러운 투척과 우아한 이동을 보여준다.",
+"params": "제안 기본값: 800ms; arc height 100px; power2.inOut",
+"impl": "자체 이차·삼차 베지어 경로를 시간으로 샘플링한다.",
+"runtime": "gsap",
+"variants": [
+"포물선",
+"S곡선",
+"곡선 착지"
+],
+"core": "arc-motion",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/animate-in-after-effects/animation-keyframes/keyframe-interpolation.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "rivetimelineblend",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R5-108",
+"en": "Rive Timeline Blend",
+"ko": "리브 타임라인 블렌드",
+"aka": [
+"Animation blend"
+],
+"family": "principles",
+"what": "서로 다른 움직임이 혼합되며 한 동작에서 다음 동작으로 이어진다.",
+"why": "포즈 전환을 부드럽게 연결한다.",
+"params": "제안 기본값: 블렌드 300ms; weight 0→1; linear",
+"impl": "동일 대상의 두 타임라인 변환값을 가중 보간한다.",
+"runtime": "gsap",
+"variants": [
+"걷기에서 정지",
+"포즈 교대",
+"속도 블렌드"
+],
+"core": "",
+"sources": [
+{
+"url": "https://rive.app/docs/editor/state-machine/states",
+"repo": "rive.app",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+},
+{
+"url": "https://github.com/rive-app/rive-runtime",
+"repo": "rive-app/rive-runtime",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "datatransitioneasing",
+"family": "principles",
+"core": "easing-curves",
+"rows": [
+{
+"id": "R6-001",
+"en": "Data transition easing",
+"ko": "데이터 전환 이징",
+"aka": [],
+"family": "principles",
+"what": "데이터 마크가 일정 속도 또는 완만한 가속과 감속으로 목표 위치에 도달한다.",
+"why": "시작과 도착을 읽기 쉽게 하고 연속 재생의 속도감을 맞춘다.",
+"params": "기본 750ms, cubicInOut; 시계열 재생 linear; poly 지수 3; back 과장 1.70158; elastic 진폭 1, 주기 0.3",
+"impl": "GSAP 진행률에 이징 함수를 적용해 좌표와 크기를 계산한다.",
+"runtime": "gsap",
+"variants": [
+"선형",
+"다항",
+"사인",
+"지수",
+"원형",
+"back",
+"elastic",
+"bounce"
+],
+"core": "easing-curves",
+"sources": [
+{
+"url": "https://d3js.org/d3-ease",
+"repo": "d3/d3-ease",
+"license": "BSD-3-Clause"
+},
+{
+"url": "https://www.chartjs.org/docs/latest/configuration/animations.html",
+"repo": "chartjs/Chart.js",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "datadrivenstagger",
+"family": "principles",
+"core": "stagger",
+"rows": [
+{
+"id": "R6-002",
+"en": "Data-driven stagger",
+"ko": "데이터 순서 시차",
+"aka": [],
+"family": "principles",
+"what": "값 또는 순위 순서에 따라 마크의 이동 시작 시점이 조금씩 늦어진다.",
+"why": "겹치는 항목을 추적하기 쉽게 하고 데이터 순서를 드러낸다.",
+"params": "기본 600ms, 항목 간 30ms, 전체 지연 상한 500ms, cubicInOut",
+"impl": "GSAP 타임라인에서 항목별 시작 시간을 값과 인덱스로 계산한다.",
+"runtime": "gsap",
+"variants": [
+"순위 지연",
+"값 기반 지연",
+"방사 거리 지연"
+],
+"core": "stagger",
+"sources": [
+{
+"url": "https://d3js.org/d3-transition",
+"repo": "d3/d3-transition",
+"license": "ISC"
+},
+{
+"url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+"repo": "Heer & Robertson 2007",
+"license": "unknown"
+},
+{
+"url": "https://app.flourish.studio/@flourish/scatter",
+"repo": "Flourish",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "objectconstantupdate",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R6-003",
+"en": "Object-constant update",
+"ko": "항목 정체성 유지 갱신",
+"aka": [],
+"family": "principles",
+"what": "같은 항목의 색과 이름을 유지한 채 위치와 크기가 이전 상태에서 새 상태로 움직인다.",
+"why": "전후 화면의 어떤 항목이 같은 대상인지 이해한다.",
+"params": "기본 750ms, ID 대응, 색 고정, cubicInOut",
+"impl": "항목 ID별 이전 좌표와 목표 좌표를 저장하고 동일 SVG 요소를 보간한다.",
+"runtime": "svg",
+"variants": [
+"수치 갱신",
+"위치 갱신",
+"색 고정 갱신"
+],
+"core": "",
+"sources": [
+{
+"url": "https://bost.ocks.org/mike/constancy/",
+"repo": "bost.ocks.org",
+"license": "unknown"
+},
+{
+"url": "https://echarts.apache.org/handbook/en/how-to/animation/transition/",
+"repo": "apache/echarts",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "stagedcharttransition",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R6-004",
+"en": "Staged chart transition",
+"ko": "차트 단계 전환",
+"aka": [],
+"family": "principles",
+"what": "축 변경, 위치 이동, 크기 변경이 한꺼번에 일어나지 않고 순서대로 진행된다.",
+"why": "복잡한 차트 변화의 각 의미를 차례로 읽는다.",
+"params": "기본 3단계 각 400ms, 단계 간 120ms, cubicInOut",
+"impl": "GSAP 타임라인에서 축, 위치, 형태 보간을 별도 단계로 연결한다.",
+"runtime": "gsap",
+"variants": [
+"축 먼저",
+"이동 먼저",
+"크기 나중",
+"2단계",
+"3단계"
+],
+"core": "",
+"sources": [
+{
+"url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+"repo": "Heer & Robertson 2007",
+"license": "unknown"
+},
+{
+"url": "https://github.com/uwdata/gemini",
+"repo": "uwdata/gemini",
+"license": "BSD-3-Clause"
+},
+{
+"url": "https://observablehq.com/@d3/stacked-to-grouped-bars",
+"repo": "Observable @d3",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "commonfategrouping",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R6-005",
+"en": "Common-fate grouping",
+"ko": "동시 운동 그룹화",
+"aka": [],
+"family": "principles",
+"what": "같은 그룹의 마크들이 같은 방향과 속도로 동시에 이동한다.",
+"why": "떨어져 있던 항목도 한 묶음으로 인식한다.",
+"params": "기본 700ms, 그룹 내 지연 0ms, 그룹 간 160ms, cubicInOut",
+"impl": "그룹별 같은 진행률을 공유하고 상대 위치를 보존해 좌표를 보간한다.",
+"runtime": "svg",
+"variants": [
+"평행 이동",
+"동기 크기 변화",
+"동기 색 변화"
+],
+"core": "",
+"sources": [
+{
+"url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+"repo": "Heer & Robertson 2007",
+"license": "unknown"
+},
+{
+"url": "https://d3js.org/d3-transition",
+"repo": "d3/d3-transition",
+"license": "ISC"
+}
+]
+}
+]
+},
+{
+"key": "interruptandretargettransition",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R6-006",
+"en": "Interrupt-and-retarget transition",
+"ko": "진행 중 목표 재설정",
+"aka": [],
+"family": "principles",
+"what": "움직이던 마크가 원점으로 튀지 않고 현재 위치에서 새 목표로 이어서 움직인다.",
+"why": "연속 데이터 갱신에서도 화면의 연속성을 유지한다.",
+"params": "기본 400ms, 현재 상태 샘플링, 갱신 간격 250ms, cubicOut",
+"impl": "새 갱신 시 현재 보간 좌표를 읽고 그 좌표를 새 시작점으로 사용한다.",
+"runtime": "svg",
+"variants": [
+"추가 갱신",
+"역방향 갱신",
+"스크롤 되돌림"
+],
+"core": "",
+"sources": [
+{
+"url": "https://d3js.org/d3-transition",
+"repo": "d3/d3-transition",
+"license": "ISC"
+},
+{
+"url": "https://bost.ocks.org/mike/transition/",
+"repo": "bost.ocks.org",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "transitiondwellandfinalhold",
+"family": "principles",
+"core": "timing-spacing",
+"rows": [
+{
+"id": "R6-007",
+"en": "Transition dwell and final hold",
+"ko": "전환 사이 읽기 정지",
+"aka": [],
+"family": "principles",
+"what": "마크가 이동을 마치면 일정 시간 멈추고 다음 상태로 넘어간다.",
+"why": "수치와 순위를 읽고 전후 차이를 기억할 시간을 확보한다.",
+"params": "기본 이동 700ms, 정지 800ms, 마지막 정지 1500ms",
+"impl": "GSAP 타임라인에 상태 유지 구간을 넣고 캡션과 다음 전환을 연결한다.",
+"runtime": "gsap",
+"variants": [
+"중간 정지",
+"끝 정지",
+"핵심 연도 정지"
+],
+"core": "timing-spacing",
+"sources": [
+{
+"url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+"repo": "Heer & Robertson 2007",
+"license": "unknown"
+},
+{
+"url": "https://helpcenter.flourish.studio/hc/en-us/articles/8761554645263-Sports-race-an-overview",
+"repo": "Flourish",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "highlightedroutetraversal",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R6-054",
+"en": "Highlighted route traversal",
+"ko": "흐름 경로 순차 강조",
+"aka": [],
+"family": "emphasis",
+"what": "특정 경로의 노드와 연결선이 출발부터 도착까지 차례로 밝아지고 나머지는 옅어진다.",
+"why": "복잡한 네트워크 안에서 하나의 흐름을 따라간다.",
+"params": "기본 노드당 350ms, opacity 비선택 0.15, 강조선 3px",
+"impl": "경로 순서에 따라 SVG fill, stroke와 opacity를 보간한다.",
+"runtime": "svg",
+"variants": [
+"고객 여정",
+"자금 흐름",
+"선수 연결"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/d3/d3-sankey",
+"repo": "d3/d3-sankey",
+"license": "BSD-3-Clause"
+},
+{
+"url": "https://github.com/the-pudding/sankey-nba",
+"repo": "the-pudding/sankey-nba",
+"license": "MIT"
+},
+{
+"url": "https://www.chartjs.org/docs/latest/configuration/animations.html",
+"repo": "chartjs/Chart.js",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "mappointeventpulse",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R6-080",
+"en": "Map point event pulse",
+"ko": "지도 사건 발생 펄스",
+"aka": [],
+"family": "emphasis",
+"what": "발생 위치에서 원이 커졌다가 사라지고 중심 표식이 남는다.",
+"why": "사건이 언제 어디서 발생했는지 주의를 모은다.",
+"params": "기본 800ms, 반지름 3에서 24px, opacity 0.6에서 0, cubicOut",
+"impl": "SVG 원 또는 Canvas 링의 반지름과 투명도를 사건 시각에 맞춰 보간한다.",
+"runtime": "svg",
+"variants": [
+"지진",
+"신규 사건",
+"선택 지역 펄스"
+],
+"core": "",
+"sources": [
+{
+"url": "https://d3js.org/d3-transition",
+"repo": "d3/d3-transition",
+"license": "ISC"
+},
+{
+"url": "https://www.chartjs.org/docs/latest/configuration/animations.html",
+"repo": "chartjs/Chart.js",
+"license": "MIT"
+},
+{
+"url": "https://vega.github.io/vega/docs/event-streams/",
+"repo": "vega/vega",
+"license": "BSD-3-Clause"
+}
+]
+}
+]
+},
+{
+"key": "overviewtoexamplespotlight",
+"family": "emphasis",
+"core": "spotlight",
+"rows": [
+{
+"id": "R6-089",
+"en": "Overview-to-example spotlight",
+"ko": "전체에서 사례 초점",
+"aka": [],
+"family": "emphasis",
+"what": "전체 데이터가 옅어지고 선택한 항목만 밝아지며 해당 위치로 시야가 접근한다.",
+"why": "전체 분포 안에서 대표 사례의 의미를 읽는다.",
+"params": "기본 비선택 opacity 0.15, 강조 350ms, 확대 700ms, 배율 2",
+"impl": "대상 마크의 opacity를 분리하고 SVG 그룹 변환을 목표 중심으로 보간한다.",
+"runtime": "svg",
+"variants": [
+"단일 사례",
+"작은 그룹",
+"전체 복귀"
+],
+"core": "spotlight",
+"sources": [
+{
+"url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+"repo": "Heer & Robertson 2007",
+"license": "unknown"
+},
+{
+"url": "https://github.com/the-pudding/pop-love-songs",
+"repo": "the-pudding/pop-love-songs",
+"license": "MIT"
+},
+{
+"url": "https://pudding.cool/process/how-to-implement-scrollytelling/",
+"repo": "the-pudding/how-to-implement-scrollytelling",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "movingdataannotationcallout",
+"family": "emphasis",
+"core": "annotation-callout",
+"rows": [
+{
+"id": "R6-090",
+"en": "Moving data annotation callout",
+"ko": "데이터 주석 따라가기",
+"aka": [],
+"family": "emphasis",
+"what": "주석 상자와 연결선이 움직이는 데이터 항목을 따라가며 나타난다.",
+"why": "그래프의 특정 변화와 설명을 정확히 연결한다.",
+"params": "기본 등장 300ms, 연결선 350ms, 여백 12px, 유지 1500ms",
+"impl": "항목의 보간 좌표를 기준으로 주석 위치와 SVG 연결선 끝점을 갱신한다.",
+"runtime": "svg",
+"variants": [
+"끝점 주석",
+"이동 거품 주석",
+"최댓값 설명"
+],
+"core": "annotation-callout",
+"sources": [
+{
+"url": "https://github.com/the-pudding/pop-love-songs",
+"repo": "the-pudding/pop-love-songs",
+"license": "MIT"
+},
+{
+"url": "https://flourish.studio/blog/line-chart-race/",
+"repo": "Flourish",
+"license": "unknown"
+},
+{
+"url": "https://www.chartjs.org/docs/latest/configuration/animations.html",
+"repo": "chartjs/Chart.js",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "chartfocusbandsweep",
+"family": "emphasis",
+"core": "highlight-sweep",
+"rows": [
+{
+"id": "R6-094",
+"en": "Chart focus band sweep",
+"ko": "차트 구간 강조 띠",
+"aka": [],
+"family": "emphasis",
+"what": "반투명 띠가 시간축을 따라 이동하거나 폭을 늘려 특정 기간의 데이터를 강조한다.",
+"why": "관심 구간과 나머지 기간을 명확히 나눈다.",
+"params": "기본 이동 700ms, opacity 0.15, 너비 1기간, cubicInOut",
+"impl": "SVG 사각형의 x와 폭을 시간 구간 좌표로 보간하고 데이터 위 또는 아래에 배치한다.",
+"runtime": "svg",
+"variants": [
+"시기 강조",
+"사건 구간",
+"값 범위"
+],
+"core": "highlight-sweep",
+"sources": [
+{
+"url": "https://www.chartjs.org/docs/latest/configuration/animations.html",
+"repo": "chartjs/Chart.js",
+"license": "MIT"
+},
+{
+"url": "https://github.com/fnando/sparkline",
+"repo": "fnando/sparkline",
+"license": "MIT"
+},
+{
+"url": "https://app.flourish.studio/@flourish/scatter",
+"repo": "Flourish",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "contractingfocusdisk",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R7-013",
+"en": "Contracting focus disk",
+"ko": "축소 원판 초점 신호",
+"aka": [
+"FocusOn"
+],
+"family": "emphasis",
+"what": "넓고 반투명한 원판이 목표 위치로 줄어들며 사라진다.",
+"why": "지금 봐야 할 정확한 위치를 찾게 한다.",
+"params": "재현 기본값: 700 ms, 반경 400~0 px, opacity 0.25~0, easeOut",
+"impl": "목표 중심 SVG 원의 반경과 투명도를 줄인다.",
+"runtime": "svg",
+"variants": [
+"원형",
+"타원형"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/indication.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "scaleandcolorindication",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R7-014",
+"en": "Scale and color indication",
+"ko": "크기와 색 맥동 강조",
+"aka": [
+"Indicate"
+],
+"family": "emphasis",
+"what": "대상이 잠깐 커지고 강조색으로 바뀌었다가 원래 상태로 돌아온다.",
+"why": "현재 언급하는 요소를 다른 요소에서 구별한다.",
+"params": "재현 기본값: 800 ms, scale 1~1.12~1, 노랑, thereAndBack",
+"impl": "대상의 scale과 fill 색을 왕복 보간한다.",
+"runtime": "gsap",
+"variants": [
+"색만 강조",
+"크기만 강조",
+"동시 강조"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/indication.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "radialflash",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R7-015",
+"en": "Radial flash",
+"ko": "방사형 섬광",
+"aka": [
+"Flash"
+],
+"family": "emphasis",
+"what": "목표 주변에서 짧은 선들이 사방으로 뻗었다가 사라진다.",
+"why": "발견이나 접촉의 순간을 눈에 띄게 한다.",
+"params": "재현 기본값: 350 ms, 선 12개, 반경 16~40 px, easeOut",
+"impl": "SVG 방사형 선의 길이와 opacity를 보간한다.",
+"runtime": "svg",
+"variants": [
+"점 섬광",
+"대상 둘레 섬광"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/indication.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "passingpathhighlight",
+"family": "emphasis",
+"core": "highlight-sweep",
+"rows": [
+{
+"id": "R7-016",
+"en": "Passing path highlight",
+"ko": "패스를 따라 흐르는 강조",
+"aka": [
+"ShowPassingFlash",
+"ShowPassingFlashWithThinningStrokeWidth",
+"VShowPassingFlash",
+"FlashAround",
+"ShowPassingFlashAround"
+],
+"family": "emphasis",
+"what": "전체 선 중 짧고 밝은 구간만 경로를 따라 지나간다.",
+"why": "연결의 방향과 흐름을 읽게 한다.",
+"params": "재현 기본값: 900 ms, 구간 길이 전체 15%, linear, 선폭 5 px",
+"impl": "SVG 짧은 dash 구간의 offset을 이동한다.",
+"runtime": "svg",
+"variants": [
+"고정 선폭",
+"끝이 가늘어짐",
+"바탕선 동반",
+"대상 주변선"
+],
+"core": "highlight-sweep",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/indication.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+},
+{
+"url": "https://github.com/3b1b/manim/blob/master/manimlib/animation/indication.py",
+"repo": "3b1b/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "wiggleindication",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R7-018",
+"en": "Wiggle indication",
+"ko": "좌우 흔들기 강조",
+"aka": [
+"Wiggle",
+"WiggleOutThenIn"
+],
+"family": "emphasis",
+"what": "대상이 중심에서 좌우로 기울거나 크기가 떨린 뒤 제자리로 돌아온다.",
+"why": "주의를 끌거나 불안정한 상태를 보여 준다.",
+"params": "재현 기본값: 700 ms, 회전 ±6 deg, 3회, 감쇠 sine",
+"impl": "rotation과 선택적 scale을 감쇠 진동으로 보간한다.",
+"runtime": "gsap",
+"variants": [
+"회전 흔들기",
+"크기 떨림"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/indication.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+},
+{
+"url": "https://github.com/3b1b/manim/blob/master/manimlib/animation/indication.py",
+"repo": "3b1b/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "temporarycircumscription",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R7-019",
+"en": "Temporary circumscription",
+"ko": "임시 둘레선 강조",
+"aka": [
+"Circumscribe",
+"CircleIndicate",
+"ShowCreationThenDestructionAround",
+"ShowCreationThenFadeAround"
+],
+"family": "emphasis",
+"what": "대상 바깥에 원이나 사각 테두리가 그려졌다가 지워진다.",
+"why": "설명의 대상 범위를 분명히 한다.",
+"params": "재현 기본값: 1000 ms, 여백 12 px, 선폭 3 px, 유지 400 ms",
+"impl": "SVG 둘레 패스의 stroke를 그린 뒤 투명도를 내린다.",
+"runtime": "svg",
+"variants": [
+"원 둘레",
+"사각 둘레",
+"역순 지우기"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/indication.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+},
+{
+"url": "https://github.com/3b1b/manim/blob/master/manimlib/animation/indication.py",
+"repo": "3b1b/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "visibilityblink",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R7-020",
+"en": "Visibility blink",
+"ko": "가시성 점멸",
+"aka": [
+"Blink"
+],
+"family": "emphasis",
+"what": "대상이 짧게 사라졌다 나타나는 동작을 반복한다.",
+"why": "경고나 놓치기 쉬운 위치를 인지한다.",
+"params": "재현 기본값: 2회, 회당 300 ms, opacity 1~0~1, steps",
+"impl": "visibility 또는 opacity를 짧은 단계로 왕복 전환한다.",
+"runtime": "css",
+"variants": [
+"한 번 점멸",
+"느린 점멸"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/indication.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "broadcastrings",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R7-029",
+"en": "Broadcast rings",
+"ko": "방송 파동 고리",
+"aka": [
+"Broadcast"
+],
+"family": "emphasis",
+"what": "중심에서 여러 고리가 시간차로 커지면서 희미해진다.",
+"why": "신호가 주변으로 확산됨을 느낀다.",
+"params": "재현 기본값: 1200 ms, 고리 3개, 간격 220 ms, 반경 8~100 px",
+"impl": "SVG 원의 반경과 opacity를 시간차로 보간한다.",
+"runtime": "svg",
+"variants": [
+"원형 파동",
+"임의 도형 파동"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/specialized.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "speedremapping",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R7-030",
+"en": "Speed remapping",
+"ko": "시간 구간 속도 재매핑",
+"aka": [
+"ChangeSpeed"
+],
+"family": "principles",
+"what": "동일한 동작이 특정 구간에서 느려졌다가 다른 구간에서 빨라진다.",
+"why": "핵심 순간을 길게 보고 나머지는 빠르게 읽는다.",
+"params": "재현 기본값: 총 1800 ms, 핵심 구간 속도 0.35배, 나머지 1.8배",
+"impl": "진행률을 자체 구간 시간 함수로 변환해 타임라인을 탐색한다.",
+"runtime": "gsap",
+"variants": [
+"슬로 모션",
+"급가속",
+"일시 정지"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/speedmodifier.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "statetostatepropertytween",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R7-034",
+"en": "State-to-state property tween",
+"ko": "목표 상태 속성 보간",
+"aka": [
+"MoveToTarget"
+],
+"family": "principles",
+"what": "위치, 크기, 회전, 색이 저장된 다음 상태로 동시에 바뀐다.",
+"why": "한 대상의 상태가 연속적으로 변함을 읽는다.",
+"params": "재현 기본값: 800 ms, smooth, 속성별 시작과 목표",
+"impl": "HTML 또는 SVG의 자체 상태 객체에서 수치 및 색 속성을 보간한다.",
+"runtime": "gsap",
+"variants": [
+"복합 속성 변화",
+"일부 속성 변화"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/transform.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "colorstatetransition",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R7-037",
+"en": "Color-state transition",
+"ko": "상태 색 변화",
+"aka": [
+"FadeToColor"
+],
+"family": "emphasis",
+"what": "대상 색이 기존 색에서 다음 색으로 부드럽게 변한다.",
+"why": "활성화나 역할 변화가 일어났음을 알게 한다.",
+"params": "재현 기본값: 450 ms, easeInOut, 색상 청색에서 노랑",
+"impl": "HTML 색 또는 SVG fill과 stroke를 보간한다.",
+"runtime": "gsap",
+"variants": [
+"채움 색",
+"윤곽 색",
+"부분 색"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/transform.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "laggedstart",
+"family": "principles",
+"core": "stagger",
+"rows": [
+{
+"id": "R7-046",
+"en": "Lagged animation start",
+"ko": "시간차 시작",
+"aka": [
+"LaggedStart",
+"LaggedStartMap"
+],
+"family": "principles",
+"what": "여러 대상의 움직임이 앞뒤로 조금씩 겹치며 차례로 시작한다.",
+"why": "집단에 순서와 리듬을 만든다.",
+"params": "재현 기본값: 대상 600 ms, 시작 간격 90 ms, easeOut",
+"impl": "GSAP 타임라인에 자식 동작을 일정 시간차로 넣는다.",
+"runtime": "gsap",
+"variants": [
+"좌우 순서",
+"중심부터",
+"임의 순서"
+],
+"core": "stagger",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/composition.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+},
+{
+"url": "https://motioncanvas.io/docs/flow/",
+"repo": "motion-canvas/motion-canvas",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "sequentialactionchain",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R7-047",
+"en": "Sequential action chain",
+"ko": "순차 동작 연결",
+"aka": [
+"Succession"
+],
+"family": "principles",
+"what": "한 동작이 끝난 뒤 다음 동작이 시작해 단계를 차례로 보여 준다.",
+"why": "과정의 선후 관계를 정확히 읽는다.",
+"params": "재현 기본값: 단계 700 ms, 간격 120 ms, smooth",
+"impl": "GSAP 타임라인에서 다음 동작을 이전 끝 이후에 배치한다.",
+"runtime": "gsap",
+"variants": [
+"무간격 연결",
+"설명 휴지 연결"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/composition.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+},
+{
+"url": "https://motioncanvas.io/docs/flow/",
+"repo": "motion-canvas/motion-canvas",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "concurrentactioncomposition",
+"family": "principles",
+"core": "overlapping-action",
+"rows": [
+{
+"id": "R7-048",
+"en": "Concurrent action composition",
+"ko": "동시 동작 합성",
+"aka": [
+"AnimationGroup"
+],
+"family": "principles",
+"what": "여러 대상이나 속성이 같은 시간대에 함께 움직인다.",
+"why": "동시에 일어나는 변화의 관계를 이해한다.",
+"params": "재현 기본값: 총 900 ms, 시작 차이 0 ms, smooth",
+"impl": "GSAP 타임라인의 공통 시간에 여러 속성 트윈을 배치한다.",
+"runtime": "gsap",
+"variants": [
+"완전 동시",
+"부분 겹침"
+],
+"core": "overlapping-action",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/composition.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+},
+{
+"url": "https://motioncanvas.io/docs/flow/",
+"repo": "motion-canvas/motion-canvas",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "explanatoryhold",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R7-052",
+"en": "Explanatory hold",
+"ko": "설명용 정지 휴지",
+"aka": [
+"Wait"
+],
+"family": "principles",
+"what": "동작이 끝난 화면이 잠시 멈춰 있고 다음 동작은 그 뒤에 시작한다.",
+"why": "새 상태를 읽고 해설을 따라갈 시간을 얻는다.",
+"params": "재현 기본값: 유지 1200 ms, 핵심식 2000 ms",
+"impl": "GSAP 타임라인에 상태를 유지하는 시간 구간을 둔다.",
+"runtime": "gsap",
+"variants": [
+"도해 휴지",
+"정답 전 휴지"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/animation.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "timingandspacingdemonstration",
+"family": "principles",
+"core": "timing-spacing",
+"rows": [
+{
+"id": "R7-078",
+"en": "Timing and spacing demonstration",
+"ko": "타이밍과 간격 대비",
+"aka": [],
+"family": "principles",
+"what": "같은 거리를 가는 두 대상의 프레임 간 이동 간격이 달라 서로 다른 무게와 속도로 보인다.",
+"why": "시간 배분이 움직임의 성격을 바꾼다는 점을 이해한다.",
+"params": "재현 기본값: 거리 300 px, 시간 1200 ms, linear와 easeOut 비교",
+"impl": "동일 시작과 끝에 서로 다른 진행률 곡선을 적용한다.",
+"runtime": "gsap",
+"variants": [
+"무거운 공",
+"가벼운 공",
+"등속과 가속"
+],
+"core": "timing-spacing",
+"sources": [
+{
+"url": "https://ed.ted.com/lessons/animation-basics-the-art-of-timing-and-spacing-ted-ed",
+"repo": "TED-Ed",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "codefocusdimming",
+"family": "emphasis",
+"core": "spotlight",
+"rows": [
+{
+"id": "R7-090",
+"en": "Code focus dimming",
+"ko": "코드 초점 디밍",
+"aka": [],
+"family": "emphasis",
+"what": "현재 설명하는 코드 범위는 선명하고 나머지 줄은 희미해진다. 초점 범위가 다음 부분으로 이동한다.",
+"why": "읽어야 할 코드 범위를 좁힌다.",
+"params": "재현 기본값: 300 ms, 비초점 opacity 0.3, easeInOut",
+"impl": "줄 또는 토큰 span의 opacity를 범위 키에 따라 갱신한다.",
+"runtime": "gsap",
+"variants": [
+"줄 초점",
+"토큰 초점",
+"다중 범위 초점"
+],
+"core": "spotlight",
+"sources": [
+{
+"url": "https://motioncanvas.io/docs/code/",
+"repo": "motion-canvas/motion-canvas",
+"license": "MIT"
+},
+{
+"url": "https://codehike.org/docs/code/focus",
+"repo": "code-hike/codehike",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "codeselectiontravel",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R7-091",
+"en": "Code selection travel",
+"ko": "코드 선택 영역 이동",
+"aka": [],
+"family": "emphasis",
+"what": "선택색 사각형이 코드의 한 범위에서 다음 범위로 이동하거나 크기가 바뀐다.",
+"why": "설명 대상의 문법적 범위를 읽게 한다.",
+"params": "재현 기본값: 400 ms, 선택색 opacity 0.25, 여백 2 px",
+"impl": "토큰 DOM 범위로 계산한 사각형의 x, y, width, height를 보간한다.",
+"runtime": "gsap",
+"variants": [
+"한 줄 선택",
+"다중 줄 선택",
+"문자 범위 선택"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motioncanvas.io/docs/code/",
+"repo": "motion-canvas/motion-canvas",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "semanticdiffpaint",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R7-092",
+"en": "Semantic diff paint",
+"ko": "추가와 삭제 코드 색 공개",
+"aka": [],
+"family": "emphasis",
+"what": "추가 줄과 삭제 줄이 다른 색으로 나타나고 변경 부분 표시가 함께 생긴다.",
+"why": "변경의 방향을 바로 구분한다.",
+"params": "재현 기본값: 250 ms, 추가 녹색, 삭제 적색, easeOut",
+"impl": "자체 diff 결과의 줄 배경과 표시 glyph opacity를 보간한다.",
+"runtime": "gsap",
+"variants": [
+"줄 diff",
+"단어 diff",
+"비교 화면"
+],
+"core": "",
+"sources": [
+{
+"url": "https://codehike.org/docs/code/diff",
+"repo": "code-hike/codehike",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "uispotlightmask",
+"family": "emphasis",
+"core": "spotlight",
+"rows": [
+{
+"id": "R7-106",
+"en": "UI spotlight mask",
+"ko": "UI 스포트라이트 마스크",
+"aka": [],
+"family": "emphasis",
+"what": "화면 전체가 어두워지고 특정 버튼이나 패널 주변만 밝게 남는다. 밝은 창이 다음 대상으로 이동한다.",
+"why": "복잡한 화면에서 봐야 할 영역을 분리한다.",
+"params": "재현 기본값: 350 ms, 암막 opacity 0.65, 여백 12 px, easeInOut",
+"impl": "자체 SVG 마스크의 구멍 사각형을 이동하고 암막 opacity를 보간한다.",
+"runtime": "svg",
+"variants": [
+"둥근 사각",
+"원형",
+"다중 영역"
+],
+"core": "spotlight",
+"sources": [
+{
+"url": "https://docs.arcade.software/kb/build/interactive-demo/edit/hotspots-callouts-and-spotlights",
+"repo": "Arcade",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "narrationsynchronizedsignaling",
+"family": "principles",
+"core": "motion-hierarchy",
+"rows": [
+{
+"id": "R7-117",
+"en": "Narration-synchronized signaling",
+"ko": "해설 동기 신호 주기",
+"aka": [],
+"family": "principles",
+"what": "해설에서 언급하는 순간 대응 도형이나 단어가 강조되고 다음 대상으로 신호가 옮겨간다.",
+"why": "말과 그림의 대응을 쉽게 찾는다.",
+"params": "재현 기본값: 해설 큐 오차 100 ms 이내, 강조 600 ms, 색 1개",
+"impl": "자체 내레이션 큐 표에 맞춰 대상 색과 scale을 짧게 보간한다.",
+"runtime": "gsap",
+"variants": [
+"색 신호",
+"테두리 신호",
+"화살표 신호"
+],
+"core": "motion-hierarchy",
+"sources": [
+{
+"url": "https://onlinelibrary.wiley.com/doi/10.1111/jcal.12197",
+"repo": "Richard E. Mayer / Wiley",
+"license": "unknown"
+},
+{
+"url": "https://www.cambridge.org/highereducation/books/multimedia-learning/FB7E79A165D24D47CEACEB4D2C426ECD/signaling-principle/9E37E775874EC1D93763620B8A296DD4",
+"repo": "Cambridge University Press",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "segmentedexplanationwithstableholds",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R7-118",
+"en": "Segmented explanation with stable holds",
+"ko": "분할 설명과 안정된 휴지",
+"aka": [],
+"family": "principles",
+"what": "긴 과정이 짧은 동작 묶음으로 나뉘고 각 묶음 끝에서 화면이 잠시 유지된다.",
+"why": "한 번에 처리해야 할 정보를 줄이고 단계별로 이해한다.",
+"params": "재현 기본값: 동작 묶음 3000 ms, 휴지 1200 ms, 단계 4개",
+"impl": "자체 과정 타임라인을 단계로 나누고 경계에 정지 상태를 둔다.",
+"runtime": "gsap",
+"variants": [
+"영상 자동 분할",
+"스크롤덱 단계 분할",
+"학습자 진행"
+],
+"core": "",
+"sources": [
+{
+"url": "https://www.cambridge.org/core/books/abs/cambridge-handbook-of-multimedia-learning/principles-for-managing-essential-processing-in-multimedia-learning-segmenting-pretraining-and-modality-principles/DD24C2F48B9B1277CE59F78276110258",
+"repo": "Cambridge University Press",
+"license": "unknown"
+},
+{
+"url": "https://onlinelibrary.wiley.com/doi/10.1111/jcal.12197",
+"repo": "Richard E. Mayer / Wiley",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "temporalcontiguityofexplanationandchange",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "R7-121",
+"en": "Temporal contiguity of explanation and change",
+"ko": "설명과 변화의 동시 제시",
+"aka": [],
+"family": "principles",
+"what": "원인을 설명하는 말이 나올 때 대응 변화도 동시에 일어난다.",
+"why": "해설 내용과 눈앞의 사건을 한 덩어리로 연결한다.",
+"params": "재현 기본값: 큐 지연 0~100 ms, 변화 800 ms, smooth",
+"impl": "자체 해설 큐와 원인 도해 트윈을 동일 시간에 시작한다.",
+"runtime": "gsap",
+"variants": [
+"원인과 결과 큐",
+"용어와 도형 큐"
+],
+"core": "",
+"sources": [
+{
+"url": "https://onlinelibrary.wiley.com/doi/10.1111/jcal.12197",
+"repo": "Richard E. Mayer / Wiley",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "coherencedrivenbackgroundsettling",
+"family": "principles",
+"core": "motion-hierarchy",
+"rows": [
+{
+"id": "R7-122",
+"en": "Coherence-driven background settling",
+"ko": "핵심 외 움직임 정착",
+"aka": [],
+"family": "principles",
+"what": "핵심 설명이 시작되면 배경과 보조 장식의 움직임이 느려져 멈추고 핵심 대상만 움직인다.",
+"why": "중요하지 않은 변화에 시선을 빼앗기지 않는다.",
+"params": "재현 기본값: 정착 500 ms, 배경 속도 1~0배, 핵심 900 ms",
+"impl": "자체 배경 트윈의 속도를 감쇠시키고 정지 상태에서 유지한다.",
+"runtime": "gsap",
+"variants": [
+"배경 정지",
+"보조 요소 퇴장",
+"비핵심 디밍"
+],
+"core": "motion-hierarchy",
+"sources": [
+{
+"url": "https://onlinelibrary.wiley.com/doi/10.1111/jcal.12197",
+"repo": "Richard E. Mayer / Wiley",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "animatedunderline",
+"family": "emphasis",
+"core": "underline-draw",
+"rows": [
+{
+"id": "R7-128",
+"en": "Animated underline",
+"ko": "밑줄 그리기 강조",
+"aka": [
+"FlashUnder"
+],
+"family": "emphasis",
+"what": "짧은 선이 문구 아래를 따라 그려지거나 밝은 구간으로 지나간다.",
+"why": "현재 핵심 문구를 구별한다.",
+"params": "재현 기본값: 550 ms, 선폭 3 px, 여백 6 px, easeOut",
+"impl": "문구 폭으로 만든 SVG 밑줄의 dashoffset을 보간한다.",
+"runtime": "svg",
+"variants": [
+"밑줄 유지",
+"밑줄 지나가기"
+],
+"core": "underline-draw",
+"sources": [
+{
+"url": "https://github.com/3b1b/manim/blob/master/manimlib/animation/indication.py",
+"repo": "3b1b/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "progresseasingcurves",
+"family": "principles",
+"core": "easing-curves",
+"rows": [
+{
+"id": "R7-129",
+"en": "Progress easing curves",
+"ko": "진행률 이징 곡선",
+"aka": [],
+"family": "principles",
+"what": "대상이 같은 경로를 가도 출발과 도착의 가속이나 감속 곡선에 따라 다른 속도로 보인다.",
+"why": "동작의 무게와 속도를 전달한다.",
+"params": "재현 기본값: 800 ms, 기본 smooth, 왕복 thereAndBack",
+"impl": "자체 진행률 함수를 위치 및 속성 보간에 적용한다.",
+"runtime": "gsap",
+"variants": [
+"linear",
+"easeIn",
+"easeOut",
+"easeInOut",
+"왕복",
+"구간 압축"
+],
+"core": "easing-curves",
+"sources": [
+{
+"url": "https://docs.manim.community/en/stable/reference/manim.utils.rate_functions.html",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "sparkspray",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R8-024",
+"en": "Spark Spray",
+"ko": "불티 분사",
+"aka": [],
+"family": "emphasis",
+"what": "작은 밝은 점이 빠르게 튀어 나가 짧은 꼬리를 남기고 꺼진다.",
+"why": "충돌과 마찰, 순간적인 충격을 강조한다.",
+"params": "재현 제안 기본값: 800ms, 점 60개, 초기속도 350px/s, 수명 450ms, 가산 합성",
+"impl": "canvas에서 원뿔 방향의 탄도를 만들고 속도 방향으로 짧은 선을 그린다.",
+"runtime": "canvas",
+"variants": [
+"충돌 불티",
+"용접 불티",
+"전기 점멸"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/iart-ai/webgl-animation-skills/blob/HEAD/skills/particle-system/SKILL.md",
+"repo": "iart-ai/webgl-animation-skills",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "bloompulse",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R8-061",
+"en": "Bloom Pulse",
+"ko": "블룸 맥박",
+"aka": [
+"Glow bloom"
+],
+"family": "emphasis",
+"what": "밝은 물체 주변으로 부드러운 빛이 퍼졌다가 줄어든다.",
+"why": "주인공과 에너지의 절정을 강조한다.",
+"params": "재현 제안 기본값: 1600ms, 임계값 0.8, 강도 0.2부터 1.1, 반경 0.35, sine.inOut",
+"impl": "WebGL에서 밝은 픽셀만 추출해 여러 해상도로 블러한 뒤 원본에 더한다.",
+"runtime": "webgl",
+"variants": [
+"선택적 블룸",
+"넓은 글로",
+"비트 블룸"
+],
+"core": "",
+"sources": [
+{
+"url": "https://threejs.org/examples/#webgl_postprocessing_unreal_bloom",
+"repo": "mrdoob/three.js",
+"license": "MIT"
+},
+{
+"url": "https://github.com/fand/vfx-js/tree/main/packages/effects#effects",
+"repo": "fand/vfx-js",
+"license": "MIT"
+},
+{
+"url": "https://oframe.github.io/ogl/examples/post-bloom.html",
+"repo": "oframe/ogl",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "pulsingborderenergy",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R8-078",
+"en": "Pulsing Border Energy",
+"ko": "맥동 테두리 에너지",
+"aka": [],
+"family": "emphasis",
+"what": "도형의 테두리를 따라 밝은 띠가 돌고 일부 구간이 두꺼워졌다 얇아진다.",
+"why": "활성 상태와 에너지가 머무는 영역을 강조한다.",
+"params": "재현 제안 기본값: 2400ms, 테두리 2px, 맥동 폭 1px, 이동 주기 1800ms, 최대 글로 10px",
+"impl": "WebGL에서 도형 경계 거리와 둘레 진행값으로 밝기 띠를 만든다.",
+"runtime": "webgl",
+"variants": [
+"회전 테두리",
+"파동 테두리",
+"국소 발광"
+],
+"core": "",
+"sources": [
+{
+"url": "https://shaders.paper.design/pulsing-border",
+"repo": "paper-design/shaders",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "outlineandedgepulse",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "R8-086",
+"en": "Outline and Edge Pulse",
+"ko": "윤곽과 에지 맥박",
+"aka": [],
+"family": "emphasis",
+"what": "이미지나 3D 물체의 경계선이 나타나고 두께와 밝기가 잠깐 커졌다 줄어든다.",
+"why": "복잡한 화면에서 선택한 형태를 분명하게 드러낸다.",
+"params": "재현 제안 기본값: 1400ms, 윤곽 1px부터 3px, 강도 0부터 0.8, sine.inOut",
+"impl": "WebGL에서 깊이와 법선 또는 밝기 차이로 경계를 추출해 원본 위에 합성한다.",
+"runtime": "webgl",
+"variants": [
+"선택 윤곽",
+"스케치 에지",
+"전체 경계 강조"
+],
+"core": "",
+"sources": [
+{
+"url": "https://threejs.org/examples/#webgl_postprocessing_outline",
+"repo": "mrdoob/three.js",
+"license": "MIT"
+},
+{
+"url": "https://threejs.org/examples/#webgl_postprocessing_sobel",
+"repo": "mrdoob/three.js",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "audioreactiveshapepulse",
+"family": "emphasis",
+"core": "kinetic-beats",
+"rows": [
+{
+"id": "R8-120",
+"en": "Audio Reactive Shape Pulse",
+"ko": "오디오 반응 도형 맥박",
+"aka": [],
+"family": "emphasis",
+"what": "음악의 저음이나 음량이 커질 때 도형이 조금 커지고 빛이 강해졌다 돌아온다.",
+"why": "영상 움직임을 소리의 리듬과 묶어 준다.",
+"params": "재현 제안 기본값: 4000ms, 저음 40~180Hz, 확대 최대 1.05배, 공격 40ms, 감쇠 180ms",
+"impl": "canvas에서 사전 분석한 오디오 밴드값을 시간별 크기와 발광 강도에 매핑한다.",
+"runtime": "canvas",
+"variants": [
+"저음 맥박",
+"고음 광택",
+"배경 호흡"
+],
+"core": "kinetic-beats",
+"sources": [
+{
+"url": "https://github.com/heygen-com/hyperframes/blob/HEAD/skills/hyperframes-animation/techniques.md",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://github.com/remotion-dev/skills/blob/HEAD/skills/remotion-best-practices/remotion-markup/audio-visualization.md",
+"repo": "remotion-dev/skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "staging",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-003",
+"en": "Staging",
+"ko": "명료한 연출",
+"aka": [],
+"family": "principles",
+"what": "구도·대비·동작을 정돈해 한 가지 의미를 분명히 보여 준다.",
+"why": "",
+"params": "강조 150~250ms power2.out; 주변 강조 해제 100~180ms; 홀드 1500~3000ms; 동시 초점 1개",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#3. 디즈니 12원칙 전체",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "straightaheadactionandposetopose",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-004",
+"en": "Straight Ahead Action and Pose to Pose",
+"ko": "순차 작화와 핵심 자세 작화",
+"aka": [],
+"family": "principles",
+"what": "앞 프레임부터 전개하거나 핵심 자세부터 정한 뒤 중간을 연결한다.",
+"why": "",
+"params": "키 상태 3개; 연결 250~450ms power3.inOut; 상태 홀드 800~1800ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#3. 디즈니 12원칙 전체",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "followthroughandoverlappingaction",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-005",
+"en": "Follow Through and Overlapping Action",
+"ko": "팔로스루와 겹침 동작",
+"aka": [],
+"family": "principles",
+"what": "주동체 뒤에 부속이 따라오고 각 부분이 다른 시점에 멈춘다.",
+"why": "",
+"params": "본체 300ms, 부속 시작 지연 40~80ms, 부속 350~450ms; power3.out; 진폭 2~5px",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#3. 디즈니 12원칙 전체",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "slowinandslowout",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-006",
+"en": "Slow In and Slow Out",
+"ko": "느린 시작과 느린 끝",
+"aka": [],
+"family": "principles",
+"what": "시작·끝의 변화량을 작게 해 가속·감속을 보여 준다.",
+"why": "",
+"params": "300~450ms; sine.inOut 또는 Material legacy standard (0.4,0,0.2,1); 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#3. 디즈니 12원칙 전체",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "arcs",
+"family": "principles",
+"core": "arc-motion",
+"rows": [
+{
+"id": "DICT-007",
+"en": "Arcs",
+"ko": "아크",
+"aka": [],
+"family": "principles",
+"what": "자연스러운 동작을 곡선 경로로 연결한다.",
+"why": "",
+"params": "350~550ms; power2.inOut; 곡선 높이 24~64px; 요소 간격 60ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "arc-motion",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#3. 디즈니 12원칙 전체",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "secondaryaction",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-008",
+"en": "Secondary Action",
+"ko": "보조 동작",
+"aka": [],
+"family": "principles",
+"what": "주동작의 의미를 돕는 작은 추가 동작을 배치한다.",
+"why": "",
+"params": "주동작 300ms 뒤 체크 150~220ms; power2.out; 후행 60~120ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#3. 디즈니 12원칙 전체",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "timing",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-009",
+"en": "Timing",
+"ko": "타이밍",
+"aka": [],
+"family": "principles",
+"what": "동작에 배정한 시간으로 무게·속도·의도를 정한다.",
+"why": "",
+"params": "수정 150~250ms, 구조 변화 350~500ms; power3.out; 독해 홀드 1500~4000ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#3. 디즈니 12원칙 전체",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "exaggeration",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-010",
+"en": "Exaggeration",
+"ko": "과장",
+"aka": [],
+"family": "principles",
+"what": "핵심 특징을 실제보다 크게 표현해 의미를 명료하게 한다.",
+"why": "",
+"params": "확대 180~250ms, 복원 200ms; power2.out; 크기 1.03~1.06; 한 비트 1회",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#3. 디즈니 12원칙 전체",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "soliddrawing",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-011",
+"en": "Solid Drawing",
+"ko": "입체감 있는 작화",
+"aka": [],
+"family": "principles",
+"what": "형태·무게·균형·부피가 일관되도록 그린다.",
+"why": "",
+"params": "정지 형태 기준; 필요한 이동 300~450ms power3.out; 그림자 변화 150ms; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#3. 디즈니 12원칙 전체",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "appeal",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-012",
+"en": "Appeal",
+"ko": "매력과 명료함",
+"aka": [],
+"family": "principles",
+"what": "관객이 읽고 관심을 가질 수 있는 개성·명료함을 만든다.",
+"why": "",
+"params": "색·형태 규칙 고정; 등장 250~400ms power3.out; 그룹 간 여백 32~64px",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#3. 디즈니 12원칙 전체",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "drag",
+"family": "principles",
+"core": "overlapping-action",
+"rows": [
+{
+"id": "DICT-015",
+"en": "Drag",
+"ko": "끌림",
+"aka": [],
+"family": "principles",
+"what": "주동체가 출발할 때 부속이 뒤에 처진다.",
+"why": "",
+"params": "지연 40~70ms; 최대 처짐 3~6px; power2.out",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "overlapping-action",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#3.1 함께 쓰지만 구분해야 할 하위 개념",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "overshoot",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-016",
+"en": "Overshoot",
+"ko": "오버슈트",
+"aka": [],
+"family": "principles",
+"what": "목표를 조금 지나친 뒤 목표로 돌아온다.",
+"why": "",
+"params": "350~500ms; back.out(0.8); 목표 초과는 샘플로 확인; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#3.1 함께 쓰지만 구분해야 할 하위 개념",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "settle",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-017",
+"en": "Settle",
+"ko": "정착",
+"aka": [],
+"family": "principles",
+"what": "도착 뒤 잔여 변화가 사라져 안정 상태가 된다.",
+"why": "",
+"params": "총 300~600ms; power3.out 또는 임계감쇠 spring; 정착 뒤 1500ms 이상 홀드",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#3.1 함께 쓰지만 구분해야 할 하위 개념",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "linearnonepower0",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-018",
+"en": "Linear / none / power0",
+"ko": "선형",
+"aka": [],
+"family": "principles",
+"what": "시간과 변화량이 일정 비율로 대응한다.",
+"why": "",
+"params": "300~1000ms; CSS linear=(0,0,1,1); GSAP none; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "ease",
+"family": "principles",
+"core": "easing-curves",
+"rows": [
+{
+"id": "DICT-019",
+"en": "ease",
+"ko": "CSS 기본 완화",
+"aka": [],
+"family": "principles",
+"what": "초반에 빨라지고 끝에서 천천히 멈춘다.",
+"why": "",
+"params": "150~300ms; 정확히 (0.25,0.1,0.25,1); 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "easing-curves",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "easeinin",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-020",
+"en": "ease-in / in",
+"ko": "가속",
+"aka": [],
+"family": "principles",
+"what": "천천히 출발해 뒤로 갈수록 빨라진다.",
+"why": "",
+"params": "150~250ms; CSS 정확히 (0.42,0,1,1); GSAP 예 power2.in; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "easeoutout",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-021",
+"en": "ease-out / out",
+"ko": "감속",
+"aka": [],
+"family": "principles",
+"what": "빠르게 반응하고 천천히 목표에 정착한다.",
+"why": "",
+"params": "150~350ms; CSS 정확히 (0,0,0.58,1); GSAP 예 power3.out; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "easeinoutinout",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-022",
+"en": "ease-in-out / inOut",
+"ko": "가속과 감속",
+"aka": [],
+"family": "principles",
+"what": "양 끝은 느리고 가운데는 빠르다.",
+"why": "",
+"params": "300~500ms; CSS 정확히 (0.42,0,0.58,1); GSAP 예 power2.inOut; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "sine",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-023",
+"en": "Sine",
+"ko": "사인",
+"aka": [],
+"family": "principles",
+"what": "삼각함수로 부드러운 가감속을 만든다.",
+"why": "",
+"params": "400~800ms; sine.in/out/inOut; ≈ (0.12,0,0.39,0) / (0.61,1,0.88,1) / (0.37,0,0.63,1); 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "quadpower1",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-024",
+"en": "Quad / power1",
+"ko": "2차",
+"aka": [],
+"family": "principles",
+"what": "제곱 함수 계열로 완만하게 속도를 바꾼다.",
+"why": "",
+"params": "150~250ms; power1.in/out/inOut; ≈ (0.11,0,0.5,0) / (0.5,1,0.89,1) / (0.45,0,0.55,1); 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "cubicpower2",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-025",
+"en": "Cubic / power2",
+"ko": "3차",
+"aka": [],
+"family": "principles",
+"what": "세제곱 계열로 더 뚜렷하게 가감속한다.",
+"why": "",
+"params": "200~350ms; power2.in/out/inOut; ≈ (0.32,0,0.67,0) / (0.33,1,0.68,1) / (0.65,0,0.35,1); 간격 40~60ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "quartpower3",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-026",
+"en": "Quart / power3",
+"ko": "4차",
+"aka": [],
+"family": "principles",
+"what": "4제곱 계열로 빠르게 이동하고 긴 감속을 준다.",
+"why": "",
+"params": "350~600ms; power3.in/out/inOut; ≈ (0.5,0,0.75,0) / (0.25,1,0.5,1) / (0.76,0,0.24,1); 간격 50~80ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "quintpower4strong",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-027",
+"en": "Quint / power4 / strong",
+"ko": "5차",
+"aka": [],
+"family": "principles",
+"what": "5제곱 계열로 강한 가감속을 준다.",
+"why": "",
+"params": "350~550ms; power4.in/out/inOut; ≈ (0.64,0,0.78,0) / (0.22,1,0.36,1) / (0.83,0,0.17,1); 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "expo",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-028",
+"en": "Expo",
+"ko": "지수",
+"aka": [],
+"family": "principles",
+"what": "지수 함수로 초반 또는 후반에 변화량을 집중한다.",
+"why": "",
+"params": "300~500ms; expo.in/out/inOut; ≈ (0.7,0,0.84,0) / (0.16,1,0.3,1) / (0.87,0,0.13,1); 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "circ",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-029",
+"en": "Circ",
+"ko": "원형",
+"aka": [],
+"family": "principles",
+"what": "원의 일부를 이용한 곡선으로 강한 속도 변화를 준다.",
+"why": "",
+"params": "300~500ms; circ.in/out/inOut; ≈ (0.55,0,1,0.45) / (0,0.55,0.45,1) / (0.85,0,0.15,1); 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "back",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-030",
+"en": "Back",
+"ko": "되밀림",
+"aka": [],
+"family": "principles",
+"what": "목표 반대 방향으로 잠깐 가거나 목표를 넘고 정착한다.",
+"why": "",
+"params": "350~500ms; back.in/out/inOut(0.8~1.2); 대표 ≈ (0.36,0,0.66,-0.56) / (0.34,1.56,0.64,1) / (0.68,-0.6,0.32,1.6); 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "elastic",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-031",
+"en": "Elastic",
+"ko": "탄성",
+"aka": [],
+"family": "principles",
+"what": "목표 주변에서 감쇠 진동하며 정착한다.",
+"why": "",
+"params": "500~800ms; elastic.out(1,0.4) 시작값; 변형 in/inOut; 단일 cubic-bezier 없음; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "bounce",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-032",
+"en": "Bounce",
+"ko": "튀기기",
+"aka": [],
+"family": "principles",
+"what": "충돌 뒤 몇 번 짧게 튀며 멈추는 구간 함수이다.",
+"why": "",
+"params": "450~700ms; bounce.out 또는 in/inOut; 단일 cubic-bezier 없음; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "steps",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-033",
+"en": "Steps",
+"ko": "계단",
+"aka": [],
+"family": "principles",
+"what": "중간 보간 없이 정해진 횟수로 값이 뛴다.",
+"why": "",
+"params": "글자당 40~70ms, 구절 후 200~400ms; CSS steps(N,end); GSAP steps(N); 베지어 없음",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "customeasecubicbezierlinear",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-034",
+"en": "CustomEase / cubic-bezier / linear()",
+"ko": "사용자 곡선",
+"aka": [],
+"family": "principles",
+"what": "원하는 속도 그래프를 직접 정의한다.",
+"why": "",
+"params": "150~400ms; 예 (0.2,0,0.38,0.9); 다점 linear()는 샘플값 사용; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "slowmoslow",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-035",
+"en": "SlowMo / slow",
+"ko": "완만한 양끝·선형 중앙",
+"aka": [],
+"family": "principles",
+"what": "시작·끝은 완화하고 중앙은 오래 선형으로 유지한다.",
+"why": "",
+"params": "600~1000ms; slow(0.7,0.7,false) 시작값; 단일 베지어 없음; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "rougheaserough",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-036",
+"en": "RoughEase / rough",
+"ko": "거친 변화",
+"aka": [],
+"family": "principles",
+"what": "제어점별 변화량에 불규칙성을 더한다.",
+"why": "",
+"params": "200~350ms; rough({strength:0.1,points:12,randomize:false,clamp:true}); 베지어 없음; 반복 0회",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "exposcaleeaseexposcale",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-037",
+"en": "ExpoScaleEase / expoScale",
+"ko": "지수 비율 크기 변화",
+"aka": [],
+"family": "principles",
+"what": "큰 배율 변화가 지각상 일정한 비율로 보이도록 보정한다.",
+"why": "",
+"params": "600~1000ms; expoScale(1,4,power2.inOut); 단일 베지어 없음; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "custombounce",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-038",
+"en": "CustomBounce",
+"ko": "사용자 충돌",
+"aka": [],
+"family": "principles",
+"what": "튀는 횟수·강도·압축을 따로 설계한다.",
+"why": "",
+"params": "500~800ms; strength 0.2 시작값; 곡선·squash 분리; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "customwiggle",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-039",
+"en": "CustomWiggle",
+"ko": "사용자 진동",
+"aka": [],
+"family": "principles",
+"what": "왕복 흔들림 횟수·감쇠 형태를 정의한다.",
+"why": "",
+"params": "200~350ms; wiggles 2~3, 감쇠형; 회전 ±1° 또는 이동 ±2px; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "spring",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-040",
+"en": "Spring",
+"ko": "물리 스프링",
+"aka": [],
+"family": "principles",
+"what": "질량·강성·감쇠·초기 속도로 정착 궤적을 정한다.",
+"why": "",
+"params": "m:1, k:400, c:40, v0:0, ζ:1; ±0.1% 정착 약 462ms; 단일 베지어 없음; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.1 곡선의 읽는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "massm",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-041",
+"en": "Mass m",
+"ko": "질량",
+"aka": [],
+"family": "principles",
+"what": "같은 힘에서 얼마나 덜 가속하는지 정한다.",
+"why": "",
+"params": "기준 m=1, 비교 m=2; 곡선 spring; 시간은 계산; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.2 스프링 물리 파라미터를 바로 조정하는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "stiffnessk",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-042",
+"en": "Stiffness k",
+"ko": "강성",
+"aka": [],
+"family": "principles",
+"what": "목표로 되돌리는 힘의 세기를 정한다.",
+"why": "",
+"params": "기준 k=400; 빠르게는 625, c는 원하는 ζ에 맞춰 재설정; 시간은 계산",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.2 스프링 물리 파라미터를 바로 조정하는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "dampingc",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-043",
+"en": "Damping c",
+"ko": "감쇠",
+"aka": [],
+"family": "principles",
+"what": "속도에 비례해 에너지를 줄인다.",
+"why": "",
+"params": "m=1,k=400,c=40; 임계감쇠; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.2 스프링 물리 파라미터를 바로 조정하는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "dampingratio",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-044",
+"en": "Damping ratio ζ",
+"ko": "감쇠비",
+"aka": [],
+"family": "principles",
+"what": "실제 감쇠를 임계감쇠에 대한 비율로 나타낸다.",
+"why": "",
+"params": "ζ=1 기본; 0.8~0.9 약한 반동; 0.6~0.7 놀이 한정; 시간은 계산",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.2 스프링 물리 파라미터를 바로 조정하는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "initialvelocityv0",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-045",
+"en": "Initial velocity v0",
+"ko": "초기 속도",
+"aka": [],
+"family": "principles",
+"what": "시작할 때 이미 가진 속도를 지정한다.",
+"why": "",
+"params": "영상 v0=0; 체험관은 측정 px/s를 목표 거리로 나눠 정규화; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.2 스프링 물리 파라미터를 바로 조정하는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "responsenaturalperiod",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-046",
+"en": "Response / natural period",
+"ko": "응답 시간",
+"aka": [],
+"family": "principles",
+"what": "고유진동 주기를 시간으로 표현하는 설계용 변수이다.",
+"why": "",
+"params": "로컬 helper 기준 response 300~500ms; ωn=2π/response; ζ=1; 정착은 response보다 길어",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.2 스프링 물리 파라미터를 바로 조정하는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "restthresholdepsilon",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-047",
+"en": "Rest threshold / epsilon",
+"ko": "정착 임계값",
+"aka": [],
+"family": "principles",
+"what": "목표·속도에서 충분히 작아진 오차를 정지 기준으로 정한다.",
+"why": "",
+"params": "정규화 위치 ε=0.001; 실시간 UI는 속도 임계도 지정; 시간 계산; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#4.2 스프링 물리 파라미터를 바로 조정하는 법",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "duration",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-048",
+"en": "Duration",
+"ko": "지속 시간",
+"aka": [],
+"family": "principles",
+"what": "한 동작이 시작부터 끝까지 걸리는 시간이다.",
+"why": "",
+"params": "피드백 100~180ms, 등장 250~450ms; power3.out; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#5. 타이밍·간격·리듬 기본기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "delayoffset",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-049",
+"en": "Delay / Offset",
+"ko": "시작 지연",
+"aka": [],
+"family": "principles",
+"what": "원점이나 이전 사건에서 얼마나 뒤에 시작할지 정한다.",
+"why": "",
+"params": "지연 60~150ms; 라벨 200ms power2.out",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#5. 타이밍·간격·리듬 기본기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "spacing",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-050",
+"en": "Spacing",
+"ko": "간격 배치",
+"aka": [],
+"family": "principles",
+"what": "같은 시간 간격에서 대상이 얼마나 이동하는지 정한다.",
+"why": "",
+"params": "총 400ms, 샘플 100ms; power3.out; 거리 80px",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#5. 타이밍·간격·리듬 기본기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "spatialspacing",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-051",
+"en": "Spatial spacing",
+"ko": "공간 간격",
+"aka": [],
+"family": "principles",
+"what": "요소 간 거리·여백을 정한다.",
+"why": "",
+"params": "그룹 여백 32~64px, 내부 12~24px; 정지 상태는 이징·시간 없음",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#5. 타이밍·간격·리듬 기본기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "holddwell",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-052",
+"en": "Hold / Dwell",
+"ko": "홀드",
+"aka": [],
+"family": "principles",
+"what": "도착 상태를 유지해 읽을 시간을 준다.",
+"why": "",
+"params": "짧은 요지 1500~2500ms, 비교 2500~4000ms 이상; 이징 없음",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#5. 타이밍·간격·리듬 기본기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "sequence",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-053",
+"en": "Sequence",
+"ko": "순차 동작",
+"aka": [],
+"family": "principles",
+"what": "하나의 결과 다음에 다음 동작을 시작한다.",
+"why": "",
+"params": "각 250~400ms power3.out; 중간 80~150ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#5. 타이밍·간격·리듬 기본기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "temporaloverlap",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-055",
+"en": "Temporal overlap",
+"ko": "시간 겹침",
+"aka": [],
+"family": "principles",
+"what": "다음 동작이 이전 동작 종료 전에 시작한다.",
+"why": "",
+"params": "겹침 60~120ms; 각 250~400ms; power3.out",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#5. 타이밍·간격·리듬 기본기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "rhythmbeat",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-056",
+"en": "Rhythm / Beat",
+"ko": "리듬·비트",
+"aka": [],
+"family": "principles",
+"what": "동작과 정지를 반복해 설명의 박자를 만든다.",
+"why": "",
+"params": "변화 250~450ms, 정지 1500~3000ms; 강·중·약 곡선 2~3개",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#5. 타이밍·간격·리듬 기본기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "accentmotionpunctuation",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-057",
+"en": "Accent / Motion punctuation",
+"ko": "액센트",
+"aka": [],
+"family": "principles",
+"what": "짧은 변화 하나로 핵심 순간을 표시한다.",
+"why": "",
+"params": "120~220ms power2.out; scale 최대 1.04; 반복 0회; 앞뒤 150ms 정리",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#5. 타이밍·간격·리듬 기본기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "asymmetrictiming",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-058",
+"en": "Asymmetric timing",
+"ko": "비대칭 시간",
+"aka": [],
+"family": "principles",
+"what": "등장·정착·퇴장에 다른 시간을 배정한다.",
+"why": "",
+"params": "등장 300ms power3.out, 퇴장 180ms power2.in, 홀드 2000ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#5. 타이밍·간격·리듬 기본기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "framesampling",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-059",
+"en": "Frame sampling",
+"ko": "프레임 샘플링",
+"aka": [],
+"family": "principles",
+"what": "연속 동작을 프레임 시간에서 관찰한다.",
+"why": "",
+"params": "30fps 한 프레임 33.33ms, 60fps 16.67ms; 이징은 기존 곡선",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#5. 타이밍·간격·리듬 기본기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "scrubprogress",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-060",
+"en": "Scrub progress",
+"ko": "스크럽 진행도",
+"aka": [],
+"family": "principles",
+"what": "시간 대신 스크롤의 위치로 상태를 결정한다.",
+"why": "",
+"params": "진행도 0~1; 직접 대응 none; 정지 구간 0.30~0.75; ms 없음",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#5. 타이밍·간격·리듬 기본기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "sequencebudget",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-061",
+"en": "Sequence budget",
+"ko": "전체 시퀀스 예산",
+"aka": [],
+"family": "principles",
+"what": "개별 동작과 지연을 합쳐 완성 시점을 제한한다.",
+"why": "",
+"params": "UI 총 500ms 이내 ; 220ms 동작이면 8행 each≤40ms; power3.out",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#5. 타이밍·간격·리듬 기본기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "choreography",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-063",
+"en": "Choreography",
+"ko": "코레오그래피",
+"aka": [],
+"family": "principles",
+"what": "여러 움직임의 순서·경로·겹침을 하나의 흐름으로 설계한다.",
+"why": "",
+"params": "틀 150ms, 자료 250ms, 결과 300ms; 간격 60~100ms; power3.out",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#6. 모션 위계·코레오그래피",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "productivemotion",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-064",
+"en": "Productive motion",
+"ko": "생산적 모션",
+"aka": [],
+"family": "principles",
+"what": "작업 흐름에 끼어들지 않는 작고 빠른 모션이다.",
+"why": "",
+"params": "70~240ms ; Carbon productive 곡선 2.2절; 간격 0~20ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#6. 모션 위계·코레오그래피",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "expressivemotion",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-065",
+"en": "Expressive motion",
+"ko": "표현적 모션",
+"aka": [],
+"family": "principles",
+"what": "드문 중요 순간에 더 크게 보이는 움직임을 준다.",
+"why": "",
+"params": "300~500ms 시작값; Carbon expressive entrance (0,0,0.3,1); 간격 60ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#6. 모션 위계·코레오그래피",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "commonfategroupmotion",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-066",
+"en": "Common fate / Group motion",
+"ko": "공통 운명",
+"aka": [],
+"family": "principles",
+"what": "같은 방향·시간으로 움직이는 요소를 한 묶음으로 읽게 한다.",
+"why": "",
+"params": "300~450ms power3.inOut; 그룹 내부 시차 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#6. 모션 위계·코레오그래피",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "semanticconsistency",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-067",
+"en": "Semantic consistency",
+"ko": "의미 일관성",
+"aka": [],
+"family": "principles",
+"what": "같은 기능에는 같은 모션 의미를 배정한다.",
+"why": "",
+"params": "같은 역할의 곡선·방향 고정; 150~300ms; 크기에 따라 기간 조절",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#6. 모션 위계·코레오그래피",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "spatialconsistency",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-068",
+"en": "Spatial consistency",
+"ko": "공간 일관성",
+"aka": [],
+"family": "principles",
+"what": "같은 층·다른 층 관계에 맞게 이동을 배정한다.",
+"why": "",
+"params": "250~400ms; power2.inOut 또는 Carbon standard; 층 dim 150~250ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#6. 모션 위계·코레오그래피",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "progressivedisclosure",
+"family": "principles",
+"core": "progressive-disclosure",
+"rows": [
+{
+"id": "DICT-069",
+"en": "Progressive disclosure",
+"ko": "점진적 공개",
+"aka": [],
+"family": "principles",
+"what": "필요한 정보부터 보여 주고 세부를 나중에 펼친다.",
+"why": "",
+"params": "펼치기 200~350ms power3.out; 독해 간격 1000~2500ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "progressive-disclosure",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#6. 모션 위계·코레오그래피",
+"license": "own"
+}
+]
+},
+{
+"id": "DICT-202",
+"en": "Progressive disclosure",
+"ko": "점진적 공개",
+"aka": [],
+"family": "emphasis",
+"what": "현재 과제에 필요한 정보를 먼저 보이고 상세는 다음 단계나 요청에 공개하는 설계이다.",
+"why": "",
+"params": "진입 240ms E, 단계 간격 800~1500ms, 읽기 2000~4000ms H",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "progressive-disclosure",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#B. 공개 순서와 시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "triggerandfeedback",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-070",
+"en": "Trigger and feedback",
+"ko": "트리거와 피드백",
+"aka": [],
+"family": "principles",
+"what": "행동에 곧바로 대응하는 상태 변화를 준다.",
+"why": "",
+"params": "피드백 시작 지연 0ms; 70~150ms; power2.out; 결과 등장 200ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#6. 모션 위계·코레오그래피",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "interruptibilityreversibility",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-071",
+"en": "Interruptibility / Reversibility",
+"ko": "중단·반전 가능성",
+"aka": [],
+"family": "principles",
+"what": "다음 입력으로 진행 중 모션을 자연스럽게 바꿀 수 있다.",
+"why": "",
+"params": "150~300ms power2.out; 추가 지연 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#6. 모션 위계·코레오그래피",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "statetransition",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-072",
+"en": "State transition",
+"ko": "상태 전이",
+"aka": [],
+"family": "principles",
+"what": "이전 상태와 새 상태를 연결하는 변화이다.",
+"why": "",
+"params": "200~350ms power3.out; 비교 홀드 1500ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#6. 모션 위계·코레오그래피",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "enterholdexit",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-073",
+"en": "Enter / Hold / Exit",
+"ko": "진입·독해·퇴장",
+"aka": [],
+"family": "principles",
+"what": "등장·정지·정리의 세 단계로 장면을 나눈다.",
+"why": "",
+"params": "영상 300ms / 2000ms / 200ms; 등장 out·퇴장 in; 덱 0~.30/.30~.75/.75~1",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#6. 모션 위계·코레오그래피",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "objectpermanence",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-074",
+"en": "Object permanence",
+"ko": "대상 지속성",
+"aka": [],
+"family": "emphasis",
+"what": "화면을 옮겨도 같은 대상이라는 단서를 유지한다.",
+"why": "",
+"params": "연결 이동 300~500ms power3.inOut; 중간 gap 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#7. 연속성·공간 모델·시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "anchorstablereference",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-076",
+"en": "Anchor / Stable reference",
+"ko": "앵커",
+"aka": [],
+"family": "emphasis",
+"what": "한 요소를 고정해 다른 변화의 기준점으로 쓴다.",
+"why": "",
+"params": "앵커 이동 0px; 교체 200~300ms power2.out; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#7. 연속성·공간 모델·시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "coordinatespaceorigin",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-077",
+"en": "Coordinate space / Origin",
+"ko": "좌표계·원점",
+"aka": [],
+"family": "emphasis",
+"what": "위치를 계산할 공통 기준과 회전·확대의 중심을 정한다.",
+"why": "",
+"params": "transformOrigin:'50% 100%'; 이동 300ms power3.out; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#7. 연속성·공간 모델·시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "layeringocclusion",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-078",
+"en": "Layering / Occlusion",
+"ko": "층·가림",
+"aka": [],
+"family": "emphasis",
+"what": "앞뒤 순서와 가림으로 깊이·포함을 드러낸다.",
+"why": "",
+"params": "패널 240~350ms entrance; 배경 dim 150~250ms; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#7. 연속성·공간 모델·시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "containercontainment",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-079",
+"en": "Container / Containment",
+"ko": "포함 모델",
+"aka": [],
+"family": "emphasis",
+"what": "요소가 어디에 소속되는지 경계로 표현한다.",
+"why": "",
+"params": "이동 300~450ms power3.out; 경계 등장 150ms; 간격 60ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#7. 연속성·공간 모델·시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "pathdirectiongrammar",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-080",
+"en": "Path / Direction grammar",
+"ko": "경로·방향 문법",
+"aka": [],
+"family": "emphasis",
+"what": "방향과 경로에 일정한 의미를 붙인다.",
+"why": "",
+"params": "이동 250~450ms power2.inOut; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#7. 연속성·공간 모델·시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "positionvelocitycontinuity",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-081",
+"en": "Position / Velocity continuity",
+"ko": "위치·속도 연속성",
+"aka": [],
+"family": "emphasis",
+"what": "연결 순간의 위치와 속도가 갑자기 바뀌지 않게 한다.",
+"why": "",
+"params": "연결 gap 0ms; 전후 이동 250~400ms; 접속 순간 속도 일치",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#7. 연속성·공간 모델·시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "intentionaldiscontinuity",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-082",
+"en": "Intentional discontinuity",
+"ko": "의도한 불연속",
+"aka": [],
+"family": "emphasis",
+"what": "명확한 사건에서만 갑작스러운 상태 변경을 쓴다.",
+"why": "",
+"params": "컷 0ms 또는 짧은 페이드 100~150ms; 이징 없음 또는 power1.out; 컷 전후 홀드 1000ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#7. 연속성·공간 모델·시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "graphicmatchmatchcut",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-083",
+"en": "Graphic match / Match cut 연결",
+"ko": "그래픽 대응",
+"aka": [],
+"family": "emphasis",
+"what": "컷 전후의 형태·위치·방향을 맞춰 의미를 이어 준다.",
+"why": "",
+"params": "컷 0ms 또는 dissolve 120~200ms; 고정 앵커; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#7. 연속성·공간 모델·시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "attentionpatheyetrace",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-084",
+"en": "Attention path / Eye trace",
+"ko": "시선 경로",
+"aka": [],
+"family": "emphasis",
+"what": "다음 중요 대상이 이전 시선 위치에서 따라가기 쉽게 나타난다.",
+"why": "",
+"params": "이동 200~350ms power2.out; 가까운 배치 24~64px; 시차 80~150ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#7. 연속성·공간 모델·시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "focushandoff",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-085",
+"en": "Focus handoff",
+"ko": "초점 이전",
+"aka": [],
+"family": "emphasis",
+"what": "한 대상의 강조를 줄이고 다음 대상에 넘긴다.",
+"why": "",
+"params": "이전 강조 해제 120ms, 다음 강조 180ms; power2.out; 겹침 40~80ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#7. 연속성·공간 모델·시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "contrastsalience",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-086",
+"en": "Contrast / Salience",
+"ko": "대비·살리언스",
+"aka": [],
+"family": "emphasis",
+"what": "크기·색·움직임 차이로 눈에 띄는 정도를 조절한다.",
+"why": "",
+"params": "강조 150~220ms power2.out; 크기 1.03; 한 번; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#7. 연속성·공간 모델·시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "pathtracingdrawon",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-087",
+"en": "Path tracing / Draw-on",
+"ko": "연결선 추적",
+"aka": [],
+"family": "emphasis",
+"what": "선을 순서대로 드러내 경로를 따라 읽게 한다.",
+"why": "",
+"params": "300~500ms; 흐름 등속은 none, 정착은 power2.out; 간격 80ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#7. 연속성·공간 모델·시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "cameravsobjectmotion",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-088",
+"en": "Camera vs Object motion",
+"ko": "카메라와 대상 분리",
+"aka": [],
+"family": "emphasis",
+"what": "전체 화면 이동과 개별 요소 이동의 역할을 나눈다.",
+"why": "",
+"params": "관찰 확대 500~800ms sine.inOut; scale 1→1.1~1.25; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#7. 연속성·공간 모델·시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "reducedmotionstaticalternative",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-090",
+"en": "Reduced motion / Static alternative",
+"ko": "모션 감소·정적 대안",
+"aka": [],
+"family": "emphasis",
+"what": "움직임을 줄여도 정보 관계를 읽을 수 있게 한다.",
+"why": "",
+"params": "이동 0px, scale 1; 필요 페이드 0~100ms linear; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#7. 연속성·공간 모델·시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "translationslide",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-091",
+"en": "Translation / Slide",
+"ko": "이동",
+"aka": [],
+"family": "principles",
+"what": "형태를 유지하고 위치를 바꾼다.",
+"why": "",
+"params": "등장 12~24px, 전달 80~240px; 250~450ms power3.out; 간격 40~80ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#8. 2D 속성 기본 동작",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "scalezoom",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-092",
+"en": "Scale / Zoom",
+"ko": "크기 변화",
+"aka": [],
+"family": "principles",
+"what": "기준점에서 크기를 비례 변경한다.",
+"why": "",
+"params": "0.96→1, 250~400ms power3.out; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#8. 2D 속성 기본 동작",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "scalexscaley",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-093",
+"en": "ScaleX / ScaleY",
+"ko": "축별 크기",
+"aka": [],
+"family": "principles",
+"what": "가로·세로 배율을 따로 변경한다.",
+"why": "",
+"params": "scaleX 0→1; 250~400ms power2.out; origin 왼쪽; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#8. 2D 속성 기본 동작",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "rotation",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-094",
+"en": "Rotation",
+"ko": "회전",
+"aka": [],
+"family": "principles",
+"what": "중심점 둘레로 방향을 바꾼다.",
+"why": "",
+"params": "UI 150~200ms, 도형 250~350ms; power2.out; 장식 ±1~3°",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#8. 2D 속성 기본 동작",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "skew",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-095",
+"en": "Skew",
+"ko": "기울임",
+"aka": [],
+"family": "principles",
+"what": "축 방향으로 형태를 비스듬히 변형한다.",
+"why": "",
+"params": "±2~4°, 120~200ms 후 200ms 복원; power2.out; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#8. 2D 속성 기본 동작",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "opacityfade",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-096",
+"en": "Opacity / Fade",
+"ko": "불투명도",
+"aka": [],
+"family": "principles",
+"what": "모양과 위치를 유지하고 가시성을 바꾼다.",
+"why": "",
+"params": "0→1 150~250ms power2.out, 퇴장 100~180ms; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#8. 2D 속성 기본 동작",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "blurfocusresolve",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-098",
+"en": "Blur / Focus resolve",
+"ko": "초점 흐림",
+"aka": [],
+"family": "principles",
+"what": "블러 반경을 바꿔 선명한 대상에 시선을 모은다.",
+"why": "",
+"params": "blur 2~4px→0, 180~300ms power2.out; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#8. 2D 속성 기본 동작",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "clipreveal",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-100",
+"en": "Clip reveal",
+"ko": "클립 리빌",
+"aka": [],
+"family": "principles",
+"what": "경계 안에서 보이는 영역을 확대해 내용을 드러낸다.",
+"why": "",
+"params": "250~400ms power3.out; inset(100% 0 0 0)→inset(0 0 0 0); 행 간격 50ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#8. 2D 속성 기본 동작",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "dimveil",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-102",
+"en": "Dim / Veil",
+"ko": "디밍",
+"aka": [],
+"family": "principles",
+"what": "배경 위에 반투명 레이어를 놓아 초점을 분리한다.",
+"why": "",
+"params": "overlay opacity 0→0.10~0.18, 150~250ms power2.out; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#8. 2D 속성 기본 동작",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "compoundtransform",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-103",
+"en": "Compound transform",
+"ko": "복합 변환",
+"aka": [],
+"family": "principles",
+"what": "이동·크기·회전을 작은 범위로 함께 바꾼다.",
+"why": "",
+"params": "250~400ms power3.out; opacity 별도 160ms; 회전 0° 기본; 간격 50ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#8. 2D 속성 기본 동작",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "pacingeditorialrhythm",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-139",
+"en": "Pacing / Editorial Rhythm",
+"ko": "페이싱",
+"aka": [],
+"family": "principles",
+"what": "비트·숏·전환·홀드의 길이와 변화를 조절한 전체 설명 속도이다.",
+"why": "",
+"params": "비트 2000~6000ms·읽기 홀드 1000~4000ms; 기본 전환 300~500ms STD: Carbon standard productive / cubic-bezier(0.2, 0, 0.38, 0.9); 컷 빈도 고정 안 함.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 2-transitions-camera.md#36. 페이싱 · Pacing / Editorial Rhythm",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "visualspatialcontinuity",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-140",
+"en": "Visual / Spatial Continuity",
+"ko": "시각 연속성",
+"aka": [],
+"family": "emphasis",
+"what": "컷 전후에 대상·방향·위치·상태의 관계가 유지되는 설계이다.",
+"why": "",
+"params": "컷 0ms 또는 300~500ms STD: Carbon standard productive / cubic-bezier(0.2, 0, 0.38, 0.9); 주요 anchor 이동은 화면의 2~5% 이내부터 시험; 도착 홀드 800~1500ms.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 2-transitions-camera.md#37. 시각 연속성 · Visual / Spatial Continuity",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "objectconstancykeyedidentity",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-176",
+"en": "Object constancy / Keyed identity",
+"ko": "객체 대응",
+"aka": [],
+"family": "emphasis",
+"what": "변화 전후 같은 대상의 식별자를 유지하는 규칙이다.",
+"why": "",
+"params": "이동 600~800ms, 전후 홀드 ≥1200ms; P, id·색·라벨 고정, 시차 0ms.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 3-type-data-ui.md#35. 객체 대응 · Object constancy / Keyed identity",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "progressscrubbing",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-177",
+"en": "Progress / Scrubbing",
+"ko": "진행률·스크러빙",
+"aka": [],
+"family": "principles",
+"what": "사용자 스크롤이나 재생 시각을 정규화 진행률로 바꾸는 제어이다.",
+"why": "",
+"params": "영상 t/T, 덱 p 0~1; driver L, scrub 0~600ms 선택, 단계 간 p≈0.2~0.25.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 3-type-data-ui.md#36. 진행률·스크러빙 · Progress / Scrubbing",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "readingholdnarrationcue",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-178",
+"en": "Reading hold / Narration cue",
+"ko": "읽기 홀드·발화 큐",
+"aka": [],
+"family": "principles",
+"what": "완성 화면을 읽을 시간과 발화 시작점을 함께 정하는 설계이다.",
+"why": "",
+"params": "단순 제목 1000~1600ms, 차트·원리 1800~3000ms 시작값; 홀드 easing 없음, 전후 E/S, 변화 종료 후 150~250ms 여유.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 3-type-data-ui.md#37. 읽기 홀드·발화 큐 · Reading hold / Narration cue",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "reducedmotionstaticequivalent",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-180",
+"en": "Reduced motion / Static equivalent",
+"ko": "모션 축소·정적 대안",
+"aka": [],
+"family": "emphasis",
+"what": "큰 이동 없이 동일한 정보와 조작 경로를 제공하는 규칙이다.",
+"why": "",
+"params": "필수 상태 변경 즉시 또는 100~150ms fade; L, 이동 0px·scale 1, 단계 간격 사용자 제어.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 3-type-data-ui.md#39. 모션 축소·정적 대안 · Reduced motion / Static equivalent",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "visualhierarchystaging",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-203",
+"en": "Visual hierarchy / Staging",
+"ko": "시각 위계·스테이징",
+"aka": [],
+"family": "emphasis",
+"what": "중요 대상의 크기·대비·배치·움직임을 조절해 주제를 명료하게 제시하는 구성이다.",
+"why": "",
+"params": "주요 진입 240ms E, 보조 150ms E, 120ms 간격, 핵심 3000ms H",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#B. 공개 순서와 시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "singlefocalpointattentionbudget",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-204",
+"en": "Single focal point / Attention budget",
+"ko": "단일 초점·주의 예산",
+"aka": [],
+"family": "emphasis",
+"what": "한 순간의 주된 주의 요청을 하나로 제한하는 제작 규칙이다.",
+"why": "",
+"params": "주모션 1개, 240~600ms S, 다음 초점까지 300~800ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#B. 공개 순서와 시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "spotlightdimming",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-206",
+"en": "Spotlight / Dimming",
+"ko": "스포트라이트·배경 약화",
+"aka": [],
+"family": "emphasis",
+"what": "주변 대비를 낮춰 현재 읽을 영역을 상대적으로 드러내는 강조이다.",
+"why": "",
+"params": "약화 240ms S, 오버레이 opacity 0.15~0.30, 유지 1500~3000ms H",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#B. 공개 순서와 시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "focuszoomreframing",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-207",
+"en": "Focus zoom / Reframing",
+"ko": "포커스 줌·리프레임",
+"aka": [],
+"family": "emphasis",
+"what": "화면의 관련 영역을 읽을 크기로 확대하고 구도를 다시 잡는 기법이다.",
+"why": "",
+"params": "400~700ms S, scale 1.15~1.40부터 시험, 확대 후 2500~5000ms H",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#B. 공개 순서와 시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "cursorchoreographyactioncue",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-208",
+"en": "Cursor choreography / Action cue",
+"ko": "커서 안무·행동 단서",
+"aka": [],
+"family": "emphasis",
+"what": "커서의 이동·정지·클릭 표시를 실제 조작 순서에 맞추는 기법이다.",
+"why": "",
+"params": "이동 400~700ms S, 사전 정지 200~400ms H, 클릭 링 150ms E, 링 1회",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#B. 공개 순서와 시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "directionalcueconnector",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-209",
+"en": "Directional cue / Connector",
+"ko": "방향 단서·연결선",
+"aka": [],
+"family": "emphasis",
+"what": "선·화살표의 방향으로 관계나 흐름을 표시하는 신호이다.",
+"why": "",
+"params": "선 그리기 400~800ms L, 도착 강조 150ms E, 단계 간격 500ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#B. 공개 순서와 시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "semanticcolorshapeconsistency",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-210",
+"en": "Semantic color / Shape consistency",
+"ko": "색·형태의 의미 고정",
+"aka": [],
+"family": "emphasis",
+"what": "같은 역할에 같은 시각 부호를 유지하는 설계이다.",
+"why": "",
+"params": "상태 변화 150ms E, 역할색 3~4개부터 시험, 라벨 상시 H",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#B. 공개 순서와 시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "beforeaftercontrolledcomparison",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-211",
+"en": "Before~after / Controlled comparison",
+"ko": "전후 비교·변수 고정",
+"aka": [],
+"family": "emphasis",
+"what": "조건을 고정하고 바꾼 부분과 결과를 나란히 보여 주는 설명이다.",
+"why": "",
+"params": "A/B 진입 240ms E, 120ms 간격, 비교 5000~8000ms H",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#B. 공개 순서와 시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "objectconstancypersistentanchor",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-212",
+"en": "Object constancy / Persistent anchor",
+"ko": "객체 지속성·앵커 유지",
+"aka": [],
+"family": "emphasis",
+"what": "상태가 변해도 같은 객체의 위치·표식을 유지해 추적하게 하는 기법이다.",
+"why": "",
+"params": "변형·이동 400~700ms S, 도착 홀드 2000~4000ms, 같은 앵커 최소 1개",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#B. 공개 순서와 시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "recaprestatement",
+"family": "emphasis",
+"core": "",
+"rows": [
+{
+"id": "DICT-213",
+"en": "Recap / Restatement",
+"ko": "요약·재진술",
+"aka": [],
+"family": "emphasis",
+"what": "앞서 본 관계를 짧은 고정 화면과 자기 언어로 다시 정리하는 설계이다.",
+"why": "",
+"params": "요약 진입 240ms E, 행 간격 150ms, 유지 6000~10000ms H",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#B. 공개 순서와 시선 유도",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "tempopacing",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-214",
+"en": "Tempo / Pacing",
+"ko": "템포·페이싱",
+"aka": [],
+"family": "principles",
+"what": "정보·발화·시각 변화가 진행되는 속도와 여유를 설계하는 개념이다.",
+"why": "",
+"params": "단순 행동 1500~3000ms H, 새 관계 4000~8000ms H, 전환 240~400ms S",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#C. 템포·리듬·편집과 비트 동기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "rhythmaccent",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-215",
+"en": "Rhythm / Accent",
+"ko": "리듬·강약",
+"aka": [],
+"family": "principles",
+"what": "변화와 정지, 큰 사건과 작은 사건의 반복·변주 패턴이다.",
+"why": "",
+"params": "작은 변화 150~240ms E, 큰 변화 400~600ms S, 정지 2000~5000ms H",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#C. 템포·리듬·편집과 비트 동기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "semanticbeat",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-216",
+"en": "Semantic beat",
+"ko": "의미 비트",
+"aka": [],
+"family": "principles",
+"what": "한 가지 설명 사건·주장·관계가 완성되는 내용 단위이다.",
+"why": "",
+"params": "비트 5000~15000ms H 포함, 주동작 400~800ms S, 비트 사이 쉼 500~1000ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#C. 템포·리듬·편집과 비트 동기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "musicalbeatbeatgrid",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-217",
+"en": "Musical beat / Beat grid",
+"ko": "음악 비트·박자 그리드",
+"aka": [],
+"family": "principles",
+"what": "BPM·강박·마디를 기준으로 음악의 시간 구조를 표시하는 개념이다.",
+"why": "",
+"params": "80~110 BPM부터 시험, 1박=60000/BPMms, 100 BPM=600ms, 박자 기준 H",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#C. 템포·리듬·편집과 비트 동기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "beatsynchronization",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-218",
+"en": "Beat synchronization",
+"ko": "비트 싱크",
+"aka": [],
+"family": "principles",
+"what": "시각 사건의 시작·도착·컷을 선택한 소리 사건에 맞추는 기법이다.",
+"why": "",
+"params": "동기 목표 ±1프레임, 30fps=33.3ms, 이동 400ms S, 음악 강조는 2~4박 간격",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#C. 템포·리듬·편집과 비트 동기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "holdsettlebreathingroom",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-219",
+"en": "Hold / Settle / Breathing room",
+"ko": "홀드·세틀·호흡",
+"aka": [],
+"family": "principles",
+"what": "도착 후 물체를 멈춰 읽고 의미를 연결하게 하는 시간이다.",
+"why": "",
+"params": "settle 150~300ms S, 읽기 홀드 2500~6000ms H, 복잡한 비교 8000ms부터",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#C. 템포·리듬·편집과 비트 동기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "hardcutsemanticboundary",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-220",
+"en": "Hard cut / Semantic boundary",
+"ko": "하드컷·의미 경계",
+"aka": [],
+"family": "principles",
+"what": "겹침 없이 바로 다음 화면으로 바꾸는 편집이다.",
+"why": "",
+"params": "컷 0ms H, 경계 전후 쉼 150~300ms, 다음 화면 3000ms 이상 H",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#C. 템포·리듬·편집과 비트 동기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "soundbridgejcutlcut",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-221",
+"en": "Sound bridge / J-cut / L-cut",
+"ko": "사운드 브리지·J컷·L컷",
+"aka": [],
+"family": "principles",
+"what": "J컷은 다음 소리가 다음 화면보다 먼저, L컷은 이전 소리가 다음 화면까지 이어지는 편집이다.",
+"why": "",
+"params": "선행·잔류 200~600ms, 화면은 0ms H 또는 240ms S, 연결은 장면당 1회부터",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#C. 템포·리듬·편집과 비트 동기",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "timecompressionellipsis",
+"family": "principles",
+"core": "",
+"rows": [
+{
+"id": "DICT-222",
+"en": "Time compression / Ellipsis",
+"ko": "시간 압축·생략 표시",
+"aka": [],
+"family": "principles",
+"what": "무의미한 대기를 줄이되 생략·배속을 시청자에게 알리는 편집이다.",
+"why": "",
+"params": "생략 컷 0ms H, 표시 150ms E·1500~2500ms H, 조작 전후 500ms 보존",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 4-explainer-learning.md#C. 템포·리듬·편집과 비트 동기",
+"license": "own"
+}
+]
+}
+]
+}
+]

@@ -1,0 +1,19 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>AI 원리 한 컷 · AI Principle in One Shot</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>
+.heading{position:absolute;left:100px;top:40px}.token{position:absolute;top:210px;font:700 56px var(--serif);white-space:nowrap}.under{position:absolute;left:0;top:88px;width:100%;border-top:1px solid var(--rule);padding-top:10px;opacity:0}.blank{position:absolute;left:690px;top:278px;width:180px;height:2px;background:var(--rule)}svg{position:absolute;inset:0;width:1168px;height:580px}path{fill:none;stroke:var(--ink);stroke-dasharray:1;stroke-dashoffset:1}.candidates{opacity:0}.bar{position:absolute;top:370px;width:24px;height:95px;background:var(--ink);transform:scaleY(0);transform-origin:50% 100%}.choice{position:absolute;top:485px;font:700 36px var(--serif);white-space:nowrap;transform-origin:0 0}.prob{position:absolute;top:470px}.base{position:absolute;left:140px;right:140px;top:465px;height:1px;background:var(--rule)}.note{position:absolute;left:900px;top:548px}
+</style></head><body data-kind="recipe" data-no="R01" data-cat="레시피 · AI 원리를 설명하는 교육 영상" data-ko="AI 원리 한 컷" data-en="AI Principle in One Shot" data-meta="분리 → 참조 → 선택" data-dur="6"><main class="scene">
+<div class="heading lab">입력 → 모델 → 출력</div><svg viewBox="0 0 1168 580"><path d="M780 195 Q520 5 200 195" pathLength="1" stroke-width="1.5" opacity=".35"/><path d="M780 195 Q550 45 325 195" pathLength="1" stroke-width=".5" opacity=".25"/><path d="M780 195 Q655 55 495 195" pathLength="1" stroke-width="6" opacity=".9"/><path d="M780 195 Q735 125 690 195" pathLength="1" stroke-width="3" opacity=".6"/></svg>
+<span class="token" style="left:225px">AI<span class="under lab">01 · 0.12</span></span><span class="token" style="left:300px">는<span class="under lab">02 · 0.04</span></span><span class="token" style="left:375px">다음<span class="under lab">03 · 0.60</span></span><span class="token" style="left:510px">말을<span class="under lab">04 · 0.24</span></span><div class="blank"></div>
+<div class="candidates"><div class="base"></div><div class="bar" style="left:205px"></div><div class="bar" style="left:435px"></div><div class="bar" style="left:665px"></div><div class="bar" style="left:895px"></div><div class="choice" id="pick" style="left:160px">고른다</div><div class="choice other" style="left:390px">정한다</div><div class="choice other" style="left:620px">찾는다</div><div class="choice other" style="left:850px">만든다</div><div class="prob lab" style="left:198px">62%</div><div class="prob lab" style="left:428px">21%</div><div class="prob lab" style="left:658px">9%</div><div class="prob lab" style="left:888px">5%</div><div class="note lab">기타 · 쓴다 3%</div></div>
+</main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl=Motion.timeline();
+document.querySelectorAll('.token').forEach((el,i)=>tl.to(el,{x:(i-1.5)*34,duration:1.05,ease:'power3.inOut'},.3));
+tl.to('.under',{opacity:1,duration:.35,stagger:.06},1.1);
+tl.to('path',{strokeDashoffset:0,duration:1.15,stagger:.12,ease:'power2.inOut'},1.55);
+tl.to('.candidates',{opacity:1,duration:.3},2.76);
+[1,21/62,9/62,5/62].forEach((v,i)=>tl.to(document.querySelectorAll('.bar')[i],{scaleY:v,duration:.8,ease:'power2.out'},3.06+i*.08));
+tl.to('#pick',{color:'var(--verm)',duration:.25},4.12);
+tl.to('#pick',{x:530,y:-275,scale:56/36,duration:.7,ease:'power3.inOut'},4.45);
+tl.to('.other,.bar,.prob,.note,.base',{opacity:.25,duration:.3},4.45);
+tl.to('.blank',{opacity:0,duration:.25},4.9);
+Motion.ready();
+</script></body></html>

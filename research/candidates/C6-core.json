@@ -1,0 +1,699 @@
+{
+  "count-up": {
+    "aka": [
+      "Count up",
+      "수치 카운트",
+      "Count Up",
+      "숫자 카운트업",
+      "counting-dynamic-scale",
+      "counting-punch",
+      "value-counter",
+      "숫자 누적",
+      "Count-up",
+      "카운트업",
+      "Numeric count up",
+      "Numerical annotation synchronization",
+      "수치와 마크 동기화",
+      "Changing numeric readout",
+      "숫자 값 보간",
+      "ChangingDecimal",
+      "ChangeDecimalToValue"
+    ],
+    "variants": [
+      "스케일 동반",
+      "완료 펀치",
+      "내림 카운터",
+      "Number Ticker",
+      "CountUp",
+      "Animated Number",
+      "number-ticker",
+      "감소",
+      "퍼센트",
+      "소수",
+      "통화",
+      "접미 단위",
+      "끝 라벨",
+      "총합 카드",
+      "연도 티커",
+      "증가",
+      "함수 연동"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/count-up/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/decline-chart/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/apple-money-count/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/mk-progress-stat/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/rules/counting-dynamic-scale.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-084",
+      "R1b-087",
+      "R3-109",
+      "DICT-149",
+      "R2-068",
+      "R6-035",
+      "R7-027"
+    ]
+  },
+  "bar-grow": {
+    "aka": [
+      "Bar grow",
+      "막대 성장",
+      "Bar Grow",
+      "stat-bars-and-fills",
+      "directional-fill",
+      "Progress fill",
+      "진행률 채우기",
+      "Bar growth",
+      "Progress bar fill",
+      "진행 막대 채움",
+      "Animated Progress",
+      "진행 막대와 링",
+      "Baseline bar growth",
+      "기준선 막대 성장",
+      "Geographic spike growth",
+      "지도 수치 스파이크 성장",
+      "Cumulative fill / Progress fill",
+      "누적 채우기",
+      "Context window fill",
+      "컨텍스트 창 채우기"
+    ],
+    "variants": [
+      "수직 막대",
+      "수평 막대",
+      "진행 채움",
+      "가로 막대",
+      "세로 막대",
+      "누적",
+      "스태거",
+      "확정 진행",
+      "스크롤 진행",
+      "역방향",
+      "단계 표시",
+      "progress",
+      "filling",
+      "세로",
+      "가로",
+      "발산",
+      "방사 막대",
+      "롤리팝 줄기",
+      "시간 구간 막대",
+      "게이지 채움",
+      "삼각 스파이크",
+      "기간별 갱신",
+      "선형 진행률 채우기",
+      "컨텍스트 예산 구간 채우기",
+      "지도 수치 스파이크"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/animated-bar-chart/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/data-chart/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/chart-story/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/rules/stat-bars-and-fills.md",
+        "license": "unknown"
+      },
+      {
+        "title": "local/music-to-video",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#directional-fill",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-085",
+      "R1b-088",
+      "R1a-087",
+      "R2-071",
+      "DICT-152",
+      "R2-114",
+      "R3-077",
+      "R6-009",
+      "R6-081",
+      "DICT-161",
+      "DICT-173"
+    ]
+  },
+  "line-draw": {
+    "aka": [
+      "Line draw",
+      "선 그래프 그리기",
+      "Line Draw",
+      "선 그리기",
+      "svg-stroke-draw-on",
+      "divider-rule-expand",
+      "svg-path-draw",
+      "Line Chart Trace",
+      "추세선과 값 추적",
+      "animated-line-chart-trace",
+      "Line chart tracing",
+      "Line draw reveal",
+      "선 그래프 경로 그리기",
+      "Pen-tip tracking draw",
+      "펜 끝을 따라 그리기",
+      "Path draw / Stroke reveal"
+    ],
+    "variants": [
+      "아이콘 윤곽",
+      "연결 화살표",
+      "중앙 발산 구분선",
+      "좌우 선 그리기",
+      "kinetic-titles",
+      "closing-qr",
+      "영역 채움",
+      "점과 값 라벨",
+      "축 선행 공개",
+      "면적 동반",
+      "포인트 강조",
+      "마커 추종",
+      "스파크라인",
+      "연결 산점도",
+      "동시 여러 선",
+      "지도 경로 그리기",
+      "생키 중심선",
+      "미니 추세선",
+      "펜만 표시",
+      "손과 펜 표시",
+      "그래프 값 라벨 동반",
+      "펜 끝 추적"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/mk-line-graph/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/data-chart/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/rules/svg-path-draw.md",
+        "license": "unknown"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/06-shapes-strokes.md#svg-stroke-draw-on",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "gongnyang/reelforge",
+        "url": "gongnyang/reelforge:skills/reelforge/references/grammar/06-shapes-strokes.md#divider-rule-expand",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-086",
+      "R1b-053",
+      "R1b-061",
+      "R2-072",
+      "R6-022",
+      "R7-079",
+      "DICT-153"
+    ]
+  },
+  "split-compare": {
+    "aka": [
+      "Before after wipe",
+      "전후 비교 와이프",
+      "Comparison split"
+    ],
+    "variants": [
+      "시각 비교",
+      "색보정 비교",
+      "중간 분할 유지"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/before-after-wipe/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/comparison-split/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/grade-split-reveal/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-animation/blueprints/comparison-split.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-193"
+    ]
+  },
+  "dot-regroup": {
+    "aka": [
+      "Scatter Regroup",
+      "산점 재배열",
+      "Scatter regroup and re-encoding",
+      "산점도 재배열과 변수 전환",
+      "Scatterplot morph",
+      "Dot regroup",
+      "Spline scatter trajectories",
+      "산점도 곡선 이동 경로",
+      "Unit grid assembly",
+      "단위 격자 조립",
+      "Unit chart",
+      "Isotype grid",
+      "Point transition / Object constancy",
+      "점 이동 트랜지션"
+    ],
+    "variants": [
+      "속성별 그룹",
+      "정렬",
+      "군집 공개",
+      "축 변수 교체",
+      "범주 묶음",
+      "beeswarm 재배열",
+      "점 행과 산점도",
+      "스플라인 경로",
+      "그룹별 곡선 경로",
+      "와플",
+      "사람 아이콘",
+      "점 격자",
+      "픽토그램",
+      "곡선 이동",
+      "단위 격자 조립",
+      "좌표 변수 교체"
+    ],
+    "sources": [
+      {
+        "title": "local/bookforge",
+        "url": "claude-skill:bookforge/references/diagrams.md",
+        "license": "MIT"
+      },
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      },
+      {
+        "title": "Flourish",
+        "url": "https://app.flourish.studio/@flourish/scatter",
+        "license": "unknown"
+      },
+      {
+        "title": "the-pudding/pop-love-songs",
+        "url": "https://github.com/the-pudding/pop-love-songs",
+        "license": "MIT"
+      },
+      {
+        "title": "NilsRodrigues/d3-scattertrans",
+        "url": "https://github.com/NilsRodrigues/d3-scattertrans",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1b-160",
+      "R6-037",
+      "R6-040",
+      "R6-046",
+      "DICT-154"
+    ]
+  },
+  "unit-grid": {
+    "aka": [
+      "Hex tile map",
+      "육각 타일 지도",
+      "Sequential unit population",
+      "단위 수량 순차 채우기",
+      "Unit share recoloring",
+      "단위 비율 색칠",
+      "Unit grid / Waffle fill",
+      "단위 격자 채우기"
+    ],
+    "variants": [
+      "행 우선",
+      "열 우선",
+      "기간별 추가",
+      "아이콘 배열",
+      "설문 비율",
+      "성공 비율",
+      "범주 전환",
+      "육각 지역 타일",
+      "단위 개수 순차 등장",
+      "고정 격자 비율 색칠"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/us-map-hex/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "Flourish",
+        "url": "https://flourish.studio/visualisations/pictogram-charts/",
+        "license": "unknown"
+      },
+      {
+        "title": "reuters-graphics/chart-module-testing-dots",
+        "url": "https://github.com/reuters-graphics/chart-module-testing-dots",
+        "license": "unknown"
+      },
+      {
+        "title": "d3/d3-interpolate",
+        "url": "https://d3js.org/d3-interpolate",
+        "license": "ISC"
+      },
+      {
+        "title": "motion dictionary 3-type-data-ui.md#15. 단위 격자 채우기 · Unit grid / Waffle fill",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "R1a-171",
+      "R6-047",
+      "R6-048",
+      "DICT-156"
+    ]
+  },
+  "annotation-callout": {
+    "aka": [
+      "Visual brace with traveling label",
+      "중괄호 주석 이동",
+      "Code callout tracking",
+      "코드 콜아웃 연결",
+      "Annotation reveal",
+      "주석 등장",
+      "Question / Evidence frame / Annotation",
+      "Vox식 질문·근거 화면·주석"
+    ],
+    "variants": [
+      "아래 중괄호",
+      "옆 중괄호",
+      "옆 설명",
+      "상단 설명",
+      "인라인 설명",
+      "중괄호 범위 주석",
+      "문서와 지도 근거 주석"
+    ],
+    "sources": [
+      {
+        "title": "3b1b/videos",
+        "url": "https://github.com/3b1b/videos/blob/master/_2016/eola/chapter3.py",
+        "license": "CC-BY-NC-SA-4.0"
+      },
+      {
+        "title": "code-hike/codehike",
+        "url": "https://codehike.org/docs/code/callout",
+        "license": "MIT"
+      },
+      {
+        "title": "motion dictionary 3-type-data-ui.md#17. 주석 등장 · Annotation reveal",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "motion dictionary 4-explainer-learning.md#F. 설명 채널에서 가져올 연출 패턴",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "R7-062",
+      "R7-093",
+      "DICT-158",
+      "DICT-242"
+    ]
+  },
+  "progressive-disclosure": {
+    "aka": [
+      "Layered explanatory buildup",
+      "설명 레이어 점진 구성",
+      "Progressive comparison overlays",
+      "비교 계열 순차 겹치기",
+      "Cumulative subset reveal",
+      "부분 집합 누적 공개",
+      "ShowIncreasingSubsets",
+      "Progressive causal disclosure",
+      "인과 단계 점진 공개",
+      "Reveal / Progressive Disclosure",
+      "리빌"
+    ],
+    "variants": [
+      "축 먼저",
+      "기준선 먼저",
+      "비교선 나중",
+      "원인별 비교",
+      "관측과 예측",
+      "대조군 비교",
+      "즉시 누적",
+      "부드러운 누적",
+      "선형 인과",
+      "분기 인과",
+      "순환 과정"
+    ],
+    "sources": [
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      },
+      {
+        "title": "uwdata/gemini",
+        "url": "https://github.com/uwdata/gemini",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "title": "the-pudding/how-to-implement-scrollytelling",
+        "url": "https://pudding.cool/process/how-to-implement-scrollytelling/",
+        "license": "unknown"
+      },
+      {
+        "title": "chartjs/Chart.js",
+        "url": "https://www.chartjs.org/docs/latest/configuration/animations.html",
+        "license": "MIT"
+      },
+      {
+        "title": "ManimCommunity/manim",
+        "url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/creation.py",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R6-092",
+      "R6-093",
+      "R7-006",
+      "R7-123",
+      "DICT-132"
+    ]
+  },
+  "highlight-sweep": {
+    "aka": [
+      "Document evidence highlight",
+      "문서 근거 강조"
+    ],
+    "variants": [
+      "문장 강조",
+      "숫자 강조"
+    ],
+    "sources": [
+      {
+        "title": "Vox",
+        "url": "https://www.youtube.com/watch?v=kIID5FDi2JQ",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R7-071"
+    ]
+  },
+  "zoom-callout": {
+    "aka": [
+      "Zoom inset / Detail view",
+      "줌 인셋"
+    ],
+    "variants": [],
+    "sources": [
+      {
+        "title": "motion dictionary 3-type-data-ui.md#16. 줌 인셋 · Zoom inset / Detail view",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "DICT-157"
+    ]
+  },
+  "token-split": {
+    "aka": [
+      "Tokenization split",
+      "토큰 쪼개기"
+    ],
+    "variants": [],
+    "sources": [
+      {
+        "title": "motion dictionary 3-type-data-ui.md#28. 토큰 쪼개기 · Tokenization split",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "DICT-169"
+    ]
+  },
+  "embedding-space": {
+    "aka": [
+      "Embedding projection / Point movement",
+      "임베딩 점 이동"
+    ],
+    "variants": [],
+    "sources": [
+      {
+        "title": "motion dictionary 3-type-data-ui.md#29. 임베딩 점 이동 · Embedding projection / Point movement",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "DICT-170"
+    ]
+  },
+  "attention-lines": {
+    "aka": [
+      "Attention weight encoding",
+      "어텐션 선 굵기"
+    ],
+    "variants": [],
+    "sources": [
+      {
+        "title": "motion dictionary 3-type-data-ui.md#30. 어텐션 선 굵기 · Attention weight encoding",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "DICT-171"
+    ]
+  },
+  "next-token": {
+    "aka": [
+      "Next-token probability bars",
+      "확률 막대",
+      "Autoregressive generation loop",
+      "자동회귀 생성 루프"
+    ],
+    "variants": [
+      "선택 토큰 추가 후 분포 갱신 반복"
+    ],
+    "sources": [
+      {
+        "title": "motion dictionary 3-type-data-ui.md#31. 확률 막대 · Next-token probability bars",
+        "url": "",
+        "license": "own"
+      },
+      {
+        "title": "motion dictionary 3-type-data-ui.md#33. 자동회귀 생성 루프 · Autoregressive generation loop",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "DICT-172",
+      "DICT-174"
+    ]
+  },
+  "shape-morph": {
+    "aka": [
+      "Metaphor-to-mechanism transition",
+      "비유에서 원리로 전환",
+      "Morphing / Interpolation",
+      "모프·보간"
+    ],
+    "variants": [
+      "공장 비유",
+      "흐름 비유",
+      "캐릭터 비유",
+      "비유 도해에서 원리 도해로 변환"
+    ],
+    "sources": [
+      {
+        "title": "Kurzgesagt",
+        "url": "https://kurzgesagt.org/what-we-do?visit=videos",
+        "license": "unknown"
+      },
+      {
+        "title": "TED-Ed",
+        "url": "https://ed.ted.com/lessons/making-a-ted-ed-lesson-visualizing-complex-ideas",
+        "license": "unknown"
+      },
+      {
+        "title": "motion dictionary 3-type-data-ui.md#14. 모프·보간 · Morphing / Interpolation",
+        "url": "",
+        "license": "own"
+      }
+    ],
+    "from": [
+      "R7-065",
+      "DICT-155"
+    ]
+  },
+  "word-emphasis": {
+    "aka": [
+      "Pre-training component tour",
+      "구성요소 사전 소개"
+    ],
+    "variants": [
+      "부품 이름 소개",
+      "기호 뜻 소개"
+    ],
+    "sources": [
+      {
+        "title": "Cambridge University Press",
+        "url": "https://www.cambridge.org/core/books/abs/cambridge-handbook-of-multimedia-learning/principles-for-managing-essential-processing-in-multimedia-learning-segmenting-pretraining-and-modality-principles/DD24C2F48B9B1277CE59F78276110258",
+        "license": "unknown"
+      },
+      {
+        "title": "Richard E. Mayer / Wiley",
+        "url": "https://onlinelibrary.wiley.com/doi/10.1111/jcal.12197",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R7-119"
+    ]
+  }
+}

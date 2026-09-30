@@ -1,0 +1,79 @@
+/* awesome-ai-motion 공용 무대 (시안 A: 종이·먹·주홍 한 점)
+   모든 효과·레시피가 이 파일 하나를 공유한다. 1280x720, 30fps 캡처 기준. */
+@font-face{font-family:"Bodoni Moda";src:url("fonts/BodoniModa.ttf") format("truetype");font-weight:400 900;font-display:block}
+@font-face{font-family:"IBM Plex Mono";src:url("fonts/IBMPlexMono-Regular.ttf") format("truetype");font-weight:400;font-display:block}
+
+:root{
+  --paper:#F4EEE3; --paper2:#EAE2D3; --ink:#141210; --ink2:#58524A; --ink3:#9A9182;
+  --rule:#CDC3B2; --verm:#D6401C; --verm-soft:#F2C9B8;
+  --serif:"Noto Serif KR","Noto Serif CJK KR","Source Han Serif K",serif;
+  --sans:"Pretendard","Pretendard Variable","Noto Sans KR","Noto Sans CJK KR",system-ui,sans-serif;
+  --didone:"Bodoni Moda","Didot",serif;
+  --mono:"IBM Plex Mono","Pretendard",monospace;
+  --W:1280px; --H:720px; --top:64px; --bot:76px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper)}
+body{font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased}
+.frame{position:relative;width:var(--W);height:var(--H);overflow:hidden;background:var(--paper);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35 0 0 0 0 .3 0 0 0 0 .22 0 0 0 .06 0'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>")}
+body.embed{background:transparent}
+
+/* 폴리오(맨 위) */
+.folio{position:absolute;left:56px;right:56px;top:0;height:var(--top);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--ink);z-index:20}
+.folio .l{display:flex;align-items:center;gap:18px}
+.folio .brand{font-family:var(--didone);font-size:17px;letter-spacing:.2em;font-weight:500;font-variation-settings:"opsz" 28}
+.folio .sec{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink2);padding-left:18px;border-left:1px solid var(--rule);line-height:18px}
+.folio .r{font-family:var(--didone);font-size:13px;letter-spacing:.24em;color:var(--ink2);font-weight:500}
+.folio .r b{color:var(--ink);font-weight:500}
+
+/* 캡션(맨 아래) */
+.cap{position:absolute;left:56px;right:56px;bottom:0;height:var(--bot);border-top:1px solid var(--rule);display:flex;align-items:center;justify-content:space-between;z-index:20}
+.cap .l{display:flex;align-items:baseline;gap:14px}
+.cap .no{font-family:var(--mono);font-size:11px;color:var(--ink2);letter-spacing:.06em}
+.cap .ko{font-family:var(--serif);font-size:19px;font-weight:700;letter-spacing:-.01em}
+.cap .en{font-family:var(--didone);font-size:14px;letter-spacing:.14em;color:var(--ink2);font-variation-settings:"opsz" 11}
+.cap .meta{font-family:var(--mono);font-size:11px;color:var(--ink2);letter-spacing:.05em;text-align:right}
+.cap .clock{font-family:var(--mono);font-size:11px;color:var(--ink);margin-left:16px;display:inline-block;min-width:42px;text-align:right}
+.prog{position:absolute;left:0;top:-1px;height:2px;width:100%;background:var(--ink);transform-origin:0 50%;transform:scaleX(0)}
+
+/* 장면 영역: 폴리오와 캡션 사이 */
+.scene{position:absolute;left:56px;right:56px;top:var(--top);bottom:var(--bot);overflow:hidden}
+.scene.bleed{left:0;right:0}
+.center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+
+/* 공용 소재: 모든 효과가 같은 재료를 쓴다 */
+.dot{width:56px;height:56px;border-radius:50%;background:var(--ink)}
+.dot.v{background:var(--verm)}
+.blk{background:var(--ink)}
+.hair{height:1px;background:var(--rule)}
+.rule-ink{height:2px;background:var(--ink)}
+.t-xl{font-family:var(--serif);font-weight:700;font-size:84px;letter-spacing:-.03em;line-height:1.08}
+.t-l{font-family:var(--serif);font-weight:700;font-size:56px;letter-spacing:-.02em;line-height:1.15}
+.t-m{font-family:var(--serif);font-weight:700;font-size:34px;letter-spacing:-.01em;line-height:1.3}
+.t-body{font-family:var(--sans);font-size:22px;line-height:1.6;color:var(--ink)}
+.num{font-family:var(--didone);font-weight:500;font-variation-settings:"opsz" 96;font-feature-settings:"lnum" 1;line-height:.85}
+.mono{font-family:var(--mono);letter-spacing:.06em}
+.lab{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--ink2)}
+.v{color:var(--verm)}
+.ghost{opacity:.18}
+/* 지시선 주석: 점 + 선 + 글 */
+.lead{position:absolute;display:flex;align-items:center;white-space:nowrap}
+.lead i{display:block;width:8px;height:8px;border-radius:50%;background:var(--ink)}
+.lead s{display:block;width:72px;height:1px;background:var(--ink);transform-origin:0 50%}
+.lead span{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink);margin-left:10px}
+/* UI 목업 재료: 상자 금지 원칙 안에서 쓰는 최소 화면 */
+.ui{position:absolute;background:#FBF8F2;border:1px solid var(--rule)}
+.ui .bar{height:34px;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:7px;padding:0 14px}
+.ui .bar i{width:9px;height:9px;border-radius:50%;background:var(--rule)}
+.cursor{position:absolute;width:26px;height:32px;z-index:15;pointer-events:none}
+/* 세로 지시선: 점이 대상 위(left/top 좌표)에 앉고, 선이 위로, 글이 맨 위 */
+.lead.up{flex-direction:column-reverse;transform:translate(-50%,-100%)}
+.lead.up s{width:1px;height:48px}
+.lead.up span{margin:0 0 6px 0}
+.lead.up.long s{height:84px}
+/* 세로 숏폼(720x1280): 폴리오·캡션 여백을 줄인다 */
+body.portrait .folio{left:40px;right:40px}
+body.portrait .cap{left:40px;right:40px}
+body.portrait .cap .en{display:none}
+body.portrait .scene{left:40px;right:40px}

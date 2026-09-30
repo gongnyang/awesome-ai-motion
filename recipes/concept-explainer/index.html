@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>개념 설명 장면 · Concept Explainer</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>
+.heading{position:absolute;left:80px;top:48px}.sub{position:absolute;left:80px;top:151px}.detail{position:absolute;left:80px;top:207px;color:var(--ink2);font-size:21px}.heading,.sub,.detail{opacity:0}
+.step{position:absolute;top:310px;width:250px;opacity:0}.step .lab{margin-bottom:18px}.name{font-family:var(--serif);font-weight:700;font-size:56px}.desc{margin-top:20px;border-top:1px solid var(--rule);padding-top:16px;font-size:22px}.arrow{position:absolute;top:382px;width:80px;height:1px;background:var(--ink3);transform:scaleX(0);transform-origin:left}.arrow:after{content:'';position:absolute;right:0;top:-4px;width:8px;height:8px;border-top:1px solid var(--ink3);border-right:1px solid var(--ink3);transform:rotate(45deg)}
+.brackets{position:absolute;inset:0;width:1168px;height:580px}.brackets path{fill:none;stroke:var(--verm);stroke-width:3;stroke-dasharray:1;stroke-dashoffset:1}.lead{left:460px;top:529px;opacity:0}
+</style></head>
+<body data-kind="recipe" data-no="R03" data-cat="레시피 · AI 원리를 한 장면으로 설명하는 교육 영상" data-ko="개념 설명 장면" data-en="Concept Explainer" data-meta="위계 → 3단계 → 모델 초점" data-dur="6"><main class="scene">
+<div class="heading t-xl">AI는 다음 말을 고른다</div><div class="sub t-m">다음 말은 어떻게 고르나요?</div><div class="detail">입력한 말에서 후보의 확률을 계산합니다.</div>
+<div class="step" id="input" style="left:80px"><div class="lab">01 / INPUT</div><div class="name">입력</div><div class="desc">AI는 다음 말을</div></div><div class="arrow" id="a1" style="left:336px"></div>
+<div class="step" id="model" style="left:460px"><div class="lab">02 / MODEL</div><div class="name">모델</div><div class="desc">후보 확률</div></div><div class="arrow" id="a2" style="left:716px"></div>
+<div class="step" id="output" style="left:840px"><div class="lab">03 / OUTPUT</div><div class="name">출력</div><div class="desc">고른다</div></div>
+<svg class="brackets"><path pathLength="1" d="M450 302 H430 V494 H450 M720 302 H740 V494 H720"/></svg><div class="lead"><i></i><s></s><span>모델 100% · 주변 25%</span></div>
+</main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+
+tl.fromTo('.heading',{y:32,opacity:0},{y:0,opacity:1,duration:.70,ease:'power3.out'},.30);
+tl.fromTo('.sub',{y:18,opacity:0},{y:0,opacity:1,duration:.40,ease:'power3.out'},1.05);
+tl.fromTo('.detail',{y:10,opacity:0},{y:0,opacity:1,duration:.22,ease:'power2.out'},1.50);
+tl.to('#input',{opacity:1,duration:.3},1.72);
+tl.to('#a1',{scaleX:1,duration:.3},2.12);
+tl.to('#input',{opacity:.25,duration:.3},2.42);
+tl.to('#model',{opacity:1,duration:.3},2.42);
+tl.to('#a2',{scaleX:1,duration:.3},2.82);
+tl.to('#model',{opacity:.25,duration:.3},3.12);
+tl.to('#output',{opacity:1,duration:.35},3.12);
+tl.to('.heading,.sub,.detail,#output,.arrow',{opacity:.25,duration:.65,ease:'power3.out'},3.8);
+tl.to('#model',{opacity:1,duration:.65,ease:'power3.out'},3.8);
+tl.to('.brackets path',{strokeDashoffset:0,autoRound:false,duration:.45,ease:'power2.out'},4.15);
+tl.to('.lead',{opacity:1,duration:.25},4.7);
+
+Motion.ready();
+</script></body></html>

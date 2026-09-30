@@ -1,0 +1,2707 @@
+[
+{
+"key": "pullbackreveal",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "R1a-026",
+"en": "Pull back reveal",
+"ko": "뒤로 빠지며 공개",
+"aka": [],
+"family": "camera",
+"what": "처음 크게 보이던 요소가 작아지며 주변 카드와 넓은 맥락이 드러난다.",
+"why": "세부가 전체에서 차지하는 위치를 알려준다.",
+"params": "재현 기본값 제안: 1500ms, scale 1.8~1, power3.out",
+"impl": "큰 월드 래퍼의 scale과 중심 보정 이동을 함께 줄인다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/pull-back-reveal/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/parallax-unzoom/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/zoom-out-workspace-reveal.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/transitions/css-scale.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "kenburns",
+"family": "camera",
+"core": "ken-burns",
+"rows": [
+{
+"id": "R1a-044",
+"en": "Ken Burns",
+"ko": "켄 번스",
+"aka": [],
+"family": "camera",
+"what": "정지 이미지의 일부를 천천히 확대하거나 옆으로 이동한다.",
+"why": "사진에 시간과 시선의 흐름을 부여한다.",
+"params": "재현 기본값 제안: 5000ms, scale 1~1.04, linear",
+"impl": "크롭 내부 이미지의 scale과 translation을 보간한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "ken-burns",
+"sources": [
+{
+"url": "claude-skill:hyperframes-creative/references/motion-principles.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-keyframes/SKILL.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/mk-emphasis-type/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:general-video/SKILL.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/montage.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-125",
+"en": "Ken Burns",
+"ko": "켄 번즈",
+"aka": [],
+"family": "camera",
+"what": "정지 이미지가 천천히 확대되거나 축소되면서 조금씩 옆으로 움직인다.",
+"why": "사진 안의 대상과 디테일에 서서히 집중한다.",
+"params": "기본 확대 5%, 이동 화면 3%, 4000ms, sine.inOut",
+"impl": "HTML 이미지를 overflow 창 안에서 scale과 translate로 천천히 보간한다.",
+"runtime": "gsap",
+"variants": [
+"줌 인",
+"줌 아웃",
+"팬 결합"
+],
+"core": "ken-burns",
+"sources": [
+{
+"url": "claude-skill:card-shorts/references/shorts-specs.json",
+"repo": "local/card-shorts",
+"license": "unknown"
+},
+{
+"url": "local:ig-carousel-hub/03_templates/motion/slot-spec.md",
+"repo": "local/ig-carousel-hub",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R3-052",
+"en": "Ken Burns",
+"ko": "켄 번스",
+"aka": [],
+"family": "camera",
+"what": "정지 이미지가 천천히 확대되며 한쪽으로 이동한다.",
+"why": "정지 자료에 생동감과 시선 이동을 준다.",
+"params": "도감 기본값: 6000ms, scale 1에서 1.15, 이동 5%, linear",
+"impl": "CSS 배경 이미지의 scale과 translate를 보간한다",
+"runtime": "css",
+"variants": [
+"kenburns-top",
+"kenburns-bottom",
+"좌우",
+"대각선",
+"kenburns-top-right",
+"kenburns-right",
+"kenburns-bottom-right",
+"kenburns-bottom-left",
+"kenburns-left",
+"kenburns-top-left"
+],
+"core": "ken-burns",
+"sources": [
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+}
+]
+},
+{
+"id": "DICT-127",
+"en": "Ken Burns Effect",
+"ko": "켄 번스",
+"aka": [],
+"family": "camera",
+"what": "정지 사진·이미지에 느린 팬과 줌을 결합하는 연출이다.",
+"why": "",
+"params": "4000~8000ms; LIN: none / cubic-bezier(0, 0, 1, 1); scale 1→1.05~1.12, x/y 이동 프레임의 2~5%; 핵심 도착 뒤 1000~2000ms 홀드.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "ken-burns",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 2-transitions-camera.md#24. 켄 번스 · Ken Burns Effect",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "pushin",
+"family": "camera",
+"core": "push-in",
+"rows": [
+{
+"id": "R1a-045",
+"en": "Push in",
+"ko": "푸시 인",
+"aka": [
+"Punch-in",
+"Crash zoom"
+],
+"family": "camera",
+"what": "카메라가 대상에 가까워지며 화면 안에서 대상이 커진다.",
+"why": "관심을 좁히고 중요도를 높인다.",
+"params": "재현 기본값 제안: 2000ms, scale 1~1.12, power2.inOut",
+"impl": "월드 래퍼의 스케일과 목표점 보정 이동을 보간한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "push-in",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/push-in/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/multi-phase-camera.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "panstations",
+"family": "camera",
+"core": "pan",
+"rows": [
+{
+"id": "R1a-046",
+"en": "Pan stations",
+"ko": "정거장 팬",
+"aka": [],
+"family": "camera",
+"what": "하나의 넓은 공간에서 카메라가 옆으로 이동하며 각 구역에 잠시 멈춘다.",
+"why": "여러 기능을 같은 세계 안에서 순서대로 소개한다.",
+"params": "재현 기본값 제안: 구간 이동 800ms, 정지 1000ms, power2.inOut",
+"impl": "월드 래퍼를 구역 중심 간 역방향 이동한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "pan",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/pan-stations/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/spatial-pan-stations.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/viewport-change.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "zoomtotarget",
+"family": "camera",
+"core": "zoom-to-detail",
+"rows": [
+{
+"id": "R1a-047",
+"en": "Zoom to target",
+"ko": "대상 중심 줌",
+"aka": [
+"Map target zoom"
+],
+"family": "camera",
+"what": "화면 가장자리의 요소가 확대되면서 중앙에 정확히 놓인다.",
+"why": "세부 기능이나 중요한 부분을 읽게 한다.",
+"params": "재현 기본값 제안: 900ms, scale 1~2, power3.out; 지도 대상 확대 변형: 줌 1500ms, scale 1~4, 라벨 300ms",
+"impl": "대상 좌표에 따른 역이동과 scale을 하나의 진행값으로 보간한다.",
+"runtime": "gsap",
+"variants": [
+"지도 대상 확대"
+],
+"core": "zoom-to-detail",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/ui-focus-zoom/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/yt-camera-move/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/coordinate-target-zoom.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/north-korea-locked-down/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:motion-graphics/categories/maps/module.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/code-scroll/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "camerafollow",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "R1a-048",
+"en": "Camera follow",
+"ko": "카메라 추적",
+"aka": [],
+"family": "camera",
+"what": "움직이는 커서나 새 단어를 일정한 화면 위치에 유지하며 배경이 움직인다.",
+"why": "긴 작업 흐름에서도 현재 행동을 놓치지 않는다.",
+"params": "재현 기본값 제안: 진입 400ms, 추적 3000ms, 고정점 화면 60%",
+"impl": "초기 구도와 추적 구도를 분리해 목표점의 역변환을 적용한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/caption-camera-follow/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/camera-cursor-tracking.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "rackfocus",
+"family": "camera",
+"core": "rack-focus",
+"rows": [
+{
+"id": "R1a-049",
+"en": "Rack focus",
+"ko": "랙 포커스",
+"aka": [],
+"family": "camera",
+"what": "가까운 대상이 흐려지고 먼 대상이 선명해져 초점이 이동한다.",
+"why": "깊이와 주목 대상의 변경을 전달한다.",
+"params": "재현 기본값 제안: 1000ms, blur 0~16px, 비주목 opacity 0.7; 출처 기본값 focus-blur-resolve: 등장 760ms, 간격 0ms, cubic-bezier(0.22, 1, 0.36, 1); 레지스트리 rack-focus 기본값 pullduration=3.2",
+"impl": "층별 blur와 opacity를 반대로 보간한다.",
+"runtime": "css",
+"variants": [
+"animate-text/focus-blur-resolve",
+"선택 블러",
+"카드 초점 교체",
+"실제 조리개 보케",
+"전경과 후경"
+],
+"core": "rack-focus",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/focus-rack/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/focus-swap/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/focus-blur-resolve/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/rack-focus/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/depth-of-field-blur.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/transitions/css-dissolve.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/focus-blur-resolve.json",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-027",
+"en": "Rack Focus",
+"ko": "초점 이동",
+"aka": [
+"rack-focus-reference",
+"depth-of-field-blur"
+],
+"family": "camera",
+"what": "한 층이 흐려지는 동안 다른 층이 선명해져 시선의 대상이 바뀐다.",
+"why": "앞뒤 대상 중 어디를 봐야 하는지 알게 된다.",
+"params": "기본 비초점 blur 8px, 권장 700ms, power2.inOut",
+"impl": "HTML 층별 filter blur를 반대 방향으로 보간한다.",
+"runtime": "gsap",
+"variants": [
+"전경에서 배경",
+"배경에서 전경",
+"선택 영역 초점"
+],
+"core": "rack-focus",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/03-camera-3d.md#rack-focus-reference",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/depth-of-field-blur.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R5-081",
+"en": "Rack Focus",
+"ko": "랙 포커스",
+"aka": [
+"Focus pull"
+],
+"family": "camera",
+"what": "앞 대상이 흐려지고 뒤 대상이 선명해지며 시선이 옮겨간다.",
+"why": "서로 다른 깊이의 중요도를 교대한다.",
+"params": "제안 기본값: 900ms; 초점 거리 400→900px; blur 최대 12px",
+"impl": "깊이별 블러 합성 또는 깊이 버퍼 기반 피사계심도를 계산한다.",
+"runtime": "webgl",
+"variants": [
+"앞에서 뒤",
+"뒤에서 앞"
+],
+"core": "rack-focus",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/work-with-layers/camera-layer/cameras-lights-points-interest.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "dollyzoom",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "R1a-050",
+"en": "Dolly zoom",
+"ko": "돌리 줌",
+"aka": [],
+"family": "camera",
+"what": "주인공의 화면 크기는 고정된 채 배경의 원근만 크게 변한다.",
+"why": "불안, 깨달음, 공간의 뒤틀림을 만든다.",
+"params": "재현 기본값 제안: 4000ms, 거리비 2, 시작거리 1400px, power2.inOut; 레지스트리 camera-dolly-zoom 기본값 strength=2, easing=power2.inOut",
+"impl": "카메라 거리 d와 FOV를 d*tan(FOV/2) 일정 조건으로 함께 계산한다.",
+"runtime": "webgl",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/camera-dolly-zoom/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+},
+{
+"id": "R1b-024",
+"en": "Dolly Zoom",
+"ko": "돌리 줌",
+"aka": [
+"dolly-zoom-vertigo"
+],
+"family": "camera",
+"what": "중심 피사체의 크기는 유지되는데 배경의 깊이와 압축감이 변한다.",
+"why": "반전이나 심리적인 긴장을 느낀다.",
+"params": "기본 Z 이동 300px, 권장 1800ms, 피사체 역스케일",
+"impl": "HTML 깊이 이동에 반대 방향 스케일을 결합해 전경 크기를 유지한다.",
+"runtime": "gsap",
+"variants": [
+"버티고 인",
+"버티고 아웃"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/03-camera-3d.md#dolly-zoom-vertigo",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#dolly-zoom",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/dolly-zoom/scene.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/dolly-zoom/index.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "camerashake",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "R1a-051",
+"en": "Camera shake",
+"ko": "카메라 흔들림",
+"aka": [],
+"family": "camera",
+"what": "화면 전체가 작은 회전과 이동으로 흔들리며 충격 뒤에 감쇠한다.",
+"why": "핸드헬드 촬영감이나 타격을 전달한다.",
+"params": "재현 기본값 제안: 300ms, 이동 6px, 회전 0.6도, 감쇠",
+"impl": "시드 노이즈를 시간과 렌즈 배율에 따라 transform으로 투영한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/camera-shake/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "3dcameraflight",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "R1a-052",
+"en": "3D camera flight",
+"ko": "3D 카메라 비행",
+"aka": [],
+"family": "camera",
+"what": "기울어진 세계 안으로 들어가고 카드 사이를 지나 다음 대상 앞에서 멈춘다.",
+"why": "정보 간 공간 관계와 여정의 규모를 보여준다.",
+"params": "재현 기본값 제안: perspective 1000px, z 300~700px, rx 30~55도, 구간 1500ms",
+"impl": "하나의 카메라 상태로 월드 translate3d와 회전을 계산한다.",
+"runtime": "css",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/3d-camera-flight.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/camera-journey.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R8-092",
+"en": "3D Camera Flight",
+"ko": "3D 카메라 비행",
+"aka": [],
+"family": "camera",
+"what": "카메라가 기울어진 카드와 면 사이로 이동하고 회전해 다음 초점 앞에 멈춘다.",
+"why": "여러 장면을 하나의 공간 여행으로 연결한다.",
+"params": "재현 제안 기본값: 4000ms, 이동 900px, 깊이 700px, 회전 y 25도, 착지 900ms, cubic.out",
+"impl": "CSS에서 perspective와 preserve-3d를 쓰고 전체 월드의 역카메라 변환을 보간한다.",
+"runtime": "css",
+"variants": [
+"카드 사이 비행",
+"비스듬한 진입",
+"평면으로 착지"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/heygen-com/hyperframes/blob/HEAD/skills/hyperframes-animation/rules/3d-camera-flight.md",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "parallax",
+"family": "camera",
+"core": "parallax",
+"rows": [
+{
+"id": "R1a-053",
+"en": "Parallax",
+"ko": "시차 이동",
+"aka": [],
+"family": "depth",
+"what": "앞뒤 층이 서로 다른 속도로 움직여 상대적 위치가 달라진다.",
+"why": "거리와 깊이, 주인공의 전진을 보여준다.",
+"params": "재현 기본값 제안: 이동 1200ms, 전경 속도 1, 후경 0.4; 출처 기본값 depth-parallax-words: 등장 700ms, 간격 70ms, cubic-bezier(0.22, 1, 0.36, 1)",
+"impl": "층별 z 또는 이동 배율을 정해 동일 진행값으로 변환한다.",
+"runtime": "css",
+"variants": [
+"기울임 카드",
+"거리별 아바타 상승",
+"animate-text/depth-parallax-words"
+],
+"core": "parallax",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/camera-rig-depth-stack/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/parallax-zoom/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/parallax-device-dive/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-creative/references/motion-principles.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/ui-3d-reveal/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/tilt-card/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/avatar-group-hover/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/depth-parallax-words.json",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-021",
+"en": "Parallax",
+"ko": "다층 시차",
+"aka": [
+"parallax-3plane-rule",
+"ambient-parallax-breathing"
+],
+"family": "camera",
+"what": "전경은 크게 움직이고 배경은 작게 움직여 층마다 다른 속도로 지나간다.",
+"why": "화면에 깊이와 공간 이동감을 느낀다.",
+"params": "기본 층 비율 0.15/0.45/1, 권장 팬 600px, 2000ms",
+"impl": "HTML 깊이별 래퍼에 동일 카메라 진행값과 서로 다른 이동 배율을 적용한다.",
+"runtime": "gsap",
+"variants": [
+"2층",
+"3층",
+"4층",
+"수평",
+"수직",
+"영상 배경",
+"미세 표류",
+"camera/parallax-3plane",
+"parallax-video"
+],
+"core": "parallax",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/03-camera-3d.md#parallax-3plane-rule",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/03-camera-3d.md#ambient-parallax-breathing",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/camera/parallax-3plane.html",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/camera/parallax-3plane.meta.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:references/techniques.md#parallax-video",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/parallax-video/scene.css",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/parallax-video/scene.html",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/parallax-video/scene.js",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/parallax-video/template.json",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+}
+]
+},
+{
+"id": "DICT-089",
+"en": "Parallax",
+"ko": "패럴랙스 기본",
+"aka": [],
+"family": "emphasis",
+"what": "층마다 이동량 차이를 줘 깊이를 읽게 한다.",
+"why": "",
+"params": "이동차 8~24px; 600~1200ms none 또는 sine.inOut; 층 2개",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "parallax",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#7. 연속성·공간 모델·시선 유도",
+"license": "own"
+}
+]
+},
+{
+"id": "DICT-122",
+"en": "Parallax",
+"ko": "패럴랙스",
+"aka": [],
+"family": "camera",
+"what": "시점 변화에 따라 가까운 층과 먼 층이 다른 양만큼 움직이는 시차이다.",
+"why": "",
+"params": "영상 1200~2500ms; LIN: none / cubic-bezier(0, 0, 1, 1); 전경 32~64px, 중경 16~32px, 배경 0~16px; 층 2~3개.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "parallax",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 2-transitions-camera.md#19. 패럴랙스 · Parallax",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "speedramp",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "R1a-192",
+"en": "Speed ramp",
+"ko": "속도 램프",
+"aka": [],
+"family": "camera",
+"what": "같은 움직임이 갑자기 빨라지거나 느려졌다 중요한 순간에 정지한다.",
+"why": "타격과 시간 집중, 리듬 변화를 만든다.",
+"params": "재현 기본값 제안: rate 0.25~4, 가속 300ms, 정지 800ms",
+"impl": "속도 곡선을 적분한 원본 시간으로 프레임 또는 절차 동작을 샘플링한다.",
+"runtime": "canvas",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/beat-freeze-cut/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-core/references/creator-editing-recipes.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R1b-070",
+"en": "Speed Ramp",
+"ko": "속도 램프",
+"aka": [
+"speed-ramp-density"
+],
+"family": "principles",
+"what": "같은 동작이나 반복 이벤트가 느리게 진행하다 갑자기 빨라지거나 다시 느려진다.",
+"why": "긴장 상승과 클라이맥스의 도착을 느낀다.",
+"params": "기본 3구간, 밀도 1배에서 4배, 권장 총 2000ms",
+"impl": "HTML 진행값의 시간 매핑을 구간별 함수로 바꿔 동작과 이벤트 시점을 계산한다.",
+"runtime": "gsap",
+"variants": [
+"가속",
+"감속",
+"가속 뒤 감속",
+"roll-flipbook-word-cycle"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/07-stylize-time.md#speed-ramp-density",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:music-to-video/references/template-catalog.md#roll-flipbook-word-cycle",
+"repo": "local/music-to-video",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "multiplanedolly",
+"family": "camera",
+"core": "push-in",
+"rows": [
+{
+"id": "R1b-022",
+"en": "Multiplane Dolly",
+"ko": "다층 돌리 푸시",
+"aka": [
+"multiplane-dolly-push"
+],
+"family": "camera",
+"what": "화면이 장면 안으로 다가가며 가까운 층이 먼 층보다 더 크게 벌어진다.",
+"why": "대상에게 접근하거나 전체 공간을 공개한다.",
+"params": "기본 perspective 1200px, Z 이동 300px, 권장 1800ms",
+"impl": "HTML preserve-3d 층의 translateZ와 세계 래퍼의 Z 위치를 보간한다.",
+"runtime": "gsap",
+"variants": [
+"푸시 인",
+"풀 아웃",
+"camera/multiplane-push"
+],
+"core": "push-in",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/03-camera-3d.md#multiplane-dolly-push",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/camera/multiplane-push.html",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/camera/multiplane-push.meta.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "turntableorbit",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "R1b-023",
+"en": "Turntable Orbit",
+"ko": "턴테이블 오빗",
+"aka": [
+"camera-orbit-turntable"
+],
+"family": "camera",
+"what": "시점이 고정 피사체 주변의 원호를 돌아 다른 면을 보여준다.",
+"why": "제품이나 로고의 입체적인 형태를 파악한다.",
+"params": "기본 스윕 45도, 권장 1600ms, power2.inOut",
+"impl": "HTML perspective 아래에서 대상 세계의 rotateY와 위치를 함께 보간한다.",
+"runtime": "gsap",
+"variants": [
+"20도 스윕",
+"90도 리빌",
+"왕복 오빗",
+"camera/orbit-turntable",
+"device-surface-showcase"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/03-camera-3d.md#camera-orbit-turntable",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/camera/orbit-turntable.html",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/camera/orbit-turntable.meta.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/device-surface-showcase.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "cranetilt",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "R1b-026",
+"en": "Crane Tilt",
+"ko": "크레인과 틸트",
+"aka": [
+"crane-pedestal-tilt"
+],
+"family": "camera",
+"what": "시점이 수직으로 오르내리면서 보는 각도도 함께 바뀐다.",
+"why": "전체에서 대상의 눈높이로 시점이 이동함을 느낀다.",
+"params": "기본 수직 120px, 틸트 12도, 권장 1600ms",
+"impl": "HTML 세계의 y와 rotateX를 같은 카메라 진행값으로 보간한다.",
+"runtime": "gsap",
+"variants": [
+"상승",
+"하강"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/03-camera-3d.md#crane-pedestal-tilt",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "vanishingpointshift",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "R1b-028",
+"en": "Vanishing Point Shift",
+"ko": "소실점 이동",
+"aka": [
+"perspective-origin-eye-shift"
+],
+"family": "camera",
+"what": "입체 요소를 바라보는 소실점이 좌우나 아래로 옮겨지며 보는 위치가 달라진다.",
+"why": "올려다보기나 미세한 관찰 시점 변화를 느낀다.",
+"params": "기본 perspective-origin 50% 50%에서 50% 70%, 권장 1600ms",
+"impl": "HTML perspective-origin 수치를 보간해 공통 3D 공간의 광학 중심을 옮긴다.",
+"runtime": "gsap",
+"variants": [
+"저각 시점",
+"좌우 헤드 이동",
+"camera/eye-shift"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/03-camera-3d.md#perspective-origin-eye-shift",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/camera/eye-shift.html",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/camera/eye-shift.meta.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "framescrub",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "R1b-079",
+"en": "Frame Scrub",
+"ko": "프레임 스크럽",
+"aka": [],
+"family": "camera",
+"what": "영상의 프레임이 스크롤이나 진행값에 따라 앞뒤로 바뀌고 제목은 고정되어 있다.",
+"why": "움직임의 단계를 직접 따라가며 원리를 읽는다.",
+"params": "기본 최대 120프레임, 스크롤 pin 260vh, 평활 600ms, 시간 재현 권장 5000ms",
+"impl": "canvas 진행값을 프레임 인덱스로 변환해 이미지 시퀀스를 그린다.",
+"runtime": "canvas",
+"variants": [
+"고정 제목 히어로",
+"과정 영상",
+"역방향 스크럽",
+"frame-scrub-hero",
+"frame-scrub-video"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/awesome-html-scrolline-deck:references/techniques.md#frame-scrub-hero",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/frame-scrub-hero/scene.css",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/frame-scrub-hero/scene.html",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/frame-scrub-hero/scene.js",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/frame-scrub-hero/template.json",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:references/techniques.md#frame-scrub-video",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/frame-scrub-video/scene.css",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/frame-scrub-video/scene.html",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/frame-scrub-video/scene.js",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/frame-scrub-video/template.json",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "horizontalgallery",
+"family": "camera",
+"core": "pan",
+"rows": [
+{
+"id": "R1b-081",
+"en": "Horizontal Gallery",
+"ko": "가로 갤러리 팬",
+"aka": [],
+"family": "camera",
+"what": "고정 캡션 아래의 여러 이미지가 옆으로 흘러가고 번호가 현재 이미지를 따라 바뀐다.",
+"why": "많은 사례를 같은 맥락과 속도로 비교한다.",
+"params": "기본 이미지 3~10장, pin 320vh, 이동 진행 16~76%, 영상 재현 권장 6000ms",
+"impl": "HTML 넓은 이미지 트랙을 x로 이동하고 진행 인덱스로 카운터를 갱신한다.",
+"runtime": "gsap",
+"variants": [
+"전체 화면 이미지",
+"사례 스트립",
+"horizontal-gallery",
+"spatial-pan-stations"
+],
+"core": "pan",
+"sources": [
+{
+"url": "gongnyang/awesome-html-scrolline-deck:references/techniques.md#horizontal-gallery",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/horizontal-gallery/scene.css",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/horizontal-gallery/scene.html",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/horizontal-gallery/scene.js",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/horizontal-gallery/template.json",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/spatial-pan-stations.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "camerajourney",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "R1b-097",
+"en": "Camera Journey",
+"ko": "다구간 카메라 여정",
+"aka": [
+"multi-phase-camera",
+"viewport-change",
+"3d-camera-flight"
+],
+"family": "camera",
+"what": "시점이 한 공간에서 디테일로 들어갔다 행동의 결과가 있는 곳으로 옮겨 안착한다.",
+"why": "원인과 결과가 공간 안에서 연결됨을 이해한다.",
+"params": "권장 3구간, 구간 1200~1800ms, 이동 power2.inOut, 안착 power4.out",
+"impl": "HTML 세계 래퍼의 위치와 scale 및 회전을 단일 카메라 상태로 순차 보간한다.",
+"runtime": "gsap",
+"variants": [
+"푸시와 복귀",
+"3D 비행",
+"정거장 팬",
+"camera-journey",
+"spatial-pan-stations"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/multi-phase-camera.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/viewport-change.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/3d-camera-flight.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/camera-journey.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/spatial-pan-stations.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "cameracarettrack",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "R1b-105",
+"en": "Camera Caret Track",
+"ko": "입력 초점 추적",
+"aka": [
+"camera-cursor-tracking"
+],
+"family": "camera",
+"what": "타이핑이 길어져 커서가 화면 경계에 가까워지면 카메라가 이동해 커서를 다시 보이게 한다.",
+"why": "입력의 연속성을 잃지 않고 현재 위치를 읽는다.",
+"params": "기본 추적 임계 화면 폭 0.65, 커서 폭 6px, 권장 추적 600ms",
+"impl": "HTML 커서 좌표가 임계를 넘는 만큼 세계의 x를 반대 방향으로 이동한다.",
+"runtime": "gsap",
+"variants": [
+"타이핑 추적",
+"클릭 지점 추적"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/camera-cursor-tracking.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "zoomtodetail",
+"family": "camera",
+"core": "zoom-to-detail",
+"rows": [
+{
+"id": "R1b-106",
+"en": "Zoom To Detail",
+"ko": "디테일 중심 확대",
+"aka": [
+"viewport-change",
+"coordinate-target-zoom"
+],
+"family": "camera",
+"what": "화면 중앙 밖의 작은 대상이 확대되면서 화면 중앙으로 이동한다.",
+"why": "현재 설명하는 디테일에 집중한다.",
+"params": "기본 3배, 1500ms power3.out, 확대 후 홀드 1000ms",
+"impl": "HTML scale 래퍼와 translate 래퍼를 분리하고 측정한 대상 중심을 역이동한다.",
+"runtime": "gsap",
+"variants": [
+"비중앙 대상",
+"확대 콜아웃",
+"복귀 확대"
+],
+"core": "zoom-to-detail",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/viewport-change.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/coordinate-target-zoom.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "workspacereveal",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "R1b-119",
+"en": "Workspace Reveal",
+"ko": "확대 디테일에서 전체 공개",
+"aka": [],
+"family": "camera",
+"what": "작은 UI 부분을 가까이 보여준 뒤 한 번의 줌아웃으로 넓은 작업 공간을 드러낸다.",
+"why": "부분이 더 큰 시스템 안에 속함을 이해한다.",
+"params": "권장 시작 scale 3, zoom-out 2200ms power3.out, 공개 후 홀드 1000ms",
+"impl": "HTML 세계 래퍼의 scale과 중심 보정을 한 번의 연속 보간으로 원래 전체 화면에 돌린다.",
+"runtime": "gsap",
+"variants": [
+"다중 패널",
+"넓은 그리드",
+"작업실 공개",
+"transcript-scroll-artifact-reveal",
+"zoom-out-workspace-reveal"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/blueprints/transcript-scroll-artifact-reveal.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/zoom-out-workspace-reveal.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "crashzoom",
+"family": "camera",
+"core": "push-in",
+"rows": [
+{
+"id": "R1b-136",
+"en": "Crash Zoom",
+"ko": "충격 줌",
+"aka": [
+"braam-punch",
+"crash-zoom-in"
+],
+"family": "camera",
+"what": "화면이 갑자기 크게 확대된 뒤 목표 대상에 강하게 멈춘다.",
+"why": "강한 강조와 순간적인 압박을 느낀다.",
+"params": "기본 400ms expo.out, 확대 2배, blur 6px에서 0px",
+"impl": "HTML 세계 scale과 초점 중심 보정을 급격한 이즈로 보간한다.",
+"runtime": "gsap",
+"variants": [
+"브라암 펀치",
+"로고 충격 확대"
+],
+"core": "push-in",
+"sources": [
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#braam-punch",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/braam-punch/scene.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/braam-punch/index.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#crash-zoom-in",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/crash-zoom-in/scene.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/crash-zoom-in/index.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:synced/39cd27d1-5d54-43b6-b557-65596e75bccb_30aab8dd-6815-4962-a41b-a684567e027b/slack-gif-creator/SKILL.md",
+"repo": "local/claude-synced-skills",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "perceptuallyuniformzoom",
+"family": "camera",
+"core": "push-in",
+"rows": [
+{
+"id": "R2-009",
+"en": "Perceptually uniform zoom",
+"ko": "지각 속도 일정 줌",
+"aka": [
+"ExpoScaleEase"
+],
+"family": "camera",
+"what": "이미지의 크기가 크게 바뀌어도 확대 속도가 고르게 느껴진다.",
+"why": "확대 과정에서 시선을 안정시킨다.",
+"params": "공식: ExpoScaleEase 시작과 끝 scale 필수, 보조 ease none. 권장 scale 0.5~4, 1800ms. scale 0 불가.",
+"impl": "양수 배율의 로그 공간에서 진행률을 보간해 scale을 적용한다.",
+"runtime": "gsap",
+"variants": [
+"확대",
+"축소",
+"부드러운 줌"
+],
+"core": "push-in",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Eases/ExpoScaleEase/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+}
+]
+}
+]
+},
+{
+"key": "layeredparallax",
+"family": "camera",
+"core": "parallax",
+"rows": [
+{
+"id": "R2-079",
+"en": "Layered parallax",
+"ko": "다층 패럴랙스",
+"aka": [],
+"family": "camera",
+"what": "앞과 뒤 레이어가 서로 다른 속도로 이동한다.",
+"why": "평면 화면에 공간 깊이를 만든다.",
+"params": "공식: ScrollSmoother data-speed 기본 1. 권장 전경 1.2, 배경 0.5, 1800ms.",
+"impl": "한 진행값을 레이어별 이동 계수와 클립 영역에 매핑한다.",
+"runtime": "gsap",
+"variants": [
+"가로",
+"세로",
+"이미지 내부",
+"반대 방향"
+],
+"core": "parallax",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/ScrollSmoother/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://www.react-spring.dev/docs/components/parallax",
+"repo": "pmndrs/react-spring",
+"license": "MIT"
+},
+{
+"url": "https://motion.dev/docs/react-scroll-animations",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://motion.dev/examples/react-parallax",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R3-167",
+"en": "Layered Parallax",
+"ko": "층별 시차",
+"aka": [],
+"family": "camera",
+"what": "여러 층이 같은 진행에 서로 다른 속도로 이동해 앞뒤 깊이가 생긴다.",
+"why": "공간 구조와 이동감을 알려 준다.",
+"params": "도감 기본값: 6000ms, 전경 이동 120px, 배경 이동 40px, linear",
+"impl": "GSAP 코어로 층별 translate를 다른 비율로 보간한다",
+"runtime": "gsap",
+"variants": [
+"Parallax Scroll",
+"Hero Parallax",
+"Parallax Hero Images",
+"GridMotion",
+"DomeGallery",
+"parallax-hero-images",
+"parallax-scroll",
+"hero-parallax"
+],
+"core": "parallax",
+"sources": [
+{
+"url": "https://ui.aceternity.com/components/parallax-hero-images",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://tympanus.net/codrops/2020/12/01/crafting-a-scrollable-and-draggable-parallax-slider/",
+"repo": "tympanus.net/codrops",
+"license": "unknown"
+},
+{
+"url": "https://github.com/codrops/ScrollBasedLayoutAnimations",
+"repo": "codrops/ScrollBasedLayoutAnimations",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "scrollzoomhero",
+"family": "camera",
+"core": "zoom-to-detail",
+"rows": [
+{
+"id": "R2-083",
+"en": "Scroll zoom hero",
+"ko": "스크롤 히어로 줌",
+"aka": [],
+"family": "camera",
+"what": "큰 이미지가 스크롤에 맞춰 확대되며 특정 부분이 화면을 채운다.",
+"why": "대표 장면과 세부 정보로 시선을 이끈다.",
+"params": "공식 공통 기본 없음. 권장 scale 1~2.5, 1600px, 원점 대상 중심.",
+"impl": "스크롤 진행값을 scale과 translate에 함께 연결한다.",
+"runtime": "gsap",
+"variants": [
+"중앙 확대",
+"특정 지점 확대",
+"축소 공개"
+],
+"core": "zoom-to-detail",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/ScrollTrigger/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/examples/react-scroll-zoom-hero",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://gsap.com/docs/v3/Eases/ExpoScaleEase/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+}
+]
+}
+]
+},
+{
+"key": "scrollimagesequence",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "R2-085",
+"en": "Scroll image sequence",
+"ko": "스크롤 이미지 시퀀스",
+"aka": [],
+"family": "camera",
+"what": "스크롤에 따라 연속 이미지 프레임이 바뀌어 물체가 회전하거나 장면이 진행된다.",
+"why": "제품의 형태와 단계별 변화를 보여준다.",
+"params": "공식 공통 기본 없음. 권장 120프레임, 2000px, 프레임 정수 반올림.",
+"impl": "직접 만든 프레임을 진행률에 대응시켜 canvas에 선택 프레임을 그린다.",
+"runtime": "canvas",
+"variants": [
+"제품 턴테이블",
+"분해도",
+"영상 프레임",
+"양방향 스크럽"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/HelperFunctions/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://gsap.com/docs/v3/Plugins/ScrollTrigger/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+}
+]
+}
+]
+},
+{
+"key": "sequencedcameratravel",
+"family": "camera",
+"core": "pan",
+"rows": [
+{
+"id": "R2-107",
+"en": "Sequenced camera travel",
+"ko": "키프레임 카메라 이동",
+"aka": [],
+"family": "camera",
+"what": "카메라가 정해진 위치와 바라보는 지점을 따라 움직이며 장면을 탐색한다.",
+"why": "설명 대상의 위치 관계와 세부 구조를 드러낸다.",
+"params": "공식 공통 기본 없음. 권장 구간 2000ms, 위치 3점, lookAt 연동.",
+"impl": "직접 만든 WebGL 장면에서 카메라 position과 target을 같은 타임라인으로 보간한다.",
+"runtime": "webgl",
+"variants": [
+"돌리",
+"궤도",
+"패닝",
+"상세 접근"
+],
+"core": "pan",
+"sources": [
+{
+"url": "https://www.theatrejs.com/docs/latest/getting-started/with-react-three-fiber",
+"repo": "theatre-js/theatre",
+"license": "Apache-2.0 / AGPL-3.0 (구성요소별)"
+},
+{
+"url": "https://www.theatrejs.com/docs/latest/manual/sequences",
+"repo": "theatre-js/theatre",
+"license": "Apache-2.0 / AGPL-3.0 (구성요소별)"
+},
+{
+"url": "https://gsap.com/docs/v3/Plugins/MotionPathPlugin/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+}
+]
+}
+]
+},
+{
+"key": "camerapushin",
+"family": "camera",
+"core": "push-in",
+"rows": [
+{
+"id": "R5-078",
+"en": "Camera Push In",
+"ko": "카메라 푸시 인",
+"aka": [
+"Dolly in"
+],
+"family": "camera",
+"what": "카메라가 앞으로 이동해 피사체가 커지고 깊이 차가 벌어진다.",
+"why": "핵심 대상에 몰입하게 한다.",
+"params": "제안 기본값: 1200ms; 이동 240px; power2.inOut",
+"impl": "투영 카메라의 z 위치를 보간한다.",
+"runtime": "webgl",
+"variants": [
+"느린 접근",
+"빠른 접근"
+],
+"core": "push-in",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/work-with-layers/camera-layer/cameras-lights-points-interest.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "camerapan",
+"family": "camera",
+"core": "pan",
+"rows": [
+{
+"id": "R5-079",
+"en": "Camera Pan",
+"ko": "카메라 팬",
+"aka": [],
+"family": "camera",
+"what": "카메라가 제자리에서 방향을 돌려 옆의 대상을 보여준다.",
+"why": "하나의 공간 안에서 시선을 이동한다.",
+"params": "제안 기본값: 1000ms; yaw 20deg; power2.inOut",
+"impl": "카메라 회전 또는 시점 방향을 보간한다.",
+"runtime": "webgl",
+"variants": [
+"가로 팬",
+"세로 틸트"
+],
+"core": "pan",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/work-with-layers/camera-layer/cameras-lights-points-interest.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "cameraorbit",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "R5-080",
+"en": "Camera Orbit",
+"ko": "카메라 오빗",
+"aka": [],
+"family": "camera",
+"what": "카메라가 대상을 중심으로 돌며 옆면과 공간 관계를 보여준다.",
+"why": "형태와 입체 구조를 이해하게 한다.",
+"params": "제안 기본값: 2400ms; 방위각 60deg; radius 600px",
+"impl": "구면 좌표로 카메라 위치를 계산하고 대상 중심을 바라보게 한다.",
+"runtime": "webgl",
+"variants": [
+"수평 오빗",
+"나선 오빗"
+],
+"core": "",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/work-with-layers/camera-layer/cameras-lights-points-interest.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R8-089",
+"en": "Camera Orbit",
+"ko": "카메라 공전",
+"aka": [
+"Orbital camera"
+],
+"family": "camera",
+"what": "카메라가 물체 둘레를 돌며 같은 물체를 다른 각도와 배경 관계로 보여준다.",
+"why": "물체의 입체 위치와 주변 공간을 전달한다.",
+"params": "재현 제안 기본값: 5000ms, 방위각 0부터 120도, 거리 4단위, 고도 20도, cubic.inOut",
+"impl": "WebGL에서 카메라 구면 좌표를 보간하고 같은 목표를 바라보게 한다.",
+"runtime": "webgl",
+"variants": [
+"수평 공전",
+"고도 변화",
+"타원 공전"
+],
+"core": "",
+"sources": [
+{
+"url": "https://p5js.org/examples/3D-Orbit-Control/",
+"repo": "processing/p5.js-website",
+"license": "MIT"
+},
+{
+"url": "https://oframe.github.io/ogl/examples/orbit-controls.html",
+"repo": "oframe/ogl",
+"license": "unknown"
+},
+{
+"url": "https://github.com/iart-ai/webgl-animation-skills/blob/HEAD/skills/threejs-animation/SKILL.md",
+"repo": "iart-ai/webgl-animation-skills",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "camerazoomthrough",
+"family": "camera",
+"core": "zoom-through",
+"rows": [
+{
+"id": "R5-085",
+"en": "Camera Zoom Through",
+"ko": "카메라 관통 줌",
+"aka": [],
+"family": "camera",
+"what": "카메라가 대상이나 구멍을 통과해 다음 공간으로 들어간다.",
+"why": "연결된 공간과 몰입형 전환을 만든다.",
+"params": "제안 기본값: 900ms; camera z 700→-300px; power3.in",
+"impl": "앞쪽 평면과 다음 장면을 깊이에 배치하고 카메라를 전진시킨다.",
+"runtime": "webgl",
+"variants": [
+"문자 구멍",
+"프레임 관통",
+"포털"
+],
+"core": "zoom-through",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/work-with-layers/camera-layer/cameras-lights-points-interest.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "lensdistortionzoom",
+"family": "camera",
+"core": "zoom-to-detail",
+"rows": [
+{
+"id": "R5-114",
+"en": "Lens Distortion Zoom",
+"ko": "렌즈 왜곡 줌",
+"aka": [
+"Optics Compensation"
+],
+"family": "camera",
+"what": "화면 중심이 확대되며 주변 직선이 휘어졌다 돌아온다.",
+"why": "강한 접근과 광각 렌즈 느낌을 준다.",
+"params": "제안 기본값: 700ms; distortion 0→0.25→0",
+"impl": "방사 렌즈 왜곡과 카메라 줌을 같은 시간축으로 계산한다.",
+"runtime": "webgl",
+"variants": [
+"배럴 왜곡",
+"핀쿠션 왜곡"
+],
+"core": "zoom-to-detail",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/distort-effects.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "movingtimewindowzoom",
+"family": "camera",
+"core": "pan",
+"rows": [
+{
+"id": "R6-028",
+"en": "Moving time-window zoom",
+"ko": "시간 창 추적 확대",
+"aka": [],
+"family": "camera",
+"what": "현재 시점 근처의 구간이 화면 중앙에 머물고 시간축이 옆으로 흘러간다.",
+"why": "긴 시계열의 세부를 좁은 화면에서 계속 볼 수 있다.",
+"params": "기본 창 10시점, 시점당 500ms, linear, 끝점 위치 80%",
+"impl": "가시 시간 범위의 양 끝을 보간하고 선과 눈금을 같은 변환으로 갱신한다.",
+"runtime": "svg",
+"variants": [
+"선두 추적",
+"최근 구간",
+"고정 폭 이동 창"
+],
+"core": "pan",
+"sources": [
+{
+"url": "https://flourish.studio/blog/line-chart-race/",
+"repo": "Flourish",
+"license": "unknown"
+},
+{
+"url": "https://d3js.org/d3-zoom",
+"repo": "d3/d3-zoom",
+"license": "ISC"
+}
+]
+}
+]
+},
+{
+"key": "hierarchydrilldownzoom",
+"family": "camera",
+"core": "zoom-to-detail",
+"rows": [
+{
+"id": "R6-060",
+"en": "Hierarchy drill-down zoom",
+"ko": "계층 내부 확대",
+"aka": [],
+"family": "camera",
+"what": "선택한 하위 영역이 화면을 채우도록 커지고 주변 상위 영역이 밖으로 밀려난다.",
+"why": "전체 안의 세부 구조를 위치 관계와 함께 읽는다.",
+"params": "기본 1000ms, cubicInOut, 목표 영역 여백 20px, 라벨 페이드 250ms",
+"impl": "하위 영역 경계를 기준으로 SVG viewBox나 각도와 반지름의 가시 범위를 보간한다.",
+"runtime": "svg",
+"variants": [
+"원 패킹",
+"트리맵",
+"선버스트",
+"상위 복귀"
+],
+"core": "zoom-to-detail",
+"sources": [
+{
+"url": "https://observablehq.com/@d3/zoomable-sunburst",
+"repo": "Observable @d3",
+"license": "unknown"
+},
+{
+"url": "https://observablehq.com/@d3/zoomable-circle-packing",
+"repo": "Observable @d3",
+"license": "unknown"
+},
+{
+"url": "https://observablehq.com/@d3/zoomable-treemap",
+"repo": "Observable @d3",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "fisheyechartlens",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "R6-064",
+"en": "Fisheye chart lens",
+"ko": "차트 어안 렌즈",
+"aka": [],
+"family": "camera",
+"what": "초점 주변의 점과 눈금 간격이 벌어지고 주변부는 압축된다.",
+"why": "전체 맥락을 남겨두면서 밀집된 구간의 세부를 본다.",
+"params": "기본 800ms, 초점 반경 120px, 왜곡 강도 2, cubicInOut",
+"impl": "초점 거리별 왜곡 함수를 진행률로 혼합해 SVG 마크와 눈금을 함께 이동한다.",
+"runtime": "svg",
+"variants": [
+"단일 초점",
+"이중 초점",
+"이동 렌즈"
+],
+"core": "",
+"sources": [
+{
+"url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+"repo": "Heer & Robertson 2007",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "maptoboundszoom",
+"family": "camera",
+"core": "zoom-to-detail",
+"rows": [
+{
+"id": "R6-072",
+"en": "Map-to-bounds zoom",
+"ko": "지도 경계 맞춤 확대",
+"aka": [],
+"family": "camera",
+"what": "선택 지역이 화면의 여백 안에 들어오도록 지도가 이동하고 확대된다.",
+"why": "지역의 위치를 잃지 않고 세부 지리를 본다.",
+"params": "기본 1000ms, 여백 24px, cubicInOut, 확대 상한 8배",
+"impl": "지역 경계 상자의 중심과 목표 배율을 계산해 지도 변환을 보간한다.",
+"runtime": "svg",
+"variants": [
+"국가",
+"행정구역",
+"경로 전체",
+"상위 지도 복귀"
+],
+"core": "zoom-to-detail",
+"sources": [
+{
+"url": "https://observablehq.com/@d3/zoom-to-bounding-box",
+"repo": "Observable @d3",
+"license": "unknown"
+},
+{
+"url": "https://d3js.org/d3-zoom",
+"repo": "d3/d3-zoom",
+"license": "ISC"
+},
+{
+"url": "https://github.com/maplibre/maplibre-gl-js",
+"repo": "maplibre/maplibre-gl-js",
+"license": "BSD-3-Clause"
+}
+]
+}
+]
+},
+{
+"key": "geographicflyto",
+"family": "camera",
+"core": "zoom-through",
+"rows": [
+{
+"id": "R6-073",
+"en": "Geographic fly-to",
+"ko": "지도 비행 이동",
+"aka": [],
+"family": "camera",
+"what": "지도 시점이 출발 지역에서 물러났다가 목표 지역으로 접근한다.",
+"why": "멀리 떨어진 장소의 거리와 공간 관계를 느낀다.",
+"params": "기본 1800ms, 중간 배율 0.5배, cubicInOut, 양 끝 정지 400ms",
+"impl": "시점 중심과 배율을 결합해 줌아웃, 이동, 줌인 경로를 보간한다.",
+"runtime": "svg",
+"variants": [
+"장거리 이동",
+"연속 지역 방문",
+"장소 목록 투어"
+],
+"core": "zoom-through",
+"sources": [
+{
+"url": "https://observablehq.com/@d3/smooth-zooming",
+"repo": "Observable @d3",
+"license": "unknown"
+},
+{
+"url": "https://d3js.org/d3-zoom",
+"repo": "d3/d3-zoom",
+"license": "ISC"
+},
+{
+"url": "https://github.com/maplibre/maplibre-gl-js",
+"repo": "maplibre/maplibre-gl-js",
+"license": "BSD-3-Clause"
+}
+]
+}
+]
+},
+{
+"key": "globedestinationrotation",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "R6-074",
+"en": "Globe destination rotation",
+"ko": "지구 목적지 회전",
+"aka": [],
+"family": "camera",
+"what": "구형 지도가 회전해 선택한 나라나 도시가 정면 중심으로 온다.",
+"why": "국가 사이의 방향과 지구상의 위치를 이해한다.",
+"params": "기본 1200ms, cubicInOut, 경도 최단 회전, 목표 확대 1.5배",
+"impl": "구면 중심 방향을 보간하고 투영 회전값과 scale을 갱신한다.",
+"runtime": "svg",
+"variants": [
+"국가 투어",
+"도시 이동",
+"대륙 비교"
+],
+"core": "",
+"sources": [
+{
+"url": "https://observablehq.com/@d3/world-tour",
+"repo": "Observable @d3",
+"license": "unknown"
+},
+{
+"url": "https://github.com/reuters-graphics/chart-module-globetrotter",
+"repo": "reuters-graphics/chart-module-globetrotter",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "chartzoomeddetailinset",
+"family": "camera",
+"core": "zoom-callout",
+"rows": [
+{
+"id": "R6-097",
+"en": "Chart zoomed detail inset",
+"ko": "차트 세부 확대 창",
+"aka": [],
+"family": "camera",
+"what": "데이터의 작은 영역이 별도 확대 창으로 나타나고 원래 위치와 연결선으로 이어진다.",
+"why": "전체 그림을 유지하면서 밀집한 데이터의 세부를 본다.",
+"params": "기본 공개 600ms, 배율 3, 원본 opacity 0.6, 연결선 300ms",
+"impl": "같은 데이터의 일부를 SVG clipPath로 별도 뷰에 렌더하고 창 크기와 위치를 보간한다.",
+"runtime": "svg",
+"variants": [
+"삽입 확대",
+"축 깨짐 비교",
+"밀집 영역"
+],
+"core": "zoom-callout",
+"sources": [
+{
+"url": "https://d3js.org/d3-zoom",
+"repo": "d3/d3-zoom",
+"license": "ISC"
+},
+{
+"url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+"repo": "Heer & Robertson 2007",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "guidedscatterclusterzoomtour",
+"family": "camera",
+"core": "zoom-to-detail",
+"rows": [
+{
+"id": "R6-105",
+"en": "Guided scatter cluster zoom tour",
+"ko": "산점도 군집 확대 투어",
+"aka": [],
+"family": "camera",
+"what": "전체 산점도에서 각 군집이 차례로 화면을 채우도록 확대되고 마지막에 전체 보기로 돌아온다.",
+"why": "전체 분포와 각 군집의 밀집 구조를 순서대로 읽는다.",
+"params": "기본 군집 이동 1000ms, 정지 1200ms, 여백 24px, cubicInOut",
+"impl": "군집 경계 상자의 중심과 배율을 목표 시점으로 정하고 SVG 그룹 변환을 순차 보간한다.",
+"runtime": "svg",
+"variants": [
+"군집 순회",
+"이상치 방문",
+"전체 복귀"
+],
+"core": "zoom-to-detail",
+"sources": [
+{
+"url": "https://observablehq.com/@d3/scatterplot-tour",
+"repo": "Observable @d3",
+"license": "unknown"
+},
+{
+"url": "https://d3js.org/d3-zoom",
+"repo": "d3/d3-zoom",
+"license": "ISC"
+}
+]
+}
+]
+},
+{
+"key": "scientificscalejourney",
+"family": "camera",
+"core": "zoom-through",
+"rows": [
+{
+"id": "R7-067",
+"en": "Scientific scale journey",
+"ko": "과학적 규모 여행",
+"aka": [],
+"family": "camera",
+"what": "시점이 거시적 대상에서 내부의 작은 구조로 계속 확대되어 새로운 도해를 만난다.",
+"why": "서로 다른 규모의 구조가 연결됨을 느낀다.",
+"params": "재현 기본값: 2400 ms, 확대 1~12배, 단계 3개, easeInOut",
+"impl": "계층별 SVG 장면을 scale하고 다음 규모의 장면을 교차 공개한다.",
+"runtime": "gsap",
+"variants": [
+"우주에서 행성",
+"세포에서 분자"
+],
+"core": "zoom-through",
+"sources": [
+{
+"url": "https://kurzgesagt.org/what-we-do?visit=videos",
+"repo": "Kurzgesagt",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "actioncenteredautomaticzoom",
+"family": "camera",
+"core": "zoom-to-detail",
+"rows": [
+{
+"id": "R7-098",
+"en": "Action-centered automatic zoom",
+"ko": "행동 위치 자동 확대",
+"aka": [],
+"family": "camera",
+"what": "클릭이나 입력이 일어나는 위치를 향해 화면이 확대되고 행동이 끝나면 원래 구도로 돌아온다.",
+"why": "작은 UI에서 현재 행동 위치를 쉽게 찾는다.",
+"params": "재현 기본값: 확대 600 ms, 배율 1.8, 유지 1400 ms, easeInOut",
+"impl": "직접 만든 이벤트 좌표로 화면 그룹의 scale과 translate를 함께 보간한다.",
+"runtime": "gsap",
+"variants": [
+"클릭 위치 확대",
+"입력 위치 확대",
+"수동 상세 확대"
+],
+"core": "zoom-to-detail",
+"sources": [
+{
+"url": "https://screen.studio/",
+"repo": "Screen Studio",
+"license": "unknown"
+},
+{
+"url": "https://supademo.com/features/demo-editor",
+"repo": "Supademo",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "aspectawaredemoreframing",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "R7-103",
+"en": "Aspect-aware demo reframing",
+"ko": "화면비에 맞춘 시연 재구도",
+"aka": [],
+"family": "camera",
+"what": "가로 화면의 관심 영역을 따라 세로 프레임의 잘린 영역이 이동하며 행동을 유지한다.",
+"why": "화면비가 달라도 중요한 UI를 놓치지 않는다.",
+"params": "재현 기본값: 이동 600 ms, 안전 여백 24 px, easeInOut",
+"impl": "자체 목표 사각형과 출력 화면비로 crop 중심을 계산해 보간한다.",
+"runtime": "gsap",
+"variants": [
+"세로 크롭",
+"정사각 크롭",
+"전체 보기 복귀"
+],
+"core": "",
+"sources": [
+{
+"url": "https://screen.studio/",
+"repo": "Screen Studio",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "demozoomcalloutinset",
+"family": "camera",
+"core": "zoom-callout",
+"rows": [
+{
+"id": "R7-109",
+"en": "Demo zoom callout inset",
+"ko": "상세 확대 삽입창",
+"aka": [],
+"family": "camera",
+"what": "원래 화면은 유지되고 작은 버튼이나 패널이 별도 확대창에 나타나 연결선으로 이어진다.",
+"why": "전체 위치와 작은 세부를 동시에 확인한다.",
+"params": "재현 기본값: 650 ms, 배율 2.5, 창 320x220 px, easeOut",
+"impl": "동일한 자체 UI 데이터를 확대창에 재렌더하고 SVG 연결선을 공개한다.",
+"runtime": "gsap",
+"variants": [
+"고정 삽입창",
+"대상 추적 삽입창"
+],
+"core": "zoom-callout",
+"sources": [
+{
+"url": "https://screen.studio/",
+"repo": "Screen Studio",
+"license": "unknown"
+},
+{
+"url": "https://supademo.com/features/demo-editor",
+"repo": "Supademo",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "macrotoheropullback",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "R7-113",
+"en": "Macro-to-hero pullback",
+"ko": "매크로에서 전체 제품 리빌",
+"aka": [],
+"family": "camera",
+"what": "표면이나 부품의 극근접 화면에서 시점이 뒤로 빠져 전체 제품이 드러난다.",
+"why": "작은 세부가 전체의 일부였음을 인지한다.",
+"params": "재현 기본값: 2000 ms, 확대 6~1배, easeInOut",
+"impl": "자체 제품 장면의 카메라 거리와 초점을 함께 보간한다.",
+"runtime": "webgl",
+"variants": [
+"재질에서 전체",
+"부품에서 전체"
+],
+"core": "",
+"sources": [
+{
+"url": "https://www.apple.com/apple-events/",
+"repo": "Apple",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "fractalzoom",
+"family": "camera",
+"core": "zoom-to-detail",
+"rows": [
+{
+"id": "R8-011",
+"en": "Fractal Zoom",
+"ko": "프랙탈 줌",
+"aka": [],
+"family": "camera",
+"what": "반복 무늬의 작은 부분으로 계속 다가가면 비슷한 구조가 다시 나타난다.",
+"why": "무한한 세부와 규모의 반복을 느끼게 한다.",
+"params": "재현 제안 기본값: 6000ms, 확대 1배부터 16배, 반복 계산 최대 100, exponential 시간 매핑",
+"impl": "WebGL에서 복소평면 중심과 스케일을 보간해 프랙탈 색을 다시 계산한다.",
+"runtime": "webgl",
+"variants": [
+"만델브로",
+"줄리아",
+"중심 이동 줌"
+],
+"core": "zoom-to-detail",
+"sources": [
+{
+"url": "https://p5js.org/examples/Math-And-Physics-Mandelbrot/",
+"repo": "processing/p5.js-website",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "dollythroughspace",
+"family": "camera",
+"core": "push-in",
+"rows": [
+{
+"id": "R8-090",
+"en": "Dolly Through Space",
+"ko": "공간 돌리 이동",
+"aka": [],
+"family": "camera",
+"what": "카메라가 공간 안에서 앞으로 이동하고 가까운 물체가 크게 스쳐 지나간다.",
+"why": "화면 확대보다 강한 깊이 변화와 진입감을 만든다.",
+"params": "재현 제안 기본값: 3000ms, 전진 3단위, FOV 45도 고정, cubic.inOut",
+"impl": "WebGL에서 카메라 위치만 이동시키고 원근 투영을 유지한다.",
+"runtime": "webgl",
+"variants": [
+"푸시 인",
+"풀 아웃",
+"물체 사이 통과"
+],
+"core": "push-in",
+"sources": [
+{
+"url": "https://github.com/iart-ai/webgl-animation-skills/blob/HEAD/skills/threejs-animation/SKILL.md",
+"repo": "iart-ai/webgl-animation-skills",
+"license": "MIT"
+},
+{
+"url": "https://github.com/heygen-com/hyperframes/blob/HEAD/skills/hyperframes-animation/rules/3d-camera-flight.md",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "splinetunnelflight",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "R8-091",
+"en": "Spline Tunnel Flight",
+"ko": "스플라인 터널 비행",
+"aka": [
+"Infinite tubes",
+"Tunnel fly-through"
+],
+"family": "camera",
+"what": "카메라가 구부러진 터널의 내부를 따라 이동하고 벽 무늬가 주변을 스쳐 간다.",
+"why": "몰입과 연속적인 여정을 느끼게 한다.",
+"params": "재현 제안 기본값: 6000ms, 경로 길이 12단위, 이동 2단위/s, FOV 60도, 경로 접선 바라보기",
+"impl": "WebGL에서 곡선 중심선으로 튜브를 만들고 카메라 위치와 방향을 호 길이에 맞춘다.",
+"runtime": "webgl",
+"variants": [
+"유기 터널",
+"격자 터널",
+"빛 터널"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/codrops/InfiniteTubes",
+"repo": "codrops/InfiniteTubes",
+"license": "unknown"
+},
+{
+"url": "https://oframe.github.io/ogl/examples/tube.html",
+"repo": "oframe/ogl",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "rackfocuslayers",
+"family": "camera",
+"core": "rack-focus",
+"rows": [
+{
+"id": "R8-094",
+"en": "Rack Focus Layers",
+"ko": "레이어 초점 전환",
+"aka": [
+"Focus pull",
+"Depth of field shift"
+],
+"family": "camera",
+"what": "앞쪽 물체가 흐려지고 뒤쪽 물체가 선명해지며 주목 대상이 이동한다.",
+"why": "같은 화면 안에서 중요 대상과 거리를 바꿔 전달한다.",
+"params": "재현 제안 기본값: 1400ms, 전후 블러 0~12px, 초점 전환 900ms, 밝기 감소 0.15, cubic.inOut",
+"impl": "CSS에서 두 레이어의 blur와 opacity를 반대로 보간하거나 WebGL 깊이 버퍼로 초점을 계산한다.",
+"runtime": "css",
+"variants": [
+"앞에서 뒤로",
+"뒤에서 앞으로",
+"초점 따라가기"
+],
+"core": "rack-focus",
+"sources": [
+{
+"url": "https://github.com/heygen-com/hyperframes/blob/HEAD/skills/hyperframes-animation/rules/depth-of-field-blur.md",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://p5js.org/examples/3D-Framebuffer-Blur/",
+"repo": "processing/p5.js-website",
+"license": "MIT"
+},
+{
+"url": "https://threejs.org/examples/#webgl_postprocessing_dof",
+"repo": "mrdoob/three.js",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "dollyindollyout",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "DICT-123",
+"en": "Dolly In / Dolly Out",
+"ko": "돌리",
+"aka": [],
+"family": "camera",
+"what": "카메라 위치를 피사체 쪽 또는 반대쪽으로 이동해 원근 관계를 바꾸는 촬영이다.",
+"why": "",
+"params": "1000~2000ms; SOFT: cubic-bezier(0.42, 0, 0.58, 1); 3D 기준 대상 거리 10~20% 변경; 평면 모사 scale 1→1.08~1.18.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 2-transitions-camera.md#20. 돌리 · Dolly In / Dolly Out",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "opticaldigitalzoom",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "DICT-124",
+"en": "Optical / Digital Zoom",
+"ko": "줌",
+"aka": [],
+"family": "camera",
+"what": "카메라 위치를 유지한 채 화각 또는 화면 배율을 바꾸는 움직임이다.",
+"why": "",
+"params": "300~600ms; STD: Carbon standard productive / cubic-bezier(0.2, 0, 0.38, 0.9); scale 1→1.3~1.8; 확대 상태 1500~4000ms; 같은 곡선으로 복귀.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 2-transitions-camera.md#21. 줌 · Optical / Digital Zoom",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "pan",
+"family": "camera",
+"core": "pan",
+"rows": [
+{
+"id": "DICT-125",
+"en": "Pan",
+"ko": "팬",
+"aka": [],
+"family": "camera",
+"what": "고정 위치의 카메라가 좌우로 회전해 보는 방향을 바꾸는 움직임이다.",
+"why": "",
+"params": "700~1400ms; SOFT: cubic-bezier(0.42, 0, 0.58, 1); 평면 모사 x 이동 프레임 폭의 10~25%; 양끝 홀드 800~1500ms.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "pan",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 2-transitions-camera.md#22. 팬 · Pan",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "tilt",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "DICT-126",
+"en": "Tilt",
+"ko": "틸트",
+"aka": [],
+"family": "camera",
+"what": "고정 위치의 카메라가 위아래로 회전해 보는 방향을 바꾸는 움직임이다.",
+"why": "",
+"params": "700~1400ms; SOFT: cubic-bezier(0.42, 0, 0.58, 1); 평면 모사 y 이동 프레임 높이의 10~25%; 도착 홀드 1000~1800ms.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 2-transitions-camera.md#23. 틸트 · Tilt",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "rackfocusfocuspull",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "DICT-128",
+"en": "Rack Focus / Focus Pull",
+"ko": "랙 포커스",
+"aka": [],
+"family": "camera",
+"what": "한 숏 안에서 초점이 맞는 거리·대상을 다른 대상으로 이동하는 연출이다.",
+"why": "",
+"params": "500~900ms; SOFT: cubic-bezier(0.42, 0, 0.58, 1); 모사 blur 0↔4~8px; 새 초점 홀드 1500~2500ms; 대상 간격 80px 이상부터 시험.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 2-transitions-camera.md#25. 랙 포커스 · Rack Focus / Focus Pull",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "pushinpunchin",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "DICT-129",
+"en": "Push-in / Punch-in",
+"ko": "푸시인",
+"aka": [],
+"family": "camera",
+"what": "주요 대상을 향해 프레이밍을 점차 좁히는 연출 의도이다.",
+"why": "",
+"params": "400~800ms; STD: Carbon standard productive / cubic-bezier(0.2, 0, 0.38, 0.9); scale 1→1.08~1.15; 강조 시작은 도착 후 80~150ms; 홀드 1500~2500ms.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 2-transitions-camera.md#26. 푸시인 · Push-in / Punch-in",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "dollyzoomvertigo",
+"family": "camera",
+"core": "",
+"rows": [
+{
+"id": "DICT-141",
+"en": "Dolly Zoom / Vertigo Effect",
+"ko": "돌리 줌",
+"aka": [],
+"family": "camera",
+"what": "카메라 거리와 화각을 반대로 바꿔 주대상 크기는 유지하고 배경 원근을 바꾸는 촬영이다.",
+"why": "",
+"params": "800~1500ms; SOFT: cubic-bezier(0.42, 0, 0.58, 1); 대상 화면 크기 유지; 거리 10~20% 변경과 반대 방향 fov 조절.",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 2-transitions-camera.md#38. 돌리 줌 · Dolly Zoom / Vertigo Effect",
+"license": "own"
+}
+]
+}
+]
+}
+]

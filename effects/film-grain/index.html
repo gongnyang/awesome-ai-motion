@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>필름 그레인 · Film Grain</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>canvas{position:absolute;inset:0;width:1168px;height:580px}.scene{isolation:isolate}</style></head>
+<body data-no="446" data-cat="질감·스타일 · TEXTURE &amp; STYLE" data-ko="필름 그레인" data-en="Film Grain" data-meta="고정 시드 · 12fps · 미세 입자" data-dur="4" data-poster="2.6">
+<main class="scene"><canvas width="1168" height="580" aria-label="큰 문구와 주홍 원 위에 필름 입자를 12fps로 갱신한다. 종이 바탕은 유지한다."></canvas></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const canvas=document.querySelector('canvas'), ctx=canvas.getContext('2d');
+const W=1168,H=580,INK='#141210',PAPER='#F4EEE3',VERM='#D6401C',RULE='#CDC3B2';
+const SERIF=getComputedStyle(document.body).getPropertyValue('--serif'), SANS=getComputedStyle(document.body).getPropertyValue('--sans');
+const rng=Motion.rand(303), state={t:0};
+const clamp=(x)=>Math.max(0,Math.min(1,x));
+const out=(x)=>1-Math.pow(1-clamp(x),3);
+const mix=(a,b,p)=>a+(b-a)*p;
+function circle(x,y,r,color=INK,alpha=1){ctx.globalAlpha=alpha;ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y,Math.max(.01,r),0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;}
+function label(s,x,y,size=16,color=INK){ctx.fillStyle=color;ctx.font=`${size}px ${SANS}`;ctx.textAlign='left';ctx.fillText(s,x,y);}
+function title(s='다음 말',x=584,y=330,color=INK){ctx.fillStyle=color;ctx.font=`700 108px ${SERIF}`;ctx.textAlign='center';ctx.fillText(s,x,y);ctx.textAlign='left';}
+function clear(){ctx.clearRect(0,0,W,H);ctx.globalAlpha=1;ctx.filter='none';}
+const grains=Array.from({length:8},(_,frame)=>{const rand=Motion.rand(446+frame);return Array.from({length:36000},()=>[rand()*W,rand()*H,rand()]);});
+function draw(t){clear();
+title();circle(898,283,39,VERM);label('같은 장면, 다른 질감',104,95,24);label('필름 입자',104,514,18);
+const frame=Math.floor(t*12)%8;for(const [x,y,a] of grains[frame]){ctx.globalAlpha=.16+a*.24;ctx.fillStyle=a>.5?PAPER:INK;ctx.fillRect(x,y,1.8+a*.8,1.8+a*.8);}ctx.globalAlpha=1;
+}
+const tl=Motion.timeline();
+tl.to(state,{t:4,duration:4,ease:"none",onUpdate:()=>draw(state.t)},0);
+draw(0);
+Motion.ready();
+</script></body></html>

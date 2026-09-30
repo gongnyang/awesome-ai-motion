@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>셰이크 · Shake</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.kicker{position:absolute;left:64px;top:40px}.caption{position:absolute;left:64px;bottom:38px;font-size:18px;color:var(--ink2)}
+svg.canvas{position:absolute;inset:0;width:1168px;height:580px}.note{position:absolute;right:64px;bottom:40px}
+
+.field{position:absolute;left:284px;top:150px;width:600px;height:220px;border-bottom:3px solid var(--ink)}.field .lab{position:absolute;top:0}.entry{position:absolute;top:55px;left:0;font-size:64px}.mark{position:absolute;right:0;top:68px;width:56px;height:56px;background:var(--verm);border-radius:50%;color:var(--paper);font-size:40px;text-align:center;line-height:56px}.error{position:absolute;left:284px;top:402px;color:var(--verm);font-size:22px}
+</style></head>
+<body data-no="083" data-cat="강조·주의 · EMPHASIS" data-ko="셰이크" data-en="Shake" data-meta="좌우 8px · 감쇠 진동" data-dur="3.5" data-poster="3.2">
+<main class="scene"><span class="lab kicker">입력 확인</span><div class="field"><span class="lab">인증 번호</span><div class="entry t-l">12 34 5</div><div class="mark">!</div></div><div class="error">여섯 자리 번호를 입력해 주세요</div><div class="caption">짧게 흔들고 기준 위치로 돌아온다</div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+[8,-8,5,-5,3,-3,1.5,0].forEach((x,i)=>tl.to('.field',{x,duration:.09,ease:'sine.inOut'},.65+i*.09));
+tl.fromTo('.error',{opacity:0},{opacity:1,duration:.2},.65);
+Motion.ready();
+</script></body></html>

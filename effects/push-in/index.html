@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>푸시인 · Push-in</title>
+<meta name="viewport" content="width=1280">
+<link rel="stylesheet" href="../../lib/stage.css">
+<style>#sentence{position:absolute;left:0;top:205px;width:1168px;height:170px;transform-origin:520.57px 85px;display:flex;align-items:center;justify-content:center;gap:24px;white-space:nowrap;font-size:64px}#sentence span{display:block}.lead{opacity:0}</style></head>
+<body data-no="221" data-cat="가상 카메라 · CAMERA" data-ko="푸시인" data-en="Push-in" data-meta="power1.inOut · 핵심어 중심 1 → 1.6" data-dur="3">
+<main class="scene"><div class="lab" style="position:absolute;left:70px;top:65px">AI는 다음 말을 고른다</div><div id="sentence" class="t-xl"><span>AI는</span><span class="v">다음 말</span><span>을 고른다</span></div><div class="lead up" id="note" style="left:520.57px;top:470px"><i></i><s></s><span>핵심어 중심 · 1.6×</span></div></main>
+<script src="../../lib/gsap.min.js"></script>
+<script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+tl.to('#sentence', {scale: 1.6, duration: 2.0, ease: 'power1.inOut'}, .3);
+tl.to('#note', {opacity: 1, duration: .2}, 2.3);
+Motion.ready();
+</script></body></html>

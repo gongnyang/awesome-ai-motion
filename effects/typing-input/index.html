@@ -1,0 +1,14 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=1280"><title>타이핑 입력</title><link rel="stylesheet" href="../../lib/stage.css"><style>
+.head{position:absolute;left:110px;top:100px}.label{position:absolute;left:110px;top:240px}.input{position:absolute;left:110px;top:290px;width:948px;height:100px;border-top:1px solid var(--rule);border-bottom:2px solid var(--ink);font-size:38px;display:flex;align-items:center}.char{display:none}.caret{display:inline-block;width:3px;height:43px;background:var(--verm);margin-left:5px}.lead{left:110px;top:460px;opacity:0}
+</style></head><body data-no="317" data-cat="UI 시연 · UI DEMO" data-ko="타이핑 입력" data-en="Typing Input" data-meta="글자 간격 0.07~0.17s · 캐럿 0.24s" data-dur="3"><main class="scene"><div class="head t-l">AI는 다음 말을 고른다</div><div class="label lab">질문 입력</div><div class="input"><span id="text"></span><span class="caret"></span></div><div class="lead"><i></i><s></s><span>입력 완료 · 1.91s</span></div></main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+const chars=Array.from('다음 말은 어떻게 고르나요?');
+document.querySelector('#text').innerHTML=chars.map(c=>`<span class="char">${c===' '?'&nbsp;':c}</span>`).join('');
+const gaps=[.08,.11,.07,.14,.09,.12,.17,.08,.1,.07,.15,.09,.11,.13,.1,.08];
+let at=.3;
+document.querySelectorAll('.char').forEach((el,i)=>{at+=gaps[i];tl.set(el,{display:'inline'},at);});
+[.24,.48,.72,.96,1.2,1.44,1.68,1.92,2.16,2.4].forEach((t,i)=>tl.set('.caret',{opacity:i%2?1:0},t));
+tl.set('.caret',{opacity:1},2.4);
+tl.to('.lead',{opacity:1,duration:.2},2.2);
+Motion.ready();
+</script></body></html>

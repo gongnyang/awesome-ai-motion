@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>펄스 · Pulse</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.kicker{position:absolute;left:64px;top:40px}.caption{position:absolute;left:64px;bottom:38px;font-size:18px;color:var(--ink2)}
+svg.canvas{position:absolute;inset:0;width:1168px;height:580px}.note{position:absolute;right:64px;bottom:40px}
+
+.cta{position:absolute;left:444px;top:174px;width:280px;height:188px;background:var(--verm);color:var(--paper);display:flex;align-items:center;justify-content:center;font-size:48px;transform-origin:50% 50%}
+.line{position:absolute;left:164px;right:164px;top:410px;height:1px;background:var(--rule)}
+</style></head>
+<body data-no="069" data-cat="강조·주의 · EMPHASIS" data-ko="펄스" data-en="Pulse" data-meta="배율 1.05 · 세 번 맥동" data-dur="4" data-poster="3.7">
+<main class="scene"><span class="lab kicker">지금 실행할 동작</span><div class="cta t-l">시작하기</div><div class="line"></div><div class="caption">자리 그대로, 크기로 시선을 모은다</div><span class="lab note">세 번 뛰고 정지</span></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+tl.to('.cta', {scale:1.05, duration:.5, ease:'sine.inOut', repeat:5, yoyo:true}, .4);
+Motion.ready();
+</script></body></html>

@@ -1,0 +1,5931 @@
+[
+{
+"key": "extendedsettle",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R1a-013",
+"en": "Extended settle",
+"ko": "긴 꼬리 도착",
+"aka": [],
+"family": "entrance",
+"what": "전체 이동의 대부분을 초반에 끝내고 남은 거리를 끝 프레임까지 천천히 움직인다.",
+"why": "정적인 도착보다 지속적인 긴장을 만든다.",
+"params": "재현 기본값 제안: 초반 시간 20%, 이동량 80%, 총 1500ms",
+"impl": "분할 이징으로 빠른 도착과 미세 잔여 이동을 연결한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/extended-keyframe/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "waterfallarrival",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R1a-014",
+"en": "Waterfall arrival",
+"ko": "폭포식 등장",
+"aka": [],
+"family": "entrance",
+"what": "단어 또는 카드가 아래에서 빠르게 올라오며 앞 요소가 멈추기 전에 뒤 요소가 들어온다.",
+"why": "한 줄 또는 묶음이 파도처럼 형성된다.",
+"params": "재현 기본값 제안: 400ms, 시작차 60ms, power3.out",
+"impl": "아래쪽 위치에서 목적 위치로 시간차 transform 이동을 준다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/waterfall-entry.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "scalepopentrance",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R1a-015",
+"en": "Scale pop entrance",
+"ko": "스케일 팝 등장",
+"aka": [],
+"family": "entrance",
+"what": "작은 크기의 요소가 빠르게 커져 최종 크기에 부드럽게 멈춘다.",
+"why": "새 요소의 도착을 분명하게 알린다.",
+"params": "재현 기본값 제안: 400ms, scale 0~1, power3.out; 출처 기본값 micro-scale-fade: 등장 600ms, 간격 0ms, cubic-bezier(0.32, 0.72, 0, 1); 출처 기본값 scale-down-fade: 등장 520ms, 간격 0ms, cubic-bezier(0.22, 1, 0.36, 1)",
+"impl": "중심 기준 scale을 보간하고 마지막 자세를 유지한다.",
+"runtime": "gsap",
+"variants": [
+"animate-text/micro-scale-fade",
+"animate-text/scale-down-fade"
+],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/number-pop-in/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/spring-pop-entrance.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/instagram-follow/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/tiktok-follow/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/reddit-post/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/x-post/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/x-follow-card/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/yt-lower-third/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/lt-soft-pill/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/cta-close/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/cta-lockup/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/store-badge-lockup/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/device-frame-stage/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/browser-device-stage/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/titlecard-reveal.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/micro-scale-fade.json",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/scale-down-fade.json",
+"repo": "pixel-point/animate-text",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "physicalexit",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R1a-016",
+"en": "Physical exit",
+"ko": "관성 퇴장",
+"aka": [],
+"family": "entrance",
+"what": "요소가 회전하거나 가속하면서 화면 밖으로 던져지거나 떨어진다.",
+"why": "퇴장에도 물리적 방향과 무게가 남는다.",
+"params": "재현 기본값 제안: 500ms, power2.in, 회전 12도",
+"impl": "최종 화면 밖 위치까지 이동과 회전을 연속 보간한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/physical-exit/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/transitions/css-other.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/transitions-other/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "ambientbreath",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R1a-123",
+"en": "Ambient breath",
+"ko": "미세 호흡과 부유",
+"aka": [],
+"family": "loop",
+"what": "멈춘 요소가 아주 작은 크기와 위치 변화를 반복한다.",
+"why": "정지 상태의 생명감과 분위기를 유지한다.",
+"params": "재현 기본값 제안: 주기 1500~3000ms, scale 진폭 0.008~0.015, y 2~3px",
+"impl": "유한 시간의 사인 함수로 scale과 y를 계산한다.",
+"runtime": "gsap",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/drift-hold/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/sine-wave-loop.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "perspectivemarquee",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R1a-198",
+"en": "Perspective marquee",
+"ko": "원근 마키",
+"aka": [],
+"family": "loop",
+"what": "단어 또는 카드 띠가 기울어진 평면에서 소실점 쪽으로 계속 지나간다.",
+"why": "많은 항목과 정보의 흐름을 보여준다.",
+"params": "재현 기본값 제안: 유한 6000ms, 속도 160px/s, rotateX 40도; 레지스트리 scroll-feed 기본값 speed=doom",
+"impl": "반복 항목 스트립을 고정 시간으로 이동하고 원근 회전을 적용한다.",
+"runtime": "css",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/perspective-marquee/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/scroll-feed/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/news-ticker/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "canopypart",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R1a-201",
+"en": "Canopy part",
+"ko": "전경 가림막 열기",
+"aka": [],
+"family": "entrance",
+"what": "앞쪽 잎이나 물체가 양쪽으로 쓸려 나가 뒤의 제목이 보인다.",
+"why": "숨어 있던 장면과 깊이를 공개한다.",
+"params": "재현 기본값 제안: 1200ms, 이동 +/-600px, power3.inOut",
+"impl": "제목 앞의 가림 요소를 좌우로 이동하고 층별 시차를 적용한다.",
+"runtime": "css",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/canopy-part-title/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "typingdotsloader",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R1a-204",
+"en": "Typing dots loader",
+"ko": "타이핑 점 로더",
+"aka": [],
+"family": "loop",
+"what": "대화 말풍선 안의 점 세 개가 시간차로 커지거나 밝아진다.",
+"why": "상대가 아직 답변을 준비하고 있음을 알려준다.",
+"params": "재현 기본값 제안: 주기 1200ms, 점 시간차 150ms, scale 1~1.2",
+"impl": "유한 주기 위상별 사인 값으로 점 크기와 opacity를 계산한다.",
+"runtime": "css",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/typing-indicator/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/agent-progress-theater.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "strokeloader",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R1a-205",
+"en": "Stroke loader",
+"ko": "선 그리기 로더",
+"aka": [],
+"family": "loop",
+"what": "짧은 선 구간이 경로를 따라 반복해서 진행하며 로딩을 표시한다.",
+"why": "작업이 진행 중인 상태를 유지한다.",
+"params": "재현 기본값 제안: 주기 1500ms, 경로 표시 25%, 유한 3회",
+"impl": "시간의 모듈러 값으로 SVG dash 길이와 offset을 계산한다.",
+"runtime": "svg",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/svg-line-draw-loader/registry-item.json",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "depixelatereveal",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R1a-216",
+"en": "Depixelate reveal",
+"ko": "픽셀 블록에서 선명화",
+"aka": [],
+"family": "entrance",
+"what": "큰 색 블록으로 가려진 이미지가 작은 블록으로 풀리며 선명해진다.",
+"why": "모호한 대상이 실제 정보로 드러나는 과정을 보여준다.",
+"params": "재현 기본값 제안: 1200ms, 블록 32~1px, power2.out",
+"impl": "텍스처 UV를 블록 중심으로 양자화하고 블록 크기를 감소시킨다.",
+"runtime": "webgl",
+"variants": [],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:media-use/references/media-treatments.md",
+"repo": "local/HyperFrames-skills",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "hingeopen",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R1b-002",
+"en": "Hinge Open",
+"ko": "경첩 열기",
+"aka": [
+"door-hinge-open",
+"orbit-3d-entry"
+],
+"family": "entrance",
+"what": "패널이 한쪽 변을 축으로 기울어진 상태에서 정면으로 열린다.",
+"why": "닫혀 있던 정보가 열리는 느낌을 준다.",
+"params": "기본 350ms, rotateY -75도, perspective 1400px, power3.out",
+"impl": "HTML 부모에 perspective를 두고 변을 축으로 rotateY를 보간한다.",
+"runtime": "gsap",
+"variants": [
+"좌우 경첩",
+"상하 경첩"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/01-anchor-transform.md#door-hinge-open",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/orbit-3d-entry.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "axislayeredarrival",
+"family": "entrance",
+"core": "overlapping-action",
+"rows": [
+{
+"id": "R1b-005",
+"en": "Axis Layered Arrival",
+"ko": "다축 복합 진입",
+"aka": [
+"axis-isolated-transform-stack"
+],
+"family": "entrance",
+"what": "요소가 이동하면서 다른 속도로 회전하고 커져 안착한다.",
+"why": "여러 힘이 겹치는 유기적인 진입을 느낀다.",
+"params": "권장 이동 600ms, 회전 800ms, 스케일 400ms, 축 지연 100ms",
+"impl": "HTML 중첩 래퍼별로 위치와 회전과 스케일의 원점 및 이징을 나눈다.",
+"runtime": "gsap",
+"variants": [
+""
+],
+"core": "overlapping-action",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/01-anchor-transform.md#axis-isolated-transform-stack",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "idlebreathe",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R1b-012",
+"en": "Idle Breathe",
+"ko": "미세 브리딩",
+"aka": [
+"offset-origin-idle-breathe",
+"sine-wave-loop",
+"svg-icon-enrichment",
+"breathing-hold"
+],
+"family": "loop",
+"what": "고정된 요소가 작은 크기 변화나 상하 표류를 반복한다.",
+"why": "정지한 장면에 약한 생동감을 준다.",
+"params": "기본 주기 2400ms, scale 진폭 0.008, y 진폭 2px, sine.inOut",
+"impl": "HTML scale과 y를 시간의 사인 함수나 유한 yoyo로 구동한다.",
+"runtime": "gsap",
+"variants": [
+"중앙 브리딩",
+"바닥 축 브리딩",
+"모서리 브리딩",
+"회전 잔향"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/01-anchor-transform.md#offset-origin-idle-breathe",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/sine-wave-loop.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:hyperframes-animation/rules/svg-icon-enrichment.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:embedded-captions/references/motion-vocabulary.md",
+"repo": "local/embedded-captions",
+"license": "unknown"
+},
+{
+"url": "claude-skill:card-shorts/references/render-recipe.md",
+"repo": "local/card-shorts",
+"license": "unknown"
+},
+{
+"url": "claude-skill:synced/39cd27d1-5d54-43b6-b557-65596e75bccb_30aab8dd-6815-4962-a41b-a684567e027b/slack-gif-creator/SKILL.md",
+"repo": "local/claude-synced-skills",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "maskreveal",
+"family": "entrance",
+"core": "mask-reveal",
+"rows": [
+{
+"id": "R1b-030",
+"en": "Mask Reveal",
+"ko": "마스크 리빌",
+"aka": [
+"inset-wipe-reveal",
+"crop-reveal-overflow",
+"word-clip-stagger",
+"mask-line-slide-reveal",
+"swipe-reveal"
+],
+"family": "entrance",
+"what": "가려진 이미지나 글자가 사각 창의 경계가 움직이면서 드러난다.",
+"why": "새 정보가 한 방향에서 열리는 과정을 읽는다.",
+"params": "기본 500ms, power3.out, inset 100%에서 0%",
+"impl": "HTML clip-path inset을 보간하거나 overflow 창 안에서 콘텐츠를 이동한다.",
+"runtime": "gsap",
+"variants": [
+"좌우",
+"상하",
+"코너",
+"고정 창 슬라이드",
+"줄 리빌",
+"단어 리빌",
+"typo/mask-line-reveal",
+"titlecard-reveal"
+],
+"core": "mask-reveal",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/04-masks-mattes.md#inset-wipe-reveal",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/04-masks-mattes.md#crop-reveal-overflow",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/04-masks-mattes.md#word-clip-stagger",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/05-text-animator.md#mask-line-slide-reveal",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/typo/mask-line-reveal.html",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/typo/mask-line-reveal.meta.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/titlecard-reveal.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:embedded-captions/references/motion-vocabulary.md",
+"repo": "local/embedded-captions",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#mask-reveal",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/mask-reveal/scene.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/mask-reveal/index.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "local:ig-carousel-hub/03_templates/motion/slot-spec.md",
+"repo": "local/ig-carousel-hub",
+"license": "unknown"
+}
+]
+},
+{
+"id": "R2-024",
+"en": "Mask reveal",
+"ko": "마스크 드러내기",
+"aka": [],
+"family": "entrance",
+"what": "내용은 고정된 채 가림 영역이 줄어들며 화면이 드러난다.",
+"why": "정돈된 공개와 방향성을 전달한다.",
+"params": "공식 공통 기본 없음. 권장 700ms, inset 100%~0%, power2.out.",
+"impl": "CSS clip-path 또는 SVG mask 경계를 GSAP 코어로 움직인다.",
+"runtime": "css",
+"variants": [
+"좌우",
+"상하",
+"기울어진 경계",
+"텍스트 마스크"
+],
+"core": "mask-reveal",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/GSAP/CorePlugins/CSS/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://gsap.com/docs/v3/Plugins/SplitText/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/examples/react-scroll-image-reveal",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+},
+{
+"id": "DICT-101",
+"en": "Mask reveal",
+"ko": "마스크 리빌",
+"aka": [],
+"family": "principles",
+"what": "별도 마스크의 모양·알파로 가시 영역을 조절한다.",
+"why": "",
+"params": "300~500ms power3.out; 반경 0→필요 크기; 간격 0ms",
+"impl": "",
+"runtime": "",
+"variants": [],
+"core": "mask-reveal",
+"sources": [
+{
+"url": "",
+"repo": "motion dictionary 1-principles.md#8. 2D 속성 기본 동작",
+"license": "own"
+}
+]
+}
+]
+},
+{
+"key": "softmaskwipe",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R1b-033",
+"en": "Soft Mask Wipe",
+"ko": "부드러운 마스크 와이프",
+"aka": [
+"gradient-mask-soft-wipe"
+],
+"family": "entrance",
+"what": "흐릿한 경계가 사진을 훑으며 서서히 드러낸다.",
+"why": "딱딱한 절단보다 감성적인 장면 공개를 느낀다.",
+"params": "기본 페더 35%, 권장 800ms, sine.inOut",
+"impl": "HTML gradient mask-image의 위치나 크기를 보간한다.",
+"runtime": "gsap",
+"variants": [
+"가로",
+"세로",
+"대각선"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/04-masks-mattes.md#gradient-mask-soft-wipe",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "countermovingmatte",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R1b-036",
+"en": "Counter Moving Matte",
+"ko": "역방향 매트 이동",
+"aka": [
+"dual-layer-counter-move"
+],
+"family": "entrance",
+"what": "창은 한쪽으로 열리고 안쪽 그림은 반대쪽으로 움직이며 나타난다.",
+"why": "경계와 내용이 분리된 역동적인 공개를 느낀다.",
+"params": "권장 창 이동 100%, 내용 이동 -30%, 600ms, power3.out",
+"impl": "HTML 마스크 래퍼와 안쪽 콘텐츠에 반대 방향 translate를 적용한다.",
+"runtime": "gsap",
+"variants": [
+"가로 역이동",
+"세로 역이동"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/04-masks-mattes.md#dual-layer-counter-move",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "stripereveal",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R1b-037",
+"en": "Stripe Reveal",
+"ko": "줄무늬 셔터 리빌",
+"aka": [
+"line-sweep-diagonal-stripes",
+"blinds-stripe-reveal"
+],
+"family": "entrance",
+"what": "여러 띠나 블라인드가 조금씩 다른 시점에 열려 전체 이미지를 완성한다.",
+"why": "분할된 조각이 합쳐지는 리듬을 느낀다.",
+"params": "기본 띠 6개, 간격 50ms, 각 400ms, power3.out",
+"impl": "HTML 이미지를 띠별 clip으로 나누고 각 띠의 마스크를 스태거한다.",
+"runtime": "gsap",
+"variants": [
+"세로 블라인드",
+"가로 블라인드",
+"사선 스트라이프",
+"object/blinds-stripe-triplet"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/04-masks-mattes.md#line-sweep-diagonal-stripes",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/04-masks-mattes.md#blinds-stripe-reveal",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/gallery-index.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/object/blinds-stripe-triplet.html",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/gallery/fragments/object/blinds-stripe-triplet.meta.json",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "alphacutout",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R1b-038",
+"en": "Alpha Cutout",
+"ko": "알파 컷아웃 리빌",
+"aka": [
+"alpha-matte-cutout"
+],
+"family": "entrance",
+"what": "인물이나 아이콘의 윤곽만 남긴 레이어가 배경 앞에 나타나 움직인다.",
+"why": "배경과 피사체를 분리해 주인공을 인지한다.",
+"params": "권장 500ms, y 32px에서 0px, opacity 0에서 1, power2.out",
+"impl": "HTML 알파 이미지나 SVG 마스크가 적용된 레이어를 translate와 opacity로 등장시킨다.",
+"runtime": "gsap",
+"variants": [
+"인물 컷아웃",
+"아이콘 매트"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/04-masks-mattes.md#alpha-matte-cutout",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:card-shorts/scripts/render/build_shorts.mjs",
+"repo": "local/card-shorts",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "cornermaskswing",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R1b-039",
+"en": "Corner Mask Swing",
+"ko": "코너 매트 스윙",
+"aka": [
+"corner-swing-mask"
+],
+"family": "entrance",
+"what": "가리는 판이 모서리를 축으로 회전하며 뒤의 내용을 연다.",
+"why": "문이나 덮개를 젖히는 공개를 느낀다.",
+"params": "권장 600ms, 회전 90도, power3.out",
+"impl": "HTML overflow 래퍼 위의 불투명 판을 코너 origin으로 회전한다.",
+"runtime": "gsap",
+"variants": [
+"좌상",
+"우상",
+"좌하",
+"우하"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/04-masks-mattes.md#corner-swing-mask",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "mosaicreveal",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R1b-041",
+"en": "Mosaic Reveal",
+"ko": "모자이크 리빌",
+"aka": [
+"mosaic-matte-collage",
+"tile-mosaic"
+],
+"family": "entrance",
+"what": "작은 타일 창이 차례로 열려 한 장의 이미지나 포스터를 완성한다.",
+"why": "부분의 축적이 전체가 되는 것을 읽는다.",
+"params": "권장 6x4 타일, 간격 40ms, 총 1600ms",
+"impl": "HTML 동일 이미지의 타일별 clip과 opacity를 정해진 순서로 연다.",
+"runtime": "gsap",
+"variants": [
+"대각선 공개",
+"바둑판 공개",
+"불규칙 콜라주"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/04-masks-mattes.md#mosaic-matte-collage",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#tile-mosaic",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/tile-mosaic/scene.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/tile-mosaic/index.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "blurresolve",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R1b-046",
+"en": "Blur Resolve",
+"ko": "블러에서 선명",
+"aka": [
+"blur-dissolve-in",
+"etch"
+],
+"family": "entrance",
+"what": "흐릿한 글자나 이미지가 선명해지면서 나타난다.",
+"why": "안개 속에서 내용이 확정되는 느낌을 준다.",
+"params": "기본 blur 12px에서 0px, 권장 600ms, power2.out",
+"impl": "HTML filter blur와 opacity를 동일 시간에 보간한다.",
+"runtime": "gsap",
+"variants": [
+"글자별",
+"단어별",
+"이미지 전체"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/reelforge:skills/reelforge/references/grammar/05-text-animator.md#blur-dissolve-in",
+"repo": "gongnyang/reelforge",
+"license": "Apache-2.0"
+},
+{
+"url": "claude-skill:embedded-captions/references/motion-vocabulary.md",
+"repo": "local/embedded-captions",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#blur-resolve",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/blur-resolve/scene.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitives/blur-resolve/index.html",
+"repo": "local/music-to-video",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "scalepop",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R1b-113",
+"en": "Scale Pop",
+"ko": "스케일 팝 등장",
+"aka": [
+"spring-pop-entrance",
+"overlay-pop"
+],
+"family": "entrance",
+"what": "요소가 작은 크기에서 제 크기로 커져 정지한다.",
+"why": "새로운 항목이 도착했음을 알아본다.",
+"params": "기본 500ms power3.out, scale 0에서 1, 그룹 간격 60ms",
+"impl": "HTML scale을 명시적인 시작값과 끝값으로 보간한다.",
+"runtime": "gsap",
+"variants": [
+"단정한 팝",
+"탄성 팝",
+"배지 등장",
+"하단 자막 팝"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/spring-pop-entrance.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:card-shorts/scripts/render/build_shorts.mjs",
+"repo": "local/card-shorts",
+"license": "unknown"
+},
+{
+"url": "claude-skill:music-to-video/references/motion-primitive-catalog.md#overlay-pop",
+"repo": "local/music-to-video",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "fadeslide",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R1b-123",
+"en": "Fade Slide",
+"ko": "페이드 슬라이드",
+"aka": [],
+"family": "entrance",
+"what": "요소가 가장자리나 조금 낮은 위치에서 이동하며 선명하게 나타난다.",
+"why": "새 항목의 위치와 등장 순서를 읽는다.",
+"params": "기본 500ms power2.out, 이동 40px, opacity 0에서 1",
+"impl": "HTML translate와 opacity를 함께 보간하고 퇴장은 같은 동작을 반대로 쓴다.",
+"runtime": "gsap",
+"variants": [
+"페이드 업",
+"좌우 슬라이드",
+"상하 퇴장",
+"순수 페이드",
+"tilt-card",
+"titlecard-reveal"
+],
+"core": "",
+"sources": [
+{
+"url": "gongnyang/awesome-html-scrolline-deck:references/techniques.md#tilt-card",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/tilt-card/scene.css",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/tilt-card/scene.html",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/tilt-card/scene.js",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "gongnyang/awesome-html-scrolline-deck:templates/scenes/tilt-card/template.json",
+"repo": "gongnyang/awesome-html-scrolline-deck",
+"license": "MIT"
+},
+{
+"url": "claude-skill:hyperframes-animation/blueprints/titlecard-reveal.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+},
+{
+"url": "claude-skill:card-shorts/scripts/render/build_shorts.mjs",
+"repo": "local/card-shorts",
+"license": "unknown"
+},
+{
+"url": "claude-skill:synced/39cd27d1-5d54-43b6-b557-65596e75bccb_30aab8dd-6815-4962-a41b-a684567e027b/slack-gif-creator/SKILL.md",
+"repo": "local/claude-synced-skills",
+"license": "Apache-2.0"
+}
+]
+},
+{
+"id": "R3-006",
+"en": "Fade Slide",
+"ko": "페이드 슬라이드",
+"aka": [
+"Fade Up",
+"Fade Through Translation"
+],
+"family": "entrance",
+"what": "요소가 짧은 거리를 이동하며 동시에 선명하게 나타난다.",
+"why": "새 정보의 진입을 과하지 않게 알린다.",
+"params": "도감 기본값: 500ms, 이동 24px, opacity 0에서 1, ease-out",
+"impl": "HTML translate와 opacity를 CSS로 함께 보간한다",
+"runtime": "css",
+"variants": [
+"fadeInUp",
+"fadeOutDown",
+"Big",
+"모서리 진입",
+"AnimatedContent",
+"In View",
+"fadeInBottomLeft",
+"fadeInBottomRight",
+"fadeInDown",
+"fadeInDownBig",
+"fadeInLeft",
+"fadeInLeftBig",
+"fadeInRight",
+"fadeInRightBig",
+"fadeInTopLeft",
+"fadeInTopRight",
+"fadeInUpBig",
+"fadeOutBottomLeft",
+"fadeOutBottomRight",
+"fadeOutDownBig",
+"fadeOutLeft",
+"fadeOutLeftBig",
+"fadeOutRight",
+"fadeOutRightBig",
+"fadeOutTopLeft",
+"fadeOutTopRight",
+"fadeOutUp",
+"fadeOutUpBig"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+},
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/michalsnik/aos",
+"repo": "michalsnik/aos",
+"license": "MIT"
+},
+{
+"url": "https://github.com/jamiebuilds/tailwindcss-animate",
+"repo": "jamiebuilds/tailwindcss-animate",
+"license": "MIT"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://github.com/ibelick/motion-primitives",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "arrownudgeloop",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R1b-162",
+"en": "Arrow Nudge Loop",
+"ko": "화살표 유도 반복",
+"aka": [],
+"family": "loop",
+"what": "고정된 링크 옆 화살표가 짧게 앞뒤로 이동하며 돌아온다.",
+"why": "다음 행동이나 진행 방향을 알아본다.",
+"params": "기본 범위 슬롯 내부, 주기 권장 1600ms, 3회, sine.inOut",
+"impl": "HTML 화살표의 x 또는 y를 유한 정수 주기로 왕복 보간한다.",
+"runtime": "gsap",
+"variants": [
+"가로 화살표",
+"세로 화살표"
+],
+"core": "",
+"sources": [
+{
+"url": "local:ig-carousel-hub/03_templates/motion/slot-spec.md",
+"repo": "local/ig-carousel-hub",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "spinloop",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R1b-163",
+"en": "Spin Loop",
+"ko": "제자리 회전",
+"aka": [],
+"family": "loop",
+"what": "기어나 시계 바늘이나 로더가 중심 위치를 유지하며 계속 회전한다.",
+"why": "작동 중인 상태와 시간의 흐름을 느낀다.",
+"params": "기본 1회 2400ms, ease none, 유한 2회, 중심 origin",
+"impl": "SVG 부품의 중심 좌표를 고정하고 rotation 또는 transform 속성을 보간한다.",
+"runtime": "svg",
+"variants": [
+"시계 바늘",
+"기어",
+"로더",
+"왕복 회전"
+],
+"core": "",
+"sources": [
+{
+"url": "claude-skill:hyperframes-animation/rules/svg-icon-enrichment.md",
+"repo": "local/hyperframes-animation",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "fadeandslideentrance",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R2-021",
+"en": "Fade and slide entrance",
+"ko": "페이드 슬라이드 등장",
+"aka": [],
+"family": "entrance",
+"what": "요소가 투명한 상태에서 짧게 이동하며 선명해진다.",
+"why": "내용의 시작과 위치를 자연스럽게 안내한다.",
+"params": "공식: GSAP 500ms, power1.out. 권장 이동 24~60px, opacity 0~1.",
+"impl": "HTML 요소의 translate와 opacity를 GSAP 코어에서 함께 보간한다.",
+"runtime": "gsap",
+"variants": [
+"상하좌우 등장",
+"반대 순서 퇴장",
+"스케일 동반"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/GSAP/Tween/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://gsap.com/docs/v3/GSAP/CorePlugins/CSS/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/examples/react-enter-animation",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "blurtofocusentrance",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R2-022",
+"en": "Blur to focus entrance",
+"ko": "흐림에서 선명한 등장",
+"aka": [],
+"family": "entrance",
+"what": "흐린 요소가 제자리에서 또렷해지며 나타난다.",
+"why": "새 정보로 주의를 옮긴다.",
+"params": "공식 공통 기본 없음. 권장 blur 12~0px, opacity 0~1, 600ms.",
+"impl": "CSS filter blur와 opacity를 GSAP 코어로 보간한다.",
+"runtime": "gsap",
+"variants": [
+"확대 동반",
+"축소 동반",
+"흐려지는 퇴장"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/GSAP/CorePlugins/CSS/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/docs/animate",
+"repo": "motiondivision/motion",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "infinitetickerwrap",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R2-054",
+"en": "Infinite ticker wrap",
+"ko": "무한 티커 순환",
+"aka": [
+"Marquee",
+"Seamless carousel",
+"Infinite conveyor"
+],
+"family": "loop",
+"what": "콘텐츠가 화면 밖으로 나간 뒤 반대편에서 이어져 끊임없이 흐른다.",
+"why": "계속되는 목록과 활기를 전달한다.",
+"params": "공식: wrap min/max 필수, repeat 기본 0. 권장 80px/s, ease none, 무한 반복.",
+"impl": "한 주기 길이의 모듈러 좌표를 GSAP 코어 modifier로 적용한다.",
+"runtime": "gsap",
+"variants": [
+"가로",
+"세로",
+"역방향",
+"속도 변경",
+"드래그 티커"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/GSAP/CorePlugins/Modifiers/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://gsap.com/docs/v3/GSAP/UtilityMethods/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/docs/react-ticker",
+"repo": "motion.dev Motion+",
+"license": "unknown"
+},
+{
+"url": "https://motion.dev/examples/react-ticker",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://demos.gsap.com/demo/infinite-card-slider",
+"repo": "demos.gsap.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/Popmotion/popmotion/blob/master/README.md",
+"repo": "Popmotion/popmotion",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "viewporttriggeredreveal",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R2-075",
+"en": "Viewport triggered reveal",
+"ko": "뷰포트 진입 공개",
+"aka": [],
+"family": "entrance",
+"what": "요소가 화면의 특정 위치에 들어오면 정해진 등장 동작이 재생된다.",
+"why": "스크롤 중 새 정보가 도착함을 알린다.",
+"params": "공식: ScrollTrigger toggleActions play none none none. 권장 start top 80%, 500ms.",
+"impl": "스크롤 시연의 구간 경계에 도달할 때 등장 타임라인을 시작한다.",
+"runtime": "gsap",
+"variants": [
+"한 번 재생",
+"재진입 재생",
+"복귀 퇴장",
+"배치 등장"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/ScrollTrigger/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/docs/react-scroll-animations",
+"repo": "motiondivision/motion",
+"license": "MIT"
+},
+{
+"url": "https://animejs.com/documentation/events/onscroll",
+"repo": "juliangarnier/anime",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "yoyoambientloop",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R2-110",
+"en": "Yoyo ambient loop",
+"ko": "왕복 앰비언트 루프",
+"aka": [],
+"family": "loop",
+"what": "물체가 두 상태를 부드럽게 오가며 계속 움직인다.",
+"why": "정지 화면에 잔잔한 생기를 준다.",
+"params": "공식: GSAP repeat 0, yoyo false. 권장 repeat -1, yoyo true, 2200ms, 이동 12px.",
+"impl": "동일 tween을 정방향과 역방향으로 이어 양끝 속도를 완화한다.",
+"runtime": "gsap",
+"variants": [
+"부유",
+"호흡 크기",
+"회전 왕복",
+"wrapYoyo"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/GSAP/Tween/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://gsap.com/docs/v3/GSAP/UtilityMethods/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/docs/react-transitions",
+"repo": "motiondivision/motion",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "spinnerarcloader",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R2-111",
+"en": "Spinner arc loader",
+"ko": "회전 원호 로더",
+"aka": [],
+"family": "loop",
+"what": "원호가 돌면서 길어졌다 짧아져 계속 작업 중임을 알린다.",
+"why": "끝나지 않은 처리 상태를 전달한다.",
+"params": "공식 공통 기본 없음. 권장 회전 1000ms, 원호 길이 주기 1500ms.",
+"impl": "SVG 원의 회전과 dash 구간 길이를 독립 주기로 보간한다.",
+"runtime": "svg",
+"variants": [
+"고정 원호",
+"가변 원호",
+"다중 링"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/docs/v3/Plugins/DrawSVGPlugin/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/examples/react-loading-circle-spinner",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "staggeredloadingdots",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R2-112",
+"en": "Staggered loading dots",
+"ko": "순차 로딩 점",
+"aka": [],
+"family": "loop",
+"what": "작은 점들이 시간차로 뛰거나 커졌다 작아진다.",
+"why": "계속되는 처리와 대기를 가볍게 표현한다.",
+"params": "공식 공통 기본 없음. 권장 점 3개, 주기 900ms, 지연 150ms, y 8px.",
+"impl": "점별 위상이 다른 y 또는 scale 곡선을 반복 적용한다.",
+"runtime": "gsap",
+"variants": [
+"점프",
+"맥동",
+"페이드",
+"수평 이동"
+],
+"core": "",
+"sources": [
+{
+"url": "https://gsap.com/resources/getting-started/Staggers/",
+"repo": "greensock/GSAP",
+"license": "GSAP Standard License"
+},
+{
+"url": "https://motion.dev/examples/react-loading-jumping-dots",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://motion.dev/examples/react-loading-three-dots-pulse",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "expandingripplerings",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R2-113",
+"en": "Expanding ripple rings",
+"ko": "확산 파문 링",
+"aka": [],
+"family": "loop",
+"what": "중심에서 생긴 원들이 커지고 흐려지며 사라진다.",
+"why": "신호 확산과 호출을 표현한다.",
+"params": "공식 공통 기본 없음. 권장 주기 1600ms, 링 3개, 지연 400ms.",
+"impl": "원 레이어의 scale을 키우고 opacity를 줄이며 반복한다.",
+"runtime": "gsap",
+"variants": [
+"로딩",
+"클릭 피드백",
+"레이더",
+"신호"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motion.dev/examples/react-loading-ripple",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://motion.dev/examples/react-material-design-ripple",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "indeterminateloadingsweep",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R2-115",
+"en": "Indeterminate loading sweep",
+"ko": "불확정 로딩 쓸기",
+"aka": [],
+"family": "loop",
+"what": "짧은 밝은 막대가 트랙을 반복해서 지나간다.",
+"why": "정확한 완료율 없이 진행 중임을 전달한다.",
+"params": "공식 공통 기본 없음. 권장 주기 1200ms, 막대 길이 30%, 지연 200ms.",
+"impl": "트랙 마스크 내부에서 밝은 막대의 x와 폭을 반복 보간한다.",
+"runtime": "css",
+"variants": [
+"막대",
+"라인 공개",
+"경계 왕복"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motion.dev/examples/react-loading-progress-bar",
+"repo": "motion.dev examples",
+"license": "unknown"
+},
+{
+"url": "https://motion.dev/examples/react-loading-line-reveal",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "skeletonshimmer",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R2-116",
+"en": "Skeleton shimmer",
+"ko": "스켈레톤 반짝임",
+"aka": [],
+"family": "loop",
+"what": "내용 자리의 옅은 블록 위로 밝은 띠가 지나간다.",
+"why": "정보가 들어올 위치와 대기 상태를 알려준다.",
+"params": "공식 공통 기본 없음. 권장 주기 1800ms, 밝은 띠 폭 25%, opacity 0.2.",
+"impl": "플레이스홀더 내부 그라디언트 레이어의 x를 반복 이동한다.",
+"runtime": "css",
+"variants": [
+"텍스트 줄",
+"이미지 자리",
+"카드",
+"대각선 빛"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motion.dev/examples/react-skeleton-shimmer",
+"repo": "motion.dev examples",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "fadeinandout",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-004",
+"en": "Fade In and Out",
+"ko": "페이드 등장과 퇴장",
+"aka": [
+"Opacity Reveal",
+"Dissolve In"
+],
+"family": "entrance",
+"what": "요소가 제자리에 머문 채 투명도만 바뀌어 나타나거나 사라진다.",
+"why": "조용한 시작과 종료를 알린다.",
+"params": "도감 기본값: 600ms, opacity 0에서 1, ease-out",
+"impl": "HTML 요소의 opacity를 CSS로 보간한다",
+"runtime": "css",
+"variants": [
+"fadeIn",
+"fadeOut",
+"FadeContent",
+"fade-in",
+"fade-out",
+"fade-in-fwd",
+"fade-in-bck",
+"fade-in-top",
+"fade-in-tr",
+"fade-in-right",
+"fade-in-br",
+"fade-in-bottom",
+"fade-in-bl",
+"fade-in-left",
+"fade-in-tl",
+"fade-out-bck",
+"fade-out-fwd",
+"fade-out-top",
+"fade-out-tr",
+"fade-out-right",
+"fade-out-br",
+"fade-out-bottom",
+"fade-out-bl",
+"fade-out-left",
+"fade-out-tl",
+"fade",
+"icon-fade"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+},
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/michalsnik/aos",
+"repo": "michalsnik/aos",
+"license": "MIT"
+},
+{
+"url": "https://github.com/foundation/motion-ui",
+"repo": "foundation/motion-ui",
+"license": "MIT"
+},
+{
+"url": "https://github.com/jamiebuilds/tailwindcss-animate",
+"repo": "jamiebuilds/tailwindcss-animate",
+"license": "MIT"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://github.com/ibelick/motion-primitives",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+},
+{
+"url": "https://github.com/IanLunn/Hover",
+"repo": "IanLunn/Hover",
+"license": "MIT personal/open-source + paid commercial"
+}
+]
+}
+]
+},
+{
+"key": "slideinandout",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-005",
+"en": "Slide In and Out",
+"ko": "슬라이드 등장과 퇴장",
+"aka": [],
+"family": "entrance",
+"what": "요소가 화면 가장자리 또는 일정 거리 밖에서 들어오거나 빠져나간다.",
+"why": "요소의 출처와 이동 방향을 알려 준다.",
+"params": "도감 기본값: 600ms, 이동 100%, ease-out",
+"impl": "HTML 요소의 translate를 CSS로 보간하고 컨테이너를 자른다",
+"runtime": "css",
+"variants": [
+"slideIn",
+"slideOut",
+"slide-in",
+"slide-out",
+"slide",
+"slideReturn",
+"상하좌우",
+"대각선",
+"slideInDown",
+"slideInLeft",
+"slideInRight",
+"slideInUp",
+"slideOutDown",
+"slideOutLeft",
+"slideOutRight",
+"slideOutUp",
+"slide-top",
+"slide-tr",
+"slide-right",
+"slide-br",
+"slide-bottom",
+"slide-bl",
+"slide-left",
+"slide-tl",
+"slide-in-top",
+"slide-in-tr",
+"slide-in-right",
+"slide-in-br",
+"slide-in-bottom",
+"slide-in-bl",
+"slide-in-left",
+"slide-in-tl",
+"slide-out-top",
+"slide-out-tr",
+"slide-out-right",
+"slide-out-br",
+"slide-out-bottom",
+"slide-out-bl",
+"slide-out-left",
+"slide-out-tl",
+"slideDown",
+"slideDownReturn",
+"slideLeft",
+"slideLeftReturn",
+"slideRight",
+"slideRightReturn",
+"slideUp",
+"slideUpReturn"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+},
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/miniMAC/magic",
+"repo": "miniMAC/magic",
+"license": "MIT"
+},
+{
+"url": "https://github.com/michalsnik/aos",
+"repo": "michalsnik/aos",
+"license": "MIT"
+},
+{
+"url": "https://github.com/foundation/motion-ui",
+"repo": "foundation/motion-ui",
+"license": "MIT"
+},
+{
+"url": "https://github.com/jamiebuilds/tailwindcss-animate",
+"repo": "jamiebuilds/tailwindcss-animate",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "scaleinandout",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-007",
+"en": "Scale In and Out",
+"ko": "스케일 등장과 퇴장",
+"aka": [
+"Zoom Reveal",
+"Grow Reveal"
+],
+"family": "entrance",
+"what": "요소가 작아진 상태에서 원래 크기로 커지거나 축소되며 사라진다.",
+"why": "중심 대상의 생성과 제거를 알린다.",
+"params": "도감 기본값: 500ms, scale 0.3에서 1, opacity 0에서 1, ease-out",
+"impl": "CSS transform-origin과 scale 및 opacity를 보간한다",
+"runtime": "css",
+"variants": [
+"zoomIn",
+"zoomOut",
+"scale-in",
+"scale-out",
+"한 축 압축",
+"모서리 기준",
+"zoomInDown",
+"zoomInLeft",
+"zoomInRight",
+"zoomInUp",
+"zoomOutDown",
+"zoomOutLeft",
+"zoomOutRight",
+"zoomOutUp",
+"scale-in-center",
+"scale-in-top",
+"scale-in-tr",
+"scale-in-right",
+"scale-in-br",
+"scale-in-bottom",
+"scale-in-bl",
+"scale-in-left",
+"scale-in-tl",
+"scale-in-hor-center",
+"scale-in-hor-left",
+"scale-in-hor-right",
+"scale-in-ver-center",
+"scale-in-ver-top",
+"scale-in-ver-bottom",
+"scale-out-center",
+"scale-out-top",
+"scale-out-tr",
+"scale-out-right",
+"scale-out-br",
+"scale-out-bottom",
+"scale-out-bl",
+"scale-out-left",
+"scale-out-tl",
+"scale-out-horizontal",
+"scale-out-hor-left",
+"scale-out-hor-right",
+"scale-out-vertical",
+"scale-out-ver-top",
+"scale-out-ver-bottom"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+},
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/michalsnik/aos",
+"repo": "michalsnik/aos",
+"license": "MIT"
+},
+{
+"url": "https://github.com/foundation/motion-ui",
+"repo": "foundation/motion-ui",
+"license": "MIT"
+},
+{
+"url": "https://github.com/jamiebuilds/tailwindcss-animate",
+"repo": "jamiebuilds/tailwindcss-animate",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "backentranceandexit",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-008",
+"en": "Back Entrance and Exit",
+"ko": "뒤에서 밀려오는 등장",
+"aka": [],
+"family": "entrance",
+"what": "작고 흐린 요소가 멀리서 이동한 뒤 마지막에 원래 크기와 불투명도로 정착한다.",
+"why": "큰 이동 뒤의 정착을 강조한다.",
+"params": "도감 기본값: 1000ms, 이동 1200px, scale 0.7에서 1, opacity 0.7에서 1",
+"impl": "CSS 위치 이동 구간과 크기 정착 구간을 나눈다",
+"runtime": "css",
+"variants": [
+"backIn",
+"backOut",
+"spaceIn",
+"spaceOut",
+"상하좌우",
+"backInDown",
+"backInLeft",
+"backInRight",
+"backInUp",
+"backOutDown",
+"backOutLeft",
+"backOutRight",
+"backOutUp",
+"spaceInDown",
+"spaceInLeft",
+"spaceInRight",
+"spaceInUp",
+"spaceOutDown",
+"spaceOutLeft",
+"spaceOutRight",
+"spaceOutUp"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+},
+{
+"url": "https://github.com/miniMAC/magic",
+"repo": "miniMAC/magic",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "bounceinandout",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-009",
+"en": "Bounce In and Out",
+"ko": "바운스 등장과 퇴장",
+"aka": [],
+"family": "entrance",
+"what": "요소가 들어오며 목표 위치나 크기를 여러 번 넘나든 뒤 멈춘다.",
+"why": "활기와 도착감을 강조한다.",
+"params": "도감 기본값: 800ms, 이동 120px, 반동 20px, ease-out",
+"impl": "CSS 위치 또는 크기에 점점 작은 반동 키프레임을 준다",
+"runtime": "css",
+"variants": [
+"bounceIn",
+"bounceOut",
+"bounce-in",
+"bounce-out",
+"tinIn",
+"tinOut",
+"swashIn",
+"swashOut",
+"bounceInDown",
+"bounceInLeft",
+"bounceInRight",
+"bounceInUp",
+"bounceOutDown",
+"bounceOutLeft",
+"bounceOutRight",
+"bounceOutUp",
+"bounce-in-top",
+"bounce-in-right",
+"bounce-in-bottom",
+"bounce-in-left",
+"bounce-in-fwd",
+"bounce-in-bck",
+"bounce-out-top",
+"bounce-out-right",
+"bounce-out-bottom",
+"bounce-out-left",
+"bounce-out-bck",
+"bounce-out-fwd",
+"icon-bounce-out",
+"tinDownIn",
+"tinDownOut",
+"tinLeftIn",
+"tinLeftOut",
+"tinRightIn",
+"tinRightOut",
+"tinUpIn",
+"tinUpOut"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+},
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/IanLunn/Hover",
+"repo": "IanLunn/Hover",
+"license": "MIT personal/open-source + paid commercial"
+},
+{
+"url": "https://github.com/miniMAC/magic",
+"repo": "miniMAC/magic",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "rotateinandout",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-010",
+"en": "Rotate In and Out",
+"ko": "회전 등장과 퇴장",
+"aka": [
+"Spin Reveal"
+],
+"family": "entrance",
+"what": "요소가 평면에서 회전하며 나타나거나 회전하며 사라진다.",
+"why": "장면에 방향감과 역동성을 더한다.",
+"params": "도감 기본값: 600ms, 회전 90deg, opacity 0에서 1, ease-out",
+"impl": "CSS rotate와 opacity 및 회전 기준점을 보간한다",
+"runtime": "css",
+"variants": [
+"rotateIn",
+"rotateOut",
+"rotate-in",
+"rotate-in-2",
+"rotate-out",
+"rotate-out-2",
+"시계",
+"반시계",
+"모서리 기준",
+"rotateInDownLeft",
+"rotateInDownRight",
+"rotateInUpLeft",
+"rotateInUpRight",
+"rotateOutDownLeft",
+"rotateOutDownRight",
+"rotateOutUpLeft",
+"rotateOutUpRight",
+"rotate-in-center",
+"rotate-in-top",
+"rotate-in-tr",
+"rotate-in-right",
+"rotate-in-br",
+"rotate-in-bottom",
+"rotate-in-bl",
+"rotate-in-left",
+"rotate-in-tl",
+"rotate-in-hor",
+"rotate-in-ver",
+"rotate-in-diag-1",
+"rotate-in-diag-2",
+"rotate-in-2-cw",
+"rotate-in-2-ccw",
+"rotate-in-2-fwd-cw",
+"rotate-in-2-fwd-ccw",
+"rotate-in-2-bck-cw",
+"rotate-in-2-bck-ccw",
+"rotate-in-2-tr-cw",
+"rotate-in-2-tr-ccw",
+"rotate-in-2-br-cw",
+"rotate-in-2-br-ccw",
+"rotate-in-2-bl-cw",
+"rotate-in-2-bl-ccw",
+"rotate-in-2-tl-cw",
+"rotate-in-2-tl-ccw",
+"rotate-out-center",
+"rotate-out-top",
+"rotate-out-tr",
+"rotate-out-right",
+"rotate-out-br",
+"rotate-out-bottom",
+"rotate-out-bl",
+"rotate-out-left",
+"rotate-out-tl",
+"rotate-out-hor",
+"rotate-out-ver",
+"rotate-out-diag-1",
+"rotate-out-diag-2",
+"rotate-out-2-cw",
+"rotate-out-2-ccw",
+"rotate-out-2-bck",
+"rotate-out-2-fwd",
+"rotate-out-2-tr-cw",
+"rotate-out-2-tr-ccw",
+"rotate-out-2-br-cw",
+"rotate-out-2-br-ccw",
+"rotate-out-2-bl-cw",
+"rotate-out-2-bl-ccw",
+"rotate-out-2-tl-cw",
+"rotate-out-2-tl-ccw"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+},
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/jamiebuilds/tailwindcss-animate",
+"repo": "jamiebuilds/tailwindcss-animate",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "flipinandout",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-011",
+"en": "Flip In and Out",
+"ko": "뒤집기 등장과 퇴장",
+"aka": [],
+"family": "entrance",
+"what": "얇은 옆면으로 보이던 요소가 3D 축을 돌아 정면으로 나타난다.",
+"why": "카드나 정보의 앞뒤 관계를 알린다.",
+"params": "도감 기본값: 700ms, perspective 800px, 회전 90deg에서 0deg, ease-out",
+"impl": "CSS perspective와 rotateX 또는 rotateY 및 opacity를 보간한다",
+"runtime": "css",
+"variants": [
+"flipInX",
+"flipInY",
+"flipOutX",
+"flipOutY",
+"flip-in",
+"flip-out",
+"대각축",
+"flip-in-hor-bottom",
+"flip-in-hor-top",
+"flip-in-ver-right",
+"flip-in-ver-left",
+"flip-in-diag-1-tr",
+"flip-in-diag-1-bl",
+"flip-in-diag-2-tl",
+"flip-in-diag-2-br",
+"flip-out-hor-top",
+"flip-out-hor-bottom",
+"flip-out-ver-left",
+"flip-out-ver-right",
+"flip-out-diag-1-tr",
+"flip-out-diag-1-bl",
+"flip-out-diag-2-tl",
+"flip-out-diag-2-br"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+},
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/michalsnik/aos",
+"repo": "michalsnik/aos",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "lightspeed",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-012",
+"en": "Light Speed",
+"ko": "빠른 진입과 기울기 정착",
+"aka": [],
+"family": "entrance",
+"what": "요소가 빠르게 옆에서 들어오며 기울었다가 반대쪽으로 꺾이며 펴진다.",
+"why": "속도감과 급한 도착을 표현한다.",
+"params": "도감 기본값: 700ms, 이동 100%, skew 30deg에서 0deg, ease-out",
+"impl": "CSS translateX와 skewX 및 opacity를 단계적으로 보간한다",
+"runtime": "css",
+"variants": [
+"lightSpeedInLeft",
+"lightSpeedInRight",
+"lightSpeedOutLeft",
+"lightSpeedOutRight"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+}
+]
+}
+]
+},
+{
+"key": "rollinandout",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-013",
+"en": "Roll In and Out",
+"ko": "구르기 등장과 퇴장",
+"aka": [],
+"family": "entrance",
+"what": "요소가 옆으로 이동하면서 평면 회전해 굴러 들어오거나 나간다.",
+"why": "재미있는 이동과 방향을 전달한다.",
+"params": "도감 기본값: 700ms, 이동 100%, 회전 120deg, ease-out",
+"impl": "CSS translate와 rotate 및 opacity를 함께 보간한다",
+"runtime": "css",
+"variants": [
+"rollIn",
+"rollOut",
+"roll-in",
+"roll-out",
+"roll-in-blurred",
+"roll-out-blurred",
+"roll-in-left",
+"roll-in-top",
+"roll-in-right",
+"roll-in-bottom",
+"roll-in-blurred-left",
+"roll-in-blurred-top",
+"roll-in-blurred-right",
+"roll-in-blurred-bottom",
+"roll-out-left",
+"roll-out-top",
+"roll-out-right",
+"roll-out-bottom",
+"roll-out-blurred-left",
+"roll-out-blurred-top",
+"roll-out-blurred-right",
+"roll-out-blurred-bottom"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+},
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+}
+]
+}
+]
+},
+{
+"key": "hingedrop",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-014",
+"en": "Hinge Drop",
+"ko": "경첩 매달림 낙하",
+"aka": [],
+"family": "entrance",
+"what": "요소가 모서리에 매달려 흔들리다가 아래로 떨어져 사라진다.",
+"why": "실패나 제거를 익살스럽게 알린다.",
+"params": "도감 기본값: 1600ms, 회전 70deg, 흔들림 3회, 낙하 700px",
+"impl": "CSS 모서리 transform-origin으로 회전한 뒤 translateY와 opacity를 바꾼다",
+"runtime": "css",
+"variants": [
+"hinge"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+}
+]
+}
+]
+},
+{
+"key": "jackinbox",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-015",
+"en": "Jack in the Box",
+"ko": "상자에서 튀어나오기",
+"aka": [],
+"family": "entrance",
+"what": "요소가 작고 기울어진 상태에서 갑자기 커진 뒤 좌우 회전하며 안정된다.",
+"why": "새 대상의 탄생과 놀라움을 준다.",
+"params": "도감 기본값: 1000ms, scale 0.1에서 1, 회전 30deg에서 0deg, 반동 2회",
+"impl": "CSS scale과 rotate 및 opacity에 반동 구간을 준다",
+"runtime": "css",
+"variants": [
+"jackInTheBox"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/animate-css/animate.css",
+"repo": "animate-css/animate.css",
+"license": "Hippocratic-2.1"
+}
+]
+}
+]
+},
+{
+"key": "puffreveal",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-016",
+"en": "Puff Reveal",
+"ko": "흐림 확대 리빌",
+"aka": [
+"Blur Scale Reveal"
+],
+"family": "entrance",
+"what": "확대되고 흐린 요소가 줄어들며 선명해지거나 확대되며 흐려져 사라진다.",
+"why": "공기처럼 부드러운 생성과 소멸을 표현한다.",
+"params": "도감 기본값: 700ms, scale 2에서 1, blur 12px에서 0px, ease-out",
+"impl": "CSS scale과 filter blur 및 opacity를 보간한다",
+"runtime": "css",
+"variants": [
+"puffIn",
+"puffOut",
+"puff-in",
+"puff-out",
+"Blur Fade",
+"BlurText",
+"puff-in-center",
+"puff-in-top",
+"puff-in-tr",
+"puff-in-right",
+"puff-in-br",
+"puff-in-bottom",
+"puff-in-bl",
+"puff-in-left",
+"puff-in-tl",
+"puff-in-hor",
+"puff-in-ver",
+"puff-out-center",
+"puff-out-top",
+"puff-out-tr",
+"puff-out-right",
+"puff-out-br",
+"puff-out-bottom",
+"puff-out-bl",
+"puff-out-left",
+"puff-out-tl",
+"puff-out-hor",
+"puff-out-ver",
+"blur-fade"
+],
+"core": "",
+"sources": [
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/miniMAC/magic",
+"repo": "miniMAC/magic",
+"license": "MIT"
+},
+{
+"url": "https://magicui.design/docs/components/blur-fade",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://github.com/ibelick/motion-primitives",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "vanish",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-017",
+"en": "Vanish",
+"ko": "압축 흐림 소멸",
+"aka": [],
+"family": "entrance",
+"what": "요소가 크기와 흐림을 크게 바꾸며 중심으로 사라지거나 반대로 나타난다.",
+"why": "마술 같은 생성과 소멸을 전달한다.",
+"params": "도감 기본값: 800ms, scale 0에서 1, blur 20px에서 0px, ease-out",
+"impl": "CSS scale과 blur 및 opacity를 역방향으로도 재생한다",
+"runtime": "css",
+"variants": [
+"vanishIn",
+"vanishOut"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/miniMAC/magic",
+"repo": "miniMAC/magic",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "swirlreveal",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-018",
+"en": "Swirl Reveal",
+"ko": "소용돌이 리빌",
+"aka": [],
+"family": "entrance",
+"what": "요소가 여러 바퀴 회전하며 축소 또는 확대되어 나타난다.",
+"why": "회오리 같은 강한 진입을 만든다.",
+"params": "도감 기본값: 700ms, 회전 540deg, scale 0에서 1, ease-out",
+"impl": "CSS rotate와 scale 및 opacity를 함께 보간한다",
+"runtime": "css",
+"variants": [
+"swirl-in",
+"swirl-out",
+"twisterInDown",
+"twisterInUp",
+"swirl-in-fwd",
+"swirl-in-bck",
+"swirl-in-top-fwd",
+"swirl-in-top-bck",
+"swirl-in-tr-fwd",
+"swirl-in-tr-bck",
+"swirl-in-right-fwd",
+"swirl-in-right-bck",
+"swirl-in-br-fwd",
+"swirl-in-br-bck",
+"swirl-in-bottom-fwd",
+"swirl-in-bottom-bck",
+"swirl-in-bl-fwd",
+"swirl-in-bl-bck",
+"swirl-in-left-fwd",
+"swirl-in-left-bck",
+"swirl-in-tl-fwd",
+"swirl-in-tl-bck",
+"swirl-out-bck",
+"swirl-out-fwd",
+"swirl-out-top-bck",
+"swirl-out-top-fwd",
+"swirl-out-tr-bck",
+"swirl-out-tr-fwd",
+"swirl-out-right-bck",
+"swirl-out-right-fwd",
+"swirl-out-br-bck",
+"swirl-out-br-fwd",
+"swirl-out-bottom-bck",
+"swirl-out-bottom-fwd",
+"swirl-out-bl-bck",
+"swirl-out-bl-fwd",
+"swirl-out-left-bck",
+"swirl-out-left-fwd",
+"swirl-out-tl-bck",
+"swirl-out-tl-fwd"
+],
+"core": "",
+"sources": [
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/miniMAC/magic",
+"repo": "miniMAC/magic",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "slitreveal",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-019",
+"en": "Slit Reveal",
+"ko": "얇은 면 펼치기",
+"aka": [],
+"family": "entrance",
+"what": "요소가 선처럼 얇은 면에서 출발해 회전 반동을 거쳐 정면으로 펼쳐진다.",
+"why": "압축된 정보가 열리는 느낌을 준다.",
+"params": "도감 기본값: 700ms, rotateY 90deg에서 0deg, z 이동 160px, 반동 15deg",
+"impl": "CSS perspective와 rotateX 또는 rotateY 및 translateZ를 단계적으로 바꾼다",
+"runtime": "css",
+"variants": [
+"slit-in",
+"slit-out",
+"수직",
+"수평",
+"대각",
+"slit-in-vertical",
+"slit-in-horizontal",
+"slit-in-diagonal-1",
+"slit-in-diagonal-2",
+"slit-out-vertical",
+"slit-out-horizontal",
+"slit-out-diagonal-1",
+"slit-out-diagonal-2"
+],
+"core": "",
+"sources": [
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+}
+]
+}
+]
+},
+{
+"key": "blurredslide",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-020",
+"en": "Blurred Slide",
+"ko": "속도 흐림 슬라이드",
+"aka": [],
+"family": "entrance",
+"what": "길게 늘어나고 흐린 요소가 이동하며 원래 모양으로 선명하게 정착한다.",
+"why": "빠른 이동의 잔상과 속도를 보여 준다.",
+"params": "도감 기본값: 600ms, 이동 800px, blur 30px, 축척 2에서 1, ease-out",
+"impl": "CSS translate와 축별 scale 및 blur를 함께 보간한다",
+"runtime": "css",
+"variants": [
+"slide-in-blurred",
+"slide-out-blurred",
+"slide-in-blurred-top",
+"slide-in-blurred-tr",
+"slide-in-blurred-right",
+"slide-in-blurred-br",
+"slide-in-blurred-bottom",
+"slide-in-blurred-bl",
+"slide-in-blurred-left",
+"slide-in-blurred-tl",
+"slide-out-blurred-top",
+"slide-out-blurred-tr",
+"slide-out-blurred-right",
+"slide-out-blurred-br",
+"slide-out-blurred-bottom",
+"slide-out-blurred-bl",
+"slide-out-blurred-left",
+"slide-out-blurred-tl"
+],
+"core": "",
+"sources": [
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+}
+]
+}
+]
+},
+{
+"key": "ellipticentrance",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-021",
+"en": "Elliptic Entrance",
+"ko": "타원 궤도 진입",
+"aka": [],
+"family": "entrance",
+"what": "요소가 3D로 기울고 찌그러진 상태에서 타원 곡선을 따라 정면으로 들어온다.",
+"why": "입체적인 이동 경로를 느끼게 한다.",
+"params": "도감 기본값: 700ms, 회전 60deg, 이동 500px, scale 0.1에서 1",
+"impl": "CSS perspective와 translate 및 rotate와 scale의 단계값을 만든다",
+"runtime": "css",
+"variants": [
+"slide-in-elliptic",
+"slide-out-elliptic",
+"앞",
+"뒤",
+"slide-in-elliptic-top-fwd",
+"slide-in-elliptic-top-bck",
+"slide-in-elliptic-right-fwd",
+"slide-in-elliptic-right-bck",
+"slide-in-elliptic-bottom-fwd",
+"slide-in-elliptic-bottom-bck",
+"slide-in-elliptic-left-fwd",
+"slide-in-elliptic-left-bck",
+"slide-out-elliptic-top-bck",
+"slide-out-elliptic-top-fwd",
+"slide-out-elliptic-right-bck",
+"slide-out-elliptic-right-fwd",
+"slide-out-elliptic-bottom-bck",
+"slide-out-elliptic-bottom-fwd",
+"slide-out-elliptic-left-bck",
+"slide-out-elliptic-left-fwd"
+],
+"core": "",
+"sources": [
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+}
+]
+}
+]
+},
+{
+"key": "tiltentrance",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-022",
+"en": "Tilt Entrance",
+"ko": "기울기 복원 등장",
+"aka": [],
+"family": "entrance",
+"what": "요소가 비스듬한 평면에서 들어오며 기울기와 비틀림을 풀어 정렬된다.",
+"why": "역동적인 요소가 정돈되는 느낌을 준다.",
+"params": "도감 기본값: 650ms, 회전 30deg, skew 15deg, opacity 0에서 1",
+"impl": "CSS rotate와 skew 및 translate를 정면 값으로 보간한다",
+"runtime": "css",
+"variants": [
+"tilt-in",
+"tilt-in-fwd",
+"tilt-in-top-1",
+"tilt-in-top-2",
+"tilt-in-tr",
+"tilt-in-right-1",
+"tilt-in-right-2",
+"tilt-in-br",
+"tilt-in-bottom-1",
+"tilt-in-bottom-2",
+"tilt-in-bl",
+"tilt-in-left-1",
+"tilt-in-left-2",
+"tilt-in-tl",
+"tilt-in-fwd-tr",
+"tilt-in-fwd-br",
+"tilt-in-fwd-bl",
+"tilt-in-fwd-tl"
+],
+"core": "",
+"sources": [
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+}
+]
+}
+]
+},
+{
+"key": "swingreveal",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-023",
+"en": "Swing Reveal",
+"ko": "문처럼 열리는 등장",
+"aka": [],
+"family": "entrance",
+"what": "요소가 가장자리를 축으로 3D 회전하며 문처럼 열린다.",
+"why": "펼침과 닫힘의 공간 관계를 전달한다.",
+"params": "도감 기본값: 650ms, 회전 90deg에서 0deg, perspective 800px",
+"impl": "CSS 가장자리 transform-origin과 rotateX 또는 rotateY를 보간한다",
+"runtime": "css",
+"variants": [
+"swing-in",
+"swing-out",
+"hinge-in",
+"hinge-out",
+"openDownLeft",
+"openUpRight",
+"Return",
+"Out",
+"swing-top-fwd",
+"swing-top-bck",
+"swing-top-right-fwd",
+"swing-top-right-bck",
+"swing-right-fwd",
+"swing-right-bck",
+"swing-bottom-right-fwd",
+"swing-bottom-right-bck",
+"swing-bottom-fwd",
+"swing-bottom-bck",
+"swing-bottom-left-fwd",
+"swing-bottom-left-bck",
+"swing-left-fwd",
+"swing-left-bck",
+"swing-top-left-fwd",
+"swing-top-left-bck",
+"swing-in-top-fwd",
+"swing-in-top-bck",
+"swing-in-right-fwd",
+"swing-in-right-bck",
+"swing-in-bottom-fwd",
+"swing-in-bottom-bck",
+"swing-in-left-fwd",
+"swing-in-left-bck",
+"swing-out-top-bck",
+"swing-out-top-fwd",
+"swing-out-right-bck",
+"swing-out-right-fwd",
+"swing-out-bottom-bck",
+"swing-out-bottom-fwd",
+"swing-out-left-bck",
+"swing-out-left-fwd",
+"openDownLeftReturn",
+"openDownRight",
+"openDownRightReturn",
+"openUpLeft",
+"openUpLeftReturn",
+"openUpRightReturn",
+"openDownLeftOut",
+"openDownRightOut",
+"openUpLeftOut",
+"openUpRightOut",
+"FoldText"
+],
+"core": "",
+"sources": [
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/foundation/motion-ui",
+"repo": "foundation/motion-ui",
+"license": "MIT"
+},
+{
+"url": "https://github.com/miniMAC/magic",
+"repo": "miniMAC/magic",
+"license": "MIT"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "flickerreveal",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-024",
+"en": "Flicker Reveal",
+"ko": "깜박이며 나타나기",
+"aka": [],
+"family": "entrance",
+"what": "요소가 불규칙하게 켜졌다 꺼졌다 하다가 완전히 나타나거나 사라진다.",
+"why": "전기 신호나 불안정한 연결을 표현한다.",
+"params": "도감 기본값: 1200ms, 점멸 6회, opacity 0 또는 1, steps(1)",
+"impl": "CSS opacity에 불규칙한 유지 구간을 배치한다",
+"runtime": "css",
+"variants": [
+"flicker-in",
+"flicker-out",
+"flicker-in-1",
+"flicker-in-2",
+"flicker-out-1",
+"flicker-out-2"
+],
+"core": "",
+"sources": [
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+}
+]
+}
+]
+},
+{
+"key": "magicdisappearance",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-025",
+"en": "Magic Disappearance",
+"ko": "마술 회전 이탈",
+"aka": [],
+"family": "entrance",
+"what": "요소가 한쪽으로 커지며 회전하고 화면 밖으로 사라진다.",
+"why": "극적인 제거와 장면 종료를 만든다.",
+"params": "도감 기본값: 1000ms, 회전 270deg, scale 1에서 2, 이동 100%",
+"impl": "CSS 기준점을 바꾸고 rotate와 scale 및 translate를 보간한다",
+"runtime": "css",
+"variants": [
+"magic"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/miniMAC/magic",
+"repo": "miniMAC/magic",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "swapentrance",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-026",
+"en": "Swap Entrance",
+"ko": "큰 궤도 축소 진입",
+"aka": [],
+"family": "entrance",
+"what": "큰 크기로 화면 밖에 있던 요소가 넓게 돌아 작아지며 제자리에 들어온다.",
+"why": "과장된 교체와 깜짝 등장을 알린다.",
+"params": "도감 기본값: 1000ms, scale 3에서 1, 이동 700px, ease-out",
+"impl": "CSS translate와 scale 및 transform-origin을 함께 보간한다",
+"runtime": "css",
+"variants": [
+"swap"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/miniMAC/magic",
+"repo": "miniMAC/magic",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "foolishreveal",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-027",
+"en": "Foolish Reveal",
+"ko": "모서리 순환 회전 등장",
+"aka": [],
+"family": "entrance",
+"what": "요소가 크기를 바꾸며 여러 모서리를 축으로 차례로 회전해 정착한다.",
+"why": "장난스럽고 예측하기 어려운 진입을 만든다.",
+"params": "도감 기본값: 1000ms, 회전 360deg, 기준점 4곳, scale 0에서 1",
+"impl": "CSS transform-origin과 rotate 및 scale의 구간값을 바꾼다",
+"runtime": "css",
+"variants": [
+"foolishIn",
+"foolishOut"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/miniMAC/magic",
+"repo": "miniMAC/magic",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "holedisappearance",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-028",
+"en": "Hole Disappearance",
+"ko": "구멍으로 말려 들어가기",
+"aka": [],
+"family": "entrance",
+"what": "요소가 여러 바퀴 회전하며 중심으로 작아져 사라진다.",
+"why": "대상이 흡수되거나 삭제됨을 알린다.",
+"params": "도감 기본값: 1000ms, 회전 1800deg, scale 1에서 0, ease-in",
+"impl": "CSS rotate와 scale 및 opacity를 보간한다",
+"runtime": "css",
+"variants": [
+"holeOut"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/miniMAC/magic",
+"repo": "miniMAC/magic",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "bombexit",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-029",
+"en": "Bomb Exit",
+"ko": "회전 폭발 이탈",
+"aka": [],
+"family": "entrance",
+"what": "요소가 옆으로 기울어 이동하며 크게 흐려져 사라진다.",
+"why": "폭발이나 강한 이탈을 표현한다.",
+"params": "도감 기본값: 1000ms, 회전 160deg, 이동 200px, blur 50px",
+"impl": "CSS translate와 rotate 및 blur와 opacity를 보간한다",
+"runtime": "css",
+"variants": [
+"bombLeftOut",
+"bombRightOut"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/miniMAC/magic",
+"repo": "miniMAC/magic",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "boingreveal",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-030",
+"en": "Boing Reveal",
+"ko": "탄성 힌지 튀기",
+"aka": [],
+"family": "entrance",
+"what": "요소가 한쪽 끝을 축으로 크게 구부러져 튀어오르거나 접히며 빠져나간다.",
+"why": "탄성 있는 면의 등장을 표현한다.",
+"params": "도감 기본값: 1000ms, rotateX 50deg, 회전 기준 하단, 반동 2회",
+"impl": "CSS perspective와 rotateX 및 transform-origin을 단계적으로 바꾼다",
+"runtime": "css",
+"variants": [
+"boingInUp",
+"boingOutDown"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/miniMAC/magic",
+"repo": "miniMAC/magic",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "floatandbob",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-041",
+"en": "Float and Bob",
+"ko": "떠오름과 부유",
+"aka": [],
+"family": "loop",
+"what": "요소가 천천히 위아래로 움직이며 공중에 떠 있는 것처럼 보인다.",
+"why": "가벼움과 대기 상태를 표현한다.",
+"params": "도감 기본값: 2400ms, 높이 12px, ease-in-out, 무한 반복",
+"impl": "CSS translateY를 사인 형태로 왕복시킨다",
+"runtime": "css",
+"variants": [
+"float",
+"sink",
+"bob",
+"hang",
+"forward",
+"backward",
+"FolderFloat",
+"ScrollFloat",
+"icon-back",
+"icon-bob",
+"icon-down",
+"icon-float",
+"icon-forward",
+"icon-hang",
+"icon-sink",
+"icon-up",
+"float-shadow",
+"bubble-float-bottom",
+"bubble-float-left",
+"bubble-float-right",
+"bubble-float-top"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/IanLunn/Hover",
+"repo": "IanLunn/Hover",
+"license": "MIT personal/open-source + paid commercial"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "gradientdrift",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-053",
+"en": "Gradient Drift",
+"ko": "그라디언트 이동",
+"aka": [],
+"family": "loop",
+"what": "큰 그라디언트의 위치가 천천히 움직이며 색 영역이 흐른다.",
+"why": "부드러운 분위기와 지속 활동감을 만든다.",
+"params": "도감 기본값: 8000ms, background-size 300%, 이동 100%, ease-in-out",
+"impl": "CSS background-position과 색상 정지점을 보간한다",
+"runtime": "css",
+"variants": [
+"bg-pan",
+"Gradient Animation",
+"Animated Gradient Text",
+"GradientText",
+"GradientWaves",
+"bg-pan-left",
+"bg-pan-right",
+"bg-pan-top",
+"bg-pan-bottom",
+"bg-pan-tr",
+"bg-pan-br",
+"bg-pan-bl",
+"bg-pan-tl",
+"animated-gradient-text",
+"background-gradient-animation"
+],
+"core": "",
+"sources": [
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://magicui.design/docs/components/animated-gradient-text",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/background-gradient-animation",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "colorcycling",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-054",
+"en": "Color Cycling",
+"ko": "색상 순환",
+"aka": [],
+"family": "loop",
+"what": "배경이나 요소의 색이 여러 색상 사이를 천천히 바꾼다.",
+"why": "다양함과 계속되는 상태를 표현한다.",
+"params": "도감 기본값: 6000ms, 색상 4개, ease-in-out, 반복",
+"impl": "CSS background-color 또는 hue-rotate를 왕복시킨다",
+"runtime": "css",
+"variants": [
+"color-change-2x",
+"color-change-3x",
+"color-change-4x",
+"color-change-5x",
+"rainbow-button"
+],
+"core": "",
+"sources": [
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://magicui.design/docs/components/rainbow-button",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "ripplering",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-060",
+"en": "Ripple Ring",
+"ko": "퍼지는 원형 파문",
+"aka": [
+"Ping",
+"Expanding Ring"
+],
+"family": "loop",
+"what": "중심에서 원 또는 윤곽선이 커지며 옅어지고 다음 원이 이어진다.",
+"why": "신호 발산과 진행 중 상태를 알린다.",
+"params": "도감 기본값: 1500ms, scale 0.2에서 1.5, opacity 1에서 0, 간격 500ms",
+"impl": "CSS 원형 테두리 요소들의 scale과 opacity를 시간차로 반복한다",
+"runtime": "css",
+"variants": [
+"ripple-in",
+"ripple-out",
+"ping",
+"ripple",
+"Ripple Button",
+"MagicRings",
+"Pulse",
+"growing",
+"circle",
+"Expanding Pulse Loader"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/IanLunn/Hover",
+"repo": "IanLunn/Hover",
+"license": "MIT personal/open-source + paid commercial"
+},
+{
+"url": "https://animista.net/play",
+"repo": "animista.net",
+"license": "BSD-2-Clause (FreeBSD)"
+},
+{
+"url": "https://github.com/magicuidesign/magicui",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://github.com/loadingio/css-spinner",
+"repo": "loadingio/css-spinner",
+"license": "CC0 loaders (README; root LICENSE absent)"
+},
+{
+"url": "https://github.com/uiverse-io/galaxy",
+"repo": "uiverse-io/galaxy",
+"license": "MIT"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://github.com/tobiasahlin/SpinKit",
+"repo": "tobiasahlin/SpinKit",
+"license": "MIT"
+},
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "ringspinner",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-066",
+"en": "Ring Spinner",
+"ko": "회전 링 로더",
+"aka": [],
+"family": "loop",
+"what": "끊어진 원이나 두 겹 링이 일정한 속도로 회전한다.",
+"why": "작업이 계속 진행 중임을 알린다.",
+"params": "도감 기본값: 1000ms, 360deg, linear, 크기 40px, 무한 반복",
+"impl": "CSS 원형 border 또는 SVG arc를 rotate로 반복 회전한다",
+"runtime": "css",
+"variants": [
+"ring",
+"dual-ring",
+"spinner",
+"thin",
+"cut",
+"shuriken",
+"loader"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/tobiasahlin/SpinKit",
+"repo": "tobiasahlin/SpinKit",
+"license": "MIT"
+},
+{
+"url": "https://github.com/lukehaas/css-loaders",
+"repo": "lukehaas/css-loaders",
+"license": "MIT"
+},
+{
+"url": "https://github.com/loadingio/css-spinner",
+"repo": "loadingio/css-spinner",
+"license": "CC0 loaders (README; root LICENSE absent)"
+},
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/uiverse-io/galaxy",
+"repo": "uiverse-io/galaxy",
+"license": "MIT"
+},
+{
+"url": "https://github.com/shadcn-ui/ui",
+"repo": "shadcn-ui/ui",
+"license": "MIT"
+},
+{
+"url": "https://rive.app/community/files/133-207-loading-animation/",
+"repo": "rive.app/Bobbeh",
+"license": "CC-BY (version unverified)"
+},
+{
+"url": "https://ui.aceternity.com/components/loader",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "chasingdots",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-067",
+"en": "Chasing Dots",
+"ko": "추격 점 로더",
+"aka": [
+"Orbit Chase"
+],
+"family": "loop",
+"what": "여러 점이 원을 따라 돌면서 크기와 간격을 바꾸며 서로를 쫓는다.",
+"why": "끊임없는 순환 작업을 보여 준다.",
+"params": "도감 기본값: 2000ms, 점 6개, 위상차 120ms, ease-in-out",
+"impl": "CSS 중심 컨테이너 회전과 각 점의 scale을 시간차로 반복한다",
+"runtime": "css",
+"variants": [
+"Chase",
+"roller",
+"mechanic"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/tobiasahlin/SpinKit",
+"repo": "tobiasahlin/SpinKit",
+"license": "MIT"
+},
+{
+"url": "https://github.com/loadingio/css-spinner",
+"repo": "loadingio/css-spinner",
+"license": "CC0 loaders (README; root LICENSE absent)"
+},
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "barwaveloader",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-068",
+"en": "Bar Wave Loader",
+"ko": "막대 파동 로더",
+"aka": [],
+"family": "loop",
+"what": "나란한 막대들이 차례로 길어지고 짧아져 파도처럼 움직인다.",
+"why": "신호 처리나 작업 리듬을 보여 준다.",
+"params": "도감 기본값: 1200ms, 막대 5개, 위상차 100ms, 높이 0.4에서 1",
+"impl": "CSS 막대 scaleY를 시간차로 반복한다",
+"runtime": "css",
+"variants": [
+"Wave",
+"facebook",
+"bars",
+"dots-bars",
+"VoicePill",
+"MicroSlats"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/tobiasahlin/SpinKit",
+"repo": "tobiasahlin/SpinKit",
+"license": "MIT"
+},
+{
+"url": "https://github.com/lukehaas/css-loaders",
+"repo": "lukehaas/css-loaders",
+"license": "MIT"
+},
+{
+"url": "https://github.com/loadingio/css-spinner",
+"repo": "loadingio/css-spinner",
+"license": "CC0 loaders (README; root LICENSE absent)"
+},
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "threedotflow",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-069",
+"en": "Three Dot Flow",
+"ko": "세 점 흐름",
+"aka": [],
+"family": "loop",
+"what": "나란한 점 세 개가 순서대로 커지거나 위로 튀며 되풀이된다.",
+"why": "응답 대기와 작성 중 상태를 알린다.",
+"params": "도감 기본값: 1200ms, 점 3개, 간격 12px, 지연 160ms",
+"impl": "CSS 점 scale 또는 translateY를 시간차로 왕복시킨다",
+"runtime": "css",
+"variants": [
+"Flow",
+"ellipsis",
+"dots",
+"typing indicator"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/tobiasahlin/SpinKit",
+"repo": "tobiasahlin/SpinKit",
+"license": "MIT"
+},
+{
+"url": "https://github.com/loadingio/css-spinner",
+"repo": "loadingio/css-spinner",
+"license": "CC0 loaders (README; root LICENSE absent)"
+},
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/uiverse-io/galaxy",
+"repo": "uiverse-io/galaxy",
+"license": "MIT"
+},
+{
+"url": "https://lottiefiles.com/free-animation/loading-animation-with-success-and-error-K2tYPTbs5Q",
+"repo": "LottieFiles/Patrick Rigor",
+"license": "Lottie Simple License"
+}
+]
+}
+]
+},
+{
+"key": "orbitingopposeddots",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-070",
+"en": "Orbiting Opposed Dots",
+"ko": "마주 도는 두 점",
+"aka": [],
+"family": "loop",
+"what": "중심을 공유한 두 점이 공전하며 번갈아 크기가 변한다.",
+"why": "서로 연관된 두 과정의 순환을 보여 준다.",
+"params": "도감 기본값: 1800ms, 반경 20px, 점 2개, 위상차 900ms",
+"impl": "CSS 컨테이너 rotate와 점 scale을 함께 반복한다",
+"runtime": "css",
+"variants": [
+"Swing",
+"rotating-dots"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/tobiasahlin/SpinKit",
+"repo": "tobiasahlin/SpinKit",
+"license": "MIT"
+},
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "circulardotwave",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-071",
+"en": "Circular Dot Wave",
+"ko": "원형 점 파동",
+"aka": [],
+"family": "loop",
+"what": "원 둘레의 점이나 짧은 막대가 순서대로 커지거나 밝아진다.",
+"why": "시계 방향으로 진행되는 대기를 알린다.",
+"params": "도감 기본값: 1200ms, 점 12개, 위상차 100ms, linear",
+"impl": "CSS 원형 배치한 요소의 scale 또는 opacity를 순차 반복한다",
+"runtime": "css",
+"variants": [
+"Circle",
+"Circle Fade",
+"default",
+"spinner"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/tobiasahlin/SpinKit",
+"repo": "tobiasahlin/SpinKit",
+"license": "MIT"
+},
+{
+"url": "https://github.com/lukehaas/css-loaders",
+"repo": "lukehaas/css-loaders",
+"license": "MIT"
+},
+{
+"url": "https://github.com/loadingio/css-spinner",
+"repo": "loadingio/css-spinner",
+"license": "CC0 loaders (README; root LICENSE absent)"
+},
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/uiverse-io/galaxy",
+"repo": "uiverse-io/galaxy",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "gridpulseloader",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-072",
+"en": "Grid Pulse Loader",
+"ko": "격자 맥동 로더",
+"aka": [],
+"family": "loop",
+"what": "격자의 칸들이 대각선이나 행 순서로 줄어들고 다시 커진다.",
+"why": "여러 작업 단위가 계속 처리됨을 보여 준다.",
+"params": "도감 기본값: 1300ms, 3x3 격자, 위상차 100ms, scale 0에서 1",
+"impl": "CSS 격자 칸마다 다른 지연으로 scale과 opacity를 반복한다",
+"runtime": "css",
+"variants": [
+"Grid",
+"grid",
+"LatticeLoader",
+"square",
+"clones"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/tobiasahlin/SpinKit",
+"repo": "tobiasahlin/SpinKit",
+"license": "MIT"
+},
+{
+"url": "https://github.com/loadingio/css-spinner",
+"repo": "loadingio/css-spinner",
+"license": "CC0 loaders (README; root LICENSE absent)"
+},
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "foldingcubeloader",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-073",
+"en": "Folding Cube Loader",
+"ko": "접히는 정사각 로더",
+"aka": [],
+"family": "loop",
+"what": "네 개의 작은 면이 차례로 3D 회전하며 접혔다 펼쳐진다.",
+"why": "조립되는 면의 순환을 보여 준다.",
+"params": "도감 기본값: 2400ms, 2x2 격자, 위상차 300ms, perspective 140px",
+"impl": "CSS 각 면에 회전 기준점과 rotateX 또는 rotateY를 준다",
+"runtime": "css",
+"variants": [
+"Fold",
+"folding-cube",
+"flipping",
+"3D"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/tobiasahlin/SpinKit",
+"repo": "tobiasahlin/SpinKit",
+"license": "MIT"
+},
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "wanderingsquares",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-074",
+"en": "Wandering Squares",
+"ko": "떠도는 정사각 로더",
+"aka": [],
+"family": "loop",
+"what": "작은 정사각형들이 네 모서리를 이동하면서 회전하고 크기를 바꾼다.",
+"why": "여러 객체가 협업하는 대기를 보여 준다.",
+"params": "도감 기본값: 1800ms, 객체 3개, 이동 30px, 위상차 200ms",
+"impl": "CSS translate와 rotate 및 scale의 폐곡선 구간을 반복한다",
+"runtime": "css",
+"variants": [
+"Wander",
+"moving",
+"dancers"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/tobiasahlin/SpinKit",
+"repo": "tobiasahlin/SpinKit",
+"license": "MIT"
+},
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "rotatingplaneloader",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-075",
+"en": "Rotating Plane Loader",
+"ko": "뒤집히는 면 로더",
+"aka": [],
+"family": "loop",
+"what": "정사각형이 가로와 세로 3D 축을 번갈아 돌아 앞뒤를 보여 준다.",
+"why": "단순한 기하 순환을 보여 준다.",
+"params": "도감 기본값: 1200ms, rotateX 180deg, rotateY 180deg, perspective 120px",
+"impl": "CSS rotateX와 rotateY를 순차 반복한다",
+"runtime": "css",
+"variants": [
+"Plane",
+"rotating-plane",
+"flipping"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/tobiasahlin/SpinKit",
+"repo": "tobiasahlin/SpinKit",
+"license": "MIT"
+},
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "hourglassloader",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-076",
+"en": "Hourglass Loader",
+"ko": "모래시계 로더",
+"aka": [],
+"family": "loop",
+"what": "모래시계나 두 삼각형이 뒤집히고 내부 채움이 다시 흘러간다.",
+"why": "시간이 흐르는 대기를 알린다.",
+"params": "도감 기본값: 2000ms, 회전 180deg, 채움 100%에서 0%, ease-in-out",
+"impl": "CSS clip-path 모래 면의 scale과 전체 rotate를 반복한다",
+"runtime": "css",
+"variants": [
+"hourglass",
+"time"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/loadingio/css-spinner",
+"repo": "loadingio/css-spinner",
+"license": "CC0 loaders (README; root LICENSE absent)"
+},
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "indeterminateprogress",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-078",
+"en": "Indeterminate Progress",
+"ko": "무정량 진행 막대",
+"aka": [],
+"family": "loop",
+"what": "짧은 색 막대가 긴 트랙을 반복 통과하며 길이도 바뀐다.",
+"why": "총량을 모르는 작업이 진행됨을 알린다.",
+"params": "도감 기본값: 1500ms, 막대 폭 20%에서 60%, 이동 100%, ease-in-out",
+"impl": "CSS 트랙 안의 막대 translateX와 scaleX를 반복한다",
+"runtime": "css",
+"variants": [
+"continuous",
+"progress",
+"classic"
+],
+"core": "",
+"sources": [
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/uiverse-io/galaxy",
+"repo": "uiverse-io/galaxy",
+"license": "MIT"
+},
+{
+"url": "https://github.com/shadcn-ui/ui",
+"repo": "shadcn-ui/ui",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "shapemorphloader",
+"family": "loop",
+"core": "shape-morph",
+"rows": [
+{
+"id": "R3-079",
+"en": "Shape Morph Loader",
+"ko": "도형 변환 로더",
+"aka": [],
+"family": "loop",
+"what": "원과 사각형 및 삼각형이 차례로 바뀌며 회전한다.",
+"why": "여러 단계의 처리가 순환함을 보여 준다.",
+"params": "도감 기본값: 2000ms, 도형 3개, 회전 180deg, ease-in-out",
+"impl": "SVG 같은 점 수의 패스를 보간하거나 CSS radius와 clip-path를 바꾼다",
+"runtime": "svg",
+"variants": [
+"shapes",
+"polygons",
+"square-circle",
+"blob"
+],
+"core": "shape-morph",
+"sources": [
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/uiverse-io/galaxy",
+"repo": "uiverse-io/galaxy",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "infinitypathloader",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-080",
+"en": "Infinity Path Loader",
+"ko": "무한대 경로 로더",
+"aka": [],
+"family": "loop",
+"what": "점이나 짧은 선이 무한대 모양 경로를 끊김 없이 돈다.",
+"why": "끝없이 이어지는 진행을 표현한다.",
+"params": "도감 기본값: 2000ms, 경로 폭 80px, linear, 무한 반복",
+"impl": "SVG 패스 위의 위치나 stroke-dashoffset을 반복 보간한다",
+"runtime": "svg",
+"variants": [
+"infinity"
+],
+"core": "",
+"sources": [
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "zigzagandwaveloader",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-081",
+"en": "Zigzag and Wave Loader",
+"ko": "지그재그와 물결 로더",
+"aka": [],
+"family": "loop",
+"what": "지그재그 또는 물결 선이 옆으로 흘러 일정한 파형을 반복한다.",
+"why": "신호 흐름과 연속 움직임을 보여 준다.",
+"params": "도감 기본값: 1500ms, 파장 24px, 진폭 8px, linear",
+"impl": "CSS 반복 그라디언트의 위치나 SVG 파형의 위상을 보간한다",
+"runtime": "css",
+"variants": [
+"zig-zag",
+"wavy",
+"line",
+"thin"
+],
+"core": "",
+"sources": [
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "rollingshapeloader",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-082",
+"en": "Rolling Shape Loader",
+"ko": "도형 구르기 로더",
+"aka": [],
+"family": "loop",
+"what": "원이나 다각형이 바닥을 따라 구르거나 모서리를 축으로 넘어간다.",
+"why": "이동을 동반한 반복 작업을 보여 준다.",
+"params": "도감 기본값: 1600ms, 이동 80px, 회전 360deg, linear",
+"impl": "CSS translateX와 rotate를 반지름에 맞춰 보간한다",
+"runtime": "css",
+"variants": [
+"rolling",
+"wobbling",
+"bouncing",
+"squishy"
+],
+"core": "",
+"sources": [
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "arcadechomploader",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-083",
+"en": "Arcade Chomp Loader",
+"ko": "입을 벌려 점 먹기 로더",
+"aka": [],
+"family": "loop",
+"what": "입을 벌리는 원형 캐릭터가 연속된 작은 점을 삼킨다.",
+"why": "대기 시간을 장난스럽게 표현한다.",
+"params": "도감 기본값: 1000ms, 입각 60deg, 점 간격 20px, linear",
+"impl": "CSS 두 반원 회전과 점의 반복 이동을 맞춘다",
+"runtime": "css",
+"variants": [
+"arcade",
+"hungry"
+],
+"core": "",
+"sources": [
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/uiverse-io/galaxy",
+"repo": "uiverse-io/galaxy",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "hypnoticpatternloader",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-084",
+"en": "Hypnotic Pattern Loader",
+"ko": "최면 무늬 로더",
+"aka": [],
+"family": "loop",
+"what": "동심원이나 반복 줄무늬가 회전 또는 신축하며 시각적 진동을 만든다.",
+"why": "강한 몰입과 추상적 진행감을 준다.",
+"params": "도감 기본값: 2400ms, 무늬 8겹, 회전 360deg, linear",
+"impl": "CSS 반복 그라디언트와 rotate 또는 scale을 반복한다",
+"runtime": "css",
+"variants": [
+"hypnotic",
+"glowing",
+"colorful"
+],
+"core": "",
+"sources": [
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "watchingeyesloader",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-085",
+"en": "Watching Eyes Loader",
+"ko": "움직이는 눈 로더",
+"aka": [],
+"family": "loop",
+"what": "한 쌍의 눈동자가 좌우로 이동하고 눈꺼풀이 잠깐 닫힌다.",
+"why": "살아 있는 대기와 친근함을 준다.",
+"params": "도감 기본값: 3000ms, 시선 이동 6px, 깜박임 150ms",
+"impl": "CSS 눈동자 translate와 눈꺼풀 scaleY를 시간표로 반복한다",
+"runtime": "css",
+"variants": [
+"eyes"
+],
+"core": "",
+"sources": [
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "naturegrowthloader",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-086",
+"en": "Nature Growth Loader",
+"ko": "자연 성장 로더",
+"aka": [],
+"family": "loop",
+"what": "식물이나 해와 같은 작은 자연 도형이 자라거나 떠오르며 반복한다.",
+"why": "편안하고 유기적인 대기를 만든다.",
+"params": "도감 기본값: 2400ms, 성장 0에서 1, ease-in-out",
+"impl": "SVG 가지와 잎의 scale 및 원형 도형 위치를 순차 보간한다",
+"runtime": "svg",
+"variants": [
+"nature"
+],
+"core": "",
+"sources": [
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "conveyorandmazeloader",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-087",
+"en": "Conveyor and Maze Loader",
+"ko": "컨베이어와 경로 로더",
+"aka": [],
+"family": "loop",
+"what": "작은 객체가 컨베이어나 미로 경로를 따라 반복 이동한다.",
+"why": "단계 처리와 생산 흐름을 보여 준다.",
+"params": "도감 기본값: 2400ms, 객체 간격 300ms, 경로 길이 120px, linear",
+"impl": "SVG 경로를 샘플링해 객체 위치를 반복 보간한다",
+"runtime": "svg",
+"variants": [
+"factory",
+"maze",
+"mechanic",
+"arrow"
+],
+"core": "",
+"sources": [
+{
+"url": "https://css-loaders.com/",
+"repo": "css-loaders.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "skeletonloading",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-088",
+"en": "Skeleton Loading",
+"ko": "스켈레톤 로딩",
+"aka": [
+"Placeholder Pulse"
+],
+"family": "loop",
+"what": "콘텐츠를 대신하는 회색 블록이 밝아졌다 어두워지거나 빛 띠가 지나간다.",
+"why": "곧 들어올 콘텐츠의 구조를 미리 보여 준다.",
+"params": "도감 기본값: 1600ms, 밝기 0.6에서 1, sweep 100%, ease-in-out",
+"impl": "CSS placeholder의 opacity 또는 background-position을 반복한다",
+"runtime": "css",
+"variants": [
+"Skeleton",
+"shimmer",
+"placeholder"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/shadcn-ui/ui",
+"repo": "shadcn-ui/ui",
+"license": "MIT"
+},
+{
+"url": "https://github.com/uiverse-io/galaxy",
+"repo": "uiverse-io/galaxy",
+"license": "MIT"
+},
+{
+"url": "https://github.com/magicuidesign/magicui",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "infinitemarquee",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-111",
+"en": "Infinite Marquee",
+"ko": "무한 흐름 띠",
+"aka": [
+"Ticker Loop",
+"Infinite Slider"
+],
+"family": "loop",
+"what": "문구와 로고 또는 카드가 일정한 방향으로 계속 흘러간다.",
+"why": "다수의 사례와 지속 흐름을 보여 준다.",
+"params": "도감 기본값: 주기 20000ms, 속도 40px/s, 간격 24px, linear",
+"impl": "HTML 항목 묶음을 반복 배치하고 묶음 길이만큼 translate한다",
+"runtime": "css",
+"variants": [
+"Marquee",
+"LogoLoop",
+"Infinite Slider",
+"Infinite Moving Cards",
+"DriftWall",
+"marquee",
+"infinite-slider",
+"infinite-moving-cards"
+],
+"core": "",
+"sources": [
+{
+"url": "https://magicui.design/docs/components/marquee",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/infinite-moving-cards",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://motion-primitives.com/docs/infinite-slider",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+},
+{
+"url": "https://tympanus.net/codrops/2020/05/23/an-infinitely-scrollable-vertical-menu/",
+"repo": "tympanus.net/codrops",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "velocitymarquee",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-112",
+"en": "Velocity Marquee",
+"ko": "속도 반응 흐름 띠",
+"aka": [],
+"family": "loop",
+"what": "흐르는 문구가 스크롤 속도에 따라 더 빠르게 이동하거나 방향을 바꾼다.",
+"why": "조작의 속도와 에너지를 보여 준다.",
+"params": "도감 기본값: 기본 30px/s, 속도 배율 2, 감쇠 500ms",
+"impl": "GSAP 코어로 측정 또는 지정한 스크롤 속도를 띠 이동에 누적한다",
+"runtime": "gsap",
+"variants": [
+"Scroll Based Velocity",
+"ScrollVelocity",
+"scroll-based-velocity"
+],
+"core": "",
+"sources": [
+{
+"url": "https://magicui.design/docs/components/scroll-based-velocity",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "orbitingobjects",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-113",
+"en": "Orbiting Objects",
+"ko": "객체 공전",
+"aka": [],
+"family": "loop",
+"what": "아이콘이나 이미지가 중심 객체 주위를 같은 또는 서로 다른 궤도로 돈다.",
+"why": "중심과 연결된 대상들의 관계를 보여 준다.",
+"params": "도감 기본값: 10000ms, 반경 120px, 객체 6개, linear",
+"impl": "CSS 중심 컨테이너를 회전하고 자식은 반대로 회전시킨다",
+"runtime": "css",
+"variants": [
+"Orbiting Circles",
+"OrbitImages",
+"Icon Cloud",
+"orbiting-circles",
+"icon-cloud"
+],
+"core": "",
+"sources": [
+{
+"url": "https://magicui.design/docs/components/orbiting-circles",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "ambientglow",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-120",
+"en": "Ambient Glow",
+"ko": "배경 발광 호흡",
+"aka": [],
+"family": "loop",
+"what": "표면 뒤의 부드러운 다색 빛이 천천히 밝아지고 위치가 변한다.",
+"why": "따뜻한 공간감과 지속 활동을 만든다.",
+"params": "도감 기본값: 5000ms, blur 48px, 밝기 0.5에서 1, ease-in-out",
+"impl": "CSS 흐린 그라디언트 면의 위치와 opacity를 반복한다",
+"runtime": "css",
+"variants": [
+"Backlight",
+"Glow Effect",
+"BorderGlow",
+"Neon Gradient Card",
+"Background Gradient",
+"neon-gradient-card",
+"backlight",
+"glow-effect",
+"background-gradient"
+],
+"core": "",
+"sources": [
+{
+"url": "https://magicui.design/docs/components/neon-gradient-card",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/background-gradient",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://motion-primitives.com/docs/glow-effect",
+"repo": "ibelick/motion-primitives",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "aurorafield",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-125",
+"en": "Aurora Field",
+"ko": "오로라 배경",
+"aka": [],
+"family": "loop",
+"what": "흐린 다색 띠가 넓게 휘어지고 색이 천천히 섞이며 흐른다.",
+"why": "몽환적이고 부드러운 분위기를 만든다.",
+"params": "도감 기본값: 12000ms, 색 3개, 진폭 20%, 속도 0.2, 반복",
+"impl": "WebGL 노이즈 필드에 색 띠를 합성하거나 CSS 흐린 그라디언트를 변형한다",
+"runtime": "webgl",
+"variants": [
+"Aurora Background",
+"Aurora",
+"SoftAurora",
+"ColorBends",
+"DarkVeil",
+"aurora-background"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/magicuidesign/magicui",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/aurora-background",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "flowingwavefield",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-126",
+"en": "Flowing Wave Field",
+"ko": "흐르는 물결 배경",
+"aka": [],
+"family": "loop",
+"what": "여러 곡선과 줄무늬가 위상을 달리하며 파도처럼 움직인다.",
+"why": "유기적인 흐름과 연결감을 준다.",
+"params": "도감 기본값: 6000ms, 진폭 30px, 파장 240px, 선 12개",
+"impl": "canvas 각 선의 사인 또는 노이즈 위상을 시간에 따라 갱신한다",
+"runtime": "canvas",
+"variants": [
+"Wavy Background",
+"Background Lines",
+"Waves",
+"LineWaves",
+"FloatingLines",
+"Strands",
+"Threads",
+"SlicedWaves",
+"ShapeWaves",
+"GhostFibers",
+"wavy-background",
+"background-lines"
+],
+"core": "",
+"sources": [
+{
+"url": "https://ui.aceternity.com/components/wavy-background",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "breathingenergyorb",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-130",
+"en": "Breathing Energy Orb",
+"ko": "에너지 구체",
+"aka": [],
+"family": "loop",
+"what": "빛나는 구체의 가장자리가 부드럽게 변형되고 내부 빛이 순환한다.",
+"why": "집중된 에너지와 대기 상태를 보여 준다.",
+"params": "도감 기본값: 5000ms, 반경 120px, 변형 10%, 속도 0.25",
+"impl": "WebGL 원형 거리장에 시간 노이즈와 색 흐름을 합성한다",
+"runtime": "webgl",
+"variants": [
+"Orb",
+"ShapeBlur"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "flickeringgrid",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-178",
+"en": "Flickering Grid",
+"ko": "깜박이는 격자",
+"aka": [],
+"family": "loop",
+"what": "격자의 일부 칸이나 점이 독립적으로 밝아지고 사라진다.",
+"why": "활성화된 단위와 디지털 환경을 보여 준다.",
+"params": "도감 기본값: 갱신 100ms, 격자 24px, 활성 비율 0.15, fade 500ms",
+"impl": "canvas 시드가 고정된 칸별 밝기를 시간에 따라 갱신한다",
+"runtime": "canvas",
+"variants": [
+"Flickering Grid",
+"Animated Grid Pattern",
+"Dotted Glow Background",
+"DotField",
+"DotGrid",
+"AcidSquares",
+"flickering-grid",
+"animated-grid-pattern",
+"dotted-glow-background"
+],
+"core": "",
+"sources": [
+{
+"url": "https://magicui.design/docs/components/flickering-grid",
+"repo": "magicuidesign/magicui",
+"license": "MIT"
+},
+{
+"url": "https://ui.aceternity.com/components/dotted-glow-background",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "radarandscansweep",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-181",
+"en": "Radar and Scan Sweep",
+"ko": "레이더와 스캔 쓸기",
+"aka": [
+"Scanning Sweep"
+],
+"family": "loop",
+"what": "빛나는 선이나 부채꼴이 영역을 훑고 통과한 점이 잠깐 빛난다.",
+"why": "탐색과 감지 활동을 알린다.",
+"params": "도감 기본값: 3000ms, 회전 360deg 또는 이동 100%, 잔광 800ms",
+"impl": "CSS conic-gradient를 회전하거나 canvas 스캔 거리로 점 밝기를 정한다",
+"runtime": "css",
+"variants": [
+"Radar",
+"Scanner",
+"GridScan",
+"Image Generation Loader",
+"image-generation-loader"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://ui.aceternity.com/components/image-generation-loader",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "emptystateillustrationloop",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-194",
+"en": "Empty State Illustration Loop",
+"ko": "빈 상태 일러스트 루프",
+"aka": [],
+"family": "loop",
+"what": "빈 상자나 작은 캐릭터가 가볍게 움직이는 일러스트가 반복된다.",
+"why": "데이터가 없음을 부담 없이 알려 준다.",
+"params": "도감 기본값: 3000ms, 부상 6px, 눈 깜박임 150ms, ease-in-out",
+"impl": "SVG 일러스트 부위의 translate와 scale 및 opacity를 독립 시간차로 반복한다",
+"runtime": "svg",
+"variants": [
+"Empty State",
+"no results"
+],
+"core": "",
+"sources": [
+{
+"url": "https://lottiefiles.com/free-animation/empty-state-EfSeWUwwKs",
+"repo": "LottieFiles/Creative Salt & Pepper",
+"license": "Lottie Simple License"
+}
+]
+}
+]
+},
+{
+"key": "papershredexit",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R3-202",
+"en": "Paper Shred Exit",
+"ko": "종이 파쇄 퇴장",
+"aka": [],
+"family": "entrance",
+"what": "문서가 좁은 틈으로 들어가 여러 가느다란 띠로 잘려 떨어지고 사라진다.",
+"why": "되돌리기 어려운 삭제와 해체를 표현한다.",
+"params": "도감 기본값: 2000ms, 공급 180px/s, 띠 폭 10px, 낙하 140px",
+"impl": "canvas 문서 영역을 세로 조각으로 나눠 틈 아래에서 낙하와 말림을 보간한다",
+"runtime": "canvas",
+"variants": [
+"Shredder"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+}
+]
+}
+]
+},
+{
+"key": "tiledpatterndrift",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R3-203",
+"en": "Tiled Pattern Drift",
+"ko": "반복 무늬 이동",
+"aka": [],
+"family": "loop",
+"what": "도형 격자와 선 무늬가 일정한 방향으로 흘러 경계에서 다시 이어진다.",
+"why": "기하학적 배경에 연속 흐름을 준다.",
+"params": "도감 기본값: 6000ms, 셀 40px, 속도 20px/s, linear",
+"impl": "CSS 반복 배경 위치를 한 타일 길이만큼 움직이거나 canvas 도형 좌표를 모듈러 이동한다",
+"runtime": "css",
+"variants": [
+"ShapeGrid",
+"Scales",
+"정사각",
+"육각",
+"원",
+"삼각",
+"상하좌우",
+"대각",
+"scales"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/DavidHDev/react-bits",
+"repo": "DavidHDev/react-bits",
+"license": "MIT + Commons Clause v1.0"
+},
+{
+"url": "https://ui.aceternity.com/components/scales",
+"repo": "ui.aceternity.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "travelingstrokesegment",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R5-002",
+"en": "Traveling Stroke Segment",
+"ko": "이동 선분",
+"aka": [
+"Trim Paths chase"
+],
+"family": "loop",
+"what": "짧은 선분이 닫힌 윤곽을 계속 돈다.",
+"why": "진행 중인 상태와 순환을 나타낸다.",
+"params": "제안 기본값: 1800ms; 길이 18%; offset 0→100%; linear",
+"impl": "SVG 대시 길이는 고정하고 오프셋을 순환시킨다.",
+"runtime": "svg",
+"variants": [
+"단일 선분",
+"다중 추적선"
+],
+"core": "",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/drawing-painting-and-paths/shapes-and-shape-attributes/shape-attributes-paint-operations-path.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "animateddashes",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R5-013",
+"en": "Animated Dashes",
+"ko": "움직이는 점선",
+"aka": [],
+"family": "loop",
+"what": "점선의 간격과 위상이 바뀌어 윤곽을 따라 흐른다.",
+"why": "이동 방향이나 연결 흐름을 표시한다.",
+"params": "제안 기본값: 1200ms; dash 8px; gap 6px; linear",
+"impl": "SVG stroke-dasharray와 stroke-dashoffset을 갱신한다.",
+"runtime": "svg",
+"variants": [
+"행진 점선",
+"대시 길이 변화"
+],
+"core": "",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/drawing-painting-and-paths/shapes-and-shape-attributes/shape-attributes-paint-operations-path.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "seamlesswiggleloop",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R5-016",
+"en": "Seamless Wiggle Loop",
+"ko": "끊김 없는 위글 루프",
+"aka": [],
+"family": "loop",
+"what": "불규칙한 흔들림이 끝에서 처음으로 자연스럽게 이어진다.",
+"why": "반복 배경에 생동감을 준다.",
+"params": "제안 기본값: 3000ms; 1Hz; 진폭 8px",
+"impl": "서로 한 주기 떨어진 노이즈 샘플을 교차 보간한다.",
+"runtime": "canvas",
+"variants": [
+"위치 루프",
+"회전 루프"
+],
+"core": "",
+"sources": [
+{
+"url": "https://motionscript.com/design-guide/looping-wiggle.html",
+"repo": "motionscript.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "cycleloop",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R5-017",
+"en": "Cycle Loop",
+"ko": "사이클 루프",
+"aka": [
+"loopOut cycle"
+],
+"family": "loop",
+"what": "동작의 마지막에 시작 상태로 돌아가 같은 움직임을 반복한다.",
+"why": "규칙적인 리듬과 지속성을 전달한다.",
+"params": "제안 기본값: 1200ms; repeat 무한; linear",
+"impl": "로컬 시간을 주기로 나누고 마지막과 첫 상태를 일치시킨다.",
+"runtime": "gsap",
+"variants": [
+"회전 루프",
+"경로 루프"
+],
+"core": "",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/work-with-expressions/expression-examples/expression-examples.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "pingpongloop",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R5-018",
+"en": "Ping Pong Loop",
+"ko": "핑퐁 루프",
+"aka": [
+"loopOut pingpong"
+],
+"family": "loop",
+"what": "대상이 두 끝 상태 사이를 왕복한다.",
+"why": "호흡·진동·대기 상태를 나타낸다.",
+"params": "제안 기본값: 1000ms 편도; sine.inOut",
+"impl": "GSAP repeat와 yoyo로 상태를 왕복시킨다.",
+"runtime": "gsap",
+"variants": [
+"위치 왕복",
+"밝기 호흡",
+"크기 호흡"
+],
+"core": "",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/work-with-expressions/expression-examples/expression-examples.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "offsetloop",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R5-019",
+"en": "Offset Loop",
+"ko": "누적 오프셋 루프",
+"aka": [
+"loopOut offset"
+],
+"family": "loop",
+"what": "같은 동작이 반복될 때마다 마지막 변위가 더해져 계속 전진한다.",
+"why": "끝없는 이동과 누적을 표현한다.",
+"params": "제안 기본값: 1000ms; 주기당 80px; linear",
+"impl": "주기 번호의 누적 변위에 주기 내부 보간값을 더한다.",
+"runtime": "gsap",
+"variants": [
+"계단 상승",
+"누적 회전"
+],
+"core": "",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/work-with-expressions/expression-language-reference/expression-language-reference.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "paintreveal",
+"family": "entrance",
+"core": "mask-reveal",
+"rows": [
+{
+"id": "R5-050",
+"en": "Paint Reveal",
+"ko": "붓질 리빌",
+"aka": [
+"Write-on reveal",
+"Stroke reveal"
+],
+"family": "entrance",
+"what": "붓이 지나간 두꺼운 자국 안에서 이미지가 드러난다.",
+"why": "그리기와 제작의 과정을 보여준다.",
+"params": "제안 기본값: 1200ms; brush 48px; hardness 70%",
+"impl": "진행 중인 경로를 두꺼운 알파 마스크로 그린다.",
+"runtime": "canvas",
+"variants": [
+"서명 리빌",
+"넓은 붓질",
+"여러 획"
+],
+"core": "mask-reveal",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/generate-effects.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "vegasrunninglights",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R5-060",
+"en": "Vegas Running Lights",
+"ko": "윤곽 추적 조명",
+"aka": [
+"Vegas effect"
+],
+"family": "loop",
+"what": "짧은 밝은 점과 선분이 대상 윤곽을 따라 달린다.",
+"why": "쇼 조명과 활성 상태를 표현한다.",
+"params": "제안 기본값: 1800ms; 12구간; pulse 10%; linear",
+"impl": "윤곽 샘플에 위상별 밝기와 글로우를 적용한다.",
+"runtime": "svg",
+"variants": [
+"점 조명",
+"선분 조명"
+],
+"core": "",
+"sources": [
+{
+"url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/generate-effects.html",
+"repo": "helpx.adobe.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "logostroketofill",
+"family": "entrance",
+"core": "line-draw",
+"rows": [
+{
+"id": "R5-088",
+"en": "Logo Stroke To Fill",
+"ko": "로고 윤곽에서 면으로",
+"aka": [
+"Outline logo reveal"
+],
+"family": "entrance",
+"what": "로고 윤곽이 먼저 그려지고 내부 색이 나타난다.",
+"why": "브랜드 형태를 단계적으로 인지하게 한다.",
+"params": "제안 기본값: 윤곽 900ms; 채움 300ms; gap 100ms",
+"impl": "SVG 윤곽 드로잉 뒤 채움 알파를 높인다.",
+"runtime": "svg",
+"variants": [
+"동시 채움",
+"부분 채움"
+],
+"core": "line-draw",
+"sources": [
+{
+"url": "https://motiondesign.school/blog/animation-principles-in-logo-animation/",
+"repo": "motiondesign.school",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "logopartsassembly",
+"family": "entrance",
+"core": "dot-regroup",
+"rows": [
+{
+"id": "R5-089",
+"en": "Logo Parts Assembly",
+"ko": "로고 부품 조립",
+"aka": [
+"Logo build"
+],
+"family": "entrance",
+"what": "떨어져 있던 도형들이 모여 정확한 로고를 이룬다.",
+"why": "브랜드의 구조와 결합을 보여준다.",
+"params": "제안 기본값: 900ms; 이동 80px; stagger 50ms; power3.out",
+"impl": "개별 도형의 위치·회전을 최종 로고 좌표로 보간한다.",
+"runtime": "gsap",
+"variants": [
+"방사 조립",
+"축 정렬",
+"퍼즐 조립"
+],
+"core": "dot-regroup",
+"sources": [
+{
+"url": "https://motiondesign.school/blog/animation-principles-in-logo-animation/",
+"repo": "motiondesign.school",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "logonegativespacereveal",
+"family": "entrance",
+"core": "mask-reveal",
+"rows": [
+{
+"id": "R5-090",
+"en": "Logo Negative Space Reveal",
+"ko": "로고 네거티브 공간 리빌",
+"aka": [],
+"family": "entrance",
+"what": "큰 면이 이동하거나 잘리며 빈 공간 안에 로고가 드러난다.",
+"why": "숨겨진 형태를 발견하는 즐거움을 준다.",
+"params": "제안 기본값: 800ms; mask travel 100%; power3.inOut",
+"impl": "면의 차집합 마스크로 로고의 음각 영역을 드러낸다.",
+"runtime": "svg",
+"variants": [
+"음각 컷아웃",
+"배경 반전"
+],
+"core": "mask-reveal",
+"sources": [
+{
+"url": "https://motiondesign.school/blog/animation-principles-in-logo-animation/",
+"repo": "motiondesign.school",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "liquidreveal",
+"family": "entrance",
+"core": "mask-reveal",
+"rows": [
+{
+"id": "R5-091",
+"en": "Liquid Reveal",
+"ko": "액체 리빌",
+"aka": [
+"Fluid reveal"
+],
+"family": "entrance",
+"what": "불규칙한 액체 경계가 퍼지며 이미지나 로고를 드러낸다.",
+"why": "유연하고 유기적인 등장감을 준다.",
+"params": "제안 기본값: 1100ms; 경계 요철 20px; power2.inOut",
+"impl": "자체 노이즈 변형 경로를 확대해 알파 마스크로 사용한다.",
+"runtime": "svg",
+"variants": [
+"방울 확산",
+"잉크 번짐",
+"멜트 리빌"
+],
+"core": "mask-reveal",
+"sources": [
+{
+"url": "https://au.linkedin.com/posts/ben-marriott-223b7456_new-tutorial-animating-a-liquid-reveal-in-activity-6677034182167945216-6dAj",
+"repo": "au.linkedin.com",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "logomotiftransformation",
+"family": "entrance",
+"core": "shape-morph",
+"rows": [
+{
+"id": "R5-092",
+"en": "Logo Motif Transformation",
+"ko": "로고 모티프 변환",
+"aka": [],
+"family": "entrance",
+"what": "로고의 한 요소가 늘어나거나 변해 전체 심볼을 만든다.",
+"why": "브랜드 모티프와 완성 로고의 연결을 보여준다.",
+"params": "제안 기본값: 1000ms; 3단계; power2.inOut",
+"impl": "하나의 도형 경로와 복제 수를 단계별 보간한다.",
+"runtime": "svg",
+"variants": [
+"점에서 심볼",
+"선에서 글자",
+"아이콘에서 로고"
+],
+"core": "shape-morph",
+"sources": [
+{
+"url": "https://motiondesign.school/blog/animation-principles-in-logo-animation/",
+"repo": "motiondesign.school",
+"license": "unknown"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "clippedvectorreveal",
+"family": "entrance",
+"core": "mask-reveal",
+"rows": [
+{
+"id": "R5-109",
+"en": "Clipped Vector Reveal",
+"ko": "벡터 클리핑 리빌",
+"aka": [
+"Track matte reveal"
+],
+"family": "entrance",
+"what": "도형 마스크가 이동하거나 확대되어 내부 그림만 드러난다.",
+"why": "내용을 통제된 순서로 공개한다.",
+"params": "제안 기본값: 700ms; clip scale 0→1; power2.out",
+"impl": "SVG clipPath를 변환해 내부 벡터 그룹을 공개한다.",
+"runtime": "svg",
+"variants": [
+"이동 마스크",
+"확대 마스크",
+"알파 마스크"
+],
+"core": "mask-reveal",
+"sources": [
+{
+"url": "https://github.com/airbnb/lottie-web/wiki/Features",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+},
+{
+"url": "https://github.com/airbnb/lottie-web",
+"repo": "airbnb/lottie-web",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "radialsweepreveal",
+"family": "entrance",
+"core": "mask-reveal",
+"rows": [
+{
+"id": "R6-018",
+"en": "Radial sweep reveal",
+"ko": "방사 차트 회전 공개",
+"aka": [],
+"family": "entrance",
+"what": "원의 중심에서 회전하는 경계가 부채꼴과 눈금을 차례로 드러낸다.",
+"why": "전체 비율을 일정한 읽기 순서로 소개한다.",
+"params": "기본 1200ms, 시작각 -90도, 회전각 360도, linear",
+"impl": "SVG clipPath의 부채꼴 각도를 늘려 차트를 공개한다.",
+"runtime": "svg",
+"variants": [
+"시계 방향",
+"반시계 방향",
+"부분 원"
+],
+"core": "mask-reveal",
+"sources": [
+{
+"url": "https://www.chartjs.org/docs/latest/configuration/animations.html",
+"repo": "chartjs/Chart.js",
+"license": "MIT"
+},
+{
+"url": "https://echarts.apache.org/handbook/en/basics/release-note/5-2-0/",
+"repo": "apache/echarts",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "loopinglinetension",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R6-069",
+"en": "Looping line tension",
+"ko": "선 곡률 반복 변화",
+"aka": [],
+"family": "loop",
+"what": "같은 데이터 점을 잇는 선이 직선에 가까워졌다가 둥근 곡선으로 돌아간다.",
+"why": "선 보간 방식의 차이를 보여주거나 차트를 반복 강조한다.",
+"params": "기본 편도 1000ms, tension 0에서 1, linear, 무한 반복",
+"impl": "점 좌표를 유지하고 Bézier 제어점의 tension만 보간한다.",
+"runtime": "canvas",
+"variants": [
+"직선과 곡선",
+"낮은 곡률",
+"높은 곡률"
+],
+"core": "",
+"sources": [
+{
+"url": "https://www.chartjs.org/docs/latest/samples/animations/loop.html",
+"repo": "chartjs/Chart.js",
+"license": "MIT"
+},
+{
+"url": "https://www.chartjs.org/docs/latest/configuration/animations.html",
+"repo": "chartjs/Chart.js",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "ambientgloberotation",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R6-075",
+"en": "Ambient globe rotation",
+"ko": "지구 지속 회전",
+"aka": [],
+"family": "loop",
+"what": "지구가 일정 속도로 계속 회전하며 대륙이 차례로 나타난다.",
+"why": "세계 전체를 대상으로 하는 데이터의 범위를 느낀다.",
+"params": "기본 30000ms당 360도, linear, 기울기 15도",
+"impl": "재생 시각을 구면 투영의 경도 회전각으로 매핑한다.",
+"runtime": "svg",
+"variants": [
+"일정 회전",
+"일시 정지",
+"느린 로케이터"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/reuters-graphics/chart-module-globetrotter",
+"repo": "reuters-graphics/chart-module-globetrotter",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "spiralassembly",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R7-008",
+"en": "Spiral assembly",
+"ko": "나선 궤도 조립",
+"aka": [
+"SpiralIn"
+],
+"family": "entrance",
+"what": "조각들이 바깥의 나선 궤도를 따라 들어와 최종 형태에 붙는다.",
+"why": "흩어진 조각이 하나의 구조로 모임을 느낀다.",
+"params": "재현 기본값: 1500 ms, 회전 540 deg, 반경 300 px, easeOut",
+"impl": "조각별 극좌표 반경과 각도를 최종 좌표까지 보간한다.",
+"runtime": "gsap",
+"variants": [
+"안쪽 수렴",
+"바깥쪽 해체"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/creation.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "fadevisibilitytransition",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R7-009",
+"en": "Fade visibility transition",
+"ko": "페이드 등장과 퇴장",
+"aka": [
+"FadeIn",
+"FadeOut",
+"FadeInFromPoint",
+"FadeOutToPoint",
+"VFadeIn",
+"VFadeOut",
+"VFadeInThenOut"
+],
+"family": "entrance",
+"what": "대상이 점차 선명해지거나 투명해지며 화면에 들어오거나 나간다.",
+"why": "부드럽게 요소의 가시 상태를 바꾼다.",
+"params": "재현 기본값: 450 ms, opacity 0~1, 선택 이동 24 px, easeOut",
+"impl": "HTML 또는 SVG의 opacity와 선택적 transform을 보간한다.",
+"runtime": "gsap",
+"variants": [
+"제자리",
+"이동 동반",
+"확대 동반",
+"축소 동반"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/fading.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+},
+{
+"url": "https://github.com/3b1b/manim/blob/master/manimlib/animation/fading.py",
+"repo": "3b1b/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "growfromanchor",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R7-010",
+"en": "Grow from anchor",
+"ko": "앵커에서 자라기",
+"aka": [
+"GrowFromPoint",
+"GrowFromCenter",
+"GrowFromEdge",
+"ShrinkToCenter"
+],
+"family": "entrance",
+"what": "작은 점이나 가장자리에서 대상이 커져 완전한 크기가 된다. 반대로 중심에 접혀 사라질 수 있다.",
+"why": "요소의 시작 위치나 발생 지점을 드러낸다.",
+"params": "재현 기본값: 650 ms, scale 0~1, easeOut, 앵커 중심",
+"impl": "transform-origin을 지정하고 scale을 보간한다.",
+"runtime": "gsap",
+"variants": [
+"중심 성장",
+"모서리 성장",
+"임의 점 성장",
+"중심 축소"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/growing.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+},
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/transform.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "spingrowentrance",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R7-012",
+"en": "Spin grow entrance",
+"ko": "회전하며 커지는 등장",
+"aka": [
+"SpinInFromNothing"
+],
+"family": "entrance",
+"what": "대상이 작은 크기에서 회전하며 커진 뒤 정방향으로 멈춘다.",
+"why": "등장 순간에 활력과 존재감을 준다.",
+"params": "재현 기본값: 700 ms, scale 0~1, 회전 180 deg, easeOut",
+"impl": "scale과 rotation을 같은 타임라인에서 보간한다.",
+"runtime": "gsap",
+"variants": [
+"시계방향",
+"반시계방향"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/growing.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "animatedperimeter",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R7-021",
+"en": "Animated perimeter",
+"ko": "움직이는 컬러 둘레",
+"aka": [
+"AnimatedBoundary"
+],
+"family": "loop",
+"what": "대상의 둘레를 색이 변하는 선이 계속 따라 돈다.",
+"why": "활성 상태나 선택 상태가 지속됨을 느낀다.",
+"params": "재현 기본값: 주기 2200 ms, 색 3개, 선폭 3 px, linear",
+"impl": "SVG dashoffset과 stroke 색을 반복 보간한다.",
+"runtime": "svg",
+"variants": [
+"단색 경계",
+"다색 경계"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/changing.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "hardappearancecut",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R7-051",
+"en": "Hard appearance cut",
+"ko": "즉시 나타나기",
+"aka": [
+"Add"
+],
+"family": "entrance",
+"what": "정해진 순간에 요소가 중간 과정 없이 화면에 나타난다.",
+"why": "컷의 순간을 분명히 하고 즉시 새 정보를 제시한다.",
+"params": "재현 기본값: 0 ms, 유지 800 ms, steps",
+"impl": "타임라인의 지정 시점에 visibility를 바꾼다.",
+"runtime": "gsap",
+"variants": [
+"단일 등장",
+"그룹 동시 등장"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/ManimCommunity/manim/blob/main/manim/animation/animation.py",
+"repo": "ManimCommunity/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "loopcursorreturn",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R7-102",
+"en": "Loop cursor return",
+"ko": "반복용 커서 복귀",
+"aka": [],
+"family": "loop",
+"what": "시연 끝에서 커서가 시작 위치로 자연스럽게 돌아가 다음 반복과 이어진다.",
+"why": "반복 시연의 경계가 거슬리지 않게 느껴진다.",
+"params": "재현 기본값: 복귀 700 ms, easeInOut, 시작과 끝 위치 일치",
+"impl": "마지막 커서 좌표를 첫 좌표까지 곡선으로 보간한다.",
+"runtime": "gsap",
+"variants": [
+"원호 복귀",
+"여백 경유 복귀"
+],
+"core": "",
+"sources": [
+{
+"url": "https://screen.studio/",
+"repo": "Screen Studio",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "flashingoutlineentrance",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R7-127",
+"en": "Flashing-outline entrance",
+"ko": "윤곽 섬광 동반 등장",
+"aka": [
+"FlashyFadeIn"
+],
+"family": "entrance",
+"what": "밝은 윤곽선이 대상을 훑는 동안 내부 대상이 점점 선명해진다.",
+"why": "등장과 주의 신호를 같은 순간에 만든다.",
+"params": "재현 기본값: 900 ms, 윤곽 2 px, 내부 지연 120 ms, smooth",
+"impl": "SVG 윤곽의 이동 dash와 내부 fill-opacity를 같은 타임라인에서 보간한다.",
+"runtime": "svg",
+"variants": [
+"윤곽 먼저",
+"윤곽과 내부 동시"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/3b1b/manim/blob/master/manimlib/animation/indication.py",
+"repo": "3b1b/manim",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "ambientparticledrift",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R8-015",
+"en": "Ambient Particle Drift",
+"ko": "앰비언트 입자 유영",
+"aka": [],
+"family": "loop",
+"what": "작고 옅은 입자가 서로 다른 속도로 떠다닌다.",
+"why": "공간에 생기를 주면서 본문보다 낮은 시각적 무게를 유지한다.",
+"params": "재현 제안 기본값: 8000ms, 입자 70개, 크기 1~4px, 속도 5~18px/s, 불투명도 0.25",
+"impl": "canvas에서 시드별 속도와 위상으로 입자 위치를 계산하고 경계를 순환한다.",
+"runtime": "canvas",
+"variants": [
+"별 먼지",
+"큰 원",
+"사각과 삼각 입자"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/tsparticles/presets/blob/HEAD/presets/ambient/README.md",
+"repo": "tsparticles/presets",
+"license": "MIT"
+},
+{
+"url": "https://github.com/tsparticles/presets/blob/HEAD/presets/stars/README.md",
+"repo": "tsparticles/presets",
+"license": "MIT"
+},
+{
+"url": "https://github.com/tsparticles/presets/blob/HEAD/presets/bigCircles/README.md",
+"repo": "tsparticles/presets",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "fireflytwinkle",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R8-025",
+"en": "Firefly Twinkle",
+"ko": "반딧불 점멸",
+"aka": [],
+"family": "loop",
+"what": "떠다니는 작은 빛이 서로 다른 박자로 밝아졌다 어두워진다.",
+"why": "따뜻하고 살아 있는 야간 분위기를 만든다.",
+"params": "재현 제안 기본값: 8000ms, 점 45개, 이동 8px/s, 점멸 주기 1700~3600ms, 글로 반경 8px",
+"impl": "canvas에서 시드별 위치와 밝기 위상으로 빛나는 점을 합성한다.",
+"runtime": "canvas",
+"variants": [
+"반딧불",
+"별 반짝임",
+"불규칙 맥박"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/tsparticles/presets/blob/HEAD/presets/firefly/README.md",
+"repo": "tsparticles/presets",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "elasticpendulum",
+"family": "loop",
+"core": "arc-motion",
+"rows": [
+{
+"id": "R8-037",
+"en": "Elastic Pendulum",
+"ko": "탄성 진자",
+"aka": [],
+"family": "loop",
+"what": "매달린 물체가 원호를 따라 흔들리며 진폭이 서서히 줄어든다.",
+"why": "무게와 관성, 평형으로 돌아오는 느낌을 준다.",
+"params": "재현 제안 기본값: 4000ms, 길이 150px, 시작각 30도, 감쇠 0.995/스텝, 스텝 8.33ms",
+"impl": "canvas에서 중력 토크로 진자각을 적분하거나 같은 감쇠 궤도를 직접 계산한다.",
+"runtime": "canvas",
+"variants": [
+"단진자",
+"이중 진자",
+"줄길이 변화"
+],
+"core": "arc-motion",
+"sources": [
+{
+"url": "https://natureofcode.com/oscillation/",
+"repo": "nature-of-code/noc-book-2",
+"license": "unknown"
+}
+]
+}
+]
+},
+{
+"key": "fluidrevealmask",
+"family": "entrance",
+"core": "mask-reveal",
+"rows": [
+{
+"id": "R8-049",
+"en": "Fluid Reveal Mask",
+"ko": "유체 드러내기 마스크",
+"aka": [],
+"family": "entrance",
+"what": "번지는 잉크 모양의 경계 안에서 숨은 이미지가 나타난다.",
+"why": "스며들거나 발견되는 느낌을 만든다.",
+"params": "재현 제안 기본값: 1800ms, 주입 반경 0.08UV, 밀도 임계값 0.15, 경계 부드러움 0.04",
+"impl": "WebGL에서 유체 염료 밀도를 알파 마스크로 사용해 두 레이어를 합성한다.",
+"runtime": "webgl",
+"variants": [
+"잉크 공개",
+"연무 공개",
+"유체 경계 전환"
+],
+"core": "mask-reveal",
+"sources": [
+{
+"url": "https://three-fluid-fx.artcreativecode.com/examples/glsl/minimal/reveal-mask/",
+"repo": "artcodev/three-fluid-fx",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "meshgradientflow",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R8-073",
+"en": "Mesh Gradient Flow",
+"ko": "메시 그라디언트 흐름",
+"aka": [
+"Animated mesh gradient",
+"Aurora gradient"
+],
+"family": "loop",
+"what": "부드러운 여러 색 덩어리가 천천히 위치와 크기를 바꾸며 서로 섞인다.",
+"why": "차분한 생기와 유동적인 배경을 만든다.",
+"params": "재현 제안 기본값: 8000ms, 색 4개, 왜곡 0.4, 중심 이동 0.15UV, 시간 속도 0.2/s",
+"impl": "WebGL에서 움직이는 색 중심의 거리 가중치와 워프 좌표로 색을 혼합한다.",
+"runtime": "webgl",
+"variants": [
+"오로라",
+"느린 컬러 블롭",
+"브랜드 팔레트"
+],
+"core": "",
+"sources": [
+{
+"url": "https://shaders.paper.design/mesh-gradient",
+"repo": "paper-design/shaders",
+"license": "Apache-2.0"
+},
+{
+"url": "https://github.com/iart-ai/webgl-animation-skills/blob/HEAD/skills/shader-glsl/SKILL.md",
+"repo": "iart-ai/webgl-animation-skills",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "skeletalwalkcycle",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R8-103",
+"en": "Skeletal Walk Cycle",
+"ko": "스켈레탈 걷기 루프",
+"aka": [],
+"family": "loop",
+"what": "관절을 가진 캐릭터가 팔과 다리를 번갈아 움직이며 반복해서 걷는다.",
+"why": "등장인물의 생동감과 이동을 표현한다.",
+"params": "재현 제안 기본값: 1200ms 주기, 보폭 0.5단위, 팔과 다리 위상차 180도, linear 클립 시간",
+"impl": "WebGL에서 뼈의 위치와 회전 키프레임을 보간하고 스킨 가중치로 정점을 변형한다.",
+"runtime": "webgl",
+"variants": [
+"제자리 걷기",
+"전진 걷기",
+"달리기"
+],
+"core": "",
+"sources": [
+{
+"url": "https://threejs.org/examples/#webgl_animation_walk",
+"repo": "mrdoob/three.js",
+"license": "MIT"
+},
+{
+"url": "https://threejs.org/examples/#webgl_animation_skinning_blending",
+"repo": "mrdoob/three.js",
+"license": "MIT"
+},
+{
+"url": "https://github.com/heygen-com/hyperframes/blob/HEAD/skills/hyperframes-animation/adapters/lottie.md",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+}
+]
+}
+]
+},
+{
+"key": "svgstroketofill",
+"family": "entrance",
+"core": "",
+"rows": [
+{
+"id": "R8-115",
+"en": "SVG Stroke to Fill",
+"ko": "SVG 윤곽에서 채움",
+"aka": [],
+"family": "entrance",
+"what": "먼저 얇은 윤곽이 그려지고 내부 색이 차올라 완성된 아이콘이 된다.",
+"why": "스케치에서 완성품으로 바뀌는 과정을 보여준다.",
+"params": "재현 제안 기본값: 1600ms, 선 그리기 1000ms, 채움 500ms, 겹침 150ms, cubic.out",
+"impl": "SVG에서 dashoffset으로 선을 드러낸 뒤 같은 경로의 fill 알파를 올린다.",
+"runtime": "svg",
+"variants": [
+"선에서 색",
+"선만 유지",
+"글로 뒤 채움"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/maxwellito/vivus",
+"repo": "maxwellito/vivus",
+"license": "MIT"
+},
+{
+"url": "https://github.com/diffusionstudio/lottie",
+"repo": "diffusionstudio/lottie",
+"license": "MIT"
+}
+]
+}
+]
+},
+{
+"key": "svginternaliconmotion",
+"family": "loop",
+"core": "",
+"rows": [
+{
+"id": "R8-118",
+"en": "SVG Internal Icon Motion",
+"ko": "SVG 아이콘 내부 모션",
+"aka": [],
+"family": "loop",
+"what": "아이콘의 외곽은 고정된 채 바늘, 날개, 작은 점 같은 내부 부품이 움직인다.",
+"why": "기능과 활성 상태를 작은 반복 동작으로 전달한다.",
+"params": "재현 제안 기본값: 2400ms, 바늘 회전 360도 또는 흔들림 ±15도, 주기 1800ms, sine.inOut",
+"impl": "SVG에서 부품별 명시적 중심 좌표를 지정하고 회전과 알파를 계산한다.",
+"runtime": "svg",
+"variants": [
+"시계 바늘",
+"팬 날개",
+"전송 점"
+],
+"core": "",
+"sources": [
+{
+"url": "https://github.com/heygen-com/hyperframes/blob/HEAD/skills/hyperframes-animation/rules/svg-icon-enrichment.md",
+"repo": "heygen-com/hyperframes",
+"license": "Apache-2.0"
+},
+{
+"url": "https://github.com/adobe-webplatform/Snap.svg",
+"repo": "adobe-webplatform/Snap.svg",
+"license": "Apache-2.0"
+}
+]
+}
+]
+}
+]

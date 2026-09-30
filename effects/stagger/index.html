@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>스태거 · Stagger</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.heading{position:absolute;left:100px;top:45px}.grid{position:absolute;left:100px;top:126px;width:968px;height:400px}
+.cell{position:absolute;width:206px;height:110px}.block{height:74px;background:var(--ink);opacity:0}.cell:last-child .block{background:var(--verm)}
+.order{position:absolute;top:88px;left:0;right:0;text-align:center;font-size:12px;color:var(--ink2)}
+.lead{left:735px;top:548px;opacity:0}
+</style></head>
+<body data-no="006" data-cat="기본기 · PRINCIPLES" data-ko="스태거" data-en="Stagger" data-meta="power3.out · 스태거 0.06s" data-dur="3">
+<main class="scene"><div class="heading lab">12 ELEMENTS · +0.06s</div><div class="grid" id="grid"></div>
+<div class="lead" id="note"><i></i><s></s><span>12번째 출발 +0.66s</span></div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>
+const grid = document.querySelector('#grid');
+for(let i=0;i<12;i++){
+  const cell=document.createElement('div');cell.className='cell';
+  cell.style.left=(i%4*254)+'px';cell.style.top=(Math.floor(i/4)*136)+'px';
+  cell.innerHTML='<div class="block"></div><div class="order mono">'+String(i+1).padStart(2,'0')+'</div>';grid.appendChild(cell);
+}
+const tl = Motion.timeline();
+tl.fromTo('.block',{y:24,opacity:0},{y:0,opacity:1,duration:0.55,stagger:0.06,ease:'power3.out'},0.3);
+tl.to('#note',{opacity:1,duration:0.2},1.65);
+Motion.ready();
+</script></body></html>

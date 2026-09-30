@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>하이라이트 스윕 · Highlight Sweep</title><meta name="viewport" content="width=1280">
+<link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.sentence{position:absolute;left:0;right:0;top:226px;text-align:center;white-space:nowrap;line-height:110px}
+.key{position:relative;display:inline-block;isolation:isolate}
+.mark{position:absolute;left:-8px;right:-8px;top:38px;height:66px;background:var(--verm-soft);z-index:-1;transform-origin:0 50%}
+.lead{left:448px;top:389px;opacity:0}
+</style></head>
+<body data-no="089" data-cat="타이포 · TYPOGRAPHY" data-ko="하이라이트 스윕" data-en="Highlight Sweep" data-meta="scaleX 0 → 1 · 1.35s" data-dur="3">
+<main class="scene"><div class="sentence t-xl">AI는 <span class="key"><span class="mark"></span>다음 말</span>을 고른다</div>
+<div class="lead"><i></i><s></s><span>왼쪽 → 오른쪽 · 1.35s</span></div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+tl.fromTo('.mark', {scaleX:0}, {scaleX:1, duration:1.35, ease:'power1.inOut'}, 0.3);
+tl.to('.lead', {opacity:1, duration:0.25}, 1.85);
+Motion.ready();
+</script></body></html>

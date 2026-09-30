@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>제품 UI 시연 · Product UI Demo</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>
+.heading{position:absolute;left:70px;top:42px}.label{position:absolute;left:70px;top:110px}.input{position:absolute;left:70px;top:144px;width:1028px;height:76px;border-top:1px solid var(--rule);border-bottom:2px solid var(--ink);display:flex;align-items:center;font-size:29px}.char{display:none}.caret{display:inline-block;width:3px;height:33px;background:var(--verm);margin-left:5px}.send{position:absolute;left:935px;top:155px;width:160px;height:52px;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-size:23px}.pointer{position:absolute;left:200px;top:350px;width:30px;height:38px;opacity:0;z-index:5}.ripple{position:absolute;left:977px;top:147px;width:76px;height:76px;border:3px solid var(--verm);border-radius:50%;opacity:0}.answer-label{position:absolute;left:70px;top:258px;opacity:0}.answer{position:absolute;left:70px;top:299px;width:665px;font-family:var(--serif);font-weight:700;font-size:29px;line-height:1.8}.token{display:none;opacity:0}.block{display:none;width:10px;height:27px;background:var(--verm);margin-left:6px;vertical-align:-3px}.lens{position:absolute;left:765px;top:240px;width:330px;height:330px;border:3px solid var(--verm);border-radius:50%;background:var(--paper);opacity:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:24px}.lens .result{font-family:var(--serif);font-size:104px;font-weight:700}.lens .detail{font-size:19px;color:var(--ink2)}.connector{position:absolute;inset:0;width:1168px;height:580px}.connector path{fill:none;stroke:var(--ink3);stroke-width:1;stroke-dasharray:1;stroke-dashoffset:1}.lead{left:70px;top:532px;opacity:0}
+</style></head>
+<body data-kind="recipe" data-no="R06" data-cat="레시피 · AI 제품의 입력부터 응답까지 보여주는 제품 시연" data-ko="제품 UI 시연" data-en="Product UI Demo" data-meta="입력 → 클릭 → 스트림 → 확대" data-dur="6"><main class="scene">
+<div class="heading t-m">AI는 다음 말을 고른다</div><div class="label lab">01 / 질문 입력</div><div class="input"><span id="text"></span><span class="caret"></span></div><div class="send">보내기</div><div class="ripple"></div><svg class="pointer" viewBox="0 0 34 42"><path d="M2 2 L2 32 L10 25 L18 40 L24 37 L16 22 L29 22 Z" fill="var(--ink)" stroke="var(--paper)" stroke-width="2"/></svg>
+<div class="answer-label lab">02 / 모델 응답</div><div class="answer"><span id="tokens"></span><span class="block"></span></div><svg class="connector"><path pathLength="1" d="M340 378 V460 H735 L765 405"/></svg><div class="lens"><div class="lab">응답 핵심</div><div class="result">확률</div><div class="detail">매긴 뒤 하나를 고릅니다.</div></div><div class="lead"><i></i><s></s><span>10개 묶음 · 결과 확대 3.59배</span></div>
+</main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+
+const chars=Array.from('다음 말은 어떻게 고르나요?');
+document.querySelector('#text').innerHTML=chars.map(c=>`<span class="char">${c===' '?'&nbsp;':c}</span>`).join('');
+const gaps=[.08,.11,.07,.14,.09,.12,.17,.08,.1,.07,.15,.09,.11,.13,.1,.08];
+let at=.3;
+document.querySelectorAll('.char').forEach((el,i)=>{at+=gaps[i];tl.set(el,{display:'inline'},at);});
+[.24,.48,.72,.96,1.2,1.44,1.68].forEach((t,i)=>tl.set('.caret',{opacity:i%2?1:0},t));
+tl.set('.caret',{opacity:0},1.91);
+tl.set('.send',{backgroundColor:'var(--verm)'},1.91);
+tl.set('.pointer',{opacity:1},1.61);
+const p={t:0};
+tl.to(p,{t:1,duration:1.1,ease:'power2.inOut',onUpdate:()=>{const t=p.t;gsap.set('.pointer',{x:810*t,y:-181*t-150*Math.sin(Math.PI*t)});}},1.61);
+tl.to('.send',{scale:.94,duration:.12,ease:'power2.in'},2.71);
+tl.to('.send',{scale:1,duration:.22,ease:'power2.out'},2.83);
+tl.fromTo('.ripple',{scale:.45,opacity:.85},{scale:2.4,opacity:0,duration:.4,ease:'power2.out',immediateRender:false},2.74);
+tl.set('.send',{backgroundColor:'var(--ink)'},2.83);
+tl.to('.pointer',{opacity:0,duration:.2},2.94);
+const chunks=['AI는 ','앞의 말을 ','읽고, ','올 수 있는 ','말마다 ','확률을 ','매긴 뒤 ','하나를 ','고릅','니다.'];
+document.querySelector('#tokens').innerHTML=chunks.map(s=>`<span class="token">${s}</span>`).join('');
+tl.set('.answer-label',{opacity:1},2.83);
+tl.set('.block',{display:'inline-block'},3.14);
+document.querySelectorAll('.token').forEach((el,i)=>{const t=2.83+i*.18;tl.set(el,{display:'inline',opacity:.22},t);tl.to(el,{opacity:1,duration:.26,ease:'none'},t);});
+tl.set('.block',{display:'none'},4.41);
+tl.to('.connector path',{strokeDashoffset:0,autoRound:false,duration:.65,ease:'power2.out'},4.41);
+tl.fromTo('.lens',{x:-120,scale:.25,opacity:0},{x:0,scale:1,opacity:1,duration:.85,ease:'power3.out'},4.41);
+tl.to('.lead',{opacity:1,duration:.25},5.10);
+
+Motion.ready();
+</script></body></html>

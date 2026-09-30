@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>오버랩 · Overlapping Action</title>
+<meta name="viewport" content="width=1280">
+<link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.row{position:absolute;left:40px;right:40px;height:150px}
+.row.a{top:110px}.row.b{top:345px}
+.row .lab{position:absolute;left:0;top:-26px}
+.row .track{position:absolute;left:0;right:0;bottom:24px;height:1px;background:var(--rule)}
+.obj{position:absolute;left:0;bottom:25px;height:90px;width:260px}
+.obj .p{position:absolute;bottom:0}
+.p.head{left:190px;width:70px;height:70px;border-radius:50%;background:var(--verm)}
+.p.body{left:90px;width:96px;height:90px;background:var(--ink)}
+.p.t1{left:60px;width:26px;height:60px;background:var(--ink)}
+.p.t2{left:30px;width:26px;height:40px;background:var(--ink)}
+.p.t3{left:0;width:26px;height:22px;background:var(--ink)}
+.row.a .p{background:var(--ink3)}
+.lead{opacity:0}
+</style></head>
+<body data-no="001" data-cat="기본기 · PRINCIPLES" data-ko="오버랩" data-en="Overlapping Action" data-meta="power3.out · 부위별 +0.07s" data-dur="3">
+<main class="scene">
+  <div class="row a"><div class="lab">시간차 없음 · 한 덩어리</div><div class="track"></div>
+    <div class="obj" id="A"><div class="p t3"></div><div class="p t2"></div><div class="p t1"></div><div class="p body"></div><div class="p head"></div></div></div>
+  <div class="row b"><div class="lab">오버랩 · 부위마다 늦게 출발하고 늦게 멈춘다</div><div class="track"></div>
+    <div class="obj" id="B"><div class="p t3"></div><div class="p t2"></div><div class="p t1"></div><div class="p body"></div><div class="p head"></div></div>
+    <div class="lead up" id="L1" style="left:1045px;top:55px"><i></i><s></s><span>머리 먼저 0.00s</span></div>
+    <div class="lead up long" id="L2" style="left:833px;top:103px"><i></i><s></s><span>꼬리 끝 +0.28s</span></div>
+  </div>
+</main>
+<script src="../../lib/gsap.min.js"></script>
+<script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+const X = 820, D = 1.1;
+tl.to('#A', { x: X, duration: D, ease: 'power3.inOut' }, 0.25);
+// 앞 부위가 먼저 출발, 뒤 부위일수록 늦게 출발·늦게 정지
+['#B .head','#B .body','#B .t1','#B .t2','#B .t3'].forEach((s, i) => {
+  tl.to(s, { x: X, duration: D + i * 0.06, ease: 'power3.inOut' }, 0.25 + i * 0.07);
+});
+tl.to('#L1', {opacity:1, duration:.3}, 1.7).to('#L2', {opacity:1, duration:.3}, 1.95);
+Motion.ready();
+</script>
+</body></html>

@@ -1,0 +1,11 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>점진적 공개 · Progressive Disclosure</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>
+.step{position:absolute;top:145px;width:270px;opacity:.12}.step .lab{margin-bottom:28px}.step .name{font-family:var(--serif);font-size:72px;font-weight:700}.step .detail{margin-top:37px;border-top:1px solid var(--rule);padding-top:22px;font-family:var(--serif);font-size:28px}.arrow{position:absolute;top:231px;width:94px;height:1px;background:var(--ink3);transform-origin:0 50%;transform:scaleX(0)}.arrow:after{content:'';position:absolute;right:0;top:-4px;width:8px;height:8px;border-top:1px solid var(--ink3);border-right:1px solid var(--ink3);transform:rotate(45deg)}.heading{position:absolute;left:90px;top:60px}
+</style></head><body data-no="365" data-cat="원리 도해 · EXPLAINER" data-ko="점진적 공개" data-en="Progressive Disclosure" data-meta="입력 → 모델 → 출력 · 단계 간격 0.7s" data-dur="3"><main class="scene"><div class="lab heading">한 번에 한 단계</div><div class="step" id="input" style="left:90px"><div class="lab">01</div><div class="name">입력</div><div class="detail">AI는 다음 말을</div></div><div class="arrow" id="a1" style="left:325px"></div><div class="step" id="model" style="left:450px"><div class="lab">02</div><div class="name">모델</div><div class="detail">후보 확률</div></div><div class="arrow" id="a2" style="left:685px"></div><div class="step" id="output" style="left:810px"><div class="lab">03</div><div class="name">출력</div><div class="detail">고른다</div></div></main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+tl.to('#input',{opacity:1,duration:.3},.3);
+tl.to('#a1',{scaleX:1,duration:.3},.7);
+tl.to('#input',{opacity:.25,duration:.3},1).to('#model',{opacity:1,duration:.3},1);
+tl.to('#a2',{scaleX:1,duration:.3},1.4);
+tl.to('#model',{opacity:.25,duration:.3},1.7).to('#output',{opacity:1,color:'var(--verm)',duration:.35},1.7);
+Motion.ready();
+</script></body></html>

@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>선 그리기 · Line Draw</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>svg{position:absolute;left:105px;top:75px;width:958px;height:435px;overflow:visible}.axis{stroke:var(--rule);stroke-width:1;fill:none}.graph{stroke:var(--ink);stroke-width:3;fill:none;stroke-linejoin:round}.focus{fill:var(--verm)}.tick{font-family:var(--mono);font-size:12px;fill:var(--ink2)}.call{stroke:var(--ink);stroke-width:1;fill:none}.note{font-family:var(--sans);font-size:23px;fill:var(--ink);opacity:0}.sub{font-family:var(--mono);font-size:12px;fill:var(--ink2);opacity:0}</style></head>
+<body data-no="244" data-cat="데이터 · DATA" data-ko="선 그리기" data-en="Line Draw" data-meta="dashoffset 1 → 0 · none" data-dur="3"><main class="scene"><svg viewBox="0 0 958 435"><path class="axis" d="M 50 35 V 370 H 920"/><text class="tick" x="50" y="404">01</text><text class="tick" x="492" y="404">04</text><text class="tick" x="886" y="404">07</text><path class="graph" id="graph" pathLength="1" d="M 50 330 L 200 285 L 350 305 L 500 195 L 650 225 L 800 110 L 900 65"/><circle class="focus" id="tip" cx="0" cy="0" r="8"/></svg></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+const path=document.querySelector('#graph'), tip=document.querySelector('#tip');
+const length=path.getTotalLength(), progress={value:0};
+gsap.set(path,{strokeDasharray:1,strokeDashoffset:1});
+const start=path.getPointAtLength(0);gsap.set(tip,{x:start.x,y:start.y});
+tl.to(path,{strokeDashoffset:0,autoRound:false,duration:1.85,ease:'none'},.3);
+tl.to(progress,{value:1,duration:1.85,ease:'none',onUpdate:()=>{const p=path.getPointAtLength(progress.value*length);gsap.set(tip,{x:p.x,y:p.y});}},.3);
+Motion.ready();
+</script></body></html>

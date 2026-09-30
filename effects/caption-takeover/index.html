@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>자막 화면 점유 · Caption Takeover</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>.headline{position:absolute;left:110px;top:95px;font-size:56px}.diagram{position:absolute;left:110px;right:110px;top:240px;display:flex;align-items:center;gap:30px}.diagram i{height:1px;background:var(--rule);flex:1}.diagram .dot{width:38px;height:38px}.rail{position:absolute;left:70px;right:70px;bottom:48px;display:flex;align-items:center;justify-content:center;gap:18px;font-family:var(--sans);font-weight:700;font-size:48px}.rail span{display:block;white-space:nowrap}.full{position:absolute;inset:0;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px}.full .t-xl{font-size:118px}.full .dot{width:24px;height:24px}</style></head>
+<body data-no="626" data-cat="자막·하단 자막 · CAPTIONS" data-ko="자막 화면 점유" data-en="Caption Takeover" data-meta="하단 자막 → 전면 강조 → 같은 자리 복귀" data-dur="4.5" data-poster="1.9">
+<main class="scene"><div class="context"><div class="diagram"><span class="lab">입력</span><i></i><span class="lab">모델</span><i></i><span class="dot v"></span></div><div class="t-l headline">AI는 다음 말을 고른다</div></div><div class="rail">AI는 다음 말을 고른다</div><div class="full"><div class="lab">기억할 한 문장</div><div class="t-xl">다음 말을</div><div class="t-xl">고른다</div><div class="dot v"></div></div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>const tl = Motion.timeline();
+tl.set('.full',{opacity:0},0);
+tl.set('.rail',{opacity:0},1.1).set('.full',{opacity:1},1.1);
+tl.to('.full',{opacity:0,scale:.98,duration:.25,ease:'power2.out'},2.4).to('.rail',{opacity:1,duration:.25},2.4);
+Motion.ready();</script></body></html>

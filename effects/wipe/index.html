@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>와이프 · Wipe</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>
+.shot{position:absolute;inset:0}.tag{position:absolute;left:80px;top:55px}.headline{position:absolute;left:80px;top:130px}.sentence{position:absolute;left:80px;top:265px}.baseline{position:absolute;left:80px;right:80px;top:445px;height:2px;background:var(--ink)}
+.step{position:absolute;left:80px;top:475px}.b{opacity:1;background:var(--paper);clip-path:inset(0% 100% 0% 0%)}.b .headline{top:125px}.percent{position:absolute;left:800px;top:120px;font-size:140px}.percent small{font-family:var(--mono);font-size:30px}.chart{position:absolute;left:80px;top:310px;width:760px}.bar{height:24px;background:var(--ink);margin-bottom:20px;transform-origin:0 50%}.bar.first{background:var(--ink);width:620px}.bar.second{width:210px}.bar.third{width:90px}.bar span{position:absolute;left:790px;font-size:16px;white-space:nowrap}
+.lead{left:845px;top:435px;opacity:0}
+.edge{position:absolute;left:0;top:35px;height:510px;width:4px;background:var(--verm)}
+</style></head>
+<body data-no="122" data-cat="전환·컷 · TRANSITIONS" data-ko="와이프" data-en="Wipe" data-meta="clip-path inset · 왼쪽→오른쪽 · 1.2s" data-dur="3">
+<main class="scene">
+<section class="shot a" id="A"><div class="lab tag">SCENE A · 문장</div><div class="t-xl headline">AI는</div><div class="t-l sentence">다음 말을 고른다</div><div class="baseline"></div><div class="lab step">입력 → 모델 → 출력</div></section>
+<section class="shot b" id="B"><div class="lab tag">SCENE B · 후보 확률</div><div class="t-l headline">다음 말</div><div class="num percent">62<small>%</small></div><div class="chart"><div class="bar first"><span class="mono">고른다 62%</span></div><div class="bar second"><span class="mono">정한다 21%</span></div><div class="bar third"><span class="mono">찾는다 9%</span></div></div></section>
+<div class="edge" id="edge"></div><div class="lead"><i></i><s></s><span>공개 경계 →</span></div>
+</main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+tl.to('#B', {clipPath:'inset(0% 0% 0% 0%)', duration:1.2, ease:'none'}, 0.35);
+tl.to('#edge', {x:1164, duration:1.2, ease:'none'}, 0.35);
+tl.to('.lead', {opacity:1, duration:0.2}, 1.7);
+Motion.ready();
+</script></body></html>

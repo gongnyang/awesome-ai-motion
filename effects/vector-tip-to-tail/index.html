@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=1280"><title>벡터 끝잇기 · Vector Tip-to-tail Construction</title><link rel="stylesheet" href="../../lib/stage.css"><style>
+.kicker{position:absolute;left:48px;top:30px}.headline{position:absolute;left:48px;top:58px;font-size:42px}.hint{position:absolute;left:48px;bottom:22px;font-size:16px;color:var(--ink2)}
+.paper{background:#FBF8F2;border:1px solid var(--rule)}.row{border-bottom:1px solid var(--rule);padding:22px 26px;font-size:24px}.badge{font-family:var(--mono);font-size:14px;color:var(--ink2)}
+.pointer{position:absolute;width:28px;height:35px;z-index:12}.button{display:inline-block;background:var(--ink);color:var(--paper);padding:14px 28px;font-size:20px}
+.diagram{position:absolute;left:40px;top:145px;width:1088px;height:340px}svg text{font-family:var(--sans);fill:var(--ink);font-size:22px}.edge{fill:none;stroke:var(--rule);stroke-width:2}.node circle{fill:var(--paper);stroke:var(--ink);stroke-width:2}.node text{text-anchor:middle}.signal{fill:var(--verm)}.diagram{top:138px;height:350px}.equation{position:absolute;right:80px;bottom:30px;font-size:30px}</style></head>
+<body data-no="403" data-cat="원리 도해 · EXPLAINER" data-ko="벡터 끝잇기" data-en="Vector Tip-to-tail Construction" data-meta="두 벡터 공개 · 끝잇기 · 합벡터" data-dur="4.5" data-poster="4.2">
+<main class="scene"><div class="kicker lab">10 / 합성</div><div class="headline t-l">끝에 이어 붙이면 합이 보인다</div><div class="hint">두 번째 벡터를 첫 번째 끝으로 옮긴다</div><svg class="diagram" viewBox="0 0 1088 350"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="var(--rule)" stroke-width=".6"/></pattern><marker id="inkArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10" fill="var(--ink)"/></marker><marker id="vermArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10" fill="var(--verm)"/></marker></defs><rect x="60" y="15" width="960" height="320" fill="url(#grid)"/><circle cx="210" cy="285" r="5" fill="var(--ink)"/><g class="a"><path d="M210 285H550" stroke="var(--ink)" stroke-width="4" fill="none" marker-end="url(#inkArrow)"/><text x="380" y="316">가로 이동</text></g><g class="b"><path d="M210 285L390 115" stroke="var(--ink)" stroke-width="4" fill="none" marker-end="url(#inkArrow)"/><text x="245" y="170">추가 이동</text></g><g class="sum"><path d="M210 285L730 115" stroke="var(--verm)" stroke-width="5" fill="none" marker-end="url(#vermArrow)"/><text x="480" y="175" style="fill:var(--verm)">전체 이동</text></g></svg><div class="equation">가로 이동 ＋ 추가 이동 ＝ 전체 이동</div></main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+
+['.a','.b','.sum'].forEach((s,i)=>{const p=document.querySelector(s+' path'),L=p.getTotalLength(),t=[.2,1.05,3.0][i];tl.fromTo(p,{strokeDasharray:L,strokeDashoffset:L,opacity:0},{strokeDashoffset:0,opacity:1,duration:.65,ease:'power2.inOut'},t);tl.fromTo(s+' text',{opacity:0},{opacity:1,duration:.25},t+.4);});
+tl.to('.b',{x:340,duration:.7,ease:'power2.inOut'},1.95);
+tl.fromTo('.equation',{opacity:0},{opacity:1,duration:.3},3.6);
+
+Motion.ready();
+</script></body></html>

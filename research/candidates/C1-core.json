@@ -1,0 +1,807 @@
+{
+  "crossfade": {
+    "aka": [
+      "Crossfade",
+      "교차 페이드",
+      "Cross dissolve",
+      "Cross Dissolve",
+      "fade()",
+      "fadeTransition",
+      "Non-Additive Dissolve",
+      "Film Dissolve",
+      "Theme Cycle",
+      "고정 앵커 테마 순환",
+      "theme-crossfade-morph",
+      "palette-flip",
+      "Semantic replacement dissolve",
+      "무관한 차트 교체 페이드",
+      "Crossfade / Cross Dissolve",
+      "크로스페이드"
+    ],
+    "variants": [
+      "이미지 교체",
+      "전체 화면",
+      "공유 요소 페이드",
+      "fade",
+      "fadefast",
+      "fadeslow",
+      "Non additive dissolve",
+      "Linear light film dissolve",
+      "IDE 스킨",
+      "브랜드 스킨",
+      "순간 팔레트 플립",
+      "fixed-anchor-cycle",
+      "split-anchor-word-slot",
+      "순차 페이드",
+      "교차 페이드",
+      "Theme Cycle",
+      "Semantic replacement dissolve",
+      "Crossfade / Cross Dissolve"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/transitions-dissolve/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "motiondivision/motion",
+        "url": "https://motion.dev/docs/react-animate-presence",
+        "license": "MIT"
+      },
+      {
+        "title": "greensock/GSAP",
+        "url": "https://gsap.com/docs/v3/Plugins/Flip/",
+        "license": "GSAP Standard License"
+      },
+      {
+        "title": "pmndrs/react-spring",
+        "url": "https://www.react-spring.dev/docs/components/use-transition",
+        "license": "MIT"
+      },
+      {
+        "title": "motion.dev examples",
+        "url": "https://motion.dev/examples/react-curtains-fade",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-017",
+      "R2-023",
+      "R4-001",
+      "DICT-097",
+      "R1b-095",
+      "R6-008",
+      "DICT-109"
+    ]
+  },
+  "push-transition": {
+    "aka": [
+      "Push transition",
+      "밀기 전환",
+      "Push Transition",
+      "밀어내기 전환",
+      "slideTransition",
+      "slide()",
+      "푸시 전환",
+      "Push scene transition",
+      "밀어내는 장면 전환",
+      "Scaled push",
+      "축소 밀어내기"
+    ],
+    "variants": [
+      "animate-text/shared-axis-x",
+      "좌우",
+      "상하",
+      "탄성 밀기",
+      "공유 축 X",
+      "좌우 밀기",
+      "상하 밀기",
+      "Directional",
+      "directional-easing",
+      "slideleft",
+      "slideright",
+      "slideup",
+      "slidedown",
+      "Editly directional-left",
+      "Editly directional-right",
+      "Editly directional-up",
+      "Editly directional-down",
+      "좌우 페이지",
+      "상하 슬라이드",
+      "방향별 복귀",
+      "DirectionalScaled",
+      "Push scene transition",
+      "Scaled push"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/directional-wipe/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/page-slide/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/transitions-push/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "pixel-point/animate-text",
+        "url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/shared-axis-x.json",
+        "license": "unknown"
+      },
+      {
+        "title": "gl-transitions/gl-transitions",
+        "url": "https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Directional.glsl",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R1a-020",
+      "R1b-124",
+      "R4-003",
+      "DICT-115",
+      "R2-030",
+      "R4-004"
+    ]
+  },
+  "wipe": {
+    "aka": [
+      "Diagonal split",
+      "대각 분할 전환",
+      "Cover wipe",
+      "가림막 와이프",
+      "Shutter",
+      "셔터 전환",
+      "Diagonal Wipe",
+      "사선 와이프",
+      "polygon-diagonal-wipe",
+      "shape-wipe-clip-path",
+      "shape-wipe-color-block",
+      "Directional wipe",
+      "방향 와이프 전환",
+      "Split doors transition",
+      "양쪽 문 전환",
+      "Fill Sweep",
+      "배경색 쓸기",
+      "Shutter Fill",
+      "셔터 채우기",
+      "Rotated Overlay Reveal",
+      "기울어진 덮개 리빌",
+      "Linear wipe",
+      "직선 와이프",
+      "Linear Wipe",
+      "선형 와이프",
+      "Linear wipe effect",
+      "Cover and uncover",
+      "덮기와 걷어내기",
+      "Split aperture wipe",
+      "양쪽 마스크 개폐",
+      "Soft directional dissolve",
+      "부드러운 방향 디졸브",
+      "Corner gradient dissolve",
+      "모서리 그라데이션 디졸브",
+      "Invisible occlusion cut",
+      "가림 숨은 컷",
+      "Light sweep wipe",
+      "빛 스윕 와이프",
+      "Neon edge wipe",
+      "네온 테두리 와이프",
+      "CC Light Wipe",
+      "빛 와이프",
+      "Board erase sweep",
+      "화이트보드 쓸어 지우기",
+      "Wipe",
+      "와이프",
+      "Slide / Slide-over Transition",
+      "슬라이드 전환",
+      "Shape / Graphic Cover Transition",
+      "셰이프 전환"
+    ],
+    "variants": [
+      "2색면",
+      "5색면",
+      "띠 가림",
+      "하단 이름표 가림",
+      "15도",
+      "45도",
+      "단색 블록",
+      "이미지 간 교체",
+      "wipe-transform",
+      "가로",
+      "세로",
+      "대각선",
+      "클립 경계",
+      "좌우 문",
+      "상하 문",
+      "중앙 닫힘",
+      "sweep-to",
+      "bounce-to",
+      "interactive-hover-button",
+      "sweep-to-bottom",
+      "sweep-to-left",
+      "sweep-to-right",
+      "sweep-to-top",
+      "shutter-in-horizontal",
+      "shutter-out-vertical",
+      "rectangle-in",
+      "rectangle-out",
+      "GradientBlinds",
+      "shutter-in-vertical",
+      "shutter-out-horizontal",
+      "Rotated Overlays",
+      "diagonal overlay",
+      "wipeDown",
+      "wipeLeft",
+      "wipeRight",
+      "wipeUp",
+      "directionalwipe",
+      "wipeleft",
+      "wiperight",
+      "wipeup",
+      "wipedown",
+      "wipetl",
+      "wipetr",
+      "wipebl",
+      "wipebr",
+      "수평",
+      "수직",
+      "부드러운 경계",
+      "coverleft",
+      "coverright",
+      "coverup",
+      "coverdown",
+      "revealleft",
+      "revealright",
+      "revealup",
+      "revealdown",
+      "HorizontalOpen",
+      "HorizontalClose",
+      "VerticalOpen",
+      "VerticalClose",
+      "vertopen",
+      "vertclose",
+      "horzopen",
+      "horzclose",
+      "smoothleft",
+      "smoothright",
+      "smoothup",
+      "smoothdown",
+      "diagtl",
+      "diagtr",
+      "diagbl",
+      "diagbr",
+      "수평 빛",
+      "대각 빛",
+      "색빛",
+      "가로 지우기",
+      "원형 지우기",
+      "Diagonal split",
+      "Cover wipe",
+      "Shutter",
+      "Diagonal Wipe",
+      "Directional wipe",
+      "Split doors transition",
+      "Fill Sweep",
+      "Shutter Fill",
+      "Rotated Overlay Reveal",
+      "Linear wipe",
+      "Linear Wipe",
+      "Cover and uncover",
+      "Split aperture wipe",
+      "Soft directional dissolve",
+      "Corner gradient dissolve",
+      "Invisible occlusion cut",
+      "Light sweep wipe",
+      "Neon edge wipe",
+      "CC Light Wipe",
+      "Board erase sweep",
+      "Slide / Slide-over Transition",
+      "Shape / Graphic Cover Transition"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/transitions-cover/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/lt-clean-bar/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/lt-bold-block/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/lt-stack-bars/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/lower-third-bild/registry-item.json",
+        "license": "Apache-2.0"
+      }
+    ],
+    "from": [
+      "R1a-023",
+      "R1a-027",
+      "R1a-029",
+      "R1b-031",
+      "R2-025",
+      "R2-027",
+      "R3-055",
+      "R3-057",
+      "R3-189",
+      "R4-002",
+      "R5-032",
+      "R4-005",
+      "R4-019",
+      "R4-033",
+      "R4-034",
+      "R4-117",
+      "R4-135",
+      "R4-136",
+      "R5-040",
+      "R7-082",
+      "DICT-110",
+      "DICT-116",
+      "DICT-120"
+    ]
+  },
+  "iris-mask": {
+    "aka": [
+      "Iris mask",
+      "아이리스 마스크",
+      "Circle iris",
+      "Diamond iris",
+      "Iris Mask",
+      "iris-circle-directional",
+      "shape-wipe-clip-path",
+      "iris-portal-threshold",
+      "iris-open",
+      "Iris reveal",
+      "아이리스 열기",
+      "아이리스 공개",
+      "Radial Fill",
+      "방사형 채우기",
+      "Iris crop through color",
+      "아이리스 닫기 후 열기",
+      "Rectangle crop through color",
+      "사각 창 닫기 후 열기",
+      "Rectangle color aperture",
+      "사각 색면 개폐",
+      "Positioned box reveal",
+      "위치 지정 사각 공개",
+      "Bow tie wipe",
+      "나비넥타이 와이프",
+      "Star wipe",
+      "별 모양 와이프",
+      "Heart and leaf silhouette wipe",
+      "실루엣 확장 와이프",
+      "Polar flower wipe",
+      "극좌표 꽃잎 와이프",
+      "Graphic iris shapes",
+      "기하 아이리스",
+      "Iris Wipe",
+      "아이리스 와이프",
+      "Mask / Clip-path Transition",
+      "마스크 전환"
+    ],
+    "variants": [
+      "원",
+      "마름모",
+      "SDF 경계",
+      "중앙",
+      "대상 좌표 원점",
+      "코너",
+      "문틀",
+      "다이아몬드",
+      "열기와 닫기",
+      "화면 중앙",
+      "클릭 위치",
+      "타원",
+      "역방향 닫힘",
+      "circleopen",
+      "circleclose",
+      "radial-in",
+      "radial-out",
+      "animated-theme-toggler",
+      "CircleCrop",
+      "circle",
+      "circlecrop",
+      "RectangleCrop",
+      "rectcrop",
+      "Rectangle",
+      "Box",
+      "BowTieHorizontal",
+      "BowTieVertical",
+      "BowTieWithParameter",
+      "StarWipe",
+      "중간 정지 후 재확대",
+      "heart",
+      "cannabisleaf",
+      "polar_function",
+      "원형",
+      "다각형",
+      "별형",
+      "Iris reveal",
+      "Radial Fill",
+      "Iris crop through color",
+      "Rectangle crop through color",
+      "Rectangle color aperture",
+      "Positioned box reveal",
+      "Bow tie wipe",
+      "Star wipe",
+      "Heart and leaf silhouette wipe",
+      "Polar flower wipe",
+      "Graphic iris shapes",
+      "Iris Wipe",
+      "Mask / Clip-path Transition"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/iris-reveal/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/sdf-iris/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/transitions-radial/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "motion.dev Motion+",
+        "url": "https://motion.dev/docs/react-use-curtains",
+        "license": "unknown"
+      },
+      {
+        "title": "motion.dev examples",
+        "url": "https://motion.dev/examples/react-curtains-iris",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-022",
+      "R1b-032",
+      "R2-029",
+      "R4-014",
+      "R3-056",
+      "R4-015",
+      "R4-016",
+      "R4-017",
+      "R4-018",
+      "R4-020",
+      "R4-021",
+      "R4-022",
+      "R4-023",
+      "R4-129",
+      "R5-039",
+      "DICT-119"
+    ]
+  },
+  "zoom-through": {
+    "aka": [
+      "Zoom through",
+      "줌 통과",
+      "Zoom Through",
+      "줌 관통",
+      "zoom-through-portal",
+      "Cross zoom",
+      "교차 줌",
+      "Simple zoom cut",
+      "단순 줌 전환",
+      "Zoom in out dissolve",
+      "확대 후 복귀 전환",
+      "Rotating zoom blur",
+      "회전 줌 블러",
+      "Doorway transition",
+      "문 열고 진입",
+      "VR Mobius zoom",
+      "구면 뫼비우스 줌",
+      "Portal Traverse",
+      "포털 통과",
+      "Portal transition",
+      "Zoom Transition / Zoom-through",
+      "줌 전환"
+    ],
+    "variants": [
+      "animate-text/shared-axis-z",
+      "8배",
+      "20배",
+      "로고 구멍",
+      "문틀 포털",
+      "pairs/zoom-portal-in",
+      "pairs/zoom-portal-out",
+      "CrossZoom",
+      "SimpleZoom",
+      "SimpleZoomOut",
+      "zoomin",
+      "zoomInOut",
+      "doorway",
+      "평면 문",
+      "곡면 포털",
+      "화면 속 화면 진입",
+      "Cross zoom",
+      "Simple zoom cut",
+      "Zoom in out dissolve",
+      "Rotating zoom blur",
+      "Doorway transition",
+      "VR Mobius zoom",
+      "Portal Traverse",
+      "Zoom Transition / Zoom-through"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/zoom-through-transition/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/cinematic-zoom/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/transitions-scale/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/shared-axis-z/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "pixel-point/animate-text",
+        "url": "https://raw.githubusercontent.com/pixel-point/animate-text/master/skills/animate-text/assets/specs/shared-axis-z.json",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-025",
+      "R1b-076",
+      "R4-047",
+      "R4-048",
+      "R4-049",
+      "R4-055",
+      "R4-081",
+      "R4-149",
+      "R8-098",
+      "DICT-117"
+    ]
+  },
+  "match-cut": {
+    "aka": [
+      "Match cut",
+      "매치 컷",
+      "Match Cut",
+      "매치컷",
+      "match-cut-position-carry",
+      "match-cut-graphic-analogy",
+      "object-scale-continuity",
+      "Matched dissolve",
+      "매치 디졸브"
+    ],
+    "variants": [
+      "좌표 매치",
+      "그래픽 은유",
+      "미시에서 거시 스케일 승계",
+      "pairs/match-cut-in",
+      "pairs/match-cut-out",
+      "Graphic match",
+      "Motion match",
+      "Color match",
+      "Audio match",
+      "Matched dissolve"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/match-cut/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/text-match-cut/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "Adobe",
+        "url": "https://www.adobe.com/creativecloud/video/post-production/cuts-in-film/match-cut.html",
+        "license": "unknown"
+      },
+      {
+        "title": "CapCut",
+        "url": "https://www.capcut.com/resource/dissolve-transition-in-video",
+        "license": "unknown"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:hyperframes-keyframes/SKILL.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-041",
+      "R1b-075",
+      "R4-103",
+      "DICT-105",
+      "R4-122"
+    ]
+  },
+  "whip-pan": {
+    "aka": [
+      "Whip pan",
+      "휘프 팬",
+      "Whip Pan",
+      "휩팬",
+      "whip-pan-cut-mask",
+      "whip-pan-directional",
+      "hypercut-whip",
+      "Whip pan cut",
+      "휩 팬 컷",
+      "Whip Pan / Swish Pan Transition"
+    ],
+    "variants": [
+      "좌우",
+      "상하",
+      "씬 내부 교체",
+      "씬 경계 전환",
+      "pairs/whip-pan-in",
+      "pairs/whip-pan-out",
+      "Whip pan cut",
+      "Whip Pan / Swish Pan Transition"
+    ],
+    "sources": [
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/blocks/whip-pan/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "heygen-com/hyperframes",
+        "url": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry/components/whip-pan-cut/registry-item.json",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "Adobe",
+        "url": "https://helpx.adobe.com/premiere/desktop/add-video-effects/effects-and-transitions-library/list-of-video-transitions.html",
+        "license": "unknown"
+      },
+      {
+        "title": "remotion-dev/remotion",
+        "url": "https://www.remotion.dev/docs/transitions/presentations/blur-slide",
+        "license": "Remotion License"
+      },
+      {
+        "title": "local/HyperFrames-skills",
+        "url": "claude-skill:music-to-video/references/motion-primitive-catalog.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1a-043",
+      "R1b-025",
+      "R4-118",
+      "DICT-111"
+    ]
+  },
+  "shape-morph": {
+    "aka": [
+      "Container Morph",
+      "컨테이너 모프",
+      "card-morph-anchor",
+      "Optical flow morph cut",
+      "광학 흐름 모프 컷",
+      "Universal chart mark morph",
+      "차트 마크 대응 모프",
+      "Cross-series morph",
+      "Universal transition",
+      "Morph / Shared-element Transition",
+      "모프 전환"
+    ],
+    "variants": [
+      "카드에서 아이콘",
+      "로고에서 CTA",
+      "알약에서 메뉴",
+      "cta-morph-press",
+      "막대와 파이",
+      "막대와 점",
+      "지도와 막대",
+      "선버스트와 트리맵",
+      "Container Morph",
+      "Optical flow morph cut",
+      "Universal chart mark morph",
+      "Morph / Shared-element Transition"
+    ],
+    "sources": [
+      {
+        "title": "Adobe",
+        "url": "https://helpx.adobe.com/uk/premiere/desktop/add-video-effects/apply-video-transitions/apply-morph-cut-to-smoothen-jump-cuts.html",
+        "license": "unknown"
+      },
+      {
+        "title": "Blackmagic Design",
+        "url": "https://www.blackmagicdesign.com/products/davinciresolve/edit",
+        "license": "unknown"
+      },
+      {
+        "title": "apache/echarts",
+        "url": "https://echarts.apache.org/handbook/en/basics/release-note/5-2-0/",
+        "license": "Apache-2.0"
+      },
+      {
+        "title": "Heer & Robertson 2007",
+        "url": "https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf",
+        "license": "unknown"
+      },
+      {
+        "title": "local/hyperframes-animation",
+        "url": "claude-skill:hyperframes-animation/rules/card-morph-anchor.md",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R1b-098",
+      "R4-120",
+      "R6-019",
+      "DICT-118"
+    ]
+  },
+  "zoom-to-detail": {
+    "aka": [
+      "Area zoom handoff",
+      "영역 줌 연결",
+      "zoomInTransition",
+      "zoomOutTransition"
+    ],
+    "variants": [
+      "영역으로 확대",
+      "영역에서 축소",
+      "Area zoom handoff"
+    ],
+    "sources": [
+      {
+        "title": "motion-canvas/motion-canvas",
+        "url": "https://motioncanvas.io/docs/transitions/",
+        "license": "MIT"
+      }
+    ],
+    "from": [
+      "R4-123"
+    ]
+  },
+  "spring-overshoot": {
+    "aka": [
+      "Elastic spring slide",
+      "스프링 슬라이드 전환"
+    ],
+    "variants": [
+      "Elastic spring slide"
+    ],
+    "sources": [
+      {
+        "title": "Adobe",
+        "url": "https://helpx.adobe.com/premiere/desktop/add-video-effects/types-of-effects/transitions.html",
+        "license": "unknown"
+      }
+    ],
+    "from": [
+      "R4-144"
+    ]
+  }
+}

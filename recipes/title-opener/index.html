@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>타이포 오프닝 · Title Opener</title><meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css"><style>
+.kicker{position:absolute;left:110px;top:65px}.title{position:absolute;left:110px;top:138px;right:70px}.window{height:108px;overflow:hidden}.window+.window{margin-top:10px}.line{display:block;line-height:108px;white-space:nowrap}.key{display:inline-block;position:relative}.underline{position:absolute;left:106px;top:349px;width:270px;height:32px;overflow:visible}.underline path{fill:none;stroke:var(--verm);stroke-width:6;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}.subtitle{position:absolute;left:110px;top:430px;font-size:28px;white-space:pre}.char{display:inline-block;opacity:0}.baseline{position:absolute;left:110px;right:110px;top:508px}
+</style></head>
+<body data-kind="recipe" data-no="R10" data-cat="레시피 · 교육 영상의 첫 4초와 짧은 타이포 오프닝" data-ko="타이포 오프닝" data-en="Title Opener" data-meta="2줄 리빌 → 부제 → 핵심어 밑줄" data-dur="4"><main class="scene">
+<div class="kicker lab">AI PRINCIPLES / 01</div><div class="title"><div class="window"><span class="line t-xl">AI는</span></div><div class="window"><span class="line t-xl"><span class="key">다음 말</span>을 고른다</span></div></div><svg class="underline" viewBox="0 0 270 32" preserveAspectRatio="none"><path pathLength="1" d="M5 20 C72 11 172 13 264 17"/></svg><div class="subtitle" id="subtitle" aria-label="입력에서 출력까지"></div><div class="hair baseline"></div>
+</main><script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script><script>
+const tl = Motion.timeline();
+
+tl.fromTo('.line',{yPercent:110},{yPercent:0,duration:1.05,stagger:.35,ease:'power3.out'},.3);
+Array.from('입력에서 출력까지').forEach(c=>{const span=document.createElement('span');span.className='char';span.textContent=c;span.setAttribute('aria-hidden','true');document.querySelector('#subtitle').appendChild(span);});
+tl.fromTo('.char',{y:64,opacity:0},{y:0,opacity:1,duration:.62,stagger:.035,ease:'power3.out'},1.4);
+tl.fromTo('.underline path',{strokeDashoffset:1},{strokeDashoffset:0,autoRound:false,duration:1.35,ease:'none'},2.0);
+
+Motion.ready();
+</script></body></html>

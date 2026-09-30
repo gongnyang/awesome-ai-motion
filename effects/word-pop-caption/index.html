@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>단어 팝 자막 · Word Pop Caption</title>
+<meta name="viewport" content="width=1280"><link rel="stylesheet" href="../../lib/stage.css">
+<style>.headline{position:absolute;left:110px;top:95px;font-size:56px}.diagram{position:absolute;left:110px;right:110px;top:240px;display:flex;align-items:center;gap:30px}.diagram i{height:1px;background:var(--rule);flex:1}.diagram .dot{width:38px;height:38px}.rail{position:absolute;left:70px;right:70px;bottom:48px;display:flex;align-items:center;justify-content:center;gap:18px;font-family:var(--sans);font-weight:700;font-size:48px}.rail span{display:block;white-space:nowrap}.page{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:18px}.page:last-child span:last-child{color:var(--verm)}</style></head>
+<body data-no="637" data-cat="자막·하단 자막 · CAPTIONS" data-ko="단어 팝 자막" data-en="Word Pop Caption" data-meta="세 어절씩 교체 · 0.85 → 1.08 → 1" data-dur="4.5" data-poster="3.4">
+<main class="scene"><div class="diagram"><span class="lab">입력</span><i></i><span class="lab">모델</span><i></i><span class="dot v"></span></div><div class="t-l headline">AI는 다음 말을 고른다</div><div class="rail"><div class="page first"><span>AI는</span><span>앞을</span><span>읽는다</span></div><div class="page second"><span>그리고</span><span>다음을</span><span>고른다</span></div></div></main>
+<script src="../../lib/gsap.min.js"></script><script src="../../lib/stage.js"></script>
+<script>const tl = Motion.timeline();
+tl.set('.second',{opacity:0},0);
+const groups=[{sel:'.first span',times:[.3,.74,1.29]},{sel:'.second span',times:[2.1,2.65,3.2]}];
+groups.forEach(g=>document.querySelectorAll(g.sel).forEach((el,i)=>{tl.fromTo(el,{scale:.85,opacity:0},{scale:1.08,opacity:1,duration:.1,ease:'power2.out'},g.times[i]);tl.to(el,{scale:1,duration:.06,ease:'power1.out'},g.times[i]+.1);}));
+tl.set('.first',{opacity:0},2.1).set('.second',{opacity:1},2.1);
+Motion.ready();</script></body></html>

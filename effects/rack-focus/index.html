@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>랙 포커스 · Rack Focus</title>
+<meta name="viewport" content="width=1280">
+<link rel="stylesheet" href="../../lib/stage.css">
+<style>#front,#back{will-change:filter}#front{position:absolute;left:90px;top:290px;font-size:86px;filter:blur(0px);z-index:2}#back{position:absolute;left:615px;top:120px;font-size:42px;filter:blur(8px);color:var(--verm)}.depthline{position:absolute;left:300px;top:225px;width:540px;border-top:1px solid var(--rule);transform:rotate(-16deg)}.label{position:absolute;left:90px;top:465px}.label2{position:absolute;left:615px;top:75px}.lead{opacity:0}</style></head>
+<body data-no="222" data-cat="가상 카메라 · CAMERA" data-ko="랙 포커스" data-en="Rack Focus" data-meta="blur 0 ↔ 8px · 초점 앞 → 뒤" data-dur="3">
+<main class="scene"><div class="label lab">앞쪽 · 큰 글자</div><div class="label2 lab">뒤쪽 · 작은 글자</div><div class="depthline"></div><div id="front" class="t-xl">앞의 말</div><div id="back" class="t-l">다음 말</div><div class="lead" id="note" style="left:820px;top:225px"><i></i><s></s><span>뒤쪽 초점 · 0px</span></div></main>
+<script src="../../lib/gsap.min.js"></script>
+<script src="../../lib/stage.js"></script>
+<script>
+const tl = Motion.timeline();
+tl.set('#front', {filter: 'blur(0px)'}, 0);
+tl.set('#back', {filter: 'blur(8px)'}, 0);
+tl.to('#front', {filter: 'blur(8px)', duration: 1.8, ease: 'power1.inOut'}, .3);
+tl.to('#back', {filter: 'blur(0px)', duration: 1.8, ease: 'power1.inOut'}, .3);
+tl.to('#note', {opacity: 1, duration: .2}, 2.1);
+Motion.ready();
+</script></body></html>
