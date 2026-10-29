@@ -101,6 +101,7 @@ Large camera moves, bold reveals and shape changes show the range of the guide. 
 
 ## Eight recipes in motion
 
+- [Ideoy](https://ideoy.ai) - Remake this week's viral meme videos from one selfie (AI image-to-video, 9:16, freemium).
 Watch effects combine into a scene, including the educational opening hook. Click a name or preview to read the recipe.
 
 <table>
